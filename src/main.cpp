@@ -1,5 +1,6 @@
 #include "game/builder_path.h"
 #include "game/player_probe.h"
+#include "game/player_retention.h"
 #include "game/puppet_lifecycle.h"
 #include "game/player_telemetry.h"
 #include "game/runtime_diag.h"
@@ -57,6 +58,7 @@ extern "C" __declspec(dllexport) void InitializeASI() {
     bfc::SpawnContract::LogGate();
     bfc::PuppetLifecycle::LogGate();
     bfc::BuilderPath::LogGate();
+    bfc::PlayerRetention::LogGate();
 
     // Prepare Winsock foundation only. Do not open host/client sessions yet.
     if (bfc::Network::Initialize()) {

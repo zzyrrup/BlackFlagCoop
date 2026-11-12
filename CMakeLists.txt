@@ -37,6 +37,8 @@ add_library(BlackFlagCoopNet STATIC
     src/game/puppet_lifecycle.h
     src/game/builder_path.cpp
     src/game/builder_path.h
+    src/game/player_retention.cpp
+    src/game/player_retention.h
 )
 
 target_include_directories(BlackFlagCoopNet PUBLIC src)
@@ -204,4 +206,27 @@ add_test(
 add_test(
     NAME BuilderPath
     COMMAND BlackFlagCoopBuilderPathTest
+)
+
+add_executable(BlackFlagCoopPlayerRetentionTest
+    tools/player_retention_test/main.cpp
+)
+
+target_link_libraries(BlackFlagCoopPlayerRetentionTest PRIVATE BlackFlagCoopNet)
+
+set_target_properties(BlackFlagCoopPlayerRetentionTest PROPERTIES
+    RUNTIME_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}/bin"
+)
+
+if(MSVC)
+    target_compile_options(BlackFlagCoopPlayerRetentionTest PRIVATE
+        /W4
+        /permissive-
+        /EHsc
+    )
+endif()
+
+add_test(
+    NAME PlayerRetention
+    COMMAND BlackFlagCoopPlayerRetentionTest
 )

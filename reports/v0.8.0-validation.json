@@ -1,14 +1,15 @@
 {
   "schemaVersion": 1,
   "milestone": "v0.8.0",
-  "generatedLocal": "2026-11-12T13:20:00 America/Denver",
+  "generatedLocal": "2026-11-12T13:40:00 America/Denver",
   "exeSha256": "19920F34BB2FAC814023EE3C27F0CECA1872E80A2AAFB37C092C419FFF77CC0D",
   "nativeFactoryConfirmed": false,
   "cachedBuilderResolved": false,
+  "playerEntityOwnerResolved": false,
   "candidate": {
     "version": "0.8.0-dev",
-    "bytes": 104448,
-    "sha256": "858F5593FA3FD29C4E04FA65A94D026EED1A8DF0B6A005D620E54ACE6ABDEC1D",
+    "bytes": 105984,
+    "sha256": "DDA35B971307142097AFDA5D5947309C132F16720F7E109AE5F2E9379547E59B",
     "invokeNativeSpawn": false,
     "callEngine": false,
     "deployed": false
@@ -23,15 +24,14 @@
     { "name": "SpawnContract", "result": "pass" },
     { "name": "PuppetLifecycle", "result": "pass" },
     { "name": "BuilderPath", "result": "pass" },
-    { "name": "BuilderPath080", "result": "pass", "note": "PlayerProgression string found; builder cache unresolved" },
-    { "name": "Ac4Names080", "result": "pass", "note": "SpawnPlayerParams and PlayerProgression present; SpawningRequest absent" },
+    { "name": "PlayerRetention", "result": "pass" },
+    { "name": "PlayerRetention080", "result": "pass" },
     { "name": "game_launch_deploy", "result": "not_run" }
   ],
   "confirmed": [
-    "SpawnPlayerParams @0x80F2A20 is a schema visitor via 0x4572C60 then 0x80F2330",
-    "PlayerProgression LEAs call name-range registrar 0x1C75AB0 (indices 0x141-0x14B)",
-    "SpawnPlayerBoatParams @0x821ABC0 is a schema visitor",
+    "PlayerEntitySelector method table 0x919F9D0 registered at 0x62F12E0",
+    "Process candidate 0x7CA9B70 uses handle/object-id resolve 0x16FAA0",
     "Gates remain default-off; installed ASI untouched"
   ],
-  "missingLink": "Cached EntityBuilder handle + RowSelector globals and BuildEntityWithSelector / World::AddEntity equivalents are not identified."
+  "missingLink": "World/local-player Entity* retention owner and builder/selector construction cache are not identified."
 }
