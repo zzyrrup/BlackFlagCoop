@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "milestone": "v0.6.17",
+  "generatedUtc": "2026-11-12T18:32:58Z",
+  "exeSha256": "19920F34BB2FAC814023EE3C27F0CECA1872E80A2AAFB37C092C419FFF77CC0D",
+  "validator": "0x43E7750",
+  "expected": [
+    {
+      "vtOff": "0x2B0",
+      "expectedRva": "0x4656C80",
+      "leaSite": "0x43E776C",
+      "compareSite": "0x43E7765",
+      "sec": ".impdata",
+      "size": 10,
+      "strings": [],
+      "callees": [],
+      "callersE8": 0,
+      "disasmHead": ["0x4656C80 mov rax,[rcx]", "0x4656C83 jmp qword ptr [rax+2B8]"]
+    },
+    {
+      "vtOff": "0x2B8",
+      "expectedRva": "0x479E3B0",
+      "leaSite": "0x43E777F",
+      "compareSite": "0x43E7778",
+      "sec": ".impdata",
+      "size": 138,
+      "strings": [],
+      "callees": [],
+      "callersE8": 40,
+      "disasmHead": ["0x479E3B0 push rsi", "0x479E3B1 push rdi", "0x479E3B2 sub rsp,28", "0x479E3B6 mov rax,[rcx+18]", "0x479E3BA test rax,rax", "0x479E3BD je short 000000014479E3CB", "0x479E3BF mov rsi,[rax+0A8]", "0x479E3C6 test rsi,rsi", "0x479E3C9 jne short 000000014479E3F4", "0x479E3CB cmp byte ptr [rcx+25],0", "0x479E3CF je short 000000014479E3E3", "0x479E3D1 mov al,1", "0x479E3D3 cmp byte ptr [rcx+22],0", "0x479E3D7 je short 000000014479E3E3", "0x479E3D9 mov [rcx+26],al", "0x479E3DC add rsp,28", "0x479E3E0 pop rdi", "0x479E3E1 pop rsi", "0x479E3E2 ret", "0x479E3E3 mov rax,[rcx]", "0x479E3E6 mov rsi,rcx", "0x479E3E9 call qword ptr [rax+2C0]", "0x479E3EF mov rcx,rsi", "0x479E3F2 jmp short 000000014479E3D9"]
+    }
+  ]
+}

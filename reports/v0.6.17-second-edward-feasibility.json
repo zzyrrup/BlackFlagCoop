@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "milestone": "v0.6.17",
+  "generatedUtc": "2026-11-12T18:45:00Z",
+  "exeSha256": "19920F34BB2FAC814023EE3C27F0CECA1872E80A2AAFB37C092C419FFF77CC0D",
+  "createSecondEdward": {
+    "class": "unsupported",
+    "reason": "Resolved vt methods and ctors still operate on existing typed objects / side blocks"
+  },
+  "expectedVtSlotsResolved": {
+    "class": "confirmed",
+    "reason": "+0x2B0=0x4656C80 trampoline; +0x2B8=0x479E3B0; arm table +0x2B8=0x2108620"
+  },
+  "ctorsDecoded": {
+    "class": "confirmed",
+    "reason": "0x2E97A50 installs 0x948FF50; 0x59D9B90 installs 0x9303E28 at +0x1D0"
+  },
+  "edx2Semantics": {
+    "class": "plausible",
+    "reason": "Validator test edx,~2 selects compare path; arming passes edx=2 into chain ending at 0x2108620/+0x98 work"
+  },
+  "liveMemoryProbe": {
+    "class": "blocked",
+    "reason": "Not authorized"
+  },
+  "next": {
+    "primary": "Deep-decode 0x2108620 / 0x479E440 mode paths; follow 0x5F11A40 and 0x59D96A0 for size/type",
+    "avoid": ["live memory", "ASI deploy", "spawn", "PC2", "+0x61-only ranking"]
+  }
+}

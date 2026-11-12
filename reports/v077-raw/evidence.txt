@@ -1,0 +1,552 @@
+===== v0.6.17 VT +0x2B0/+0x2B8 + CTORS =====
+exeSha256=19920F34BB2FAC814023EE3C27F0CECA1872E80A2AAFB37C092C419FFF77CC0D
+
+===== VALIDATOR 0x43E7750 =====
+validator size=927 prologue=56 57 48 83 EC 28 80 49 23 01 F7 C2 FD FF FF FF
+  0x43E7750 push rsi
+  0x43E7751 push rdi
+  0x43E7752 sub rsp,28
+  0x43E7756 or byte ptr [rcx+23],1
+  0x43E775A test edx,0FFFFFFFD
+  0x43E7760 jne short 00000001443E77B1
+  0x43E7762 mov rdx,[rcx]
+  0x43E7765 mov rax,[rdx+2B0]
+  *** EXPECTED vt+0x2B0 = 0x4656C80 sec=.impdata prologue=48 8B 01 48 FF A0 B8 02 00 00 CC CC CC CC CC CC
+  0x43E776C lea r8,[rip+26F50D]
+  0x43E7773 cmp rax,r8
+  0x43E7776 jne short 00000001443E77C1
+  0x43E7778 mov rax,[rdx+2B8]
+  *** EXPECTED vt+0x2B8 = 0x479E3B0 sec=.impdata prologue=56 57 48 83 EC 28 48 8B 41 18 48 85 C0 74 0C 48
+  0x43E777F lea r8,[rip+3B6C2A]
+  0x43E7786 cmp rax,r8
+  0x43E7789 jne short 00000001443E77B8
+  0x43E778B mov rax,[rcx+18]
+  0x43E778F test rax,rax
+  0x43E7792 je short 00000001443E77A0
+  0x43E7794 mov rsi,[rax+0A8]
+  0x43E779B test rsi,rsi
+  0x43E779E jne short 00000001443E77DD
+  0x43E77A0 cmp byte ptr [rcx+25],0
+  0x43E77A4 je short 00000001443E77CF
+  0x43E77A6 mov al,1
+  0x43E77A8 cmp byte ptr [rcx+22],0
+  0x43E77AC je short 00000001443E77CF
+  0x43E77AE mov [rcx+26],al
+  0x43E77B1 add rsp,28
+  0x43E77B5 pop rdi
+  0x43E77B6 pop rsi
+  0x43E77B7 ret
+  0x43E77B8 add rsp,28
+  0x43E77BC pop rdi
+  0x43E77BD pop rsi
+  0x43E77BE jmp rax
+  0x43E77C1 mov edx,3
+  0x43E77C6 add rsp,28
+  0x43E77CA pop rdi
+  0x43E77CB pop rsi
+  0x43E77CC jmp rax
+  0x43E77CF mov rsi,rcx
+  0x43E77D2 call qword ptr [rdx+2C0]
+  0x43E77D8 mov rcx,rsi
+  0x43E77DB jmp short 00000001443E77AE
+  0x43E77DD cmp byte ptr [rcx+25],0
+  0x43E77E1 je short 00000001443E77F8
+  0x43E77E3 cmp byte ptr [rcx+22],0
+  0x43E77E7 je short 00000001443E77F8
+  0x43E77E9 add rsi,68
+  0x43E77ED mov rdx,rcx
+  0x43E77F0 mov rcx,rsi
+  0x43E77F3 mov r8b,1
+  0x43E77F6 jmp short 00000001443E7815
+  0x43E77F8 mov rdi,rcx
+  0x43E77FB call qword ptr [rdx+2C0]
+  0x43E7801 mov rcx,rdi
+  0x43E7804 test al,al
+  0x43E7806 jne short 00000001443E77E9
+  0x43E7808 add rsi,68
+  0x43E780C mov rdx,rcx
+  0x43E780F mov rcx,rsi
+  0x43E7812 xor r8d,r8d
+  0x43E7815 add rsp,28
+  0x43E7819 pop rdi
+  0x43E781A pop rsi
+  0x43E781B jmp near ptr 000000014479E440
+  0x43E7820 push r14
+  0x43E7822 push rsi
+  0x43E7823 push rdi
+  0x43E7824 push rbp
+  0x43E7825 push rbx
+  0x43E7826 sub rsp,0C0
+  0x43E782D mov rdi,r8
+  0x43E7830 mov rax,[rip+5ECB9C9]
+  0x43E7837 xor rax,rsp
+  0x43E783A mov [rsp+0B8],rax
+  0x43E7842 lea rbx,[rsp+50]
+  0x43E7847 mov rcx,rbx
+  0x43E784A call 0000000140152410
+  0x43E784F lea r14,[rsp+30]
+  0x43E7854 xor esi,esi
+  0x43E7856 mov rcx,r14
+  0x43E7859 mov rdx,rbx
+  0x43E785C xor r8d,r8d
+  0x43E785F call 0000000140152230
+  0x43E7864 mov eax,[rbx+60]
+  0x43E7867 mov ecx,[r14]
+  0x43E786A inc ecx
+  0x43E786C mov [r14],ecx
+  0x43E786F cmp ecx,eax
+  0x43E7871 jae near ptr 00000001443E7933
+  0x43E7877 lea rbx,[rsp+0A8]
+  0x43E787F xor esi,esi
+  0x43E7881 mov ebp,3FFF
+  0x43E7886 jmp short 00000001443E7901
+  0x43E7888 mov eax,[rsp+34]
+  0x43E788C lea edx,[rax-1]
+  0x43E788F mov [rsp+34],edx
+  0x43E7893 test eax,eax
+  0x43E7895 jg short 00000001443E78CE
+  0x43E7897 jmp short 00000001443E78E9
+  0x43E7899 nop dword ptr [rax]
+  0x43E78A0 movzx r10d,word ptr [r14+8]
+  0x43E78A5 test r10d,3FFF
+  0x43E78AC je short 00000001443E7925
+  0x43E78AE add rdx,r9
+  0x43E78B1 movzx r8d,word ptr [rdx+4]
+  0x43E78B6 mov [rbx+4],r8w
+  0x43E78BB mov edx,[rdx]
+  0x43E78BD mov [rbx],edx
+  0x43E78BF mov edx,[r14+8]
+  0x43E78C3 and edx,ebp
+  0x43E78C5 sub edx,1
+  0x43E78C8 mov [rsp+34],edx
+  0x43E78CC jb short 00000001443E78F4
+  0x43E78CE mov rax,[r14]
+  0x43E78D1 shl edx,3
+  0x43E78D4 lea r8d,[rdx+rdx*4]
+  0x43E78D8 lea rcx,[rax+r8]
+  0x43E78DC mov rdx,rdi
+  0x43E78DF call qword ptr [rax+r8+10]
+  0x43E78E4 cmp eax,1
+  0x43E78E7 jne short 00000001443E7888
+  0x43E78E9 mov eax,[rsp+0B0]
+  0x43E78F0 mov ecx,[rsp+30]
+  0x43E78F4 inc ecx
+  0x43E78F6 mov [rsp+30],ecx
+  0x43E78FA mov sil,1
+  0x43E78FD cmp ecx,eax
+  0x43E78FF jae short 00000001443E7933
+  0x43E7901 mov rdx,[rsp+50]
+  0x43E7906 mov rdx,[rdx]
+  0x43E7909 mov r8d,ecx
+  0x43E790C shl r8,4
+  0x43E7910 mov r9d,r8d
+  0x43E7913 and r9d,0FFFFFFF0
+  0x43E7917 mov r14,[rdx+r9+8]
+  0x43E791C test r14,r14
+  0x43E791F jne near ptr 00000001443E78A0
+  0x43E7925 inc ecx
+  0x43E7927 mov [rsp+30],ecx
+  0x43E792B add r8,10
+  0x43E792F cmp eax,ecx
+  0x43E7931 jne short 00000001443E7910
+  0x43E7933 mov rdi,[rsp+38]
+  0x43E7938 mov eax,[rdi+10]
+  0x43E793B and eax,3FFF
+  0x43E7940 lea rcx,[rax*8-8]
+  0x43E7948 mov rdx,rcx
+  0x43E794B shr rdx,3
+  0x43E794F inc edx
+  0x43E7951 cmp edx,eax
+  0x43E7953 jb near ptr 00000001443E7A29
+  0x43E7959 lea ebx,[rax-1]
+  0x43E795C cmp ebx,4000
+  0x43E7962 jae near ptr 00000001443E7A95
+  0x43E7968 and ebx,3FFF
+  0x43E796E mov eax,0FFFFC000
+  0x43E7973 and eax,[rdi+10]
+  0x43E7976 or eax,ebx
+  0x43E7978 mov [rdi+10],eax
+  0x43E797B mov eax,[rip+67A423F]
+  0x43E7981 mov rcx,gs:[58]
+  0x43E798A mov rax,[rcx+rax*8]
+  0x43E798E mov rdi,[rax+2B30]
+  0x43E7995 mov ecx,[rdi+8]
+  0x43E7998 mov eax,ecx
+  0x43E799A and eax,3FFF
+  0x43E799F lea ebx,[rax-1]
+  0x43E79A2 and ecx,3FFF
+  0x43E79A8 lea rcx,[rcx*8-8]
+  0x43E79B0 mov rdx,rcx
+  0x43E79B3 shr rdx,3
+  0x43E79B7 inc edx
+  0x43E79B9 cmp edx,eax
+  0x43E79BB jb short 00000001443E7A19
+  0x43E79BD cmp ebx,4000
+  0x43E79C3 jae short 00000001443E7A40
+  0x43E79C5 and ebx,3FFF
+  0x43E79CB mov eax,0FFFFC000
+  0x43E79D0 and eax,[rdi+8]
+  0x43E79D3 or eax,ebx
+  0x43E79D5 mov [rdi+8],eax
+  0x43E79D8 test byte ptr [rsp+61],40
+  0x43E79DD jne short 00000001443E7A03
+  0x43E79DF and sil,1
+  0x43E79E3 mov rcx,[rsp+0B8]
+  0x43E79EB xor rcx,rsp
+  0x43E79EE call 0000000145014570
+  0x43E79F3 mov eax,esi
+  0x43E79F5 add rsp,0C0
+  0x43E79FC pop rbx
+  0x43E79FD pop rbp
+  0x43E79FE pop rdi
+  0x43E79FF pop rsi
+  0x43E7A00 pop r14
+  0x43E7A02 ret
+  0x43E7A03 mov rdx,[rsp+58]
+  0x43E7A08 test rdx,rdx
+  0x43E7A0B je short 00000001443E79DF
+  0x43E7A0D lea rcx,[rsp+58]
+  0x43E7A12 call 00000001445B64D0
+  0x43E7A17 jmp short 00000001443E79DF
+  0x43E7A19 mov rdx,[rdi]
+  0x43E7A1C mov ecx,ecx
+  0x43E7A1E mov rax,[rdx+rax*8-8]
+  0x43E7A23 mov [rdx+rcx],rax
+  0x43E7A27 jmp short 00000001443E79C5
+  0x43E7A29 mov rdx,[rdi+8]
+  0x43E7A2D mov ecx,ecx
+  0x43E7A2F mov r8,[rdx+rax*8-8]
+  0x43E7A34 mov [rdx+rcx],r8
+  0x43E7A38 lea ebx,[rax-1]
+  0x43E7A3B jmp near ptr 00000001443E7968
+  0x43E7A40 lock inc dword ptr [rip+6B516F1]
+  0x43E7A47 lea rax,[rip+6B514EB]
+  0x43E7A4E lea rcx,[rsp+40]
+  0x43E7A53 mov [rcx],rax
+  0x43E7A56 mov dword ptr [rcx+8],100
+  0x43E7A5D mov dword ptr [rsp+20],3FFF
+  0x43E7A65 lea rdx,[rip+5D1E288]
+  0x43E7A6C lea r8,[rip+5D641B4]
+  0x43E7A73 mov r9d,0FFFFFFFF
+  0x43E7A79 call 000000014000E6E0
+  0x43E7A7E mov dword ptr [2],0
+  0x43E7A89 lock dec dword ptr [rip+6B516A8]
+  0x43E7A90 jmp near ptr 00000001443E79C5
+  0x43E7A95 lock inc dword ptr [rip+6B5169C]
+  0x43E7A9C lea rax,[rip+6B51496]
+  0x43E7AA3 lea rcx,[rsp+40]
+  0x43E7AA8 mov [rcx],rax
+  0x43E7AAB mov dword ptr [rcx+8],100
+  0x43E7AB2 mov dword ptr [rsp+20],3FFF
+  0x43E7ABA lea rdx,[rip+5D1E233]
+  0x43E7AC1 lea r8,[rip+5D6415F]
+  0x43E7AC8 mov ebx,0FFFFFFFF
+  0x43E7ACD mov r9d,0FFFFFFFF
+  0x43E7AD3 call 000000014000E6E0
+  0x43E7AD8 mov dword ptr [2],0
+  0x43E7AE3 lock dec dword ptr [rip+6B5164E]
+  0x43E7AEA jmp near ptr 00000001443E7968
+expectedCount=2
+
+===== EXPECTED METHOD vt+0x2B0 = 0x4656C80 =====
+entry=0x4656C80 end=0x4656C8A size=10 role=vt+0x2B0-expected prologue=48 8B 01 48 FF A0 B8 02 00 00 CC CC CC CC CC CC sec=.impdata
+  0x4656C80 mov rax,[rcx]
+  0x4656C83 jmp qword ptr [rax+2B8]
+nested=False key=False alloc=False t61=False t98=False t2B0=False t2B8=True callersE8=0 immSizes=
+  install lea @0x43E776C func≈0x43E7750
+  install lea @0x43E776D func≈0x43E7750
+  install qword @0x91EB970 sec=.edata
+  install qword @0x91EBC50 sec=.edata
+  install qword @0x91EF260 sec=.edata
+  install qword @0x91EF540 sec=.edata
+  install qword @0x91EF820 sec=.edata
+  install qword @0x91F7EB8 sec=.edata
+  install qword @0x91F8198 sec=.edata
+  install qword @0x91FE080 sec=.edata
+  install qword @0x91FE360 sec=.edata
+  install qword @0x91FE640 sec=.edata
+-- callers --
+
+===== EXPECTED METHOD vt+0x2B8 = 0x479E3B0 =====
+entry=0x479E3B0 end=0x479E43A size=138 role=vt+0x2B8-expected prologue=56 57 48 83 EC 28 48 8B 41 18 48 85 C0 74 0C 48 sec=.impdata
+  0x479E3B0 push rsi
+  0x479E3B1 push rdi
+  0x479E3B2 sub rsp,28
+  0x479E3B6 mov rax,[rcx+18]
+  0x479E3BA test rax,rax
+  0x479E3BD je short 000000014479E3CB
+  0x479E3BF mov rsi,[rax+0A8]
+  0x479E3C6 test rsi,rsi
+  0x479E3C9 jne short 000000014479E3F4
+  0x479E3CB cmp byte ptr [rcx+25],0
+  0x479E3CF je short 000000014479E3E3
+  0x479E3D1 mov al,1
+  0x479E3D3 cmp byte ptr [rcx+22],0
+  0x479E3D7 je short 000000014479E3E3
+  0x479E3D9 mov [rcx+26],al
+  0x479E3DC add rsp,28
+  0x479E3E0 pop rdi
+  0x479E3E1 pop rsi
+  0x479E3E2 ret
+  0x479E3E3 mov rax,[rcx]
+  0x479E3E6 mov rsi,rcx
+  0x479E3E9 call qword ptr [rax+2C0]
+  0x479E3EF mov rcx,rsi
+  0x479E3F2 jmp short 000000014479E3D9
+  0x479E3F4 cmp byte ptr [rcx+25],0
+  0x479E3F8 je short 000000014479E40F
+  0x479E3FA cmp byte ptr [rcx+22],0
+  0x479E3FE je short 000000014479E40F
+  0x479E400 add rsi,68
+  0x479E404 mov rdx,rcx
+  0x479E407 mov rcx,rsi
+  0x479E40A mov r8b,1
+  0x479E40D jmp short 000000014479E42F
+  0x479E40F mov rax,[rcx]
+  0x479E412 mov rdi,rcx
+  0x479E415 call qword ptr [rax+2C0]
+  0x479E41B mov rcx,rdi
+  0x479E41E test al,al
+  0x479E420 jne short 000000014479E400
+  0x479E422 add rsi,68
+  0x479E426 mov rdx,rcx
+  0x479E429 mov rcx,rsi
+  0x479E42C xor r8d,r8d
+  0x479E42F add rsp,28
+  0x479E433 pop rdi
+  0x479E434 pop rsi
+  0x479E435 jmp near ptr 000000014479E440
+nested=False key=False alloc=False t61=False t98=False t2B0=False t2B8=False callersE8=40 immSizes=
+  install lea @0x43E777F func≈0x43E7750
+  install lea @0x43E7780 func≈0x43E7750
+  install qword @0x91EB978 sec=.edata
+  install qword @0x91EBC58 sec=.edata
+  install qword @0x91FE088 sec=.edata
+  install qword @0x91FE368 sec=.edata
+  install qword @0x91FE648 sec=.edata
+  install qword @0x91FE928 sec=.edata
+  install qword @0x9206CB0 sec=.edata
+  install qword @0x9206F90 sec=.edata
+  install qword @0x9210B88 sec=.edata
+  install qword @0x9210E68 sec=.edata
+-- callers --
+  e8 @0x994823 func≈0x994810 key=False alloc=False
+  e8 @0xD92CF8 func≈0xD92CF0 key=False alloc=False
+  e8 @0xFD30B8 func≈0xFD30B0 key=False alloc=False
+  e8 @0x110D1B8 func≈0x110D1B0 key=False alloc=False
+  e8 @0x1139C98 func≈0x1139C90 key=False alloc=False
+  e8 @0x13690C8 func≈0x13690C0 key=False alloc=False
+  e8 @0x17CB3E8 func≈0x17CB3E0 key=False alloc=False
+  e8 @0x17CB898 func≈0x17CB890 key=False alloc=False
+  e8 @0x1DC36C8 func≈0x1DC36C0 key=False alloc=False
+  e8 @0x1FF73C9 func≈0x1FF73C0 key=False alloc=False
+  e8 @0x2039998 func≈0x2039990 key=False alloc=False
+  e8 @0x203E7DC func≈0x203E7C0 key=False alloc=False
+  e8 @0x207A288 func≈0x207A280 key=False alloc=False
+  e8 @0x2096568 func≈0x2096560 key=False alloc=False
+  e8 @0x2106448 func≈0x2106440 key=False alloc=False
+  e8 @0x210863B func≈0x2108620 key=False alloc=False
+  e8 @0x21DB4B8 func≈0x21DB4B0 key=False alloc=False
+  e8 @0x21DBA0A func≈0x21DBA00 key=False alloc=False
+  e8 @0x21DC1F8 func≈0x21DBE50 key=False alloc=False
+  e8 @0x21DCBD8 func≈0x21DCBD0 key=False alloc=False
+
+===== CTOR 0x2E97A50 =====
+entry=0x2E97A50 end=0x2E97B56 size=262 role=ctor-arm-table prologue=56 57 55 53 48 83 EC 28 48 89 CE 31 DB 89 59 08 sec=.impdata
+  0x2E97A50 push rsi
+  0x2E97A51 push rdi
+  0x2E97A52 push rbp
+  0x2E97A53 push rbx
+  0x2E97A54 sub rsp,28
+  0x2E97A58 mov rsi,rcx
+  0x2E97A5B xor ebx,ebx
+  0x2E97A5D mov [rcx+8],ebx
+  0x2E97A60 vmovaps ymm0,[rip+693DCD8]
+  0x2E97A68 vmovups [rcx+10],ymm0
+  0x2E97A6D lea rax,[rip+65F84DC]
+  *** VT/TABLE 0x2E97A6D lea rax,[rip+65F84DC] ->0x948FF50 => mov [rcx],rax => mov eax,[rcx+30]
+  0x2E97A74 mov [rcx],rax
+  0x2E97A77 mov ebp,80000000
+  0x2E97A7C mov eax,[rcx+30]
+  0x2E97A7F and eax,ebp
+  0x2E97A81 or eax,0C000
+  0x2E97A86 mov [rcx+30],eax
+  0x2E97A89 mov eax,[rcx+3C]
+  0x2E97A8C and eax,ebp
+  0x2E97A8E or eax,0C000
+  0x2E97A93 mov [rcx+3C],eax
+  0x2E97A96 mov [rcx+34],rbx
+  0x2E97A9A mov eax,[rcx+48]
+  0x2E97A9D and eax,ebp
+  0x2E97A9F or eax,0C000
+  0x2E97AA4 mov [rcx+48],eax
+  0x2E97AA7 mov [rcx+40],rbx
+  0x2E97AAB mov [rcx+50],rbx
+  0x2E97AAF lea rax,[rip+80DC122]
+  0x2E97AB6 mov [rcx+58],rax
+  0x2E97ABA mov byte ptr [rcx+68],0
+  0x2E97ABE mov [rcx+6C],ebx
+  0x2E97AC1 mov eax,0FFFFFFFF
+  0x2E97AC6 mov [rcx+70],rax
+  0x2E97ACA lea rax,[rcx+78]
+  0x2E97ACE lea rcx,[rip+6397A93]
+  0x2E97AD5 mov [rsi+78],rcx
+  0x2E97AD9 mov [rsi+90],rbx
+  0x2E97AE0 mov [rsi+80],rax
+  0x2E97AE7 mov [rsi+88],rax
+  0x2E97AEE mov [rsi+98],rbx
+  0x2E97AF5 lea rdi,[rsi+0A0]
+  0x2E97AFC mov rcx,rdi
+  0x2E97AFF mov edx,1
+  0x2E97B04 vzeroupper
+  0x2E97B07 call qword ptr [rip+73B15FB]
+  0x2E97B0D mov rcx,rdi
+  0x2E97B10 xor edx,edx
+  0x2E97B12 call qword ptr [rip+73B17B0]
+  0x2E97B18 mov dword ptr [rsi+0C8],64
+  0x2E97B22 and ebp,[rsi+0D8]
+  0x2E97B28 or ebp,0C000
+  0x2E97B2E mov [rsi+0D8],ebp
+  0x2E97B34 mov [rsi+0D0],rbx
+  0x2E97B3B mov [rsi+0DD],bx
+  0x2E97B42 mov [rsi+0E0],rbx
+  ... +7 ins ...
+nested=False key=False alloc=False t61=False t98=True t2B0=False t2B8=False callersE8=0 immSizes=0xC000
+  vt 0x2E97A6D lea rax,[rip+65F84DC] ->0x948FF50 => mov [rcx],rax => mov eax,[rcx+30]
+  field +0x98 @0x2E97AEE mov [rsi+98],rbx
+  install lea @0x5F11CD2 func≈0x5F11A40
+  install lea @0x5F11CD3 func≈0x5F11A40
+  install rva32 @0x1D75EC28 sec=.vmp4
+-- callers --
+
+===== CTOR 0x59D9B90 =====
+entry=0x59D9B90 end=0x59D9C6F size=223 role=ctor-bit-table prologue=56 57 55 53 48 83 EC 28 48 89 CE 48 8D 05 46 21 sec=.impdata
+  0x59D9B90 push rsi
+  0x59D9B91 push rdi
+  0x59D9B92 push rbp
+  0x59D9B93 push rbx
+  0x59D9B94 sub rsp,28
+  0x59D9B98 mov rsi,rcx
+  0x59D9B9B lea rax,[rip+37C2146]
+  0x59D9BA2 mov [rcx],rax
+  0x59D9BA5 add rcx,10
+  0x59D9BA9 xor ebx,ebx
+  0x59D9BAB mov r8d,140
+  0x59D9BB1 xor edx,edx
+  0x59D9BB3 call 0000000145352080
+  0x59D9BB8 mov ebp,80000000
+  0x59D9BBD mov eax,[rsi+158]
+  0x59D9BC3 and eax,ebp
+  0x59D9BC5 or eax,0C000
+  0x59D9BCA mov [rsi+158],eax
+  0x59D9BD0 mov [rsi+150],rbx
+  0x59D9BD7 mov eax,[rsi+164]
+  0x59D9BDD and eax,ebp
+  0x59D9BDF or eax,0C000
+  0x59D9BE4 mov [rsi+164],eax
+  0x59D9BEA mov [rsi+15C],rbx
+  0x59D9BF1 mov byte ptr [rsi+168],18
+  0x59D9BF8 mov byte ptr [rsi+180],0
+  0x59D9BFF mov [rsi+190],rbx
+  0x59D9C06 lea rdi,[rsi+1A0]
+  0x59D9C0D mov rcx,rdi
+  0x59D9C10 mov edx,1
+  0x59D9C15 call qword ptr [rip+486F4ED]
+  0x59D9C1B mov rcx,rdi
+  0x59D9C1E xor edx,edx
+  0x59D9C20 call qword ptr [rip+486F6A2]
+  0x59D9C26 mov dword ptr [rsi+1C8],64
+  0x59D9C30 lea rcx,[rsi+1D0]
+  0x59D9C37 call 0000000141B7A250
+  0x59D9C3C lea rax,[rip+392A1E5]
+  *** VT/TABLE 0x59D9C3C lea rax,[rip+392A1E5] ->0x9303E28 => mov [rsi+1D0],rax => mov [rsi+0AC8],ebp
+  0x59D9C43 mov [rsi+1D0],rax
+  0x59D9C4A and ebp,[rsi+0AC8]
+  0x59D9C50 or ebp,0C000
+  0x59D9C56 mov [rsi+0AC8],ebp
+  0x59D9C5C mov [rsi+0AC0],rbx
+  0x59D9C63 mov rax,rsi
+  0x59D9C66 add rsp,28
+  0x59D9C6A pop rbx
+  0x59D9C6B pop rbp
+  0x59D9C6C pop rdi
+  0x59D9C6D pop rsi
+  0x59D9C6E ret
+nested=False key=False alloc=False t61=False t98=False t2B0=False t2B8=False callersE8=1 immSizes=0x140,0xC000
+  vt 0x59D9C3C lea rax,[rip+392A1E5] ->0x9303E28 => mov [rsi+1D0],rax => mov [rsi+0AC8],ebp
+  callee 0x5352080
+  callee 0x1B7A250
+  install rva32 @0x1D82A298 sec=.vmp4
+-- callers --
+  e8 @0x59D96CB func≈0x59D96A0 key=False alloc=False
+--- callee dump 0x5352080 ---
+  func 0x5352080 size~65 prologue=48 8B C1 4C 8B C9 4C 8D 15 73 DF CA
+    0x5352080 mov rax,rcx
+    0x5352083 mov r9,rcx
+    0x5352086 lea r10,[rip-535208D]
+    0x535208D movzx edx,dl
+    0x5352090 mov r11,101010101010101
+    0x535209A imul r11,rdx
+    0x535209E movq xmm0,r11
+    0x53520A3 cmp r8,0F
+    0x53520A7 ja near ptr 0000000145352130
+    0x53520AD nop dword ptr [rax]
+    0x53520B0 add rcx,r8
+    0x53520B3 mov r9d,[r10+r8*4+0A0F4580]
+--- callee dump 0x1B7A250 ---
+  func 0x1B7A250 size~11 prologue=E9 4B 88 DA 0F E9 05 7A 87 00 99 8F
+    0x1B7A250 jmp near ptr 0000000151922AA0
+    0x1B7A255 jmp near ptr 00000001423F1C5F
+    0x1B7A25A cdq
+
+===== TABLE SLOT CROSS-CHECK =====
+expected 0x4656C80 qwordHits=20
+  qw @0x91EB970 sec=.edata offFromArm=FFFFFFFFFFD5BA20 offFromBit=FFFFFFFFFFEE7B48
+  qw @0x91EBC50 sec=.edata offFromArm=FFFFFFFFFFD5BD00 offFromBit=FFFFFFFFFFEE7E28
+  qw @0x91EF260 sec=.edata offFromArm=FFFFFFFFFFD5F310 offFromBit=FFFFFFFFFFEEB438
+  qw @0x91EF540 sec=.edata offFromArm=FFFFFFFFFFD5F5F0 offFromBit=FFFFFFFFFFEEB718
+  qw @0x91EF820 sec=.edata offFromArm=FFFFFFFFFFD5F8D0 offFromBit=FFFFFFFFFFEEB9F8
+  qw @0x91F7EB8 sec=.edata offFromArm=FFFFFFFFFFD67F68 offFromBit=FFFFFFFFFFEF4090
+  qw @0x91F8198 sec=.edata offFromArm=FFFFFFFFFFD68248 offFromBit=FFFFFFFFFFEF4370
+  qw @0x91FE080 sec=.edata offFromArm=FFFFFFFFFFD6E130 offFromBit=FFFFFFFFFFEFA258
+  qw @0x91FE360 sec=.edata offFromArm=FFFFFFFFFFD6E410 offFromBit=FFFFFFFFFFEFA538
+  qw @0x91FE640 sec=.edata offFromArm=FFFFFFFFFFD6E6F0 offFromBit=FFFFFFFFFFEFA818
+  qw @0x91FE920 sec=.edata offFromArm=FFFFFFFFFFD6E9D0 offFromBit=FFFFFFFFFFEFAAF8
+  qw @0x92054D0 sec=.edata offFromArm=FFFFFFFFFFD75580 offFromBit=FFFFFFFFFFF016A8
+expected 0x479E3B0 qwordHits=20
+  qw @0x91EB978 sec=.edata offFromArm=FFFFFFFFFFD5BA28 offFromBit=FFFFFFFFFFEE7B50
+  qw @0x91EBC58 sec=.edata offFromArm=FFFFFFFFFFD5BD08 offFromBit=FFFFFFFFFFEE7E30
+  qw @0x91FE088 sec=.edata offFromArm=FFFFFFFFFFD6E138 offFromBit=FFFFFFFFFFEFA260
+  qw @0x91FE368 sec=.edata offFromArm=FFFFFFFFFFD6E418 offFromBit=FFFFFFFFFFEFA540
+  qw @0x91FE648 sec=.edata offFromArm=FFFFFFFFFFD6E6F8 offFromBit=FFFFFFFFFFEFA820
+  qw @0x91FE928 sec=.edata offFromArm=FFFFFFFFFFD6E9D8 offFromBit=FFFFFFFFFFEFAB00
+  qw @0x9206CB0 sec=.edata offFromArm=FFFFFFFFFFD76D60 offFromBit=FFFFFFFFFFF02E88
+  qw @0x9206F90 sec=.edata offFromArm=FFFFFFFFFFD77040 offFromBit=FFFFFFFFFFF03168
+  qw @0x9210B88 sec=.edata offFromArm=FFFFFFFFFFD80C38 offFromBit=FFFFFFFFFFF0CD60
+  qw @0x9210E68 sec=.edata offFromArm=FFFFFFFFFFD80F18 offFromBit=FFFFFFFFFFF0D040
+  qw @0x921E208 sec=.edata offFromArm=FFFFFFFFFFD8E2B8 offFromBit=FFFFFFFFFFF1A3E0
+  qw @0x921E4E8 sec=.edata offFromArm=FFFFFFFFFFD8E598 offFromBit=FFFFFFFFFFF1A6C0
+
+===== SUMMARY =====
+vt+0x2B0 expected=0x4656C80 lea@0x43E776C
+vt+0x2B8 expected=0x479E3B0 lea@0x43E777F
+0x4656C80 vt+0x2B0-expected size=10 alloc=False key=False t61=False callersE8=0 vtInstalls=0
+0x479E3B0 vt+0x2B8-expected size=138 alloc=False key=False t61=False callersE8=40 vtInstalls=0
+0x2E97A50 ctor-arm-table size=262 alloc=False key=False t61=False callersE8=0 vtInstalls=1
+0x59D9B90 ctor-bit-table size=223 alloc=False key=False t61=False callersE8=1 vtInstalls=1
+
+===== DEEPENED NOTES (post-scan) =====
+Expected from 0x43E7750:
+  +0x2B0 -> 0x4656C80  (mov rax,[rcx]; jmp [rax+0x2B8])
+  +0x2B8 -> 0x479E3B0  (flag/nested; continues 0x479E440)
+  test edx,0xFFFFFFFD selects edx==2 path
+
+Arm table 0x948FF50:
+  +0x2B0 = 0x4656C80
+  +0x2B8 = 0x2108620  (NOT 0x479E3B0)
+
+Arming chain:
+  0x21085D0 --edx=2--> 0x4656C80 --> 0x2108620 --> call 0x479E3B0 --> +0x98 work
+
+Ctor 0x2E97A50: mov [obj],0x948FF50; before 0x2E97B60; LEA from 0x5F11A40
+Ctor 0x59D9B90: mov [obj+0x1D0],0x9303E28; fill 0x140; caller 0x59D96A0
