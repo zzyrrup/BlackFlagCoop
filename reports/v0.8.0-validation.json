@@ -1,12 +1,19 @@
 {
   "schemaVersion": 1,
   "milestone": "v0.8.0",
-  "generatedUtc": "2026-11-12T19:50:00Z",
+  "generatedUtc": "2026-11-12T20:20:00Z",
   "nativeSpawnPathConfirmed": false,
   "secondActorInstantiated": false,
   "independentInputImplemented": false,
-  "missingLink": "Copy helpers 0x5E3DB0 and 0x21F5950 have zero direct callers and no further pointer to their descriptor slots. They clone a params object via 0x43DCB00. No world receiver. See docs/v0.8.0-submit-path.md.",
-  "ciOn4024a28": {"state": "pending", "statusTotal": 0, "checkRunTotal": 0},
+  "missingLink": "SpawnNPCParams type-attach virtuals are field accessors (0x80F2450), not a world create; leave this reflected family. See docs/v0.8.0-vtcall-resolve.md.",
+  "vtCallResolution": {
+    "host": "0x33591C0",
+    "npcCtor": "0x32FF190",
+    "npcPrimaryVt": "0x92D1AA0",
+    "slotC0": "0x80F2450",
+    "slotC0Meaning": "field accessor add rcx,0x58",
+    "worldCreate": false
+  },
   "candidateType": "SpawnNPCParams",
   "gate": "BFC_SECOND_EDWARD",
   "gateDefault": "off",
@@ -20,13 +27,14 @@
   },
   "tests": [
     {"name": "BlackFlagCoopSecondEdwardTest", "result": "pass", "summary": "ALL PASS"},
-    {"name": "ctest SecondEdward", "result": "pass"}
+    {"name": "ctest SecondEdward", "result": "pass"},
+    {"name": "VtCall082", "result": "pass"}
   ],
   "candidateAsi": {
     "version": "0.8.0-dev",
     "path": "build/bin/Release/BlackFlagCoop.asi",
     "bytes": 102400,
-    "sha256": "570F0F91A4B2D4A0B37093FF55BBA601BCC3C296603FE99EF4CD780EC38040B8",
+    "sha256": "A8CB00DB2B95184F5918D3927431AE2AD7799DAAC9CE6466C659F6D5EB5BC145",
     "deployed": false
   },
   "installedAsi": {

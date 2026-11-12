@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedUtc": "2026-11-12T19:50:00Z",
+  "generatedUtc": "2026-11-12T20:15:00Z",
   "handoffFor": "ChatGPT",
   "executor": "Cursor",
   "machine": "PC1",
@@ -20,7 +20,7 @@
   },
   "milestone": {
     "currentId": "v0.8.0",
-    "currentTitle": "Second Edward proof-of-life gate; spawn-param types mapped, create callsite missing",
+    "currentTitle": "Second Edward gate; SpawnNPCParams reflected family closed as non-factory",
     "status": "ready-for-review",
     "priorPreserved": ["v0.6.25", "v0.6.24", "v0.6.23", "v0.7.0 session panel on its own branch"]
   },
@@ -28,7 +28,7 @@
     "installedVersion": "0.5.1",
     "installedSha256": "63B38877DDA7CC7CD9AB2619F94D3941C37F54C95A435EFE47084DC4CF2A50BE",
     "candidateVersion": "0.8.0-dev",
-    "candidateSha256": "570F0F91A4B2D4A0B37093FF55BBA601BCC3C296603FE99EF4CD780EC38040B8",
+    "candidateSha256": "A8CB00DB2B95184F5918D3927431AE2AD7799DAAC9CE6466C659F6D5EB5BC145",
     "candidateBytes": 102400,
     "deployAuthorized": false,
     "preserveWorkingAsi": true
@@ -54,40 +54,51 @@
   "engineFindings": {
     "summary": [
       "SpawnNPCParams registrar 0x80F23E0 hash 0x94D05600 has 0 E8 callers",
-      "SpawnPlayerParams registrar 0x80F2A20 hash 0x51BA3541 has 0 E8 callers",
-      "SpawnCharacterParams 0x80F2330 is the parent serializer, not a factory",
-      "Descriptor stride 0x20; +0 is ret 0x53741F0; +0x18 copies params",
+      "Copy helpers 0x5E3DB0 / 0x21F5950 have 0 direct callers",
+      "NPC type 0xB5378F0 +0x50 ctor 0x32FF190 installs vt 0x92D1AA0",
+      "vt 0x92D1AA0 +0xC0 is 0x80F2450 field accessor (add rcx,0x58)",
+      "0x33591C0 type-attach virtuals are not a world create",
+      "AC4Coop EntityBuilder names absent from Resynced",
       "No create/apply callsite; candidate gate refuses"
     ],
     "keyRvas": {
       "spawnNpcRegistrar": "0x80F23E0",
       "spawnNpcHash": "0x94D05600",
-      "spawnPlayerRegistrar": "0x80F2A20",
-      "spawnCharacterRegistrar": "0x80F2330",
-      "npcCopyHelper": "0x5E3DB0",
-      "playerCopyHelper": "0x21F5950",
-      "fieldVisitor": "0x1207200"
+      "npcTypeGlobal": "0xB5378F0",
+      "npcNodeCtor": "0x32FF190",
+      "npcPrimaryVt": "0x92D1AA0",
+      "npcSlotC0": "0x80F2450",
+      "typeAttachHost": "0x33591C0",
+      "typeAttach": "0x137AE80",
+      "nodeAlloc": "0x156B20"
     }
   },
   "confirmed": [
     "Installed ASI still v0.5.1; candidate not deployed",
     "Spawn-parameter type chain and descriptor layout",
+    "SpawnNPCParams type-attach virtuals resolve to field accessors",
+    "Reflected params family is not a world factory",
     "SecondEdward test pass; Release ASI built",
     "No game launch this milestone"
   ],
   "hypotheses": [
-    "A later callsite fills SpawnNPCParams and hands it to an entity create",
-    "0x43DCB00 only supplies the params-copy destination"
+    "A Resynced-native character create exists outside the SpawnNPCParams reflected family",
+    "Mission/script entity construction may eventually reach a world add without these registrars"
   ],
   "blockers": [
-    "Create/apply callsite for SpawnNPCParams or SpawnCharacterParams is unidentified",
+    "Create/apply callsite for a second Edward is unidentified",
     "Archetype id, transform, and world receiver are unknown",
     "No possession/input path",
     "In-game proof not run"
   ],
   "mostRecentCompletedMilestone": {
     "id": "v0.8.0",
-    "docs": ["docs/v0.8.0-second-edward-plan.md", "docs/v0.8.0-manual-pc1-checklist.md"],
+    "docs": [
+      "docs/v0.8.0-second-edward-plan.md",
+      "docs/v0.8.0-manual-pc1-checklist.md",
+      "docs/v0.8.0-submit-path.md",
+      "docs/v0.8.0-vtcall-resolve.md"
+    ],
     "reports": [
       "reports/v0.8.0-validation.json",
       "reports/v0.8.0-spawn-string-xrefs.json",
@@ -95,18 +106,20 @@
       "reports/v0.8.0-spawn-param-consumers.json",
       "reports/v0.8.0-spawn-fnptr-slots.json",
       "reports/v0.8.0-submit-path.json",
-      "reports/v0.8.0-submit-follow.json"
+      "reports/v0.8.0-submit-follow.json",
+      "reports/v0.8.0-vtcall-resolve.json"
     ]
   },
   "nextRecommendedMilestone": {
     "id": "v0.8.1",
-    "title": "Resolve 0x33591C0 virtual calls after the params copy trace",
-    "primary": ["0x33593D0", "0x335A228", "0x137AE80"],
-    "forbidden": ["speculative spawn call", "deploy", "live memory", "PC2", "treat registrars as factories", "resume deferred-queue as the factory"]
+    "title": "Leave SpawnNPCParams family; find Resynced-native character create",
+    "primary": ["mission/script entity create", "world add", "not 0x33591C0 / registrars / copy helpers"],
+    "forbidden": ["speculative spawn call", "deploy", "live memory", "PC2", "treat registrars as factories", "resume deferred-queue as the factory", "re-open SpawnNPCParams type-attach virtuals as the create path"]
   },
   "tests": [
     {"name": "SecondEdward", "result": "pass"},
     {"name": "Release_ASI_build", "result": "pass"},
+    {"name": "VtCall082", "result": "pass"},
     {"name": "game_launch_deploy", "result": "not_run"}
   ],
   "safety": {
@@ -118,12 +131,5 @@
     "noForcePushMain": true,
     "noLiveMemory": true,
     "priorMilestonesPreserved": true
-  },
-  "chatgptNextReviewInstructions": [
-    "Read docs/CHATGPT_HANDOFF.md and docs/v0.8.0-second-edward-plan.md first",
-    "Do not treat the candidate load as a second Edward",
-    "Next work is the create/apply xref, not another LOD pass",
-    "Do not authorize deploy or a gameplay test unless the user asks",
-    "Return PC1 branch+PR instructions"
-  ]
+  }
 }

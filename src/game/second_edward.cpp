@@ -34,7 +34,7 @@ SecondEdwardDecision EvaluateSecondEdward(bool gateEnabled) {
     decision.player1LeftIntact = true;
     decision.candidateType = kSecondEdwardCandidateType;
     decision.missingLink =
-        "no callsite builds SpawnNPCParams or SpawnCharacterParams and creates an entity";
+        "SpawnNPCParams type-attach virtuals are field accessors, not a world create; leave this reflected family";
     decision.blocker = gateEnabled ? SecondEdwardBlocker::MissingCreateCallsite
                                    : SecondEdwardBlocker::GateOff;
     return decision;

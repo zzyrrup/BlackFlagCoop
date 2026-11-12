@@ -57,7 +57,7 @@ struct SecondEdwardDecision {
     SecondEdwardBlocker blocker = SecondEdwardBlocker::GateOff;
     const char* candidateType = kSecondEdwardCandidateType;
     const char* missingLink =
-        "no callsite builds SpawnNPCParams or SpawnCharacterParams and creates an entity";
+        "SpawnNPCParams type-attach virtuals are field accessors, not a world create; leave this reflected family";
 };
 
 // "1", "on", and "true" request the proof-of-life. Every other value,

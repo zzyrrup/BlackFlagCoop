@@ -25,7 +25,7 @@ Ultimate vision is **not claimed as achieved**. Dual-Edward co-op remains unprov
 
 ## 2. Current development milestone
 
-**v0.8.0 in review** — Spawn-parameter copy helpers have no callers and do not submit an entity. Gate `BFC_SECOND_EDWARD` stays default-off and refused. CI on `4024a28` was `pending` with zero status entries; do not treat that as a pass.
+**v0.8.0 in review** — SpawnNPCParams type-attach virtuals resolve to field accessors (`0x80F2450`), not a world create. The reflected params family is closed. Gate `BFC_SECOND_EDWARD` stays default-off and refused.
 
 Prior: v0.6.25 complete on `cursor/v085-vt-owner-ctors-8285`. v0.6.5–v0.6.24 preserved. No deploy, no gameplay test, no networking change.
 
@@ -37,7 +37,7 @@ Prior: v0.6.25 complete on `cursor/v085-vt-owner-ctors-8285`. v0.6.5–v0.6.24 p
 |------|--------|
 | Working in-game ASI | **v0.5.1** (still installed; verified this milestone) |
 | ASI SHA256 | `63B38877DDA7CC7CD9AB2619F94D3941C37F54C95A435EFE47084DC4CF2A50BE` |
-| Candidate ASI | **v0.8.0-dev**, not deployed. SHA256 `570F0F91A4B2D4A0B37093FF55BBA601BCC3C296603FE99EF4CD780EC38040B8` (102,400 bytes) |
+| Candidate ASI | **v0.8.0-dev**, not deployed. SHA256 `A8CB00DB2B95184F5918D3927431AE2AD7799DAAC9CE6466C659F6D5EB5BC145` (102,400 bytes) |
 | Deploy status | **Do not replace** without explicit user approval |
 
 ---
@@ -108,7 +108,7 @@ High-signal offline findings (see `docs/v0.6.*` and `reports/v0.6.*`):
 - **v0.6.23:** Tight-factory callers do **not** LEA key/`0x20F0` (186 records, 0 hits). Helper deep-decode: `0x2336560` position extract; `0x1D25E20` spatial math — not possession. Still no Edward/create path.
 - **v0.6.24:** Outer `0x59D9660` = InstallerA TypeInfo registration only (0 E8). Neighbor/Spatial = `.edata` methods; owner vtables `0x976B2D0`/`0x9236E00`. Still no Edward/create path.
 - **v0.6.25:** Owner VT[0] ctors `0x13612B0`/`0x5781490` (0 E8); spat/neigh ctors init `+0x98` (enrollment side-block field). Still no Edward/create path.
-- **v0.8.0:** Spawn-parameter registrars confirmed (`SpawnNPCParams` `0x80F23E0` hash `0x94D05600`, `SpawnPlayerParams` `0x80F2A20` hash `0x51BA3541`, `SpawnCharacterParams` `0x80F2330` hash `0xFB7FF6A5`). Descriptor stride `0x20`; slot +0 is `ret` `0x53741F0`; +0x10 is a field visitor; +0x18 is a params copy. **No** create/apply callsite. Candidate gate refuses the call.
+- **v0.8.0:** Spawn-parameter registrars confirmed (`SpawnNPCParams` `0x80F23E0` hash `0x94D05600`, `SpawnPlayerParams` `0x80F2A20` hash `0x51BA3541`, `SpawnCharacterParams` `0x80F2330` hash `0xFB7FF6A5`). Descriptor stride `0x20`; copy helpers have 0 callers. NPC type-attach in `0x33591C0` installs ctor `0x32FF190` / vt `0x92D1AA0`; slot `+0xC0` is field accessor `0x80F2450`. **No** create/apply callsite. Candidate gate refuses the call.
 
 ---
 
@@ -202,13 +202,15 @@ High-signal offline findings (see `docs/v0.6.*` and `reports/v0.6.*`):
 - Helper transform/position extract (`0x2336560` / `0x1D25E20`) equals possession/control (not shown).
 - Expecting a direct `E8 0x59D9660` create site (none; TypeInfo icall only).
 - Expecting E8 callers of owner VT[0] ctors (none; table-dispatched).
+- SpawnNPCParams / SpawnCharacterParams registrars or copy helpers as world factories.
+- Virtual `+0xC0` / `+0x20` after NPC type-attach in `0x33591C0` as a world add (field accessors / handle bookkeeping only).
 
 ---
 
 ## 9. Current blockers
 
 - No confirmed character/Edward **create/apply** callsite. Spawn-parameter types are serializers and copies. The deferred queue still only updates existing objects.
-- Missing link: who fills `SpawnNPCParams` (`0x80F23E0` / hash `0x94D05600`) or `SpawnCharacterParams` and passes it to a world/entity create. Next xrefs: `0x5E3DB0`, `0x21F5950`, hashes `0x94D05600` and `0x51BA3541` outside the registrars.
+- The reflected SpawnNPCParams family is a **dead end** for world create (copy helpers + type-attach virtuals resolved; no world receiver). A new native create lead is required.
 - Who Allocates then invokes owner VT[0] ctors still open; that LOD chain is not the character factory.
 - No verified input→character ownership/control binding.
 - No in-game second-Edward test in this milestone. The candidate refuses the call even when `BFC_SECOND_EDWARD=1`.
@@ -218,16 +220,18 @@ High-signal offline findings (see `docs/v0.6.*` and `reports/v0.6.*`):
 
 ## 10. Most recent completed milestone
 
-**v0.8.0 — Second Edward proof-of-life (gate refuses; factory callsite still missing)**
+**v0.8.0 — Second Edward proof-of-life (gate refuses; reflected params family closed)**
 
 Deliverables:
 
 - `docs/v0.8.0-second-edward-plan.md`
 - `docs/v0.8.0-manual-pc1-checklist.md`
+- `docs/v0.8.0-submit-path.md`
+- `docs/v0.8.0-vtcall-resolve.md`
 - `src/game/second_edward.cpp` / `second_edward.h`
 - `tools/second_edward_test/main.cpp`
-- `tools/offline/SpawnPath080/`
-- `reports/v0.8.0-spawn-*.json`
+- `tools/offline/SpawnPath080/`, `SubmitPath081/`, `VtCall082/`
+- `reports/v0.8.0-spawn-*.json`, `v0.8.0-submit-*.json`, `v0.8.0-vtcall-resolve.json`
 - `reports/v0.8.0-validation.json`
 
 v0.6.25 and earlier reports were left in place. Installed ASI was not replaced.
@@ -236,7 +240,7 @@ v0.6.25 and earlier reports were left in place. Installed ASI was not replaced.
 
 ## 11. Next recommended milestone
 
-**v0.8.1 (proposed):** Resolve virtual calls `0x33593D0` and `0x335A228` inside `0x33591C0`. The copy helpers and both type hashes are already traced and are not a world submit. Still no speculative call, deploy, live memory, or PC2 unless separately authorized.
+**v0.8.1 (proposed):** Leave the SpawnNPCParams reflected family. Find a Resynced-native character create that is not these registrars / copy helpers / type-attach virtuals (mission/script entity construction → world add). Still no speculative call, deploy, live memory, or PC2 unless separately authorized.
 
 ---
 
@@ -244,9 +248,11 @@ v0.6.25 and earlier reports were left in place. Installed ASI was not replaced.
 
 - `docs/v0.8.0-second-edward-plan.md`
 - `docs/v0.8.0-manual-pc1-checklist.md`
+- `docs/v0.8.0-submit-path.md`
+- `docs/v0.8.0-vtcall-resolve.md`
 - `src/game/second_edward.cpp`, `src/game/second_edward.h`, `src/main.cpp`, `CMakeLists.txt`
 - `tools/second_edward_test/main.cpp`
-- `tools/offline/SpawnPath080/`
+- `tools/offline/SpawnPath080/`, `SubmitPath081/`, `VtCall082/`
 - `reports/v0.8.0-*.json`
 - `docs/CHATGPT_HANDOFF.md`
 - `reports/CHATGPT_HANDOFF.json`
@@ -279,8 +285,10 @@ v0.6.25 and earlier reports were left in place. Installed ASI was not replaced.
 | Offline ctor-reverse/ownership v0.6.24 (`CtorReverse084`) | Pass; Outer=InstallerA LEA only; vtable owners mapped |
 | Offline VT owner ctors v0.6.25 (`VtOwner085`) | Pass; VT[0] ctors; +0x98 enrollment link |
 | Offline spawn-param scan v0.8.0 (`SpawnPath080`) | Pass; serializers found; create callsite absent |
-| `BlackFlagCoopSecondEdwardTest` / ctest `SecondEdward` | Pass (35 checks, ALL PASS) |
-| VS 18 2026 x64 Release `BlackFlagCoop.asi` | Pass; SHA256 `570F0F91A4B2D4A0B37093FF55BBA601BCC3C296603FE99EF4CD780EC38040B8` |
+| Offline submit-path v0.8.0 (`SubmitPath081`) | Pass; copy helpers have 0 callers; no world receiver |
+| Offline vtcall resolve v0.8.0 (`VtCall082`) | Pass; NPC `+0xC0` = field accessor `0x80F2450` |
+| `BlackFlagCoopSecondEdwardTest` / ctest `SecondEdward` | Pass (ALL PASS) |
+| VS 18 2026 x64 Release `BlackFlagCoop.asi` | Pass; SHA256 `A8CB00DB2B95184F5918D3927431AE2AD7799DAAC9CE6466C659F6D5EB5BC145` |
 | Installed ASI still v0.5.1 | Pass; `63B38877DDA7CC7CD9AB2619F94D3941C37F54C95A435EFE47084DC4CF2A50BE` |
 | Subject MSVC RTTI name | **Not found** (game types RTTI-stripped) |
 | Game launch / ASI deploy | **Not performed** |
@@ -307,6 +315,6 @@ When reviewing the GitHub repository after a Cursor push:
 2. Diff against the previous handoff `milestoneId` / commit.
 3. Treat only **confirmed** items as facts; keep hypotheses labeled.
 4. Propose the **next single milestone** with: objective, in-scope RVAs/files, out-of-scope (spawn/deploy/PC2), required deliverables paths, and acceptance checks.
-5. Prefer **v0.8.1**: resolve virtual calls `0x33593D0` and `0x335A228` inside `0x33591C0`. The copy helpers and hashes `0x94D05600` / `0x51BA3541` are already traced and are not a world submit. Do not call an RVA until a world receiver and its arguments are confirmed. CI on `4024a28` was pending with zero checks.
+5. Prefer **v0.8.1**: leave the SpawnNPCParams reflected family (registrars, copy helpers, and `0x33591C0` type-attach virtuals are closed as non-factories). Start a new narrow search for a Resynced-native character create → world add. Do not call an RVA until a world receiver and its arguments are confirmed.
 6. Do not instruct Cursor to deploy ASI, spawn, use live memory, or touch PC2/save data unless the user explicitly overrides safety.
 7. Return instructions Cursor can execute verbatim on PC1 on a dedicated branch + PR (never push main).
