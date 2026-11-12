@@ -1,6 +1,6 @@
 ﻿{
     "schemaVersion":  1,
-    "generatedUtc":  "2026-11-12T21:22:36Z",
+    "generatedUtc":  "2026-11-12T21:24:02Z",
     "handoffFor":  "ChatGPT",
     "executor":  "Cursor",
     "machine":  "PC1",
@@ -20,8 +20,8 @@
                 },
     "milestone":  {
                       "currentId":  "v0.8.0",
-                      "currentTitle":  "C2 strict triad filter; Begin candidate 0x5001598 unproven",
-                      "status":  "c2_triad_strict_unproven",
+                      "currentTitle":  "C2: falsified Begin cand 0x5001598; triad still unproven",
+                      "status":  "c2_begin_cand_falsified",
                       "priorPreserved":  [
                                              "v0.6.4",
                                              "v0.6.5",
@@ -85,11 +85,11 @@
                 },
     "engineFindings":  {
                            "summary":  [
-                                           "TriadStrict080: strictBegin10=49 arming=7 fullTriad=0 dupWithBuild=28",
-                                           "Falsified 0x4DE1C40 (TLS [TEB+1CE8]=ecx) and 0x5014570 (cookie) as Begin/Dup",
-                                           "Candidate Begin(1,0) leaf 0x5001598 uses cl+dl returns al; caller 0x5305D2F",
-                                           "Next: follow 0x5001598 for Dup/End/Build; prefer cl+dl Begin leaves",
-                                           "callEngine=off; ASI v0.5.1 preserved"
+                                           "Followed Begin cand 0x5001598: 1 caller, no Dup/End/Build in func",
+                                           "Leaf is init/guard (rip flag + optional dl early-out) — falsified as Begin",
+                                           "Prior: strictFullTriad=0; falsified 0x4DE1C40 TLS setter",
+                                           "Next: multi-caller cl+dl TLS-arming Begin leaves; or Dup that reads Begin TLS",
+                                           "callEngine=off; CTest 4/4; ASI v0.5.1 preserved"
                                        ],
                            "keyRvas":  {
                                            "spawnPlayerParams":  "0x80F2A20",

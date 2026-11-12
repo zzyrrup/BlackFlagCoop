@@ -1,0 +1,11 @@
+{
+  "schemaVersion": 1,
+  "beginCand": "0x5001598",
+  "callers": 1,
+  "callersBegin10": 1,
+  "withDup": 0,
+  "withEnd": 0,
+  "withBuild": 0,
+  "c2Proven": false,
+  "callEngine": false
+}

@@ -25,7 +25,7 @@ Ultimate vision is **not claimed as achieved**. Dual-Edward co-op remains unprov
 
 ## 2. Current development milestone
 
-**v0.8.0 in progress** — Agent 2 C2: strict last-def triad filter. Full triad still **0**. Falsified TLS setter `0x4DE1C40` as Begin. Surviving Begin(1,0)-shaped leaf candidate `0x5001598` (unproven). `callEngine=off`. See `docs/v0.8.0-c2-triad-strict.md`.
+**v0.8.0 in progress** — Agent 2 C2: Begin candidate `0x5001598` **falsified** (single-caller init/guard; no Dup/End/Build). Triad still **unproven**. `callEngine=off`. See `docs/v0.8.0-begin-follow.md`.
 
 Prior: v0.6.25 owner VT[0] ctors (`0x13612B0` / `0x5781490`) and v0.6.5–v0.6.24 preserved. Details: `docs/v0.8.0-second-edward-plan.md`.
 
