@@ -3,7 +3,7 @@
 **Last updated:** 2026-11-12  
 **Machine:** PC1 only  
 **Repo:** https://github.com/zzyrrup/BlackFlagCoop  
-**Branch:** `cursor/v065-deferred-queue-worker-007d` (research commit `6cdae9f`, based on `main`)  
+**Branch:** `cursor/v065-queue-worker-decode-8285` (PR into `cursor/v065-deferred-queue-worker-007d`; do not push main)  
 **Initial commit:** `e12e70150656ac80742f10b496f7e5556e7985b7`
 
 This document is the primary human-readable bridge between Cursor (local execution) and ChatGPT (review / next instructions). Update it after every completed milestone.
@@ -25,9 +25,9 @@ Ultimate vision is **not claimed as achieved**. Dual-Edward co-op remains unprov
 
 ## 2. Current development milestone
 
-**v0.6.5 complete** — Deferred queue worker and 16-byte element layout (`0x725400`, `0xE95E80`).
+**v0.6.6 complete** — Deferred queue producers (`0x2E97B60` enqueue helper; wrapper `0x2E97FC0`).
 
-Offline only. No ASI, spawn, or networking change.
+Prior: v0.6.5 worker/element decode (preserved). Offline only. No ASI, spawn, or networking change.
 
 ---
 
@@ -87,6 +87,7 @@ High-signal offline findings (see `docs/v0.6.*` and `reports/v0.6.*`):
 - **v0.6.3:** `0x187F0550` = thin `Pad_LockAndTurnMovement` bind wrapper → helper `0x18EADD0`. `0x5CBDFB0` = frame-phase **registrar**, not factory. Registered handler for `CreateActorsDeferredSingleThreaded` = **`0x1AC380`**.
 - **v0.6.4:** `0x1AC380` = deferred **queue processor** (`[obj+0xAC0]` / count `[+0xAC8]&0x3FFF`, stride 0x10); per-element `0x725400` / `0xE95E80`. Not proven as Edward/character factory. `0x7B00B60` / `0x29C6910` unlinked beyond phase table. Action vtable `0x9255320` installed by descriptor ctors; no verified input→character path.
 - **v0.6.5:** Each 16-byte slot is an **object pointer at +0** plus a handler-written **f32 score at +8** (compared with 25.0). `+0xC` is unreferenced. Workers receive the object pointer, not the slot. `0x725400` is a shared flag/hash-list helper. `0xE95E80` is queue-only and attaches a **0x160** side block at `object+0x98`. No character/Edward/archetype edge. Handler body ends at `0x1AC61F` (671 bytes); v0.6.4's `0x1ACA4A` included the next function.
+- **v0.6.6:** Enqueue helper **`0x2E97B60(coordinator, object)`** appends the pointer with the same `0x3FFF`/`0xFFFFC000`/stride-`0x10` packing and zeros slot+8. Sole callers are three sites in wrapper **`0x2E97FC0`**, which then **`or [object+0x61], 4`** (bit cleared later by `0x725400`). Wrapper has no direct `E8` callers (likely phase dispatch). Still no Edward/create path.
 
 ---
 
@@ -100,15 +101,16 @@ High-signal offline findings (see `docs/v0.6.*` and `reports/v0.6.*`):
 - Slot `+0` is an object pointer. Slot `+8` is an `f32` score written by the handler and compared with 25.0. Slot `+0xC` is not interpreted by the handler or either worker.
 - `0x725400(object, dl)` edits `object+0x61` and can unlink that pointer from a 0x18-stride hashed list. Direct callers also exist outside the handler, with `dl = 0`.
 - `0xE95E80(object)` is called only from `0x1AC4DB` and `0x1AC523`. It allocates 0x160 bytes and stores the block at `object+0x98` with a back-pointer at `block+0x100`.
+- `0x2E97B60` is the deferred-queue **enqueue** helper; `0x2E97FC0` is its only wrapper caller set; post-enqueue sets `object+0x61` bit 2.
 - Input lead `0x187F0550` is action-name bind, not a movement controller.
 - No verified shared entity/ownership edge between input bind path and deferred handler.
-- No Edward, character, archetype, player, or transform string in either worker.
+- No Edward, character, archetype, player, or transform string in either worker or the producer wrapper.
 
 ### Hypotheses (not confirmed)
 
 - The queued object is an actor or character.
 - The 0x160 side block is activation state for that object.
-- A producer outside this queue creates the object before the pointer is stored.
+- `0x2E97FC0` is registered as a frame phase like `0x1AC380`.
 - Dual Edward / dual input context is feasible somewhere else in the engine.
 
 ### Disproven on this path
@@ -122,8 +124,9 @@ High-signal offline findings (see `docs/v0.6.*` and `reports/v0.6.*`):
 
 ## 9. Current blockers
 
-- No confirmed character/Edward factory or archetype reuse path. This queue consumes existing object pointers.
-- The producer that stores those pointers at `[coordinator+0xAC0]` is not yet decoded.
+- No confirmed character/Edward factory or archetype reuse path. Queue only enqueues/activates existing objects.
+- Subject type / RTTI for enqueued objects still unknown.
+- Registration/dispatch of wrapper `0x2E97FC0` not yet recovered.
 - No verified input→character ownership/control binding.
 - No safe authorized spawn/possession test design yet.
 - GitHub handoff must stay free of ASI/game binaries.
@@ -132,41 +135,37 @@ High-signal offline findings (see `docs/v0.6.*` and `reports/v0.6.*`):
 
 ## 10. Most recent completed milestone
 
-**v0.6.5 — Deferred queue worker and 16-byte element layout**
+**v0.6.6 — Deferred queue producers**
 
 Deliverables:
 
-- `docs/v0.6.5-deferred-queue-worker-analysis.md`
-- `reports/v0.6.5-queue-element-layout.json`
-- `reports/v0.6.5-worker-disassembly.json`
-- `reports/v0.6.5-worker-callgraph.json`
-- `reports/v0.6.5-actor-lifecycle-connections.json`
-- `reports/v0.6.5-second-edward-feasibility.json`
-- `tools/offline/QueueWorker065/` (offline decoder; Iced 1.21)
+- `docs/v0.6.6-deferred-queue-producers.md`
+- `reports/v0.6.6-enqueue-helper.json`
+- `reports/v0.6.6-producer-scan-summary.json`
+- `reports/v0.6.6-second-edward-feasibility.json`
+- `reports/v066-raw/evidence.txt`
+- `tools/offline/QueueProducer066/`
 
-v0.6.4 reports were left in place.
+v0.6.4 and v0.6.5 reports were left in place.
 
 ---
 
 ## 11. Next recommended milestone
 
-**v0.6.6 (proposed):** Offline-find the producers that **store** the object pointer into `[coordinator+0xAC0]`. That is the first place a create-versus-enqueue distinction can be made. Still no spawn, no deploy, no networking changes unless separately authorized.
+**v0.6.7 (proposed):** Offline recover **dispatch/registration of `0x2E97FC0`** and **subject vtable/RTTI** for objects reaching enqueue + `0xE95E80`. Still no spawn, deploy, live memory, or PC2 unless separately authorized.
 
 ---
 
 ## 12. Files changed in the latest milestone
 
-- `docs/v0.6.5-deferred-queue-worker-analysis.md`
-- `reports/v0.6.5-queue-element-layout.json`
-- `reports/v0.6.5-worker-disassembly.json`
-- `reports/v0.6.5-worker-callgraph.json`
-- `reports/v0.6.5-actor-lifecycle-connections.json`
-- `reports/v0.6.5-second-edward-feasibility.json`
-- `tools/offline/QueueWorker065/Program.cs`
-- `tools/offline/QueueWorker065/QueueWorker065.csproj`
+- `docs/v0.6.6-deferred-queue-producers.md`
+- `reports/v0.6.6-enqueue-helper.json`
+- `reports/v0.6.6-producer-scan-summary.json`
+- `reports/v0.6.6-second-edward-feasibility.json`
+- `reports/v066-raw/evidence.txt`
+- `tools/offline/QueueProducer066/`
 - `docs/CHATGPT_HANDOFF.md`
 - `reports/CHATGPT_HANDOFF.json`
-- `.gitignore` (ignore `tools/offline/**/bin` and `obj`)
 
 ---
 
@@ -174,7 +173,8 @@ v0.6.4 reports were left in place.
 
 | Test | Result |
 |------|--------|
-| Offline decode v0.6.5 (`QueueWorker065`, Iced 1.21) | EXE SHA256 matched. Call sites `0x1AC4D3` → `0x725400` and `0x1AC4DB` → `0xE95E80` landed on real instructions. Reports written. |
+| Offline decode v0.6.5 (`QueueWorker065`) | Pass (prior) |
+| Offline producer scan v0.6.6 (`QueueProducer066`) | Pass; enqueue helper `0x2E97B60` confirmed |
 | Game launch / ASI deploy | **Not performed** |
 | Spawn / inject / live memory | **Not performed** |
 | Network protocol changes | **None** |
@@ -199,6 +199,6 @@ When reviewing the GitHub repository after a Cursor push:
 2. Diff against the previous handoff `milestoneId` / commit.
 3. Treat only **confirmed** items as facts; keep hypotheses labeled.
 4. Propose the **next single milestone** with: objective, in-scope RVAs/files, out-of-scope (spawn/deploy/PC2), required deliverables paths, and acceptance checks.
-5. Prefer **v0.6.6**: offline producers of the object pointer stored at `[coordinator+0xAC0]`, unless new evidence supersedes. Do not treat the phase name as proof of actor creation.
-6. Do not instruct Cursor to deploy ASI or modify the game unless the user explicitly overrides safety.
-7. Return instructions Cursor can execute verbatim on PC1.
+5. Prefer **v0.6.7**: registration/dispatch of `0x2E97FC0` + subject vtable/RTTI, unless new evidence supersedes. Do not treat enqueue as character creation.
+6. Do not instruct Cursor to deploy ASI, spawn, use live memory, or touch PC2/save data unless the user explicitly overrides safety.
+7. Return instructions Cursor can execute verbatim on PC1 on a dedicated branch + PR (never push main).

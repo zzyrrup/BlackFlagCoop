@@ -1,0 +1,46 @@
+{
+  "schemaVersion": 1,
+  "generatedUtc": "2026-11-12T17:05:00Z",
+  "milestone": "v0.6.6",
+  "exeSha256": "19920F34BB2FAC814023EE3C27F0CECA1872E80A2AAFB37C092C419FFF77CC0D",
+  "enqueueHelper": {
+    "rva": "0x2E97B60",
+    "end": "0x2E97D18",
+    "sizeBytes": 440,
+    "args": { "rcx": "coordinator", "rdx": "objectToEnqueue" },
+    "lockField": "0x1A0",
+    "confirmedBehavior": [
+      "Reads count/capacity from coordinator+0xAC8 using masks 0x3FFF and >>16",
+      "Writes updated count preserving high bits with 0xFFFFC000",
+      "Stores object pointer at [arrayBase + newIndex*0x10]",
+      "Zeros dword at slot+8 (score)",
+      "Grows Small array on capacity overflow"
+    ],
+    "createsObject": false,
+    "matchesConsumerPacking": true
+  },
+  "wrapper": {
+    "rva": "0x2E97FC0",
+    "approxSizeBytes": 22878,
+    "stackSubRsp": "0x678",
+    "earlyGate": "[rcx+0x180]",
+    "directE8Callers": 0,
+    "note": "Likely phase/function-pointer dispatched; not proven"
+  },
+  "callSitesOfEnqueueHelper": [
+    { "site": "0x2E98AA3", "wrapper": "0x2E97FC0", "postFlag": "or [object+0x61], 4" },
+    { "site": "0x2E9B3D1", "wrapper": "0x2E97FC0", "postFlag": "or [object+0x61], 4" },
+    { "site": "0x2E9B481", "wrapper": "0x2E97FC0", "postFlag": "or [object+0x61], 4" }
+  ],
+  "coordinatorLookup": {
+    "path": "object+0x18 -> +0xA8 -> +0x3CD0 ; call 0x429F9E0 ; add +0x20",
+    "status": "confirmed_sequence"
+  },
+  "flagLifecycle": {
+    "offset": "0x61",
+    "bit": "0x04",
+    "setBy": "0x2E97FC0 after enqueue",
+    "clearedBy": "0x725400 (v0.6.5 deferred worker)",
+    "status": "confirmed"
+  }
+}
