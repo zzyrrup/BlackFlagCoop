@@ -1,0 +1,22 @@
+{
+  "schemaVersion": 1,
+  "milestone": "v0.6.11",
+  "generatedUtc": "2026-11-12T17:27:43Z",
+  "exeSha256": "19920F34BB2FAC814023EE3C27F0CECA1872E80A2AAFB37C092C419FFF77CC0D",
+  "edges": [
+    { "lead": "0x400B50", "caller": "0x2971ED0", "site": "0x2972098", "kind": "e8", "callsEnqueue": false, "callsWrapper": false, "callsLookup": true, "callsAllocator": false, "nestedChain": true, "note": "", "strings": [] },
+    { "lead": "0x2971ED0", "caller": "0x2972360", "site": "0x29723A9", "kind": "e8-hop2", "callsEnqueue": false, "callsWrapper": false, "callsLookup": false, "callsAllocator": false, "nestedChain": false, "note": "", "strings": [] },
+    { "lead": "0x400B50", "caller": "0x485CC20", "site": "0x485E248", "kind": "e8", "callsEnqueue": false, "callsWrapper": false, "callsLookup": true, "callsAllocator": false, "nestedChain": true, "note": "", "strings": [] },
+    { "lead": "0x485CC20", "caller": "0x485B760", "site": "0x485BB2A", "kind": "e8-hop2", "callsEnqueue": false, "callsWrapper": false, "callsLookup": false, "callsAllocator": false, "nestedChain": false, "note": "", "strings": [] },
+    { "lead": "0x485CC20", "caller": "0x485B760", "site": "0x485C6B3", "kind": "e8-hop2", "callsEnqueue": false, "callsWrapper": false, "callsLookup": false, "callsAllocator": false, "nestedChain": false, "note": "", "strings": [] },
+    { "lead": "0x485CC20", "caller": "0x485B760", "site": "0x485C78D", "kind": "e8-hop2", "callsEnqueue": false, "callsWrapper": false, "callsLookup": false, "callsAllocator": false, "nestedChain": false, "note": "", "strings": [] },
+    { "lead": "0x485CC20", "caller": "0x485B760", "site": "0x485C856", "kind": "e8-hop2", "callsEnqueue": false, "callsWrapper": false, "callsLookup": false, "callsAllocator": false, "nestedChain": false, "note": "", "strings": [] },
+    { "lead": "0x485CC20", "caller": "0x485B760", "site": "0x485C925", "kind": "e8-hop2", "callsEnqueue": false, "callsWrapper": false, "callsLookup": false, "callsAllocator": false, "nestedChain": false, "note": "", "strings": [] },
+    { "lead": "0x400B50", "caller": "0x6F19CF0", "site": "0x6F19F1C", "kind": "e8", "callsEnqueue": false, "callsWrapper": false, "callsLookup": true, "callsAllocator": false, "nestedChain": true, "note": "", "strings": [] },
+    { "lead": "0x4444C0", "caller": "0xCD76C84", "site": "0xCD76CC4", "kind": "e8", "callsEnqueue": false, "callsWrapper": false, "callsLookup": false, "callsAllocator": false, "nestedChain": false, "note": "", "strings": [] },
+    { "lead": "0x4444C0", "caller": "0xD720692", "site": "0xD7206D2", "kind": "e8", "callsEnqueue": false, "callsWrapper": false, "callsLookup": false, "callsAllocator": false, "nestedChain": false, "note": "", "strings": [] },
+    { "lead": "0x4444C0", "caller": "0xD7225A3", "site": "0xD7225E3", "kind": "e8", "callsEnqueue": false, "callsWrapper": false, "callsLookup": false, "callsAllocator": false, "nestedChain": false, "note": "", "strings": [] }
+  ],
+  "withEnqueueOrWrapper": 0,
+  "withLookup": 3
+}
