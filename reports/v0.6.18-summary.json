@@ -1,0 +1,11 @@
+{
+  "schemaVersion": 1,
+  "milestone": "v0.6.18",
+  "generatedUtc": "2026-11-12T18:39:42Z",
+  "exeSha256": "19920F34BB2FAC814023EE3C27F0CECA1872E80A2AAFB37C092C419FFF77CC0D",
+  "armWrap": { "rva": "0x2108620", "size": 541, "callsCanonical2B8": true, "touches98": true, "modes": [1, 2, 3, 4], "listHelper": true },
+  "post2B8": { "rva": "0x479E440", "size": 508, "modes": [2, 3], "nested": false },
+  "installerA": { "rva": "0x5F11A40", "size": 12113, "callsCtorA": false, "vtInstalls": 1, "callersE8": 0 },
+  "installerB": { "rva": "0x59D96A0", "size": 1249, "callsCtorB": true, "alloc": false, "callersE8": 1 },
+  "edwardOrPlayerTypeConfirmed": false
+}
