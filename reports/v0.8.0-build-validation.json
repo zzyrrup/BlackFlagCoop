@@ -2,10 +2,10 @@
   "schemaVersion": 1,
   "workstream": "9/7",
   "milestone": "v0.8.0-build-validation",
-  "generatedUtc": "2026-11-12T20:41:51Z",
-  "commit": "441bd675a18b0db3255eb69c26fd86ec2cae2dc5",
+  "generatedUtc": "2026-11-12T20:42:21Z",
+  "commit": "43161323270e6759b24f86e7f50412150734fb73",
   "branch": "cursor/v080-build-validation-ba41",
-  "dirty": true,
+  "dirty": false,
   "host": {
     "system": "Linux",
     "machine": "x86_64",
