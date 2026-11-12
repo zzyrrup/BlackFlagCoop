@@ -1,0 +1,174 @@
+===== v0.6.29 Neighbor TypeInfo REGISTRAR + SpatA/SpatB FEEDS =====
+exeSha256=19920F34BB2FAC814023EE3C27F0CECA1872E80A2AAFB37C092C419FFF77CC0D
+
+===== NEIGHBOR TypeInfo-SHAPED META @0xAAD2290 =====
+Neigh VT[+0x30]=0xAAD2290 expect 0xAAD2290 match=True
+Spat VT[+0x30]=0xACE83F8 expect 0xACE83F8 match=True
+--- NeighMeta 0xAAD2290 ---
+  [+0x0] = 0xAAD21E0
+  [+0x8] = 0x0
+  [+0x10] = 0x0
+  [+0x18] = 0x2996CA50CB0F23F4 key?
+  [+0x20] = 0xB0 size?
+  [+0x28] = 0x20000000000
+  [+0x30] = 0x0
+  [+0x38] = 0x0
+  [+0x40] = 0x0
+  [+0x48] = 0x7FFF7FFF00000000
+  [+0x50] = 0x3D522C0 ctor
+  [+0x58] = 0x0
+NeighMeta+0x50 ctor=0x3D522C0 expect NeighRel 0x3D522C0 match=True
+NeighMeta+0x20 size=0xB0
+NeighMeta+0x18 keyHash=0x2996CA50CB0F23F4 expect 0x2996CA50CB0F23F4 match=True
+keyHash embeds=1 @0xAAD22A8
+
+===== NEIGHBOR RUNTIME LEA+STORE OF CTOR (SpatRegistrar pattern) =====
+neighRuntimeLeaCtorSites=0 (0 => PE-static TypeInfo ctor field; no SpatRegistrar-style fill)
+
+===== SPAT TypeInfo RECORDS (SpatA/SpatB +0x50 fields) =====
+--- SpatTi 0xACE83F8 ---
+  [+0x0] = 0x0
+  [+0x8] = 0x0
+  [+0x10] = 0x0
+  [+0x18] = 0x0 key?
+  [+0x20] = 0x0 size?
+  [+0x28] = 0x0
+  [+0x30] = 0x0
+  [+0x38] = 0x0
+  [+0x40] = 0x0
+  [+0x48] = 0x0
+  [+0x50] = 0x0 ctor
+  [+0x58] = 0x0
+--- SpatBTi 0xACE8478 ---
+  [+0x0] = 0x0
+  [+0x8] = 0x0
+  [+0x10] = 0x0
+  [+0x18] = 0x0 key?
+  [+0x20] = 0x0 size?
+  [+0x28] = 0x0
+  [+0x30] = 0x0
+  [+0x38] = 0x0
+  [+0x40] = 0x0
+  [+0x48] = 0x0
+  [+0x50] = 0x0 ctor
+  [+0x58] = 0x0
+SpatTi+0x50 field RVA=0xACE8448 == SpatAField 0xACE8448: True
+SpatBTi+0x50 field RVA=0xACE84C8 == SpatBField 0xACE84C8: True
+
+===== SpatRegistrar FILLS INTO SpatTi WINDOW =====
+  STORE @0x5E5B97A ->0xACE83F8 off=+0x0 mov [rip+4E8CA77],rax
+  STORE @0x5E5B999 ->0xACE8420 off=+0x28 mov [rip+4E8CA80],r12
+  STORE @0x5E5B9A0 ->0xACE8428 off=+0x30 mov [rip+4E8CA81],rsi
+  STORE @0x5E5B9AC ->0xACE8430 off=+0x38 mov [rip+4E8CA7E],ecx
+  STORE @0x5E5B9B7 ->0xACE8438 off=+0x40 mov [rip+4E8CA7A],rsi
+  STORE @0x5E5B9BE ->0xACE8440 off=+0x48 mov [rip+4E8CA7B],r13
+  STORE @0x5E5B9CC ->0xACE8448 off=+0x50 mov [rip+4E8CA75],rcx
+  STORE @0x5E5BA1B ->0xACE84C8 off=+0xD0 mov [rip+4E8CAA6],rax
+SpatAField filled by registrar=True SpatBField filled=True
+
+===== VT[+0x20] CONSTRUCT-FROM-TypeInfo FEEDS =====
+Neigh VT[+0x20]=0x3D52400 expect 0x3D52400 match=True
+Spat VT[+0x20]=0x6CF34E0 expect 0x6CF34E0 match=True
+--- NeighVT20-construct ---
+0x3D52400 push r15
+0x3D52402 push r14
+0x3D52404 push r13
+0x3D52406 push r12
+0x3D52408 push rsi
+0x3D52409 push rdi
+0x3D5240A push rbp
+0x3D5240B push rbx
+0x3D5240C sub rsp,78
+0x3D52410 mov ebp,r8d
+0x3D52413 mov rdi,rcx
+0x3D52416 mov rax,[rip+6560DE3]
+0x3D5241D xor rax,rsp
+0x3D52420 mov [rsp+70],rax
+0x3D52425 lea rcx,[rip+6D7FE64] *** NEIGH_META ***
+0x3D5242C call 00000001443DCB00 *** TI_HELPER ***
+0x3D52431 mov rbx,rax
+0x3D52434 mov rcx,rdi
+0x3D52437 mov rdx,rax
+0x3D5243A mov r8d,ebp
+0x3D5243D call 0000000140233310
+0x3D52442 lea r14,[rbx+28]
+0x3D52446 mov rcx,r14
+0x3D52449 call 0000000145673A70
+0x3D5244E mov rcx,r14
+0x3D52451 call 0000000141361320
+0x3D52456 mov r15d,[rdi+30]
+0x3D5245A and r15d,3FFF
+--- SpatVT20-construct ---
+0x6CF34E0 push rsi
+0x6CF34E1 push rdi
+0x6CF34E2 push rbx
+0x6CF34E3 sub rsp,20
+0x6CF34E7 mov esi,r8d
+0x6CF34EA mov rdi,rcx
+0x6CF34ED lea rcx,[rip+3FF4F04] *** SPAT_TI ***
+0x6CF34F4 call 00000001443DCB00 *** TI_HELPER ***
+0x6CF34F9 mov rbx,rax
+0x6CF34FC lea eax,[rsi-5]
+0x6CF34FF cmp eax,0FFFFFFFD
+0x6CF3502 ja short 0000000146CF351D
+0x6CF3504 lea rdx,[rip-18F7C2B]
+0x6CF350B lea r9,[rip+42805B2]
+0x6CF3512 mov rcx,rbx
+0x6CF3515 xor r8d,r8d
+0x6CF3518 call 0000000144CF96B0
+0x6CF351D mov rcx,rdi
+0x6CF3520 mov rdx,rbx
+0x6CF3523 mov r8d,esi
+0x6CF3526 call 0000000146CF31F0
+0x6CF352B add rdi,98
+0x6CF3532 mov rcx,rbx
+0x6CF3535 add rcx,98
+0x6CF353C mov rdx,rdi
+0x6CF353F mov r8d,esi
+0x6CF3542 call 00000001442F0690
+0x6CF3547 mov rax,rbx
+0x6CF354A add rsp,20
+0x6CF354E pop rbx
+0x6CF354F pop rdi
+0x6CF3550 pop rsi
+0x6CF3551 ret
+0x6CF3552 int 3
+0x6CF3553 int 3
+TiHelper 0x43DCB00 E8 callers sampled=20 (generic; many)
+
+===== RIP REFS TO TypeInfo BASES =====
+  LOAD/LEA base=0xACE83F8 @0x5E5B148 func=0x5E5AF20 lea rax,[rip+4E8D2A9]
+  LOAD/LEA base=0xACE83F8 @0x602CCC8 func=0x602CAA0 lea rdx,[rip+4CBB729]
+  LOAD/LEA base=0xACE83F8 @0x6CF34ED func=0x6CF34E0 lea rcx,[rip+3FF4F04]
+  LOAD/LEA base=0xAAD2290 @0x2471F3E func=0x2471AC0 lea rdx,[rip+866034B]
+  LOAD/LEA base=0xAAD2290 @0x3D52425 func=0x3D52400 lea rcx,[rip+6D7FE64]
+  LOAD/LEA base=0xAAD2290 @0x3E1F7AA func=0x3E1F3D0 lea rax,[rip+6CB2ADF]
+  LOAD/LEA base=0xAAD2290 @0x672E3CA func=0x672E030 lea rax,[rip+43A3EBF]
+
+===== LEA TypeInfo BASE → Alloc/Lookup/TiHelper/icall50 =====
+  ti=0xACE83F8 lea@0x5E5B148 func=0x5E5AF20 alloc=False lookup=False tiHelper=False icall50=False callSpatCtor=False
+  ti=0xACE83F8 lea@0x5E5B149 func=0x5E5AF20 alloc=False lookup=False tiHelper=False icall50=False callSpatCtor=False
+  ti=0xACE83F8 lea@0x602CCC8 func=0x602CAA0 alloc=False lookup=False tiHelper=False icall50=False callSpatCtor=False
+  ti=0xACE83F8 lea@0x602CCC9 func=0x602CAA0 alloc=False lookup=False tiHelper=False icall50=False callSpatCtor=False
+  ti=0xACE83F8 lea@0x6CF34ED func=0x6CF34E0 alloc=False lookup=False tiHelper=True icall50=False callSpatCtor=False
+  ti=0xACE83F8 lea@0x6CF34EE func=0x6CF34E0 alloc=False lookup=False tiHelper=True icall50=False callSpatCtor=False
+  ti=0xAAD2290 lea@0x2471F3E func=0x2471AC0 alloc=False lookup=False tiHelper=False icall50=False callSpatCtor=False
+  ti=0xAAD2290 lea@0x2471F3F func=0x2471AC0 alloc=False lookup=False tiHelper=False icall50=False callSpatCtor=False
+  ti=0xAAD2290 lea@0x3D52425 func=0x3D52400 alloc=False lookup=False tiHelper=True icall50=False callSpatCtor=False
+  ti=0xAAD2290 lea@0x3D52426 func=0x3D52400 alloc=False lookup=False tiHelper=True icall50=False callSpatCtor=False
+  ti=0xAAD2290 lea@0x3E1F7AA func=0x3E1F3D0 alloc=False lookup=False tiHelper=False icall50=False callSpatCtor=False
+  ti=0xAAD2290 lea@0x3E1F7AB func=0x3E1F3D0 alloc=False lookup=False tiHelper=False icall50=False callSpatCtor=False
+  ti=0xAAD2290 lea@0x672E3CA func=0x672E030 alloc=False lookup=False tiHelper=False icall50=False callSpatCtor=False
+  ti=0xAAD2290 lea@0x672E3CB func=0x672E030 alloc=False lookup=False tiHelper=False icall50=False callSpatCtor=False
+
+===== TIGHT FACTORIES vs Spat TI (no static key LEA) =====
+  factory 0x238590 icall50=1 seesSpatTiRip=False
+  factory 0x256280 icall50=1 seesSpatTiRip=False
+  factory 0x218900 icall50=1 seesSpatTiRip=False
+  factory 0x218660 icall50=2 seesSpatTiRip=False
+  factory 0x21FA70 icall50=1 seesSpatTiRip=False
+
+===== VERDICT =====
+1) Neighbor registrar equivalent = PE-static TypeInfo @0xAAD2290 (VT[+0x30]); +0x50=NeighRel; +0x20 size=0xB0; +0x18 keyHash unique. No runtime LEA+store. confirmed=True
+2) SpatA/SpatB TypeInfo keys/records: SpatTi 0xACE83F8 (+0x50=SpatA), SpatBTi 0xACE8478 (+0x50=SpatB); runtime-filled by SpatRegistrar.
+3) Factory/construct feeds: both families use VT[+0x20] construct-from-TI (Neigh 0x3D52400 / Spat 0x6CF34E0) via TiHelper 0x43DCB00. Tight factories remain generic (no static Spat TI RIP). parallelVt20=True spatFeed=True

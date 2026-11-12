@@ -1,0 +1,26 @@
+{
+  "schemaVersion": 1,
+  "milestone": "v0.6.29",
+  "generatedUtc": "2026-11-12T20:54:03Z",
+  "exeSha256": "19920F34BB2FAC814023EE3C27F0CECA1872E80A2AAFB37C092C419FFF77CC0D",
+  "neighborTypeInfo": {
+    "meta": "0xAAD2290",
+    "peStatic": true,
+    "sizePlus20": "0xB0",
+    "ctorPlus50": "0x3D522C0",
+    "keyHashPlus18": "0x2996CA50CB0F23F4",
+    "runtimeRegistrarFound": false,
+    "equivalentToSpatRegistrar": "pe_static_typeinfo_record"
+  },
+  "spatTypeInfoFeeds": {
+    "spatTi": "0xACE83F8",
+    "spatAField": "0xACE8448",
+    "spatBTi": "0xACE8478",
+    "spatBField": "0xACE84C8",
+    "registrarFillsCtorFields": true,
+    "vtPlus20Construct": "0x6CF34E0",
+    "feedConfirmed": true
+  },
+  "parallelVt20Construct": true,
+  "edwardOrPlayerTypeConfirmed": false
+}
