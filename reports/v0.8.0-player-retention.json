@@ -1,32 +1,42 @@
 {
   "schemaVersion": 1,
   "milestone": "v0.8.0",
+  "agent": "Agent2-player-retention",
   "mode": "offline-pe-readonly",
   "exeSha256": "19920F34BB2FAC814023EE3C27F0CECA1872E80A2AAFB37C092C419FFF77CC0D",
-  "blueprint": "Agent1 docs/v0.8.0-ac4coop-source-map.md reference-only",
+  "blueprint": "Agent1 docs/v0.8.0-ac4coop-source-map.md @ 45262db + PR#28 answers reference-only",
+  "firstChain": "PlayerEntitySelector::Process -> 0x62F12E0 -> table 0x919F9D0 -> Process 0x7CA9B70 -> allocator resolve 0x16FAA0",
+  "agent1AnswersIngested": true,
   "playerEntityAcquisitionResolved": false,
   "builderSelectorRetentionResolved": false,
-  "playerSpaceString": false,
-  "fakeEntitiesString": false,
-  "humanBehaviorString": true,
-  "loadingAdvisorUpdateString": true,
-  "decision": "retention-role-strings-found-entity-owner-unresolved",
-  "blocker": "Local-player Entity*/HandleContainer retention owner not identified; builder/selector cache unresolved",
-  "strings": [
-    {"needle": "ObjectID", "rva": "0x999A866", "text": "ObjectID""},
-    {"needle": "PlayerEntity", "rva": "0xA118077", "text": "PlayerEntitySelector::Process""},
-    {"needle": "HumanBehaviorState", "rva": "0xA142D69", "text": "HumanBehaviorState_DangerAnticipation""},
-    {"needle": "LoadingAdvisorUpdate", "rva": "0xA15C4FF", "text": "LoadingAdvisorUpdate""}
+  "callEngine": false,
+  "decision": "process-allocator-resolve-and-handleDeref-shape-found-entity-owner-unresolved",
+  "blocker": "Live local-player Entity* retention owner unproven; builder/selector construction cache unproven",
+  "binaryConfirmed": [
+    {"rva": "0xA118077", "role": "string PlayerEntitySelector::Process"},
+    {"rva": "0x62F12E0", "role": "selector family registrar"},
+    {"rva": "0x919F9D0", "role": "PlayerEntitySelector method table"},
+    {"rva": "0x7CA9B70", "role": "table[2] Process candidate"},
+    {"rva": "0x16FAA0", "role": "allocator-pointer resolve (not proven CreateReference)"},
+    {"rva": "0x50AB0", "role": "handleDeref shape sample (+8 sign bit masks +0 object)"}
   ],
-  "leaSites": [
-    {"needle": "PlayerEntity", "site": "0x62F2790", "func": "0x62F12E0"},
-    {"needle": "PlayerEntity", "site": "0x62F2791", "func": "0x62F12E0"},
-    {"needle": "HumanBehaviorState", "site": "0x6D17FC0", "func": "0x6D17EB0"},
-    {"needle": "HumanBehaviorState", "site": "0x6D17FC1", "func": "0x6D17EB0"},
-    {"needle": "LoadingAdvisorUpdate", "site": "0x1ED29C8", "func": "0x1ED0FC0"},
-    {"needle": "LoadingAdvisorUpdate", "site": "0x1ED29C9", "func": "0x1ED0FC0"}
+  "sourceDerivedFromPr28": [
+    "GetPlayer unresolved thiscall; no in-tree m_Player writer",
+    "builder/selector cache fill outside AC4Coop repo",
+    "HandleContainer packed {obj*, soft, hard, objectId}; reload waits m_Object",
+    "Human-update hook esi=Human*; filter GetHuman(GetPlayer())",
+    "net puppet: AddEntity + empty pad; no RegisterPlayer"
   ],
-  "multiGlobalStoreFuncs": [
-    {"entry": "0x62F12E0", "class": "retention-role-multi-store", "stores": ["0xB33D940", "0xB33D958", "0xB33D950", "0xB33D960", "0xB33D962", "0xB33D964", "0xB33D966", "0xB33D968", "0xB33D978", "0xB33D988", "0xB33D998", "0xB33D9A8"], "strings": ["ReferenceEntitySelector::Process", "PlayerEntitySelector::Process", "DistanceEntitySelector::Process", "CharacterWithinRangeSelectorWithEntityCache::Process", "ActiveMinionEntitySelector::Process", "DeadMinionEntitySelector::Process"]}
+  "hypotheses": [
+    "PlayerEntitySelector::Process resolves to the live local-player Entity*",
+    "Resynced dword@+8 validity bit is HandleContainer hard-ref equivalent"
+  ],
+  "corrections": [
+    "0x16FAA0 is allocator-pointer resolve (error string), not ObjectID CreateReference"
+  ],
+  "unresolved": [
+    "World/local-player Entity* retention owner",
+    "builder/selector construction cache after player spawn",
+    "main-thread Human update hook site on Resynced"
   ]
 }

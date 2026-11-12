@@ -25,7 +25,7 @@ int main() {
     Expect(!bfc::PlayerRetention::kCallEngine, "retention path never calls the engine");
     Expect(bfc::PlayerRetention::CurrentStage() == bfc::PlayerRetentionStage::Blocked,
            "stage stays blocked until Entity owner is proven");
-    Expect(bfc::PlayerRetention::LeadCount() >= 8u, "offline leads are recorded");
+    Expect(bfc::PlayerRetention::LeadCount() >= 12u, "offline leads include Agent 1 answers");
 
     const std::string text = bfc::PlayerRetention::Describe();
     Expect(text.find("callEngine=off") != std::string::npos, "description says callEngine off");
@@ -33,7 +33,11 @@ int main() {
            "description names PlayerEntitySelector");
     Expect(text.find("0x919F9D0") != std::string::npos, "description records method table");
     Expect(text.find("0x7CA9B70") != std::string::npos, "description records Process candidate");
-    Expect(text.find("0x16FAA0") != std::string::npos, "description records handle resolve");
+    Expect(text.find("0x16FAA0") != std::string::npos, "description records allocator resolve");
+    Expect(text.find("0x50AB0") != std::string::npos, "description records handleDeref sample");
+    Expect(text.find("allocator-pointer") != std::string::npos,
+           "description classifies 0x16FAA0 as allocator resolve");
+    Expect(text.find("PR#28") != std::string::npos, "description cites Agent 1 PR#28 answers");
     Expect(text.find("binary-confirmed") != std::string::npos, "evidence classes are labeled");
     Expect(text.find("source-derived") != std::string::npos, "source-derived rows are labeled");
     Expect(text.find("hypothesis") != std::string::npos, "hypotheses are labeled");
@@ -43,6 +47,8 @@ int main() {
     Expect(graph.find("0x62F12E0") != std::string::npos, "flow graph starts at registrar");
     Expect(graph.find("virtual [vt+0x88]") != std::string::npos,
            "flow graph includes Process virtual tail");
+    Expect(graph.find("handleDeref shape") != std::string::npos,
+           "flow graph records handleDeref shape");
 
     if (g_failed != 0) {
         std::cout << "FAILED " << g_failed << "\n";

@@ -29,8 +29,10 @@ const char* PlayerRetention::StageName(PlayerRetentionStage stage) {
         return "SelectorTableFound";
     case PlayerRetentionStage::ProcessCandidateFound:
         return "ProcessCandidateFound";
-    case PlayerRetentionStage::HandleResolveCandidateFound:
-        return "HandleResolveCandidateFound";
+    case PlayerRetentionStage::AllocatorResolveFound:
+        return "AllocatorResolveFound";
+    case PlayerRetentionStage::HandleDerefShapeFound:
+        return "HandleDerefShapeFound";
     case PlayerRetentionStage::EntityOwnerUnresolved:
         return "EntityOwnerUnresolved";
     case PlayerRetentionStage::Blocked:
@@ -44,8 +46,8 @@ std::size_t PlayerRetention::LeadCount() {
 }
 
 PlayerRetentionStage PlayerRetention::CurrentStage() {
-    // Offline evidence reached handle-resolve on the selector Process candidate,
-    // but the Entity retention owner is still unresolved.
+    // Offline evidence reached allocator resolve + handleDeref shape, but Entity owner
+    // remains unresolved.
     return PlayerRetentionStage::Blocked;
 }
 
@@ -78,15 +80,22 @@ std::string PlayerRetention::FlowGraph() {
         "         table[0] 0x69B05F0  shared ctor wrapper -> 0x755F340\n"
         "         table[1] 0x3016DB0  Alloc(0x30) + vt 0x919F8D0\n"
         "         table[2] 0x7CA9B70  Process candidate\n"
-        "              ├─ 0x16FAA0  object-id/handle table resolve\n"
+        "              ├─ 0x16FAA0  allocator-pointer resolve (manager @ 0xAF676D8)\n"
         "              ├─ 0x1214C00 ref/list clear on selector object\n"
         "              ├─ virtual [vt+0x18]\n"
         "              └─ jmp virtual [vt+0x88]\n"
-        "source-derived expectation (AC4Coop map, not proven here):\n"
-        "  World::GetPlayer / HandleContainer retain builder id across release\n"
+        "  handleDeref shape (many sites; sample 0x50AB0):\n"
+        "    obj = *(qword*)HC; valid = (int32)HC[+8] >> 31; use (obj & valid)\n"
+        "source-derived (Agent 1 PR#28 answers, AC4Coop only):\n"
+        "  GetPlayer = unresolved thiscall; no in-tree m_Player writer\n"
+        "  builder/selector cache fill outside repo\n"
+        "  HandleContainer packed {obj*, soft, hard, objectId}; reload waits m_Object\n"
+        "  Human-update hook esi=Human*; filter GetHuman(GetPlayer())\n"
+        "  net puppet: AddEntity + empty pad; no RegisterPlayer\n"
         "unresolved:\n"
         "  which object owns the live local-player Entity*\n"
-        "  whether any builder/selector construction cache survives player spawn\n";
+        "  whether any builder/selector construction cache survives player spawn\n"
+        "  whether 0x16FAA0 is related to HandleManager::CreateReference(id)\n";
 }
 
 std::string PlayerRetention::Describe() {
@@ -107,8 +116,8 @@ void PlayerRetention::LogGate() {
     Logger::Info(std::string("PlayerRetention ") + kVersion + " callEngine=off");
     Logger::Info(kBlocker);
     Logger::Info(
-        "PlayerEntitySelector table 0x919F9D0; Process candidate 0x7CA9B70; "
-        "handle resolve helper 0x16FAA0");
+        "PlayerEntitySelector table 0x919F9D0; Process 0x7CA9B70; "
+        "allocator resolve 0x16FAA0; handleDeref shape sample 0x50AB0");
 }
 
 }  // namespace bfc

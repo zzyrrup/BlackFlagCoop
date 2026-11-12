@@ -1,37 +1,57 @@
-{
-  "schemaVersion": 1,
-  "milestone": "v0.8.0",
-  "generatedLocal": "2026-11-12T13:40:00 America/Denver",
-  "exeSha256": "19920F34BB2FAC814023EE3C27F0CECA1872E80A2AAFB37C092C419FFF77CC0D",
-  "nativeFactoryConfirmed": false,
-  "cachedBuilderResolved": false,
-  "playerEntityOwnerResolved": false,
-  "candidate": {
-    "version": "0.8.0-dev",
-    "bytes": 105984,
-    "sha256": "DDA35B971307142097AFDA5D5947309C132F16720F7E109AE5F2E9379547E59B",
-    "invokeNativeSpawn": false,
-    "callEngine": false,
-    "deployed": false
-  },
-  "installedAsi": {
-    "version": "0.5.1",
-    "bytes": 99840,
-    "sha256": "63B38877DDA7CC7CD9AB2619F94D3941C37F54C95A435EFE47084DC4CF2A50BE",
-    "preserved": true
-  },
-  "tests": [
-    { "name": "SpawnContract", "result": "pass" },
-    { "name": "PuppetLifecycle", "result": "pass" },
-    { "name": "BuilderPath", "result": "pass" },
-    { "name": "PlayerRetention", "result": "pass" },
-    { "name": "PlayerRetention080", "result": "pass" },
-    { "name": "game_launch_deploy", "result": "not_run" }
-  ],
-  "confirmed": [
-    "PlayerEntitySelector method table 0x919F9D0 registered at 0x62F12E0",
-    "Process candidate 0x7CA9B70 uses handle/object-id resolve 0x16FAA0",
-    "Gates remain default-off; installed ASI untouched"
-  ],
-  "missingLink": "World/local-player Entity* retention owner and builder/selector construction cache are not identified."
+﻿{
+    "schemaVersion":  1,
+    "milestone":  "v0.8.0",
+    "generatedLocal":  "2026-11-12T13:40:00 America/Denver",
+    "exeSha256":  "19920F34BB2FAC814023EE3C27F0CECA1872E80A2AAFB37C092C419FFF77CC0D",
+    "nativeFactoryConfirmed":  false,
+    "cachedBuilderResolved":  false,
+    "playerEntityOwnerResolved":  false,
+    "candidate":  {
+                      "version":  "0.8.0-dev",
+                      "bytes":  106496,
+                      "sha256":  "67C201F083BCE7C0F1C94AFC9C995492ACD292E3B57344C72F1488DC54F6AE14",
+                      "invokeNativeSpawn":  false,
+                      "callEngine":  false,
+                      "deployed":  false
+                  },
+    "installedAsi":  {
+                         "version":  "0.5.1",
+                         "bytes":  99840,
+                         "sha256":  "63B38877DDA7CC7CD9AB2619F94D3941C37F54C95A435EFE47084DC4CF2A50BE",
+                         "preserved":  true
+                     },
+    "tests":  [
+                  {
+                      "name":  "SpawnContract",
+                      "result":  "pass"
+                  },
+                  {
+                      "name":  "PuppetLifecycle",
+                      "result":  "pass"
+                  },
+                  {
+                      "name":  "BuilderPath",
+                      "result":  "pass"
+                  },
+                  {
+                      "name":  "PlayerRetention",
+                      "result":  "pass"
+                  },
+                  {
+                      "name":  "PlayerRetention080",
+                      "result":  "pass"
+                  },
+                  {
+                      "name":  "game_launch_deploy",
+                      "result":  "not_run"
+                  }
+              ],
+    "confirmed":  [
+                      "PlayerEntitySelector method table 0x919F9D0 registered at 0x62F12E0",
+                      "Process candidate 0x7CA9B70 uses allocator-pointer resolve 0x16FAA0",
+                      "handleDeref shape sample at 0x50AB0 (+8 sign bit)",
+                      "Agent 1 PR#28 answers ingested",
+                      "Gates remain default-off; installed ASI untouched"
+                  ],
+    "missingLink":  "World/local-player Entity* retention owner and builder/selector construction cache are not identified."
 }
