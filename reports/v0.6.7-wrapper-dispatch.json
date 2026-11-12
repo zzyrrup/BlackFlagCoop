@@ -1,0 +1,48 @@
+{
+  "schemaVersion": 1,
+  "generatedUtc": "2026-11-12T17:20:00Z",
+  "milestone": "v0.6.7",
+  "exeSha256": "19920F34BB2FAC814023EE3C27F0CECA1872E80A2AAFB37C092C419FFF77CC0D",
+  "wrapper": "0x2E97FC0",
+  "dispatch": {
+    "status": "confirmed",
+    "phaseRegistrar": "0x5CBDFB0",
+    "phaseName": "UpdateActorLOD",
+    "phaseNameLea": "0x5CBE01F",
+    "stub": "0x1A5A70",
+    "stubLeaInRegistrar": "0x5CBE045",
+    "stubStoreAt": "coordinator+0xE18",
+    "stubBody": "add rcx, 0x10; jmp 0x2E97FC0",
+    "jmpSite": "0x1A5A74",
+    "siblingCallbacksInSameBundle": {
+      "+0xE10": "self",
+      "+0xE18": "0x1A5A70",
+      "+0xE20": "0",
+      "+0xE28": "0x67BDB30",
+      "+0xE30": "0x1A5A00"
+    }
+  },
+  "absentDirectEdges": {
+    "e8Callers": 0,
+    "leaXrefs": 0,
+    "absoluteQwords": 0,
+    "movImm64Abs": 0,
+    "listedAsPrimaryPhaseHandler": false
+  },
+  "vmp4RvaHit": {
+    "site": "0x1D75EC58",
+    "classification": "function_bounds_table",
+    "start": "0x2E97FC0",
+    "end": "0x2E9D91E",
+    "isDispatch": false
+  },
+  "relatedConsumerPhase": {
+    "name": "CreateActorsDeferredSingleThreaded",
+    "handler": "0x1AC380",
+    "relationship": "sibling_phase_drains_queue_filled_by_UpdateActorLOD_wrapper"
+  },
+  "coordinatorGateAlignment": {
+    "status": "confirmed",
+    "note": "stub +0x10 makes wrapper [rcx+0x180] == deferred handler [base+0x190]"
+  }
+}
