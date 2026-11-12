@@ -3,7 +3,7 @@
 **Last updated:** 2026-11-12  
 **Machine:** PC1 only  
 **Repo:** https://github.com/zzyrrup/BlackFlagCoop  
-**Branch:** `cursor/v085-vt-owner-ctors-8285` (PR into `cursor/v084-ctor-reverse-8285`; do not push main)  
+**Branch:** `cursor/v080-second-edward-4d8f` (PR into `cursor/v085-vt-owner-ctors-8285`; do not push main)  
 **Initial commit:** `e12e70150656ac80742f10b496f7e5556e7985b7`
 
 This document is the primary human-readable bridge between Cursor (local execution) and ChatGPT (review / next instructions). Update it after every completed milestone.
@@ -25,9 +25,9 @@ Ultimate vision is **not claimed as achieved**. Dual-Edward co-op remains unprov
 
 ## 2. Current development milestone
 
-**v0.6.25 complete** — Owner VT[0] ctors mapped (`0x13612B0` / `0x5781490`); 0 E8 callers (table-dispatched); spatial/neigh ctors init shared `+0x98` enrollment field.
+**v0.8.0 in review** — SpawnNPCParams family closed. Agent 1 delivered AC4Coop source map + clean-room contracts (`docs/v0.8.0-ac4coop-source-map.md`, `docs/v0.8.0-ac4coop-contracts.md`) from upstream `68355c71` (no LICENSE → reference-only). Gate `BFC_SECOND_EDWARD` stays default-off and refused.
 
-Prior: v0.6.5–v0.6.24 preserved. Offline only. No ASI, spawn, or networking change.
+Prior: v0.6.25 complete on `cursor/v085-vt-owner-ctors-8285`. v0.6.5–v0.6.24 preserved. No deploy, no gameplay test, no networking change.
 
 ---
 
@@ -35,8 +35,9 @@ Prior: v0.6.5–v0.6.24 preserved. Offline only. No ASI, spawn, or networking ch
 
 | Item | Value |
 |------|--------|
-| Working in-game ASI | **v0.5.1** |
+| Working in-game ASI | **v0.5.1** (still installed; verified this milestone) |
 | ASI SHA256 | `63B38877DDA7CC7CD9AB2619F94D3941C37F54C95A435EFE47084DC4CF2A50BE` |
+| Candidate ASI | **v0.8.0-dev**, not deployed. SHA256 `A8CB00DB2B95184F5918D3927431AE2AD7799DAAC9CE6466C659F6D5EB5BC145` (102,400 bytes) |
 | Deploy status | **Do not replace** without explicit user approval |
 
 ---
@@ -107,6 +108,7 @@ High-signal offline findings (see `docs/v0.6.*` and `reports/v0.6.*`):
 - **v0.6.23:** Tight-factory callers do **not** LEA key/`0x20F0` (186 records, 0 hits). Helper deep-decode: `0x2336560` position extract; `0x1D25E20` spatial math — not possession. Still no Edward/create path.
 - **v0.6.24:** Outer `0x59D9660` = InstallerA TypeInfo registration only (0 E8). Neighbor/Spatial = `.edata` methods; owner vtables `0x976B2D0`/`0x9236E00`. Still no Edward/create path.
 - **v0.6.25:** Owner VT[0] ctors `0x13612B0`/`0x5781490` (0 E8); spat/neigh ctors init `+0x98` (enrollment side-block field). Still no Edward/create path.
+- **v0.8.0:** Spawn-parameter registrars confirmed (`SpawnNPCParams` `0x80F23E0` hash `0x94D05600`, `SpawnPlayerParams` `0x80F2A20` hash `0x51BA3541`, `SpawnCharacterParams` `0x80F2330` hash `0xFB7FF6A5`). Descriptor stride `0x20`; copy helpers have 0 callers. NPC type-attach in `0x33591C0` installs ctor `0x32FF190` / vt `0x92D1AA0`; slot `+0xC0` is field accessor `0x80F2450`. **No** create/apply callsite. Candidate gate refuses the call.
 
 ---
 
@@ -169,6 +171,8 @@ High-signal offline findings (see `docs/v0.6.*` and `reports/v0.6.*`):
 - Lookup+Alloc cands `0x1B6AFF0`/`0x26D28E0`/`0x2F2C1A0` are **not** on the Outer reverse path.
 - Neighbor/Spatial are **vtable methods** (`.edata 0x976B3E0` / `0x9236E58`); owner table bases `0x976B2D0` (+0x110) / `0x9236E00` (+0x58); installers `0x13612B0` / `0x5563CF0`/`0x6CF34A0` (spatial inits `+0x98`).
 - Owner **VT[0]** ctors: neigh `0x13612B0`, spat `0x5781490` (+ family `0x3D522C0`/`0x5563CF0`/`0x6CF34A0`/`0x6CF3750`); **0 E8** callers; spat/neigh ctors init shared **`+0x98`** field (enrollment side-block offset).
+- Spawn-parameter registrars and hashes listed in `docs/v0.8.0-second-edward-plan.md`. Player/NPC/first-person/boat registrars have **0** direct `E8` callers. `SpawnCharacterParams` is called only by those derived registrars.
+- Descriptor record stride **`0x20`**. Shared `+0` slot `0x53741F0` is `ret`. NPC `+0x18` `0x5E3DB0` and player `+0x18` `0x21F5950` copy a params object via `0x43DCB00`. They are not a world spawn.
 - Input lead `0x187F0550` is action-name bind, not a movement controller.
 - No verified shared entity/ownership edge between input bind path and deferred handler.
 - No Edward, character, archetype, player, or transform string in either worker or the producer wrapper.
@@ -198,48 +202,60 @@ High-signal offline findings (see `docs/v0.6.*` and `reports/v0.6.*`):
 - Helper transform/position extract (`0x2336560` / `0x1D25E20`) equals possession/control (not shown).
 - Expecting a direct `E8 0x59D9660` create site (none; TypeInfo icall only).
 - Expecting E8 callers of owner VT[0] ctors (none; table-dispatched).
+- SpawnNPCParams / SpawnCharacterParams registrars or copy helpers as world factories.
+- Virtual `+0xC0` / `+0x20` after NPC type-attach in `0x33591C0` as a world add (field accessors / handle bookkeeping only).
 
 ---
 
 ## 9. Current blockers
 
-- No confirmed character/Edward factory or archetype reuse path. Queue only enqueues/activates existing objects.
-- Who Allocates then invokes owner VT[0] ctors still open; side-block attach→arming on same instances unproven.
+- No confirmed character/Edward **create/apply** callsite. Spawn-parameter types are serializers and copies. The deferred queue still only updates existing objects.
+- The reflected SpawnNPCParams family is a **dead end** for world create (copy helpers + type-attach virtuals resolved; no world receiver). A new native create lead is required.
+- Who Allocates then invokes owner VT[0] ctors still open; that LOD chain is not the character factory.
 - No verified input→character ownership/control binding.
-- No safe authorized spawn/possession test design yet.
+- No in-game second-Edward test in this milestone. The candidate refuses the call even when `BFC_SECOND_EDWARD=1`.
 - GitHub handoff must stay free of ASI/game binaries.
 
 ---
 
 ## 10. Most recent completed milestone
 
-**v0.6.25 — Owner VT constructors + enrollment +0x98 link**
+**v0.8.0 — Second Edward proof-of-life (gate refuses; reflected params family closed)**
 
 Deliverables:
 
-- `docs/v0.6.25-vt-owner-ctors.md`
-- `reports/v0.6.25-funcs-deep.json`
-- `reports/v0.6.25-summary.json`
-- `reports/v0.6.25-second-edward-feasibility.json`
-- `reports/v085-raw/evidence.txt`
-- `tools/offline/VtOwner085/`
+- `docs/v0.8.0-second-edward-plan.md`
+- `docs/v0.8.0-manual-pc1-checklist.md`
+- `docs/v0.8.0-submit-path.md`
+- `docs/v0.8.0-vtcall-resolve.md`
+- `docs/v0.8.0-ac4coop-source-map.md`
+- `src/game/second_edward.cpp` / `second_edward.h`
+- `tools/second_edward_test/main.cpp`
+- `tools/offline/SpawnPath080/`, `SubmitPath081/`, `VtCall082/`
+- `reports/v0.8.0-spawn-*.json`, `v0.8.0-submit-*.json`, `v0.8.0-vtcall-resolve.json`
+- `reports/v0.8.0-ac4coop-source-map.json`
+- `reports/v0.8.0-validation.json`
 
-v0.6.4–v0.6.24 reports were left in place.
+v0.6.25 and earlier reports were left in place. Installed ASI was not replaced.
 
 ---
 
 ## 11. Next recommended milestone
 
-**v0.6.26 (proposed):** Offline find who Allocates then invokes owner **VT[0]** ctors (`0x13612B0` / `0x5781490`); prove `0xE95E80` side-block attach + arming on those same instances. Still no spawn, deploy, live memory, or PC2 unless separately authorized.
+**v0.8.1 (proposed):** Agent 2 executes P1 of `docs/v0.8.0-ac4coop-contracts.md` (C1→C5 primitives) using the clean-room checklist; Agent 1 stays docs/contracts. Do not transplant AC4Coop x86 addresses/layouts. Still no speculative call, deploy, live memory, or PC2 unless separately authorized.
 
 ---
 
 ## 12. Files changed in the latest milestone
 
-- `docs/v0.6.25-vt-owner-ctors.md`
-- `reports/v0.6.25-*.json`
-- `reports/v085-raw/evidence.txt`
-- `tools/offline/VtOwner085/`
+- `docs/v0.8.0-second-edward-plan.md`
+- `docs/v0.8.0-manual-pc1-checklist.md`
+- `docs/v0.8.0-submit-path.md`
+- `docs/v0.8.0-vtcall-resolve.md`
+- `src/game/second_edward.cpp`, `src/game/second_edward.h`, `src/main.cpp`, `CMakeLists.txt`
+- `tools/second_edward_test/main.cpp`
+- `tools/offline/SpawnPath080/`, `SubmitPath081/`, `VtCall082/`
+- `reports/v0.8.0-*.json`
 - `docs/CHATGPT_HANDOFF.md`
 - `reports/CHATGPT_HANDOFF.json`
 
@@ -270,6 +286,12 @@ v0.6.4–v0.6.24 reports were left in place.
 | Offline factory-feed/possession v0.6.23 (`FactoryFeed083`) | Pass; 0 key-tied factory callers; helpers = transform/position |
 | Offline ctor-reverse/ownership v0.6.24 (`CtorReverse084`) | Pass; Outer=InstallerA LEA only; vtable owners mapped |
 | Offline VT owner ctors v0.6.25 (`VtOwner085`) | Pass; VT[0] ctors; +0x98 enrollment link |
+| Offline spawn-param scan v0.8.0 (`SpawnPath080`) | Pass; serializers found; create callsite absent |
+| Offline submit-path v0.8.0 (`SubmitPath081`) | Pass; copy helpers have 0 callers; no world receiver |
+| Offline vtcall resolve v0.8.0 (`VtCall082`) | Pass; NPC `+0xC0` = field accessor `0x80F2450` |
+| `BlackFlagCoopSecondEdwardTest` / ctest `SecondEdward` | Pass (ALL PASS) |
+| VS 18 2026 x64 Release `BlackFlagCoop.asi` | Pass; SHA256 `A8CB00DB2B95184F5918D3927431AE2AD7799DAAC9CE6466C659F6D5EB5BC145` |
+| Installed ASI still v0.5.1 | Pass; `63B38877DDA7CC7CD9AB2619F94D3941C37F54C95A435EFE47084DC4CF2A50BE` |
 | Subject MSVC RTTI name | **Not found** (game types RTTI-stripped) |
 | Game launch / ASI deploy | **Not performed** |
 | Spawn / inject / live memory | **Not performed** |
@@ -295,6 +317,6 @@ When reviewing the GitHub repository after a Cursor push:
 2. Diff against the previous handoff `milestoneId` / commit.
 3. Treat only **confirmed** items as facts; keep hypotheses labeled.
 4. Propose the **next single milestone** with: objective, in-scope RVAs/files, out-of-scope (spawn/deploy/PC2), required deliverables paths, and acceptance checks.
-5. Prefer **v0.6.26**: who Allocates then invokes owner VT[0] ctors; prove `0xE95E80` + arming on same instances. Do not expect E8 to Outer/owner VT[0] ctors; do not treat helper position extract as possession; do not treat loose fullPattern as proven; do not treat field-offset `0x20F0` as heap size; avoid `+0x61`-only ranking; do not conflate wrap modes with the enrollment gate; do not rely on MSVC RTTI for game types.
+5. Prefer **v0.8.1**: leave SpawnNPCParams closed. Use the AC4Coop source map as a **role checklist** only (builder/selector/duplication/world enroll/drive). Independently rediscover Resynced x64 primitives; never transplant AC4Coop addresses or copy its sources (no LICENSE). Do not call an RVA until a world receiver and its arguments are confirmed.
 6. Do not instruct Cursor to deploy ASI, spawn, use live memory, or touch PC2/save data unless the user explicitly overrides safety.
 7. Return instructions Cursor can execute verbatim on PC1 on a dedicated branch + PR (never push main).

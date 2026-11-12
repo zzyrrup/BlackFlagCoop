@@ -1,0 +1,49 @@
+{
+  "schemaVersion": 1,
+  "milestone": "v0.8.0",
+  "generatedUtc": "2026-11-12T20:20:00Z",
+  "nativeSpawnPathConfirmed": false,
+  "secondActorInstantiated": false,
+  "independentInputImplemented": false,
+  "missingLink": "SpawnNPCParams type-attach virtuals are field accessors (0x80F2450), not a world create; leave this reflected family. See docs/v0.8.0-vtcall-resolve.md.",
+  "vtCallResolution": {
+    "host": "0x33591C0",
+    "npcCtor": "0x32FF190",
+    "npcPrimaryVt": "0x92D1AA0",
+    "slotC0": "0x80F2450",
+    "slotC0Meaning": "field accessor add rcx,0x58",
+    "worldCreate": false
+  },
+  "candidateType": "SpawnNPCParams",
+  "gate": "BFC_SECOND_EDWARD",
+  "gateDefault": "off",
+  "nativeSpawnCallable": false,
+  "build": {
+    "generator": "Visual Studio 18 2026",
+    "architecture": "x64",
+    "config": "Release",
+    "result": "pass",
+    "compiler": "MSVC 19.52.37029.0"
+  },
+  "tests": [
+    {"name": "BlackFlagCoopSecondEdwardTest", "result": "pass", "summary": "ALL PASS"},
+    {"name": "ctest SecondEdward", "result": "pass"},
+    {"name": "VtCall082", "result": "pass"}
+  ],
+  "candidateAsi": {
+    "version": "0.8.0-dev",
+    "path": "build/bin/Release/BlackFlagCoop.asi",
+    "bytes": 102400,
+    "sha256": "A8CB00DB2B95184F5918D3927431AE2AD7799DAAC9CE6466C659F6D5EB5BC145",
+    "deployed": false
+  },
+  "installedAsi": {
+    "version": "0.5.1",
+    "path": "C:\\Games\\AC Black Flag Resynced\\BlackFlagCoop.asi",
+    "bytes": 99840,
+    "sha256": "63B38877DDA7CC7CD9AB2619F94D3941C37F54C95A435EFE47084DC4CF2A50BE",
+    "replaced": false
+  },
+  "gameLaunch": "not_run",
+  "pc2": "untouched"
+}

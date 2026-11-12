@@ -1,0 +1,25 @@
+{
+  "schemaVersion": 1,
+  "milestone": "v0.8.0-ac4coop-contracts",
+  "generatedUtc": "2026-11-12T20:40:00Z",
+  "agent": "Agent1",
+  "upstreamSha": "68355c71eafa0baf913587605e9c330db6166057",
+  "sourceMapDoc": "docs/v0.8.0-ac4coop-source-map.md",
+  "contractsDoc": "docs/v0.8.0-ac4coop-contracts.md",
+  "licensePosture": "clean-room-behavioral-spec-no-source-copy",
+  "verification": {
+    "spotCheckedLines": [249, 261, 294, 307, 337, 545, 572, 589, 706, 727, 811, 855, 1013, 1160, 1293],
+    "result": "pass",
+    "hookSiteCorrection": "Human-update is source-confirmed; phase1.h LinkUpdateAction wording is stale"
+  },
+  "contracts": ["C0", "C1", "C2", "C3", "C4", "C5", "C6", "C7", "C8", "C9", "C10"],
+  "offlineNow": ["P0.1", "P0.2", "P0.3", "P0.4", "P0.5"],
+  "blockedOnAgent2": ["P1.1", "P1.2", "P1.3", "P1.4", "P1.5", "P2.1", "P2.2", "P2.3", "P2.4"],
+  "agent2Pr": 29,
+  "agent2Head": "61510e39593c06488c1a741a1e909755e90b3790",
+  "buildTestThisPass": {
+    "asiRebuild": "not_required_docs_only",
+    "gameLaunch": "not_run",
+    "asiDeploy": false
+  }
+}

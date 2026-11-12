@@ -1,0 +1,32 @@
+{
+  "nameLeas": {
+    "SpawnInventoryParams": [{"site":"0x80F2800","func":"0x80F27E0"}],
+    "SpawnPlayerBoatParams": [{"site":"0x821ABE0","func":"0x821ABC0"}],
+    "SpawnPlayerParams": [{"site":"0x80F2A3C","func":"0x80F2A20"}],
+    "SpawnFirstPersonPlayerParams": [{"site":"0x80F259C","func":"0x80F2580"}],
+    "SpawnCharacterParams": [{"site":"0x80F2350","func":"0x80F2330"}],
+    "SpawnEntityBuilderParams": [{"site":"0x8E02980","func":"0x8E02960"}],
+    "SpawnEntityParams": [{"site":"0x8DFFBB0","func":"0x8DFFB90"}]
+  },
+  "derivedCallers": {
+    "0x80F2A20": [],
+    "0x80F2580": [],
+    "0x821ABC0": [],
+    "0x80F23E0": [],
+    "0x80F27E0": []
+  },
+  "stringsAt": [
+    {"rva":"0xA11E28C","text":"SpawnNPCParams"},
+    {"rva":"0xA11DD92","text":"SpawnPlayerParams"},
+    {"rva":"0xA11DDA4","text":"SpawnFirstPersonPlayerParams"},
+    {"rva":"0xA11DD1C","text":"SpawnPlayerBoatParams"},
+    {"rva":"0xA11DDC1","text":"SpawnCharacterParams"}
+  ],
+  "bodies": [
+    {"entry":"0x80F2A20","decode":"0x80F2A20 push rsi | 0x80F2A21 push rdi | 0x80F2A22 sub rsp,28h | 0x80F2A26 mov rsi,rdx | 0x80F2A29 mov [rdx+38h],rcx | 0x80F2A2D mov rax,[rdx+8] | 0x80F2A31 cmp byte [rax+0Ah],0 | 0x80F2A35 jne short 00000001480F2A5Ah | 0x80F2A37 mov [rsp+20h],rcx | 0x80F2A3C lea rdx,[rel 14A11DD92h] | 0x80F2A43 mov rdi,rcx | 0x80F2A46 mov rcx,rsi | 0x80F2A49 xor r8d,r8d | 0x80F2A4C mov r9d,51BA3541h | 0x80F2A52 call 0000000144572C60h | 0x80F2A57 mov rcx,rdi | 0x80F2A5A mov edi,[rsi+40h] | 0x80F2A5D mov dword [rsi+40h],0 | 0x80F2A64 mov rdx,rsi | 0x80F2A67 call 00000001480F2330h | 0x80F2A6C mov [rsi+40h],edi | 0x80F2A6F mov rcx,rsi | 0x80F2A72 call 0000000144987180h | 0x80F2A77 and byte [rsi+0A3h],0EFh | 0x80F2A7E add rsp,28h | 0x80F2A82 pop rdi | 0x80F2A83 pop rsi | 0x80F2A84 ret"},
+    {"entry":"0x80F2580","decode":"0x80F2580 push rsi | 0x80F2581 push rdi | 0x80F2582 sub rsp,28h | 0x80F2586 mov rsi,rdx | 0x80F2589 mov [rdx+38h],rcx | 0x80F258D mov rax,[rdx+8] | 0x80F2591 cmp byte [rax+0Ah],0 | 0x80F2595 jne short 00000001480F25BAh | 0x80F2597 mov [rsp+20h],rcx | 0x80F259C lea rdx,[rel 14A11DDA4h] | 0x80F25A3 mov rdi,rcx | 0x80F25A6 mov rcx,rsi | 0x80F25A9 xor r8d,r8d | 0x80F25AC mov r9d,0AAB0218Fh | 0x80F25B2 call 0000000144572C60h | 0x80F25B7 mov rcx,rdi | 0x80F25BA mov edi,[rsi+40h] | 0x80F25BD mov dword [rsi+40h],0 | 0x80F25C4 mov rdx,rsi | 0x80F25C7 call 00000001480F2330h | 0x80F25CC mov [rsi+40h],edi | 0x80F25CF mov rcx,rsi | 0x80F25D2 call 0000000144987180h | 0x80F25D7 and byte [rsi+0A3h],0EFh | 0x80F25DE add rsp,28h | 0x80F25E2 pop rdi | 0x80F25E3 pop rsi | 0x80F25E4 ret"},
+    {"entry":"0x821ABC0","decode":"0x821ABC0 push rsi | 0x821ABC1 push rdi | 0x821ABC2 push rbx | 0x821ABC3 sub rsp,30h | 0x821ABC7 mov rsi,rdx | 0x821ABCA mov rdi,rcx | 0x821ABCD mov [rdx+38h],rcx | 0x821ABD1 mov rax,[rdx+8] | 0x821ABD5 cmp byte [rax+0Ah],0 | 0x821ABD9 jne short 000000014821ABF8h | 0x821ABDB mov [rsp+20h],rdi | 0x821ABE0 lea rdx,[rel 14A11DD1Ch] | 0x821ABE7 mov rcx,rsi | 0x821ABEA xor r8d,r8d | 0x821ABED mov r9d,3DF9C374h | 0x821ABF3 call 0000000144572C60h | 0x821ABF8 mov ebx,[rsi+40h] | 0x821ABFB mov dword [rsi+40h],0 | 0x821AC02 mov rcx,rdi | 0x821AC05 mov rdx,rsi | 0x821AC08 call 00000001480F2330h | 0x821AC0D mov [rsi+40h],ebx | 0x821AC10 mov r9,[rel 14B5B9680h] | 0x821AC17 add rdi,0B0h | 0x821AC1E mov rcx,rsi | 0x821AC21 mov edx,69EEFDEEh | 0x821AC26 mov r8,rdi | 0x821AC29 call 000000014033B130h | 0x821AC2E mov rcx,rsi | 0x821AC31 call 0000000144987180h | 0x821AC36 and byte [rsi+0A3h],0EFh | 0x821AC3D add rsp,30h"},
+    {"entry":"0x80F23E0","decode":"0x80F23E0 push rsi | 0x80F23E1 push rdi | 0x80F23E2 sub rsp,28h | 0x80F23E6 mov rsi,rdx | 0x80F23E9 mov [rdx+38h],rcx | 0x80F23ED mov rax,[rdx+8] | 0x80F23F1 cmp byte [rax+0Ah],0 | 0x80F23F5 jne short 00000001480F241Ah | 0x80F23F7 mov [rsp+20h],rcx | 0x80F23FC lea rdx,[rel 14A11E28Ch] | 0x80F2403 mov rdi,rcx | 0x80F2406 mov rcx,rsi | 0x80F2409 xor r8d,r8d | 0x80F240C mov r9d,94D05600h | 0x80F2412 call 0000000144572C60h | 0x80F2417 mov rcx,rdi | 0x80F241A mov edi,[rsi+40h] | 0x80F241D mov dword [rsi+40h],0 | 0x80F2424 mov rdx,rsi | 0x80F2427 call 00000001480F2330h | 0x80F242C mov [rsi+40h],edi | 0x80F242F mov rcx,rsi | 0x80F2432 call 0000000144987180h | 0x80F2437 and byte [rsi+0A3h],0EFh | 0x80F243E add rsp,28h | 0x80F2442 pop rdi | 0x80F2443 pop rsi | 0x80F2444 ret"},
+    {"entry":"0x80F27E0","decode":"0x80F27E0 push rsi | 0x80F27E1 push rdi | 0x80F27E2 push rbx | 0x80F27E3 sub rsp,30h | 0x80F27E7 mov rsi,rdx | 0x80F27EA mov rdi,rcx | 0x80F27ED mov [rdx+38h],rcx | 0x80F27F1 mov rax,[rdx+8] | 0x80F27F5 cmp byte [rax+0Ah],0 | 0x80F27F9 jne short 00000001480F2818h | 0x80F27FB mov [rsp+20h],rdi | 0x80F2800 lea rdx,[rel 14A11DC3Fh] | 0x80F2807 mov rcx,rsi | 0x80F280A xor r8d,r8d | 0x80F280D mov r9d,0D920BAC7h | 0x80F2813 call 0000000144572C60h | 0x80F2818 mov ebx,[rsi+40h] | 0x80F281B mov dword [rsi+40h],0 | 0x80F2822 mov rcx,rdi | 0x80F2825 mov rdx,rsi | 0x80F2828 call 0000000148E02960h | 0x80F282D mov [rsi+40h],ebx | 0x80F2830 mov r8,[rel 14B537CD0h] | 0x80F2837 add rdi,58h | 0x80F283B mov rcx,rsi | 0x80F283E mov rdx,rdi | 0x80F2841 call 0000000140914330h | 0x80F2846 mov rcx,rsi | 0x80F2849 call 0000000144987180h | 0x80F284E and byte [rsi+0A3h],0EFh | 0x80F2855 add rsp,30h | 0x80F2859 pop rbx"}
+  ]
+}

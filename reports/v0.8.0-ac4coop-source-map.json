@@ -1,0 +1,47 @@
+{
+  "schemaVersion": 1,
+  "milestone": "v0.8.0-ac4coop-source-map",
+  "generatedUtc": "2026-11-12T20:30:00Z",
+  "agent": "Agent1-AC4Coop-source-translation",
+  "upstream": {
+    "url": "https://github.com/Kamzik123/AC4Coop",
+    "headSha": "68355c71eafa0baf913587605e9c330db6166057",
+    "license": null,
+    "licenseFilePresent": false,
+    "reusePosture": "reference-only-independent-implementation"
+  },
+  "localMirror": {
+    "path": "C:\\Users\\Frees\\OneDrive\\Documents\\AC4Coop-ref",
+    "sha": "68355c71eafa0baf913587605e9c330db6166057"
+  },
+  "docs": ["docs/v0.8.0-ac4coop-source-map.md"],
+  "lifecycleStepsDocumented": [
+    "cached EntityBuilder+RowSelector acquire/reload",
+    "DuplicationManager Begin/End + RowSelector::Duplicate",
+    "EntityBuilder::BuildEntityWithSelector",
+    "World::AddEntity + GetUnusedPadID hook + optional RegisterPlayer",
+    "behavior disable / HybridLoco ownership",
+    "SetGlobalMatrixInternal + DriveEntity=false + swim kamikaze",
+    "CAS + SetTargetAction + blend-in + 46-slot blend + timeScale",
+    "per-frame Human-update OnFrame orchestration",
+    "DespawnPuppet / world-travel drop / ambient spawn suppress"
+  ],
+  "transplantForbidden": [
+    "x86 absolute addresses",
+    "struct layouts/offsets",
+    "calling conventions",
+    "source file copies"
+  ],
+  "resyncStatus": {
+    "namedApisPresent": false,
+    "spawnNpcParamsFamily": "closed-non-factory",
+    "createPathProven": false,
+    "gate": "BFC_SECOND_EDWARD refused"
+  },
+  "buildTestThisPass": {
+    "asiRebuild": "not_required_docs_only",
+    "secondEdwardTest": "not_run_this_pass",
+    "gameLaunch": "not_run",
+    "asiDeploy": false
+  }
+}

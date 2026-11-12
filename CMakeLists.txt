@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.20)
 
 project(BlackFlagCoop
-    VERSION 0.5.1
+    VERSION 0.8.0
     LANGUAGES CXX
 )
 
@@ -31,6 +31,8 @@ add_library(BlackFlagCoopNet STATIC
     src/game/player_telemetry.h
     src/game/player_probe.cpp
     src/game/player_probe.h
+    src/game/second_edward.cpp
+    src/game/second_edward.h
 )
 
 target_include_directories(BlackFlagCoopNet PUBLIC src)
@@ -131,3 +133,28 @@ if(MSVC)
         /EHsc
     )
 endif()
+
+# Offline second-Edward contract checks. No game process and no native calls.
+add_executable(BlackFlagCoopSecondEdwardTest
+    tools/second_edward_test/main.cpp
+)
+
+target_link_libraries(BlackFlagCoopSecondEdwardTest PRIVATE BlackFlagCoopNet)
+
+set_target_properties(BlackFlagCoopSecondEdwardTest PROPERTIES
+    RUNTIME_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}/bin"
+)
+
+if(MSVC)
+    target_compile_options(BlackFlagCoopSecondEdwardTest PRIVATE
+        /W4
+        /permissive-
+        /EHsc
+    )
+endif()
+
+enable_testing()
+add_test(
+    NAME SecondEdward
+    COMMAND BlackFlagCoopSecondEdwardTest
+)

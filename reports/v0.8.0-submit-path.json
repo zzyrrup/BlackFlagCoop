@@ -1,0 +1,69 @@
+{
+  "schemaVersion": 1,
+  "milestone": "v0.8.0-submit",
+  "bodies": [
+    {"entry":"0x5E3DB0","role":"npc_params_copy","calls":[{"target":"0x43DCB00","role":"dest_object_helper"},{"target":"0x5E3DF0","role":"shared_field_copy"}],"text":"0x5E3DB0 push rsi | 0x5E3DB1 push rdi | 0x5E3DB2 push rbx | 0x5E3DB3 sub rsp,20h | 0x5E3DB7 mov esi,r8d | 0x5E3DBA mov rdi,rcx | 0x5E3DBD lea rcx,[rel 14B5378F0h] | 0x5E3DC4 call 00000001443DCB00h | 0x5E3DC9 mov rbx,rax | 0x5E3DCC mov rcx,rdi | 0x5E3DCF mov rdx,rax | 0x5E3DD2 mov r8d,esi | 0x5E3DD5 call 00000001405E3DF0h | 0x5E3DDA mov rax,rbx | 0x5E3DDD add rsp,20h | 0x5E3DE1 pop rbx | 0x5E3DE2 pop rdi | 0x5E3DE3 pop rsi | 0x5E3DE4 ret"},
+    {"entry":"0x21F5950","role":"player_params_copy","calls":[{"target":"0x43DCB00","role":"dest_object_helper"},{"target":"0x5E3DF0","role":"shared_field_copy"}],"text":"0x21F5950 push rsi | 0x21F5951 push rdi | 0x21F5952 push rbx | 0x21F5953 sub rsp,20h | 0x21F5957 mov ebx,r8d | 0x21F595A mov rsi,rcx | 0x21F595D lea rcx,[rel 14B537FC8h] | 0x21F5964 call 00000001443DCB00h | 0x21F5969 mov rdi,rax | 0x21F596C mov rcx,rsi | 0x21F596F mov rdx,rax | 0x21F5972 mov r8d,ebx | 0x21F5975 call 00000001405E3DF0h | 0x21F597A cmp ebx,4 | 0x21F597D je short 00000001421F598Bh | 0x21F597F mov al,[rsi+0C0h] | 0x21F5985 mov [rdi+0C0h],al | 0x21F598B add rsi,0B0h | 0x21F5992 mov rdx,rdi | 0x21F5995 add rdx,0B0h | 0x21F599C mov rcx,rsi | 0x21F599F mov r8d,ebx | 0x21F59A2 call qword [rel 14BE568E0h] | 0x21F59A8 mov rax,rdi | 0x21F59AB add rsp,20h | 0x21F59AF pop rbx | 0x21F59B0 pop rdi | 0x21F59B1 pop rsi | 0x21F59B2 ret"},
+    {"entry":"0x5E3DF0","role":"shared_field_copy","calls":[{"target":"0x43DCB00","role":"dest_object_helper"},{"target":"0x5E3E60","role":""},{"target":"0x4401410","role":""}],"text":"0x5E3DF0 push rsi | 0x5E3DF1 push rdi | 0x5E3DF2 push rbx | 0x5E3DF3 sub rsp,20h | 0x5E3DF7 mov esi,r8d | 0x5E3DFA mov rdi,rcx | 0x5E3DFD lea rcx,[rel 14B5377F8h] | 0x5E3E04 call 00000001443DCB00h | 0x5E3E09 mov rbx,rax | 0x5E3E0C mov rcx,rdi | 0x5E3E0F mov rdx,rax | 0x5E3E12 mov r8d,esi | 0x5E3E15 call 00000001405E3E60h | 0x5E3E1A lea rdx,[rdi+0A8h] | 0x5E3E21 lea rcx,[rbx+0A8h] | 0x5E3E28 mov r8d,esi | 0x5E3E2B xor r9d,r9d | 0x5E3E2E call 0000000144401410h | 0x5E3E33 add rdi,58h | 0x5E3E37 lea rdx,[rbx+58h] | 0x5E3E3B mov rcx,rdi | 0x5E3E3E mov r8d,esi | 0x5E3E41 call qword [rel 14BE56B40h] | 0x5E3E47 mov rax,rbx | 0x5E3E4A add rsp,20h | 0x5E3E4E pop rbx | 0x5E3E4F pop rdi | 0x5E3E50 pop rsi | 0x5E3E51 ret"},
+    {"entry":"0x43DCB00","role":"dest_object_helper","calls":[],"text":"0x43DCB00 push r15 | 0x43DCB02 push r14 | 0x43DCB04 push r13 | 0x43DCB06 push r12 | 0x43DCB08 push rsi | 0x43DCB09 push rdi | 0x43DCB0A push rbp | 0x43DCB0B push rbx | 0x43DCB0C sub rsp,38h | 0x43DCB10 mov rax,rdx | 0x43DCB13 test rdx,rdx | 0x43DCB16 je short 00000001443DCB29h | 0x43DCB18 add rsp,38h | 0x43DCB1C pop rbx | 0x43DCB1D pop rbp | 0x43DCB1E pop rdi | 0x43DCB1F pop rsi | 0x43DCB20 pop r12 | 0x43DCB22 pop r13 | 0x43DCB24 pop r14 | 0x43DCB26 pop r15 | 0x43DCB28 ret"},
+    {"entry":"0x4572C60","role":"type_name_hash_register","calls":[{"target":"0x4572D20","role":""}],"text":"0x4572C60 push rsi | 0x4572C61 sub rsp,30h | 0x4572C65 mov eax,[rcx+0B8h] | 0x4572C6B cmp eax,1 | 0x4572C6E je near 0000000144572CF5h | 0x4572C74 cmp eax,3 | 0x4572C77 je near 0000000144572D14h | 0x4572C7D mov eax,r9d | 0x4572C80 mov r10,rax | 0x4572C83 shl r10,15h | 0x4572C87 not rax | 0x4572C8A add rax,r10 | 0x4572C8D mov r10,rax | 0x4572C90 shr r10,18h | 0x4572C94 xor r10,rax | 0x4572C97 imul rax,r10,109h | 0x4572C9E mov r10,rax | 0x4572CA1 shr r10,0Eh | 0x4572CA5 xor r10,rax | 0x4572CA8 lea rax,[r10+r10*4] | 0x4572CAC lea rax,[r10+rax*4] | 0x4572CB0 mov r10,rax | 0x4572CB3 shr r10,1Ch | 0x4572CB7 xor r10,rax | 0x4572CBA mov rax,r10 | 0x4572CBD shl rax,1Fh | 0x4572CC1 add rax,r10 | 0x4572CC4 mov r10,[rel 14AF72298h] | 0x4572CCB dec r10 | 0x4572CCE and r10,rax | 0x4572CD1 mov rax,[rel 14AF722A8h] | 0x4572CD8 shl r10,4 | 0x4572CDC mov r10d,[rax+r10+0Ch] | 0x4572CE1 mov r11,[rel 14AF722A0h] | 0x4572CE8 mov rsi,r10 | 0x4572CEB shl rsi,4 | 0x4572CEF cmp [r11+rsi],r9d | 0x4572CF3 jne short 0000000144572D0Ah | 0x4572CF5 mov qword [rsp+20h],0 | 0x4572CFE call 0000000144572D20h | 0x4572D03 nop | 0x4572D04 add rsp,30h | 0x4572D08 pop rsi | 0x4572D09 ret"},
+    {"entry":"0x1207200","role":"field_visitor","calls":[{"target":"0x10607C0","role":""},{"target":"0x16F260","role":""}],"text":"0x1207200 push rsi | 0x1207201 push rdi | 0x1207202 sub rsp,28h | 0x1207206 mov rsi,rdx | 0x1207209 mov rdi,rcx | 0x120720C call 00000001410607C0h | 0x1207211 mov r9,[rel 14B5377E0h] | 0x1207218 lea r8,[rdi+0A8h] | 0x120721F lea rdx,[rel 14A99A650h] | 0x1207226 mov rcx,rsi | 0x1207229 call 000000014016F260h | 0x120722E mov r9,[rel 14B5377F0h] | 0x1207235 add rdi,58h | 0x1207239 lea rdx,[rel 14BE56AC8h] | 0x1207240 mov rcx,rsi | 0x1207243 mov r8,rdi | 0x1207246 add rsp,28h | 0x120724A pop rdi | 0x120724B pop rsi | 0x120724C jmp 0000000140035C60h | 0x1207251 int3"}
+  ],
+  "directCallers": {
+    "0x5E3DB0": [],"uniqueFuncsShown":0,"sitesFound":0},
+    "0x21F5950": [],"uniqueFuncsShown":0,"sitesFound":0},
+    "0x5E3DF0": [{"site":"0x5E3DD5","func":"0x5E3DCC","known":""},{"site":"0x21F5975","func":"0x21F595A","known":""},{"site":"0x6454955","func":"0x645493A","known":""},{"site":"0x80F2615","func":"0x80F260C","known":""}],"uniqueFuncsShown":4,"sitesFound":4},
+    "0x12071F0": [],"uniqueFuncsShown":0,"sitesFound":0},
+    "0x64099B0": [],"uniqueFuncsShown":0,"sitesFound":0},
+    "0x80F23E0": [],"uniqueFuncsShown":0,"sitesFound":0},
+    "0x80F2A20": [],"uniqueFuncsShown":0,"sitesFound":0}
+  },
+  "callerDepth2": [
+    {"root":"0x5E3DB0","callers":[]},
+    {"root":"0x21F5950","callers":[]}
+  ],
+  "pointerSlots": {
+    "0x5E3DB0": [{"rva":"0x92D1AC0","section":".edata"}],
+    "0x21F5950": [{"rva":"0x92D1C80","section":".edata"}],
+    "0x5E3DF0": [{"rva":"0x92D19E0","section":".edata"}],
+    "0x1207200": [{"rva":"0x92D19D8","section":".edata"}],
+    "0x80F23E0": [{"rva":"0x92D1AB0","section":".edata"}],
+    "0x80F2A20": [{"rva":"0x92D1C70","section":".edata"}]
+  },
+  "hashImmediates": {
+    "0x94D05600": [{"site":"0x80F240E","section":".impdata","func":"0x80F23E0","known":"SpawnNPCParams_registrar"},{"site":"0xA0352D4","section":".edata","func":"0xA034D95","known":""}],
+    "0x51BA3541": [{"site":"0x80F2A4E","section":".impdata","func":"0x80F2A20","known":"SpawnPlayerParams_registrar"},{"site":"0xA035324","section":".edata","func":"0xA034D95","known":""}]
+  },
+  "ripUsers": [
+    {"site":"0x9EFE8D","func":"0x9EF7B2","known":"","target":"0xA10978E","kind":"lea"},
+    {"site":"0x1ED260F","func":"0x1ED0FF0","known":"","target":"0xA145BA5","kind":"lea"},
+    {"site":"0x1ED261D","func":"0x1ED0FF0","known":"","target":"0xA173E65","kind":"lea"},
+    {"site":"0x1ED274A","func":"0x1ED0FF0","known":"","target":"0xA0FDEBB","kind":"lea"},
+    {"site":"0x21291AE","func":"0x2129000","known":"","target":"0xA102E1F","kind":"lea"},
+    {"site":"0x3DD17B0","func":"0x3DD1720","known":"","target":"0xA112559","kind":"lea"},
+    {"site":"0x4C26FE6","func":"0x4C260F6","known":"","target":"0xA13FE51","kind":"lea"},
+    {"site":"0x4C27147","func":"0x4C260F6","known":"","target":"0xA13FE51","kind":"lea"},
+    {"site":"0x4C27792","func":"0x4C27180","known":"","target":"0xA13FE51","kind":"lea"},
+    {"site":"0x4C27903","func":"0x4C27180","known":"","target":"0xA13FE51","kind":"lea"},
+    {"site":"0x79EB873","func":"0x79EB800","known":"","target":"0xA121C06","kind":"lea"},
+    {"site":"0x80F23FC","func":"0x80F23E0","known":"SpawnNPCParams_registrar","target":"0xA11E28C","kind":"lea"},
+    {"site":"0x80F2A3C","func":"0x80F2A20","known":"SpawnPlayerParams_registrar","target":"0xA11DD92","kind":"lea"},
+    {"site":"0x867E6F1","func":"0x867E5E3","known":"","target":"0xA13FE51","kind":"lea"},
+    {"site":"0x867E802","func":"0x867E5E3","known":"","target":"0xA13FE51","kind":"lea"},
+    {"site":"0x8E02980","func":"0x8E02960","known":"SpawnEntityBuilderParams_registrar","target":"0xA11DDF0","kind":"lea"}
+  ],
+  "ac4NameStrings": [
+    {"needle":"AddEntity","rva":"0xA0FDEBB","section":".edata","text":"OnPostAddEntity"},
+    {"needle":"Duplicate","rva":"0xA102E1F","section":".edata","text":"Duplicate reference to 0x%llx"},
+    {"needle":"Duplicate","rva":"0xA10978E","section":".edata","text":"Duplicated Request"},
+    {"needle":"Duplicate","rva":"0xA112559","section":".edata","text":"CutResultDuplicateAfterFailClothObject"},
+    {"needle":"SpawnPlayerParams","rva":"0xA11DD92","section":".edata","text":"SpawnPlayerParams"},
+    {"needle":"EntityBuilder","rva":"0xA11DDF0","section":".edata","text":"SpawnEntityBuilderParams"},
+    {"needle":"SpawnNPCParams","rva":"0xA11E28C","section":".edata","text":"SpawnNPCParams"},
+    {"needle":"Duplicate","rva":"0xA121C06","section":".edata","text":"allowDuplicates"},
+    {"needle":"Duplicate","rva":"0xA125F8F","section":".edata","text":"trianglesWithDuplicatedEdges"},
+    {"needle":"Duplicate","rva":"0xA13FE51","section":".edata","text":"Duplicate section"},
+    {"needle":"AddEntity","rva":"0xA145BA5","section":".edata","text":"FinalizeAddEntityToWorldBlock::Begin"},
+    {"needle":"AddEntity","rva":"0xA173E65","section":".edata","text":"FinalizeAddEntityToWorldBlock::End"}
+  ]
+}
