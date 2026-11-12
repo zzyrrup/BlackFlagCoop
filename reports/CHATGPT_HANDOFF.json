@@ -1,46 +1,65 @@
 {
   "schemaVersion": 1,
-  "generatedUtc": "2026-11-12T17:10:00Z",
+  "generatedUtc": "2026-11-12T16:46:11Z",
   "handoffFor": "ChatGPT",
   "executor": "Cursor",
   "machine": "PC1",
   "repository": {
     "url": "https://github.com/zzyrrup/BlackFlagCoop",
     "defaultBranch": "main",
-    "featureBranch": "cursor/v065-queue-worker-decode-8285",
-    "baseBranch": "cursor/v065-deferred-queue-worker-007d",
+    "featureBranch": "cursor/v070-session-panel-ba61",
+    "baseBranch": "cursor/v065-queue-worker-decode-8285",
     "doNotPushMain": true,
     "initialCommit": "e12e70150656ac80742f10b496f7e5556e7985b7"
   },
   "project": {
     "name": "BlackFlagCoop",
     "goal": "Research path toward co-op for AC Black Flag Resynced (two Edwards / shared world / LAN-internet); not claimed achieved",
-    "functionalityChangedByThisMilestone": false
+    "functionalityChangedByThisMilestone": true,
+    "functionalityNote": "Candidate plugin logs an idle session roster and can draw it when BFC_SESSION_PANEL=1. Installed v0.5.1 was not replaced. No socket, spawn, or protocol change."
   },
   "milestone": {
-    "currentId": "v0.6.6",
-    "currentTitle": "Deferred queue producers",
-    "status": "complete",
-    "priorPreserved": ["v0.6.4", "v0.6.5"]
+    "currentId": "v0.7.0",
+    "currentTitle": "Gated co-op session roster panel",
+    "status": "automated_complete_gameplay_not_run",
+    "priorPreserved": ["v0.6.4", "v0.6.5", "v0.6.6"]
   },
   "asi": {
     "version": "0.5.1",
     "sha256": "63B38877DDA7CC7CD9AB2619F94D3941C37F54C95A435EFE47084DC4CF2A50BE",
+    "installedBytes": 99840,
+    "installedPath": "C:\\Games\\AC Black Flag Resynced\\BlackFlagCoop.asi",
+    "installedHashRechecked": true,
     "deployAuthorized": false,
-    "preserveWorkingAsi": true
+    "preserveWorkingAsi": true,
+    "candidate": {
+      "version": "0.7.0-dev",
+      "path": "build/bin/Release/BlackFlagCoop.asi",
+      "bytes": 112640,
+      "sha256": "EF7EB82D3F6CAAB00BFBED350BACCCFD0A2D88E56F8D023BFD62821C3C7262A0",
+      "deployed": false
+    }
   },
   "game": {
     "title": "Assassin's Creed Black Flag Resynced",
     "version": "1.0.6",
     "executable": "ACBlackFlag.exe",
-    "exeSha256": "19920F34BB2FAC814023EE3C27F0CECA1872E80A2AAFB37C092C419FFF77CC0D"
+    "exeSha256": "19920F34BB2FAC814023EE3C27F0CECA1872E80A2AAFB37C092C419FFF77CC0D",
+    "launchedThisMilestone": false
   },
   "build": {
-    "asiRebuilt": false,
-    "offlineTools": ["tools/offline/QueueWorker065", "tools/offline/QueueProducer066"]
+    "asiRebuilt": true,
+    "generator": "Visual Studio 18 2026",
+    "architecture": "x64",
+    "config": "Release",
+    "result": "pass",
+    "warnings": 0,
+    "offlineTools": ["tools/offline/QueueWorker065", "tools/offline/QueueProducer066", "tools/session_panel_test"]
   },
   "network": {
     "changesAuthorized": false,
+    "protocolChanged": false,
+    "initializeAsiOpensSocket": false,
     "pc2Untouched": true
   },
   "engineFindings": {
@@ -48,7 +67,8 @@
       "v0.6.5: slot={ptr@0,f32@8}; workers 0x725400/0xE95E80 on subject",
       "v0.6.6: enqueue helper 0x2E97B60(coordinator,object); wrapper 0x2E97FC0",
       "Post-enqueue sets object+0x61 bit2; 0x725400 clears it",
-      "No Edward/create/input path on producer or consumer"
+      "No Edward/create/input path on producer or consumer",
+      "v0.7.0 panel does not use those RVAs and does not spawn"
     ],
     "keyRvas": {
       "deferredHandler": "0x1AC380",
@@ -60,11 +80,13 @@
     }
   },
   "confirmed": [
-    "ASI v0.5.1 preserved; no deploy",
+    "Installed ASI v0.5.1 hash unchanged on 2026-11-12",
+    "Candidate ASI SHA256 EF7EB82D3F6CAAB00BFBED350BACCCFD0A2D88E56F8D023BFD62821C3C7262A0 differs from v0.5.1",
+    "Session panel model covers idle, host waiting, active, client, disconnect, leaving, and error without an in-world Edward claim",
+    "Overlay stays off unless BFC_SESSION_PANEL is 1, on, overlay, or true",
+    "Release build and ctest SessionPanel passed",
     "0x2E97B60 enqueues object pointers into +0xAC0 with consumer packing",
-    "Only callers of enqueue are inside 0x2E97FC0 (3 sites)",
-    "object+0x61 bit 0x04 set on enqueue, cleared in 0x725400",
-    "No Edward strings on producer path"
+    "No Edward strings on the v0.6.6 producer path"
   ],
   "hypotheses": [
     "0x2E97FC0 is phase-dispatched like 0x1AC380",
@@ -72,30 +94,37 @@
     "0x160 side block is activation/controller-related"
   ],
   "blockers": [
+    "In-game panel appearance is unverified",
     "Subject type/RTTI unknown",
     "0x2E97FC0 registration unknown",
     "No input/possession path",
     "Spawn tests not authorized"
   ],
   "mostRecentCompletedMilestone": {
-    "id": "v0.6.6",
-    "docs": ["docs/v0.6.6-deferred-queue-producers.md"],
+    "id": "v0.7.0",
+    "docs": [
+      "docs/v0.7.0-implementation-plan.md",
+      "docs/v0.7.0-manual-pc1-checklist.md"
+    ],
     "reports": [
-      "reports/v0.6.6-enqueue-helper.json",
-      "reports/v0.6.6-producer-scan-summary.json",
-      "reports/v0.6.6-second-edward-feasibility.json",
-      "reports/v066-raw/evidence.txt"
+      "reports/v0.7.0-validation.json",
+      "reports/v0.7.0-build-log.txt",
+      "reports/v0.7.0-session-panel-test.txt"
     ]
   },
   "nextRecommendedMilestone": {
-    "id": "v0.6.7",
-    "title": "Enqueue wrapper dispatch and subject type recovery",
-    "primary": ["registration of 0x2E97FC0", "subject vtable/RTTI"],
-    "forbidden": ["spawn", "deploy", "live memory", "PC2", "save-data", "force-push main"]
+    "id": "v0.7.0-manual-then-localhost-session",
+    "title": "User checks the idle panel, then a later change feeds it from a localhost Session",
+    "primary": [
+      "docs/v0.7.0-manual-pc1-checklist.md",
+      "SessionPanelInput from an existing Session on localhost"
+    ],
+    "forbidden": ["spawn", "deploy", "live memory", "PC2", "save-data", "force-push main", "game launch before the user asks"]
   },
   "tests": [
-    { "name": "QueueProducer066_build_scan", "result": "pass" },
-    { "name": "enqueue_helper_packing_match", "result": "pass" },
+    { "name": "SessionPanel_ctest_Release", "result": "pass" },
+    { "name": "BlackFlagCoopSessionPanelTest", "result": "pass" },
+    { "name": "installed_asi_hash_recheck", "result": "pass" },
     { "name": "game_launch_deploy", "result": "not_run" },
     { "name": "spawn_live_memory", "result": "not_run" }
   ],
@@ -110,11 +139,11 @@
     "priorMilestonesPreserved": true
   },
   "chatgptNextReviewInstructions": [
-    "Read docs/CHATGPT_HANDOFF.md and this JSON first",
-    "Review v0.6.6 PR; preserve v0.6.4/v0.6.5 history",
-    "Separate confirmed vs hypotheses",
-    "Propose v0.6.7: 0x2E97FC0 dispatch + subject RTTI",
-    "Do not authorize deploy/spawn/live memory/PC2 unless user overrides",
-    "Return PC1 branch+PR instructions"
+    "Read docs/CHATGPT_HANDOFF.md, this JSON, and reports/v0.7.0-validation.json first",
+    "The session panel is a placeholder roster, not a second Edward",
+    "Automated build and SessionPanel tests passed; in-game appearance is unverified",
+    "Next user action is the manual checklist; next code step is a localhost session feeding the same model",
+    "Do not authorize deploy/spawn/live memory/PC2 unless the user overrides",
+    "Return PC1 branch+PR instructions and never push main"
   ]
 }

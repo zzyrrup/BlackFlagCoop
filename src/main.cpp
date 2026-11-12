@@ -4,6 +4,8 @@
 #include "logger.h"
 #include "network/network.h"
 #include "splash.h"
+#include "ui/session_overlay.h"
+#include "ui/session_panel.h"
 
 #include <Windows.h>
 
@@ -11,7 +13,24 @@
 
 namespace {
 
-constexpr const char* kPluginVersion = "0.5.1";
+constexpr const char* kPluginVersion = bfc::kSessionPanelVersion;
+
+void LogSessionPanelLines(const std::string& text) {
+    std::string line;
+    for (char ch : text) {
+        if (ch == '\n') {
+            if (!line.empty()) {
+                bfc::Logger::Info("SessionPanel: " + line);
+            }
+            line.clear();
+        } else if (ch != '\r') {
+            line.push_back(ch);
+        }
+    }
+    if (!line.empty()) {
+        bfc::Logger::Info("SessionPanel: " + line);
+    }
+}
 
 // 0 = not started, 1 = initialization in progress or finished.
 volatile LONG g_initializeOnce = 0;
@@ -49,7 +68,7 @@ extern "C" __declspec(dllexport) void InitializeASI() {
         std::to_string(static_cast<unsigned long long>(processId)));
     bfc::Logger::Info("Initialization timestamp " + timestamp);
     bfc::Logger::Info(
-        "Phase: v0.5.1 safe runtime diagnostics (no full-module scans at init)");
+        "Phase: v0.7.0-dev session panel (gated overlay, no spawn, no session socket)");
 
     // Prepare Winsock foundation only. Do not open host/client sessions yet.
     if (bfc::Network::Initialize()) {
@@ -81,6 +100,31 @@ extern "C" __declspec(dllexport) void InitializeASI() {
         bfc::Logger::Info("Startup splash requested");
     } else {
         bfc::Logger::Info("Startup splash could not be started");
+    }
+
+    // Idle roster only. Do not host, join, scan memory, or claim a second Edward.
+    const bfc::SessionPanelSnapshot panel =
+        bfc::BuildSessionPanel(bfc::MakeIdleSessionPanelInput());
+    const std::string panelText = bfc::RenderSessionPanel(panel);
+    bfc::Logger::Info("Session panel snapshot (sockets closed, spawn disabled)");
+    LogSessionPanelLines(panelText);
+    if (bfc::SessionPanelClaimsInWorldEdward(panel)) {
+        bfc::Logger::Info("Session panel safety fault: in-world Edward claim");
+    } else {
+        bfc::Logger::Info("Session panel safety: no in-world second Edward");
+    }
+
+    if (bfc::SessionPanelDisplayModeFromEnvironment() ==
+        bfc::SessionPanelDisplayMode::Overlay) {
+        if (bfc::StartSessionPanelOverlay(panelText)) {
+            bfc::Logger::Info(
+                "Session panel overlay started (BFC_SESSION_PANEL opt-in)");
+        } else {
+            bfc::Logger::Info("Session panel overlay requested but could not start");
+        }
+    } else {
+        bfc::Logger::Info(
+            "Session panel overlay disabled (default). Set BFC_SESSION_PANEL=1 to draw.");
     }
 }
 

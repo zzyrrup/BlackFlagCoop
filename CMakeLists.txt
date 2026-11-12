@@ -1,7 +1,9 @@
 cmake_minimum_required(VERSION 3.20)
 
+# Candidate sources identify themselves as v0.7.0-dev at runtime.
+# The installed in-game ASI remains v0.5.1 and must not be replaced by this build.
 project(BlackFlagCoop
-    VERSION 0.5.1
+    VERSION 0.7.0
     LANGUAGES CXX
 )
 
@@ -31,6 +33,8 @@ add_library(BlackFlagCoopNet STATIC
     src/game/player_telemetry.h
     src/game/player_probe.cpp
     src/game/player_probe.h
+    src/ui/session_panel.cpp
+    src/ui/session_panel.h
 )
 
 target_include_directories(BlackFlagCoopNet PUBLIC src)
@@ -55,6 +59,8 @@ add_library(BlackFlagCoop SHARED
     src/main.cpp
     src/splash.cpp
     src/splash.h
+    src/ui/session_overlay.cpp
+    src/ui/session_overlay.h
 )
 
 target_link_libraries(BlackFlagCoop PRIVATE
@@ -131,3 +137,28 @@ if(MSVC)
         /EHsc
     )
 endif()
+
+# Offline session-panel checks. No game process, no sockets, no overlay window.
+add_executable(BlackFlagCoopSessionPanelTest
+    tools/session_panel_test/main.cpp
+)
+
+target_link_libraries(BlackFlagCoopSessionPanelTest PRIVATE BlackFlagCoopNet)
+
+set_target_properties(BlackFlagCoopSessionPanelTest PROPERTIES
+    RUNTIME_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}/bin"
+)
+
+if(MSVC)
+    target_compile_options(BlackFlagCoopSessionPanelTest PRIVATE
+        /W4
+        /permissive-
+        /EHsc
+    )
+endif()
+
+enable_testing()
+add_test(
+    NAME SessionPanel
+    COMMAND BlackFlagCoopSessionPanelTest
+)

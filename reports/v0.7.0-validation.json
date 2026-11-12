@@ -1,0 +1,76 @@
+{
+  "schemaVersion": 1,
+  "generatedUtc": "2026-11-12T16:46:11Z",
+  "milestone": "v0.7.0",
+  "machine": "PC1",
+  "branch": "cursor/v070-session-panel-ba61",
+  "baseBranch": "cursor/v065-queue-worker-decode-8285",
+  "verticalSlice": "gated co-op session roster panel",
+  "gameplayTest": "not_run",
+  "gameLaunched": false,
+  "saveLoaded": false,
+  "deployed": false,
+  "pc2Untouched": true,
+  "protocolChanged": false,
+  "spawnAttempted": false,
+  "installedAsi": {
+    "version": "0.5.1",
+    "path": "C:\\Games\\AC Black Flag Resynced\\BlackFlagCoop.asi",
+    "bytes": 99840,
+    "sha256": "63B38877DDA7CC7CD9AB2619F94D3941C37F54C95A435EFE47084DC4CF2A50BE",
+    "preserved": true
+  },
+  "candidateAsi": {
+    "version": "0.7.0-dev",
+    "path": "build/bin/Release/BlackFlagCoop.asi",
+    "bytes": 112640,
+    "sha256": "EF7EB82D3F6CAAB00BFBED350BACCCFD0A2D88E56F8D023BFD62821C3C7262A0",
+    "config": "Release",
+    "generator": "Visual Studio 18 2026",
+    "architecture": "x64",
+    "differsFromInstalled": true,
+    "deployed": false
+  },
+  "build": {
+    "commandConfigure": "cmake -S . -B build -G \"Visual Studio 18 2026\" -A x64",
+    "commandBuild": "cmake --build build --config Release --parallel",
+    "result": "pass",
+    "warnings": 0,
+    "log": "reports/v0.7.0-build-log.txt"
+  },
+  "tests": [
+    {
+      "name": "ctest SessionPanel Release",
+      "command": "ctest --test-dir build -C Release --output-on-failure",
+      "result": "pass",
+      "detail": "1/1 passed"
+    },
+    {
+      "name": "BlackFlagCoopSessionPanelTest",
+      "result": "pass",
+      "detail": "ALL PASSED",
+      "log": "reports/v0.7.0-session-panel-test.txt"
+    },
+    {
+      "name": "game_launch_deploy",
+      "result": "not_run"
+    },
+    {
+      "name": "spawn_live_memory",
+      "result": "not_run"
+    }
+  ],
+  "behavior": {
+    "defaultDisplay": "log only",
+    "overlayOptIn": "BFC_SESSION_PANEL=1|on|overlay|true",
+    "initializeAsiOpensSocket": false,
+    "inWorldEdwardClaim": false,
+    "manualChecklist": "docs/v0.7.0-manual-pc1-checklist.md"
+  },
+  "limitations": [
+    "Overlay shows the idle roster captured at InitializeASI. It does not follow a live session because the plugin still does not host or join.",
+    "Ready flags exist on the panel model and are covered by the offline test. Nothing in the loaded plugin sets them.",
+    "No second Edward, no campaign sync, and no LAN session was tested.",
+    "Passing the automated tests does not mean the sidebar looks correct in game. That check is the manual checklist."
+  ]
+}

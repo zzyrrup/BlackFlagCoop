@@ -3,7 +3,7 @@
 **Last updated:** 2026-11-12  
 **Machine:** PC1 only  
 **Repo:** https://github.com/zzyrrup/BlackFlagCoop  
-**Branch:** `cursor/v065-queue-worker-decode-8285` (PR into `cursor/v065-deferred-queue-worker-007d`; do not push main)  
+**Branch:** `cursor/v070-session-panel-ba61` (PR into `cursor/v065-queue-worker-decode-8285`; do not push main)  
 **Initial commit:** `e12e70150656ac80742f10b496f7e5556e7985b7`
 
 This document is the primary human-readable bridge between Cursor (local execution) and ChatGPT (review / next instructions). Update it after every completed milestone.
@@ -25,9 +25,9 @@ Ultimate vision is **not claimed as achieved**. Dual-Edward co-op remains unprov
 
 ## 2. Current development milestone
 
-**v0.6.6 complete** — Deferred queue producers (`0x2E97B60` enqueue helper; wrapper `0x2E97FC0`).
+**v0.7.0 automated slice complete** — gated co-op session roster panel (`0.7.0-dev`).
 
-Prior: v0.6.5 worker/element decode (preserved). Offline only. No ASI, spawn, or networking change.
+The panel logs an idle two-slot roster from `InitializeASI` and draws a click-through sidebar only when `BFC_SESSION_PANEL=1`. It does not open a socket, spawn an actor, or claim an in-world Edward. v0.6.5 and v0.6.6 research is preserved. The installed ASI was not replaced. Gameplay was not run.
 
 ---
 
@@ -36,8 +36,10 @@ Prior: v0.6.5 worker/element decode (preserved). Offline only. No ASI, spawn, or
 | Item | Value |
 |------|--------|
 | Working in-game ASI | **v0.5.1** |
-| ASI SHA256 | `63B38877DDA7CC7CD9AB2619F94D3941C37F54C95A435EFE47084DC4CF2A50BE` |
-| Deploy status | **Do not replace** without explicit user approval |
+| Installed ASI SHA256 | `63B38877DDA7CC7CD9AB2619F94D3941C37F54C95A435EFE47084DC4CF2A50BE` (re-read 2026-11-12, 99840 bytes) |
+| Candidate ASI | `0.7.0-dev` at `build/bin/Release/BlackFlagCoop.asi` |
+| Candidate SHA256 | `EF7EB82D3F6CAAB00BFBED350BACCCFD0A2D88E56F8D023BFD62821C3C7262A0` (112640 bytes) |
+| Deploy status | **Do not replace** v0.5.1 without explicit user approval |
 
 ---
 
@@ -70,7 +72,7 @@ cmake --build build --config Release
 
 ## 6. Network architecture and LAN test status
 
-- Plugin networking: custom BFC TCP session (messages 1–8, heartbeat, poseVerified sanitize).
+- Plugin networking: custom BFC TCP session (messages 1–8, heartbeat, poseVerified sanitize). v0.7.0 does not change the wire protocol and does not open a session from `InitializeASI`.
 - Tools: `tools/net_test`, scripts under `scripts/` (`Run-LanHost.ps1`, `Run-LanClient.ps1`, etc.).
 - Reliability work landed in **v0.5.8** era (heartbeat/idle tests in net_test).
 - Plugin net ≠ engine replication. PC2 / production deploy not part of current handoff setup.
@@ -135,7 +137,21 @@ High-signal offline findings (see `docs/v0.6.*` and `reports/v0.6.*`):
 
 ## 10. Most recent completed milestone
 
-**v0.6.6 — Deferred queue producers**
+**v0.7.0 — Session roster panel (automated only)**
+
+Deliverables:
+
+- `docs/v0.7.0-implementation-plan.md`
+- `docs/v0.7.0-manual-pc1-checklist.md`
+- `reports/v0.7.0-validation.json`
+- `reports/v0.7.0-build-log.txt`
+- `reports/v0.7.0-session-panel-test.txt`
+- `src/ui/session_panel.*`, `src/ui/session_overlay.*`
+- `tools/session_panel_test/main.cpp`
+
+v0.6.6 producer reports were left in place.
+
+**Prior completed research: v0.6.6 — Deferred queue producers**
 
 Deliverables:
 
@@ -152,18 +168,28 @@ v0.6.4 and v0.6.5 reports were left in place.
 
 ## 11. Next recommended milestone
 
-**v0.6.7 (proposed):** Offline recover **dispatch/registration of `0x2E97FC0`** and **subject vtable/RTTI** for objects reaching enqueue + `0xE95E80`. Still no spawn, deploy, live memory, or PC2 unless separately authorized.
+**User manual check (not started):** Cruz runs `docs/v0.7.0-manual-pc1-checklist.md` when ready. Do not launch the game or deploy ahead of that.
+
+**Next code step after a passing look:** feed `SessionPanelInput` from a localhost `Session` so the roster can show Connected / Disconnected. Still no actor spawn.
+
+Offline v0.6.7 (dispatch of `0x2E97FC0` and subject RTTI) stays a separate research track. It is not required to explain this panel.
 
 ---
 
 ## 12. Files changed in the latest milestone
 
-- `docs/v0.6.6-deferred-queue-producers.md`
-- `reports/v0.6.6-enqueue-helper.json`
-- `reports/v0.6.6-producer-scan-summary.json`
-- `reports/v0.6.6-second-edward-feasibility.json`
-- `reports/v066-raw/evidence.txt`
-- `tools/offline/QueueProducer066/`
+- `CMakeLists.txt`
+- `src/main.cpp`
+- `src/ui/session_panel.h`
+- `src/ui/session_panel.cpp`
+- `src/ui/session_overlay.h`
+- `src/ui/session_overlay.cpp`
+- `tools/session_panel_test/main.cpp`
+- `docs/v0.7.0-implementation-plan.md`
+- `docs/v0.7.0-manual-pc1-checklist.md`
+- `reports/v0.7.0-validation.json`
+- `reports/v0.7.0-build-log.txt`
+- `reports/v0.7.0-session-panel-test.txt`
 - `docs/CHATGPT_HANDOFF.md`
 - `reports/CHATGPT_HANDOFF.json`
 
@@ -173,8 +199,10 @@ v0.6.4 and v0.6.5 reports were left in place.
 
 | Test | Result |
 |------|--------|
-| Offline decode v0.6.5 (`QueueWorker065`) | Pass (prior) |
-| Offline producer scan v0.6.6 (`QueueProducer066`) | Pass; enqueue helper `0x2E97B60` confirmed |
+| `ctest -C Release` SessionPanel | Pass (1/1) |
+| `BlackFlagCoopSessionPanelTest` | Pass (`ALL PASSED`) |
+| VS 18 2026 x64 Release build | Pass, 0 warnings |
+| Installed ASI hash re-read | Still v0.5.1 `63B38877…` |
 | Game launch / ASI deploy | **Not performed** |
 | Spawn / inject / live memory | **Not performed** |
 | Network protocol changes | **None** |
@@ -195,10 +223,10 @@ v0.6.4 and v0.6.5 reports were left in place.
 
 When reviewing the GitHub repository after a Cursor push:
 
-1. Read this file and `reports/CHATGPT_HANDOFF.json` first.
-2. Diff against the previous handoff `milestoneId` / commit.
-3. Treat only **confirmed** items as facts; keep hypotheses labeled.
-4. Propose the **next single milestone** with: objective, in-scope RVAs/files, out-of-scope (spawn/deploy/PC2), required deliverables paths, and acceptance checks.
-5. Prefer **v0.6.7**: registration/dispatch of `0x2E97FC0` + subject vtable/RTTI, unless new evidence supersedes. Do not treat enqueue as character creation.
-6. Do not instruct Cursor to deploy ASI, spawn, use live memory, or touch PC2/save data unless the user explicitly overrides safety.
+1. Read this file, `reports/CHATGPT_HANDOFF.json`, and `reports/v0.7.0-validation.json` first.
+2. Treat the session panel as a UI placeholder. Do not describe it as a second Edward.
+3. Automated build and `SessionPanel` tests passed. In-game appearance is **unverified**.
+4. Next user action is the manual checklist. Next code step, after that look, is a localhost session feeding the same panel model.
+5. v0.6.7 RTTI/dispatch research remains optional and separate. Do not treat the deferred queue as character creation.
+6. Do not instruct Cursor to deploy the candidate, spawn, use live memory, or touch PC2/save data unless the user explicitly overrides safety.
 7. Return instructions Cursor can execute verbatim on PC1 on a dedicated branch + PR (never push main).
