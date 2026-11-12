@@ -6,7 +6,9 @@
   "machine": "PC1",
   "repository": {
     "url": "https://github.com/zzyrrup/BlackFlagCoop",
-    "defaultBranch": "main"
+    "defaultBranch": "main",
+    "latestCommit": "e12e70150656ac80742f10b496f7e5556e7985b7",
+    "tracking": "origin/main"
   },
   "project": {
     "name": "BlackFlagCoop",
