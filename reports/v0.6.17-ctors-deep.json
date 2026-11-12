@@ -1,0 +1,44 @@
+{
+  "schemaVersion": 1,
+  "milestone": "v0.6.17",
+  "generatedUtc": "2026-11-12T18:32:58Z",
+  "exeSha256": "19920F34BB2FAC814023EE3C27F0CECA1872E80A2AAFB37C092C419FFF77CC0D",
+  "ctors": [
+    {
+      "entry": "0x2E97A50",
+      "role": "ctor-arm-table",
+      "size": 262,
+      "callsAllocator": false,
+      "usesKey": false,
+      "touches61": false,
+      "touches98": true,
+      "vtableInstalls": ["0x2E97A6D lea rax,[rip+65F84DC] ->0x948FF50 => mov [rcx],rax => mov eax,[rcx+30]"],
+      "allocNotes": [],
+      "immSizes": ["0xC000"],
+      "strings": [],
+      "callees": [],
+      "callersE8": [],
+      "callerNotes": [],
+      "installHits": ["lea @0x5F11CD2 func≈0x5F11A40", "lea @0x5F11CD3 func≈0x5F11A40", "rva32 @0x1D75EC28 sec=.vmp4"],
+      "disasmHead": ["0x2E97A50 push rsi", "0x2E97A51 push rdi", "0x2E97A52 push rbp", "0x2E97A53 push rbx", "0x2E97A54 sub rsp,28", "0x2E97A58 mov rsi,rcx", "0x2E97A5B xor ebx,ebx", "0x2E97A5D mov [rcx+8],ebx", "0x2E97A60 vmovaps ymm0,[rip+693DCD8]", "0x2E97A68 vmovups [rcx+10],ymm0", "0x2E97A6D lea rax,[rip+65F84DC]", "0x2E97A74 mov [rcx],rax", "0x2E97A77 mov ebp,80000000", "0x2E97A7C mov eax,[rcx+30]", "0x2E97A7F and eax,ebp", "0x2E97A81 or eax,0C000", "0x2E97A86 mov [rcx+30],eax", "0x2E97A89 mov eax,[rcx+3C]", "0x2E97A8C and eax,ebp", "0x2E97A8E or eax,0C000", "0x2E97A93 mov [rcx+3C],eax", "0x2E97A96 mov [rcx+34],rbx", "0x2E97A9A mov eax,[rcx+48]", "0x2E97A9D and eax,ebp", "0x2E97A9F or eax,0C000", "0x2E97AA4 mov [rcx+48],eax", "0x2E97AA7 mov [rcx+40],rbx", "0x2E97AAB mov [rcx+50],rbx", "0x2E97AAF lea rax,[rip+80DC122]", "0x2E97AB6 mov [rcx+58],rax", "0x2E97ABA mov byte ptr [rcx+68],0", "0x2E97ABE mov [rcx+6C],ebx"]
+    },
+    {
+      "entry": "0x59D9B90",
+      "role": "ctor-bit-table",
+      "size": 223,
+      "callsAllocator": false,
+      "usesKey": false,
+      "touches61": false,
+      "touches98": false,
+      "vtableInstalls": ["0x59D9C3C lea rax,[rip+392A1E5] ->0x9303E28 => mov [rsi+1D0],rax => mov [rsi+0AC8],ebp"],
+      "allocNotes": [],
+      "immSizes": ["0x140", "0xC000"],
+      "strings": [],
+      "callees": ["0x5352080", "0x1B7A250"],
+      "callersE8": ["0x59D96CB"],
+      "callerNotes": ["e8 @0x59D96CB func≈0x59D96A0 key=False alloc=False"],
+      "installHits": ["rva32 @0x1D82A298 sec=.vmp4"],
+      "disasmHead": ["0x59D9B90 push rsi", "0x59D9B91 push rdi", "0x59D9B92 push rbp", "0x59D9B93 push rbx", "0x59D9B94 sub rsp,28", "0x59D9B98 mov rsi,rcx", "0x59D9B9B lea rax,[rip+37C2146]", "0x59D9BA2 mov [rcx],rax", "0x59D9BA5 add rcx,10", "0x59D9BA9 xor ebx,ebx", "0x59D9BAB mov r8d,140", "0x59D9BB1 xor edx,edx", "0x59D9BB3 call 0000000145352080", "0x59D9BB8 mov ebp,80000000", "0x59D9BBD mov eax,[rsi+158]", "0x59D9BC3 and eax,ebp", "0x59D9BC5 or eax,0C000", "0x59D9BCA mov [rsi+158],eax", "0x59D9BD0 mov [rsi+150],rbx", "0x59D9BD7 mov eax,[rsi+164]", "0x59D9BDD and eax,ebp", "0x59D9BDF or eax,0C000", "0x59D9BE4 mov [rsi+164],eax", "0x59D9BEA mov [rsi+15C],rbx", "0x59D9BF1 mov byte ptr [rsi+168],18", "0x59D9BF8 mov byte ptr [rsi+180],0", "0x59D9BFF mov [rsi+190],rbx", "0x59D9C06 lea rdi,[rsi+1A0]", "0x59D9C0D mov rcx,rdi", "0x59D9C10 mov edx,1", "0x59D9C15 call qword ptr [rip+486F4ED]", "0x59D9C1B mov rcx,rdi"]
+    }
+  ]
+}

@@ -1,14 +1,14 @@
 {
   "schemaVersion": 1,
-  "generatedUtc": "2026-11-12T18:40:00Z",
+  "generatedUtc": "2026-11-12T18:50:00Z",
   "handoffFor": "ChatGPT",
   "executor": "Cursor",
   "machine": "PC1",
   "repository": {
     "url": "https://github.com/zzyrrup/BlackFlagCoop",
     "defaultBranch": "main",
-    "featureBranch": "cursor/v076-edata-vcall-2b0-8285",
-    "baseBranch": "cursor/v075-install-e2c8a0-8285",
+    "featureBranch": "cursor/v077-vt-slot-ctors-8285",
+    "baseBranch": "cursor/v076-edata-vcall-2b0-8285",
     "doNotPushMain": true,
     "initialCommit": "e12e70150656ac80742f10b496f7e5556e7985b7"
   },
@@ -18,10 +18,10 @@
     "functionalityChangedByThisMilestone": false
   },
   "milestone": {
-    "currentId": "v0.6.16",
-    "currentTitle": "Edata consumers, arming neighbors, vcall +0x2B0",
+    "currentId": "v0.6.17",
+    "currentTitle": "Expected VT +0x2B0/+0x2B8 slots and ctor follow",
     "status": "complete",
-    "priorPreserved": ["v0.6.4", "v0.6.5", "v0.6.6", "v0.6.7", "v0.6.8", "v0.6.9", "v0.6.10", "v0.6.11", "v0.6.12", "v0.6.13", "v0.6.14", "v0.6.15"]
+    "priorPreserved": ["v0.6.4", "v0.6.5", "v0.6.6", "v0.6.7", "v0.6.8", "v0.6.9", "v0.6.10", "v0.6.11", "v0.6.12", "v0.6.13", "v0.6.14", "v0.6.15", "v0.6.16"]
   },
   "asi": {
     "version": "0.5.1",
@@ -37,7 +37,7 @@
   },
   "build": {
     "asiRebuilt": false,
-    "offlineTools": ["tools/offline/EdataConsumer076"]
+    "offlineTools": ["tools/offline/VtSlotCtor077"]
   },
   "network": {
     "changesAuthorized": false,
@@ -45,69 +45,64 @@
   },
   "engineFindings": {
     "summary": [
-      "Edata slots are vtable entries; ctors 0x2E97A50/0x59D9B90 install table bases",
-      "Arming slot 0x9490078 = base 0x948FF50 + 0x128",
-      "Neighbor A 0x2108530->0x129E5190 calls 0x4D04450 and 0x725400",
-      "Neighbor B 0x2108830->0x43E7750 compares [vt+0x2B0]/[vt+0x2B8]",
-      "Arming helper tail-calls [vt+0x2B0] with edx=2",
+      "Expected +0x2B0=0x4656C80 trampoline to +0x2B8; +0x2B8=0x479E3B0",
+      "Arm table +0x2B8=0x2108620 wraps 0x479E3B0 with +0x98 work",
+      "Arming chain: 0x21085D0 -> 0x4656C80 -> 0x2108620 -> 0x479E3B0",
+      "Validator test edx,~2 selects edx=2 compare path",
+      "Ctor 0x2E97A50 installs 0x948FF50; ctor 0x59D9B90 installs 0x9303E28 at +0x1D0",
       "No Edward/create path"
     ],
     "keyRvas": {
-      "armingSlot": "0x9490078",
-      "bitSlots": ["0x9303E30", "0x9303E38"],
-      "armingTableBase": "0x948FF50",
-      "bitTableBase": "0x9303E28",
-      "ctorNearWrap": "0x2E97A50",
-      "ctorBitTable": "0x59D9B90",
-      "neighborA": "0x2108530",
-      "neighborATarget": "0x129E5190",
-      "neighborB": "0x2108830",
-      "neighborBTarget": "0x43E7750",
-      "armingHelper": "0x21085D0",
-      "vcallSlot": "0x2B0"
+      "expected2B0": "0x4656C80",
+      "expected2B8": "0x479E3B0",
+      "armTable2B8": "0x2108620",
+      "armTable": "0x948FF50",
+      "bitTable": "0x9303E28",
+      "ctorA": "0x2E97A50",
+      "ctorAInstaller": "0x5F11A40",
+      "ctorB": "0x59D9B90",
+      "ctorBCaller": "0x59D96A0",
+      "post2B8": "0x479E440"
     }
   },
   "confirmed": [
     "ASI v0.5.1 preserved; no deploy",
-    "Edata slot consumption via vtable install confirmed",
-    "Neighbor A/B roles confirmed",
-    "Arming edx=2 vcall pattern confirmed",
+    "Expected vt slots and arming concrete chain resolved",
+    "Both ctors decoded",
     "No live memory this milestone"
   ],
   "hypotheses": [
-    "edx=2 selects a mode on the +0x2B0 virtual method",
-    "0x2E97A50 constructs the UpdateActorLOD enrollment object family"
+    "0x2108620 is arm-table specialization of 0x479E3B0",
+    "Ctor A objects are UpdateActorLOD enrollment subjects"
   ],
   "blockers": [
     "Subject concrete type name unknown",
-    "+0x2B0 method semantics / edx=2 meaning unidentified",
+    "Full 0x2108620/0x479E440 mode semantics open",
     "No input/possession path",
     "Spawn tests not authorized"
   ],
   "mostRecentCompletedMilestone": {
-    "id": "v0.6.16",
-    "docs": ["docs/v0.6.16-edata-vcall-2b0.md"],
+    "id": "v0.6.17",
+    "docs": ["docs/v0.6.17-vt-slot-ctors.md"],
     "reports": [
-      "reports/v0.6.16-edata-consumers.json",
-      "reports/v0.6.16-arming-neighbors.json",
-      "reports/v0.6.16-vcall-2b0.json",
-      "reports/v0.6.16-summary.json",
-      "reports/v0.6.16-second-edward-feasibility.json",
-      "reports/v076-raw/evidence.txt"
+      "reports/v0.6.17-expected-vt-slots.json",
+      "reports/v0.6.17-ctors-deep.json",
+      "reports/v0.6.17-summary.json",
+      "reports/v0.6.17-second-edward-feasibility.json",
+      "reports/v077-raw/evidence.txt"
     ]
   },
   "nextRecommendedMilestone": {
-    "id": "v0.6.17",
-    "title": "Deep-decode expected [vt+0x2B0]/[vt+0x2B8] from 0x43E7750; follow ctors 0x2E97A50/0x59D9B90",
-    "primary": ["0x43E7750 expected callees", "0x2E97A50", "0x59D9B90"],
+    "id": "v0.6.18",
+    "title": "Deep-decode 0x2108620 / 0x479E440; follow 0x5F11A40 / 0x59D96A0",
+    "primary": ["0x2108620", "0x479E440", "0x5F11A40", "0x59D96A0"],
     "forbidden": ["spawn", "deploy", "live memory", "PC2", "save-data", "force-push main", "+0x61-only ranking"]
   },
   "tests": [
-    { "name": "EdataConsumer076_build_scan", "result": "pass" },
-    { "name": "vtable_install_ctors", "result": "pass" },
-    { "name": "neighborA_membership_worker", "result": "pass" },
-    { "name": "neighborB_vt_validate", "result": "pass" },
-    { "name": "arming_edx2_vcall", "result": "pass" },
+    { "name": "VtSlotCtor077_build_scan", "result": "pass" },
+    { "name": "expected_vt_slots", "result": "pass" },
+    { "name": "arm_table_crosscheck", "result": "pass" },
+    { "name": "ctors_decoded", "result": "pass" },
     { "name": "game_launch_deploy", "result": "not_run" },
     { "name": "spawn_live_memory", "result": "not_run" }
   ],
@@ -123,9 +118,9 @@
   },
   "chatgptNextReviewInstructions": [
     "Read docs/CHATGPT_HANDOFF.md and this JSON first",
-    "Review v0.6.16 PR; preserve v0.6.4-v0.6.15 history",
+    "Review v0.6.17 PR; preserve v0.6.4-v0.6.16 history",
     "Separate confirmed vs hypotheses",
-    "Propose v0.6.17 +0x2B0 callee decode + ctor follow",
+    "Propose v0.6.18 0x2108620/0x479E440 deep-decode",
     "Do not authorize deploy/spawn/live memory/PC2 unless user overrides",
     "Return PC1 branch+PR instructions"
   ]

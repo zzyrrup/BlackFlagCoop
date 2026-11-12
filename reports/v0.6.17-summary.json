@@ -1,0 +1,36 @@
+{
+  "schemaVersion": 1,
+  "milestone": "v0.6.17",
+  "generatedUtc": "2026-11-12T18:45:00Z",
+  "exeSha256": "19920F34BB2FAC814023EE3C27F0CECA1872E80A2AAFB37C092C419FFF77CC0D",
+  "expectedSlots": [
+    { "vtOff": "0x2B0", "rva": "0x4656C80", "role": "trampoline_to_2B8" },
+    { "vtOff": "0x2B8", "rva": "0x479E3B0", "role": "canonical_flag_nested_helper" }
+  ],
+  "armTable948FF50": {
+    "plus2B0": "0x4656C80",
+    "plus2B8": "0x2108620"
+  },
+  "armingCallChain": [
+    "0x21085D0",
+    "0x4656C80",
+    "0x2108620",
+    "0x479E3B0"
+  ],
+  "validatorEdxTest": "test edx,0xFFFFFFFD  ; edx==2 continues compare path",
+  "ctorA": {
+    "rva": "0x2E97A50",
+    "size": 262,
+    "vtable": "0x948FF50",
+    "leaInstaller": "0x5F11A40",
+    "beforeEnqueueHelper": true
+  },
+  "ctorB": {
+    "rva": "0x59D9B90",
+    "size": 223,
+    "secondaryTableAt1D0": "0x9303E28",
+    "fillSize": "0x140",
+    "caller": "0x59D96A0"
+  },
+  "edwardOrPlayerTypeConfirmed": false
+}
