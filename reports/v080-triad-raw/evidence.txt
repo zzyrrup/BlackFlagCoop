@@ -1,0 +1,190 @@
+===== v0.8.0 C2 TRIAD HUNT (Agent1 string-free) =====
+exeSha256=19920F34BB2FAC814023EE3C27F0CECA1872E80A2AAFB37C092C419FFF77CC0D
+triad=Begin(1,0) -> Duplicate(sel,0,0)->new* -> End() -> Build(builder,&out,dup)
+callEngine=off
+begin10Candidates=64
+sandwichCandidates=5
+fullTriad=0
+beginDupEnd=5
+
+===== FULL TRIAD SITES =====
+
+===== BEGIN+DUP+END (no Build yet) =====
+func=0x600060 begin=0x6000DA->0x6A110 dup=0x6000EE->0xD85740 end=0x60019A->0x482D2C0 build=0x0->0x0
+--- begindupend @0x6000DA ---
+func=0x6A0EC50 begin=0x6A0EE0A->0xD75C50 dup=0x6A0EE22->0x6A0DC20 end=0x6A0EE31->0x7A32F0 build=0x0->0x0
+--- begindupend @0x6A0EE0A ---
+0x6A0EDFA xor r8d,r8d
+0x6A0EDFD call 0000000146A0DC20  ;call=0x6A0DC20
+0x6A0EE02 mov bl,[rdi+168]
+0x6A0EE08 mov cl,1
+0x6A0EE0A call 0000000140D75C50  ;call=0xD75C50
+0x6A0EE0F mov r9d,[rax+3C]
+0x6A0EE13 test bl,bl
+0x6A0EE15 sete byte ptr [rsp+20]
+0x6A0EE1A mov rcx,rdi
+0x6A0EE1D xor edx,edx
+0x6A0EE1F xor r8d,r8d
+0x6A0EE22 call 0000000146A0DC20  ;call=0x6A0DC20
+0x6A0EE27 mov rdx,[rdi+98]
+0x6A0EE2E mov rcx,rdi
+0x6A0EE31 call 00000001407A32F0  ;call=0x7A32F0
+0x6A0EE36 jmp near ptr 0000000146A0ECBC
+0x6A0EE3B int 3
+func=0x6A0F0D0 begin=0x6A0F6A2->0xD75C50 dup=0x6A0F6B8->0x6A0DC20 end=0x6A0F6C7->0x7A32F0 build=0x0->0x0
+--- begindupend @0x6A0F6A2 ---
+0x6A0F692 add [rax-77],cl
+0x6A0F695 int1
+0x6A0F696 xor edx,edx
+0x6A0F698 xor r8d,r8d
+0x6A0F69B call 0000000146A0DC20  ;call=0x6A0DC20
+0x6A0F6A0 mov cl,1
+0x6A0F6A2 call 0000000140D75C50  ;call=0xD75C50
+0x6A0F6A7 mov r9d,[rax+3C]
+0x6A0F6AB mov byte ptr [rsp+20],1
+0x6A0F6B0 mov rcx,rsi
+0x6A0F6B3 mov dl,1
+0x6A0F6B5 mov r8b,1
+0x6A0F6B8 call 0000000146A0DC20  ;call=0x6A0DC20
+0x6A0F6BD mov rdx,[rsi+0A0]
+0x6A0F6C4 mov rcx,rsi
+0x6A0F6C7 call 00000001407A32F0  ;call=0x7A32F0
+0x6A0F6CC jmp near ptr 0000000146A0F41A
+0x6A0F6D1 mov rcx,[rsi+88]
+0x6A0F6D8 call 0000000146A0E960  ;call=0x6A0E960
+0x6A0F6DD mov ebx,eax
+0x6A0F6DF mov [rsi+169],al
+0x6A0F6E5 mov byte ptr [rsi+16A],0
+0x6A0F6EC mov dil,[rsi+168]
+0x6A0F6F3 mov cl,1
+0x6A0F6F5 call 0000000140D75C50  ;call=0xD75C50
+0x6A0F6FA mov r9d,[rax+40]
+0x6A0F6FE mov dl,[rsi+16A]
+0x6A0F704 cmp dil,bl
+0x6A0F707 setne byte ptr [rsp+20]
+0x6A0F70C mov rcx,rsi
+0x6A0F70F mov r8b,1
+0x6A0F712 call 0000000146A0DC20  ;call=0x6A0DC20
+0x6A0F717 mov dil,[rsi+168]
+0x6A0F71E mov cl,1
+0x6A0F720 call 0000000140D75C50  ;call=0xD75C50
+func=0x6A0F760 begin=0x6A0FD2E->0xD75C50 dup=0x6A0FD44->0x6A0DC20 end=0x6A0FD53->0x7A32F0 build=0x0->0x0
+--- begindupend @0x6A0FD2E ---
+0x6A0FD1E add [rax-77],cl
+0x6A0FD21 int1
+0x6A0FD22 xor edx,edx
+0x6A0FD24 xor r8d,r8d
+0x6A0FD27 call 0000000146A0DC20  ;call=0x6A0DC20
+0x6A0FD2C mov cl,1
+0x6A0FD2E call 0000000140D75C50  ;call=0xD75C50
+0x6A0FD33 mov r9d,[rax+40]
+0x6A0FD37 mov byte ptr [rsp+20],1
+0x6A0FD3C mov rcx,rsi
+0x6A0FD3F mov dl,1
+0x6A0FD41 mov r8b,1
+0x6A0FD44 call 0000000146A0DC20  ;call=0x6A0DC20
+0x6A0FD49 mov rdx,[rsi+0A0]
+0x6A0FD50 mov rcx,rsi
+0x6A0FD53 call 00000001407A32F0  ;call=0x7A32F0
+0x6A0FD58 jmp near ptr 0000000146A0FAAB
+0x6A0FD5D mov rcx,[rsi+88]
+0x6A0FD64 call 0000000146A0E960  ;call=0x6A0E960
+0x6A0FD69 mov ebx,eax
+0x6A0FD6B mov [rsi+169],al
+0x6A0FD71 mov byte ptr [rsi+16A],0
+0x6A0FD78 mov dil,[rsi+168]
+0x6A0FD7F mov cl,1
+0x6A0FD81 call 0000000140D75C50  ;call=0xD75C50
+0x6A0FD86 mov r9d,[rax+40]
+0x6A0FD8A mov dl,[rsi+16A]
+0x6A0FD90 cmp dil,bl
+0x6A0FD93 sete byte ptr [rsp+20]
+0x6A0FD98 mov rcx,rsi
+0x6A0FD9B mov r8b,1
+0x6A0FD9E call 0000000146A0DC20  ;call=0x6A0DC20
+0x6A0FDA3 mov dil,[rsi+168]
+0x6A0FDAA mov cl,1
+0x6A0FDAC call 0000000140D75C50  ;call=0xD75C50
+func=0xDF9D7D9 begin=0xDF9D7F9->0x156B20 dup=0xDF9D813->0xA147A0 end=0xDF9D848->0x4420DB0 build=0x0->0x0
+--- begindupend @0xDF9D7F9 ---
+0xDF9D7E9 xadd [rip-3028890],ecx
+0xDF9D7F0 mov rax,[r15]
+0xDF9D7F3 mov r8,[rax+30]
+0xDF9D7F7 xor edx,edx
+0xDF9D7F9 call 0000000140156B20  ;call=0x156B20
+0xDF9D7FE mov r12,rax
+0xDF9D801 mov rax,[r15]
+0xDF9D804 mov rcx,r15
+0xDF9D807 mov rdx,r12
+0xDF9D80A xor r8d,r8d
+0xDF9D80D call qword ptr [rax+20]
+0xDF9D810 mov rcx,r12
+0xDF9D813 call 0000000140A147A0  ;call=0xA147A0
+0xDF9D818 call 000000014085F450  ;call=0x85F450
+0xDF9D81D mov [rdi],r12
+0xDF9D820 test r12,r12
+0xDF9D823 je near ptr 000000014DF9D8ED
+0xDF9D829 vmovss xmm6,dword ptr [r12+128]
+0xDF9D833 mov rax,[r14]
+0xDF9D836 mov rcx,r14
+0xDF9D839 mov rdx,rdi
+0xDF9D83C mov r8,rsi
+0xDF9D83F mov r9,rbx
+0xDF9D842 call qword ptr [rax+0A0]
+0xDF9D848 call 0000000144420DB0  ;call=0x4420DB0
+0xDF9D84D mov rcx,rsi
+0xDF9D850 call 0000000144BF5690  ;call=0x4BF5690
+0xDF9D855 mov rcx,[rdi]
+0xDF9D858 test rcx,rcx
+0xDF9D85B je short 000000014DF9D885
+0xDF9D85D vmovss xmm0,dword ptr [rcx+128]
+0xDF9D865 vsubss xmm1,xmm0,xmm6
+0xDF9D869 vbroadcastss xmm2,dword ptr [rip-4E6B9D6]
+0xDF9D872 vandps xmm1,xmm1,xmm2
+0xDF9D876 vucomiss xmm1,dword ptr [rip-4F4EE2E]
+
+===== BUILD-SHAPED NEAR DUP(0,0) =====
+buildNearDup=59
+dup=0xCAD30 dupCallee=0xE59370 build=0xCAD63 buildCallee=0x43D1DA0 func=0xC9B60
+dup=0xCAD44 dupCallee=0x7F14730 build=0xCAD63 buildCallee=0x43D1DA0 func=0xC9B60
+dup=0x44A8BF dupCallee=0xBF3100 build=0x44A8EC buildCallee=0x44B210 func=0x44A650
+dup=0x9C10E5 dupCallee=0xEA6310 build=0x9C1103 buildCallee=0x15E2F70 func=0x9C0E80
+dup=0x9C10ED dupCallee=0x42B85F0 build=0x9C1103 buildCallee=0x15E2F70 func=0x9C0E80
+dup=0xC12173 dupCallee=0xEA6310 build=0xC12193 buildCallee=0xC14930 func=0xC11C80
+dup=0xC1217B dupCallee=0x42B85F0 build=0xC12193 buildCallee=0xC14930 func=0xC11C80
+dup=0x12E197A dupCallee=0xFAE740 build=0x12E19BA buildCallee=0x87425B0 func=0x12E12A0
+dup=0x12E198C dupCallee=0x10F8BC0 build=0x12E19BA buildCallee=0x87425B0 func=0x12E12A0
+dup=0x12E1999 dupCallee=0x4922540 build=0x12E19BA buildCallee=0x87425B0 func=0x12E12A0
+dup=0x1C439E6 dupCallee=0x11150F0 build=0x1C43A11 buildCallee=0x85C6F0 func=0x1C43850
+dup=0x1C439FE dupCallee=0x44386C0 build=0x1C43A11 buildCallee=0x85C6F0 func=0x1C43850
+dup=0x1F75EC1 dupCallee=0xBF3100 build=0x1F75EE9 buildCallee=0x44B210 func=0x1F75E70
+dup=0x285B1EB dupCallee=0x54A3B20 build=0x285B22E buildCallee=0x6D1D10 func=0x285A6C0
+dup=0x2BEB012 dupCallee=0x2BE4770 build=0x2BEB060 buildCallee=0x2BE4770 func=0x2BEAFD0
+dup=0x3653CE8 dupCallee=0x11150F0 build=0x3653D1D buildCallee=0x85C6F0 func=0x3653AD0
+dup=0x3653D05 dupCallee=0x44386C0 build=0x3653D1D buildCallee=0x85C6F0 func=0x3653AD0
+dup=0x3FF3194 dupCallee=0x11EF740 build=0x3FF31D2 buildCallee=0x678EE70 func=0x3FF2C90
+dup=0x4FBFC63 dupCallee=0x4F65AA8 build=0x4FBFC97 buildCallee=0x532DC74 func=0x4FBF860
+dup=0x5051FE1 dupCallee=0x4F9C4A0 build=0x505201A buildCallee=0x4F8AA50 func=0x5051E90
+dup=0x52B9B4A dupCallee=0x5189210 build=0x52B9B62 buildCallee=0x5189510 func=0x52B9A60
+dup=0x52B9B62 dupCallee=0x5189510 build=0x52B9B76 buildCallee=0x5189510 func=0x52B9A60
+dup=0x54A3A8C dupCallee=0x54A3B20 build=0x54A3AD0 buildCallee=0x6D1D10 func=0x54A3A50
+dup=0x55B8E01 dupCallee=0x55B8F80 build=0x55B8E1E buildCallee=0x4DA690 func=0x55B8D50
+dup=0x55B8E11 dupCallee=0x11E84D0 build=0x55B8E1E buildCallee=0x4DA690 func=0x55B8D50
+dup=0x574BF64 dupCallee=0x283B50 build=0x574BF74 buildCallee=0x283FA0 func=0x574BD70
+dup=0x574BF74 dupCallee=0x283FA0 build=0x574BF8F buildCallee=0x283D20 func=0x574BD70
+dup=0x690E8F0 dupCallee=0x5354820 build=0x690E939 buildCallee=0x12EDFD0 func=0x690E5E0
+dup=0x6948BD5 dupCallee=0x5014570 build=0x6948C1A buildCallee=0x69415E0 func=0x6948AC0
+dup=0x6EAC583 dupCallee=0x6920780 build=0x6EAC5D4 buildCallee=0x6920670 func=0x6EAC3ED
+
+===== UNIQUE CALLEES =====
+BeginCallees=0x6A110,0xD75C50,0x156B20
+DupCallees=0xD85740,0x6A0DC20,0xA147A0
+EndCallees=0x482D2C0,0x7A32F0,0x4420DB0
+BuildCallees=
+
+===== VERDICT =====
+c1Proven=false
+c2Proven=false
+callEngine=off
+decision=Begin+Dup+End sandwiches found — Build link missing or different shape
+next=At sandwich sites, find post-End consumer of Duplicate return (Build or enroll).

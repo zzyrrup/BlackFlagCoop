@@ -1,0 +1,22 @@
+{
+  "schemaVersion": 1,
+  "milestone": "v0.8.0",
+  "contract": "C2",
+  "mode": "offline-pe-readonly",
+  "exeSha256": "19920F34BB2FAC814023EE3C27F0CECA1872E80A2AAFB37C092C419FFF77CC0D",
+  "agent1Fingerprint": "Begin(1,0)->Duplicate(0,0)->End()->Build(builder,&out,dup)",
+  "begin10": 64,
+  "sandwich": 5,
+  "fullTriad": 0,
+  "beginDupEnd": 5,
+  "buildNearDup": 59,
+  "c2Proven": false,
+  "callEngine": false,
+  "falsified": [
+    {"id": "0xD75C50", "reason": "not Begin — global getter 0xABEAE80"},
+    {"id": "0x6A0DC20", "reason": "not Duplicate(0,0) — multi-arg"},
+    {"id": "0x7A32F0", "reason": "not freestanding End — thiscall"}
+  ],
+  "blocker": "No confirmed C2 triad; heuristics need TLS/global Begin + last-def (0,0) Dup filter",
+  "next": "Small freestanding Begin leaves that write TLS/global; then Dup(0,0) last-def; End; Build"
+}

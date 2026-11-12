@@ -1,6 +1,6 @@
 ﻿{
     "schemaVersion":  1,
-    "generatedUtc":  "2026-11-12T21:11:09Z",
+    "generatedUtc":  "2026-11-12T21:16:23Z",
     "handoffFor":  "ChatGPT",
     "executor":  "Cursor",
     "machine":  "PC1",
@@ -20,8 +20,8 @@
                 },
     "milestone":  {
                       "currentId":  "v0.8.0",
-                      "currentTitle":  "C1 role hunt; Duplicate/objectId strings falsified",
-                      "status":  "c1_roles_unproven_strings_falsified",
+                      "currentTitle":  "C2 triad hunt; no confirmed Begin/Dup/End/Build site",
+                      "status":  "c2_triad_unproven",
                       "priorPreserved":  [
                                              "v0.6.4",
                                              "v0.6.5",
@@ -85,10 +85,10 @@
                 },
     "engineFindings":  {
                            "summary":  [
-                                           "Agent1: hunt Duplicate-this + handle/objectId roles; adjacent-bss not hard requirement",
-                                           "Duplicate* strings falsified (Havok/crypto/inventory)",
-                                           "objectId@0xA17B42F LEA is item schema binder 0x18F4610 — not HC GetObjectID",
-                                           "ObjectID string has zero LEAs; same-func dup+oid heuristic pairs = 0",
+                                           "Agent1 triad: Begin(1,0)-\u003eDuplicate(0,0)-\u003eEnd()-\u003eBuild(builder,\u0026out,dup)",
+                                           "TriadHunt080: begin10=64 sandwich=5 fullTriad=0 buildNearDup=59",
+                                           "Falsified sandwich callees 0xD75C50/0x6A0DC20/0x7A32F0 as Begin/Dup/End",
+                                           "Next: TLS/global-arming Begin leaves + last-def (0,0) Dup filter",
                                            "callEngine=off; ASI v0.5.1 preserved"
                                        ],
                            "keyRvas":  {
