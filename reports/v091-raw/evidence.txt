@@ -1,0 +1,72 @@
+===== v0.6.31 VT[+0x20] CALLERS + 0xB0/+0x98 CONSUMERS =====
+exeSha256=19920F34BB2FAC814023EE3C27F0CECA1872E80A2AAFB37C092C419FFF77CC0D
+
+===== VT[+0x20] SLOT IDENTITY =====
+Neigh VT[+0x20]=0x3D52400 expect 0x3D52400 match=True
+Spat VT[+0x20]=0x6CF34E0 expect 0x6CF34E0 match=True
+Neigh VT[+0x110] @0x976B3E0=0x2335140 expect Neighbor 0x2335140 match=True
+
+===== DIRECT XREFS TO VT[+0x20] BODIES =====
+NeighVt20 E8=0 LEA=0 qwordEmbeds=1 @0x976B2F0
+SpatVt20 E8=0 LEA=0 qwordEmbeds=1 @0x9236E20
+FF15 to VT+0x20 slots: Neigh=0 Spat=0
+vcallOnly (table-dispatched; no E8/LEA/FF15)=True
+
+===== OWNER VT LEA SITES (INSTALLERS, NOT +0x20 CALLERS) =====
+  NeighVt lea@0x13612BC func=0x13612B0 [VT0/sibling ctor]
+  NeighVt lea@0x3D522D4 func=0x3D522C0 [VT0/sibling ctor]
+  SpatVt lea@0x5563CFD func=0x5563CF0 [VT0/sibling ctor]
+  SpatVt lea@0x578149B func=0x5781490 [VT0/sibling ctor]
+  SpatVt lea@0x6CF34A8 func=0x6CF34A0 [VT0/sibling ctor]
+
+===== GENERIC call [rax+0x20] POPULATION =====
+call [rax+20] sites=4659 uniqueFuncs=3166
+call [rcx+20] sites=270
+Offline cannot uniquely bind generic vcall+20 to Neigh/Spat without RTTI/live VT compare.
+annotated among top100 vcall20 funcs=0 (expect low)
+
+===== VT[+0x20] BODY CONTRACT =====
+NeighVt20 0x3D52400: callTiHelper=True inline+98=False
+  near callees: 0x43DCB00, 0x233310, 0x5673A70, 0x1361320
+SpatVt20 0x6CF34E0: callTiHelper=True inline+98=True
+  near callees: 0x43DCB00, 0x4CF96B0, 0x6CF31F0, 0x42F0690
+
+===== +0x98 BYTE vs POINTER-FAMILY CONSUMERS =====
+Pointer-family (qword +0x98):
+  SideBlock 0xE95E80 qword98=4 byte98=0 add/lea98=0
+  Arming 0x21085D0 qword98=4 byte98=0 add/lea98=0
+  ArmWrap 0x2108620 qword98=3 byte98=0 add/lea98=0
+  Helper546 0x546D150 qword98=2 byte98=0 add/lea98=0
+NeighRel (0xB0 ctor) +0x98:
+  byteZero=True qword98=0 SideBlock=False
+Neighbor method 0x2335140 (Neigh VT[+0x110]) bridge:
+  E8 callers=0 (0 => .edata/vtable only)
+  qword embeds @0x976B3E0
+  edx=3 vcall [vt+0x2B0]=True
+  load nested via [this+0x18] then POINTER [nested+0x98]=True
+  BYTE store/cmp on this+0x98=True
+  -- key excerpt --
+  0x2335140: push rsi
+  0x2335141: push rdi
+  0x2335142: push rbx
+  0x2335143: sub rsp,20
+  0x2335147: or byte ptr [rcx+23],1
+  0x233514B: test edx,0FFFFFFFD
+  0x2335151: jne short 00000001423351C0
+  0x2335153: mov rsi,rcx
+  0x2335156: mov rax,[rcx]
+  0x2335159: mov edx,3
+  0x233515E: call qword ptr [rax+2B0] *** VCALL2B0 ***
+  0x2335164: mov rcx,[rsi+18] *** +18 ***
+  0x2335168: mov rdi,[rcx+98] *** +98 ***
+  0x23351B9: mov byte ptr [rsi+98],1 *** +98 ***
+Spat VT0/A/B inline +0x98 (add reg,98):
+  SpatVt0 add/lea98=1 qword98=0 byte98=0
+  SpatA add/lea98=1 qword98=0 byte98=0
+  SpatB add/lea98=3 qword98=0 byte98=0
+  SpatVt20 add/lea98=2 qword98=0 byte98=0
+Opcode census: cmp byte[reg+98]=62 mov byte[reg+98],imm=33 cmp qword[reg+98],0=3
+
+===== VERDICTS =====
+1) Neigh/Spat VT[+0x20] construct are vtable-dispatched only (no E8/LEA/FF15). callersTraced=True
+2) +0x98 consumers: (a) byte field on Neigh 0xB0/Neighbor-this; (b) pointer on nested/SideBlock/Arming family; (c) Spatial inline add. Neighbor 0x2335140 bridges (a)+(b) via [this+0x18]. mapped=True
