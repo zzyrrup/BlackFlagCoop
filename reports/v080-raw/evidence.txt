@@ -1,0 +1,267 @@
+===== v0.6.20 ACTIV PATH + HEAP SIZE =====
+exeSha256=19920F34BB2FAC814023EE3C27F0CECA1872E80A2AAFB37C092C419FFF77CC0D
+
+===== FUNC 0x2335040 (activ-owner-2335040) =====
+entry=0x2335040 end=0x2335133 size=243 sec=.impdata prologue=56 57 48 83 EC 48 48 89 CE 48 8B 05
+nested=True t22/25/26/34=True/True/True/True t61=False t98=False tA0=True post=True notify=True anim=True v2B0=False v2C0=True callersE8=0 callees=3
+  CALL_POST @0x23350F1
+  ANIM_STR @0x2335122 lea r9,[rip+7E44976]
+  CALL_NOTIFY @0x2335129
+  field +0x26 @0x233507B mov [rsi+26],al
+  field +0x34 @0x2335090 cmp byte ptr [rsi+34],0
+  mode 0x23350CF mov r8b,1
+  callee 0x5014570 size~21 prologue=48 3B 0D 89 EC 29 05 75 "@SVWH"
+  callee 0x479E440 size~390 prologue=41 57 41 56 41 55 41 54 *** POST *** "AWAVAUATVWUSH"
+  callee 0x8CD620 size~85 prologue=41 57 41 56 56 57 55 53 *** NOTIFY *** "AWAVVWUSH"
+  str @0xA179A9F "AnimatedOnActiveChanged"
+--- disasm head ---
+0x2335040 push rsi
+0x2335041 push rdi
+0x2335042 sub rsp,48
+0x2335046 mov rsi,rcx
+0x2335049 mov rax,[rip+7F7E1B0]
+0x2335050 xor rax,rsp
+0x2335053 mov [rsp+40],rax
+0x2335058 mov rax,[rcx+18]
+0x233505C test rax,rax
+0x233505F je short 000000014233506D
+0x2335061 mov rdi,[rax+0A8]
+0x2335068 test rdi,rdi
+0x233506B jne short 00000001423350B9
+0x233506D cmp byte ptr [rsi+25],0
+0x2335071 je short 00000001423350AB
+0x2335073 mov al,1
+0x2335075 cmp byte ptr [rsi+22],0
+0x2335079 je short 00000001423350AB
+0x233507B mov [rsi+26],al
+0x233507E cmp byte ptr [rsi+25],0
+0x2335082 setne al
+0x2335085 cmp byte ptr [rsi+22],0
+0x2335089 setne cl
+0x233508C test al,cl
+0x233508E jne short 0000000142335096
+0x2335090 cmp byte ptr [rsi+34],0
+0x2335094 jne short 00000001423350F8
+0x2335096 mov rcx,[rsp+40]
+0x233509B xor rcx,rsp
+0x233509E call 0000000145014570
+0x23350A3 nop
+0x23350A4 add rsp,48
+0x23350A8 pop rdi
+0x23350A9 pop rsi
+0x23350AA ret
+0x23350AB mov rax,[rsi]
+0x23350AE mov rcx,rsi
+0x23350B1 call qword ptr [rax+2C0]
+0x23350B7 jmp short 000000014233507B
+0x23350B9 cmp byte ptr [rsi+25],0
+0x23350BD je short 00000001423350D4
+0x23350BF cmp byte ptr [rsi+22],0
+0x23350C3 je short 00000001423350D4
+0x23350C5 add rdi,68
+0x23350C9 mov rcx,rdi
+0x23350CC mov rdx,rsi
+0x23350CF mov r8b,1
+0x23350D2 jmp short 00000001423350F1
+0x23350D4 mov rax,[rsi]
+0x23350D7 mov rcx,rsi
+0x23350DA call qword ptr [rax+2C0]
+0x23350E0 test al,al
+0x23350E2 jne short 00000001423350C5
+0x23350E4 add rdi,68
+0x23350E8 mov rcx,rdi
+0x23350EB mov rdx,rsi
+0x23350EE xor r8d,r8d
+0x23350F1 call 000000014479E440
+0x23350F6 jmp short 000000014233507E
+0x23350F8 mov rcx,[rsi+0A0]
+
+===== FUNC 0x8CD620 (notify-8CD620) =====
+entry=0x8CD620 end=0x8CD741 size=289 sec=.impdata prologue=41 57 41 56 56 57 55 53 48 83 EC 28
+nested=False t22/25/26/34=False/False/False/False t61=False t98=False tA0=True post=False notify=False anim=False v2B0=False v2C0=False callersE8=30 callees=0
+  e8 @0xC49DB func≈0xC48F0
+  e8 @0x142C0B func≈0x142920
+  e8 @0x160259 func≈0x160210
+  e8 @0x4E53D6 func≈0x4E51B0
+  e8 @0x8CD608 func≈0x8CD5D0
+  e8 @0xF7C379 func≈0xF7C2A0
+  e8 @0x128F5A9 func≈0x128F4E0
+  e8 @0x1393292 func≈0x1392C10
+  e8 @0x1414531 func≈0x14143C0
+  e8 @0x15D9C2A func≈0x15D9860
+  e8 @0x201BE50 func≈0x201BE10
+  e8 @0x2335129 func≈0x2335040
+--- disasm head ---
+0x8CD620 push r15
+0x8CD622 push r14
+0x8CD624 push rsi
+0x8CD625 push rdi
+0x8CD626 push rbp
+0x8CD627 push rbx
+0x8CD628 sub rsp,28
+0x8CD62C cmp dword ptr [rcx+27C],0
+0x8CD633 je short 00000001408CD668
+0x8CD635 cmp qword ptr [rcx+2C8],0FFFFFFFFFFFFFFFF
+0x8CD63D je short 00000001408CD668
+0x8CD63F mov rax,[rcx+2A0]
+0x8CD646 test rax,rax
+0x8CD649 je short 00000001408CD668
+0x8CD64B cmp qword ptr [rax+10],0
+0x8CD650 je short 00000001408CD668
+0x8CD652 mov r9,[rcx+2D8]
+0x8CD659 test r9,r9
+0x8CD65C je short 00000001408CD675
+0x8CD65E cmp byte ptr [r9+0E4],0
+0x8CD666 je short 00000001408CD675
+0x8CD668 add rsp,28
+0x8CD66C pop rbx
+0x8CD66D pop rbp
+0x8CD66E pop rdi
+0x8CD66F pop rsi
+0x8CD670 pop r14
+0x8CD672 pop r15
+0x8CD674 ret
+0x8CD675 mov rdi,rdx
+0x8CD678 mov rsi,r8
+0x8CD67B mov r14,[rax+38]
+0x8CD67F mov rbx,[r14]
+0x8CD682 mov rax,gs:[30]
+0x8CD68B mov ebp,[rax+48]
+0x8CD68E cmp [rbx+0C],ebp
+0x8CD691 je short 00000001408CD6A6
+0x8CD693 mov r15,rcx
+0x8CD696 mov rcx,rbx
+0x8CD699 call qword ptr [rip+997BD49]
+0x8CD69F mov rcx,r15
+0x8CD6A2 test al,al
+0x8CD6A4 je short 00000001408CD712
+0x8CD6A6 lock dec dword ptr [rbx+8]
+0x8CD6AA mov [rbx+0C],ebp
+0x8CD6AD mov rdx,[rcx+2C8]
+0x8CD6B4 cmp rdx,0FFFFFFFFFFFFFFFF
+0x8CD6B8 je short 00000001408CD6EB
+0x8CD6BA mov rax,[rcx+2A0]
+0x8CD6C1 test rax,rax
+0x8CD6C4 je short 00000001408CD6EB
+0x8CD6C6 mov rcx,[rax+10]
+0x8CD6CA test rcx,rcx
+0x8CD6CD je short 00000001408CD6EB
+0x8CD6CF mov rax,[rcx+18]
+0x8CD6D3 add rcx,18
+0x8CD6D7 mov dword ptr [rsp+20],0
+0x8CD6DF mov r8,rdi
+0x8CD6E2 mov r9,rsi
+0x8CD6E5 call qword ptr [rax+0A0]
+
+===== FUNC 0x2335140 (neighbor-2335140) =====
+entry=0x2335140 end=0x23352CA size=394 sec=.impdata prologue=56 57 53 48 83 EC 20 80 49 23 01 F7
+nested=False t22/25/26/34=False/False/False/False t61=False t98=True tA0=False post=False notify=False anim=False v2B0=True v2C0=False callersE8=0 callees=1
+  mode test~2 @0x233514B test edx,0FFFFFFFD
+  mode 0x2335159 mov edx,3
+  callee 0x546D150 size~215 prologue=56 57 48 83 EC 28 48 8B "9HNwkD"
+--- disasm head ---
+0x2335140 push rsi
+0x2335141 push rdi
+0x2335142 push rbx
+0x2335143 sub rsp,20
+0x2335147 or byte ptr [rcx+23],1
+0x233514B test edx,0FFFFFFFD
+0x2335151 jne short 00000001423351C0
+0x2335153 mov rsi,rcx
+0x2335156 mov rax,[rcx]
+0x2335159 mov edx,3
+0x233515E call qword ptr [rax+2B0]
+0x2335164 mov rcx,[rsi+18]
+0x2335168 mov rdi,[rcx+98]
+0x233516F test rdi,rdi
+0x2335172 je short 000000014233517A
+0x2335174 add rdi,40
+0x2335178 jmp short 0000000142335181
+0x233517A mov rdi,[rip+9CE12BF]
+0x2335181 mov eax,[rdi+8]
+0x2335184 cmp eax,2
+0x2335187 je short 00000001423351FA
+0x2335189 cmp eax,1
+0x233518C je short 00000001423351CB
+0x233518E vmovups ymm0,[rcx+20]
+0x2335193 vmovups ymm1,[rcx+30]
+0x2335198 vmovups [rsi+50],ymm1
+0x233519D vmovups [rsi+40],ymm0
+0x23351A2 vmovaps xmm0,[rcx+50]
+0x23351A7 vmovaps [rsi+70],xmm0
+0x23351AC vmovaps xmm0,[rcx+60]
+0x23351B1 vmovaps [rsi+80],xmm0
+0x23351B9 mov byte ptr [rsi+98],1
+0x23351C0 add rsp,20
+0x23351C4 pop rbx
+0x23351C5 pop rdi
+0x23351C6 pop rsi
+0x23351C7 vzeroupper
+0x23351CA ret
+0x23351CB mov rax,[rdi]
+0x23351CE mov edx,[rip+88569EC]
+0x23351D4 mov r8,gs:[58]
+0x23351DD mov rdx,[r8+rdx*8]
+0x23351E1 movsxd r8,dword ptr [rax+8]
+0x23351E5 sar r8,1F
+0x23351E9 or r8,[rdx+1C88]
+0x23351F0 test [rax],r8
+0x23351F3 je short 000000014233518E
+0x23351F5 jmp near ptr 0000000142335281
+0x23351FA cmp word ptr [rdi+10],0FFFF
+0x23351FF je short 000000014233518E
+0x2335201 mov rdx,[rdi]
+0x2335204 mov eax,[rip+88569B6]
+0x233520A mov r8,gs:[58]
+0x2335213 mov r8,[r8+rax*8]
+0x2335217 movsxd rax,dword ptr [rdx+8]
+0x233521B sar rax,1F
+0x233521F or rax,[r8+1C88]
+0x2335226 and rax,[rdx]
+0x2335229 je near ptr 000000014233518E
+0x233522F movzx edx,byte ptr [rax+176]
+
+===== 0x59D9660 REGISTRATION CONSUMERS =====
+LEA=2 QWORD=0 E8=0
+  lea @0x5F14901 func≈0x5F11A40 sec=.impdata
+    storeSlot @0x5F14908 ->0xB289918 mov [rip+5375009],rcx
+    regWindowStores=0
+  lea @0x5F14902 func≈0x5F11A40 sec=.impdata
+    storeSlot @0x5F14908 ->0xB289918 mov [rip+5375009],rcx
+    regWindowStores=0
+
+===== ALLOC + OUTER CTOR PROXIMITY =====
+E8->Allocator sampleCap=200
+  alloc@0x685D8 func≈0x67E30 sizeImm=0x50 refsOuter=False
+  alloc@0x7497A func≈0x748F0 sizeImm=0xE0 refsOuter=False
+  alloc@0x16962E func≈0x1694E0 sizeImm=0x50 refsOuter=False
+  alloc@0x1B0696 func≈0x1B04C0 sizeImm=0x50 refsOuter=False
+  alloc@0x1FFE71 func≈0x1F99A0 sizeImm=0xE0 refsOuter=False
+interestingAllocHits=5
+
+===== REG RECORD PEEK =====
+  slot 0xB289918 sec=.trace hex40=FF FF 00 00 00 00 00 00 00 00 4A DC F0 5D 00 00 00 00 0C 7F 80 59 01 00 00 00 40 0E 41 80 C6 0F A2 C3 FF FF FF FF C0 18
+    nearDword off=-24 @0xB289900 =0x6090
+    nearDword off=12 @0xB289924 =0x5DF0
+    nearDword off=20 @0xB28992C =0x15980
+
+===== INSTALLERA WINDOW @0x5F148C0 =====
+0x5F148C0 add eax,3511F8C5
+0x5F148C5 dec dword ptr [rdi+37]
+0x5F148C8 add eax,925AB948
+0x5F148CD xchg r9b,[rsp+rcx+14]
+0x5F148D2 ror byte ptr [rax-77],0D
+
+===== CROSS =====
+activ callsPost=True usesAnim=True callsNotify=True t26=True vcall2C0=True
+notify size=289 strings=0 callees=0 callersE8=30
+neighbor vcall2B0=True modes=[test~2 @0x233514B test edx,0FFFFFFFD,0x2335159 mov edx,3] t61=False
+regSlots=1 sizeCandidates=[0x20F0,0x5DF0,0x6090,0x15980]
+heapNotes=7
+
+===== CONFIRMED FOLLOW-UP =====
+TypeInfo size: 0x5F148DA mov dword [rip],0x20F0 -> 0xB2898E8
+Outer ctor:    0x5F14901 lea rcx,0x59D9660 ; 0x5F14908 mov [rip],rcx -> 0xB289918
+registeredHeapSize=0x20F0 layoutLowerBound=0x20E0
+notifyShared=True callersE8=30
+neighbor edx=3 vcall [vt+0x2B0] helper=0x546D150
