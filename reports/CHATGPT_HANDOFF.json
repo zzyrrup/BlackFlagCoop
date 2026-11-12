@@ -73,6 +73,15 @@
     "Input path at 0x187F0550 is not a movement controller",
     "No verified input-to-character connection as of v0.6.4"
   ],
+  "c2NextEdge": {
+    "branch": "cursor/v080-c2-vt90-edge-530e",
+    "parentCommit": "768ad21",
+    "advances": "C2",
+    "site": "0x1F75EA7",
+    "slot": "vt+0x90",
+    "callEngine": false,
+    "doc": "docs/v0.8.0-c2-vt90-next-edge.md"
+  },
   "hypotheses": [
     "Deferred elements are actor or job handles",
     "0xE95E80 performs creation or activation",
