@@ -172,6 +172,10 @@ Handoff setup (this update), in addition to existing v0.6.4 research already on 
 
 ---
 
+## 15a. C2 next edge (2026-11-12, branch `cursor/v080-c2-vt90-edge-530e`)
+
+`vt+0x90 (0,0)` is dropped as Duplicate after Agent 2 `a12d5b1`: 191 sites, zero Begin, zero unbroken return-to-Build, and the sampled consumer is `[rax+0x88]` with the tag bit cleared (`0x30F1D6`). Next xref is the callers of `0x30F0D0` only. Details: `docs/v0.8.0-c2-vt90-next-edge.md`. `callEngine` stays off. No ASI deploy, no game launch.
+
 ## 15. Exact instructions for ChatGPT's next review
 
 When reviewing the GitHub repository after a Cursor push:

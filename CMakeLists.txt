@@ -131,3 +131,22 @@ if(MSVC)
         /EHsc
     )
 endif()
+
+# Offline C2 callsite classifier. Not linked into the ASI. callEngine stays off.
+enable_testing()
+add_executable(BlackFlagCoopC2CallShapeTest
+    tools/c2_call_shape_test/main.cpp
+)
+target_include_directories(BlackFlagCoopC2CallShapeTest PRIVATE src)
+target_compile_features(BlackFlagCoopC2CallShapeTest PRIVATE cxx_std_17)
+set_target_properties(BlackFlagCoopC2CallShapeTest PROPERTIES
+    RUNTIME_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}/bin"
+)
+if(MSVC)
+    target_compile_options(BlackFlagCoopC2CallShapeTest PRIVATE
+        /W4
+        /permissive-
+        /EHsc
+    )
+endif()
+add_test(NAME C2CallShape COMMAND BlackFlagCoopC2CallShapeTest)

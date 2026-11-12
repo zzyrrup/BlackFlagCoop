@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "milestone": "v0.8.0",
+  "contract": "C2",
+  "mode": "reclassify-captured-window",
+  "parentBranch": "cursor/v080-spawn-callers-a9fe",
+  "parentCommit": "768ad21",
+  "dump": "reports/v080-triad-strict-raw/deep.txt",
+  "exeSha256": "19920F34BB2FAC814023EE3C27F0CECA1872E80A2AAFB37C092C419FFF77CC0D",
+  "exePresentOnThisMachine": false,
+  "callEngine": false,
+  "triad": {
+    "begin": "missing — prior leaves 0x5001598, 0x4420000, 0x4DE1C40 falsified",
+    "duplicate": "unproven — virtual [vt+0x90](this,0,0) at 0x1F75EA7 and sibling 0x44A8A5",
+    "end": "not in these windows; reference End is a __finally funclet, so an in-function direct call is the wrong filter",
+    "build": "missing — tagged callees are not Build(builder, &out, dup)"
+  },
+  "sites": [
+    {
+      "rva": "0x1F75EA7",
+      "form": "call qword ptr [rax+0x90]",
+      "lastDef": {"edx": 0, "r8": 0},
+      "rcxPath": "[incoming+8] -> [+0x20] -> byte[+0xB] bit 0x80 -> [+0]",
+      "return": "null-checked, saved in rdi",
+      "role": "Duplicate-shaped, unproven",
+      "thread": "unknown"
+    },
+    {
+      "rva": "0x44A8A5",
+      "form": "call qword ptr [rax+0x90]",
+      "lastDef": {"edx": 0, "r8": 0},
+      "rcxPath": "rcx already the object (mov rax, [rcx])",
+      "return": "null-checked, saved in rbx",
+      "role": "same tail as 0x1F75EA7; not a second lead",
+      "thread": "unknown"
+    }
+  ],
+  "falsifiedInThisWindow": [
+    {"rva": "0x1F75EC1", "target": "0xBF3100", "reason": "scanner dup tag; args are (virtual return, 0)"},
+    {"rva": "0x44A8BF", "target": "0xBF3100", "reason": "same helper, not Duplicate"},
+    {"rva": "0xBF2EF0", "reason": "4-arg call; rdx is RIP-relative; r9 is the 0xBF3100 return"},
+    {"rva": "0x1F75EE9", "target": "0x44B210", "reason": "scanner build tag; does not consume the saved virtual return"},
+    {"rva": "0x44A8EC", "target": "0x44B210", "reason": "same, not BuildEntityWithSelector"}
+  ],
+  "followUp": {
+    "parentCommit": "a12d5b1",
+    "vt90Dup00": 191,
+    "unbrokenRetToBuild": 0,
+    "withBegin10": 0,
+    "decision": "drop vt+0x90 as Duplicate",
+    "reason": "Dominant consumer is [rax+0x88] with the low tag bit cleared. The working AC4 route requires Duplicate inside Begin/End and consumption by Build. These sites do neither.",
+    "sample": "0x30F1D6 in function 0x30F0D0"
+  },
+  "nextXref": "Callers of 0x30F0D0 only: is rbx a long-lived player owner that also stores a selector? If the callers are generic, close the +0x90 family and return to the C1 cache writer.",
+  "offlineTest": {
+    "command": "g++ -std=c++17 -Wall -Wextra -Wpedantic -Werror -Isrc tools/c2_call_shape_test/main.cpp",
+    "compiler": "g++ 13.3.0",
+    "checksPassed": 16,
+    "visualStudio18": "not installed on this machine"
+  },
+  "advances": "C2",
+  "doesNotAdvance": ["C1", "C3", "C5", "C4"]
+}

@@ -7,7 +7,7 @@
   "repository": {
     "url": "https://github.com/zzyrrup/BlackFlagCoop",
     "defaultBranch": "main",
-    "latestCommit": "c7e43650e6ec307ac0891f682421fae36da5bb07",
+    "latestCommit": "79f2762803914b45ea669982ff1d44c476ff09c2",
     "initialCommit": "e12e70150656ac80742f10b496f7e5556e7985b7",
     "tracking": "origin/main"
   },
@@ -73,6 +73,15 @@
     "Input path at 0x187F0550 is not a movement controller",
     "No verified input-to-character connection as of v0.6.4"
   ],
+  "c2NextEdge": {
+    "branch": "cursor/v080-c2-vt90-edge-530e",
+    "parentCommit": "a12d5b1",
+    "advances": "C2",
+    "site": "0x1F75EA7",
+    "slot": "vt+0x90",
+    "callEngine": false,
+    "doc": "docs/v0.8.0-c2-vt90-next-edge.md"
+  },
   "hypotheses": [
     "Deferred elements are actor or job handles",
     "0xE95E80 performs creation or activation",
