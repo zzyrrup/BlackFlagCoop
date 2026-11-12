@@ -42,9 +42,13 @@ public:
         {0xE95E80u, "side-block allocator"},
         {0x426EE50u, "generic allocator"},
         {0x80F2330u, "SpawnCharacterParams schema visitor"},
+        {0x80F23E0u, "SpawnNPCParams schema visitor"},
+        {0x80F2A20u, "SpawnPlayerParams schema visitor"},
+        {0x821ABC0u, "SpawnPlayerBoatParams schema visitor"},
         {0x8DFFB90u, "SpawnEntityParams schema visitor"},
         {0x8E02960u, "SpawnEntityBuilderParams schema visitor"},
         {0x4572C60u, "schema type-name registrar"},
+        {0x1C75AB0u, "PlayerProgression name-range registrar (not builder cache)"},
     };
 
     static constexpr UnprovenSameTableAlloc kUnprovenAllocs[] = {
@@ -59,10 +63,12 @@ public:
     };
 
     static constexpr const char* kMissingLink =
-        "No proven native Edward factory. SpawnCharacterParams, SpawnEntityParams, "
-        "and SpawnEntityBuilderParams only register schema names through 0x4572C60. "
-        "The missing call is the one that fills a builder and inserts a character "
-        "into the world.";
+        "No proven native Edward factory. SpawnPlayerParams, SpawnCharacterParams, "
+        "SpawnNPCParams, SpawnEntityParams, and SpawnEntityBuilderParams only "
+        "register schema names through 0x4572C60. PlayerProgression is a named "
+        "ID-range label via 0x1C75AB0, not the AC4Coop cached builder globals. "
+        "The missing call still fills a builder and inserts a character into the "
+        "world.";
 
     static bool IsExcluded(std::uint32_t rva);
     static const UnprovenSameTableAlloc* FindUnprovenAlloc(std::uint32_t rva);

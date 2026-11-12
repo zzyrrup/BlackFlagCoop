@@ -1,0 +1,68 @@
+{
+  "schemaVersion": 1,
+  "milestone": "v0.8.0",
+  "mode": "offline-pe-readonly",
+  "exeSha256": "19920F34BB2FAC814023EE3C27F0CECA1872E80A2AAFB37C092C419FFF77CC0D",
+  "playerProgressionStringFound": true,
+  "cachedBuilderResolved": false,
+  "spawnPlayerParamsVisitor": "0x80F2A20",
+  "playerProgressionRegistrar": "0x1C75AB0",
+  "decision": "player-progression-string-found-builder-cache-unresolved",
+  "blocker": "PlayerProgression name exists; cached selector+builder handle globals not identified",
+  "strings": [
+    {"needle": "Duplicate reference to 0x%llx", "rva": "0xA102E1F", "text": "Duplicate reference to 0x%llx"},
+    {"needle": "Duplicated Request", "rva": "0xA10978E", "text": "Duplicated Request"},
+    {"needle": "PlayerProgressions", "rva": "0xA11C861", "text": "PlayerProgressions"},
+    {"needle": "SpawnInventoryParams", "rva": "0xA11DC3F", "text": "SpawnInventoryParams"},
+    {"needle": "SpawnPlayerBoatParams", "rva": "0xA11DD1C", "text": "SpawnPlayerBoatParams"},
+    {"needle": "SpawnEntityBuilderParams", "rva": "0xA11DDF0", "text": "SpawnEntityBuilderParams"},
+    {"needle": "SpawnNPCParams", "rva": "0xA11E28C", "text": "SpawnNPCParams"},
+    {"needle": "PlayerProgression", "rva": "0xA14482A", "text": "PlayerProgression"},
+    {"needle": "LoadingAdvisorUpdate", "rva": "0xA15C4FF", "text": "LoadingAdvisorUpdate"},
+    {"needle": "CreateActorsDeferredSingleThreaded", "rva": "0xA17A4F0", "text": "CreateActorsDeferredSingleThreaded"}
+  ],
+  "leaSites": [
+    {"needle": "Duplicate reference to 0x%llx", "site": "0x21291AE", "func": "0x2129000"},
+    {"needle": "Duplicate reference to 0x%llx", "site": "0x21291AF", "func": "0x2129000"},
+    {"needle": "Duplicated Request", "site": "0x9EFE8D", "func": "0x9EF320"},
+    {"needle": "Duplicated Request", "site": "0x9EFE8E", "func": "0x9EF320"},
+    {"needle": "SpawnInventoryParams", "site": "0x80F2800", "func": "0x80F27E0"},
+    {"needle": "SpawnInventoryParams", "site": "0x80F2801", "func": "0x80F27E0"},
+    {"needle": "SpawnPlayerBoatParams", "site": "0x821ABE0", "func": "0x821ABC0"},
+    {"needle": "SpawnPlayerBoatParams", "site": "0x821ABE1", "func": "0x821ABC0"},
+    {"needle": "SpawnEntityBuilderParams", "site": "0x8E02980", "func": "0x8E02960"},
+    {"needle": "SpawnEntityBuilderParams", "site": "0x8E02981", "func": "0x8E02960"},
+    {"needle": "SpawnNPCParams", "site": "0x80F23FC", "func": "0x80F23E0"},
+    {"needle": "SpawnNPCParams", "site": "0x80F23FD", "func": "0x80F23E0"},
+    {"needle": "PlayerProgression", "site": "0x1C71A0B", "func": "0x1C6FD50"},
+    {"needle": "PlayerProgression", "site": "0x1C71A0C", "func": "0x1C6FD50"},
+    {"needle": "PlayerProgression", "site": "0x6386663", "func": "0x6383FE0"},
+    {"needle": "PlayerProgression", "site": "0x6386664", "func": "0x6383FE0"},
+    {"needle": "LoadingAdvisorUpdate", "site": "0x1ED29C8", "func": "0x1ED0FC0"},
+    {"needle": "LoadingAdvisorUpdate", "site": "0x1ED29C9", "func": "0x1ED0FC0"},
+    {"needle": "CreateActorsDeferredSingleThreaded", "site": "0x5CBE0C7", "func": "0x5CBDFB0"},
+    {"needle": "CreateActorsDeferredSingleThreaded", "site": "0x5CBE0C8", "func": "0x5CBDFB0"}
+  ],
+  "playerProgressionFuncs": [
+  ],
+  "cacheStoreCandidates": [
+    {"entry": "0x6383FE0", "class": "multi-global-store", "stores": ["0xB407470", "0xB407460", "0xB407480", "0xB407490", "0xB407494", "0xB407498", "0xB40749C", "0xB4074A0", "0xB4074A4", "0xB4074A8", "0xB4074AC", "0xB4074B0"], "loads": ["0xA2B3200", "0x904EA4C", "0x97B6AC0", "0xB407510", "0x97B7370", "0xB407530", "0xB407550", "0x97B7374", "0xA02AD40", "0xA02AD50", "0xA02AD60", "0xA02AD70"]},
+    {"entry": "0x1C6FD50", "class": "multi-global-store", "stores": ["0xAF39138", "0xB2EB830", "0xB2EB820", "0xB2EB840", "0xB2EB850", "0xB2EB854", "0xB2EB858", "0xB2EB85C", "0xB2EB860", "0xB2EB864", "0xB2EB868", "0xB2EB86C"], "loads": ["0xA2B3200", "0xAF6FD48", "0xAF676B0", "0xAF39138", "0xAF38F39", "0xAF67708", "0xAF67F14", "0x904EA4C", "0x97B6AC0", "0xB2EB8D0", "0x97B7370", "0xB2EB8F0"]},
+    {"entry": "0x16A6AE0", "class": "multi-global-store", "stores": ["0xAF39138"], "loads": ["0xA2B3200", "0xAB8BBC0", "0xAF6FD48", "0xAF67708", "0xAF67F14", "0xAF39138", "0xAF38F39", "0xAF676B0"]},
+    {"entry": "0x9EF320", "class": "alloc-user", "stores": ["0xAF39138"], "loads": ["0xA2B3200", "0xBFB7600", "0xBFB7670", "0xAF73BD8", "0xAB8BBC0", "0xAF6FED8", "0xAF6FD48", "0x91EA6A0", "0xAF73B90", "0xAF73AE0", "0xA249190", "0xAF6FDD8"]}
+  ],
+  "functions": [
+    {"entry": "0x9EF320", "class": "alloc-user", "callsSchema": false, "callsAlloc": true, "size": 2308},
+    {"entry": "0x16A6AE0", "class": "multi-global-store", "callsSchema": false, "callsAlloc": false, "size": 2168},
+    {"entry": "0x1C6FD50", "class": "multi-global-store", "callsSchema": false, "callsAlloc": false, "size": 2304},
+    {"entry": "0x1ED0FC0", "class": "unrelated", "callsSchema": false, "callsAlloc": false, "size": 2306},
+    {"entry": "0x2129000", "class": "named-ref", "callsSchema": false, "callsAlloc": false, "size": 718},
+    {"entry": "0x5414E30", "class": "unrelated", "callsSchema": false, "callsAlloc": false, "size": 47},
+    {"entry": "0x5B65B50", "class": "unrelated", "callsSchema": false, "callsAlloc": false, "size": 79},
+    {"entry": "0x6383FE0", "class": "multi-global-store", "callsSchema": false, "callsAlloc": false, "size": 2309},
+    {"entry": "0x67AE240", "class": "unrelated", "callsSchema": false, "callsAlloc": false, "size": 228},
+    {"entry": "0x80F23E0", "class": "schema", "callsSchema": true, "callsAlloc": false, "size": 101},
+    {"entry": "0x821ABC0", "class": "schema", "callsSchema": true, "callsAlloc": false, "size": 133},
+    {"entry": "0x8E02960", "class": "schema", "callsSchema": true, "callsAlloc": false, "size": 151}
+  ]
+}

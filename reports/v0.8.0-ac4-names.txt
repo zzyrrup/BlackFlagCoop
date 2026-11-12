@@ -10,3 +10,11 @@ SetGlobalMatrixInternal hit=0
 SetTargetAction hit=0
 PlayerPadManager hit=0
 CharacterActionSet hit=0
+PlayerProgression hit=1 text=PlayerProgressions
+PlayerProgression hit=2 text=PlayerProgression
+PlayerProgression hit=3 text=UsPlayerProgressionsProviderRuntimeConfig
+SpawnPlayerParams hit=1 text=SpawnPlayerParams
+SpawnPlayerBoatParams hit=1 text=SpawnPlayerBoatParams
+LoadingAdvisorUpdate hit=1 text=LoadingAdvisorUpdate
+SpawningRequest hit=0
+CrowdHerder hit=0

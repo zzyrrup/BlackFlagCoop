@@ -1,0 +1,63 @@
+===== SPAWN PLAYER / PARAM VT SLOTS =====
+QWORD 0x80F2A20 embeds=1
+  slot=0x92D1C70 base=0x92D1C60 index=2
+    [0] 0x21F6CD0 schema=False alloc=False
+    [1] 0x53741F0 schema=False alloc=False
+    [2] 0x80F2A20 schema=True alloc=False
+    [3] 0x64099B0 schema=False alloc=False
+    [4] 0x21F5950 schema=False alloc=False
+    [5] 0x53741F0 schema=False alloc=False
+    [6] 0xB537FC8 not-code
+QWORD 0x80F2330 embeds=1
+  slot=0x92D19D0 base=0x92D19A8 index=5
+    [0] 0x46DC120 schema=False alloc=False
+    [1] 0x53741F0 schema=False alloc=False
+    [2] 0x316BFC0 schema=False alloc=False
+    [3] 0x80FCA40 schema=False alloc=False
+    [4] 0x53741F0 schema=False alloc=False
+    [5] 0x80F2330 schema=True alloc=False
+    [6] 0x1207200 schema=False alloc=False
+    [7] 0x5E3DF0 schema=False alloc=False
+    [8] 0x53741F0 schema=False alloc=False
+    [9] 0xB5377F8 not-code
+QWORD 0x80F23E0 embeds=1
+  slot=0x92D1AB0 base=0x92D1AA0 index=2
+    [0] 0x925390 schema=False alloc=False
+    [1] 0x53741F0 schema=False alloc=False
+    [2] 0x80F23E0 schema=True alloc=False
+    [3] 0x12071F0 schema=False alloc=False
+    [4] 0x5E3DB0 schema=False alloc=False
+    [5] 0x53741F0 schema=False alloc=False
+    [6] 0xB5378F0 not-code
+QWORD 0x821ABC0 embeds=1
+  slot=0x92D1D50 base=0x92D1D40 index=2
+    [0] 0x6454B10 schema=False alloc=False
+    [1] 0x53741F0 schema=False alloc=False
+    [2] 0x821ABC0 schema=True alloc=False
+    [3] 0x64548E0 schema=False alloc=False
+    [4] 0x6454930 schema=False alloc=False
+    [5] 0x53741F0 schema=False alloc=False
+    [6] 0xB5B9688 not-code
+QWORD 0x8E02960 embeds=2
+  slot=0x92D1EF0 base=0x92D1E58 index=19
+    [0] 0x46DC120 schema=False alloc=False
+    [1] 0x21F57E0 schema=False alloc=False
+    [2] 0x1000 schema=False alloc=False
+    [3] 0x1000 schema=False alloc=False
+    [4] 0x1000 schema=False alloc=False
+    [5] 0x1000 schema=False alloc=False
+    [6] 0x1000 schema=False alloc=False
+    [7] 0x53741F0 schema=False alloc=False
+    [8] 0x1000 schema=False alloc=False
+    [9] 0x53741F0 schema=False alloc=False
+  slot=0x92D1FB0 base=0x92D1F18 index=19
+    [0] 0x46DC120 schema=False alloc=False
+    [1] 0x780F20 schema=False alloc=False
+    [2] 0x1000 schema=False alloc=False
+    [3] 0x1000 schema=False alloc=False
+    [4] 0x1000 schema=False alloc=False
+    [5] 0x1000 schema=False alloc=False
+    [6] 0x1000 schema=False alloc=False
+    [7] 0x53741F0 schema=False alloc=False
+    [8] 0x1000 schema=False alloc=False
+    [9] 0x53741F0 schema=False alloc=False

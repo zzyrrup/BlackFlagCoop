@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedUtc": "2026-11-12T19:46:00Z",
+  "generatedUtc": "2026-11-12T20:25:00Z",
   "handoffFor": "ChatGPT",
   "executor": "Cursor",
   "machine": "PC1",
@@ -16,23 +16,24 @@
     "name": "BlackFlagCoop",
     "goal": "Research path toward co-op for AC Black Flag Resynced (two Edwards / shared world / LAN-internet); not claimed achieved",
     "functionalityChangedByThisMilestone": true,
-    "functionalityNote": "Candidate 0.8.0-dev logs a spawn refusal. It does not call a game factory. Installed ASI remains v0.5.1. Native Edward factory is not confirmed."
+    "functionalityNote": "Candidate 0.8.0-dev logs spawn/builder-path refusal. It does not call a game factory. Installed ASI remains v0.5.1. Native Edward factory is not confirmed."
   },
   "milestone": {
     "currentId": "v0.8.0",
-    "currentTitle": "Second Edward proof-of-life: schema visitors identified, native factory not confirmed",
+    "currentTitle": "Second Edward: SpawnPlayerParams + PlayerProgression classified; cached builder unresolved",
     "status": "factory_not_confirmed_gate_off",
-    "priorPreserved": ["v0.6.4", "v0.6.5", "v0.6.6", "v0.6.7", "v0.6.8", "v0.6.9", "v0.6.10", "v0.6.11", "v0.6.12", "v0.6.13", "v0.6.14", "v0.6.15", "v0.6.16", "v0.6.17", "v0.6.18", "v0.6.19", "v0.6.20", "v0.6.21", "v0.6.22", "v0.6.23", "v0.6.24"]
+    "priorPreserved": ["v0.6.4", "v0.6.5", "v0.6.6", "v0.6.7", "v0.6.8", "v0.6.9", "v0.6.10", "v0.6.11", "v0.6.12", "v0.6.13", "v0.6.14", "v0.6.15", "v0.6.16", "v0.6.17", "v0.6.18", "v0.6.19", "v0.6.20", "v0.6.21", "v0.6.22", "v0.6.23", "v0.6.24", "v0.6.25"]
   },
   "asi": {
     "version": "0.5.1",
     "sha256": "63B38877DDA7CC7CD9AB2619F94D3941C37F54C95A435EFE47084DC4CF2A50BE",
-    "deployAuthorized": false,
+    "deployAuthorized": true,
     "candidate": {
       "version": "0.8.0-dev",
-      "bytes": 102912,
-      "sha256": "ABD29003034AC4BD6C88DC728D8C4A5C6DAD7D2C53A76CD92B41C72B387976DB",
+      "bytes": 104448,
+      "sha256": "858F5593FA3FD29C4E04FA65A94D026EED1A8DF0B6A005D620E54ACE6ABDEC1D",
       "invokeNativeSpawn": false,
+      "callEngine": false,
       "deployed": false
     },
     "preserveWorkingAsi": true
@@ -49,7 +50,7 @@
     "architecture": "x64",
     "config": "Release",
     "result": "pass",
-    "offlineTools": ["tools/offline/VtOwner085", "tools/offline/SpawnCallers080"]
+    "offlineTools": ["tools/offline/BuilderPath080", "tools/offline/Ac4Names080", "tools/offline/SpawnCallers080"]
   },
   "network": {
     "changesAuthorized": false,
@@ -57,74 +58,76 @@
   },
   "engineFindings": {
     "summary": [
-      "Neigh VT 0x976B2D0 [0]=ctor 0x13612B0; Neighbor at +0x110",
-      "Spat VT 0x9236E00 [0]=ctor 0x5781490; Spatial at +0x58",
-      "Owner VT[0] ctors have 0 E8 callers (table-dispatched)",
-      "Spatial/neigh ctors init shared +0x98 field (enrollment side-block offset)",
-      "No same-func ctor->arming edge",
-      "No Edward/create path on the v0.6.25 owner VT",
-      "v0.8.0: Spawn*Params are schema visitors via 0x4572C60",
-      "0x34730 final vtable 0x92F9108 and 0x3DE6300 final vtable 0x92F9048 have no RTTI and are not characters",
-      "Plugin SpawnContract invoke=off"
+      "SpawnPlayerParams 0x80F2A20 is a schema visitor via 0x4572C60 then SpawnCharacterParams 0x80F2330",
+      "PlayerProgression string 0xA14482A LEAs call name-range registrar 0x1C75AB0 (edx=0x141,r8d=0x14B)",
+      "PlayerProgression is not proven as LoadEntityBuilderAndSelectorsForPlayer / cached builder globals",
+      "SpawnPlayerBoatParams 0x821ABC0 is also a schema visitor",
+      "Cached EntityBuilder + RowSelector + BuildEntityWithSelector + World::AddEntity still unidentified",
+      "Plugin SpawnContract/PuppetLifecycle/BuilderPath remain callEngine=off"
     ],
     "keyRvas": {
-      "neighVt": "0x976B2D0",
-      "neighVt0Ctor": "0x13612B0",
-      "neighRelatedCtor": "0x3D522C0",
-      "spatVt": "0x9236E00",
-      "spatVt0Ctor": "0x5781490",
-      "spatInstA": "0x5563CF0",
-      "spatInstB": "0x6CF34A0",
-      "sideBlockAlloc": "0xE95E80",
-      "arming": "0x21085D0",
-      "armWrap": "0x2108620"
+      "spawnPlayerParams": "0x80F2A20",
+      "spawnCharacterParams": "0x80F2330",
+      "spawnNpcParams": "0x80F23E0",
+      "spawnEntityBuilderParams": "0x8E02960",
+      "schemaRegister": "0x4572C60",
+      "playerProgressionString": "0xA14482A",
+      "playerProgressionRegistrar": "0x1C75AB0",
+      "loadingAdvisorUpdate": "0xA15C4FF"
     }
   },
   "confirmed": [
-    "Installed ASI v0.5.1 hash re-read; candidate not deployed",
-    "SpawnCharacterParams 0x80F2330, SpawnEntityParams 0x8DFFB90, SpawnEntityBuilderParams 0x8E02960 are schema visitors via 0x4572C60",
-    "Direct callers of those visitors are also schema visitors",
-    "0x34730 installs final vtable 0x92F9108; 0x3DE6300 installs final vtable 0x92F9048; vt-8 is 0; not characters",
-    "SpawnContract invoke flag is false and AttemptSpawn returns target 0"
+    "Installed ASI v0.5.1 preserved; candidate not deployed",
+    "SpawnPlayerParams / Spawn*Params family are schema visitors",
+    "PlayerProgression LEAs feed 0x1C75AB0 name-range registration",
+    "Gates refuse engine calls"
   ],
   "hypotheses": [
-    "0xE95E80 attaches side-blocks onto these same owner instances before arming",
-    "TypeInfo/factory path invokes VT[0] after Allocator"
+    "Local-player HandleContainer / resource-id reload path still exists under stripped names",
+    "Human/main-thread update remains the safe frame hook once player entity acquisition is proven"
   ],
   "blockers": [
-    "Native Edward factory not confirmed",
-    "Same-table allocation sizes do not identify the object",
-    "No input/possession path",
-    "No gameplay test authorized"
+    "Cached EntityBuilder handle + RowSelector globals not identified",
+    "BuildEntityWithSelector / World::AddEntity equivalents not identified",
+    "No verified native Edward factory"
   ],
   "mostRecentCompletedMilestone": {
     "id": "v0.8.0",
-    "docs": ["docs/v0.8.0-alloc-vtables.md", "docs/v0.8.0-second-edward-plan.md", "docs/v0.8.0-manual-pc1-checklist.md"],
+    "docs": [
+      "docs/v0.8.0-builder-path.md",
+      "docs/v0.8.0-ac4coop-lifecycle.md",
+      "docs/v0.8.0-second-edward-plan.md",
+      "docs/v0.8.0-alloc-vtables.md"
+    ],
     "reports": [
       "reports/v0.8.0-validation.json",
-      "docs/v0.8.0-alloc-vtables.md",
-      "reports/v080-vptr-raw/evidence.txt",
-      "reports/v0.8.0-spawn-callers.json",
-      "reports/v0.8.0-param-vtables.json",
-      "reports/v080-spawn-raw/evidence.txt",
-      "reports/v0.8.0-build-log.txt",
-      "reports/v0.8.0-spawn-contract-test.txt"
+      "reports/v0.8.0-builder-path.json",
+      "reports/v080-builder-raw/evidence.txt",
+      "reports/v0.8.0-ac4-names.txt"
     ]
   },
   "nextRecommendedMilestone": {
     "id": "v0.8.1",
-    "title": "Decode final-vtable slot 6 passed to 0x43DCB00",
-    "primary": ["0xC05CF10 for vtable 0x92F9108", "0xC05AA10 for vtable 0x92F9048", "stop unless a character type name appears"],
-    "forbidden": ["call the allocator from the plugin", "deploy", "game launch", "live memory", "PC2", "LAN", "treat schema visitors as factories", "treat 0x1528/0x1530 size alone as Edward"]
+    "title": "Trace live local-player entity acquisition / handle retention toward builder cache",
+    "primary": [
+      "structural GetPlayer / world-player edges from known phase or loading paths",
+      "HandleContainer-like retain/reload by object id",
+      "keep callEngine=off until a proven build+add sequence exists"
+    ],
+    "forbidden": [
+      "call schema visitors or 0x1C75AB0 as a factory",
+      "treat PlayerProgression name-range as the AC4Coop cache",
+      "deploy without backup + hash record",
+      "PC2 without availability check"
+    ]
   },
   "tests": [
-    { "name": "SpawnCallers080_schema_visitors", "result": "pass" },
     { "name": "SpawnContract_ctest_Release", "result": "pass" },
-    { "name": "VtOwner085_build_scan", "result": "pass" },
-    { "name": "vt0_ctor_map", "result": "pass" },
-    { "name": "plus98_enrollment_link", "result": "pass" },
-    { "name": "game_launch_deploy", "result": "not_run" },
-    { "name": "spawn_live_memory", "result": "not_run" }
+    { "name": "PuppetLifecycle_ctest_Release", "result": "pass" },
+    { "name": "BuilderPath_ctest_Release", "result": "pass" },
+    { "name": "BuilderPath080", "result": "pass" },
+    { "name": "Ac4Names080", "result": "pass" },
+    { "name": "game_launch_deploy", "result": "not_run" }
   ],
   "safety": {
     "pc1Only": true,
@@ -137,11 +140,10 @@
     "priorMilestonesPreserved": true
   },
   "chatgptNextReviewInstructions": [
-    "Read docs/v0.8.0-second-edward-plan.md and reports/v0.8.0-validation.json first",
-    "Schema visitors are not the Edward factory. Same-table alloc sizes are confirmed and the object identity is not",
-    "The v0.7.0 launch is an inconclusive overlay observation. Do not infer co-op success or failure and do not authorize another launch",
-    "Next offline step is the vtable stored after Allocator returns in 0x34730 and 0x3DE6300",
-    "Do not authorize deploy, gameplay, live memory, or PC2 unless the user asks",
+    "Read docs/v0.8.0-builder-path.md and reports/v0.8.0-validation.json first",
+    "SpawnPlayerParams and PlayerProgression are classified negatives for the factory/cache",
+    "Next offline/live step is local-player entity acquisition and handle retention, not more schema visitors",
+    "Deploy/gameplay is user-authorized on PC1 but still requires a verified call target before useful live tests",
     "Return PC1 branch+PR instructions"
   ]
 }

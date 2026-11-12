@@ -1,3 +1,4 @@
+#include "game/builder_path.h"
 #include "game/player_probe.h"
 #include "game/puppet_lifecycle.h"
 #include "game/player_telemetry.h"
@@ -55,6 +56,7 @@ extern "C" __declspec(dllexport) void InitializeASI() {
         "(native spawn refused, no factory proven)");
     bfc::SpawnContract::LogGate();
     bfc::PuppetLifecycle::LogGate();
+    bfc::BuilderPath::LogGate();
 
     // Prepare Winsock foundation only. Do not open host/client sessions yet.
     if (bfc::Network::Initialize()) {

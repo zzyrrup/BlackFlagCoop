@@ -50,7 +50,8 @@ public:
     static constexpr const char* kBlocker =
         "Resynced equivalents of the cached EntityBuilder, the DuplicationManager "
         "scope, BuildEntityWithSelector, and World::AddEntity are not identified. "
-        "No engine function is called.";
+        "PlayerProgression and SpawnPlayerParams were found offline but are not "
+        "that cache. No engine function is called.";
 
     static const char* StageName(PuppetStage stage);
     static std::size_t SourceStepCount();

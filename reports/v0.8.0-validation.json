@@ -1,48 +1,37 @@
 {
   "schemaVersion": 1,
   "milestone": "v0.8.0",
-  "generatedUtc": "2026-11-12T19:46:00Z",
-  "machine": "PC1",
-  "nativeSpawnConfirmed": false,
-  "secondActorInstantiated": false,
-  "independentControlImplemented": false,
-  "gameLaunched": false,
-  "deployed": false,
+  "generatedLocal": "2026-11-12T13:20:00 America/Denver",
   "exeSha256": "19920F34BB2FAC814023EE3C27F0CECA1872E80A2AAFB37C092C419FFF77CC0D",
-  "build": {
-    "generator": "Visual Studio 18 2026",
-    "architecture": "x64",
-    "config": "Release",
-    "compiler": "MSVC 19.52.37029.0",
-    "result": "pass",
-    "warningsObserved": 0,
-    "log": "reports/v0.8.0-build-log.txt"
-  },
+  "nativeFactoryConfirmed": false,
+  "cachedBuilderResolved": false,
   "candidate": {
     "version": "0.8.0-dev",
-    "path": "build/bin/Release/BlackFlagCoop.asi",
-    "bytes": 102912,
-    "sha256": "ABD29003034AC4BD6C88DC728D8C4A5C6DAD7D2C53A76CD92B41C72B387976DB",
+    "bytes": 104448,
+    "sha256": "858F5593FA3FD29C4E04FA65A94D026EED1A8DF0B6A005D620E54ACE6ABDEC1D",
     "invokeNativeSpawn": false,
+    "callEngine": false,
     "deployed": false
   },
   "installedAsi": {
-    "path": "C:\\Games\\AC Black Flag Resynced\\BlackFlagCoop.asi",
     "version": "0.5.1",
     "bytes": 99840,
     "sha256": "63B38877DDA7CC7CD9AB2619F94D3941C37F54C95A435EFE47084DC4CF2A50BE",
-    "unchanged": true
+    "preserved": true
   },
   "tests": [
-    { "name": "SpawnCallers080_exe_hash_and_schema_visitors", "result": "pass", "schemaVisitors": "3/3", "factoryCandidates": 0 },
-    { "name": "SpawnContract_ctest_Release", "result": "pass" },
-    { "name": "PuppetLifecycle_ctest_Release", "result": "pass" },
-    { "name": "Ac4Names080", "result": "pass", "note": "AC4Coop engine names absent except SpawnEntityBuilderParams" },
+    { "name": "SpawnContract", "result": "pass" },
+    { "name": "PuppetLifecycle", "result": "pass" },
+    { "name": "BuilderPath", "result": "pass" },
+    { "name": "BuilderPath080", "result": "pass", "note": "PlayerProgression string found; builder cache unresolved" },
+    { "name": "Ac4Names080", "result": "pass", "note": "SpawnPlayerParams and PlayerProgression present; SpawningRequest absent" },
     { "name": "game_launch_deploy", "result": "not_run" }
   ],
-  "allocVtables": {
-    "0x34730": {"size": "0x1528", "finalVtable": "0x92F9108", "rtti": "none", "character": false},
-    "0x3DE6300": {"size": "0x1530", "finalVtable": "0x92F9048", "rtti": "none", "character": false}
-  },
-  "missingLink": "A callsite that fills SpawnEntityBuilderParams and inserts a character into the world. The 0x1528/0x1530 objects are not that character."
+  "confirmed": [
+    "SpawnPlayerParams @0x80F2A20 is a schema visitor via 0x4572C60 then 0x80F2330",
+    "PlayerProgression LEAs call name-range registrar 0x1C75AB0 (indices 0x141-0x14B)",
+    "SpawnPlayerBoatParams @0x821ABC0 is a schema visitor",
+    "Gates remain default-off; installed ASI untouched"
+  ],
+  "missingLink": "Cached EntityBuilder handle + RowSelector globals and BuildEntityWithSelector / World::AddEntity equivalents are not identified."
 }

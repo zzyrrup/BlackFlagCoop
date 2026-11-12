@@ -25,7 +25,7 @@ Ultimate vision is **not claimed as achieved**. Dual-Edward co-op remains unprov
 
 ## 2. Current development milestone
 
-**v0.8.0 in progress** — Second Edward proof-of-life. Native factory **not confirmed**. `SpawnCharacterParams` / `SpawnEntityParams` / `SpawnEntityBuilderParams` are schema visitors through `0x4572C60`. The plugin gate `SpawnContract` refuses to call them (`invoke=off`). No second actor. No launch. No deploy.
+**v0.8.0 in progress** — Second Edward proof-of-life. Native factory **not confirmed**. `SpawnPlayerParams` (`0x80F2A20`) joins the other `Spawn*Params` schema visitors through `0x4572C60`. `PlayerProgression` is a name-range label via `0x1C75AB0`, not the AC4Coop cached builder. Gates `SpawnContract` / `PuppetLifecycle` / `BuilderPath` stay `callEngine=off`. No second actor. No launch. No deploy.
 
 Prior: v0.6.25 owner VT[0] ctors (`0x13612B0` / `0x5781490`) and v0.6.5–v0.6.24 preserved. Details: `docs/v0.8.0-second-edward-plan.md`.
 

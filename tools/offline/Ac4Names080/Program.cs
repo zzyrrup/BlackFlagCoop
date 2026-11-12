@@ -19,7 +19,13 @@ internal static class Program {
     "SetGlobalMatrixInternal",
     "SetTargetAction",
     "PlayerPadManager",
-    "CharacterActionSet"
+    "CharacterActionSet",
+    "PlayerProgression",
+    "SpawnPlayerParams",
+    "SpawnPlayerBoatParams",
+    "LoadingAdvisorUpdate",
+    "SpawningRequest",
+    "CrowdHerder"
   };
 
   static int Main() {

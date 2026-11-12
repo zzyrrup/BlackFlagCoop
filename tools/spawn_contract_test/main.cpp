@@ -37,9 +37,13 @@ int main() {
     Expect(bfc::SpawnContract::IsExcluded(0xE95E80u), "side-block alloc is excluded");
     Expect(bfc::SpawnContract::IsExcluded(0x426EE50u), "generic allocator is excluded");
     Expect(bfc::SpawnContract::IsExcluded(0x80F2330u), "character params visitor is excluded");
+    Expect(bfc::SpawnContract::IsExcluded(0x80F23E0u), "npc params visitor is excluded");
+    Expect(bfc::SpawnContract::IsExcluded(0x80F2A20u), "player params visitor is excluded");
+    Expect(bfc::SpawnContract::IsExcluded(0x821ABC0u), "player boat params visitor is excluded");
     Expect(bfc::SpawnContract::IsExcluded(0x8DFFB90u), "entity params visitor is excluded");
     Expect(bfc::SpawnContract::IsExcluded(0x8E02960u), "builder params visitor is excluded");
     Expect(bfc::SpawnContract::IsExcluded(0x4572C60u), "schema registrar is excluded");
+    Expect(bfc::SpawnContract::IsExcluded(0x1C75AB0u), "player progression registrar is excluded");
     Expect(!bfc::SpawnContract::IsExcluded(0u), "zero is not an exclusion");
 
     const bfc::UnprovenSameTableAlloc* entity =
@@ -63,6 +67,10 @@ int main() {
     Expect(text.find("invoke=off") != std::string::npos, "description says invoke off");
     Expect(text.find("SpawnEntityBuilderParams") != std::string::npos,
            "description names the builder params");
+    Expect(text.find("SpawnPlayerParams") != std::string::npos,
+           "description names SpawnPlayerParams");
+    Expect(text.find("PlayerProgression") != std::string::npos,
+           "description names PlayerProgression");
     Expect(text.find("not called") != std::string::npos,
            "description says the allocators are not called");
     Expect(text.find("0x34730") != std::string::npos, "description records 0x34730");

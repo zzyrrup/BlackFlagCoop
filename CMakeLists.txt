@@ -35,6 +35,8 @@ add_library(BlackFlagCoopNet STATIC
     src/game/spawn_contract.h
     src/game/puppet_lifecycle.cpp
     src/game/puppet_lifecycle.h
+    src/game/builder_path.cpp
+    src/game/builder_path.h
 )
 
 target_include_directories(BlackFlagCoopNet PUBLIC src)
@@ -172,6 +174,24 @@ if(MSVC)
     )
 endif()
 
+add_executable(BlackFlagCoopBuilderPathTest
+    tools/builder_path_test/main.cpp
+)
+
+target_link_libraries(BlackFlagCoopBuilderPathTest PRIVATE BlackFlagCoopNet)
+
+set_target_properties(BlackFlagCoopBuilderPathTest PROPERTIES
+    RUNTIME_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}/bin"
+)
+
+if(MSVC)
+    target_compile_options(BlackFlagCoopBuilderPathTest PRIVATE
+        /W4
+        /permissive-
+        /EHsc
+    )
+endif()
+
 enable_testing()
 add_test(
     NAME SpawnContract
@@ -180,4 +200,8 @@ add_test(
 add_test(
     NAME PuppetLifecycle
     COMMAND BlackFlagCoopPuppetLifecycleTest
+)
+add_test(
+    NAME BuilderPath
+    COMMAND BlackFlagCoopBuilderPathTest
 )
