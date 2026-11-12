@@ -1,0 +1,14 @@
+{
+  "schemaVersion": 1,
+  "milestone": "v0.6.26",
+  "generatedUtc": "2026-11-12T19:44:34Z",
+  "exeSha256": "19920F34BB2FAC814023EE3C27F0CECA1872E80A2AAFB37C092C419FFF77CC0D",
+  "createSecondEdward": { "class": "unsupported", "reason": "Alloc/VT0 and sideblock/arming links do not prove Edward create/possession" },
+  "allocThenVt0": { "class": "unsupported", "reason": "No Allocator+VT[0] E8/abs/LEA-near path; VT[0] ctors are in-place (assume rcx allocated) and only table-dispatched" },
+  "sameInstanceSideblockArming": { "class": "confirmed", "reason": "SideBlock Alloc(0x160)+mov [this+98],block; Arming/ArmWrap load [this+98]; owner ctors share +0x98; sole E8 SideBlock path is queue handler 0x1AC380; no same-func SideBlock+Arming E8 (Arming VT-slot)" },
+  "liveMemoryProbe": { "class": "blocked", "reason": "Not authorized" },
+  "next": {
+    "primary": "Reverse TypeInfo/+0x50 consumers that invoke owner VT[0]; map which object types carry pointer +0x98 vs Spatial inline +0x98",
+    "avoid": ["live memory", "ASI deploy", "spawn", "PC2", "expect E8 to owner VT[0]"]
+  }
+}

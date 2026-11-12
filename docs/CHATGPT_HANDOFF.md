@@ -25,9 +25,9 @@ Ultimate vision is **not claimed as achieved**. Dual-Edward co-op remains unprov
 
 ## 2. Current development milestone
 
-**v0.6.25 complete** — Owner VT[0] ctors mapped (`0x13612B0` / `0x5781490`); 0 E8 callers (table-dispatched); spatial/neigh ctors init shared `+0x98` enrollment field.
+**v0.6.26 complete** — Alloc→owner VT[0] is **indirect-only** (0 Alloc+LEA/abs); SideBlock Alloc(0x160)+`[this+0x98]` attach proven; Arming/ArmWrap load same pointer slot (structural same-instance).
 
-Prior: v0.6.5–v0.6.24 preserved. Offline only. No ASI, spawn, or networking change.
+Prior: v0.6.5–v0.6.25 preserved. Offline only. No ASI, spawn, or networking change.
 
 ---
 
@@ -107,6 +107,7 @@ High-signal offline findings (see `docs/v0.6.*` and `reports/v0.6.*`):
 - **v0.6.23:** Tight-factory callers do **not** LEA key/`0x20F0` (186 records, 0 hits). Helper deep-decode: `0x2336560` position extract; `0x1D25E20` spatial math — not possession. Still no Edward/create path.
 - **v0.6.24:** Outer `0x59D9660` = InstallerA TypeInfo registration only (0 E8). Neighbor/Spatial = `.edata` methods; owner vtables `0x976B2D0`/`0x9236E00`. Still no Edward/create path.
 - **v0.6.25:** Owner VT[0] ctors `0x13612B0`/`0x5781490` (0 E8); spat/neigh ctors init `+0x98` (enrollment side-block field). Still no Edward/create path.
+- **v0.6.26:** No Alloc→VT[0] static path (in-place ctors, table-only); SideBlock Alloc+attach + Arming/ArmWrap `[this+0x98]` pointer-slot same-instance confirmed. Still no Edward/create path.
 
 ---
 
@@ -169,6 +170,9 @@ High-signal offline findings (see `docs/v0.6.*` and `reports/v0.6.*`):
 - Lookup+Alloc cands `0x1B6AFF0`/`0x26D28E0`/`0x2F2C1A0` are **not** on the Outer reverse path.
 - Neighbor/Spatial are **vtable methods** (`.edata 0x976B3E0` / `0x9236E58`); owner table bases `0x976B2D0` (+0x110) / `0x9236E00` (+0x58); installers `0x13612B0` / `0x5563CF0`/`0x6CF34A0` (spatial inits `+0x98`).
 - Owner **VT[0]** ctors: neigh `0x13612B0`, spat `0x5781490` (+ family `0x3D522C0`/`0x5563CF0`/`0x6CF34A0`/`0x6CF3750`); **0 E8** callers; spat/neigh ctors init shared **`+0x98`** field (enrollment side-block offset).
+- **No** PE-static Alloc→owner VT[0] path (0 movabs / 0 Alloc+LEA owner VT / 0 LEA-near-Alloc); VT[0] ctors are in-place and table-dispatched only.
+- SideBlock `0xE95E80`: Alloc(0x160) then `mov [this+98],block` + back-ptr `[block+100]=this`; sole E8 callers in queue handler `0x1AC380`.
+- Arming `0x21085D0` / ArmWrap `0x2108620` load `[this+98]` as side-block pointer — **pointer-slot same-instance** with SideBlock attach (structural; live Neighbor VT identity still unproven).
 - Input lead `0x187F0550` is action-name bind, not a movement controller.
 - No verified shared entity/ownership edge between input bind path and deferred handler.
 - No Edward, character, archetype, player, or transform string in either worker or the producer wrapper.
@@ -179,7 +183,8 @@ High-signal offline findings (see `docs/v0.6.*` and `reports/v0.6.*`):
 - The queued object is an actor or character (LOD-tracked).
 - The 0x160 side block is activation state for that object.
 - Runtime (non-RIP) TypeInfo pointer for `0xB2898C8` may still reach a tight factory.
-- `0xE95E80` attaches side-blocks onto these same owner instances before arming (structural `+0x98` link confirmed; instance identity unproven).
+- TypeInfo `[ti+0x50]` (or equivalent) invokes owner VT[0] after some Allocator.
+- Enrollment-family objects with pointer `+0x98` are the same live Neighbor VT instances that host spat/neigh methods.
 - Dual Edward / dual input context is feasible somewhere else in the engine.
 
 ### Disproven on this path
@@ -198,13 +203,15 @@ High-signal offline findings (see `docs/v0.6.*` and `reports/v0.6.*`):
 - Helper transform/position extract (`0x2336560` / `0x1D25E20`) equals possession/control (not shown).
 - Expecting a direct `E8 0x59D9660` create site (none; TypeInfo icall only).
 - Expecting E8 callers of owner VT[0] ctors (none; table-dispatched).
+- Expecting a co-located Allocator + LEA owner VT / movabs ctor path for VT[0] (none offline).
 
 ---
 
 ## 9. Current blockers
 
 - No confirmed character/Edward factory or archetype reuse path. Queue only enqueues/activates existing objects.
-- Who Allocates then invokes owner VT[0] ctors still open; side-block attach→arming on same instances unproven.
+- Alloc→owner VT[0] remains table/TypeInfo-indirect (no PE static site); TypeInfo `+0x50` binding to these ctors not recovered.
+- Pointer-slot same-instance SideBlock↔Arming confirmed; live object identity / Edward create still unproven.
 - No verified input→character ownership/control binding.
 - No safe authorized spawn/possession test design yet.
 - GitHub handoff must stay free of ASI/game binaries.
@@ -213,33 +220,33 @@ High-signal offline findings (see `docs/v0.6.*` and `reports/v0.6.*`):
 
 ## 10. Most recent completed milestone
 
-**v0.6.25 — Owner VT constructors + enrollment +0x98 link**
+**v0.6.26 — Alloc→VT[0] indirect-only + SideBlock/Arming same-instance**
 
 Deliverables:
 
-- `docs/v0.6.25-vt-owner-ctors.md`
-- `reports/v0.6.25-funcs-deep.json`
-- `reports/v0.6.25-summary.json`
-- `reports/v0.6.25-second-edward-feasibility.json`
-- `reports/v085-raw/evidence.txt`
-- `tools/offline/VtOwner085/`
+- `docs/v0.6.26-alloc-vt0.md`
+- `reports/v0.6.26-funcs-deep.json`
+- `reports/v0.6.26-summary.json`
+- `reports/v0.6.26-second-edward-feasibility.json`
+- `reports/v086-raw/evidence.txt`
+- `tools/offline/AllocVt086/`
 
-v0.6.4–v0.6.24 reports were left in place.
+v0.6.4–v0.6.25 reports were left in place.
 
 ---
 
 ## 11. Next recommended milestone
 
-**v0.6.26 (proposed):** Offline find who Allocates then invokes owner **VT[0]** ctors (`0x13612B0` / `0x5781490`); prove `0xE95E80` side-block attach + arming on those same instances. Still no spawn, deploy, live memory, or PC2 unless separately authorized.
+**v0.6.27 (proposed):** Offline reverse TypeInfo/`[ti+0x50]` consumers that invoke owner VT[0]; classify pointer `+0x98` (SideBlock) vs Spatial inline `+0x98`. Still no spawn, deploy, live memory, or PC2 unless separately authorized.
 
 ---
 
 ## 12. Files changed in the latest milestone
 
-- `docs/v0.6.25-vt-owner-ctors.md`
-- `reports/v0.6.25-*.json`
-- `reports/v085-raw/evidence.txt`
-- `tools/offline/VtOwner085/`
+- `docs/v0.6.26-alloc-vt0.md`
+- `reports/v0.6.26-*.json`
+- `reports/v086-raw/evidence.txt`
+- `tools/offline/AllocVt086/`
 - `docs/CHATGPT_HANDOFF.md`
 - `reports/CHATGPT_HANDOFF.json`
 
@@ -270,6 +277,7 @@ v0.6.4–v0.6.24 reports were left in place.
 | Offline factory-feed/possession v0.6.23 (`FactoryFeed083`) | Pass; 0 key-tied factory callers; helpers = transform/position |
 | Offline ctor-reverse/ownership v0.6.24 (`CtorReverse084`) | Pass; Outer=InstallerA LEA only; vtable owners mapped |
 | Offline VT owner ctors v0.6.25 (`VtOwner085`) | Pass; VT[0] ctors; +0x98 enrollment link |
+| Offline Alloc/VT0 + same-instance v0.6.26 (`AllocVt086`) | Pass; Alloc→VT[0] indirect-only; SideBlock+Arming `+0x98` confirmed |
 | Subject MSVC RTTI name | **Not found** (game types RTTI-stripped) |
 | Game launch / ASI deploy | **Not performed** |
 | Spawn / inject / live memory | **Not performed** |
@@ -295,6 +303,6 @@ When reviewing the GitHub repository after a Cursor push:
 2. Diff against the previous handoff `milestoneId` / commit.
 3. Treat only **confirmed** items as facts; keep hypotheses labeled.
 4. Propose the **next single milestone** with: objective, in-scope RVAs/files, out-of-scope (spawn/deploy/PC2), required deliverables paths, and acceptance checks.
-5. Prefer **v0.6.26**: who Allocates then invokes owner VT[0] ctors; prove `0xE95E80` + arming on same instances. Do not expect E8 to Outer/owner VT[0] ctors; do not treat helper position extract as possession; do not treat loose fullPattern as proven; do not treat field-offset `0x20F0` as heap size; avoid `+0x61`-only ranking; do not conflate wrap modes with the enrollment gate; do not rely on MSVC RTTI for game types.
+5. Prefer **v0.6.27**: TypeInfo/`[ti+0x50]` → owner VT[0]; classify pointer vs inline `+0x98`. Do not expect E8 to Outer/owner VT[0] ctors; do not treat helper position extract as possession; do not treat layout-only same-offset as live Edward identity; do not treat field-offset `0x20F0` as heap size; avoid `+0x61`-only ranking; do not conflate wrap modes with the enrollment gate; do not rely on MSVC RTTI for game types.
 6. Do not instruct Cursor to deploy ASI, spawn, use live memory, or touch PC2/save data unless the user explicitly overrides safety.
 7. Return instructions Cursor can execute verbatim on PC1 on a dedicated branch + PR (never push main).

@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 1,
+  "milestone": "v0.6.26",
+  "generatedUtc": "2026-11-12T19:44:34Z",
+  "exeSha256": "19920F34BB2FAC814023EE3C27F0CECA1872E80A2AAFB37C092C419FFF77CC0D",
+  "allocVt0": {
+    "movabsCtorSites": 0,
+    "allocPlusOwnerVtFuncs": 0,
+    "leaOwnerVtNearAllocHits": 0,
+    "decodedFullChain": 0,
+    "verdict": "indirect_only",
+    "fullChainFuncs": []
+  },
+  "sameInstance": {
+    "sideblockAllocates": true,
+    "sideblockStoresThisPlus98": true,
+    "sideblockBackPtrAtBlockPlus100": true,
+    "armingTouches98": true,
+    "armWrapTouches98": true,
+    "sidePlusOwner": 0,
+    "sidePlusArming": 0,
+    "structuralSameLayout": true,
+    "pointerSlotSameInstance": true,
+    "callGraphSameInstance": false
+  },
+  "edwardOrPlayerTypeConfirmed": false
+}
