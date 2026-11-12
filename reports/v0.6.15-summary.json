@@ -1,0 +1,26 @@
+{
+  "schemaVersion": 1,
+  "milestone": "v0.6.15",
+  "generatedUtc": "2026-11-12T18:20:00Z",
+  "exeSha256": "19920F34BB2FAC814023EE3C27F0CECA1872E80A2AAFB37C092C419FFF77CC0D",
+  "gateSetterInstall": {
+    "stub": "0x7BB020",
+    "armingHelper": "0x21085D0",
+    "edataSlot": "0x9490078",
+    "altWorkerJmp": "0xE95E80"
+  },
+  "bitWriterInstall": {
+    "thunkBit1": "0xF1C230",
+    "thunkBit0": "0x210A9F0",
+    "edataSlots": ["0x9303E30", "0x9303E38"]
+  },
+  "e2c8a0": {
+    "size": 859,
+    "callsNearWrap": true,
+    "callsAllocator": true,
+    "usesKey": false,
+    "callersE8": 40,
+    "role": "sorted_0x18_stride_ensure_insert"
+  },
+  "edwardOrPlayerTypeConfirmed": false
+}

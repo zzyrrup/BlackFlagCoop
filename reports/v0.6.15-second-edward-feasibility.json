@@ -1,0 +1,26 @@
+{
+  "schemaVersion": 1,
+  "milestone": "v0.6.15",
+  "generatedUtc": "2026-11-12T18:20:00Z",
+  "exeSha256": "19920F34BB2FAC814023EE3C27F0CECA1872E80A2AAFB37C092C419FFF77CC0D",
+  "createSecondEdward": {
+    "class": "unsupported",
+    "reason": "Install paths arm/write flags on existing objects; no Edward factory shown"
+  },
+  "installSitesRecovered": {
+    "class": "confirmed",
+    "reason": "Gate via 0x21085D0→0x7BB020→0x53F31A0; bit-writer via .edata thunks 0xF1C230/0x210A9F0"
+  },
+  "e2c8a0FeedsNearWrap": {
+    "class": "confirmed",
+    "reason": "0xE2C8A0 calls allocator then 0x2EA0B00"
+  },
+  "liveMemoryProbe": {
+    "class": "blocked",
+    "reason": "Not authorized"
+  },
+  "next": {
+    "primary": "Decode consumers of .edata slots 0x9490078 and 0x9303E30-E38; deep-decode arming neighbors 0x2108530/0x2108830 and vcall +0x2B0",
+    "avoid": ["live memory", "ASI deploy", "spawn", "PC2", "+0x61-only ranking"]
+  }
+}

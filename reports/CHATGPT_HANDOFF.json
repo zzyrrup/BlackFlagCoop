@@ -1,14 +1,14 @@
 {
   "schemaVersion": 1,
-  "generatedUtc": "2026-11-12T18:05:00Z",
+  "generatedUtc": "2026-11-12T18:25:00Z",
   "handoffFor": "ChatGPT",
   "executor": "Cursor",
   "machine": "PC1",
   "repository": {
     "url": "https://github.com/zzyrrup/BlackFlagCoop",
     "defaultBranch": "main",
-    "featureBranch": "cursor/v074-gate-deep-typeinfo-8285",
-    "baseBranch": "cursor/v073-enroll-insert-gate-8285",
+    "featureBranch": "cursor/v075-install-e2c8a0-8285",
+    "baseBranch": "cursor/v074-gate-deep-typeinfo-8285",
     "doNotPushMain": true,
     "initialCommit": "e12e70150656ac80742f10b496f7e5556e7985b7"
   },
@@ -18,10 +18,10 @@
     "functionalityChangedByThisMilestone": false
   },
   "milestone": {
-    "currentId": "v0.6.14",
-    "currentTitle": "Gate/insert deep-decode and TypeInfo field map",
+    "currentId": "v0.6.15",
+    "currentTitle": "Install sites for gate/bit-writer and E2C8A0 deep-decode",
     "status": "complete",
-    "priorPreserved": ["v0.6.4", "v0.6.5", "v0.6.6", "v0.6.7", "v0.6.8", "v0.6.9", "v0.6.10", "v0.6.11", "v0.6.12", "v0.6.13"]
+    "priorPreserved": ["v0.6.4", "v0.6.5", "v0.6.6", "v0.6.7", "v0.6.8", "v0.6.9", "v0.6.10", "v0.6.11", "v0.6.12", "v0.6.13", "v0.6.14"]
   },
   "asi": {
     "version": "0.5.1",
@@ -37,7 +37,7 @@
   },
   "build": {
     "asiRebuilt": false,
-    "offlineTools": ["tools/offline/GateDeep074"]
+    "offlineTools": ["tools/offline/InstallSite075"]
   },
   "network": {
     "changesAuthorized": false,
@@ -45,62 +45,64 @@
   },
   "engineFindings": {
     "summary": [
-      "0x53F31A0: nested+key, or [obj+0x61],0x0A, LOD float math; 0 E8/LEA callers",
-      "0xF1C240: child table +0x138/+0x165, and 0xFE/or bl store; key + 3FFF packing; 0 E8/LEA callers",
-      "0x4B5A560/0x4D04450: bit1 early-out, +0x98, call worker 0x725400",
-      "0x2EA0B00: indexed list writes; callers from 0xE2C8A0 (alloc)",
-      "0xB2898C8: no inline name; lookup uses shr key,0x38",
+      "Gate install: .edata 0x9490078 -> 0x21085D0 -> stub 0x7BB020 -> jmp 0x53F31A0 (alt jmp 0xE95E80)",
+      "Arming requires +0x98==0, nested +0x18/+0xA8, bit1 clear; then vcall [vt+0x2B0] edx=2",
+      "Bit-writer install: .edata 0x9303E30/E38 -> thunks 0x210A9F0 (bit=0) / 0xF1C230 (bit=1) -> 0xF1C240",
+      "0xE2C8A0: sorted 0x18-stride ensure/insert; alloc then 0x2EA0B00; no key/+0x61",
       "No Edward/create path"
     ],
     "keyRvas": {
       "gateSetter": "0x53F31A0",
+      "gateStub": "0x7BB020",
+      "armingHelper": "0x21085D0",
+      "armingEdataSlot": "0x9490078",
       "bitWriter": "0xF1C240",
-      "membershipA": "0x4B5A560",
-      "membershipB": "0x4D04450",
-      "nearWrapperList": "0x2EA0B00",
-      "nearWrapperCaller": "0xE2C8A0",
-      "lookupKey": "0xB2898C8",
-      "lookup": "0x429F9E0",
-      "workerA": "0x725400"
+      "bitThunk1": "0xF1C230",
+      "bitThunk0": "0x210A9F0",
+      "bitEdataSlots": ["0x9303E30", "0x9303E38"],
+      "e2c8a0": "0xE2C8A0",
+      "nearWrap": "0x2EA0B00",
+      "workerB": "0xE95E80"
     }
   },
   "confirmed": [
     "ASI v0.5.1 preserved; no deploy",
-    "Gate-setter and bit-writer semantics confirmed offline",
-    "Membership leads linked to +0x98 and worker",
+    "Gate-setter and bit-writer install/dispatch paths recovered offline",
+    "0xE2C8A0 feeds 0x2EA0B00 via allocator",
     "No live memory this milestone"
   ],
   "hypotheses": [
-    "Gate-setter/bit-writer installed via vtable/bundle slots",
-    "0xE2C8A0 allocator path populates lists consumed by UpdateActorLOD"
+    ".edata slots are interface/vtable method tables",
+    "0xE2C8A0 list population is upstream of UpdateActorLOD drain"
   ],
   "blockers": [
     "Subject concrete type name unknown",
-    "Indirect install sites for gate-setter/bit-writer unidentified",
+    "Runtime consumers of .edata install slots unidentified",
     "No input/possession path",
     "Spawn tests not authorized"
   ],
   "mostRecentCompletedMilestone": {
-    "id": "v0.6.14",
-    "docs": ["docs/v0.6.14-gate-deep-typeinfo.md"],
+    "id": "v0.6.15",
+    "docs": ["docs/v0.6.15-install-e2c8a0.md"],
     "reports": [
-      "reports/v0.6.14-typeinfo-fields.json",
-      "reports/v0.6.14-leads-deep.json",
-      "reports/v0.6.14-summary.json",
-      "reports/v0.6.14-second-edward-feasibility.json",
-      "reports/v074-raw/evidence.txt"
+      "reports/v0.6.15-install-sites.json",
+      "reports/v0.6.15-e2c8a0-deep.json",
+      "reports/v0.6.15-summary.json",
+      "reports/v0.6.15-second-edward-feasibility.json",
+      "reports/v075-raw/evidence.txt"
     ]
   },
   "nextRecommendedMilestone": {
-    "id": "v0.6.15",
-    "title": "Recover indirect install sites for gate-setter/bit-writer; deep-decode 0xE2C8A0",
-    "primary": ["0x53F31A0 install", "0xF1C240 install", "0xE2C8A0"],
+    "id": "v0.6.16",
+    "title": "Decode .edata slot consumers; deep-decode arming neighbors and vcall +0x2B0",
+    "primary": ["0x9490078 consumers", "0x9303E30-E38 consumers", "0x2108530", "0x2108830", "vtable+0x2B0"],
     "forbidden": ["spawn", "deploy", "live memory", "PC2", "save-data", "force-push main", "+0x61-only ranking"]
   },
   "tests": [
-    { "name": "GateDeep074_build_scan", "result": "pass" },
-    { "name": "gate_setter_or0A", "result": "pass" },
-    { "name": "typeinfo_inline_name", "result": "absent" },
+    { "name": "InstallSite075_build_scan", "result": "pass" },
+    { "name": "gate_install_chain", "result": "pass" },
+    { "name": "bit_writer_edata_thunks", "result": "pass" },
+    { "name": "e2c8a0_nearwrap", "result": "pass" },
     { "name": "game_launch_deploy", "result": "not_run" },
     { "name": "spawn_live_memory", "result": "not_run" }
   ],
@@ -116,9 +118,9 @@
   },
   "chatgptNextReviewInstructions": [
     "Read docs/CHATGPT_HANDOFF.md and this JSON first",
-    "Review v0.6.14 PR; preserve v0.6.4-v0.6.13 history",
+    "Review v0.6.15 PR; preserve v0.6.4-v0.6.14 history",
     "Separate confirmed vs hypotheses",
-    "Propose v0.6.15 indirect install recovery + 0xE2C8A0 decode",
+    "Propose v0.6.16 .edata consumer decode + arming neighbors",
     "Do not authorize deploy/spawn/live memory/PC2 unless user overrides",
     "Return PC1 branch+PR instructions"
   ]

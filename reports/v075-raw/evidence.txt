@@ -1,0 +1,314 @@
+===== v0.6.15 INSTALL SITES + 0xE2C8A0 =====
+exeSha256=19920F34BB2FAC814023EE3C27F0CECA1872E80A2AAFB37C092C419FFF77CC0D
+imageBase=0x140000000
+
+===== CONTROL XREFS WRAPPER 0x2E97FC0 =====
+wrapper E8=0 LEA=0 QWORD=0 RVA32=1 E9=1 imm64=0
+  r32 0x1D75EC58 sec=.vmp4
+  e9 0x1A5A74 func≈0x1A5A70
+
+===== INSTALL TARGET 0x53F31A0 =====
+target=0x53F31A0 role=gate-setter prologue=56 57 53 48 83 EC 30 C5 F8 29 74 24 20 48 89 CE
+  rva32 @0x1C6D80F8 sec=.vmp0 func≈0x1C6D80B8
+  rva32 @0x1D7EB928 sec=.vmp4 func≈0x1D7EB8E8
+  e9 @0x7BB12D sec=.impdata func≈0x7BB020
+hitCount=3 byKind=rva32:2,e9:1
+
+===== INSTALL TARGET 0xF1C240 =====
+target=0xF1C240 role=bit-writer prologue=41 56 56 57 53 48 83 EC 28 0F B6 81 65 01 00 00
+  rva32 @0x1D6D8534 sec=.vmp4 func≈0x1D6D84F4
+  e9 @0xF1C235 sec=.impdata func≈0xF1C230
+  e9 @0x210A9F5 sec=.impdata func≈0x210A9F0
+hitCount=3 byKind=rva32:1,e9:2
+
+===== STUB FOLLOW 0x53F31A0 =====
+stubCandidates=1
+  stub 0x7BB020 56 57 53 48 83 EC 20 F6 41 60 01 0F
+  func 0x7BB020 size~49 prologue=56 57 53 48 83 EC 20 F6 41 60 01 0F
+    0x7BB020 push rsi
+    0x7BB021 push rdi
+    0x7BB022 push rbx
+    0x7BB023 sub rsp,20
+    0x7BB027 test byte ptr [rcx+60],1
+    0x7BB02B jne near ptr 00000001407BB120
+    0x7BB031 mov al,[rip+0A856335]
+    0x7BB037 test al,1
+    0x7BB039 je near ptr 00000001407BB132
+    0x7BB03F mov rax,gs:[30]
+    0x7BB048 mov eax,[rax+48]
+    0x7BB04B cmp eax,[rip+0A856327]
+    stubE8 @0x21085FE func≈0x21085D0
+    stubRva32 @0x1D6C0F24 sec=.vmp4
+
+===== STUB FOLLOW 0xF1C240 =====
+stubCandidates=3
+  stub 0xF1C230 48 89 D1 B2 01 E9 06 00 00 00 CC CC
+  func 0xF1C230 size~10 prologue=48 89 D1 B2 01 E9 06 00 00 00 CC CC
+    0xF1C230 mov rcx,rdx
+    0xF1C233 mov dl,1
+    0xF1C235 jmp near ptr 0000000140F1C240
+    stubQword @0x9303E38 sec=.edata
+      q[-4] @0x9303E18=0x1404D6790 ->0x4D6790 sec=.impdata CODE
+      q[-3] @0x9303E20=0x143225930 ->0x3225930 sec=.impdata CODE
+      q[-2] @0x9303E28=0x147B04290 ->0x7B04290 sec=.impdata CODE
+      q[-1] @0x9303E30=0x14210A9F0 ->0x210A9F0 sec=.impdata CODE
+      q[0] @0x9303E38=0x140F1C230 ->0xF1C230 sec=.impdata CODE
+      q[1] @0x9303E40=0x0
+      q[2] @0x9303E48=0x1466E67F0 ->0x66E67F0 sec=.impdata CODE
+      q[3] @0x9303E50=0x1423374A0 ->0x23374A0 sec=.impdata CODE
+      q[4] @0x9303E58=0x141117950 ->0x1117950 sec=.impdata CODE
+  stub 0xF1C235 E9 06 00 00 00 CC CC CC CC CC CC 41
+  func 0xF1C235 size~5 prologue=E9 06 00 00 00 CC CC CC CC CC CC 41
+    0xF1C235 jmp near ptr 0000000140F1C240
+  stub 0x210A9F0 48 89 D1 31 D2 E9 46 18 E1 FE CC CC
+  func 0x210A9F0 size~10 prologue=48 89 D1 31 D2 E9 46 18 E1 FE CC CC
+    0x210A9F0 mov rcx,rdx
+    0x210A9F3 xor edx,edx
+    0x210A9F5 jmp near ptr 0000000140F1C240
+    stubQword @0x9303E30 sec=.edata
+      q[-4] @0x9303E10=0x1446DC120 ->0x46DC120 sec=.impdata CODE
+      q[-3] @0x9303E18=0x1404D6790 ->0x4D6790 sec=.impdata CODE
+      q[-2] @0x9303E20=0x143225930 ->0x3225930 sec=.impdata CODE
+      q[-1] @0x9303E28=0x147B04290 ->0x7B04290 sec=.impdata CODE
+      q[0] @0x9303E30=0x14210A9F0 ->0x210A9F0 sec=.impdata CODE
+      q[1] @0x9303E38=0x140F1C230 ->0xF1C230 sec=.impdata CODE
+      q[2] @0x9303E40=0x0
+      q[3] @0x9303E48=0x1466E67F0 ->0x66E67F0 sec=.impdata CODE
+      q[4] @0x9303E50=0x1423374A0 ->0x23374A0 sec=.impdata CODE
+
+===== TABLE / TYPEINFO NEIGHBORHOOD =====
+absKeyHits=1
+  keyAbs @0x9491000 sec=.edata
+      q[-4] @0x9490FE0=0x1453741F0 ->0x53741F0 sec=.impdata CODE
+      q[-3] @0x9490FE8=0x1454DFBD0 ->0x54DFBD0 sec=.impdata CODE
+      q[-2] @0x9490FF0=0x147B03F00 ->0x7B03F00 sec=.impdata CODE
+      q[-1] @0x9490FF8=0x1453741F0 ->0x53741F0 sec=.impdata CODE
+      q[0] @0x9491000=0x14B2898C8 ->0xB2898C8 sec=.trace
+      q[1] @0x9491008=0x147B03EE0 ->0x7B03EE0 sec=.impdata CODE
+      q[2] @0x9491010=0x1454D9000 ->0x54D9000 sec=.impdata CODE
+      q[3] @0x9491018=0x146277070 ->0x6277070 sec=.impdata CODE
+      q[4] @0x9491020=0x140001000 ->0x1000 sec=.impdata CODE
+rva32 of 0x53F31A0 count=2
+  @0x1C6D80F8 sec=.vmp0 nextDword=0xC3EC3E53
+  @0x1D7EB928 sec=.vmp4 nextDword=0x53F3288 BOUNDS?
+rva32 of 0xF1C240 count=1
+  @0x1D6D8534 sec=.vmp4 nextDword=0xF1C36D BOUNDS?
+
+===== DEEP 0xE2C8A0 =====
+entry=0xE2C8A0 end=0xE2CBFB size=859 prologue=41 57 41 56 41 55 41 54 56 57 55 53 48 83 EC 78
+  0xE2C8A0 push r15
+  0xE2C8A2 push r14
+  0xE2C8A4 push r13
+  0xE2C8A6 push r12
+  0xE2C8A8 push rsi
+  0xE2C8A9 push rdi
+  0xE2C8AA push rbp
+  0xE2C8AB push rbx
+  0xE2C8AC sub rsp,78
+  0xE2C8B0 mov rbx,r9
+  0xE2C8B3 mov r12,r8
+  0xE2C8B6 mov rbp,rdx
+  0xE2C8B9 mov r14,rcx
+  0xE2C8BC mov rax,[rip+948693D]
+  0xE2C8C3 xor rax,rsp
+  0xE2C8C6 mov [rsp+70],rax
+  0xE2C8CB mov rsi,[r9]
+  0xE2C8CE mov edi,[r9+8]
+  0xE2C8D2 mov rax,[rcx]
+  0xE2C8D5 mov ecx,[rcx+8]
+  0xE2C8D8 mov r13,rax
+  0xE2C8DB and ecx,3FFF
+  0xE2C8E1 je short 0000000140E2C91F
+  0xE2C8E3 mov r8,rcx
+  0xE2C8E6 mov r13,rax
+  0xE2C8E9 mov rdx,rcx
+  0xE2C8EC jmp short 0000000140E2C903
+  0xE2C8EE add r9,18
+  0xE2C8F2 not rdx
+  0xE2C8F5 add rdx,r8
+  0xE2C8F8 mov r13,r9
+  0xE2C8FB mov r8,rdx
+  0xE2C8FE test rdx,rdx
+  0xE2C901 jle short 0000000140E2C91F
+  0xE2C903 shr rdx,1
+  0xE2C906 lea r9,[rdx+rdx*2]
+  0xE2C90A cmp [r13+r9*8+8],edi
+  0xE2C90F ja short 0000000140E2C8FB
+  0xE2C911 lea r9,[r13+r9*8]
+  0xE2C916 jb short 0000000140E2C8EE
+  0xE2C918 cmp [r9],rsi
+  0xE2C91B jae short 0000000140E2C8FB
+  0xE2C91D jmp short 0000000140E2C8EE
+  0xE2C91F lea ecx,[rcx*8]
+  0xE2C926 lea ecx,[rcx+rcx*2]
+  0xE2C929 add rcx,rax
+  0xE2C92C cmp r13,rcx
+  0xE2C92F je near ptr 0000000140E2C9C0
+  0xE2C935 cmp [r13],rsi
+  0xE2C939 jne near ptr 0000000140E2C9C0
+  0xE2C93F cmp [r13+8],edi
+  0xE2C943 jne short 0000000140E2C9C0
+  0xE2C945 mov rax,[r13+10]
+  0xE2C949 test rax,rax
+  0xE2C94C je near ptr 0000000140E2CAD0
+  0xE2C952 cmp dword ptr [rax+0B0],0
+  0xE2C959 je near ptr 0000000140E2CB59
+  0xE2C95F add r14,48
+  0xE2C963 mov rcx,[rsp+70]
+  0xE2C968 xor rcx,rsp
+  0xE2C96B call 0000000145014570
+  0xE2C970 mov rcx,r14
+  0xE2C973 mov rdx,rbp
+  0xE2C976 mov r8,r12
+  *** ALLOC @0xE2C9F6
+  *** call NEARWRAP 0x2EA0B00 @0xE2CA86
+    pre 0xE2CA53 mov rcx,r15
+    pre 0xE2CA56 mov rdx,rbx
+    pre 0xE2CA59 call 0000000142EA0A20
+    pre 0xE2CA5E mov rax,[rbx+20]
+    pre 0xE2CA62 lea r8,[rsp+50]
+    pre 0xE2CA67 mov [r8+10],rax
+    pre 0xE2CA6B vmovups xmm0,[rbx+10]
+    pre 0xE2CA70 vmovaps [r8],xmm0
+    pre 0xE2CA75 mov rax,[rsp+28]
+    pre 0xE2CA7A mov [r8+18],rax
+    pre 0xE2CA7E mov rcx,r15
+    pre 0xE2CA81 mov rdx,[rsp+30]
+  *** ALLOC @0xE2CAF2
+  *** call NEARWRAP 0x2EA0B00 @0xE2CB7B
+    pre 0xE2CB4A mov [r13+10],rax
+    pre 0xE2CB4E mov rcx,rax
+    pre 0xE2CB51 mov rdx,rbx
+    pre 0xE2CB54 call 0000000142EA0A20
+    pre 0xE2CB59 mov rax,[rbx+20]
+    pre 0xE2CB5D lea r8,[rsp+50]
+    pre 0xE2CB62 mov [r8+10],rax
+    pre 0xE2CB66 vmovups xmm0,[rbx+10]
+    pre 0xE2CB6B vmovaps [r8],xmm0
+    pre 0xE2CB70 mov [r8+18],rbp
+    pre 0xE2CB74 mov rcx,[r13+10]
+    pre 0xE2CB78 mov rdx,r12
+  ... +154 ins ...
+nested=False key=False lookup=False alloc=True helper=False nearWrap=True t61=False t98=False
+nearWrapSites=0xE2CA86,0xE2CB7B
+gateOps=0 indexedStores=0 callersE8=40 immSizes=0xB8
+  callee 0x5014570
+  callee 0x2EA0A20
+  callee 0x2EA0B00 *** NEARWRAP ***
+  callee 0x2436690
+-- callers of 0xE2C8A0 --
+  e8 @0xC220F func≈0xC21A0 key=False alloc=False helper=False
+    str "AWAVATVWSH"
+  e8 @0xE88F9 func≈0xE7B90 key=False alloc=False helper=False
+  e8 @0x21A052 func≈0x219D00 key=False alloc=False helper=False
+  e8 @0x21A568 func≈0x21A360 key=False alloc=False helper=False
+  e8 @0x2211A1 func≈0x220E30 key=False alloc=False helper=False
+  e8 @0x78909D func≈0x789010 key=False alloc=False helper=False
+    str "AWAVAUATVWUSH"
+    str "AWAVAUATVWUS"
+  e8 @0x8E242A func≈0x8E1890 key=False alloc=False helper=False
+  e8 @0x9C118C func≈0x9C0E80 key=False alloc=False helper=False
+    str "AVVWSH"
+  e8 @0xB30950 func≈0xB30490 key=False alloc=False helper=False
+  e8 @0xC0FC0F func≈0xC0EC90 key=False alloc=False helper=False
+  e8 @0xC41139 func≈0xC40FB0 key=False alloc=False helper=False
+  e8 @0xD03180 func≈0xD030B0 key=False alloc=False helper=False
+  e8 @0xD5F43E func≈0xD5F1D0 key=False alloc=False helper=False
+    str "AWAVAUATVWUSH"
+  e8 @0xD932E0 func≈0xD93260 key=False alloc=False helper=False
+  e8 @0xDB1593 func≈0xDB14E0 key=False alloc=False helper=False
+  e8 @0xDC4234 func≈0xDC4010 key=False alloc=False helper=False
+  e8 @0xDDEC17 func≈0xDDE770 key=False alloc=False helper=False
+  e8 @0xE2C77D func≈0xE2C600 key=False alloc=False helper=False
+    str "AVVWSH"
+    str "AWAVATVWSH"
+  e8 @0xE2C7C8 func≈0xE2C600 key=False alloc=False helper=False
+    str "AVVWSH"
+    str "AWAVATVWSH"
+  e8 @0xE2CEFF func≈0xE2CC00 key=False alloc=False helper=False
+    str "Too many elements for %sArray. Size: %u, Max Size: %u"
+  e8 @0xE2DD86 func≈0xE2DD20 key=False alloc=False helper=False
+    str "AWAVATVWSH"
+  e8 @0xE2E53F func≈0xE2E4D0 key=False alloc=False helper=False
+    str "AWAVVWSH"
+  e8 @0xE2E976 func≈0xE2E910 key=False alloc=False helper=False
+    str "AWAVAUATVWUSH"
+  e8 @0xE2EFA0 func≈0xE2EEC0 key=False alloc=False helper=False
+    str "AVVWSH"
+--- callee dump 0x5014570 ---
+  func 0x5014570 size~21 prologue=48 3B 0D 89 EC 29 05 75 10 48 C1 C1
+    0x5014570 cmp rcx,[rip+529EC89]
+    0x5014577 jne short 0000000145014589
+    0x5014579 rol rcx,10
+    0x501457D test cx,0FFFF
+    0x5014582 jne short 0000000145014585
+    0x5014584 ret
+--- callee dump 0x2EA0A20 ---
+  func 0x2EA0A20 size~69 prologue=C5 F8 10 02 C5 F8 11 41 08 48 8B 51
+    0x2EA0A20 vmovups xmm0,[rdx]
+    0x2EA0A24 vmovups [rcx+8],xmm0
+    0x2EA0A29 mov rdx,[rcx+8]
+    0x2EA0A2D mov eax,[rcx+10]
+    0x2EA0A30 cmp rdx,[rip+83E8DE9]
+    0x2EA0A37 jne short 0000000142EA0A41
+    0x2EA0A39 cmp eax,[rip+83E8DE9]
+    0x2EA0A3F je short 0000000142EA0ABD
+    0x2EA0A41 cmp rdx,[rip+83E8DF0]
+    0x2EA0A48 jne short 0000000142EA0A56
+    0x2EA0A4A cmp eax,[rip+83E8DF0]
+    0x2EA0A50 je near ptr 0000000142EA0AD7
+--- callee dump 0x2436690 ---
+  func 0x2436690 size~66 prologue=41 57 41 56 41 55 41 54 56 57 53 48
+    0x2436690 push r15
+    0x2436692 push r14
+    0x2436694 push r13
+    0x2436696 push r12
+    0x2436698 push rsi
+    0x2436699 push rdi
+    0x243669A push rbx
+    0x243669B sub rsp,60
+    0x243669F mov rsi,r9
+    0x24366A2 mov edi,edx
+    0x24366A4 mov r12,[rsp+0C0]
+    0x24366AC mov rax,[rip+7E7CB4D]
+    str "Too many elements for %sArray. Size: %u, Max Size: %u"
+    str "Small"
+-- LEA/QWORD/RVA32 of 0xE2C8A0 --
+e2c8a0 E8=20 LEA=0 QWORD=0 RVA32=1 E9=0 imm64=0
+  e8 0xC220F func≈0xC21A0
+  e8 0xE88F9 func≈0xE7B90
+  e8 0x21A052 func≈0x219D00
+  e8 0x21A568 func≈0x21A360
+  e8 0x2211A1 func≈0x220E30
+  e8 0x78909D func≈0x789010
+  e8 0x8E242A func≈0x8E1890
+  e8 0x9C118C func≈0x9C0E80
+  r32 0x1D6D53CC sec=.vmp4
+
+===== SUMMARY =====
+0x53F31A0 gate-setter hits=5 stubs=1
+  rva32 @0x1C6D80F8 func≈0x1C6D80B8 sec=.vmp0
+  rva32 @0x1D7EB928 func≈0x1D7EB8E8 sec=.vmp4
+  e9 @0x7BB12D func≈0x7BB020 sec=.impdata
+  stubE8 @0x21085FE func≈0x21085D0 sec=.impdata stub=0x7BB020
+  stubRva32 @0x1D6C0F24 func≈0x0 sec=.vmp4 stub=0x7BB020
+0xF1C240 bit-writer hits=5 stubs=3
+  rva32 @0x1D6D8534 func≈0x1D6D84F4 sec=.vmp4
+  e9 @0xF1C235 func≈0xF1C230 sec=.impdata
+  e9 @0x210A9F5 func≈0x210A9F0 sec=.impdata
+  stubQword @0x9303E38 func≈0x0 sec=.edata stub=0xF1C230
+  stubQword @0x9303E30 func≈0x0 sec=.edata stub=0x210A9F0
+e2c8a0 size=859 callsNearWrap=True callsAlloc=True usesKey=False callersE8=40
+
+===== DEEPENED NOTES (post-scan) =====
+Gate chain:
+  .edata 0x9490078 = 0x21085D0
+  0x21085D0: require +98==0, +18/+A8, bit1 clear; call 0x7BB020; vcall [vt+0x2B0] edx=2
+  0x7BB020: test +61 bit1; jmp 0x53F31A0 OR jmp 0xE95E80
+
+Bit-writer chain:
+  .edata 0x9303E30 = 0x210A9F0 (bit=0 thunk)
+  .edata 0x9303E38 = 0xF1C230 (bit=1 thunk)
+  both jmp 0xF1C240
+
+E2C8A0: sorted 0x18-stride ensure/insert; alloc; 0x2EA0A20 copy; call 0x2EA0B00 x2
