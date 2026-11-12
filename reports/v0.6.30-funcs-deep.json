@@ -1,0 +1,24 @@
+{
+  "schemaVersion": 1,
+  "milestone": "v0.6.30",
+  "generatedUtc": "2026-11-12T21:03:08Z",
+  "exeSha256": "19920F34BB2FAC814023EE3C27F0CECA1872E80A2AAFB37C092C419FFF77CC0D",
+  "tiHelperPrimary": {
+    "entry": "0x43DCB00",
+    "args": "rcx=TypeInfo*, rdx=existingOrNull",
+    "ifRdxNonNull": "return rdx",
+    "ifRdxNull": [
+      "flags=[ti+0xF6]&0x7F",
+      "size=[ti+0x20]",
+      "pool=*(runtime_global 0xAF6FD48)",
+      "prefer freelist pop then icall [ti+0x50]",
+      "else vtable alloc call r9(pool, size, flags) then icall [ti+0x50]"
+    ],
+    "not": ["Lookup 0x429F9E0", "Allocator 0x426EE50"]
+  },
+  "constructChannels": [
+    { "name": "NS_VT20_TiHelper", "entries": ["0x3D52400", "0x6CF34E0"], "ti": ["0xAAD2290", "0xACE83F8"] },
+    { "name": "TightFactory_Lookup_Alloc", "entries": ["0x238590", "0x256280", "0x218900", "0x218660", "0x21FA70"], "usesNsTi": false }
+  ],
+  "neighRel98": { "rva": "0x3D522C0", "op": "mov [rcx+98],al after xor eax,eax", "kind": "zero_byte_field_init" }
+}

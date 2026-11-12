@@ -1,0 +1,15 @@
+{
+  "schemaVersion": 1,
+  "milestone": "v0.6.30",
+  "generatedUtc": "2026-11-12T21:03:08Z",
+  "exeSha256": "19920F34BB2FAC814023EE3C27F0CECA1872E80A2AAFB37C092C419FFF77CC0D",
+  "createSecondEdward": { "class": "unsupported", "reason": "TiHelper/Lookup/0xB0 paths are TypeInfo construct, not Edward create/possession" },
+  "tiHelperDecode": { "class": "confirmed", "reason": "TiHelper 0x43DCB00 is TypeInfo construct helper: [ti+0x20] size, pool freelist or vtbl-alloc, icall [ti+0x50]; not Lookup/Allocator" },
+  "lookupNsTiIntoTightFactories": { "class": "confirmed_absent", "reason": "0 Lookup funcs LEA NeighMeta/SpatTi/keyField; tight factories use Lookup+Alloc without NS TI or TiHelper; channels distinct" },
+  "sizeB0VsEnrollment98": { "class": "confirmed", "reason": "Neigh size 0xB0 via TypeInfo/TiHelper; NeighRel zero-inits +0x98 byte (object field); not SideBlock pointer enroll; Spat VT20 uses inline add reg,98" },
+  "liveMemoryProbe": { "class": "blocked", "reason": "Not authorized" },
+  "next": {
+    "primary": "Trace who calls Neigh/Spat VT[+0x20] construct; map live consumers of Neigh 0xB0 +0x98 byte vs pointer-family enrollment objects",
+    "avoid": ["live memory", "ASI deploy", "spawn", "PC2", "expect Neigh/SpatTi Lookup into tight factories", "conflate NeighRel +0x98 byte with SideBlock pointer"]
+  }
+}

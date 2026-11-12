@@ -1,0 +1,223 @@
+===== v0.6.30 TiHelper DEEP-DECODE + LOOKUP/0xB0 MAP =====
+exeSha256=19920F34BB2FAC814023EE3C27F0CECA1872E80A2AAFB37C092C419FFF77CC0D
+
+===== TiHelper 0x43DCB00 PRIMARY PATH =====
+callsLookup=False callsAllocator=False
+loads [ti+0x20] size=True loads [ti+0xF6] flags=True
+icall [ti+0x50] ctor=True
+rdx passthrough (non-null -> return rdx)=True
+freelist pop path @0x43DCB9F=True
+vtable alloc path call r9 @0x43DCC1C (edx=size from ti+0x20)=True
+runtime pool global slot RVA=0xAF6FD48 PE-qword=0x0 (runtime-filled)
+E8->TiHelper total=28384
+
+-- primary path disasm excerpt --
+  0x43DCB00: push r15
+  0x43DCB02: push r14
+  0x43DCB04: push r13
+  0x43DCB06: push r12
+  0x43DCB08: push rsi
+  0x43DCB09: push rdi
+  0x43DCB0A: push rbp
+  0x43DCB0B: push rbx
+  0x43DCB0C: sub rsp,38
+  0x43DCB10: mov rax,rdx
+  0x43DCB13: test rdx,rdx
+  0x43DCB16: je short 00000001443DCB29
+  0x43DCB18: add rsp,38
+  0x43DCB1C: pop rbx
+  0x43DCB1D: pop rbp
+  0x43DCB1E: pop rdi
+  0x43DCB1F: pop rsi
+  0x43DCB20: pop r12
+  0x43DCB22: pop r13
+  0x43DCB24: pop r14
+  0x43DCB26: pop r15
+  0x43DCB28: ret
+  0x43DCB29: movzx esi,byte ptr [rcx+0F6] *** FLAGS ***
+  0x43DCB30: and esi,7F
+  0x43DCB33: mov edi,[rcx+20] *** SIZE ***
+  0x43DCB36: mov r8,[rip+6B9320B]
+  0x43DCB3D: cmp byte ptr [r8+2A],0
+  0x43DCB42: je near ptr 00000001443DCC71
+  0x43DCB48: mov rbx,r8
+  0x43DCB4B: mov rax,[rbx]
+  0x43DCB4E: mov r9,[rax+70]
+  0x43DCB52: lea rdx,[rip+31612E7]
+  0x43DCB59: cmp r9,rdx
+  0x43DCB5C: jne near ptr 00000001443DCC01
+  0x43DCB62: mov r15,rcx
+  0x43DCB65: mov rax,[rax+68]
+  0x43DCB69: lea rcx,[rip+0A89710]
+  0x43DCB70: cmp rax,rcx
+  0x43DCB73: jne near ptr 00000001443DD077
+  0x43DCB79: lea r14,[rbx+50]
+  0x43DCB7D: mov rcx,r14
+  0x43DCB80: call qword ptr [rip+5E6C872]
+  0x43DCB86: test eax,eax
+  0x43DCB88: je near ptr 00000001443DCE79
+  0x43DCB8E: lea r12,[rbx+40]
+  0x43DCB92: mov rcx,[rbx+40]
+  0x43DCB96: test rcx,rcx
+  0x43DCB99: je near ptr 00000001443DCFFD
+  0x43DCB9F: mov r13,[rcx+18]
+  0x43DCBA3: test r13,r13
+  0x43DCBA6: je near ptr 00000001443DCD41
+  0x43DCBAC: mov rax,[r13]
+  0x43DCBB0: mov [rcx+18],rax
+  0x43DCBB4: dec dword ptr [rcx+10]
+  0x43DCBB7: je near ptr 00000001443DCE22
+  0x43DCBBD: mov rcx,r14
+  0x43DCBC0: call qword ptr [rip+5E6C5CA]
+  0x43DCBC6: mov rdx,r13
+  0x43DCBC9: mov rax,[rbx]
+  0x43DCBCC: test rdx,rdx
+  0x43DCBCF: je near ptr 00000001443DCFCA
+  0x43DCBD5: mov rax,[rax+18]
+  0x43DCBD9: lea rcx,[rip+0B4B220]
+  0x43DCBE0: cmp rax,rcx
+  0x43DCBE3: jne short 00000001443DCC35
+  0x43DCBE5: mov eax,[rbx+34]
+  0x43DCBE8: mov eax,eax
+  0x43DCBEA: lock add [rbx+20],rax
+  0x43DCBEF: mov rcx,rdx
+  0x43DCBF2: mov rsi,rdx
+  0x43DCBF5: call qword ptr [r15+50] *** ICALL ti+50 ***
+  0x43DCBF9: mov rax,rsi
+  0x43DCBFC: jmp near ptr 00000001443DCB18
+  0x43DCC01: lea rdx,[rip+100E248]
+  0x43DCC08: cmp r9,rdx
+  0x43DCC0B: je near ptr 00000001443DCDA2
+  0x43DCC11: mov r15,rcx
+  0x43DCC14: mov rcx,rbx
+  0x43DCC17: mov edx,edi
+  0x43DCC19: mov r8d,esi
+  0x43DCC1C: call r9 *** VTBL ALLOC edx=size ***
+  0x43DCC1F: mov rdx,rax
+  0x43DCC22: jmp short 00000001443DCBC9
+  0x43DCC24: mov rax,[rdx-8]
+  0x43DCC28: test al,2
+  0x43DCC2A: je near ptr 00000001443DD083
+  0x43DCC30: and eax,0FFFFFFFC
+  0x43DCC33: jmp short 00000001443DCBE8
+  0x43DCC35: lea rcx,[rip-17578C]
+  0x43DCC3C: cmp rax,rcx
+E8 callees in first 0x800:
+  0x5014570 x2
+  0x5353570 x1
+  0x50098A0 x1
+  0x43DD510 x1
+  0x474B870 x1
+  0x4D1A730 x1
+  0x43DD240 x1
+  0x45B64D0 x1
+
+===== VT[+0x20] -> TiHelper CONTRACT =====
+NeighVT20 0x3D52400:
+  0x3D52400: push r15
+  0x3D52402: push r14
+  0x3D52404: push r13
+  0x3D52406: push r12
+  0x3D52408: push rsi
+  0x3D52409: push rdi
+  0x3D5240A: push rbp
+  0x3D5240B: push rbx
+  0x3D5240C: sub rsp,78
+  0x3D52410: mov ebp,r8d
+  0x3D52413: mov rdi,rcx
+  0x3D52416: mov rax,[rip+6560DE3]
+  0x3D5241D: xor rax,rsp
+  0x3D52420: mov [rsp+70],rax
+  0x3D52425: lea rcx,[rip+6D7FE64] *** TI ***
+  0x3D5242C: call 00000001443DCB00 *** TIHELPER ***
+  0x3D52431: mov rbx,rax
+  0x3D52434: mov rcx,rdi
+  0x3D52437: mov rdx,rax
+  0x3D5243A: mov r8d,ebp
+  0x3D5243D: call 0000000140233310
+  0x3D52442: lea r14,[rbx+28]
+  0x3D52446: mov rcx,r14
+  0x3D52449: call 0000000145673A70
+  0x3D5244E: mov rcx,r14
+  0x3D52451: call 0000000141361320
+  0x3D52456: mov r15d,[rdi+30]
+  0x3D5245A: and r15d,3FFF
+  0x3D52461: mov eax,[rbx+30]
+  0x3D52464: mov esi,eax
+  0x3D52466: and esi,3FFF
+  0x3D5246C: cmp esi,r15d
+  0x3D5246F: jbe near ptr 0000000143D525DE
+  0x3D52475: lea ecx,[r15*8]
+  0x3D5247D: lea r13d,[rax*8]
+  leaTI=True callTiHelper=True +98=False
+SpatVT20 0x6CF34E0:
+  0x6CF34E0: push rsi
+  0x6CF34E1: push rdi
+  0x6CF34E2: push rbx
+  0x6CF34E3: sub rsp,20
+  0x6CF34E7: mov esi,r8d
+  0x6CF34EA: mov rdi,rcx
+  0x6CF34ED: lea rcx,[rip+3FF4F04] *** TI ***
+  0x6CF34F4: call 00000001443DCB00 *** TIHELPER ***
+  0x6CF34F9: mov rbx,rax
+  0x6CF34FC: lea eax,[rsi-5]
+  0x6CF34FF: cmp eax,0FFFFFFFD
+  0x6CF3502: ja short 0000000146CF351D
+  0x6CF3504: lea rdx,[rip-18F7C2B]
+  0x6CF350B: lea r9,[rip+42805B2]
+  0x6CF3512: mov rcx,rbx
+  0x6CF3515: xor r8d,r8d
+  0x6CF3518: call 0000000144CF96B0
+  0x6CF351D: mov rcx,rdi
+  0x6CF3520: mov rdx,rbx
+  0x6CF3523: mov r8d,esi
+  0x6CF3526: call 0000000146CF31F0
+  0x6CF352B: add rdi,98 *** +98 ***
+  0x6CF3532: mov rcx,rbx
+  0x6CF3535: add rcx,98 *** +98 ***
+  0x6CF353C: mov rdx,rdi
+  0x6CF353F: mov r8d,esi
+  0x6CF3542: call 00000001442F0690
+  0x6CF3547: mov rax,rbx
+  0x6CF354A: add rsp,20
+  0x6CF354E: pop rbx
+  0x6CF354F: pop rdi
+  0x6CF3550: pop rsi
+  0x6CF3551: ret
+  0x6CF3552: int 3
+  0x6CF3553: int 3
+  leaTI=True callTiHelper=True +98=True
+
+===== LOOKUP / TIGHT-FACTORY vs Neigh keyHash / SpatTi =====
+LEA NeighMeta=8 SpatTi=6 SpatBTi=0 NeighMeta+0x18=0
+keyHash embeds=0xAAD22A8
+Lookup funcs also LEA NS TypeInfo/keyField=0 (0 => no offline Lookup feed of Neigh/Spat TI into factories)
+Tight factory bodies:
+  0x238590 LEA_NS_TI=False TiHelper=False Lookup=True Alloc=True
+  0x256280 LEA_NS_TI=False TiHelper=False Lookup=True Alloc=True
+  0x218900 LEA_NS_TI=False TiHelper=False Lookup=True Alloc=True
+  0x218660 LEA_NS_TI=False TiHelper=False Lookup=True Alloc=True
+  0x21FA70 LEA_NS_TI=False TiHelper=False Lookup=True Alloc=False
+LEA NS-TI funcs vs Lookup/Alloc/Tight/TiHelper:
+  NeighMeta func 0x3D52400 Lookup=False Alloc=False Tight=False TiH=True
+  SpatTi func 0x602CAA0 Lookup=False Alloc=False Tight=False TiH=True
+  SpatTi func 0x6CF34E0 Lookup=False Alloc=False Tight=False TiH=True
+
+===== SIZE 0xB0 vs ENROLLMENT / +0x98 =====
+NeighMeta+0x20 size=0xB0 SpatTi+0x20 PE-static=0x0 SpatBTi+0x20 PE-static=0x0 (Spat sizes runtime-filled)
+Allocator sites sampled=2000 with imm 0xB0 nearby=0 (0 => size 0xB0 not hard-coded into shared Allocator)
+NeighRel ctor (TypeInfo+0x50 for size 0xB0 objects):
+  xor eax,eax=True mov [rcx+98],al (zero byte)=True zero +0x90=True zero +0xA0=True
+  calls SideBlock=False Arming=False (false => NOT enrollment pointer-slot attach)
+  0x3D522EE: xor eax,eax
+  0x3D522F3: mov [rcx+0A0],rax
+  0x3D522FA: mov [rcx+90],rax
+  0x3D52338: mov [rcx+98],al
+NeighVT20 +0x98=False +0x61=False SideBlock=False
+SpatVT20 inline +0x98 (add reg,98)=True (spatial copy, not SideBlock)
+TiHelper caller funcs sampled=488 touch+98=82 SideBlock=0 +61=3
+
+===== VERDICTS =====
+1) TiHelper=TypeInfo construct helper (size[ti+0x20] -> pool/vtbl-alloc -> icall[ti+0x50]); NOT Lookup bridge. decoded=True
+2) Neigh keyHash / SpatTi do NOT feed tight factories via Lookup offline. noLookupFeed=True
+3) Size 0xB0=Neigh TypeInfo heap size via TiHelper; NeighRel zero-inits +0x98 byte (object field), distinct from SideBlock pointer enroll. mapped=True
