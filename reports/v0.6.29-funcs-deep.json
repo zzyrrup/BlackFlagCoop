@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "milestone": "v0.6.29",
+  "generatedUtc": "2026-11-12T20:54:03Z",
+  "exeSha256": "19920F34BB2FAC814023EE3C27F0CECA1872E80A2AAFB37C092C419FFF77CC0D",
+  "tiBaseRefs": [
+    { "site": "0x5E5B148", "data": "0xACE83F8", "func": "0x5E5AF20", "kind": "LOAD/LEA", "text": "lea rax,[rip+4E8D2A9]" },
+    { "site": "0x602CCC8", "data": "0xACE83F8", "func": "0x602CAA0", "kind": "LOAD/LEA", "text": "lea rdx,[rip+4CBB729]" },
+    { "site": "0x6CF34ED", "data": "0xACE83F8", "func": "0x6CF34E0", "kind": "LOAD/LEA", "text": "lea rcx,[rip+3FF4F04]" },
+    { "site": "0x2471F3E", "data": "0xAAD2290", "func": "0x2471AC0", "kind": "LOAD/LEA", "text": "lea rdx,[rip+866034B]" },
+    { "site": "0x3D52425", "data": "0xAAD2290", "func": "0x3D52400", "kind": "LOAD/LEA", "text": "lea rcx,[rip+6D7FE64]" },
+    { "site": "0x3E1F7AA", "data": "0xAAD2290", "func": "0x3E1F3D0", "kind": "LOAD/LEA", "text": "lea rax,[rip+6CB2ADF]" },
+    { "site": "0x672E3CA", "data": "0xAAD2290", "func": "0x672E030", "kind": "LOAD/LEA", "text": "lea rax,[rip+43A3EBF]" }
+  ],
+  "constructFromTi": [
+    { "family": "Neighbor", "vtPlus20": "0x3D52400", "ti": "0xAAD2290", "helper": "0x43DCB00" },
+    { "family": "Spatial", "vtPlus20": "0x6CF34E0", "ti": "0xACE83F8", "helper": "0x43DCB00" }
+  ]
+}

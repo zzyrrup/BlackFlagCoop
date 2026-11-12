@@ -1,0 +1,14 @@
+{
+  "schemaVersion": 1,
+  "milestone": "v0.6.29",
+  "generatedUtc": "2026-11-12T20:54:03Z",
+  "exeSha256": "19920F34BB2FAC814023EE3C27F0CECA1872E80A2AAFB37C092C419FFF77CC0D",
+  "createSecondEdward": { "class": "unsupported", "reason": "TypeInfo/VT construct paths are not Edward create/possession" },
+  "neighborTypeInfoRegistrar": { "class": "confirmed", "reason": "Neighbor TypeInfo is PE-static at 0xAAD2290 (VT[+0x30]): +0x50=NeighRel, +0x20=0xB0, +0x18 keyHash; no runtime SpatRegistrar-style fill" },
+  "spatABTypeInfoFeeds": { "class": "confirmed", "reason": "SpatTi/SpatBTi records hold SpatA/SpatB at +0x50 (runtime-filled); Spat VT[+0x20]=0x6CF34E0 constructs via TiHelper from SpatTi; tight factories stay generic" },
+  "liveMemoryProbe": { "class": "blocked", "reason": "Not authorized" },
+  "next": {
+    "primary": "Deep-decode TiHelper 0x43DCB00; map Lookup of Neigh keyHash / SpatTi into tight factories; relate size 0xB0 objects to enrollment",
+    "avoid": ["live memory", "ASI deploy", "spawn", "PC2", "expect runtime Neigh registrar like Spat", "treat Outer as NS factory"]
+  }
+}

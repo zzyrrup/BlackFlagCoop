@@ -3,7 +3,7 @@
 **Last updated:** 2026-11-12  
 **Machine:** PC1 only  
 **Repo:** https://github.com/zzyrrup/BlackFlagCoop  
-**Branch:** `cursor/v085-vt-owner-ctors-8285` (PR into `cursor/v084-ctor-reverse-8285`; do not push main)  
+**Branch:** `cursor/v089-neigh-ti-feed-8285` (PR into `cursor/v088-ns-construct-8285`; do not push main)  
 **Initial commit:** `e12e70150656ac80742f10b496f7e5556e7985b7`
 
 This document is the primary human-readable bridge between Cursor (local execution) and ChatGPT (review / next instructions). Update it after every completed milestone.
@@ -25,9 +25,9 @@ Ultimate vision is **not claimed as achieved**. Dual-Edward co-op remains unprov
 
 ## 2. Current development milestone
 
-**v0.6.28 complete** — Spatial: SpatRegistrar `0x5E5AF20` runtime-fills `.trace` SpatA/SpatB ctor fields → VT install. Neighbor: VT0/NeighRel table-only (no runtime registrar found). DIR64 reloc leads on VT/NeighRel.
+**v0.6.29 complete** — Neighbor TypeInfo is PE-static at `0xAAD2290` (SpatRegistrar equivalent; no runtime fill). SpatA/SpatB live at SpatTi/SpatBTi `+0x50` (runtime-filled); construct feed is VT`[+0x20]` → TiHelper `0x43DCB00` (parallel Neigh/Spat).
 
-Prior: v0.6.5–v0.6.27 preserved. Offline only. No ASI, spawn, or networking change.
+Prior: v0.6.5–v0.6.28 preserved. Offline only. No ASI, spawn, or networking change.
 
 ---
 
@@ -110,6 +110,7 @@ High-signal offline findings (see `docs/v0.6.*` and `reports/v0.6.*`):
 - **v0.6.26:** No Alloc→VT[0] static path (in-place ctors, table-only); SideBlock Alloc+attach + Arming/ArmWrap `[this+0x98]` pointer-slot same-instance confirmed. Still no Edward/create path.
 - **v0.6.27:** No static TypeInfo/`+0x50` → owner VT[0] (0 LEA/movabs/store; Outer LEA contrast); pointer vs Spatial inline `+0x98` distinct. Still no Edward/create path.
 - **v0.6.28:** SpatRegistrar `0x5E5AF20` runtime TypeInfo fill SpatA/SpatB; Neighbor VT0/NeighRel table-only; DIR64 on VT/NeighRel. Still no Edward/create path.
+- **v0.6.29:** Neighbor TypeInfo PE-static `@0xAAD2290` (`+0x50`=NeighRel, `+0x20`=`0xB0`, keyHash); SpatA/SpatB TypeInfo feeds + VT`[+0x20]`→TiHelper construct. Still no Edward/create path.
 
 ---
 
@@ -180,6 +181,8 @@ High-signal offline findings (see `docs/v0.6.*` and `reports/v0.6.*`):
 - **Spatial construct path:** SpatRegistrar `0x5E5AF20` (`.edata 0xA23E188`) runtime-fills `.trace` ctor fields `0xACE8448=SpatA` / `0xACE84C8=SpatB`; those + SpatVT0 LEA Spat VT (in-place). Invoke via factory `[ti+0x50]` or `call [vt+0]`.
 - **Neighbor construct path:** VT install only in NeighVT0/`NeighRel`; NeighRel PE-static `@0xAAD22E0`; no runtime TypeInfo registrar found.
 - **Reloc leads:** DIR64 on Neigh/Spat VT bases and NeighRel slot.
+- **Neighbor TypeInfo registrar equivalent:** PE-static TypeInfo at `0xAAD2290` (Neigh VT`[+0x30]`): `+0x18` keyHash `0x2996CA50CB0F23F4`, `+0x20` size `0xB0`, `+0x50`=NeighRel; **0** LEA+store of NeighVT0/NeighRel into `.trace`.
+- **SpatA/SpatB TypeInfo feeds:** SpatTi `0xACE83F8` / SpatBTi `0xACE8478` hold SpatA/SpatB at `+0x50` (SpatRegistrar-filled); Spat VT`[+0x20]`=`0x6CF34E0` and Neigh VT`[+0x20]`=`0x3D52400` construct via TiHelper `0x43DCB00`; tight factories stay generic (no static RIP to SpatTi).
 - Input lead `0x187F0550` is action-name bind, not a movement controller.
 - No verified shared entity/ownership edge between input bind path and deferred handler.
 - No Edward, character, archetype, player, or transform string in either worker or the producer wrapper.
@@ -190,8 +193,8 @@ High-signal offline findings (see `docs/v0.6.*` and `reports/v0.6.*`):
 - The queued object is an actor or character (LOD-tracked).
 - The 0x160 side block is activation state for that object.
 - Runtime (non-RIP) TypeInfo pointer for `0xB2898C8` may still reach a tight factory.
-- Concrete Lookup key / tight-factory TypeInfo instance feeds SpatA/SpatB `.trace` fields.
-- Neighbor has an undiscovered SpatRegistrar-equivalent for `.trace` TypeInfo registration.
+- TiHelper `0x43DCB00` is the generic Lookup/construct bridge that also feeds tight factories from Neigh keyHash / SpatTi.
+- Size `0xB0` Neighbor TypeInfo objects relate to enrollment / pointer `+0x98` family.
 - Enrollment-family objects with pointer `+0x98` are the same live Neighbor VT instances that host spat/neigh methods.
 - Dual Edward / dual input context is feasible somewhere else in the engine.
 
@@ -215,13 +218,15 @@ High-signal offline findings (see `docs/v0.6.*` and `reports/v0.6.*`):
 - Expecting a static TypeInfo/`[ti+0x50]` field equal to owner VT[0] (none offline; Outer still LEA-registered; Spatial uses **runtime** `.trace` fill).
 - Conflating Spatial inline `+0x98` with SideBlock/Arming pointer `+0x98` (distinct layouts).
 - Treating Outer/InstallerA as the Neighbor/Spatial object factory (parallel TypeInfo registration only).
+- Expecting a runtime Neighbor SpatRegistrar-style `.trace` fill (Neighbor TypeInfo is PE-static).
+- Expecting tight factories to RIP-embed SpatTi (feed is VT`[+0x20]` → TiHelper).
 
 ---
 
 ## 9. Current blockers
 
 - No confirmed character/Edward factory or archetype reuse path. Queue only enqueues/activates existing objects.
-- Neighbor runtime TypeInfo registrar still missing; Spatial factory key→SpatA/SpatB wiring open.
+- TiHelper deep-decode + Neigh keyHash / SpatTi Lookup into tight factories still open.
 - Live object identity / Edward create still unproven.
 - No verified input→character ownership/control binding.
 - No safe authorized spawn/possession test design yet.
@@ -231,33 +236,37 @@ High-signal offline findings (see `docs/v0.6.*` and `reports/v0.6.*`):
 
 ## 10. Most recent completed milestone
 
-**v0.6.28 — Neighbor/Spatial construction + reloc/TypeInfo leads**
+**v0.6.29 — Neighbor TypeInfo registrar + SpatA/SpatB feeds**
 
 Deliverables:
 
-- `docs/v0.6.28-ns-construct.md`
-- `reports/v0.6.28-funcs-deep.json`
-- `reports/v0.6.28-summary.json`
-- `reports/v0.6.28-second-edward-feasibility.json`
-- `reports/v088-raw/evidence.txt`
-- `tools/offline/NsConstruct088/`
+- `docs/v0.6.29-neigh-ti-feed.md`
+- `docs/v0.6.29-funcs-deep.md`
+- `docs/v0.6.29-second-edward-feasibility.md`
+- `reports/v0.6.29-funcs-deep.json`
+- `reports/v0.6.29-summary.json`
+- `reports/v0.6.29-second-edward-feasibility.json`
+- `reports/v089-raw/evidence.txt`
+- `tools/offline/NeighTiFeed089/`
 
-v0.6.4–v0.6.27 reports were left in place.
+v0.6.4–v0.6.28 reports were left in place.
 
 ---
 
 ## 11. Next recommended milestone
 
-**v0.6.29 (proposed):** Offline find Neighbor TypeInfo/.trace registration equivalent to SpatRegistrar; map which TypeInfo keys / factory feeds use SpatA/SpatB `.trace` fields. Still no spawn, deploy, live memory, or PC2 unless separately authorized.
+**v0.6.30 (proposed):** Offline deep-decode TiHelper `0x43DCB00`; map Lookup of Neigh keyHash / SpatTi into tight factories; relate size `0xB0` Neighbor objects to enrollment/`+0x98`. Still no spawn, deploy, live memory, or PC2 unless separately authorized.
 
 ---
 
 ## 12. Files changed in the latest milestone
 
-- `docs/v0.6.28-ns-construct.md`
-- `reports/v0.6.28-*.json`
-- `reports/v088-raw/evidence.txt`
-- `tools/offline/NsConstruct088/`
+- `docs/v0.6.29-neigh-ti-feed.md`
+- `docs/v0.6.29-funcs-deep.md`
+- `docs/v0.6.29-second-edward-feasibility.md`
+- `reports/v0.6.29-*.json`
+- `reports/v089-raw/evidence.txt`
+- `tools/offline/NeighTiFeed089/`
 - `docs/CHATGPT_HANDOFF.md`
 - `reports/CHATGPT_HANDOFF.json`
 
@@ -291,6 +300,7 @@ v0.6.4–v0.6.27 reports were left in place.
 | Offline Alloc/VT0 + same-instance v0.6.26 (`AllocVt086`) | Pass; Alloc→VT[0] indirect-only; SideBlock+Arming `+0x98` confirmed |
 | Offline ti50/+0x98 classify v0.6.27 (`Ti50Plus087`) | Pass; no static ti+50→VT[0]; pointer vs inline `+0x98` distinct |
 | Offline NS construct/reloc v0.6.28 (`NsConstruct088`) | Pass; SpatRegistrar runtime TypeInfo; Neigh table-only |
+| Offline Neigh TI / Spat feeds v0.6.29 (`NeighTiFeed089`) | Pass; Neigh PE-static TI; SpatA/B feeds + VT[+0x20]→TiHelper |
 | Subject MSVC RTTI name | **Not found** (game types RTTI-stripped) |
 | Game launch / ASI deploy | **Not performed** |
 | Spawn / inject / live memory | **Not performed** |
@@ -316,6 +326,6 @@ When reviewing the GitHub repository after a Cursor push:
 2. Diff against the previous handoff `milestoneId` / commit.
 3. Treat only **confirmed** items as facts; keep hypotheses labeled.
 4. Propose the **next single milestone** with: objective, in-scope RVAs/files, out-of-scope (spawn/deploy/PC2), required deliverables paths, and acceptance checks.
-5. Prefer **v0.6.29**: Neighbor TypeInfo/.trace registrar; SpatA/SpatB factory-key feed. Do not expect E8 to Outer/owner VT[0] ctors; do not treat Outer/InstallerA as NS factory; do not conflate Spatial inline `+0x98` with SideBlock pointer; do not treat helper position extract as possession; avoid `+0x61`-only ranking; do not rely on MSVC RTTI for game types.
+5. Prefer **v0.6.30**: deep-decode TiHelper `0x43DCB00`; map Lookup of Neigh keyHash / SpatTi into tight factories; relate size `0xB0` to enrollment. Do not expect a runtime Neighbor SpatRegistrar; do not expect E8 to Outer/owner VT[0] ctors; do not treat Outer/InstallerA as NS factory; do not conflate Spatial inline `+0x98` with SideBlock pointer; do not treat helper position extract as possession; avoid `+0x61`-only ranking; do not rely on MSVC RTTI for game types.
 6. Do not instruct Cursor to deploy ASI, spawn, use live memory, or touch PC2/save data unless the user explicitly overrides safety.
 7. Return instructions Cursor can execute verbatim on PC1 on a dedicated branch + PR (never push main).
