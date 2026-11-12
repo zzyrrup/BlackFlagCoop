@@ -1,16 +1,16 @@
 {
   "schemaVersion": 1,
-  "generatedUtc": "2026-11-12T16:26:26Z",
+  "generatedUtc": "2026-11-12T17:10:00Z",
   "handoffFor": "ChatGPT",
   "executor": "Cursor",
   "machine": "PC1",
   "repository": {
     "url": "https://github.com/zzyrrup/BlackFlagCoop",
     "defaultBranch": "main",
-    "latestCommit": "6cdae9fe64b80077c7228558b71c4d41b4cb42a2",
-    "initialCommit": "e12e70150656ac80742f10b496f7e5556e7985b7",
-    "branch": "cursor/v065-deferred-queue-worker-007d",
-    "base": "main"
+    "featureBranch": "cursor/v065-queue-worker-decode-8285",
+    "baseBranch": "cursor/v065-deferred-queue-worker-007d",
+    "doNotPushMain": true,
+    "initialCommit": "e12e70150656ac80742f10b496f7e5556e7985b7"
   },
   "project": {
     "name": "BlackFlagCoop",
@@ -18,137 +18,103 @@
     "functionalityChangedByThisMilestone": false
   },
   "milestone": {
-    "currentId": "v0.6.5",
-    "currentTitle": "Deferred queue worker and 16-byte element layout",
-    "status": "complete"
+    "currentId": "v0.6.6",
+    "currentTitle": "Deferred queue producers",
+    "status": "complete",
+    "priorPreserved": ["v0.6.4", "v0.6.5"]
   },
   "asi": {
     "version": "0.5.1",
     "sha256": "63B38877DDA7CC7CD9AB2619F94D3941C37F54C95A435EFE47084DC4CF2A50BE",
     "deployAuthorized": false,
-    "preserveWorkingAsi": true,
-    "openedThisMilestone": false
+    "preserveWorkingAsi": true
   },
   "game": {
     "title": "Assassin's Creed Black Flag Resynced",
     "version": "1.0.6",
     "executable": "ACBlackFlag.exe",
-    "exeSha256": "19920F34BB2FAC814023EE3C27F0CECA1872E80A2AAFB37C092C419FFF77CC0D",
-    "imageBase": "0x140000000"
+    "exeSha256": "19920F34BB2FAC814023EE3C27F0CECA1872E80A2AAFB37C092C419FFF77CC0D"
   },
   "build": {
-    "generator": "Visual Studio 18 2026",
-    "architecture": "x64",
-    "configure": "cmake -S . -B build -G \"Visual Studio 18 2026\" -A x64",
-    "build": "cmake --build build --config Release",
-    "asiBuiltThisMilestone": false
+    "asiRebuilt": false,
+    "offlineTools": ["tools/offline/QueueWorker065", "tools/offline/QueueProducer066"]
   },
   "network": {
-    "architecture": "BFC TCP session; msgs 1-8; heartbeat; poseVerified sanitize",
-    "lanTestStatus": "unchanged",
-    "pc2Untouched": true,
-    "changesAuthorized": false
+    "changesAuthorized": false,
+    "pc2Untouched": true
   },
   "engineFindings": {
     "summary": [
-      "16-byte queue slot is an object pointer at +0 plus a handler-written f32 score at +8",
-      "0x725400 is a shared flag and hashed-list helper on that object",
-      "0xE95E80 is called only from 0x1AC380 and attaches a 0x160 side block at object+0x98",
-      "Neither worker creates a character or reads an archetype",
-      "0x1AC380 ends at 0x1AC61F (671 bytes); 0x1AC620 is the next function"
+      "v0.6.5: slot={ptr@0,f32@8}; workers 0x725400/0xE95E80 on subject",
+      "v0.6.6: enqueue helper 0x2E97B60(coordinator,object); wrapper 0x2E97FC0",
+      "Post-enqueue sets object+0x61 bit2; 0x725400 clears it",
+      "No Edward/create/input path on producer or consumer"
     ],
     "keyRvas": {
       "deferredHandler": "0x1AC380",
-      "handlerEndExclusive": "0x1AC61F",
+      "enqueueHelper": "0x2E97B60",
+      "enqueueWrapper": "0x2E97FC0",
       "perElementA": "0x725400",
       "perElementB": "0xE95E80",
-      "sideBlockAllocator": "0x426EE50",
-      "scoreConstant25": "0x97C5C00"
+      "controllerNeighborHelper": "0x7B02D70"
     }
   },
   "confirmed": [
-    "EXE SHA256 19920F34… matched before decode",
-    "Element+0 is the object pointer passed to both workers",
-    "Element+8 is an f32 score written by vsubps/vmulps/vhaddps and compared with 25.0",
-    "0xE95E80 callers are only 0x1AC4DB and 0x1AC523",
-    "0xE95E80 allocates 0x160 bytes and links the block to the existing object",
-    "No Edward/character/archetype/player/transform string in either worker"
+    "ASI v0.5.1 preserved; no deploy",
+    "0x2E97B60 enqueues object pointers into +0xAC0 with consumer packing",
+    "Only callers of enqueue are inside 0x2E97FC0 (3 sites)",
+    "object+0x61 bit 0x04 set on enqueue, cleared in 0x725400",
+    "No Edward strings on producer path"
   ],
   "hypotheses": [
-    "The queued object may be an actor",
-    "The 0x160 block may be activation bookkeeping",
-    "A producer outside this function may create the object before enqueue"
-  ],
-  "disproven": [
-    "Workers are invoked with the 16-byte slot address",
-    "Element+8 is an input transform",
-    "The slot contains a callback or archetype id",
-    "0xE95E80 spawns an Edward or character"
+    "0x2E97FC0 is phase-dispatched like 0x1AC380",
+    "Queued objects may include player/Edward instances",
+    "0x160 side block is activation/controller-related"
   ],
   "blockers": [
-    "Producer of the queued object pointer is not decoded",
-    "Object and side-block types are unnamed",
-    "No verified dual input context",
-    "Spawn tests are not authorized"
+    "Subject type/RTTI unknown",
+    "0x2E97FC0 registration unknown",
+    "No input/possession path",
+    "Spawn tests not authorized"
   ],
   "mostRecentCompletedMilestone": {
-    "id": "v0.6.5",
-    "docs": ["docs/v0.6.5-deferred-queue-worker-analysis.md"],
+    "id": "v0.6.6",
+    "docs": ["docs/v0.6.6-deferred-queue-producers.md"],
     "reports": [
-      "reports/v0.6.5-queue-element-layout.json",
-      "reports/v0.6.5-worker-disassembly.json",
-      "reports/v0.6.5-worker-callgraph.json",
-      "reports/v0.6.5-actor-lifecycle-connections.json",
-      "reports/v0.6.5-second-edward-feasibility.json"
+      "reports/v0.6.6-enqueue-helper.json",
+      "reports/v0.6.6-producer-scan-summary.json",
+      "reports/v0.6.6-second-edward-feasibility.json",
+      "reports/v066-raw/evidence.txt"
     ]
   },
   "nextRecommendedMilestone": {
-    "id": "v0.6.6",
-    "title": "Producers of the deferred object-pointer queue",
-    "primaryRvas": ["0x1AC380"],
-    "objective": "Find stores of the object pointer into [coordinator+0xAC0] and determine whether that producer creates the object",
-    "forbidden": ["spawn", "deploy", "game modify", "PC2", "force-push", "push to main"]
+    "id": "v0.6.7",
+    "title": "Enqueue wrapper dispatch and subject type recovery",
+    "primary": ["registration of 0x2E97FC0", "subject vtable/RTTI"],
+    "forbidden": ["spawn", "deploy", "live memory", "PC2", "save-data", "force-push main"]
   },
-  "filesChangedThisUpdate": [
-    "docs/v0.6.5-deferred-queue-worker-analysis.md",
-    "reports/v0.6.5-queue-element-layout.json",
-    "reports/v0.6.5-worker-disassembly.json",
-    "reports/v0.6.5-worker-callgraph.json",
-    "reports/v0.6.5-actor-lifecycle-connections.json",
-    "reports/v0.6.5-second-edward-feasibility.json",
-    "tools/offline/QueueWorker065/Program.cs",
-    "tools/offline/QueueWorker065/QueueWorker065.csproj",
-    "docs/CHATGPT_HANDOFF.md",
-    "reports/CHATGPT_HANDOFF.json",
-    ".gitignore"
-  ],
   "tests": [
-    {
-      "name": "offline_pe_v0.6.5",
-      "result": "pass",
-      "notes": "QueueWorker065 matched EXE hash and landed on call sites 0x1AC4D3 and 0x1AC4DB"
-    },
-    {
-      "name": "game_launch_deploy",
-      "result": "not_run",
-      "notes": "forbidden"
-    }
+    { "name": "QueueProducer066_build_scan", "result": "pass" },
+    { "name": "enqueue_helper_packing_match", "result": "pass" },
+    { "name": "game_launch_deploy", "result": "not_run" },
+    { "name": "spawn_live_memory", "result": "not_run" }
   ],
   "safety": {
     "pc1Only": true,
+    "pc2Untouched": true,
     "gameInstallsUnmodified": true,
     "asiPreserved": true,
-    "noForcePush": true,
-    "noSecretsCommitted": true,
-    "noGameBinariesCommitted": true,
-    "analysisMode": "offline_pe_only"
+    "noSaveDataInterference": true,
+    "noForcePushMain": true,
+    "noLiveMemory": true,
+    "priorMilestonesPreserved": true
   },
   "chatgptNextReviewInstructions": [
     "Read docs/CHATGPT_HANDOFF.md and this JSON first",
-    "Read docs/v0.6.5-deferred-queue-worker-analysis.md",
-    "Separate confirmed vs hypotheses vs disproven",
-    "Propose v0.6.6 as an offline search for producers of [coordinator+0xAC0]",
-    "Do not authorize deploy or spawn unless the user explicitly overrides",
-    "Return PC1-executable instructions for Cursor"
+    "Review v0.6.6 PR; preserve v0.6.4/v0.6.5 history",
+    "Separate confirmed vs hypotheses",
+    "Propose v0.6.7: 0x2E97FC0 dispatch + subject RTTI",
+    "Do not authorize deploy/spawn/live memory/PC2 unless user overrides",
+    "Return PC1 branch+PR instructions"
   ]
 }

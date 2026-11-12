@@ -1,0 +1,43 @@
+{
+  "schemaVersion": 1,
+  "generatedUtc": "2026-11-12T17:05:00Z",
+  "milestone": "v0.6.6",
+  "assessments": {
+    "queueProducerIdentified": {
+      "class": "confirmed",
+      "reason": "0x2E97B60 appends existing object pointers into coordinator+0xAC0 with the same packing the deferred handler drains"
+    },
+    "createSecondCharacterEntity": {
+      "class": "unsupported_on_this_path",
+      "reason": "Producer and consumer operate on pre-existing objects; no archetype/Edward construction in 0x2E97B60 or 0x2E97FC0 strings"
+    },
+    "reuseEdwardCharacterDefinition": {
+      "class": "unsupported",
+      "reason": "No Edward/archetype edges in producer wrapper strings (allocator/SmallArray only)"
+    },
+    "assignSeparateInputControl": {
+      "class": "unsupported",
+      "reason": "No input/possession edges on producer path"
+    },
+    "multipleQueuedObjects": {
+      "class": "confirmed",
+      "reason": "Enqueue increments packed count; wrapper loops enqueue multiple objects"
+    },
+    "secondEdwardWorks": {
+      "class": "unknown_untested",
+      "reason": "No spawn/control test performed; object identity unknown"
+    }
+  },
+  "nextSafestStep": {
+    "primary": "Recover registration/dispatch of wrapper 0x2E97FC0 and subject vtable/RTTI",
+    "forbidden": ["spawn", "ASI deploy", "live memory", "PC2", "save-data", "push main"]
+  },
+  "safety": {
+    "spawnAttempted": false,
+    "gameLaunched": false,
+    "liveMemory": false,
+    "asiPreservedAsV051": true,
+    "pc2Untouched": true,
+    "v065DeliverablesPreserved": true
+  }
+}
