@@ -30,8 +30,8 @@
     "deployAuthorized": false,
     "candidate": {
       "version": "0.8.0-dev",
-      "bytes": 101376,
-      "sha256": "BB65C643BA4318C9714EA7C2F0A1468D9730BD423DA71BD953BC97434783D925",
+      "bytes": 102912,
+      "sha256": "ABD29003034AC4BD6C88DC728D8C4A5C6DAD7D2C53A76CD92B41C72B387976DB",
       "invokeNativeSpawn": false,
       "deployed": false
     },

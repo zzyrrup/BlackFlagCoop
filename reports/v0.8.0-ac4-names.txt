@@ -1,0 +1,12 @@
+exeSha256=19920F34BB2FAC814023EE3C27F0CECA1872E80A2AAFB37C092C419FFF77CC0D
+LoadEntityBuilderAndSelectorsForPlayer hit=0
+BuildEntityWithSelector hit=0
+EntityBuilder hit=1 text=SpawnEntityBuilderParams
+RowSelector hit=0
+DuplicationManager hit=0
+BhvAssassin hit=0
+GetUnusedPadID hit=0
+SetGlobalMatrixInternal hit=0
+SetTargetAction hit=0
+PlayerPadManager hit=0
+CharacterActionSet hit=0

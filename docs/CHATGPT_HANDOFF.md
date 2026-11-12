@@ -38,7 +38,7 @@ Prior: v0.6.25 owner VT[0] ctors (`0x13612B0` / `0x5781490`) and v0.6.5–v0.6.2
 | Working in-game ASI | **v0.5.1** (still installed, 99840 bytes) |
 | ASI SHA256 | `63B38877DDA7CC7CD9AB2619F94D3941C37F54C95A435EFE47084DC4CF2A50BE` |
 | Candidate | `0.8.0-dev` `build/bin/Release/BlackFlagCoop.asi` |
-| Candidate SHA256 | `BB65C643BA4318C9714EA7C2F0A1468D9730BD423DA71BD953BC97434783D925` (101376 bytes) |
+| Candidate SHA256 | `ABD29003034AC4BD6C88DC728D8C4A5C6DAD7D2C53A76CD92B41C72B387976DB` (102912 bytes) |
 | Deploy status | **Do not replace** the installed v0.5.1 without explicit user approval |
 
 ---
@@ -275,7 +275,8 @@ v0.6.4–v0.6.24 reports were left in place.
 | Offline VT owner ctors v0.6.25 (`VtOwner085`) | Pass; VT[0] ctors; +0x98 enrollment link |
 | Offline spawn callers v0.8.0 (`SpawnCallers080`) | Pass; 3/3 schema visitors; 0 factory candidates |
 | `ctest -C Release` SpawnContract | Pass (1/1, ALL PASSED) |
-| VS 18 2026 x64 Release | Pass. Candidate `BB65C643…` (101376 bytes). Not deployed |
+| VS 18 2026 x64 Release | Pass. Candidate `ABD29003…` (102912 bytes). Not deployed |
+| `ctest` PuppetLifecycle | Pass. Engine calls stay off. AC4Coop x86 addresses are not in the plugin |
 | Subject MSVC RTTI name | **Not found** (game types RTTI-stripped) |
 | Game launch / ASI deploy | **Not performed** |
 | Spawn / inject / live memory | **Not performed** |
@@ -287,7 +288,7 @@ v0.6.4–v0.6.24 reports were left in place.
 
 - PC1 only; PC2 untouched.
 - Game installs unmodified by this handoff work.
-- ASI v0.5.1 preserved and re-read (`63B38877…`, 99840 bytes). Candidate `BB65C643…` was not copied into the game.
+- ASI v0.5.1 preserved and re-read (`63B38877…`, 99840 bytes). Candidate `ABD29003…` was not copied into the game. The AC4Coop puppet sequence is recorded and unbound.
 - Backups preserved locally; excluded from Git.
 - No force-push; no credential commits.
 

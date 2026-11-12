@@ -1,4 +1,5 @@
 #include "game/player_probe.h"
+#include "game/puppet_lifecycle.h"
 #include "game/player_telemetry.h"
 #include "game/runtime_diag.h"
 #include "game/spawn_contract.h"
@@ -53,6 +54,7 @@ extern "C" __declspec(dllexport) void InitializeASI() {
         "Phase: v0.8.0-dev second Edward gate "
         "(native spawn refused, no factory proven)");
     bfc::SpawnContract::LogGate();
+    bfc::PuppetLifecycle::LogGate();
 
     // Prepare Winsock foundation only. Do not open host/client sessions yet.
     if (bfc::Network::Initialize()) {

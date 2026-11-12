@@ -21,8 +21,8 @@
   "candidate": {
     "version": "0.8.0-dev",
     "path": "build/bin/Release/BlackFlagCoop.asi",
-    "bytes": 101376,
-    "sha256": "BB65C643BA4318C9714EA7C2F0A1468D9730BD423DA71BD953BC97434783D925",
+    "bytes": 102912,
+    "sha256": "ABD29003034AC4BD6C88DC728D8C4A5C6DAD7D2C53A76CD92B41C72B387976DB",
     "invokeNativeSpawn": false,
     "deployed": false
   },
@@ -36,6 +36,8 @@
   "tests": [
     { "name": "SpawnCallers080_exe_hash_and_schema_visitors", "result": "pass", "schemaVisitors": "3/3", "factoryCandidates": 0 },
     { "name": "SpawnContract_ctest_Release", "result": "pass" },
+    { "name": "PuppetLifecycle_ctest_Release", "result": "pass" },
+    { "name": "Ac4Names080", "result": "pass", "note": "AC4Coop engine names absent except SpawnEntityBuilderParams" },
     { "name": "game_launch_deploy", "result": "not_run" }
   ],
   "allocVtables": {
