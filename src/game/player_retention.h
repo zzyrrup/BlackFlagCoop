@@ -54,7 +54,13 @@ public:
         {0x69B05F0u, "table[0] shared ctor wrapper (calls 0x755F340)", "binary-confirmed"},
         {0x3016DB0u, "table[1] small-object factory (Alloc 0x30, vt 0x919F8D0)",
          "binary-confirmed"},
-        {0x7CA9B70u, "table[2] Process candidate (allocator resolve + virtual dispatch)",
+        {0x7CA9B70u,
+         "table[2] Process — SHARED by Reference/Player/Distance/Minion selectors "
+         "(NOT unique player retention / C1 owner)",
+         "binary-confirmed"},
+        {0xADA320u,
+         "LoadingAdvisorUpdate phase handler (body @0xADA340); uses this+0x2D0/+0x2A0; "
+         "not proven builder cache",
          "binary-confirmed"},
         {0x16FAA0u,
          "allocator-pointer resolve used by Process (NOT ObjectID CreateReference)",
