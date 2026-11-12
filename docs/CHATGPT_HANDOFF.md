@@ -25,7 +25,7 @@ Ultimate vision is **not claimed as achieved**. Dual-Edward co-op remains unprov
 
 ## 2. Current development milestone
 
-**v0.8.0 in review** — Spawn-parameter types identified (`SpawnNPCParams` registrar `0x80F23E0`). They serialize/copy params. No world-create callsite, so the candidate ASI refuses to spawn. Gate `BFC_SECOND_EDWARD` defaults off.
+**v0.8.0 in review** — Spawn-parameter copy helpers have no callers and do not submit an entity. Gate `BFC_SECOND_EDWARD` stays default-off and refused. CI on `4024a28` was `pending` with zero status entries; do not treat that as a pass.
 
 Prior: v0.6.25 complete on `cursor/v085-vt-owner-ctors-8285`. v0.6.5–v0.6.24 preserved. No deploy, no gameplay test, no networking change.
 
@@ -236,7 +236,7 @@ v0.6.25 and earlier reports were left in place. Installed ASI was not replaced.
 
 ## 11. Next recommended milestone
 
-**v0.8.1 (proposed):** Offline xref of NPC copy `0x5E3DB0`, player copy `0x21F5950`, and hashes `0x94D05600` / `0x51BA3541` outside the registrars, to find the function that applies a spawn-params object to the world. Still no speculative call, deploy, live memory, or PC2 unless separately authorized. Do not return to the deferred-queue chain for this question.
+**v0.8.1 (proposed):** Resolve virtual calls `0x33593D0` and `0x335A228` inside `0x33591C0`. The copy helpers and both type hashes are already traced and are not a world submit. Still no speculative call, deploy, live memory, or PC2 unless separately authorized.
 
 ---
 
@@ -307,6 +307,6 @@ When reviewing the GitHub repository after a Cursor push:
 2. Diff against the previous handoff `milestoneId` / commit.
 3. Treat only **confirmed** items as facts; keep hypotheses labeled.
 4. Propose the **next single milestone** with: objective, in-scope RVAs/files, out-of-scope (spawn/deploy/PC2), required deliverables paths, and acceptance checks.
-5. Prefer **v0.8.1**: xref `0x5E3DB0`, `0x21F5950`, and hashes `0x94D05600` / `0x51BA3541` outside the spawn-param registrars. Do not treat those registrars, the `0x20`-stride copy helpers, or the deferred queue as the character factory. Do not call an RVA until the create/apply arguments are confirmed.
+5. Prefer **v0.8.1**: resolve virtual calls `0x33593D0` and `0x335A228` inside `0x33591C0`. The copy helpers and hashes `0x94D05600` / `0x51BA3541` are already traced and are not a world submit. Do not call an RVA until a world receiver and its arguments are confirmed. CI on `4024a28` was pending with zero checks.
 6. Do not instruct Cursor to deploy ASI, spawn, use live memory, or touch PC2/save data unless the user explicitly overrides safety.
 7. Return instructions Cursor can execute verbatim on PC1 on a dedicated branch + PR (never push main).

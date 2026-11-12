@@ -93,13 +93,15 @@
       "reports/v0.8.0-spawn-string-xrefs.json",
       "reports/v0.8.0-spawn-params-follow.json",
       "reports/v0.8.0-spawn-param-consumers.json",
-      "reports/v0.8.0-spawn-fnptr-slots.json"
+      "reports/v0.8.0-spawn-fnptr-slots.json",
+      "reports/v0.8.0-submit-path.json",
+      "reports/v0.8.0-submit-follow.json"
     ]
   },
   "nextRecommendedMilestone": {
     "id": "v0.8.1",
-    "title": "Xref params copy helpers and type hashes to the create/apply callsite",
-    "primary": ["0x5E3DB0", "0x21F5950", "hash 0x94D05600", "hash 0x51BA3541"],
+    "title": "Resolve 0x33591C0 virtual calls after the params copy trace",
+    "primary": ["0x33593D0", "0x335A228", "0x137AE80"],
     "forbidden": ["speculative spawn call", "deploy", "live memory", "PC2", "treat registrars as factories", "resume deferred-queue as the factory"]
   },
   "tests": [

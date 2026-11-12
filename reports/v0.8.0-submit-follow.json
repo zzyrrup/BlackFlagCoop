@@ -1,0 +1,56 @@
+{
+  "vtablePointerHits": {
+    "0x92D1AA8": [],
+    "0x92D1C68": [],
+    "0x92D1AC0": [],
+    "0xA035200": [],
+    "0xA0352D4": []
+  },
+  "absentNames": {
+    "BuildEntityWithSelector": 0,
+    "GetUnusedPadID": 0,
+    "DuplicationManager": 0,
+    "RowSelector": 0,
+    "World::AddEntity": 0,
+    "EntityBuilder::": 0,
+    "BuildEntity": 0
+  },
+  "typeGlobalUsers": [
+    {"site":"0x5E3DBD","func":"0x5E3DB0","known":"npc_params_copy","target":"0xB5378F0","kind":"lea"},
+    {"site":"0x5E3DFD","func":"0x5E3DF0","known":"shared_field_copy","target":"0xB5377F8","kind":"lea"},
+    {"site":"0x21F595D","func":"0x21F595A","known":"","target":"0xB537FC8","kind":"lea"},
+    {"site":"0x335939C","func":"0x33591C0","known":"","target":"0xB5378F0","kind":"lea"},
+    {"site":"0x335A1E2","func":"0x3359FC0","known":"","target":"0xB5378F0","kind":"lea"},
+    {"site":"0x35E69C3","func":"0x35E69C3","known":"","target":"0xB5377F8","kind":"lea"},
+    {"site":"0x35E6A24","func":"0x35E6A24","known":"","target":"0xB537AE0","kind":"lea"},
+    {"site":"0x35E6A95","func":"0x35E6A95","known":"","target":"0xB5378F0","kind":"lea"},
+    {"site":"0x35E6ABA","func":"0x35E6ABA","known":"","target":"0xB5B9688","kind":"lea"},
+    {"site":"0x35E6AD8","func":"0x35E6AD8","known":"","target":"0xB537FC8","kind":"lea"},
+    {"site":"0x5D4E685","func":"0x5D4E685","known":"","target":"0xB5377F8","kind":"mov"},
+    {"site":"0x5D4EB28","func":"0x5D4EB28","known":"","target":"0xB537FC8","kind":"mov"},
+    {"site":"0x645493D","func":"0x645493A","known":"","target":"0xB5B9688","kind":"lea"},
+    {"site":"0x645BA63","func":"0x645BA63","known":"","target":"0xB5B9688","kind":"mov"},
+    {"site":"0x64BF01A","func":"0x64BF01A","known":"","target":"0xB5377F8","kind":"lea"},
+    {"site":"0x64BF06E","func":"0x64BF06E","known":"","target":"0xB537AE0","kind":"lea"},
+    {"site":"0x64BF0D0","func":"0x64BF0D0","known":"","target":"0xB5378F0","kind":"lea"},
+    {"site":"0x64BF0FA","func":"0x64BF0FA","known":"","target":"0xB5B9688","kind":"lea"},
+    {"site":"0x64BF116","func":"0x64BF116","known":"","target":"0xB537FC8","kind":"lea"},
+    {"site":"0x80F25FD","func":"0x80F25F0","known":"","target":"0xB537AE0","kind":"lea"}
+  ],
+  "hashNeighbors": [
+    {"site":"0xA0352D4","dwords":["0x53AEA36A","0x170","0x0","0xF28BE5B4","0x1CE7099A","0x1528","0x0","0xFB7FF6A5","0x94D05600","0xB0","0x0","0x1CE7099A","0xC2553654","0x1528","0x0","0xFB7FF6A5"]},
+    {"site":"0xA035324","dwords":["0x6C7F9FF9","0x1538","0x0","0x1CE7099A","0xAAFB0487","0x1528","0x0","0xFB7FF6A5","0x51BA3541","0xC8","0x0","0x1","0xB2BBD02E","0x3","0x0","0x2"]}
+  ],
+  "extraCopies": [
+    {"entry":"0x6454930","text":"0x6454930 push rsi | 0x6454931 push rdi | 0x6454932 push rbx | 0x6454933 sub rsp,20h | 0x6454937 mov ebx,r8d | 0x645493A mov rsi,rcx | 0x645493D lea rcx,[rel 14B5B9688h] | 0x6454944 call 00000001443DCB00h | 0x6454949 mov rdi,rax | 0x645494C mov rcx,rsi | 0x645494F mov rdx,rax | 0x6454952 mov r8d,ebx | 0x6454955 call 00000001405E3DF0h | 0x645495A cmp ebx,4 | 0x645495D je short 0000000146454977h | 0x645495F mov eax,[rsi+0B0h] | 0x6454965 mov [rdi+0B0h],eax | 0x645496B mov al,[rsi+0B4h] | 0x6454971 mov [rdi+0B4h],al | 0x6454977 mov rax,rdi | 0x645497A add rsp,20h | 0x645497E pop rbx | 0x645497F pop rdi | 0x6454980 pop rsi | 0x6454981 ret | 0x6454982 int3"},
+    {"entry":"0x80F25F0","text":"0x80F25F0 push rsi | 0x80F25F1 push rdi | 0x80F25F2 push rbx | 0x80F25F3 sub rsp,20h | 0x80F25F7 mov esi,r8d | 0x80F25FA mov rdi,rcx | 0x80F25FD lea rcx,[rel 14B537AE0h] | 0x80F2604 call 00000001443DCB00h | 0x80F2609 mov rbx,rax | 0x80F260C mov rcx,rdi | 0x80F260F mov rdx,rax | 0x80F2612 mov r8d,esi | 0x80F2615 call 00000001405E3DF0h | 0x80F261A mov rax,rbx | 0x80F261D add rsp,20h | 0x80F2621 pop rbx | 0x80F2622 pop rdi | 0x80F2623 pop rsi | 0x80F2624 ret | 0x80F2625 int3"},
+    {"entry":"0x35E69C3","text":"0x35E69C3 lea rax,[rel 14B5377F8h] | 0x35E69CA lea rcx,[rel 14B375670h] | 0x35E69D1 mov [rsp+0FF18h],rax | 0x35E69D9 mov [rsp+0FF20h],rcx | 0x35E69E1 lea rax,[rel 14B375578h] | 0x35E69E8 lea rcx,[rel 14B2FBF08h] | 0x35E69EF mov [rsp+0FF28h],rax | 0x35E69F7 mov [rsp+0FF30h],rcx | 0x35E69FF lea rax,[rel 14B394068h] | 0x35E6A06 lea rcx,[rel 14B339548h] | 0x35E6A0D mov [rsp+0FF38h],rax | 0x35E6A15 mov [rsp+0FF40h],rcx | 0x35E6A1D lea rax,[rel 14B5379E8h] | 0x35E6A24 lea rcx,[rel 14B537AE0h] | 0x35E6A2B mov [rsp+0FF48h],rax | 0x35E6A33 mov [rsp+0FF50h],rcx | 0x35E6A3B lea rax,[rel 14B393A40h] | 0x35E6A42 lea rcx,[rel 14B537BD8h] | 0x35E6A49 mov [rsp+0FF58h],rax | 0x35E6A51 mov [rsp+0FF60h],rcx | 0x35E6A59 lea rax,[rel 14B537CD8h] | 0x35E6A60 lea rcx,[rel 14B537DD8h] | 0x35E6A67 mov [rsp+0FF68h],rax | 0x35E6A6F mov [rsp+0FF70h],rcx | 0x35E6A77 lea rax,[rel 14B393B58h] | 0x35E6A7E lea rcx,[rel 14B393C68h] | 0x35E6A85 mov [rsp+0FF78h],rax | 0x35E6A8D mov [rsp+0FF80h],rcx | 0x35E6A95 lea rax,[rel 14B5378F0h] | 0x35E6A9C lea rcx,[rel 14B393D68h] | 0x35E6AA3 mov [rsp+0FF88h],rax | 0x35E6AAB mov [rsp+0FF90h],rcx | 0x35E6AB3 lea rax,[rel 14B5B9580h] | 0x35E6ABA lea rcx,[rel 14B5B9688h] | 0x35E6AC1 mov [rsp+0FF98h],rax | 0x35E6AC9 mov [rsp+0FFA0h],rcx | 0x35E6AD1 lea rax,[rel 14B537ED0h] | 0x35E6AD8 lea rcx,[rel 14B537FC8h] | 0x35E6ADF mov [rsp+0FFA8h],rax | 0x35E6AE7 mov [rsp+0FFB0h],rcx | 0x35E6AEF lea rax,[rel 14B393E68h] | 0x35E6AF6 lea rcx,[rel 14B5CEE90h] | 0x35E6AFD mov [rsp+0FFB8h],rax | 0x35E6B05 mov [rsp+0FFC0h],rcx | 0x35E6B0D lea rax,[rel 14B46C828h] | 0x35E6B14 lea rcx,[rel 14B393F68h] | 0x35E6B1B mov [rsp+0FFC8h],rax | 0x35E6B23 mov [rsp+0FFD0h],rcx | 0x35E6B2B lea rax,[rel 14B54E000h] | 0x35E6B32 lea rcx,[rel 14B47F9C8h] | 0x35E6B39 mov [rsp+0FFD8h],rax | 0x35E6B41 mov"},
+    {"entry":"0x64BF01A","text":"0x64BF01A lea rax,[rel 14B5377F8h] | 0x64BF021 mov [rel 14B64F268h],rax | 0x64BF028 lea rax,[rel 14B375670h] | 0x64BF02F mov [rel 14B64F270h],rax | 0x64BF036 lea rax,[rel 14B375578h] | 0x64BF03D mov [rel 14B64F278h],rax | 0x64BF044 lea rax,[rel 14B2FBF08h] | 0x64BF04B mov [rel 14B64F280h],rax | 0x64BF052 lea rax,[rel 14B394068h] | 0x64BF059 mov [rel 14B64F288h],rax | 0x64BF060 lea rax,[rel 14B5379E8h] | 0x64BF067 mov [rel 14B64F290h],rax | 0x64BF06E lea rax,[rel 14B537AE0h] | 0x64BF075 mov [rel 14B64F298h],rax | 0x64BF07C lea rax,[rel 14B393A40h] | 0x64BF083 mov [rel 14B64F2A0h],rax | 0x64BF08A lea rax,[rel 14B537BD8h] | 0x64BF091 mov [rel 14B64F2A8h],rax | 0x64BF098 lea rax,[rel 14B537CD8h] | 0x64BF09F mov [rel 14B64F2B0h],rax | 0x64BF0A6 lea rax,[rel 14B537DD8h] | 0x64BF0AD mov [rel 14B64F2B8h],rax | 0x64BF0B4 lea rax,[rel 14B393B58h] | 0x64BF0BB mov [rel 14B64F2C0h],rax | 0x64BF0C2 lea rax,[rel 14B393C68h] | 0x64BF0C9 mov [rel 14B64F2C8h],rax | 0x64BF0D0 lea rax,[rel 14B5378F0h] | 0x64BF0D7 mov [rel 14B64F2D0h],rax | 0x64BF0DE lea rax,[rel 14B393D68h] | 0x64BF0E5 mov [rel 14B64F2D8h],rax | 0x64BF0EC lea rax,[rel 14B5B9580h] | 0x64BF0F3 mov [rel 14B64F2E0h],rax | 0x64BF0FA lea rax,[rel 14B5B9688h] | 0x64BF101 mov [rel 14B64F2E8h],rax | 0x64BF108 lea rax,[rel 14B537ED0h] | 0x64BF10F mov [rel 14B64F2F0h],rax | 0x64BF116 lea rax,[rel 14B537FC8h] | 0x64BF11D mov [rel 14B64F2F8h],rax | 0x64BF124 lea rax,[rel 14B393E68h] | 0x64BF12B mov [rel 14B64F300h],rax | 0x64BF132 lea rax,[rel 14B393F68h] | 0x64BF139 mov [rel 14B64F308h],rax | 0x64BF140 lea rax,[rel 14B54E000h] | 0x64BF147 mov [rel 14B64F310h],rax | 0x64BF14E lea rax,[rel 14B47F9C8h] | 0x64BF155 mov [rel 14B64F318h],rax | 0x64BF15C lea rax,[rel 14B4AA1A8h] | 0x64BF163 mov [rel 14B64F320h],rax | 0x64BF16A lea rax,[rel 1"},
+    {"entry":"0x33591C0","text":"0x33591C0 push r15 | 0x33591C2 push r14 | 0x33591C4 push r13 | 0x33591C6 push r12 | 0x33591C8 push rsi | 0x33591C9 push rdi | 0x33591CA push rbp | 0x33591CB push rbx | 0x33591CC sub rsp,128h | 0x33591D3 mov rdi,rdx | 0x33591D6 mov rsi,rcx | 0x33591D9 mov rax,[rel 14A2B3200h] | 0x33591E0 xor rax,rsp | 0x33591E3 mov [rsp+120h],rax | 0x33591EB mov rbx,[rel 14ABE2080h] | 0x33591F2 mov rax,[rdx] | 0x33591F5 mov rax,[rax+98h] | 0x33591FC movsxd rdx,[rax+8] | 0x3359200 sar rdx,1Fh | 0x3359204 and rdx,[rax] | 0x3359207 mov rcx,rbx | 0x335920A call 000000014492BFF0h | 0x335920F lea rcx,[rax+8] | 0x3359213 add rbx,1C8h | 0x335921A test rax,rax | 0x335921D cmovne rbx,rcx | 0x3359221 lea r8,[rel 14AF73BD0h] | 0x3359228 lea r14,[rsp+48h] | 0x335922D mov rcx,r14 | 0x3359230 mov rdx,rbx | 0x3359233 call 00000001404B0E00h | 0x3359238 mov rcx,[r14] | 0x335923B mov eax,[rel 14AB8BBC0h] | 0x3359241 mov rdx,[gs:58h] | 0x335924A mov rax,[rdx+rax*8] | 0x335924E movsxd rdx,[rcx+8] | 0x3359252 sar rdx,1Fh | 0x3359256 or rdx,[rax+1C88h] | 0x335925D lea rax,[rel 14AF73BD8h] | 0x3359264 test [rcx],rdx | 0x3359267 mov [rsp+38h],rsi | 0x335926C mov [rsp+30h],rdi | 0x3359271 jne short 00000001433592CCh | 0x3359273 mov rcx,[rdi] | 0x3359276 mov rbx,[rcx+98h] | 0x335927D cmp rbx,rax | 0x3359280 je short 0000000143359291h | 0x3359282 mov rcx,100000000h | 0x335928C lock add [rbx+8],rcx | 0x3359291 xchg rbx,[rsi+38h] | 0x3359295 cmp rbx,rax | 0x3359298 je near 000000014335938Fh | 0x335929E mov rdi,0FFFFFFFF00000000h | 0x33592A8 mov rbp,7FFFFFFF01FFFFFFh | 0x33592B2 lea r14,[rel 14AF73B90h] | 0x33592B9 lea r15,[rel 14AF73AE0h] | 0x33592C0 mov rsi,[rel 14A249190h] | 0x33592C7 jmp 0000000143359766h | 0x33592CC mov rdx,[rsi+30h] | 0x33592D0 xor rcx,[rdx] | 0x33592D3 mov rdx,[rdx+8] | 0x33592D7 xor rdx,[rsp+5"}
+  ],
+  "windows": [
+    {"at":"0x137AEB0","text":""},
+    {"at":"0x137AF20","text":"0x137AF20 leave | 0x137AF21 xor edx,edx | 0x137AF23 mov r8,r14 | 0x137AF26 call 0000000140156B20h | 0x137AF2B mov rbx,rax | 0x137AF2E mov [rbx+8],rsi | 0x137AF32 mov rax,[rbx] | 0x137AF35 mov rcx,rbx | 0x137AF38 call qword [rax+58h] | 0x137AF3B mov eax,[rsi+74h] | 0x137AF3E mov edx,eax | 0x137AF40 and edx,3FFFh | 0x137AF46 mov ecx,eax | 0x137AF48 shr ecx,10h | 0x137AF4B and ecx,3FFFh | 0x137AF51 cmp edx,ecx | 0x137AF53 jae short 000000014137AFB2h | 0x137AF55 mov r14,[rdi] | 0x137AF58 lea r15d,[rax*8] | 0x137AF60 and r15d,1FFF8h | 0x137AF67 mov ecx,eax | 0x137AF69 and ecx,3FFFh | 0x137AF6F lea edi,[rcx+1] | 0x137AF72 cmp ecx,3FFFh | 0x137AF78 je near 000000014137B059h | 0x137AF7E and edi,3FFFh | 0x137AF84 and eax,0FFFFC000h | 0x137AF89 or eax,edi"},
+    {"at":"0x137B000","text":"0x137B000 jae near 000000014137AF55h | 0x137B006 lea edx,[r14*8] | 0x137B00E mov rcx,rdi | 0x137B011 call 00000001442EB100h | 0x137B016 test rax,rax | 0x137B019 jne short 000000014137B022h | 0x137B01B mov rax,[rel 14AF6FD48h] | 0x137B022 mov [rsp+30h],rax | 0x137B027 xor eax,eax | 0x137B029 mov [rsp+28h],eax | 0x137B02D mov [rsp+20h],eax | 0x137B031 mov qword [rsp+38h],0 | 0x137B03A mov rcx,rdi | 0x137B03D mov edx,r14d | 0x137B040 mov r8d,8 | 0x137B046 mov r9d,8 | 0x137B04C call 0000000144265F00h | 0x137B051 mov eax,[rsi+74h] | 0x137B054 jmp 000000014137AF55h | 0x137B059 lock inc dword [rel 14AF39138h] | 0x137B060 lea rax,[rel 14AF38F39h] | 0x137B067 lea rcx,[rsp+48h] | 0x137B06C mov [rcx],rax | 0x137B06F mov dword [rcx+8],100h | 0x137B076 mov dword [rsp+20h],3FFFh | 0x137B07E lea rdx,[rel 14A105CF4h] | 0x137B085 lea r8,[rel 14A14BC27h] | 0x137B08C mov r9d,edi"}
+  ]
+}
