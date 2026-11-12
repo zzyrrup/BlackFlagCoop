@@ -23,6 +23,8 @@ add_library(BlackFlagCoopNet STATIC
     src/network/session.cpp
     src/network/session.h
     src/network/protocol.h
+    src/network/peer_protocol.cpp
+    src/network/peer_protocol.h
     src/network/player_state.cpp
     src/network/player_state.h
     src/game/runtime_diag.cpp
@@ -131,3 +133,25 @@ if(MSVC)
         /EHsc
     )
 endif()
+
+# Transport-independent peer protocol codec. The test links the static net
+# library on Windows; tests/peer_protocol/CMakeLists.txt is the portable
+# equivalent used where the Visual Studio generator is not available.
+enable_testing()
+
+add_executable(BlackFlagCoopPeerProtocolTest
+    tests/peer_protocol/main.cpp
+)
+
+target_link_libraries(BlackFlagCoopPeerProtocolTest PRIVATE BlackFlagCoopNet)
+target_compile_features(BlackFlagCoopPeerProtocolTest PRIVATE cxx_std_17)
+
+if(MSVC)
+    target_compile_options(BlackFlagCoopPeerProtocolTest PRIVATE
+        /W4
+        /permissive-
+        /EHsc
+    )
+endif()
+
+add_test(NAME PeerProtocolCodec COMMAND BlackFlagCoopPeerProtocolTest)
