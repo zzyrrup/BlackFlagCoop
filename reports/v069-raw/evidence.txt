@@ -1,0 +1,4253 @@
+===== v0.6.9 CTOR DEEP + LOD CONSUMERS =====
+exeSha256=19920F34BB2FAC814023EE3C27F0CECA1872E80A2AAFB37C092C419FFF77CC0D
+imageBase=0x140000000
+
+===== CANDIDATE 0x519E20 =====
+entry=0x519E20 end=0x51BD7C size=8028 sec=.impdata prologue=41 57 41 56 41 55 41 54 56 57 55 53 48 81 EC 18
+  0x519E20 push r15
+  0x519E22 push r14
+  0x519E24 push r13
+  0x519E26 push r12
+  0x519E28 push rsi
+  0x519E29 push rdi
+  0x519E2A push rbp
+  0x519E2B push rbx
+  0x519E2C sub rsp,218
+  0x519E33 vmovaps [rsp+200],xmm6
+  0x519E3C mov rdi,rcx
+  0x519E3F mov rax,[rip+9D993BA]
+  0x519E46 xor rax,rsp
+  0x519E49 mov [rsp+1F8],rax
+  0x519E51 mov r12,[rip+0BADCAA0]
+  0x519E58 mov eax,[rip+0AAF76FA]
+  0x519E5E cmp eax,[rcx+20]
+  0x519E61 jae short 0000000140519E6C
+  0x519E63 cmp byte ptr [rip+0BADC9E6],0
+  0x519E6A je short 0000000140519EA3
+  0x519E6C mov eax,[rdi]
+  0x519E6E lea rcx,[rip+9BA44FB]
+  0x519E75 movsxd rax,dword ptr [rcx+rax*4]
+  0x519E79 add rax,rcx
+  0x519E7C mov [rsp+48],r12
+  0x519E81 jmp rax
+  0x519E83 cmp byte ptr [rdi+64],0
+  0x519E87 mov rcx,[rip+0BAF6802]
+  0x519E8E je near ptr 000000014051BA0B
+  0x519E94 mov eax,[rcx+248]
+  0x519E9A cmp eax,1
+  0x519E9D jne near ptr 000000014051BB17
+  0x519EA3 mov rcx,[rsp+1F8]
+  0x519EAB xor rcx,rsp
+  0x519EAE call 0000000145014570
+  0x519EB3 mov rcx,r12
+  0x519EB6 mov rdx,rdi
+  0x519EB9 vmovaps xmm6,[rsp+200]
+  0x519EC2 add rsp,218
+  0x519EC9 pop rbx
+  ... (1746 more ins) ...
+directCallees=37
+  call 0x5014570 sec=.impdata
+  call 0x57D3D60 sec=.impdata
+  call 0x1895A50 sec=.impdata
+  call 0x3D652B0 sec=.impdata
+  call 0x519E20 *** cand *** sec=.impdata
+  call 0x517530 sec=.impdata
+  call 0x14C1D70 sec=.impdata
+  call 0x517D90 sec=.impdata
+  call 0x8AE9B0 sec=.impdata
+  call 0x4C22B70 sec=.impdata
+  call 0xC87740 sec=.impdata
+  call 0x5432700 sec=.impdata
+  call 0x42256B0 sec=.impdata
+  call 0x4213840 sec=.impdata
+  call 0x6660 sec=.impdata
+  call 0x450D890 sec=.impdata
+  call 0x136C4C0 sec=.impdata
+  call 0x136B440 sec=.impdata
+  call 0x4573A30 sec=.impdata
+  call 0x46787A0 sec=.impdata
+  call 0xE6E0 sec=.impdata
+  call 0x3D648F0 sec=.impdata
+  call 0x426EE50 sec=.impdata
+  call 0x42EB100 sec=.impdata
+  call 0x4257BA0 sec=.impdata
+  call 0x8D49050 sec=.impdata
+  call 0x5AED830 sec=.impdata
+  call 0x31E570 sec=.impdata
+  call 0x5B99710 sec=.impdata
+  call 0x5712060 sec=.impdata
+  call 0x5931860 sec=.impdata
+  call 0x5610210 sec=.impdata
+  call 0x8E05AB0 sec=.impdata
+  call 0x8E05BB0 sec=.impdata
+  call 0x2C7B0F0 sec=.impdata
+  call 0x8E08060 sec=.impdata
+  call 0x4265F00 sec=.impdata
+  str 0x51ABBA "forge"
+  str 0x51AC1B "Data{}.{}"
+  str 0x51ACA5 "Invalid pointer not allocated by our allocators or already freed: 0x%p (allocato"
+  str 0x51AD93 "Invalid pointer not allocated by our allocators or already freed: 0x%p (allocato"
+  str 0x51B029 "AWAVVWUSH"
+  str 0x51B1EF "Invalid pointer not allocated by our allocators or already freed: 0x%p (allocato"
+  str 0x51BD4A "Too many elements for %sArray. Size: %u, Max Size: %u"
+  str 0x51BD51 "Small"
+  field +0x61 @0x51A131 cmp byte ptr [rdi+61],0
+  field +0x61 @0x51A168 cmp byte ptr [rdi+61],0
+  field +0x61 @0x51A1BC mov dword ptr [r14+61],0
+  field +0x61 @0x51A31B mov dword ptr [rdx+61],0
+  field +0x61 @0x51B01D mov al,[rsi+61]
+  field +0x61 @0x51B127 mov dword ptr [rsi+61],0
+  field +0x61 @0x51B4BB mov al,[rsi+61]
+  field +0x61 @0x51BB17 mov bl,[rdi+61]
+touches61=True touches98=False nestedChain=False callsEnqueue=False callsWorker=False callsLookup=False callsDeferred=False
+vtInstalls=8 : 0xAF73B90, 0xAF73BD8, 0xD9EE10, 0xAF676B0, 0x3D2AF00, 0x452B390, 0x28489A0, 0xAF73BD0
+immSizes=0x60, 0x100
+callersE8=4 callersLea=0
+  e8 @0x51A1C7 func≈0x519E20
+  e8 @0x51B131 func≈0x519E20
+  e8 @0x51B658 func≈0x519E20
+  e8 @0x51B6BC func≈0x519E20
+--- sample callee 0x5014570 ---
+  func 0x5014570 end=0x5014585 size=21 prologue=48 3B 0D 89 EC 29 05 75 10 48 C1 C1
+    0x5014570 cmp rcx,[rip+529EC89]
+    0x5014577 jne short 0000000145014589
+    0x5014579 rol rcx,10
+    0x501457D test cx,0FFFF
+    0x5014582 jne short 0000000145014585
+    0x5014584 ret
+--- sample callee 0x57D3D60 ---
+  func 0x57D3D60 end=0x57D3D80 size=32 prologue=E9 BB 37 85 10 E9 17 35 65 04 6F E9
+    0x57D3D60 jmp near ptr 0000000156027520
+    0x57D3D65 jmp near ptr 0000000149E27281
+    0x57D3D6A outsd
+    0x57D3D6B jmp near ptr 000000014A7EC805
+    0x57D3D70 ror dword ptr [rcx],cl
+    0x57D3D72 insb
+    0x57D3D73 in eax,4
+    0x57D3D75 ja short 00000001457D3DC2
+    0x57D3D77 mov [11B840002A724BE9],al
+--- sample callee 0x1895A50 ---
+  func 0x1895A50 end=0x1895AD0 size=128 prologue=41 57 41 56 56 57 53 48 83 EC 20 48
+    0x1895A50 push r15
+    0x1895A52 push r14
+    0x1895A54 push rsi
+    0x1895A55 push rdi
+    0x1895A56 push rbx
+    0x1895A57 sub rsp,20
+    0x1895A5B mov rsi,rdx
+    0x1895A5E mov rdi,rcx
+    0x1895A61 call 00000001442256B0
+    0x1895A66 mov rcx,rdi
+    0x1895A69 mov eax,[rdi+44]
+    0x1895A6C cmp eax,[rdi+38]
+    0x1895A6F jle near ptr 0000000141895B10
+    0x1895A75 mov rdi,[rcx+30]
+    0x1895A79 movsxd rax,dword ptr [rcx+3C]
+    0x1895A7D imul rbx,rax,70
+    0x1895A81 mov eax,[rsi]
+    0x1895A83 mov [rdi+rbx],eax
+    0x1895A86 mov rdx,[rsi+8]
+    0x1895A8A mov [rdi+rbx+8],rdx
+    0x1895A8F lea rax,[rip+96DE142]
+    0x1895A96 cmp rdx,rax
+    0x1895A99 je short 0000000141895AA0
+    0x1895A9B lock inc qword ptr [rdx+8]
+--- sample callee 0x3D652B0 ---
+  func 0x3D652B0 end=0x3D65332 size=130 prologue=41 57 41 56 41 55 41 54 56 57 55 53
+    0x3D652B0 push r15
+    0x3D652B2 push r14
+    0x3D652B4 push r13
+    0x3D652B6 push r12
+    0x3D652B8 push rsi
+    0x3D652B9 push rdi
+    0x3D652BA push rbp
+    0x3D652BB push rbx
+    0x3D652BC sub rsp,68
+    0x3D652C0 mov rsi,rdx
+    0x3D652C3 mov r14,rcx
+    0x3D652C6 mov rax,[rip+654DF33]
+    0x3D652CD xor rax,rsp
+    0x3D652D0 mov [rsp+60],rax
+    0x3D652D5 add rcx,10
+    0x3D652D9 mov [rsp+48],rcx
+    0x3D652DE call 00000001442256B0
+    0x3D652E3 lea rax,[rsi+38A8]
+    0x3D652EA mov [rsp+40],rsi
+    0x3D652EF test rsi,rsi
+    0x3D652F2 lea rcx,[rip+720E8D7]
+    0x3D652F9 cmovne rcx,rax
+    0x3D652FD mov rbx,[rcx]
+    0x3D65300 lea r12,[rip+720E8D1]
+    str "Too many elements for %sArray. Size: %u, Max Size: %u"
+    str "Small"
+--- sample callee 0x517530 ---
+  func 0x517530 end=0x5175A8 size=120 prologue=41 57 41 56 41 55 41 54 56 57 55 53
+    0x517530 push r15
+    0x517532 push r14
+    0x517534 push r13
+    0x517536 push r12
+    0x517538 push rsi
+    0x517539 push rdi
+    0x51753A push rbp
+    0x51753B push rbx
+    0x51753C sub rsp,28
+    0x517540 lea rsi,[rcx+30]
+    0x517544 mov r9,[rcx+38]
+    0x517548 test r9,r9
+    0x51754B jne near ptr 0000000140517626
+    0x517551 vxorps xmm0,xmm0,xmm0
+    0x517555 vmovaps [rsi],xmm0
+    0x517559 mov rsi,[rcx+18]
+    0x51755D lea r12,[rip+0AA5C674]
+    0x517564 cmp rsi,r12
+    0x517567 jne short 00000001405175E7
+    0x517569 mov qword ptr [rcx+18],0
+    0x517571 mov rsi,[rcx+10]
+    0x517575 cmp rsi,r12
+    0x517578 jne near ptr 0000000140517691
+    0x51757E mov qword ptr [rcx+10],0
+--- sample callee 0x14C1D70 ---
+  func 0x14C1D70 end=0x14C1DF1 size=129 prologue=41 57 41 56 41 54 56 57 53 48 81 EC
+    0x14C1D70 push r15
+    0x14C1D72 push r14
+    0x14C1D74 push r12
+    0x14C1D76 push rsi
+    0x14C1D77 push rdi
+    0x14C1D78 push rbx
+    0x14C1D79 sub rsp,278
+    0x14C1D80 mov rax,[rip+8DF1479]
+    0x14C1D87 xor rax,rsp
+    0x14C1D8A mov [rsp+270],rax
+    0x14C1D92 lea rax,[rcx+10]
+    0x14C1D96 cmp rax,[rcx+18]
+    0x14C1D9A je near ptr 00000001414C2044
+    0x14C1DA0 mov rdi,rdx
+    0x14C1DA3 mov rsi,rcx
+    0x14C1DA6 mov ecx,0C0000000
+    0x14C1DAB mov rax,gs:[30]
+    0x14C1DB4 mov edx,[rax+48]
+    0x14C1DB7 cmp [rsi+8],edx
+    0x14C1DBA je near ptr 00000001414C1E85
+    0x14C1DC0 mov r8d,1
+    0x14C1DC6 jmp near ptr 00000001414C1E57
+    0x14C1DCB pause
+    0x14C1DCD pause
+    str "Invalid pointer not allocated by our allocators or already freed: 0x%p"
+--- sample callee 0x517D90 ---
+  func 0x517D90 end=0x517E10 size=128 prologue=41 57 41 56 41 55 41 54 56 57 55 53
+    0x517D90 push r15
+    0x517D92 push r14
+    0x517D94 push r13
+    0x517D96 push r12
+    0x517D98 push rsi
+    0x517D99 push rdi
+    0x517D9A push rbp
+    0x517D9B push rbx
+    0x517D9C sub rsp,68
+    0x517DA0 mov rdi,rcx
+    0x517DA3 mov rax,[rip+9D9B456]
+    0x517DAA xor rax,rsp
+    0x517DAD mov [rsp+60],rax
+    0x517DB2 xor eax,eax
+    0x517DB4 xchg eax,[rcx+54]
+    0x517DB7 lock add [rcx+50],eax
+    0x517DBB lea r15,[rcx+68]
+    0x517DBF mov rcx,r15
+    0x517DC2 call 00000001442256B0
+    0x517DC7 mov r10d,[rdi+0BC]
+    0x517DCE mov r12d,[rdi+0A0]
+    0x517DD5 mov r9d,[rdi+0B0]
+    0x517DDC mov r13d,r10d
+    0x517DDF sub r13d,r9d
+--- sample callee 0x8AE9B0 ---
+  func 0x8AE9B0 end=0x8AEA25 size=117 prologue=56 B8 40 20 00 00 E8 E5 AE 75 04 48
+    0x8AE9B0 push rsi
+    0x8AE9B1 mov eax,2040
+    0x8AE9B6 call 00000001450098A0
+    0x8AE9BB sub rsp,rax
+    0x8AE9BE mov rax,[rip+9A0483B]
+    0x8AE9C5 xor rax,rsp
+    0x8AE9C8 mov [rsp+2038],rax
+    0x8AE9D0 lea rax,[rsp+38]
+    0x8AE9D5 mov rdx,40080000000
+    0x8AE9DF mov [rax-8],rdx
+    0x8AE9E3 mov [rax-10],rax
+    0x8AE9E7 lea rsi,[rsp+28]
+    0x8AE9EC mov rdx,rsi
+    0x8AE9EF call 0000000144306BA0
+    0x8AE9F4 mov rcx,[rip+0A6C50B5]
+    0x8AE9FB mov rdx,rsi
+    0x8AE9FE call 0000000144306880
+    0x8AEA03 mov rcx,rsi
+    0x8AEA06 call 0000000144306640
+    0x8AEA0B mov rcx,[rsp+2038]
+    0x8AEA13 xor rcx,rsp
+    0x8AEA16 call 0000000145014570
+    0x8AEA1B nop
+    0x8AEA1C add rsp,2040
+
+===== CANDIDATE 0x2D4F30 =====
+entry=0x2D4F30 end=0x2D6698 size=5992 sec=.impdata prologue=41 57 41 56 41 55 41 54 56 57 55 53 48 81 EC 88
+  0x2D4F30 push r15
+  0x2D4F32 push r14
+  0x2D4F34 push r13
+  0x2D4F36 push r12
+  0x2D4F38 push rsi
+  0x2D4F39 push rdi
+  0x2D4F3A push rbp
+  0x2D4F3B push rbx
+  0x2D4F3C sub rsp,288
+  0x2D4F43 vmovaps [rsp+270],xmm15
+  0x2D4F4C vmovaps [rsp+260],xmm14
+  0x2D4F55 vmovaps [rsp+250],xmm13
+  0x2D4F5E vmovaps [rsp+240],xmm12
+  0x2D4F67 vmovaps [rsp+230],xmm11
+  0x2D4F70 vmovaps [rsp+220],xmm10
+  0x2D4F79 vmovaps [rsp+210],xmm9
+  0x2D4F82 vmovaps [rsp+200],xmm8
+  0x2D4F8B vmovaps [rsp+1F0],xmm7
+  0x2D4F94 vmovaps [rsp+1E0],xmm6
+  0x2D4F9D mov rsi,rdx
+  0x2D4FA0 mov rdi,rcx
+  0x2D4FA3 mov rax,[rip+9FDE256]
+  0x2D4FAA xor rax,rsp
+  0x2D4FAD mov [rsp+1D8],rax
+  0x2D4FB5 mov eax,[rdx+34]
+  0x2D4FB8 mov [rsp+48],rax
+  0x2D4FBD mov rax,[rdx+8]
+  0x2D4FC1 test byte ptr [rax+0B],80
+  0x2D4FC5 vmovss xmm6,dword ptr [rip+8D61253]
+  0x2D4FCD je short 00000001402D4FDF
+  0x2D4FCF mov rax,[rax]
+  0x2D4FD2 test rax,rax
+  0x2D4FD5 je short 00000001402D4FDF
+  0x2D4FD7 vmovss xmm6,dword ptr [rax+128]
+  0x2D4FDF mov rcx,rsi
+  0x2D4FE2 call 0000000140C75200
+  0x2D4FE7 movzx eax,word ptr [rsi+34]
+  0x2D4FEB test eax,3FFF
+  0x2D4FF0 je short 00000001402D503D
+  0x2D4FF2 xor eax,eax
+  ... (1151 more ins) ...
+directCallees=13
+  call 0xC75200 sec=.impdata
+  call 0x5014570 sec=.impdata
+  call 0x426EE50 sec=.impdata
+  call 0xD510 sec=.impdata
+  call 0x2D29B0 sec=.impdata
+  call 0xE6E0 sec=.impdata
+  call 0x3DCA510 sec=.impdata
+  call 0xD530 sec=.impdata
+  call 0x461B6F0 sec=.impdata
+  call 0x42C5730 sec=.impdata
+  call 0x4265F00 sec=.impdata
+  call 0x4F3770 sec=.impdata
+  call 0x75BEA0 sec=.impdata
+  str 0x2D5562 "Invalid pointer not allocated by our allocators or already freed: 0x%p (allocato"
+  str 0x2D6424 "ClothRagdollObject"
+  str 0x2D647D "ClothRagdollObject"
+  str 0x2D64D6 "Too many elements for %sArray. Size: %u, Max Size: %u"
+  str 0x2D64DD "Small"
+  str 0x2D6537 "ClothRagdollObject"
+  str 0x2D6599 "ClothRagdollObject"
+  str 0x2D65F5 "ClothRagdollObject"
+  field +0x61 @0x2D53C7 mov byte ptr [r13+61],0
+  field +0x61 @0x2D548D mov byte ptr [r13+61],0
+  field +0x61 @0x2D55D0 mov [r13+61],r14b
+  field +0x61 @0x2D5721 mov byte ptr [r13+61],0
+  field +0x61 @0x2D5CD9 mov byte ptr [r13+61],0
+  field +0x61 @0x2D6008 mov byte ptr [r13+61],0
+touches61=True touches98=False nestedChain=False callsEnqueue=False callsWorker=False callsLookup=False callsDeferred=False
+vtInstalls=2 : 0x9782870, 0xAF676B0
+immSizes=0x70, 0x100
+callersE8=2 callersLea=0
+  e8 @0x10F5598 func≈0x10F5440
+  e8 @0x46BA104 func≈0x46B7CB0
+--- sample callee 0xC75200 ---
+  func 0xC75200 end=0xC75282 size=130 prologue=41 57 41 56 41 55 41 54 56 57 55 53
+    0xC75200 push r15
+    0xC75202 push r14
+    0xC75204 push r13
+    0xC75206 push r12
+    0xC75208 push rsi
+    0xC75209 push rdi
+    0xC7520A push rbp
+    0xC7520B push rbx
+    0xC7520C sub rsp,1B8
+    0xC75213 vmovaps [rsp+1A0],xmm15
+    0xC7521C vmovaps [rsp+190],xmm14
+    0xC75225 vmovdqa xmmword ptr [rsp+180],xmm13
+    0xC7522E vmovaps [rsp+170],xmm12
+    0xC75237 vmovaps [rsp+160],xmm11
+    0xC75240 vmovaps [rsp+150],xmm10
+    0xC75249 vmovaps [rsp+140],xmm9
+    0xC75252 vmovaps [rsp+130],xmm8
+    0xC7525B vmovaps [rsp+120],xmm7
+    0xC75264 vmovaps [rsp+110],xmm6
+    0xC7526D mov rsi,rcx
+    0xC75270 mov rax,[rip+963DF89]
+    0xC75277 xor rax,rsp
+    0xC7527A mov [rsp+108],rax
+--- sample callee 0x5014570 ---
+  func 0x5014570 end=0x5014585 size=21 prologue=48 3B 0D 89 EC 29 05 75 10 48 C1 C1
+    0x5014570 cmp rcx,[rip+529EC89]
+    0x5014577 jne short 0000000145014589
+    0x5014579 rol rcx,10
+    0x501457D test cx,0FFFF
+    0x5014582 jne short 0000000145014585
+    0x5014584 ret
+--- sample callee 0xD510 ---
+  func 0xD510 end=0xD526 size=22 prologue=48 83 EC 28 48 8D 0D C5 97 7A 09 E8
+    0xD510 sub rsp,28
+    0xD514 lea rcx,[rip+97A97C5]
+    0xD51B call 000000014421A990
+    0xD520 nop
+    0xD521 add rsp,28
+    0xD525 ret
+--- sample callee 0x2D29B0 ---
+  func 0x2D29B0 end=0x2D2A34 size=132 prologue=56 57 53 48 81 EC B0 00 00 00 C5 F8
+    0x2D29B0 push rsi
+    0x2D29B1 push rdi
+    0x2D29B2 push rbx
+    0x2D29B3 sub rsp,0B0
+    0x2D29BA vmovaps [rsp+0A0],xmm6
+    0x2D29C3 mov rbx,rdx
+    0x2D29C6 mov rsi,rcx
+    0x2D29C9 mov rax,[rip+9FE0830]
+    0x2D29D0 xor rax,rsp
+    0x2D29D3 mov [rsp+98],rax
+    0x2D29DB mov rax,[rcx+20]
+    0x2D29DF test r8,r8
+    0x2D29E2 lea rdx,[rip+9E2F213]
+    0x2D29E9 cmovne rdx,r8
+    0x2D29ED lea rdi,[rsp+60]
+    0x2D29F2 mov rcx,rdi
+    0x2D29F5 mov r8,rax
+    0x2D29F8 call 00000001402D2C70
+    0x2D29FD mov rax,[rdi]
+    0x2D2A00 mov [rsi+28],rax
+    0x2D2A04 mov eax,[rsi+5C]
+    0x2D2A07 cmp eax,3
+    0x2D2A0A jne near ptr 00000001402D2AEA
+    0x2D2A10 test rbx,rbx
+    str "ClothRagdollRigidBody"
+    str "cloth capsule shape"
+    str "cloth box shape"
+    str "cloth sphere shape"
+--- sample callee 0xE6E0 ---
+  func 0xE6E0 end=0xE6E6 size=6 prologue=E9 CB 77 CC 0C 9E CC CC CC CC CC 74
+    0xE6E0 jmp near ptr 000000014CCD5EB0
+    0xE6E5 sahf
+--- sample callee 0x3DCA510 ---
+  func 0x3DCA510 end=0x3DCA593 size=131 prologue=41 57 41 56 56 57 55 53 48 83 EC 58
+    0x3DCA510 push r15
+    0x3DCA512 push r14
+    0x3DCA514 push rsi
+    0x3DCA515 push rdi
+    0x3DCA516 push rbp
+    0x3DCA517 push rbx
+    0x3DCA518 sub rsp,58
+    0x3DCA51C mov rax,[rip+64E8CDD]
+    0x3DCA523 xor rax,rsp
+    0x3DCA526 mov [rsp+50],rax
+    0x3DCA52B inc dword ptr [rcx+28]
+    0x3DCA52E mov rax,rdx
+    0x3DCA531 mov byte ptr [rcx+2C],0
+    0x3DCA535 lea rsi,[rcx+10]
+    0x3DCA539 mov r8d,[rcx+18]
+    0x3DCA53D mov r10d,r8d
+    0x3DCA540 and r10d,3FFF
+    0x3DCA547 mov r9d,r8d
+    0x3DCA54A shr r9d,10
+    0x3DCA54E and r9d,3FFF
+    0x3DCA555 cmp r10d,r9d
+    0x3DCA558 jae short 0000000143DCA5A9
+    0x3DCA55A mov rdi,[rsi]
+    0x3DCA55D mov ebp,3FFF
+    str "Too many elements for %sArray. Size: %u, Max Size: %u"
+    str "Small"
+--- sample callee 0xD530 ---
+  func 0xD530 end=0xD546 size=22 prologue=48 83 EC 28 48 8D 0D F5 9E 7A 09 E8
+    0xD530 sub rsp,28
+    0xD534 lea rcx,[rip+97A9EF5]
+    0xD53B call 000000014421A990
+    0xD540 nop
+    0xD541 add rsp,28
+    0xD545 ret
+--- sample callee 0x461B6F0 ---
+  func 0x461B6F0 end=0x461B773 size=131 prologue=41 57 41 56 41 55 41 54 56 57 55 53
+    0x461B6F0 push r15
+    0x461B6F2 push r14
+    0x461B6F4 push r13
+    0x461B6F6 push r12
+    0x461B6F8 push rsi
+    0x461B6F9 push rdi
+    0x461B6FA push rbp
+    0x461B6FB push rbx
+    0x461B6FC sub rsp,58
+    0x461B700 mov rdi,rdx
+    0x461B703 mov rsi,rcx
+    0x461B706 mov rax,[rip+5C97AF3]
+    0x461B70D xor rax,rsp
+    0x461B710 mov [rsp+50],rax
+    0x461B715 mov r15,[rcx]
+    0x461B718 test r15,r15
+    0x461B71B je near ptr 000000014461B828
+    0x461B721 mov rcx,r15
+    0x461B724 and rcx,0FFFFFFFFFFFFFFF0
+    0x461B728 vpxor xmm0,xmm0,xmm0
+    0x461B72C vpcmpeqb xmm1,xmm0,[rcx]
+    0x461B730 vpmovmskb eax,xmm1
+    0x461B734 mov edx,r15d
+    0x461B737 and dl,0F
+    str "Invalid pointer not allocated by our allocators or already freed: 0x%p"
+    str "AVVWSH"
+
+===== CANDIDATE 0x1D9CC0 =====
+entry=0x1D9CC0 end=0x1DB37C size=5820 sec=.impdata prologue=41 57 41 56 41 55 41 54 56 57 55 53 48 81 EC 08
+  0x1D9CC0 push r15
+  0x1D9CC2 push r14
+  0x1D9CC4 push r13
+  0x1D9CC6 push r12
+  0x1D9CC8 push rsi
+  0x1D9CC9 push rdi
+  0x1D9CCA push rbp
+  0x1D9CCB push rbx
+  0x1D9CCC sub rsp,208
+  0x1D9CD3 vmovaps [rsp+1F0],xmm9
+  0x1D9CDC vmovaps [rsp+1E0],xmm8
+  0x1D9CE5 vmovaps [rsp+1D0],xmm7
+  0x1D9CEE vmovaps [rsp+1C0],xmm6
+  0x1D9CF7 mov r13,rcx
+  0x1D9CFA mov rax,[rip+0A0D94FF]
+  0x1D9D01 xor rax,rsp
+  0x1D9D04 mov [rsp+1B8],rax
+  0x1D9D0C test rdx,rdx
+  0x1D9D0F je short 00000001401D9D90
+  0x1D9D11 mov rax,[rip+0AA0BFA8]
+  0x1D9D18 mov rax,[rax+20]
+  0x1D9D1C mov rax,[rax+20]
+  0x1D9D20 mov rax,[rax+0D0]
+  0x1D9D27 vmovss xmm0,dword ptr [rdx+614]
+  0x1D9D2F vmulss xmm0,xmm0,dword ptr [rdx+610]
+  0x1D9D37 vmulss xmm0,xmm0,dword ptr [rax+2C]
+  0x1D9D3C vroundss xmm0,xmm0,xmm0,0B
+  0x1D9D42 vsqrtss xmm0,xmm0,xmm0
+  0x1D9D46 vbroadcastss xmm0,xmm0
+  0x1D9D4B vroundps xmm0,xmm0,2
+  0x1D9D51 vroundss xmm0,xmm0,xmm0,0B
+  0x1D9D57 vmulss xmm0,xmm0,dword ptr [rip+9752E95]
+  0x1D9D5F vcvttss2si rax,xmm0
+  0x1D9D64 add eax,107
+  0x1D9D69 imul rax,3E0F83E1
+  0x1D9D70 shr rax,26
+  0x1D9D74 mov ecx,eax
+  0x1D9D76 shl ecx,8
+  0x1D9D79 lea edx,[rcx+rax*8]
+  0x1D9D7C mov eax,[r13+0CC]
+  ... (1220 more ins) ...
+directCallees=16
+  call 0x1B54AF0 sec=.impdata
+  call 0x42256B0 sec=.impdata
+  call 0x4213840 sec=.impdata
+  call 0x6660 sec=.impdata
+  call 0x42EB100 sec=.impdata
+  call 0x4257BA0 sec=.impdata
+  call 0x51E4E0 sec=.impdata
+  call 0x2959C90 sec=.impdata
+  call 0x44386C0 sec=.impdata
+  call 0x42EB170 sec=.impdata
+  call 0xE6E0 sec=.impdata
+  call 0x4A2F170 sec=.impdata
+  call 0x5014570 sec=.impdata
+  call 0x42BA040 sec=.impdata
+  call 0x53519E0 sec=.impdata
+  call 0x1B54EF0 sec=.impdata
+  str 0x1DA9E4 "Invalid pointer not allocated by our allocators or already freed: 0x%p (allocato"
+  str 0x1DABA3 "Invalid pointer not allocated by our allocators or already freed: 0x%p (allocato"
+  str 0x1DADA8 "Too many elements for %sArray. Size: %u, Max Size: %u"
+  str 0x1DAE2E "Too many elements for %sArray. Size: %u, Max Size: %u"
+  str 0x1DB0C6 "Too many elements for %sArray. Size: %u, Max Size: %u"
+  str 0x1DB12D "Too many elements for %sArray. Size: %u, Max Size: %u"
+  str 0x1DB1CA "Too many elements for %sArray. Size: %u, Max Size: %u"
+  str 0x1DB2AB "Too many elements for %sArray. Size: %u, Max Size: %u"
+  str 0x1DB34F "Too many elements for %sArray. Size: %u, Max Size: %u"
+  field +0x61 @0x1DA0F7 movzx ecx,byte ptr [r14+61]
+  field +0x61 @0x1DA164 movzx r9d,byte ptr [rdx+61]
+  field +0x98 @0x1DA269 mov r11,[r9+98]
+  field +0x61 @0x1DA2FA movzx r8d,byte ptr [rdx+61]
+  field +0x61 @0x1DA758 movzx eax,byte ptr [rdx+61]
+  field +0x61 @0x1DA782 movzx edx,byte ptr [rcx+61]
+  field +0x98 @0x1DA81A mov r11,[rdx+98]
+  field +0x98 @0x1DA8E8 lea r14,[rsp+98]
+  field +0x98 @0x1DA905 mov [rsp+98],rax
+  field +0x98 @0x1DA9D2 lea rcx,[rsp+98]
+  field +0x98 @0x1DB0A2 mov [rsp+98],rax
+  field +0x98 @0x1DB0BE lea rcx,[rsp+98]
+  field +0x98 @0x1DB109 mov [rsp+98],rax
+  field +0x98 @0x1DB125 lea rcx,[rsp+98]
+touches61=True touches98=True nestedChain=False callsEnqueue=False callsWorker=False callsLookup=False callsDeferred=False
+vtInstalls=5 : 0xAF73AE0, 0xAF73BD8, 0xAE86F28, 0xAF73B90, 0xAF676B0
+immSizes=0x100
+callersE8=2 callersLea=0
+  e8 @0x3A551AE func≈0x3A54CE0
+  e8 @0x44F7022 func≈0x44F6DE0
+--- sample callee 0x1B54AF0 ---
+  func 0x1B54AF0 end=0x1B54B72 size=130 prologue=41 56 56 57 53 48 83 EC 28 48 8B 05
+    0x1B54AF0 push r14
+    0x1B54AF2 push rsi
+    0x1B54AF3 push rdi
+    0x1B54AF4 push rbx
+    0x1B54AF5 sub rsp,28
+    0x1B54AF9 mov rax,[rip+90911C0]
+    0x1B54B00 mov rax,[rax+18]
+    0x1B54B04 mov rax,[rax+28]
+    0x1B54B08 mov rax,[rax+88]
+    0x1B54B0F mov r8d,[rax+28]
+    0x1B54B13 vcvtsi2ss xmm0,xmm0,r8
+    0x1B54B18 vmovss xmm1,dword ptr [rip+7DD8154]
+    0x1B54B20 vmulss xmm0,xmm0,xmm1
+    0x1B54B24 vbroadcastss xmm0,xmm0
+    0x1B54B29 vroundps xmm0,xmm0,2
+    0x1B54B2F vcvttss2si r8,xmm0
+    0x1B54B34 mov eax,[rax+2C]
+    0x1B54B37 vcvtsi2ss xmm0,xmm2,rax
+    0x1B54B3C vmulss xmm0,xmm0,xmm1
+    0x1B54B40 vbroadcastss xmm0,xmm0
+    0x1B54B45 vroundps xmm0,xmm0,2
+    0x1B54B4B mov eax,edx
+    0x1B54B4D vcvtsi2ss xmm2,xmm2,rax
+    0x1B54B52 vcvttss2si rdx,xmm0
+--- sample callee 0x42256B0 ---
+  func 0x42256B0 end=0x42256D0 size=32 prologue=56 57 53 48 83 EC 20 48 89 CE FF 15
+    0x42256B0 push rsi
+    0x42256B1 push rdi
+    0x42256B2 push rbx
+    0x42256B3 sub rsp,20
+    0x42256B7 mov rsi,rcx
+    0x42256BA call qword ptr [rip+6023D38]
+    0x42256C0 xor edi,edi
+    0x42256C2 test eax,eax
+    0x42256C4 je short 00000001442256E8
+    0x42256C6 mov eax,edi
+    0x42256C8 add rsp,20
+    0x42256CC pop rbx
+    0x42256CD pop rdi
+    0x42256CE pop rsi
+    0x42256CF ret
+--- sample callee 0x4213840 ---
+  func 0x4213840 end=0x42138C3 size=131 prologue=41 56 56 57 53 48 83 EC 28 48 8B 42
+    0x4213840 push r14
+    0x4213842 push rsi
+    0x4213843 push rdi
+    0x4213844 push rbx
+    0x4213845 sub rsp,28
+    0x4213849 mov rax,[rdx+8]
+    0x421384D test eax,1FFFFFF
+    0x4213852 jne near ptr 0000000144213A3F
+    0x4213858 mov rsi,[rdx]
+    0x421385B test rsi,rsi
+    0x421385E jne near ptr 000000014421397E
+    0x4213864 bt eax,19
+    0x4213868 jb near ptr 0000000144213961
+    0x421386E mov r8,7FFFFFFF00000000
+    0x4213878 test rax,r8
+    0x421387B jne near ptr 000000014421396D
+    0x4213881 mov rdi,[rdx+10]
+    0x4213885 test rsi,rsi
+    0x4213888 jne near ptr 0000000144213A49
+    0x421388E lock or qword ptr [rdx+8],8000000
+    0x4213897 test rdi,rdi
+    0x421389A je near ptr 0000000144213961
+    0x42138A0 mov rbx,rcx
+    0x42138A3 mov r14,rdx
+--- sample callee 0x6660 ---
+  func 0x6660 end=0x66E3 size=131 prologue=41 57 41 56 41 55 41 54 56 57 55 53
+    0x6660 push r15
+    0x6662 push r14
+    0x6664 push r13
+    0x6666 push r12
+    0x6668 push rsi
+    0x6669 push rdi
+    0x666A push rbp
+    0x666B push rbx
+    0x666C mov eax,20F8
+    0x6671 call 00000001450098A0
+    0x6676 sub rsp,rax
+    0x6679 mov rdi,rcx
+    0x667C mov rax,[rip+0A2ACB7D]
+    0x6683 xor rax,rsp
+    0x6686 mov [rsp+20F0],rax
+    0x668E lea rax,[rsp+2050]
+    0x6696 mov rcx,1480000000
+    0x66A0 mov [rax-8],rcx
+    0x66A4 mov [rax-10],rax
+    0x66A8 lea rax,[rsp+40]
+    0x66AD mov rcx,40080000000
+    0x66B7 mov [rax-8],rcx
+    0x66BB mov [rax-10],rax
+    0x66BF lea rsi,[rdi+58]
+    str "Invalid pointer not allocated by our allocators or already freed: 0x%p"
+--- sample callee 0x42EB100 ---
+  func 0x42EB100 end=0x42EB15A size=90 prologue=8B 05 BA 0A 8A 06 65 4C 8B 04 25 58
+    0x42EB100 mov eax,[rip+68A0ABA]
+    0x42EB106 mov r8,gs:[58]
+    0x42EB10F mov rax,[r8+rax*8]
+    0x42EB113 mov rax,[rax+1C68]
+    0x42EB11A test rax,rax
+    0x42EB11D je short 00000001442EB157
+    0x42EB11F mov r8,gs:[8]
+    0x42EB128 mov r9,gs:[10]
+    0x42EB131 mov r10,rcx
+    0x42EB134 sub r10,r9
+    0x42EB137 not r9
+    0x42EB13A add r9,r8
+    0x42EB13D cmp r10,r9
+    0x42EB140 jbe short 00000001442EB15A
+    0x42EB142 mov r9,[rax+30]
+    0x42EB146 cmp r9,rcx
+    0x42EB149 ja short 00000001442EB157
+    0x42EB14B mov r8d,[rax+38]
+    0x42EB14F add r9,r8
+    0x42EB152 cmp r9,rcx
+    0x42EB155 ja short 00000001442EB15E
+    0x42EB157 xor eax,eax
+    0x42EB159 ret
+--- sample callee 0x4257BA0 ---
+  func 0x4257BA0 end=0x4257C22 size=130 prologue=41 57 41 56 41 55 41 54 56 57 55 53
+    0x4257BA0 push r15
+    0x4257BA2 push r14
+    0x4257BA4 push r13
+    0x4257BA6 push r12
+    0x4257BA8 push rsi
+    0x4257BA9 push rdi
+    0x4257BAA push rbp
+    0x4257BAB push rbx
+    0x4257BAC sub rsp,68
+    0x4257BB0 mov rsi,rcx
+    0x4257BB3 mov rax,[rip+605B646]
+    0x4257BBA xor rax,rsp
+    0x4257BBD mov [rsp+60],rax
+    0x4257BC2 mov eax,[rcx+8]
+    0x4257BC5 test r8d,r8d
+    0x4257BC8 je short 0000000144257C39
+    0x4257BCA mov r14d,r9d
+    0x4257BCD mov edi,r8d
+    0x4257BD0 and eax,0FFFFC000
+    0x4257BD5 mov [rsi+8],eax
+    0x4257BD8 cmp r8d,4000
+    0x4257BDF jae near ptr 0000000144258D4D
+    0x4257BE5 mov r8d,eax
+    0x4257BE8 shr r8d,10
+    str "AVVWSH"
+--- sample callee 0x51E4E0 ---
+  func 0x51E4E0 end=0x51E55A size=122 prologue=41 57 41 56 41 54 56 57 53 48 83 EC
+    0x51E4E0 push r15
+    0x51E4E2 push r14
+    0x51E4E4 push r12
+    0x51E4E6 push rsi
+    0x51E4E7 push rdi
+    0x51E4E8 push rbx
+    0x51E4E9 sub rsp,48
+    0x51E4ED mov rsi,rcx
+    0x51E4F0 mov rax,[rip+9D94D09]
+    0x51E4F7 xor rax,rsp
+    0x51E4FA mov [rsp+40],rax
+    0x51E4FF and dword ptr [rcx+8],0FFFFC000
+    0x51E506 mov rdi,rdx
+    0x51E509 mov ebx,3FFF
+    0x51E50E mov edx,[rdx+8]
+    0x51E511 and edx,ebx
+    0x51E513 mov qword ptr [rsp+20],0
+    0x51E51C mov r8d,8
+    0x51E522 xor r9d,r9d
+    0x51E525 call 000000014051E6A0
+    0x51E52A mov r14d,[rdi+8]
+    0x51E52E shl r14d,6
+    0x51E532 and r14d,0FFFC0
+    0x51E539 jne short 000000014051E55A
+    str "Too many elements for %sArray. Size: %u, Max Size: %u"
+    str "Small"
+--- sample callee 0x2959C90 ---
+  func 0x2959C90 end=0x2959CB7 size=39 prologue=41 57 41 56 41 54 56 57 53 48 83 EC
+    0x2959C90 push r15
+    0x2959C92 push r14
+    0x2959C94 push r12
+    0x2959C96 push rsi
+    0x2959C97 push rdi
+    0x2959C98 push rbx
+    0x2959C99 sub rsp,58
+    0x2959C9D mov eax,3FFFFFFF
+    0x2959CA2 and eax,[rcx+0C]
+    0x2959CA5 cmp eax,edx
+    0x2959CA7 jb short 0000000142959CB7
+    0x2959CA9 add rsp,58
+    0x2959CAD pop rbx
+    0x2959CAE pop rdi
+    0x2959CAF pop rsi
+    0x2959CB0 pop r12
+    0x2959CB2 pop r14
+    0x2959CB4 pop r15
+    0x2959CB6 ret
+
+===== CROSS-LINKS AMONG CANDIDATES / QUEUE =====
+0x519E20 callsOtherCandidates=[0x519E20]
+  linksQueueHelpers=False size=8028 +61=True +98=False
+0x2D4F30 callsOtherCandidates=[]
+  linksQueueHelpers=False size=5992 +61=True +98=False
+0x1D9CC0 callsOtherCandidates=[]
+  linksQueueHelpers=False size=5820 +61=True +98=True
+
+===== LOD COMPARATOR 0x67BDB30 CONSUMERS =====
+lodCmp lea @0x792F2 func≈0x78FD0  storeDisp=0x320 storeDisp=0x4 storeDisp=0x4 storeDisp=0x358 storeDisp=0x1E8 storeDisp=0x1F0 storeDisp=0x1F8 storeDisp=0x200 storeDisp=0x208 storeDisp=0x300 storeDisp=0xC
+    0x792B2 add al,[rax]
+    0x792B4 add [rax],al
+    0x792B6 mov ecx,ebp
+    0x792B8 mov [rsi+320],rcx
+    0x792BF mov rcx,[rip+0BF800A2]
+    0x792C6 mov ecx,[rcx+4]
+    0x792C9 mov [rsi+4],ecx
+    0x792CC mov [rsi+358],eax
+    0x792D2 mov [rsi+1E8],rdi
+    0x792D9 lea rax,[rip+3638900]
+    0x792E0 mov [rsi+1F0],rax
+    0x792E7 mov qword ptr [rsi+1F8],0
+    0x792F2 lea rax,[rip+6744837]
+    0x792F9 mov [rsi+200],rax
+    0x79300 lea rax,[rip+42A9459]
+    0x79307 mov [rsi+208],rax
+    0x7930E mov dword ptr [rsi+300],3
+    0x79318 mov rcx,rsi
+    0x7931B mov rdx,rdi
+    0x7931E xor r8d,r8d
+    0x79321 call 00000001436A2C00
+    0x79326 vmovaps xmm0,[rdi+60]
+    0x7932B cmp byte ptr [r14+5C],0
+    0x79330 je near ptr 0000000140079456
+    0x79336 vmovss xmm1,dword ptr [r14+2C]
+    0x7933C vmovss xmm2,dword ptr [r14+34]
+    0x79342 vmovss dword ptr [rsi+10],xmm1
+    0x79347 vmovss dword ptr [rsi+14],xmm2
+    0x7934C mov dword ptr [rsi+0C],0
+lodCmp lea @0x792F3 func≈0x78FD0  storeDisp=0x4 storeDisp=0x4 storeDisp=0x358 storeDisp=0x1E8 storeDisp=0x1F0 storeDisp=0x1F8 storeDisp=0x200 storeDisp=0x208 storeDisp=0x300 storeDisp=0xC
+    0x792B3 add [rax],al
+    0x792B5 add [rcx-7176B717],cl
+    0x792BB and [rbx],al
+    0x792BD add [rax],al
+    0x792BF mov rcx,[rip+0BF800A2]
+    0x792C6 mov ecx,[rcx+4]
+    0x792C9 mov [rsi+4],ecx
+    0x792CC mov [rsi+358],eax
+    0x792D2 mov [rsi+1E8],rdi
+    0x792D9 lea rax,[rip+3638900]
+    0x792E0 mov [rsi+1F0],rax
+    0x792E7 mov qword ptr [rsi+1F8],0
+    0x792F2 lea rax,[rip+6744837]
+    0x792F9 mov [rsi+200],rax
+    0x79300 lea rax,[rip+42A9459]
+    0x79307 mov [rsi+208],rax
+    0x7930E mov dword ptr [rsi+300],3
+    0x79318 mov rcx,rsi
+    0x7931B mov rdx,rdi
+    0x7931E xor r8d,r8d
+    0x79321 call 00000001436A2C00
+    0x79326 vmovaps xmm0,[rdi+60]
+    0x7932B cmp byte ptr [r14+5C],0
+    0x79330 je near ptr 0000000140079456
+    0x79336 vmovss xmm1,dword ptr [r14+2C]
+    0x7933C vmovss xmm2,dword ptr [r14+34]
+    0x79342 vmovss dword ptr [rsi+10],xmm1
+    0x79347 vmovss dword ptr [rsi+14],xmm2
+    0x7934C mov dword ptr [rsi+0C],0
+lodCmp lea @0xA99A0 func≈0xA9560  storeDisp=0x3CD0 storeDisp=0x0 storeDisp=0x80 storeDisp=0x98 storeDisp=0x88 storeDisp=0x90 storeDisp=0xA0 storeDisp=0xC0 storeDisp=0xD8 storeDisp=0xC8 storeDisp=0xD0 storeDisp=0xE0
+    0xA9960 test al,0
+    0xA9962 add [rax],al
+    0xA9964 test rax,rax
+    0xA9967 je near ptr 00000001400A9A8F
+    0xA996D mov rcx,[rax+3CD0]
+    0xA9974 lea rdx,[rip+0B37F72D]
+    0xA997B xor r8d,r8d
+    0xA997E call 000000014429F9E0
+    0xA9983 test rax,rax
+    0xA9986 je near ptr 00000001400A9A8F
+    0xA998C mov rdi,[rax]
+    0xA998F test rdi,rdi
+    0xA9992 je near ptr 00000001400A9A8F
+    0xA9998 mov [rsp+80],rsi
+    0xA99A0 lea rax,[rip+6714189]
+    0xA99A7 mov [rsp+98],rax
+    0xA99AF lea rcx,[rip+698231A]
+    0xA99B6 mov [rsp+88],rcx
+    0xA99BE xor ecx,ecx
+    0xA99C0 mov [rsp+90],rcx
+    0xA99C8 lea rdx,[rip+52FB681]
+    0xA99CF mov [rsp+0A0],rdx
+    0xA99D7 mov [rsp+0C0],rsi
+    0xA99DF mov [rsp+0D8],rax
+    0xA99E7 lea rax,[rip+52FBF22]
+    0xA99EE mov [rsp+0C8],rax
+    0xA99F6 mov [rsp+0D0],rcx
+    0xA99FE mov [rsp+0E0],rdx
+lodCmp lea @0xA99A1 func≈0xA9560  storeDisp=0x3CD0 storeDisp=0x0 storeDisp=0x80 storeDisp=0x98 storeDisp=0x88 storeDisp=0x90 storeDisp=0xA0 storeDisp=0xC0 storeDisp=0xD8 storeDisp=0xC8 storeDisp=0xD0 storeDisp=0xE0
+    0xA9961 add [rax],al
+    0xA9963 add [rax-7B],cl
+    0xA9966 ror byte ptr [rdi],84
+    0xA9969 and al,[rcx]
+    0xA996B add [rax],al
+    0xA996D mov rcx,[rax+3CD0]
+    0xA9974 lea rdx,[rip+0B37F72D]
+    0xA997B xor r8d,r8d
+    0xA997E call 000000014429F9E0
+    0xA9983 test rax,rax
+    0xA9986 je near ptr 00000001400A9A8F
+    0xA998C mov rdi,[rax]
+    0xA998F test rdi,rdi
+    0xA9992 je near ptr 00000001400A9A8F
+    0xA9998 mov [rsp+80],rsi
+    0xA99A0 lea rax,[rip+6714189]
+    0xA99A7 mov [rsp+98],rax
+    0xA99AF lea rcx,[rip+698231A]
+    0xA99B6 mov [rsp+88],rcx
+    0xA99BE xor ecx,ecx
+    0xA99C0 mov [rsp+90],rcx
+    0xA99C8 lea rdx,[rip+52FB681]
+    0xA99CF mov [rsp+0A0],rdx
+    0xA99D7 mov [rsp+0C0],rsi
+    0xA99DF mov [rsp+0D8],rax
+    0xA99E7 lea rax,[rip+52FBF22]
+    0xA99EE mov [rsp+0C8],rax
+    0xA99F6 mov [rsp+0D0],rcx
+    0xA99FE mov [rsp+0E0],rdx
+lodCmp lea @0xAE4F5 func≈0xAE3F0  storeDisp=0x0 storeDisp=0x74 storeDisp=0x74 storeDisp=0x0 storeDisp=0x18 storeDisp=0x8 storeDisp=0x10 storeDisp=0x20 storeDisp=0x0 storeDisp=0x18 storeDisp=0x8 storeDisp=0x10 storeDisp=0x20
+    0xAE4B5 or [rbp-73],cl
+    0xAE4B8 cmp al,0E
+    0xAE4BA test r15,rdx
+    0xAE4BD je near ptr 00000001400AE7C2
+    0xAE4C3 mov rax,r14
+    0xAE4C6 lock cmpxchg [rbx+8],r15
+    0xAE4CC cmp rax,r14
+    0xAE4CF jne short 00000001400AE4B2
+    0xAE4D1 mov qword ptr [r13],0
+    0xAE4D9 add r13,8
+    0xAE4DD cmp r13,r12
+    0xAE4E0 jne short 00000001400AE4A9
+    0xAE4E2 mov eax,[rsi+74]
+    0xAE4E5 and eax,0FFFFC000
+    0xAE4EA mov [rsi+74],eax
+    0xAE4ED lea rdx,[rsp+50]
+    0xAE4F2 mov [rdx],rsi
+    0xAE4F5 lea rbx,[rip+670F634]
+    0xAE4FC mov [rdx+18],rbx
+    0xAE500 lea rax,[rip+0FCE29]
+    0xAE507 mov [rdx+8],rax
+    0xAE50B xor r15d,r15d
+    0xAE50E mov [rdx+10],r15
+    0xAE512 lea r14,[rip+0F86A7]
+    0xAE519 mov [rdx+20],r14
+    0xAE51D mov rcx,rsi
+    0xAE520 call 00000001400B12D0
+    0xAE525 lea rdx,[rsp+28]
+    0xAE52A mov [rdx],rsi
+    0xAE52D mov [rdx+18],rbx
+    0xAE531 lea rax,[rip+0F97F8]
+    0xAE538 mov [rdx+8],rax
+    0xAE53C mov [rdx+10],r15
+    0xAE540 mov [rdx+20],r14
+    0xAE544 mov rcx,rsi
+    0xAE547 call 00000001400B12D0
+lodCmp lea @0xAE4F6 func≈0xAE3F0  storeDisp=0x0 storeDisp=0x74 storeDisp=0x74 storeDisp=0x0 storeDisp=0x18 storeDisp=0x8 storeDisp=0x10 storeDisp=0x20 storeDisp=0x0 storeDisp=0x18 storeDisp=0x8 storeDisp=0x10 storeDisp=0x20
+    0xAE4B6 lea r15,[r14+rcx]
+    0xAE4BA test r15,rdx
+    0xAE4BD je near ptr 00000001400AE7C2
+    0xAE4C3 mov rax,r14
+    0xAE4C6 lock cmpxchg [rbx+8],r15
+    0xAE4CC cmp rax,r14
+    0xAE4CF jne short 00000001400AE4B2
+    0xAE4D1 mov qword ptr [r13],0
+    0xAE4D9 add r13,8
+    0xAE4DD cmp r13,r12
+    0xAE4E0 jne short 00000001400AE4A9
+    0xAE4E2 mov eax,[rsi+74]
+    0xAE4E5 and eax,0FFFFC000
+    0xAE4EA mov [rsi+74],eax
+    0xAE4ED lea rdx,[rsp+50]
+    0xAE4F2 mov [rdx],rsi
+    0xAE4F5 lea rbx,[rip+670F634]
+    0xAE4FC mov [rdx+18],rbx
+    0xAE500 lea rax,[rip+0FCE29]
+    0xAE507 mov [rdx+8],rax
+    0xAE50B xor r15d,r15d
+    0xAE50E mov [rdx+10],r15
+    0xAE512 lea r14,[rip+0F86A7]
+    0xAE519 mov [rdx+20],r14
+    0xAE51D mov rcx,rsi
+    0xAE520 call 00000001400B12D0
+    0xAE525 lea rdx,[rsp+28]
+    0xAE52A mov [rdx],rsi
+    0xAE52D mov [rdx+18],rbx
+    0xAE531 lea rax,[rip+0F97F8]
+    0xAE538 mov [rdx+8],rax
+    0xAE53C mov [rdx+10],r15
+    0xAE540 mov [rdx+20],r14
+    0xAE544 mov rcx,rsi
+    0xAE547 call 00000001400B12D0
+    0xAE54C add rdi,0C8
+lodCmp lea @0xAFB23 func≈0xAFAC0  storeDisp=0x78 storeDisp=0x8 storeDisp=0xA8 storeDisp=0x60 storeDisp=0x58 storeDisp=0x0 storeDisp=0x18 storeDisp=0x8 storeDisp=0x10 storeDisp=0x20 storeDisp=0x8 storeDisp=0xA8 storeDisp=0x58 storeDisp=0x60 storeDisp=0x58 storeDisp=0x10 storeDisp=0x20
+    0xAFAE3 xor rax,rsp
+    0xAFAE6 mov [rsp+78],rax
+    0xAFAEB mov rax,[rcx+8]
+    0xAFAEF mov rax,[rax+0A8]
+    0xAFAF6 mov rax,[rax+60]
+    0xAFAFA mov rax,[rax+58]
+    0xAFAFE vmovaps xmm6,[rax+50]
+    0xAFB03 call 000000014000D530
+    0xAFB08 vxorps xmm1,xmm1,xmm1
+    0xAFB0C vblendvps xmm0,xmm6,xmm1,xmm0
+    0xAFB12 lea rcx,[rsp+40]
+    0xAFB17 vmovaps [rcx],xmm0
+    0xAFB1B lea rax,[rsp+50]
+    0xAFB20 mov [rax],rbx
+    0xAFB23 lea rdx,[rip+670E006]
+    0xAFB2A mov [rax+18],rdx
+    0xAFB2E lea rdx,[rip+1286E4B]
+    0xAFB35 mov [rax+8],rdx
+    0xAFB39 mov qword ptr [rax+10],0
+    0xAFB41 lea rdx,[rip+1286E08]
+    0xAFB48 mov [rax+20],rdx
+    0xAFB4C mov rdx,[rbx+8]
+    0xAFB50 mov rdx,[rdx+0A8]
+    0xAFB57 mov r8,[rdx+58]
+    0xAFB5B mov rdx,[rdx+60]
+    0xAFB5F mov r9,[rdx+58]
+    0xAFB63 mov rdx,[r8+10]
+    0xAFB67 vmovss xmm2,dword ptr [rdx+3550]
+    0xAFB6F lea rdx,[rsp+30]
+    0xAFB74 vmovaps [rdx],xmm1
+    0xAFB78 mov [rsp+20],rax
+    0xAFB7D call 00000001443D2440
+    0xAFB82 test rax,rax
+lodCmp lea @0xAFB24 func≈0xAFAC0  storeDisp=0x78 storeDisp=0x8 storeDisp=0xA8 storeDisp=0x60 storeDisp=0x58 storeDisp=0x0 storeDisp=0x18 storeDisp=0x8 storeDisp=0x10 storeDisp=0x20 storeDisp=0x8 storeDisp=0xA8 storeDisp=0x58 storeDisp=0x60 storeDisp=0x58 storeDisp=0x10 storeDisp=0x20
+    0xAFAE4 xor eax,esp
+    0xAFAE6 mov [rsp+78],rax
+    0xAFAEB mov rax,[rcx+8]
+    0xAFAEF mov rax,[rax+0A8]
+    0xAFAF6 mov rax,[rax+60]
+    0xAFAFA mov rax,[rax+58]
+    0xAFAFE vmovaps xmm6,[rax+50]
+    0xAFB03 call 000000014000D530
+    0xAFB08 vxorps xmm1,xmm1,xmm1
+    0xAFB0C vblendvps xmm0,xmm6,xmm1,xmm0
+    0xAFB12 lea rcx,[rsp+40]
+    0xAFB17 vmovaps [rcx],xmm0
+    0xAFB1B lea rax,[rsp+50]
+    0xAFB20 mov [rax],rbx
+    0xAFB23 lea rdx,[rip+670E006]
+    0xAFB2A mov [rax+18],rdx
+    0xAFB2E lea rdx,[rip+1286E4B]
+    0xAFB35 mov [rax+8],rdx
+    0xAFB39 mov qword ptr [rax+10],0
+    0xAFB41 lea rdx,[rip+1286E08]
+    0xAFB48 mov [rax+20],rdx
+    0xAFB4C mov rdx,[rbx+8]
+    0xAFB50 mov rdx,[rdx+0A8]
+    0xAFB57 mov r8,[rdx+58]
+    0xAFB5B mov rdx,[rdx+60]
+    0xAFB5F mov r9,[rdx+58]
+    0xAFB63 mov rdx,[r8+10]
+    0xAFB67 vmovss xmm2,dword ptr [rdx+3550]
+    0xAFB6F lea rdx,[rsp+30]
+    0xAFB74 vmovaps [rdx],xmm1
+    0xAFB78 mov [rsp+20],rax
+    0xAFB7D call 00000001443D2440
+    0xAFB82 test rax,rax
+lodCmp lea @0xB8C87 func≈0xB80C0  storeDisp=0x50 storeDisp=0x8 storeDisp=0x0 storeDisp=0xC storeDisp=0x14 storeDisp=0x18 storeDisp=0x30 storeDisp=0x20 storeDisp=0x28 storeDisp=0x38 storeDisp=0x58 storeDisp=0x2C storeDisp=0x29
+    0xB8C47 enter 0FFFB,0FF
+    0xB8C4B mov [rsp+50],rdi
+    0xB8C50 mov ecx,80000000
+    0xB8C55 lea r15,[rsp+110]
+    0xB8C5D and ecx,[r15+8]
+    0xB8C61 or ecx,0C000
+    0xB8C67 mov [r15+8],ecx
+    0xB8C6B xor ebx,ebx
+    0xB8C6D mov [r15],rbx
+    0xB8C70 mov rcx,3F80000000000032
+    0xB8C7A mov [r15+0C],rcx
+    0xB8C7E mov byte ptr [r15+14],1
+    0xB8C83 mov [r15+18],r15
+    0xB8C87 lea rcx,[rip+6704EA2]
+    0xB8C8E mov [r15+30],rcx
+    0xB8C92 lea rcx,[rip+16D7257]
+    0xB8C99 mov [r15+20],rcx
+    0xB8C9D mov [r15+28],rbx
+    0xB8CA1 lea rcx,[rip+0EDF18]
+    0xB8CA8 mov [r15+38],rcx
+    0xB8CAC mov rcx,r15
+    0xB8CAF mov edx,1
+    0xB8CB4 xor r8d,r8d
+    0xB8CB7 mov [rsp+58],rsi
+    0xB8CBC mov rsi,rax
+    0xB8CBF call 0000000140119160
+    0xB8CC4 mov rbp,rax
+    0xB8CC7 mov dword ptr [rax+2C],11
+    0xB8CCE mov [rax+29],bl
+    0xB8CD1 lea rdx,[rsp+70]
+    0xB8CD6 mov rcx,r12
+    0xB8CD9 call 000000014031E6F0
+    0xB8CDE lea rdi,[rsp+80]
+    0xB8CE6 mov rcx,r12
+lodCmp lea @0xB8C88 func≈0xB80C0 
+    0xB8C48 sti
+lodCmp lea @0xCAE8A func≈0xC9B60 
+lodCmp lea @0xCAE8B func≈0xC9B60  storeDisp=0x8 storeDisp=0x0 storeDisp=0x10 storeDisp=0x14 storeDisp=0x18 storeDisp=0x30 storeDisp=0x20 storeDisp=0x28 storeDisp=0x38 storeDisp=0x20 storeDisp=0x18 storeDisp=0x0 storeDisp=0x8
+    0xCAE4B and rdi,[rax]
+    0xCAE4E je near ptr 00000001400CADC7
+    0xCAE54 lea rbx,[rcx-50]
+    0xCAE58 mov r14,rcx
+    0xCAE5B mov rcx,rbx
+    0xCAE5E call 00000001400CE0E0
+    0xCAE63 mov rcx,320000C000
+    0xCAE6D lea rdx,[rsp+48]
+    0xCAE72 mov [rdx+8],rcx
+    0xCAE76 xor ecx,ecx
+    0xCAE78 mov [rdx],rcx
+    0xCAE7B mov dword ptr [rdx+10],3F800000
+    0xCAE82 mov byte ptr [rdx+14],1
+    0xCAE86 mov [rdx+18],rdx
+    0xCAE8A lea r8,[rip+66F2C9F]
+    0xCAE91 mov [rdx+30],r8
+    0xCAE95 lea r8,[rip+16C5054]
+    0xCAE9C mov [rdx+20],r8
+    0xCAEA0 mov [rdx+28],rcx
+    0xCAEA4 lea rcx,[rip+0DBD15]
+    0xCAEAB mov [rdx+38],rcx
+    0xCAEAF mov r15d,[r14+20]
+    0xCAEB3 shl r15d,3
+    0xCAEB7 and r15d,1FFF8
+    0xCAEBE je short 00000001400CAF14
+    0xCAEC0 mov rax,r14
+    0xCAEC3 mov r12,[r14+18]
+    0xCAEC7 xor r13d,r13d
+    0xCAECA lea r14,[rsp+48]
+    0xCAECF vmovss xmm6,dword ptr [rip+96EC349]
+    0xCAED7 vmovss xmm7,dword ptr [rip+96EC345]
+    0xCAEDF mov rcx,[r12+r13]
+    0xCAEE3 mov eax,[rcx+8]
+    0xCAEE6 cmp eax,1
+    0xCAEE9 je near ptr 00000001400CADFC
+lodCmp lea @0xFE768 func≈0xFE700 
+lodCmp lea @0xFE769 func≈0xFE700  storeDisp=0x8 storeDisp=0x0 storeDisp=0x78 storeDisp=0x80 storeDisp=0x88 storeDisp=0x90 storeDisp=0x98 storeDisp=0x0 storeDisp=0x20 storeDisp=0x30
+    0xFE729 js short 00000001400FE773
+    0xFE72B mov ebx,[rcx+8]
+    0xFE72E lea r14,[rsp+2C]
+    0xFE733 mov dword ptr [r14],0
+    0xFE73A mov rcx,rbx
+    0xFE73D mov rdx,rdi
+    0xFE740 mov r8,rsi
+    0xFE743 mov r9,r14
+    0xFE746 call 0000000140455A90
+    0xFE74B mov [rax+78],rax
+    0xFE74F lea rcx,[rip+11B41A]
+    0xFE756 mov [rax+80],rcx
+    0xFE75D mov qword ptr [rax+88],0
+    0xFE768 lea rcx,[rip+66BF3C1]
+    0xFE76F mov [rax+90],rcx
+    0xFE776 lea rcx,[rip+0A8443]
+    0xFE77D mov [rax+98],rcx
+    0xFE784 mov eax,[r14]
+    0xFE787 mov [rsp+20],eax
+    0xFE78B mov rcx,rbx
+    0xFE78E mov rdx,rdi
+    0xFE791 mov r8,rsi
+    0xFE794 mov r9b,1
+    0xFE797 call 0000000140455590
+    0xFE79C mov rcx,[rsp+30]
+    0xFE7A1 xor rcx,rsp
+    0xFE7A4 call 0000000145014570
+    0xFE7A9 xor eax,eax
+    0xFE7AB add rsp,38
+    0xFE7AF pop rbx
+    0xFE7B0 pop rdi
+    0xFE7B1 pop rsi
+    0xFE7B2 pop r14
+    0xFE7B4 ret
+    0xFE7B5 int 3
+lodCmp lea @0x122FE1 func≈0x122A80  storeDisp=0xA0 storeDisp=0x78 storeDisp=0x0 storeDisp=0x18 storeDisp=0x8 storeDisp=0x10 storeDisp=0x20 storeDisp=0x8 storeDisp=0xA8 storeDisp=0x60 storeDisp=0x58 storeDisp=0x20
+    0x122FA1 xor esi,esi
+    0x122FA3 lea rdi,[rsp+1C40]
+    0x122FAB mov [rsp+0A0],rbx
+    0x122FB3 jmp near ptr 0000000140123FA3
+    0x122FB8 mov dil,1
+    0x122FBB mov r13d,r15d
+    0x122FBE mov r14,[rsp+78]
+    0x122FC3 jmp short 0000000140122FD6
+    0x122FC5 mov dil,1
+    0x122FC8 jmp short 0000000140122FD6
+    0x122FCA xor edi,edi
+    0x122FCC jmp short 0000000140122FD6
+    0x122FCE xor edi,edi
+    0x122FD0 xor r13d,r13d
+    0x122FD3 xor r14d,r14d
+    0x122FD6 lea rax,[rsp+118]
+    0x122FDE mov [rax],r12
+    0x122FE1 lea rcx,[rip+669AB48]
+    0x122FE8 mov [rax+18],rcx
+    0x122FEC lea rcx,[rip+55BF8FD]
+    0x122FF3 mov [rax+8],rcx
+    0x122FF7 mov qword ptr [rax+10],0
+    0x122FFF lea rcx,[rip+55BF8BA]
+    0x123006 mov [rax+20],rcx
+    0x12300A mov rcx,[r12+8]
+    0x12300F mov rcx,[rcx+0A8]
+    0x123016 mov rcx,[rcx+60]
+    0x12301A mov r9,[rcx+58]
+    0x12301E vmovaps xmm0,[rip+969590A]
+    0x123026 lea rdx,[rsp+140]
+    0x12302E vmovaps [rdx],xmm0
+    0x123032 mov [rsp+20],rax
+    0x123037 lea rcx,[rsp+100]
+    0x12303F vmovss xmm2,dword ptr [rip+96B4539]
+lodCmp lea @0x122FE2 func≈0x122A80  storeDisp=0x78 storeDisp=0x0 storeDisp=0x18 storeDisp=0x8 storeDisp=0x10 storeDisp=0x20 storeDisp=0x8 storeDisp=0xA8 storeDisp=0x60 storeDisp=0x58
+    0x122FA2 test byte ptr [rax-73],0BC
+    0x122FA6 and al,40
+    0x122FA8 sbb al,0
+    0x122FAA add [rax-77],cl
+    0x122FAD pushfq
+    0x122FAE and al,0A0
+    0x122FB0 add [rax],al
+    0x122FB2 add cl,ch
+    0x122FB4 jmp short 0000000140122FC5
+    0x122FB6 add [rax],al
+    0x122FB8 mov dil,1
+    0x122FBB mov r13d,r15d
+    0x122FBE mov r14,[rsp+78]
+    0x122FC3 jmp short 0000000140122FD6
+    0x122FC5 mov dil,1
+    0x122FC8 jmp short 0000000140122FD6
+    0x122FCA xor edi,edi
+    0x122FCC jmp short 0000000140122FD6
+    0x122FCE xor edi,edi
+    0x122FD0 xor r13d,r13d
+    0x122FD3 xor r14d,r14d
+    0x122FD6 lea rax,[rsp+118]
+    0x122FDE mov [rax],r12
+    0x122FE1 lea rcx,[rip+669AB48]
+    0x122FE8 mov [rax+18],rcx
+    0x122FEC lea rcx,[rip+55BF8FD]
+    0x122FF3 mov [rax+8],rcx
+    0x122FF7 mov qword ptr [rax+10],0
+    0x122FFF lea rcx,[rip+55BF8BA]
+    0x123006 mov [rax+20],rcx
+    0x12300A mov rcx,[r12+8]
+    0x12300F mov rcx,[rcx+0A8]
+    0x123016 mov rcx,[rcx+60]
+    0x12301A mov r9,[rcx+58]
+    0x12301E vmovaps xmm0,[rip+969590A]
+    0x123026 lea rdx,[rsp+140]
+lodCmp lea @0x1B2871 func≈0x1B2790  storeDisp=0x30 storeDisp=0x1E0 storeDisp=0x80 storeDisp=0x68 storeDisp=0x78 storeDisp=0x70 storeDisp=0x60 storeDisp=0x0 storeDisp=0x8 storeDisp=0x10 storeDisp=0x18
+    0x1B2831 sbb al,0
+    0x1B2833 add [rbp+3FFF],bh
+    0x1B2839 xor r14d,r14d
+    0x1B283C jmp near ptr 00000001401B2A7B
+    0x1B2841 mov rax,gs:[30]
+    0x1B284A lock dec dword ptr [rcx+180]
+    0x1B2851 mov esi,3FFF
+    0x1B2856 and esi,[rcx+1C8]
+    0x1B285C je near ptr 00000001401B293D
+    0x1B2862 mov rdi,[rcx+1E0]
+    0x1B2869 mov [rsp+80],rcx
+    0x1B2871 lea rax,[rip+660B2B8]
+    0x1B2878 mov [rsp+68],rax
+    0x1B287D lea rax,[rip-1B1884]
+    0x1B2884 mov [rsp+78],rax
+    0x1B2889 xor ebx,ebx
+    0x1B288B mov [rsp+70],rbx
+    0x1B2890 lea rax,[rip-0CE97]
+    0x1B2897 mov [rsp+60],rax
+    0x1B289C lea rax,[rdi+198]
+    0x1B28A3 mov r14,rcx
+    0x1B28A6 mov rcx,rax
+    0x1B28A9 mov edx,1
+    0x1B28AE xor r8d,r8d
+    0x1B28B1 call 0000000140510480
+    0x1B28B6 mov [rax],r14
+    0x1B28B9 lea rcx,[rip+158140]
+    0x1B28C0 mov [rax+8],rcx
+    0x1B28C4 mov [rax+10],rbx
+    0x1B28C8 lea rcx,[rip+660B261]
+    0x1B28CF mov [rax+18],rcx
+lodCmp lea @0x1B2872 func≈0x1B2790  storeDisp=0x30 storeDisp=0x1E0 storeDisp=0x80 storeDisp=0x68 storeDisp=0x78 storeDisp=0x70 storeDisp=0x60 storeDisp=0x0 storeDisp=0x8 storeDisp=0x10 storeDisp=0x18
+    0x1B2832 add [rax],al
+    0x1B2834 mov ebp,3FFF
+    0x1B2839 xor r14d,r14d
+    0x1B283C jmp near ptr 00000001401B2A7B
+    0x1B2841 mov rax,gs:[30]
+    0x1B284A lock dec dword ptr [rcx+180]
+    0x1B2851 mov esi,3FFF
+    0x1B2856 and esi,[rcx+1C8]
+    0x1B285C je near ptr 00000001401B293D
+    0x1B2862 mov rdi,[rcx+1E0]
+    0x1B2869 mov [rsp+80],rcx
+    0x1B2871 lea rax,[rip+660B2B8]
+    0x1B2878 mov [rsp+68],rax
+    0x1B287D lea rax,[rip-1B1884]
+    0x1B2884 mov [rsp+78],rax
+    0x1B2889 xor ebx,ebx
+    0x1B288B mov [rsp+70],rbx
+    0x1B2890 lea rax,[rip-0CE97]
+    0x1B2897 mov [rsp+60],rax
+    0x1B289C lea rax,[rdi+198]
+    0x1B28A3 mov r14,rcx
+    0x1B28A6 mov rcx,rax
+    0x1B28A9 mov edx,1
+    0x1B28AE xor r8d,r8d
+    0x1B28B1 call 0000000140510480
+    0x1B28B6 mov [rax],r14
+    0x1B28B9 lea rcx,[rip+158140]
+    0x1B28C0 mov [rax+8],rcx
+    0x1B28C4 mov [rax+10],rbx
+    0x1B28C8 lea rcx,[rip+660B261]
+    0x1B28CF mov [rax+18],rcx
+lodCmp lea @0x1B28C8 func≈0x1B2790  storeDisp=0x60 storeDisp=0x0 storeDisp=0x8 storeDisp=0x10 storeDisp=0x18 storeDisp=0x20 storeDisp=0x80 storeDisp=0x28 storeDisp=0x78 storeDisp=0x30 storeDisp=0x70 storeDisp=0x38 storeDisp=0x68 storeDisp=0x40 storeDisp=0x60 storeDisp=0x48 storeDisp=0x1A8 storeDisp=0x50 storeDisp=0x5C storeDisp=0x1A8 storeDisp=0x54
+    0x1B2888 js short 00000001401B28BB
+    0x1B288A fisttp dword ptr [rax-77]
+    0x1B288D pop rsp
+    0x1B288E and al,70
+    0x1B2890 lea rax,[rip-0CE97]
+    0x1B2897 mov [rsp+60],rax
+    0x1B289C lea rax,[rdi+198]
+    0x1B28A3 mov r14,rcx
+    0x1B28A6 mov rcx,rax
+    0x1B28A9 mov edx,1
+    0x1B28AE xor r8d,r8d
+    0x1B28B1 call 0000000140510480
+    0x1B28B6 mov [rax],r14
+    0x1B28B9 lea rcx,[rip+158140]
+    0x1B28C0 mov [rax+8],rcx
+    0x1B28C4 mov [rax+10],rbx
+    0x1B28C8 lea rcx,[rip+660B261]
+    0x1B28CF mov [rax+18],rcx
+    0x1B28D3 lea rcx,[rip+158116]
+    0x1B28DA mov [rax+20],rcx
+    0x1B28DE mov rcx,[rsp+80]
+    0x1B28E6 mov [rax+28],rcx
+    0x1B28EA mov rcx,[rsp+78]
+    0x1B28EF mov [rax+30],rcx
+    0x1B28F3 mov rcx,[rsp+70]
+    0x1B28F8 mov [rax+38],rcx
+    0x1B28FC mov rcx,[rsp+68]
+    0x1B2901 mov [rax+40],rcx
+    0x1B2905 mov rcx,[rsp+60]
+    0x1B290A mov [rax+48],rcx
+    0x1B290E mov ecx,[rdi+1A8]
+    0x1B2914 mov [rax+50],ecx
+    0x1B2917 mov [rax+5C],ecx
+    0x1B291A add ecx,esi
+    0x1B291C mov [rdi+1A8],ecx
+    0x1B2922 mov [rax+54],ecx
+lodCmp lea @0x1B28C9 func≈0x1B2790  storeDisp=0x70 storeDisp=0x60 storeDisp=0x0 storeDisp=0x8 storeDisp=0x10 storeDisp=0x18 storeDisp=0x20 storeDisp=0x80 storeDisp=0x28 storeDisp=0x78 storeDisp=0x30 storeDisp=0x70 storeDisp=0x38 storeDisp=0x68 storeDisp=0x40 storeDisp=0x60 storeDisp=0x48 storeDisp=0x1A8 storeDisp=0x50 storeDisp=0x5C storeDisp=0x1A8 storeDisp=0x54 storeDisp=0x58
+    0x1B2889 xor ebx,ebx
+    0x1B288B mov [rsp+70],rbx
+    0x1B2890 lea rax,[rip-0CE97]
+    0x1B2897 mov [rsp+60],rax
+    0x1B289C lea rax,[rdi+198]
+    0x1B28A3 mov r14,rcx
+    0x1B28A6 mov rcx,rax
+    0x1B28A9 mov edx,1
+    0x1B28AE xor r8d,r8d
+    0x1B28B1 call 0000000140510480
+    0x1B28B6 mov [rax],r14
+    0x1B28B9 lea rcx,[rip+158140]
+    0x1B28C0 mov [rax+8],rcx
+    0x1B28C4 mov [rax+10],rbx
+    0x1B28C8 lea rcx,[rip+660B261]
+    0x1B28CF mov [rax+18],rcx
+    0x1B28D3 lea rcx,[rip+158116]
+    0x1B28DA mov [rax+20],rcx
+    0x1B28DE mov rcx,[rsp+80]
+    0x1B28E6 mov [rax+28],rcx
+    0x1B28EA mov rcx,[rsp+78]
+    0x1B28EF mov [rax+30],rcx
+    0x1B28F3 mov rcx,[rsp+70]
+    0x1B28F8 mov [rax+38],rcx
+    0x1B28FC mov rcx,[rsp+68]
+    0x1B2901 mov [rax+40],rcx
+    0x1B2905 mov rcx,[rsp+60]
+    0x1B290A mov [rax+48],rcx
+    0x1B290E mov ecx,[rdi+1A8]
+    0x1B2914 mov [rax+50],ecx
+    0x1B2917 mov [rax+5C],ecx
+    0x1B291A add ecx,esi
+    0x1B291C mov [rdi+1A8],ecx
+    0x1B2922 mov [rax+54],ecx
+    0x1B2925 mov dword ptr [rax+58],5
+lodCmp lea @0x25222C func≈0x252190  storeDisp=0xF0 storeDisp=0x10 storeDisp=0x8 storeDisp=0x8 storeDisp=0x10 storeDisp=0x18 storeDisp=0x20 storeDisp=0x28 storeDisp=0x10 storeDisp=0x0 storeDisp=0x8 storeDisp=0x3B storeDisp=0x30 storeDisp=0x38 storeDisp=0x40
+    0x2521EC add [rax],al
+    0x2521EE jae near ptr 0000000140252293
+    0x2521F4 and esi,3FFF
+    0x2521FA mov eax,0FFFFC000
+    0x2521FF and eax,[rcx+0F0]
+    0x252205 or eax,esi
+    0x252207 mov [rcx+0F0],eax
+    0x25220D mov [rdx+10],rdi
+    0x252211 mov rax,[rdi+8]
+    0x252215 mov [rax+8],rcx
+    0x252219 lea rcx,[rip-0AB4B0]
+    0x252220 mov [rax+10],rcx
+    0x252224 mov qword ptr [rax+18],0
+    0x25222C lea rcx,[rip+656B8FD]
+    0x252233 mov [rax+20],rcx
+    0x252237 lea rcx,[rip-0AB67E]
+    0x25223E mov [rax+28],rcx
+    0x252242 mov rax,[rdx+10]
+    0x252246 mov [rax],rdx
+    0x252249 mov rsi,[rax+8]
+    0x25224D mov byte ptr [rsi+3B],0
+    0x252251 mov dword ptr [rsi+30],0
+    0x252258 mov word ptr [rsi+38],0
+    0x25225E mov rcx,[rsp+40]
+    0x252263 xor rcx,rsp
+    0x252266 mov rdi,rdx
+    0x252269 call 0000000145014570
+    0x25226E mov rcx,rsi
+    0x252271 mov rdx,rdi
+    0x252274 add rsp,48
+    0x252278 pop rbx
+    0x252279 pop rdi
+    0x25227A pop rsi
+    0x25227B pop r14
+    0x25227D jmp near ptr 00000001446F0200
+    0x252282 mov r9d,r9d
+lodCmp lea @0x25222D func≈0x252190 
+    0x2521ED add [rdi],cl
+    0x2521EF sbb dword ptr [rdi-7F000000],0FFFFFFE6
+lodCmp lea @0x288885 func≈0x288650  storeDisp=0x28 storeDisp=0x0 storeDisp=0x8 storeDisp=0x10 storeDisp=0x18 storeDisp=0x20 storeDisp=0x30 storeDisp=0x58 storeDisp=0x58 storeDisp=0x0 storeDisp=0x1C60
+    0x288845 sbb [rax-73],cl
+    0x288848 or eax,0ACEB38B
+    0x28884D cmp rax,rcx
+    0x288850 je short 0000000140288857
+    0x288852 lock inc qword ptr [rax+8]
+    0x288857 lea rax,[rip-0E2E5E]
+    0x28885E mov [rsp+28],rax
+    0x288863 mov rcx,[rip+0AB5B73E]
+    0x28886A lea rdx,[rsp+30]
+    0x28886F mov [rdx],rdi
+    0x288872 lea r8,[rip+0AF3DE7]
+    0x288879 mov [rdx+8],r8
+    0x28887D mov qword ptr [rdx+10],0
+    0x288885 lea r8,[rip+65352A4]
+    0x28888C mov [rdx+18],r8
+    0x288890 mov [rdx+20],rax
+    0x288894 call 00000001400489B0
+    0x288899 mov rax,gs:[30]
+    0x2888A2 lock dec dword ptr [r14]
+    0x2888A6 mov rcx,[rsp+58]
+    0x2888AB xor rcx,rsp
+    0x2888AE call 0000000145014570
+    0x2888B3 nop
+    0x2888B4 add rsp,60
+    0x2888B8 pop rbx
+    0x2888B9 pop rdi
+    0x2888BA pop rsi
+    0x2888BB pop r12
+    0x2888BD pop r13
+    0x2888BF pop r14
+    0x2888C1 pop r15
+    0x2888C3 ret
+    0x2888C4 mov ecx,[rip+0A9032F6]
+    0x2888CA mov rdx,gs:[58]
+    0x2888D3 mov rcx,[rdx+rcx*8]
+    0x2888D7 mov rbx,[rcx+1C60]
+lodCmp lea @0x288886 func≈0x288650  storeDisp=0x28 storeDisp=0x0 storeDisp=0x8 storeDisp=0x10 storeDisp=0x18 storeDisp=0x20 storeDisp=0x30 storeDisp=0x58 storeDisp=0x58 storeDisp=0x0 storeDisp=0x1C60
+    0x288846 lea rcx,[rip+0ACEB38B]
+    0x28884D cmp rax,rcx
+    0x288850 je short 0000000140288857
+    0x288852 lock inc qword ptr [rax+8]
+    0x288857 lea rax,[rip-0E2E5E]
+    0x28885E mov [rsp+28],rax
+    0x288863 mov rcx,[rip+0AB5B73E]
+    0x28886A lea rdx,[rsp+30]
+    0x28886F mov [rdx],rdi
+    0x288872 lea r8,[rip+0AF3DE7]
+    0x288879 mov [rdx+8],r8
+    0x28887D mov qword ptr [rdx+10],0
+    0x288885 lea r8,[rip+65352A4]
+    0x28888C mov [rdx+18],r8
+    0x288890 mov [rdx+20],rax
+    0x288894 call 00000001400489B0
+    0x288899 mov rax,gs:[30]
+    0x2888A2 lock dec dword ptr [r14]
+    0x2888A6 mov rcx,[rsp+58]
+    0x2888AB xor rcx,rsp
+    0x2888AE call 0000000145014570
+    0x2888B3 nop
+    0x2888B4 add rsp,60
+    0x2888B8 pop rbx
+    0x2888B9 pop rdi
+    0x2888BA pop rsi
+    0x2888BB pop r12
+    0x2888BD pop r13
+    0x2888BF pop r14
+    0x2888C1 pop r15
+    0x2888C3 ret
+    0x2888C4 mov ecx,[rip+0A9032F6]
+    0x2888CA mov rdx,gs:[58]
+    0x2888D3 mov rcx,[rdx+rcx*8]
+    0x2888D7 mov rbx,[rcx+1C60]
+    0x2888DE test rbx,rbx
+lodCmp lea @0x306C91 func≈0x306A00  storeDisp=0x30 storeDisp=0x40 storeDisp=0x0 storeDisp=0x8 storeDisp=0x10 storeDisp=0x18 storeDisp=0x20 storeDisp=0x8 storeDisp=0x0 storeDisp=0x30 storeDisp=0x30 storeDisp=0x38 storeDisp=0x30 storeDisp=0x30 storeDisp=0x38 storeDisp=0x30 storeDisp=0x28 storeDisp=0x28
+    0x306C51 pop rsp
+    0x306C52 and al,38
+    0x306C54 cmp rax,r11
+    0x306C57 jne short 0000000140306C04
+    0x306C59 lea rax,[r10+r9]
+    0x306C5D add rax,10
+    0x306C61 vxorps xmm0,xmm0,xmm0
+    0x306C65 vmovups [rax+10],ymm0
+    0x306C6A vmovups [rax],ymm0
+    0x306C6E mov qword ptr [rax+30],0
+    0x306C76 mov [rsp+40],rax
+    0x306C7B mov [rax],rcx
+    0x306C7E lea r9,[rip+0B1334B]
+    0x306C85 mov [rax+8],r9
+    0x306C89 mov qword ptr [rax+10],0
+    0x306C91 lea r9,[rip+64B6E98]
+    0x306C98 mov [rax+18],r9
+    0x306C9C lea r9,[rip+0B1330D]
+    0x306CA3 mov [rax+20],r9
+    0x306CA7 mov r9,[rcx+8]
+    0x306CAB mov rcx,[rcx]
+    0x306CAE mov [rsp+30],rcx
+    0x306CB3 test r9,r9
+    0x306CB6 je short 0000000140306CBD
+    0x306CB8 lock inc dword ptr [r9+0C]
+    0x306CBD mov rcx,[rsp+30]
+    0x306CC2 mov [rsp+38],rcx
+    0x306CC7 mov rcx,[rax+30]
+    0x306CCB mov [rsp+30],rcx
+    0x306CD0 mov rcx,[rsp+38]
+    0x306CD5 mov [rax+30],rcx
+    0x306CD9 mov rcx,[rax+28]
+    0x306CDD mov [rax+28],r9
+    0x306CE1 test rcx,rcx
+    0x306CE4 je short 0000000140306D01
+    0x306CE6 lock dec dword ptr [rcx+0C]
+lodCmp lea @0x306C92 func≈0x306A00  storeDisp=0x30 storeDisp=0x40 storeDisp=0x0 storeDisp=0x8 storeDisp=0x10 storeDisp=0x18 storeDisp=0x20 storeDisp=0x8 storeDisp=0x0 storeDisp=0x30 storeDisp=0x30 storeDisp=0x38 storeDisp=0x30 storeDisp=0x30 storeDisp=0x38 storeDisp=0x30 storeDisp=0x28 storeDisp=0x28
+    0x306C52 and al,38
+    0x306C54 cmp rax,r11
+    0x306C57 jne short 0000000140306C04
+    0x306C59 lea rax,[r10+r9]
+    0x306C5D add rax,10
+    0x306C61 vxorps xmm0,xmm0,xmm0
+    0x306C65 vmovups [rax+10],ymm0
+    0x306C6A vmovups [rax],ymm0
+    0x306C6E mov qword ptr [rax+30],0
+    0x306C76 mov [rsp+40],rax
+    0x306C7B mov [rax],rcx
+    0x306C7E lea r9,[rip+0B1334B]
+    0x306C85 mov [rax+8],r9
+    0x306C89 mov qword ptr [rax+10],0
+    0x306C91 lea r9,[rip+64B6E98]
+    0x306C98 mov [rax+18],r9
+    0x306C9C lea r9,[rip+0B1330D]
+    0x306CA3 mov [rax+20],r9
+    0x306CA7 mov r9,[rcx+8]
+    0x306CAB mov rcx,[rcx]
+    0x306CAE mov [rsp+30],rcx
+    0x306CB3 test r9,r9
+    0x306CB6 je short 0000000140306CBD
+    0x306CB8 lock inc dword ptr [r9+0C]
+    0x306CBD mov rcx,[rsp+30]
+    0x306CC2 mov [rsp+38],rcx
+    0x306CC7 mov rcx,[rax+30]
+    0x306CCB mov [rsp+30],rcx
+    0x306CD0 mov rcx,[rsp+38]
+    0x306CD5 mov [rax+30],rcx
+    0x306CD9 mov rcx,[rax+28]
+    0x306CDD mov [rax+28],r9
+    0x306CE1 test rcx,rcx
+    0x306CE4 je short 0000000140306D01
+    0x306CE6 lock dec dword ptr [rcx+0C]
+    0x306CEA jne short 0000000140306D01
+lodCmp lea @0x317E1A func≈0x317DC0  storeDisp=0x10 storeDisp=0x0 storeDisp=0x80 storeDisp=0x50 storeDisp=0x58 storeDisp=0x60 storeDisp=0x68 storeDisp=0x70 storeDisp=0x80 storeDisp=0x10 storeDisp=0x1C storeDisp=0x18 storeDisp=0x0 storeDisp=0x60 storeDisp=0x0
+    0x317DDA test eax,eax
+    0x317DDC je short 0000000140317E59
+    0x317DDE mov rcx,[rax+10]
+    0x317DE2 test rcx,rcx
+    0x317DE5 je near ptr 0000000140317E75
+    0x317DEB mov rax,[rcx]
+    0x317DEE mov rdi,rdx
+    0x317DF1 call qword ptr [rax+50]
+    0x317DF4 mov rdx,rdi
+    0x317DF7 mov [rsi+80],rax
+    0x317DFE test rax,rax
+    0x317E01 je short 0000000140317E75
+    0x317E03 mov [rax+50],rsi
+    0x317E07 lea rcx,[rip-110C4E]
+    0x317E0E mov [rax+58],rcx
+    0x317E12 mov qword ptr [rax+60],0
+    0x317E1A lea rcx,[rip+64A5D0F]
+    0x317E21 mov [rax+68],rcx
+    0x317E25 lea rcx,[rip-17126C]
+    0x317E2C mov [rax+70],rcx
+    0x317E30 mov rcx,[rsi+80]
+    0x317E37 mov [rcx+10],rdx
+    0x317E3B mov byte ptr [rcx+1C],1
+    0x317E3F cmp byte ptr [rcx+1B],0
+    0x317E43 jne short 0000000140317E49
+    0x317E45 mov byte ptr [rcx+18],2
+    0x317E49 mov rax,[rcx]
+    0x317E4C mov rax,[rax+60]
+    0x317E50 add rsp,28
+    0x317E54 pop rdi
+    0x317E55 pop rsi
+    0x317E56 jmp rax
+    0x317E59 mov rax,[rsi]
+    0x317E5C mov rcx,rsi
+    0x317E5F mov rdi,rdx
+    0x317E62 call qword ptr [rax+78]
+lodCmp lea @0x317E1B func≈0x317DC0  storeDisp=0x0 storeDisp=0x80 storeDisp=0x50 storeDisp=0x58 storeDisp=0x60 storeDisp=0x68 storeDisp=0x70 storeDisp=0x80 storeDisp=0x10 storeDisp=0x1C storeDisp=0x18 storeDisp=0x0 storeDisp=0x60 storeDisp=0x0
+    0x317DDB sal byte ptr [rbx+rdi*2+48],8B
+    0x317DE0 adc [rax-7B],cl
+    0x317DE4 leave
+    0x317DE5 je near ptr 0000000140317E75
+    0x317DEB mov rax,[rcx]
+    0x317DEE mov rdi,rdx
+    0x317DF1 call qword ptr [rax+50]
+    0x317DF4 mov rdx,rdi
+    0x317DF7 mov [rsi+80],rax
+    0x317DFE test rax,rax
+    0x317E01 je short 0000000140317E75
+    0x317E03 mov [rax+50],rsi
+    0x317E07 lea rcx,[rip-110C4E]
+    0x317E0E mov [rax+58],rcx
+    0x317E12 mov qword ptr [rax+60],0
+    0x317E1A lea rcx,[rip+64A5D0F]
+    0x317E21 mov [rax+68],rcx
+    0x317E25 lea rcx,[rip-17126C]
+    0x317E2C mov [rax+70],rcx
+    0x317E30 mov rcx,[rsi+80]
+    0x317E37 mov [rcx+10],rdx
+    0x317E3B mov byte ptr [rcx+1C],1
+    0x317E3F cmp byte ptr [rcx+1B],0
+    0x317E43 jne short 0000000140317E49
+    0x317E45 mov byte ptr [rcx+18],2
+    0x317E49 mov rax,[rcx]
+    0x317E4C mov rax,[rax+60]
+    0x317E50 add rsp,28
+    0x317E54 pop rdi
+    0x317E55 pop rsi
+    0x317E56 jmp rax
+    0x317E59 mov rax,[rsi]
+    0x317E5C mov rcx,rsi
+    0x317E5F mov rdi,rdx
+    0x317E62 call qword ptr [rax+78]
+    0x317E65 mov rdx,rdi
+lodCmp lea @0x33863E func≈0x338470  storeDisp=0x0 storeDisp=0x2C storeDisp=0x0 storeDisp=0x18 storeDisp=0x8 storeDisp=0x10 storeDisp=0x20
+    0x3385FE sal byte ptr [rdx+rcx-77],0C0
+    0x338603 neg rax
+    0x338606 lock add [rdi+20],rax
+    0x33860B mov rax,[rdi]
+    0x33860E mov rcx,rdi
+    0x338611 mov rdx,rsi
+    0x338614 call qword ptr [rax+88]
+    0x33861A mov rax,800000008
+    0x338624 lea rsi,[rsp+28]
+    0x338629 mov [rsi+2C],rax
+    0x33862D mov rcx,[rip+0BD272EC]
+    0x338634 xor eax,eax
+    0x338636 lea r8,[rsp+60]
+    0x33863B mov [r8],rax
+    0x33863E lea rdx,[rip+64854EB]
+    0x338645 mov [r8+18],rdx
+    0x338649 lea rdx,[rip+727FB30]
+    0x338650 mov [r8+8],rdx
+    0x338654 mov [r8+10],rax
+    0x338658 lea rax,[rip+7280F71]
+    0x33865F mov [r8+20],rax
+    0x338663 mov rdx,rsi
+    0x338666 call 0000000148E068D0
+    0x33866B mov rcx,rsi
+    0x33866E call 0000000148E14190
+    0x338673 jmp near ptr 00000001403384B5
+    0x338678 int 3
+lodCmp lea @0x33863F func≈0x338470  storeDisp=0x0 storeDisp=0x2C storeDisp=0x0 storeDisp=0x18 storeDisp=0x8 storeDisp=0x10 storeDisp=0x20
+    0x3385FF je short 000000014033860B
+    0x338601 mov eax,eax
+    0x338603 neg rax
+    0x338606 lock add [rdi+20],rax
+    0x33860B mov rax,[rdi]
+    0x33860E mov rcx,rdi
+    0x338611 mov rdx,rsi
+    0x338614 call qword ptr [rax+88]
+    0x33861A mov rax,800000008
+    0x338624 lea rsi,[rsp+28]
+    0x338629 mov [rsi+2C],rax
+    0x33862D mov rcx,[rip+0BD272EC]
+    0x338634 xor eax,eax
+    0x338636 lea r8,[rsp+60]
+    0x33863B mov [r8],rax
+    0x33863E lea rdx,[rip+64854EB]
+    0x338645 mov [r8+18],rdx
+    0x338649 lea rdx,[rip+727FB30]
+    0x338650 mov [r8+8],rdx
+    0x338654 mov [r8+10],rax
+    0x338658 lea rax,[rip+7280F71]
+    0x33865F mov [r8+20],rax
+    0x338663 mov rdx,rsi
+    0x338666 call 0000000148E068D0
+    0x33866B mov rcx,rsi
+    0x33866E call 0000000148E14190
+    0x338673 jmp near ptr 00000001403384B5
+    0x338678 int 3
+lodCmp lea @0x36F1B3 func≈0x36F0B0  storeDisp=0x78 storeDisp=0x88 storeDisp=0xB8 storeDisp=0x0 storeDisp=0x18 storeDisp=0x8 storeDisp=0x10 storeDisp=0x20 storeDisp=0x188 storeDisp=0x6C storeDisp=0x74
+    0x36F173 mov r8,r14
+    0x36F176 mov r9,rbx
+    0x36F179 call 0000000140EC16C0
+    0x36F17E mov [rsp+78],r13
+    0x36F183 mov eax,[rsp+88]
+    0x36F18A bt eax,0E
+    0x36F18E jb near ptr 000000014036F400
+    0x36F194 mov rcx,[rsi+0B8]
+    0x36F19B test rcx,rcx
+    0x36F19E je short 000000014036F1AB
+    0x36F1A0 mov r8,r14
+    0x36F1A3 mov r9,rdi
+    0x36F1A6 call 00000001411789A0
+    0x36F1AB lea r15,[rsp+78]
+    0x36F1B0 mov [r15],rsi
+    0x36F1B3 lea rax,[rip+644E976]
+    0x36F1BA mov [r15+18],rax
+    0x36F1BE lea rax,[rip-1A1425]
+    0x36F1C5 mov [r15+8],rax
+    0x36F1C9 mov qword ptr [r15+10],0
+    0x36F1D1 lea rax,[rip-1C97D8]
+    0x36F1D8 mov [r15+20],rax
+    0x36F1DC mov rcx,r14
+    0x36F1DF mov rdx,r15
+    0x36F1E2 call 0000000141458410
+    0x36F1E7 mov rcx,r14
+    0x36F1EA call 0000000141458380
+    0x36F1EF mov [rsi+188],al
+    0x36F1F5 lea r14,[rsi+0C0]
+    0x36F1FC mov rax,10000006F
+    0x36F206 mov [rsp+6C],rax
+    0x36F20B mov dword ptr [rsp+74],5F
+lodCmp lea @0x36F1B4 func≈0x36F0B0  storeDisp=0x78 storeDisp=0x88 storeDisp=0xB8 storeDisp=0x0 storeDisp=0x18 storeDisp=0x8 storeDisp=0x10 storeDisp=0x20 storeDisp=0x188 storeDisp=0x6C storeDisp=0x74
+    0x36F174 mov eax,esi
+    0x36F176 mov r9,rbx
+    0x36F179 call 0000000140EC16C0
+    0x36F17E mov [rsp+78],r13
+    0x36F183 mov eax,[rsp+88]
+    0x36F18A bt eax,0E
+    0x36F18E jb near ptr 000000014036F400
+    0x36F194 mov rcx,[rsi+0B8]
+    0x36F19B test rcx,rcx
+    0x36F19E je short 000000014036F1AB
+    0x36F1A0 mov r8,r14
+    0x36F1A3 mov r9,rdi
+    0x36F1A6 call 00000001411789A0
+    0x36F1AB lea r15,[rsp+78]
+    0x36F1B0 mov [r15],rsi
+    0x36F1B3 lea rax,[rip+644E976]
+    0x36F1BA mov [r15+18],rax
+    0x36F1BE lea rax,[rip-1A1425]
+    0x36F1C5 mov [r15+8],rax
+    0x36F1C9 mov qword ptr [r15+10],0
+    0x36F1D1 lea rax,[rip-1C97D8]
+    0x36F1D8 mov [r15+20],rax
+    0x36F1DC mov rcx,r14
+    0x36F1DF mov rdx,r15
+    0x36F1E2 call 0000000141458410
+    0x36F1E7 mov rcx,r14
+    0x36F1EA call 0000000141458380
+    0x36F1EF mov [rsi+188],al
+    0x36F1F5 lea r14,[rsi+0C0]
+    0x36F1FC mov rax,10000006F
+    0x36F206 mov [rsp+6C],rax
+    0x36F20B mov dword ptr [rsp+74],5F
+    0x36F213 lea rdx,[rsp+48]
+lodCmp lea @0x36F2B3 func≈0x36F0B0  storeDisp=0x78 storeDisp=0x88 storeDisp=0x108 storeDisp=0x0 storeDisp=0x18 storeDisp=0x8 storeDisp=0x10 storeDisp=0x20 storeDisp=0x189 storeDisp=0xA0
+    0x36F273 mov r8,r14
+    0x36F276 mov r9,rbx
+    0x36F279 call 0000000140EC16C0
+    0x36F27E mov [rsp+78],r13
+    0x36F283 mov eax,[rsp+88]
+    0x36F28A bt eax,0E
+    0x36F28E jb near ptr 000000014036F317
+    0x36F294 mov rcx,[rsi+108]
+    0x36F29B test rcx,rcx
+    0x36F29E je short 000000014036F2AB
+    0x36F2A0 mov r8,r14
+    0x36F2A3 mov r9,rdi
+    0x36F2A6 call 00000001411789A0
+    0x36F2AB lea rdx,[rsp+78]
+    0x36F2B0 mov [rdx],rsi
+    0x36F2B3 lea rax,[rip+644E876]
+    0x36F2BA mov [rdx+18],rax
+    0x36F2BE lea rax,[rip-19C3B5]
+    0x36F2C5 mov [rdx+8],rax
+    0x36F2C9 mov qword ptr [rdx+10],0
+    0x36F2D1 lea rax,[rip-1C98D8]
+    0x36F2D8 mov [rdx+20],rax
+    0x36F2DC mov rcx,r14
+    0x36F2DF call 0000000141458410
+    0x36F2E4 mov rcx,r14
+    0x36F2E7 call 0000000141458380
+    0x36F2EC mov [rsi+189],al
+    0x36F2F2 mov rcx,[rsp+0A0]
+    0x36F2FA xor rcx,rsp
+    0x36F2FD call 0000000145014570
+    0x36F302 nop
+    0x36F303 add rsp,0A8
+    0x36F30A pop rbx
+    0x36F30B pop rbp
+    0x36F30C pop rdi
+    0x36F30D pop rsi
+lodCmp lea @0x36F2B4 func≈0x36F0B0  storeDisp=0x78 storeDisp=0x88 storeDisp=0x108 storeDisp=0x0 storeDisp=0x18 storeDisp=0x8 storeDisp=0x10 storeDisp=0x20 storeDisp=0x189 storeDisp=0xA0
+    0x36F274 mov eax,esi
+    0x36F276 mov r9,rbx
+    0x36F279 call 0000000140EC16C0
+    0x36F27E mov [rsp+78],r13
+    0x36F283 mov eax,[rsp+88]
+    0x36F28A bt eax,0E
+    0x36F28E jb near ptr 000000014036F317
+    0x36F294 mov rcx,[rsi+108]
+    0x36F29B test rcx,rcx
+    0x36F29E je short 000000014036F2AB
+    0x36F2A0 mov r8,r14
+    0x36F2A3 mov r9,rdi
+    0x36F2A6 call 00000001411789A0
+    0x36F2AB lea rdx,[rsp+78]
+    0x36F2B0 mov [rdx],rsi
+    0x36F2B3 lea rax,[rip+644E876]
+    0x36F2BA mov [rdx+18],rax
+    0x36F2BE lea rax,[rip-19C3B5]
+    0x36F2C5 mov [rdx+8],rax
+    0x36F2C9 mov qword ptr [rdx+10],0
+    0x36F2D1 lea rax,[rip-1C98D8]
+    0x36F2D8 mov [rdx+20],rax
+    0x36F2DC mov rcx,r14
+    0x36F2DF call 0000000141458410
+    0x36F2E4 mov rcx,r14
+    0x36F2E7 call 0000000141458380
+    0x36F2EC mov [rsi+189],al
+    0x36F2F2 mov rcx,[rsp+0A0]
+    0x36F2FA xor rcx,rsp
+    0x36F2FD call 0000000145014570
+    0x36F302 nop
+    0x36F303 add rsp,0A8
+    0x36F30A pop rbx
+    0x36F30B pop rbp
+    0x36F30C pop rdi
+    0x36F30D pop rsi
+lodCmp lea @0x38C4C8 func≈0x38BF10  storeDisp=0x40 storeDisp=0x58 storeDisp=0x0 storeDisp=0x0 storeDisp=0x18 storeDisp=0x8 storeDisp=0x10 storeDisp=0x20 storeDisp=0x0 storeDisp=0x18
+    0x38C488 and eax,3D834800
+    0x38C48D inc bl
+    0x38C48F cmpsb
+    0x38C490 or eax,[rax]
+    0x38C492 mov rsi,[rsp+40]
+    0x38C497 jne short 000000014038C500
+    0x38C499 mov eax,[rip+0AA57A91]
+    0x38C49F mov ecx,[rip+0A7FF71B]
+    0x38C4A5 mov rdx,gs:[58]
+    0x38C4AE mov rcx,[rdx+rcx*8]
+    0x38C4B2 cmp eax,[rcx+4]
+    0x38C4B8 jg near ptr 000000014038C959
+    0x38C4BE xor eax,eax
+    0x38C4C0 lea rdx,[rsp+58]
+    0x38C4C5 mov [rdx],rax
+    0x38C4C8 lea rcx,[rip+6431661]
+    0x38C4CF mov [rdx+18],rcx
+    0x38C4D3 lea rcx,[rip+0C11C16]
+    0x38C4DA mov [rdx+8],rcx
+    0x38C4DE mov [rdx+10],rax
+    0x38C4E2 lea rax,[rip+425D2E7]
+    0x38C4E9 mov [rdx+20],rax
+    0x38C4ED lea rcx,[rip+0AA57A30]
+    0x38C4F4 call 000000014038BC60
+    0x38C4F9 mov [rip+0BA6C390],rax
+    0x38C500 cmp qword ptr [rip+0BA6C390],0
+    0x38C508 jne short 000000014038C54D
+    0x38C50A call 000000014038BBD0
+    0x38C50F xor ecx,ecx
+    0x38C511 lea rdx,[rsp+58]
+    0x38C516 mov [rdx],rcx
+    0x38C519 lea r8,[rip+6431610]
+    0x38C520 mov [rdx+18],r8
+    0x38C524 lea r8,[rip+0C11BC5]
+lodCmp lea @0x38C4C9 func≈0x38BF10  storeDisp=0x58 storeDisp=0x0 storeDisp=0x0 storeDisp=0x18 storeDisp=0x8 storeDisp=0x10 storeDisp=0x20 storeDisp=0x0 storeDisp=0x18
+    0x38C489 add [rax-7D],cl
+    0x38C48C cmp eax,0BA6C3FE
+    0x38C491 add [rax-75],cl
+    0x38C494 je short 000000014038C4BA
+    0x38C496 jne short 000000014038C500
+    0x38C499 mov eax,[rip+0AA57A91]
+    0x38C49F mov ecx,[rip+0A7FF71B]
+    0x38C4A5 mov rdx,gs:[58]
+    0x38C4AE mov rcx,[rdx+rcx*8]
+    0x38C4B2 cmp eax,[rcx+4]
+    0x38C4B8 jg near ptr 000000014038C959
+    0x38C4BE xor eax,eax
+    0x38C4C0 lea rdx,[rsp+58]
+    0x38C4C5 mov [rdx],rax
+    0x38C4C8 lea rcx,[rip+6431661]
+    0x38C4CF mov [rdx+18],rcx
+    0x38C4D3 lea rcx,[rip+0C11C16]
+    0x38C4DA mov [rdx+8],rcx
+    0x38C4DE mov [rdx+10],rax
+    0x38C4E2 lea rax,[rip+425D2E7]
+    0x38C4E9 mov [rdx+20],rax
+    0x38C4ED lea rcx,[rip+0AA57A30]
+    0x38C4F4 call 000000014038BC60
+    0x38C4F9 mov [rip+0BA6C390],rax
+    0x38C500 cmp qword ptr [rip+0BA6C390],0
+    0x38C508 jne short 000000014038C54D
+    0x38C50A call 000000014038BBD0
+    0x38C50F xor ecx,ecx
+    0x38C511 lea rdx,[rsp+58]
+    0x38C516 mov [rdx],rcx
+    0x38C519 lea r8,[rip+6431610]
+    0x38C520 mov [rdx+18],r8
+    0x38C524 lea r8,[rip+0C11BC5]
+lodCmp lea @0x38C519 func≈0x38BF10  storeDisp=0x20 storeDisp=0x0 storeDisp=0x18 storeDisp=0x8 storeDisp=0x10 storeDisp=0x20 storeDisp=0x0
+    0x38C4D9 add [rax-77],cl
+    0x38C4DC or [rax-77],cl
+    0x38C4E0 adc [rax-73],cl
+    0x38C4E4 add eax,425D2E7
+    0x38C4E9 mov [rdx+20],rax
+    0x38C4ED lea rcx,[rip+0AA57A30]
+    0x38C4F4 call 000000014038BC60
+    0x38C4F9 mov [rip+0BA6C390],rax
+    0x38C500 cmp qword ptr [rip+0BA6C390],0
+    0x38C508 jne short 000000014038C54D
+    0x38C50A call 000000014038BBD0
+    0x38C50F xor ecx,ecx
+    0x38C511 lea rdx,[rsp+58]
+    0x38C516 mov [rdx],rcx
+    0x38C519 lea r8,[rip+6431610]
+    0x38C520 mov [rdx+18],r8
+    0x38C524 lea r8,[rip+0C11BC5]
+    0x38C52B mov [rdx+8],r8
+    0x38C52F mov [rdx+10],rcx
+    0x38C533 lea rcx,[rip+425D296]
+    0x38C53A mov [rdx+20],rcx
+    0x38C53E mov rcx,rax
+    0x38C541 call 000000014038BC60
+    0x38C546 mov [rip+0BA6C34B],rax
+    0x38C54D mov [rdi+rbp*8],rbx
+    0x38C551 mov eax,[rip+0BA6C3C1]
+    0x38C557 dec eax
+    0x38C559 mov [rip+0BA6C3B9],eax
+    0x38C55F test eax,eax
+    0x38C561 jne near ptr 000000014038BF70
+    0x38C567 mov dword ptr [rip+0BA6C3A3],0FFFFFFFF
+    0x38C571 mov dword ptr [rip+0BA6C395],0
+lodCmp lea @0x38C51A func≈0x38BF10  storeDisp=0x8 storeDisp=0x10 storeDisp=0x20 storeDisp=0x0 storeDisp=0x18 storeDisp=0x8 storeDisp=0x10 storeDisp=0x20 storeDisp=0x0
+    0x38C4DA mov [rdx+8],rcx
+    0x38C4DE mov [rdx+10],rax
+    0x38C4E2 lea rax,[rip+425D2E7]
+    0x38C4E9 mov [rdx+20],rax
+    0x38C4ED lea rcx,[rip+0AA57A30]
+    0x38C4F4 call 000000014038BC60
+    0x38C4F9 mov [rip+0BA6C390],rax
+    0x38C500 cmp qword ptr [rip+0BA6C390],0
+    0x38C508 jne short 000000014038C54D
+    0x38C50A call 000000014038BBD0
+    0x38C50F xor ecx,ecx
+    0x38C511 lea rdx,[rsp+58]
+    0x38C516 mov [rdx],rcx
+    0x38C519 lea r8,[rip+6431610]
+    0x38C520 mov [rdx+18],r8
+    0x38C524 lea r8,[rip+0C11BC5]
+    0x38C52B mov [rdx+8],r8
+    0x38C52F mov [rdx+10],rcx
+    0x38C533 lea rcx,[rip+425D296]
+    0x38C53A mov [rdx+20],rcx
+    0x38C53E mov rcx,rax
+    0x38C541 call 000000014038BC60
+    0x38C546 mov [rip+0BA6C34B],rax
+    0x38C54D mov [rdi+rbp*8],rbx
+    0x38C551 mov eax,[rip+0BA6C3C1]
+    0x38C557 dec eax
+    0x38C559 mov [rip+0BA6C3B9],eax
+    0x38C55F test eax,eax
+    0x38C561 jne near ptr 000000014038BF70
+    0x38C567 mov dword ptr [rip+0BA6C3A3],0FFFFFFFF
+    0x38C571 mov dword ptr [rip+0BA6C395],0
+lodCmp lea @0x39E4D2 func≈0x39E340 
+    0x39E492 add [rcx-77],cl
+lodCmp lea @0x39E4D3 func≈0x39E340  storeDisp=0x40 storeDisp=0x128 storeDisp=0x130 storeDisp=0x138 storeDisp=0x140 storeDisp=0x148 storeDisp=0x150 storeDisp=0x158 storeDisp=0x160 storeDisp=0x168 storeDisp=0x170 storeDisp=0x0 storeDisp=0x8
+    0x39E493 mov r13,rax
+    0x39E496 lock add [r12+8],rbp
+    0x39E49C mov rbp,r12
+    0x39E49F xchg rbp,[r13+118]
+    0x39E4A6 cmp rbp,r15
+    0x39E4A9 jne near ptr 000000014039E937
+    0x39E4AF mov rbp,[rsp+40]
+    0x39E4B4 mov [r13+128],rbp
+    0x39E4BB lea rax,[rip+5006EFE]
+    0x39E4C2 mov [r13+130],rax
+    0x39E4C9 xor eax,eax
+    0x39E4CB mov [r13+138],rax
+    0x39E4D2 lea rcx,[rip+641F657]
+    0x39E4D9 mov [r13+140],rcx
+    0x39E4E0 lea rdx,[rip+5006B69]
+    0x39E4E7 mov [r13+148],rdx
+    0x39E4EE mov [r13+150],rbp
+    0x39E4F5 lea r8,[rip+6324]
+    0x39E4FC mov [r13+158],r8
+    0x39E503 mov [r13+160],rax
+    0x39E50A mov [r13+168],rcx
+    0x39E511 mov [r13+170],rdx
+    0x39E518 mov rcx,r13
+    0x39E51B call 000000014039EF20
+    0x39E520 mov rcx,r13
+    0x39E523 call 000000014039EB90
+    0x39E528 mov [r14],esi
+    0x39E52B cmp r12,r15
+    0x39E52E je short 000000014039E565
+    0x39E530 mov r13,[r12+8]
+lodCmp lea @0x39E6CD func≈0x39E340  storeDisp=0xB0 storeDisp=0xB0 storeDisp=0x0 storeDisp=0x0 storeDisp=0x18 storeDisp=0x8 storeDisp=0x10 storeDisp=0x20 storeDisp=0x0 storeDisp=0x18 storeDisp=0x8 storeDisp=0x10 storeDisp=0x20 storeDisp=0x0
+    0x39E68D ret
+    0x39E68E cmp qword ptr [rbp+0B0],0
+    0x39E696 je short 000000014039E669
+    0x39E698 call 00000001416957A0
+    0x39E69D mov rdx,[rbp+0B0]
+    0x39E6A4 mov rcx,rax
+    0x39E6A7 call 0000000145828D90
+    0x39E6AC mov qword ptr [rbp+0B0],0
+    0x39E6B7 jmp short 000000014039E669
+    0x39E6B9 lea rcx,[rsp+78]
+    0x39E6BE mov [rcx],rbx
+    0x39E6C1 lea r13,[rsp+0A8]
+    0x39E6C9 mov [r13],rbp
+    0x39E6CD lea rdx,[rip+641F45C]
+    0x39E6D4 mov [r13+18],rdx
+    0x39E6D8 lea r8,[rip+6141]
+    0x39E6DF mov [r13+8],r8
+    0x39E6E3 xor r8d,r8d
+    0x39E6E6 mov [r13+10],r8
+    0x39E6EA lea r9,[rip+500695F]
+    0x39E6F1 mov [r13+20],r9
+    0x39E6F5 lea r15,[rsp+80]
+    0x39E6FD mov [r15],rbp
+    0x39E700 mov [r15+18],rdx
+    0x39E704 lea rdx,[rip+5006CB5]
+    0x39E70B mov [r15+8],rdx
+    0x39E70F mov [r15+10],r8
+    0x39E713 mov [r15+20],r9
+    0x39E717 lea r12,[rsp+70]
+    0x39E71C mov [r12],rax
+    0x39E720 mov rdx,100000000
+    0x39E72A lock add [rax+8],rdx
+lodCmp lea @0x39E6CE func≈0x39E340  storeDisp=0xB0 storeDisp=0xB0 storeDisp=0x0 storeDisp=0x0 storeDisp=0x18 storeDisp=0x8 storeDisp=0x10 storeDisp=0x20 storeDisp=0x0 storeDisp=0x18 storeDisp=0x8 storeDisp=0x10 storeDisp=0x20 storeDisp=0x0
+    0x39E68E cmp qword ptr [rbp+0B0],0
+    0x39E696 je short 000000014039E669
+    0x39E698 call 00000001416957A0
+    0x39E69D mov rdx,[rbp+0B0]
+    0x39E6A4 mov rcx,rax
+    0x39E6A7 call 0000000145828D90
+    0x39E6AC mov qword ptr [rbp+0B0],0
+    0x39E6B7 jmp short 000000014039E669
+    0x39E6B9 lea rcx,[rsp+78]
+    0x39E6BE mov [rcx],rbx
+    0x39E6C1 lea r13,[rsp+0A8]
+    0x39E6C9 mov [r13],rbp
+    0x39E6CD lea rdx,[rip+641F45C]
+    0x39E6D4 mov [r13+18],rdx
+    0x39E6D8 lea r8,[rip+6141]
+    0x39E6DF mov [r13+8],r8
+    0x39E6E3 xor r8d,r8d
+    0x39E6E6 mov [r13+10],r8
+    0x39E6EA lea r9,[rip+500695F]
+    0x39E6F1 mov [r13+20],r9
+    0x39E6F5 lea r15,[rsp+80]
+    0x39E6FD mov [r15],rbp
+    0x39E700 mov [r15+18],rdx
+    0x39E704 lea rdx,[rip+5006CB5]
+    0x39E70B mov [r15+8],rdx
+    0x39E70F mov [r15+10],r8
+    0x39E713 mov [r15+20],r9
+    0x39E717 lea r12,[rsp+70]
+    0x39E71C mov [r12],rax
+    0x39E720 mov rdx,100000000
+    0x39E72A lock add [rax+8],rdx
+lodCmp lea @0x39E89B func≈0x39E340 
+lodCmp lea @0x39E89C func≈0x39E340  storeDisp=0x0 storeDisp=0x0 storeDisp=0xA8 storeDisp=0xC0 storeDisp=0xB0 storeDisp=0xB8 storeDisp=0xC8 storeDisp=0x30 storeDisp=0x28 storeDisp=0x20
+    0x39E85C mov rax,[rax]
+    0x39E85F mov rcx,r15
+    0x39E862 mov rdx,r14
+    0x39E865 xor r8d,r8d
+    0x39E868 xor r9d,r9d
+    0x39E86B call qword ptr [rax+18]
+    0x39E86E test eax,eax
+    0x39E870 je short 000000014039E87C
+    0x39E872 mov eax,eax
+    0x39E874 neg rax
+    0x39E877 lock add [r15+20],rax
+    0x39E87C mov rax,[r15]
+    0x39E87F mov rcx,r15
+    0x39E882 mov rdx,r14
+    0x39E885 call qword ptr [rax+88]
+    0x39E88B mov rcx,rdi
+    0x39E88E call 0000000141A38F00
+    0x39E893 mov [rsp+0A8],rbp
+    0x39E89B lea rax,[rip+641F28E]
+    0x39E8A2 mov [rsp+0C0],rax
+    0x39E8AA lea rax,[rip-921]
+    0x39E8B1 mov [rsp+0B0],rax
+    0x39E8B9 mov qword ptr [rsp+0B8],0
+    0x39E8C5 lea rax,[rip+50065E4]
+    0x39E8CC mov [rsp+0C8],rax
+    0x39E8D4 mov al,1
+    0x39E8D6 mov [rsp+30],al
+    0x39E8DA mov [rsp+28],al
+    0x39E8DE mov [rsp+20],rbx
+    0x39E8E3 lea rbx,[rsp+80]
+    0x39E8EB mov rcx,rdi
+    0x39E8EE xor edx,edx
+    0x39E8F0 mov r8d,0A9FBBAA1
+    0x39E8F6 mov r9,rbx
+    0x39E8F9 call 00000001453A7400
+lodCmp lea @0x39EF45 func≈0x39EF20  storeDisp=0x58 storeDisp=0x40 storeDisp=0x28 storeDisp=0x38 storeDisp=0x30 storeDisp=0x20 storeDisp=0x0 storeDisp=0x58 storeDisp=0x0 storeDisp=0x120 storeDisp=0x120
+    0x39EF20 push r15
+    0x39EF22 push r14
+    0x39EF24 push r12
+    0x39EF26 push rsi
+    0x39EF27 push rdi
+    0x39EF28 push rbp
+    0x39EF29 push rbx
+    0x39EF2A sub rsp,60
+    0x39EF2E mov rsi,rcx
+    0x39EF31 mov rax,[rip+9F142C8]
+    0x39EF38 xor rax,rsp
+    0x39EF3B mov [rsp+58],rax
+    0x39EF40 mov [rsp+40],rcx
+    0x39EF45 lea rax,[rip+641EBE4]
+    0x39EF4C mov [rsp+28],rax
+    0x39EF51 lea rax,[rip+5006068]
+    0x39EF58 mov [rsp+38],rax
+    0x39EF5D mov qword ptr [rsp+30],0
+    0x39EF66 lea rax,[rip+5005F43]
+    0x39EF6D mov [rsp+20],rax
+    0x39EF72 lea r14,[rip+0ABD4C5F]
+    0x39EF79 lea rdi,[rsp+48]
+    0x39EF7E mov [rdi],r14
+    0x39EF81 mov eax,[rip+0A7ECC39]
+    0x39EF87 mov rcx,gs:[58]
+    0x39EF90 mov r15,[rcx+rax*8]
+    0x39EF94 mov r12d,[r15+120]
+    0x39EF9B mov ebp,1
+    0x39EFA0 mov [r15+120],ebp
+lodCmp lea @0x39EF46 func≈0x39EF20  storeDisp=0x58 storeDisp=0x40 storeDisp=0x28 storeDisp=0x38 storeDisp=0x30 storeDisp=0x20 storeDisp=0x0 storeDisp=0x58 storeDisp=0x0 storeDisp=0x120 storeDisp=0x120
+    0x39EF20 push r15
+    0x39EF22 push r14
+    0x39EF24 push r12
+    0x39EF26 push rsi
+    0x39EF27 push rdi
+    0x39EF28 push rbp
+    0x39EF29 push rbx
+    0x39EF2A sub rsp,60
+    0x39EF2E mov rsi,rcx
+    0x39EF31 mov rax,[rip+9F142C8]
+    0x39EF38 xor rax,rsp
+    0x39EF3B mov [rsp+58],rax
+    0x39EF40 mov [rsp+40],rcx
+    0x39EF45 lea rax,[rip+641EBE4]
+    0x39EF4C mov [rsp+28],rax
+    0x39EF51 lea rax,[rip+5006068]
+    0x39EF58 mov [rsp+38],rax
+    0x39EF5D mov qword ptr [rsp+30],0
+    0x39EF66 lea rax,[rip+5005F43]
+    0x39EF6D mov [rsp+20],rax
+    0x39EF72 lea r14,[rip+0ABD4C5F]
+    0x39EF79 lea rdi,[rsp+48]
+    0x39EF7E mov [rdi],r14
+    0x39EF81 mov eax,[rip+0A7ECC39]
+    0x39EF87 mov rcx,gs:[58]
+    0x39EF90 mov r15,[rcx+rax*8]
+    0x39EF94 mov r12d,[r15+120]
+    0x39EF9B mov ebp,1
+    0x39EFA0 mov [r15+120],ebp
+lodCmp lea @0x4E6236 func≈0x4E5F60 
+lodCmp lea @0x4E6237 func≈0x4E5F60 
+    0x4E61F7 add al,[rax]
+    0x4E61F9 add [rax-47],cl
+    0x4E61FC add [rax],al
+    0x4E61FE add [rax],al
+lodCmp lea @0x528901 func≈0x526E90  storeDisp=0x8 storeDisp=0x0 storeDisp=0x18 storeDisp=0x8 storeDisp=0x10 storeDisp=0x20 storeDisp=0x0 storeDisp=0x58 storeDisp=0x0 storeDisp=0x1C60
+    0x5288C1 sti
+    0x5288C2 retf 480A
+    0x5288C6 mov ecx,[rip+0ACA67FC]
+    0x5288CC and ecx,3FFFFFFF
+    0x5288D2 add r15d,ecx
+    0x5288D5 and r15d,8C2338C1
+    0x5288DC shl r15,4
+    0x5288E0 lea rdx,[rax+r15]
+    0x5288E4 cmp dword ptr [rax+r15],0C5304E33
+    0x5288EC jne near ptr 000000014052919C
+    0x5288F2 mov rcx,[rdx+8]
+    0x5288F6 lea rdx,[rsp+1E8]
+    0x5288FE mov [rdx],rsi
+    0x528901 lea rax,[rip+6295228]
+    0x528908 mov [rdx+18],rax
+    0x52890C lea rax,[rip+6D039AD]
+    0x528913 mov [rdx+8],rax
+    0x528917 mov qword ptr [rdx+10],0
+    0x52891F lea rax,[rip+49345DA]
+    0x528926 mov [rdx+20],rax
+    0x52892A mov rax,[rcx]
+    0x52892D mov r8d,1
+    0x528933 call qword ptr [rax+140]
+    0x528939 jmp near ptr 0000000140526F1E
+    0x52893E mov eax,[rip+0A66327C]
+    0x528944 mov rdx,gs:[58]
+    0x52894D mov rax,[rdx+rax*8]
+    0x528951 mov rbx,[rax+1C60]
+    0x528958 test rbx,rbx
+    0x52895B jne near ptr 0000000140528789
+lodCmp lea @0x528902 func≈0x526E90  storeDisp=0x8 storeDisp=0x0 storeDisp=0x18 storeDisp=0x8 storeDisp=0x10 storeDisp=0x20 storeDisp=0x0 storeDisp=0x58 storeDisp=0x0 storeDisp=0x1C60
+    0x5288C2 retf 480A
+    0x5288C6 mov ecx,[rip+0ACA67FC]
+    0x5288CC and ecx,3FFFFFFF
+    0x5288D2 add r15d,ecx
+    0x5288D5 and r15d,8C2338C1
+    0x5288DC shl r15,4
+    0x5288E0 lea rdx,[rax+r15]
+    0x5288E4 cmp dword ptr [rax+r15],0C5304E33
+    0x5288EC jne near ptr 000000014052919C
+    0x5288F2 mov rcx,[rdx+8]
+    0x5288F6 lea rdx,[rsp+1E8]
+    0x5288FE mov [rdx],rsi
+    0x528901 lea rax,[rip+6295228]
+    0x528908 mov [rdx+18],rax
+    0x52890C lea rax,[rip+6D039AD]
+    0x528913 mov [rdx+8],rax
+    0x528917 mov qword ptr [rdx+10],0
+    0x52891F lea rax,[rip+49345DA]
+    0x528926 mov [rdx+20],rax
+    0x52892A mov rax,[rcx]
+    0x52892D mov r8d,1
+    0x528933 call qword ptr [rax+140]
+    0x528939 jmp near ptr 0000000140526F1E
+    0x52893E mov eax,[rip+0A66327C]
+    0x528944 mov rdx,gs:[58]
+    0x52894D mov rax,[rdx+rax*8]
+    0x528951 mov rbx,[rax+1C60]
+    0x528958 test rbx,rbx
+    0x52895B jne near ptr 0000000140528789
+    0x528961 lea eax,[rdi+3F]
+lodCmp lea @0x54152B func≈0x541420 
+    0x5414EB add al,al
+lodCmp lea @0x54152C func≈0x541420  storeDisp=0x600 storeDisp=0x5F8 storeDisp=0x8 storeDisp=0x8 storeDisp=0x0 storeDisp=0xC storeDisp=0x14 storeDisp=0x18 storeDisp=0x30 storeDisp=0x20 storeDisp=0x28 storeDisp=0x38 storeDisp=0x600
+    0x5414EC sar bh,0FF
+    0x5414EF or eax,r14d
+    0x5414F2 mov [rsp+600],eax
+    0x5414F9 mov rbx,[rsp+5F8]
+    0x541501 test r12d,r12d
+    0x541504 je near ptr 0000000140541594
+    0x54150A shl r14d,6
+    0x54150E add rbx,r14
+    0x541511 mov eax,r12d
+    0x541514 shl eax,6
+    0x541517 neg rax
+    0x54151A mov ecx,80000000
+    0x54151F xor edx,edx
+    0x541521 mov r8,3F80000000000032
+    0x54152B lea r9,[rip+627C5FE]
+    0x541532 lea r10,[rip+124E9B7]
+    0x541539 lea r11,[rip-39A980]
+    0x541540 lea rsi,[rbx+rax]
+    0x541544 mov r14d,[rbx+rax+8]
+    0x541549 and r14d,ecx
+    0x54154C or r14d,0C000
+    0x541553 mov [rbx+rax+8],r14d
+    0x541558 mov [rbx+rax],rdx
+    0x54155C mov [rbx+rax+0C],r8
+    0x541561 mov byte ptr [rbx+rax+14],1
+    0x541566 mov [rbx+rax+18],rsi
+    0x54156B mov [rbx+rax+30],r9
+    0x541570 mov [rbx+rax+20],r10
+    0x541575 mov [rbx+rax+28],rdx
+    0x54157A mov [rbx+rax+38],r11
+    0x54157F add rax,40
+    0x541583 jne short 0000000140541540
+    0x541585 mov eax,[rsp+600]
+lodCmp lea @0x5415C4 func≈0x541420 
+    0x541584 mov ebx,24848B
+lodCmp lea @0x5415C5 func≈0x541420  storeDisp=0x600 storeDisp=0x5F8 storeDisp=0xC storeDisp=0xC storeDisp=0x14 storeDisp=0x14 storeDisp=0x8 storeDisp=0x8 storeDisp=0x8
+    0x541585 mov eax,[rsp+600]
+    0x54158C mov rbx,[rsp+5F8]
+    0x541594 mov ecx,eax
+    0x541596 and ecx,3FFF
+    0x54159C cmp ebp,ecx
+    0x54159E jb near ptr 00000001405431D0
+    0x5415A4 mov rsi,rdi
+    0x5415A7 test r12d,r12d
+    0x5415AA je near ptr 00000001405416D8
+    0x5415B0 shl esi,6
+    0x5415B3 add rbx,rsi
+    0x5415B6 shl r12d,6
+    0x5415BA add r12,rbx
+    0x5415BD lea r9,[rip+124E92C]
+    0x5415C4 lea r10,[rip+627C565]
+    0x5415CB lea r11,[rip-39AA12]
+    0x5415D2 mov r14d,3FFF
+    0x5415D8 lea r8,[rip+0A9F795A]
+    0x5415DF mov eax,[r15+0C]
+    0x5415E3 mov [rbx+0C],eax
+    0x5415E6 vmovss xmm0,dword ptr [r15+10]
+    0x5415EC vmovss dword ptr [rbx+10],xmm0
+    0x5415F1 mov al,[r15+14]
+    0x5415F5 mov [rbx+14],al
+    0x5415F8 cmp rbx,r15
+    0x5415FB je near ptr 00000001405416A5
+    0x541601 mov eax,[rbx+8]
+    0x541604 mov ecx,eax
+    0x541606 and ecx,0FFFFC000
+    0x54160C mov [rbx+8],ecx
+    0x54160F mov edi,[r15+8]
+    0x541613 mov ebp,edi
+    0x541615 and ebp,r14d
+    0x541618 shr eax,10
+    0x54161B and eax,r14d
+    0x54161E cmp eax,ebp
+lodCmp lea @0x542819 func≈0x541420  storeDisp=0x30 storeDisp=0x28 storeDisp=0x20 storeDisp=0x38 storeDisp=0x8 storeDisp=0x58 storeDisp=0x0 storeDisp=0x1C68 storeDisp=0x5F8
+    0x5427D9 mov rax,[rip+0AA2D568]
+    0x5427E0 mov [rsp+30],rax
+    0x5427E5 xor eax,eax
+    0x5427E7 mov [rsp+28],eax
+    0x5427EB mov [rsp+20],eax
+    0x5427EF mov qword ptr [rsp+38],0
+    0x5427F8 mov rcx,rbx
+    0x5427FB mov edx,r13d
+    0x5427FE mov r8d,40
+    0x542804 mov r9d,10
+    0x54280A call 0000000144265F00
+    0x54280F mov eax,[rbx+8]
+    0x542812 lea r9,[rip+124D6D7]
+    0x542819 lea r10,[rip+627B310]
+    0x542820 lea r11,[rip-39BC67]
+    0x542827 lea r8,[rip+0A9F670B]
+    0x54282E jmp near ptr 0000000140541655
+    0x542833 mov eax,[rip+0A649387]
+    0x542839 mov rcx,gs:[58]
+    0x542842 mov rax,[rcx+rax*8]
+    0x542846 mov rdi,[rax+1C68]
+    0x54284D jmp near ptr 000000014054290E
+    0x542852 mov rsi,[rsp+5F8]
+    0x54285A test rsi,rsi
+    0x54285D je near ptr 000000014054194D
+    0x542863 bt eax,1E
+    0x542867 jb short 0000000140542833
+    0x542869 mov rax,[rip+0AA24E98]
+    0x542870 mov rcx,rsi
+    0x542873 shr rcx,1C
+    0x542877 mov rdx,7FFFFFFF8
+lodCmp lea @0x54281A func≈0x541420  storeDisp=0x30 storeDisp=0x28 storeDisp=0x20 storeDisp=0x38 storeDisp=0x8 storeDisp=0x58 storeDisp=0x0 storeDisp=0x1C68 storeDisp=0x5F8
+    0x5427DA mov eax,[rip+0AA2D568]
+    0x5427E0 mov [rsp+30],rax
+    0x5427E5 xor eax,eax
+    0x5427E7 mov [rsp+28],eax
+    0x5427EB mov [rsp+20],eax
+    0x5427EF mov qword ptr [rsp+38],0
+    0x5427F8 mov rcx,rbx
+    0x5427FB mov edx,r13d
+    0x5427FE mov r8d,40
+    0x542804 mov r9d,10
+    0x54280A call 0000000144265F00
+    0x54280F mov eax,[rbx+8]
+    0x542812 lea r9,[rip+124D6D7]
+    0x542819 lea r10,[rip+627B310]
+    0x542820 lea r11,[rip-39BC67]
+    0x542827 lea r8,[rip+0A9F670B]
+    0x54282E jmp near ptr 0000000140541655
+    0x542833 mov eax,[rip+0A649387]
+    0x542839 mov rcx,gs:[58]
+    0x542842 mov rax,[rcx+rax*8]
+    0x542846 mov rdi,[rax+1C68]
+    0x54284D jmp near ptr 000000014054290E
+    0x542852 mov rsi,[rsp+5F8]
+    0x54285A test rsi,rsi
+    0x54285D je near ptr 000000014054194D
+    0x542863 bt eax,1E
+    0x542867 jb short 0000000140542833
+    0x542869 mov rax,[rip+0AA24E98]
+    0x542870 mov rcx,rsi
+    0x542873 shr rcx,1C
+    0x542877 mov rdx,7FFFFFFF8
+lodCmp lea @0x543163 func≈0x541420 
+    0x543123 and al,38
+    0x543125 add [rax],eax
+    0x543127 add [rax],al
+    0x543129 add [rax],eax
+    0x54312B add bh,al
+    0x54312D and al,20
+lodCmp lea @0x543164 func≈0x541420  storeDisp=0x20 storeDisp=0x2 storeDisp=0x8
+    0x543124 cmp [rcx],al
+    0x543126 add [rax],al
+    0x543128 add [rcx],al
+    0x54312A add [rax],al
+    0x54312C mov dword ptr [rsp+20],3FFF
+    0x543134 lea rcx,[rsp+130]
+    0x54313C lea rdx,[rip+9BC2BB1]
+    0x543143 lea r8,[rip+9C08ADD]
+    0x54314A mov r9d,ebp
+    0x54314D vzeroupper
+    0x543150 call 000000014000E6E0
+    0x543155 lea r8,[rip+0A9F5DDD]
+    0x54315C lea r11,[rip-39C5A3]
+    0x543163 lea r10,[rip+627A9C6]
+    0x54316A lea r9,[rip+124CD7F]
+    0x543171 mov dword ptr [2],0
+    0x54317C lock dec dword ptr [rip+0A9F5FB5]
+    0x543183 mov eax,[rbx+8]
+    0x543186 jmp near ptr 0000000140541677
+    0x54318B lea rcx,[rip+0A74C87E]
+    0x543192 vzeroupper
+    0x543195 call 0000000144F69808
+    0x54319A mov eax,[rip+0A74C870]
+    0x5431A0 cmp eax,0FFFFFFFF
+    0x5431A3 jne near ptr 0000000140541D5A
+    0x5431A9 vmovaps [rip+0A74C83F],xmm7
+    0x5431B1 vmovaps [rip+0A74C847],xmm6
+    0x5431B9 lea rcx,[rip+0A74C850]
+    0x5431C0 call 0000000144F6979C
+lodCmp lea @0x55148C func≈0x551240  storeDisp=0x8800 storeDisp=0x8808 storeDisp=0x8810 storeDisp=0x8818 storeDisp=0x74
+    0x55144C add [rax],al
+    0x55144E add [rcx+861086],cl
+    0x551454 add bh,al
+    0x551456 xchg bl,[rax]
+    0x551458 xchg al,[rax]
+    0x55145A add [rdx],al
+    0x55145C add [rax],al
+    0x55145E add [rcx+896886],cl
+    0x551464 add [rcx+rcx*4-52],cl
+    0x551468 xor [rcx-76B80000],cl
+    0x55146E mov dh,0F8
+    0x551470 xchg eax,[rax]
+    0x551472 add [rax-73],cl
+    0x551475 add eax,31605D6
+    0x55147A mov [rsi+8800],rax
+    0x551481 mov qword ptr [rsi+8808],0
+    0x55148C lea rax,[rip+626C69D]
+    0x551493 mov [rsi+8810],rax
+    0x55149A lea rax,[rip+3DD12BF]
+    0x5514A1 mov [rsi+8818],rax
+    0x5514A8 mov rcx,rdi
+    0x5514AB mov rdx,rsi
+    0x5514AE xor r8d,r8d
+    0x5514B1 call 00000001436A2C00
+    0x5514B6 mov rax,[rip+0B6E700B]
+    0x5514BD mov eax,[rax+74]
+    0x5514C0 vmovshdup xmm0,xmmword ptr [rsp+40]
+    0x5514C6 vminss xmm0,xmm0,dword ptr [rsp+60]
+    0x5514CC vcvtsi2ss xmm1,xmm10,rax
+    0x5514D1 vmulss xmm0,xmm0,dword ptr [rip+8B20673]
+    0x5514D9 vmulss xmm0,xmm0,xmm1
+    0x5514DD vxorps xmm1,xmm1,xmm1
+    0x5514E1 vmaxss xmm2,xmm1,dword ptr [r14+50]
+    0x5514E7 vmaxss xmm1,xmm1,dword ptr [r14+54]
+lodCmp lea @0x55148D func≈0x551240  storeDisp=0x8610 storeDisp=0x8618 storeDisp=0x8968 storeDisp=0x8930 storeDisp=0x87F8 storeDisp=0x8800 storeDisp=0x8808 storeDisp=0x8810 storeDisp=0x8818 storeDisp=0x74
+    0x55144D add [rax],al
+    0x55144F mov [rsi+8610],eax
+    0x551455 mov dword ptr [rsi+8618],2
+    0x55145F mov [rsi+8968],eax
+    0x551465 mov [rsi+8930],r13
+    0x55146C mov [rsi+87F8],rsi
+    0x551473 lea rax,[rip+31605D6]
+    0x55147A mov [rsi+8800],rax
+    0x551481 mov qword ptr [rsi+8808],0
+    0x55148C lea rax,[rip+626C69D]
+    0x551493 mov [rsi+8810],rax
+    0x55149A lea rax,[rip+3DD12BF]
+    0x5514A1 mov [rsi+8818],rax
+    0x5514A8 mov rcx,rdi
+    0x5514AB mov rdx,rsi
+    0x5514AE xor r8d,r8d
+    0x5514B1 call 00000001436A2C00
+    0x5514B6 mov rax,[rip+0B6E700B]
+    0x5514BD mov eax,[rax+74]
+    0x5514C0 vmovshdup xmm0,xmmword ptr [rsp+40]
+    0x5514C6 vminss xmm0,xmm0,dword ptr [rsp+60]
+    0x5514CC vcvtsi2ss xmm1,xmm10,rax
+    0x5514D1 vmulss xmm0,xmm0,dword ptr [rip+8B20673]
+    0x5514D9 vmulss xmm0,xmm0,xmm1
+    0x5514DD vxorps xmm1,xmm1,xmm1
+    0x5514E1 vmaxss xmm2,xmm1,dword ptr [r14+50]
+    0x5514E7 vmaxss xmm1,xmm1,dword ptr [r14+54]
+lodCmp consumerCount=60 uniqueFuncs=22
+
+===== LOD THUNK 0x1A5A00 CONSUMERS =====
+lodThunk lea @0x1B2890 func≈0x1B2790  storeDisp=0x1E0 storeDisp=0x80 storeDisp=0x68 storeDisp=0x78 storeDisp=0x70 storeDisp=0x60 storeDisp=0x0 storeDisp=0x8 storeDisp=0x10 storeDisp=0x18 storeDisp=0x20 storeDisp=0x80 storeDisp=0x28 storeDisp=0x78 storeDisp=0x30
+    0x1B2850 add [rsi+3FFF],bh
+    0x1B2856 and esi,[rcx+1C8]
+    0x1B285C je near ptr 00000001401B293D
+    0x1B2862 mov rdi,[rcx+1E0]
+    0x1B2869 mov [rsp+80],rcx
+    0x1B2871 lea rax,[rip+660B2B8]
+    0x1B2878 mov [rsp+68],rax
+    0x1B287D lea rax,[rip-1B1884]
+    0x1B2884 mov [rsp+78],rax
+    0x1B2889 xor ebx,ebx
+    0x1B288B mov [rsp+70],rbx
+    0x1B2890 lea rax,[rip-0CE97]
+    0x1B2897 mov [rsp+60],rax
+    0x1B289C lea rax,[rdi+198]
+    0x1B28A3 mov r14,rcx
+    0x1B28A6 mov rcx,rax
+    0x1B28A9 mov edx,1
+    0x1B28AE xor r8d,r8d
+    0x1B28B1 call 0000000140510480
+    0x1B28B6 mov [rax],r14
+    0x1B28B9 lea rcx,[rip+158140]
+    0x1B28C0 mov [rax+8],rcx
+    0x1B28C4 mov [rax+10],rbx
+    0x1B28C8 lea rcx,[rip+660B261]
+    0x1B28CF mov [rax+18],rcx
+    0x1B28D3 lea rcx,[rip+158116]
+    0x1B28DA mov [rax+20],rcx
+    0x1B28DE mov rcx,[rsp+80]
+    0x1B28E6 mov [rax+28],rcx
+    0x1B28EA mov rcx,[rsp+78]
+    0x1B28EF mov [rax+30],rcx
+lodThunk lea @0x1B2891 func≈0x1B2790  storeDisp=0x1E0 storeDisp=0x80 storeDisp=0x68 storeDisp=0x78 storeDisp=0x70 storeDisp=0x60 storeDisp=0x0 storeDisp=0x8 storeDisp=0x10 storeDisp=0x18 storeDisp=0x20 storeDisp=0x80 storeDisp=0x28 storeDisp=0x78 storeDisp=0x30
+    0x1B2851 mov esi,3FFF
+    0x1B2856 and esi,[rcx+1C8]
+    0x1B285C je near ptr 00000001401B293D
+    0x1B2862 mov rdi,[rcx+1E0]
+    0x1B2869 mov [rsp+80],rcx
+    0x1B2871 lea rax,[rip+660B2B8]
+    0x1B2878 mov [rsp+68],rax
+    0x1B287D lea rax,[rip-1B1884]
+    0x1B2884 mov [rsp+78],rax
+    0x1B2889 xor ebx,ebx
+    0x1B288B mov [rsp+70],rbx
+    0x1B2890 lea rax,[rip-0CE97]
+    0x1B2897 mov [rsp+60],rax
+    0x1B289C lea rax,[rdi+198]
+    0x1B28A3 mov r14,rcx
+    0x1B28A6 mov rcx,rax
+    0x1B28A9 mov edx,1
+    0x1B28AE xor r8d,r8d
+    0x1B28B1 call 0000000140510480
+    0x1B28B6 mov [rax],r14
+    0x1B28B9 lea rcx,[rip+158140]
+    0x1B28C0 mov [rax+8],rcx
+    0x1B28C4 mov [rax+10],rbx
+    0x1B28C8 lea rcx,[rip+660B261]
+    0x1B28CF mov [rax+18],rcx
+    0x1B28D3 lea rcx,[rip+158116]
+    0x1B28DA mov [rax+20],rcx
+    0x1B28DE mov rcx,[rsp+80]
+    0x1B28E6 mov [rax+28],rcx
+    0x1B28EA mov rcx,[rsp+78]
+    0x1B28EF mov [rax+30],rcx
+lodThunk lea @0x288857 func≈0x288650  storeDisp=0x0 storeDisp=0x8 storeDisp=0x208 storeDisp=0x10 storeDisp=0x10 storeDisp=0x18 storeDisp=0x28 storeDisp=0x0 storeDisp=0x8 storeDisp=0x10 storeDisp=0x18 storeDisp=0x20 storeDisp=0x30 storeDisp=0x58
+    0x288817 mov [rdi],edi
+    0x288819 mov [rdi+8],rsi
+    0x28881D mov rdx,[rsi+208]
+    0x288824 lea rcx,[rip+0ACEB2B5]
+    0x28882B lea r9,[rip+0ACEB5EE]
+    0x288832 xor r8d,r8d
+    0x288835 call 00000001444386C0
+    0x28883A mov [rdi+10],rax
+    0x28883E mov rax,[rsi+10]
+    0x288842 mov [rdi+18],rax
+    0x288846 lea rcx,[rip+0ACEB38B]
+    0x28884D cmp rax,rcx
+    0x288850 je short 0000000140288857
+    0x288852 lock inc qword ptr [rax+8]
+    0x288857 lea rax,[rip-0E2E5E]
+    0x28885E mov [rsp+28],rax
+    0x288863 mov rcx,[rip+0AB5B73E]
+    0x28886A lea rdx,[rsp+30]
+    0x28886F mov [rdx],rdi
+    0x288872 lea r8,[rip+0AF3DE7]
+    0x288879 mov [rdx+8],r8
+    0x28887D mov qword ptr [rdx+10],0
+    0x288885 lea r8,[rip+65352A4]
+    0x28888C mov [rdx+18],r8
+    0x288890 mov [rdx+20],rax
+    0x288894 call 00000001400489B0
+    0x288899 mov rax,gs:[30]
+    0x2888A2 lock dec dword ptr [r14]
+    0x2888A6 mov rcx,[rsp+58]
+    0x2888AB xor rcx,rsp
+    0x2888AE call 0000000145014570
+    0x2888B3 nop
+    0x2888B4 add rsp,60
+lodThunk lea @0x288858 func≈0x288650 
+lodThunk lea @0x36F1D1 func≈0x36F0B0 
+    0x36F191 add al,[rax]
+    0x36F193 add [rax-75],cl
+lodThunk lea @0x36F1D2 func≈0x36F0B0  storeDisp=0xB8 storeDisp=0x0 storeDisp=0x18 storeDisp=0x8 storeDisp=0x10 storeDisp=0x20 storeDisp=0x188 storeDisp=0x6C storeDisp=0x74 storeDisp=0x0 storeDisp=0x0 storeDisp=0x8
+    0x36F192 add [rax],al
+    0x36F194 mov rcx,[rsi+0B8]
+    0x36F19B test rcx,rcx
+    0x36F19E je short 000000014036F1AB
+    0x36F1A0 mov r8,r14
+    0x36F1A3 mov r9,rdi
+    0x36F1A6 call 00000001411789A0
+    0x36F1AB lea r15,[rsp+78]
+    0x36F1B0 mov [r15],rsi
+    0x36F1B3 lea rax,[rip+644E976]
+    0x36F1BA mov [r15+18],rax
+    0x36F1BE lea rax,[rip-1A1425]
+    0x36F1C5 mov [r15+8],rax
+    0x36F1C9 mov qword ptr [r15+10],0
+    0x36F1D1 lea rax,[rip-1C97D8]
+    0x36F1D8 mov [r15+20],rax
+    0x36F1DC mov rcx,r14
+    0x36F1DF mov rdx,r15
+    0x36F1E2 call 0000000141458410
+    0x36F1E7 mov rcx,r14
+    0x36F1EA call 0000000141458380
+    0x36F1EF mov [rsi+188],al
+    0x36F1F5 lea r14,[rsi+0C0]
+    0x36F1FC mov rax,10000006F
+    0x36F206 mov [rsp+6C],rax
+    0x36F20B mov dword ptr [rsp+74],5F
+    0x36F213 lea rdx,[rsp+48]
+    0x36F218 mov [rdx],r12
+    0x36F21B mov [r15],r13
+    0x36F21E mov eax,80000000
+    0x36F223 and eax,[r15+10]
+    0x36F227 lea rcx,[rsp+78]
+    0x36F22C mov [rdx+8],rcx
+    0x36F230 or eax,48000
+lodThunk lea @0x36F2D1 func≈0x36F0B0 
+    0x36F291 add [rax],al
+    0x36F293 add [rax-75],cl
+lodThunk lea @0x36F2D2 func≈0x36F0B0  storeDisp=0x108 storeDisp=0x0 storeDisp=0x18 storeDisp=0x8 storeDisp=0x10 storeDisp=0x20 storeDisp=0x189 storeDisp=0xA0 storeDisp=0x80
+    0x36F292 add [rax],al
+    0x36F294 mov rcx,[rsi+108]
+    0x36F29B test rcx,rcx
+    0x36F29E je short 000000014036F2AB
+    0x36F2A0 mov r8,r14
+    0x36F2A3 mov r9,rdi
+    0x36F2A6 call 00000001411789A0
+    0x36F2AB lea rdx,[rsp+78]
+    0x36F2B0 mov [rdx],rsi
+    0x36F2B3 lea rax,[rip+644E876]
+    0x36F2BA mov [rdx+18],rax
+    0x36F2BE lea rax,[rip-19C3B5]
+    0x36F2C5 mov [rdx+8],rax
+    0x36F2C9 mov qword ptr [rdx+10],0
+    0x36F2D1 lea rax,[rip-1C98D8]
+    0x36F2D8 mov [rdx+20],rax
+    0x36F2DC mov rcx,r14
+    0x36F2DF call 0000000141458410
+    0x36F2E4 mov rcx,r14
+    0x36F2E7 call 0000000141458380
+    0x36F2EC mov [rsi+189],al
+    0x36F2F2 mov rcx,[rsp+0A0]
+    0x36F2FA xor rcx,rsp
+    0x36F2FD call 0000000145014570
+    0x36F302 nop
+    0x36F303 add rsp,0A8
+    0x36F30A pop rbx
+    0x36F30B pop rbp
+    0x36F30C pop rdi
+    0x36F30D pop rsi
+    0x36F30E pop r12
+    0x36F310 pop r13
+    0x36F312 pop r14
+    0x36F314 pop r15
+    0x36F316 ret
+    0x36F317 mov rbx,[rsp+80]
+lodThunk lea @0x7AC4D6 func≈0x7AC240 
+    0x7AC496 js short 00000001407AC4C0
+    0x7AC498 pushfq
+    0x7AC499 and al,0C0
+    0x7AC49B add [rax],al
+    0x7AC49D add ch,al
+    0x7AC49F js short 00000001407AC4C9
+    0x7AC4A1 movsb
+    0x7AC4A2 and al,0D0
+    0x7AC4A4 add [rax],al
+    0x7AC4A6 add ch,al
+    0x7AC4A8 js short 00000001407AC4D2
+    0x7AC4AA lodsb
+    0x7AC4AB and al,0E0
+    0x7AC4AD add [rax],al
+    0x7AC4AF add [rax-7F],cl
+lodThunk lea @0x7AC4D7 func≈0x7AC240 
+    0x7AC497 sub [rsp+0C0],bl
+    0x7AC49E vmovaps xmm12,[rsp+0D0]
+    0x7AC4A7 vmovaps xmm13,[rsp+0E0]
+    0x7AC4B0 add rsp,0F8
+    0x7AC4B7 pop rbx
+    0x7AC4B8 pop rbp
+    0x7AC4B9 pop rdi
+    0x7AC4BA pop rsi
+    0x7AC4BB pop r12
+    0x7AC4BD pop r13
+    0x7AC4BF pop r14
+    0x7AC4C1 pop r15
+    0x7AC4C3 jmp qword ptr [rip+9A9CCC6]
+    0x7AC4CA lea rcx,[r13+80]
+    0x7AC4D1 call r8
+    0x7AC4D4 jmp short 00000001407AC4F3
+    0x7AC4D6 lea rcx,[rip-606ADD]
+    0x7AC4DD cmp r8,rcx
+    0x7AC4E0 je short 00000001407AC4EE
+    0x7AC4E2 lea rcx,[rip-606AE9]
+    0x7AC4E9 cmp r8,rcx
+    0x7AC4EC jne short 00000001407AC4CA
+    0x7AC4EE mov rcx,rdx
+    0x7AC4F1 call rax
+    0x7AC4F3 test al,al
+    0x7AC4F5 jne near ptr 00000001407AC649
+    0x7AC4FB rdtsc
+    0x7AC4FD shl rdx,20
+    0x7AC501 or rax,rdx
+    0x7AC504 sub rax,rbx
+    0x7AC507 mov r8,[rip+0A8683B2]
+    0x7AC50E xor edx,edx
+    0x7AC510 div r8
+    0x7AC513 mov rcx,rax
+    0x7AC516 imul rax,rdx,0F4240
+    0x7AC51D xor edx,edx
+lodThunk lea @0x7AC4E2 func≈0x7AC240 
+    0x7AC4A2 and al,0D0
+    0x7AC4A4 add [rax],al
+    0x7AC4A6 add ch,al
+    0x7AC4A8 js short 00000001407AC4D2
+    0x7AC4AA lodsb
+    0x7AC4AB and al,0E0
+    0x7AC4AD add [rax],al
+    0x7AC4AF add [rax-7F],cl
+lodThunk lea @0x7AC4E3 func≈0x7AC240 
+    0x7AC4A3 rol byte ptr [rax],1
+    0x7AC4A5 add [rax],al
+    0x7AC4A7 vmovaps xmm13,[rsp+0E0]
+    0x7AC4B0 add rsp,0F8
+    0x7AC4B7 pop rbx
+    0x7AC4B8 pop rbp
+    0x7AC4B9 pop rdi
+    0x7AC4BA pop rsi
+    0x7AC4BB pop r12
+    0x7AC4BD pop r13
+    0x7AC4BF pop r14
+    0x7AC4C1 pop r15
+    0x7AC4C3 jmp qword ptr [rip+9A9CCC6]
+    0x7AC4CA lea rcx,[r13+80]
+    0x7AC4D1 call r8
+    0x7AC4D4 jmp short 00000001407AC4F3
+    0x7AC4D6 lea rcx,[rip-606ADD]
+    0x7AC4DD cmp r8,rcx
+    0x7AC4E0 je short 00000001407AC4EE
+    0x7AC4E2 lea rcx,[rip-606AE9]
+    0x7AC4E9 cmp r8,rcx
+    0x7AC4EC jne short 00000001407AC4CA
+    0x7AC4EE mov rcx,rdx
+    0x7AC4F1 call rax
+    0x7AC4F3 test al,al
+    0x7AC4F5 jne near ptr 00000001407AC649
+    0x7AC4FB rdtsc
+    0x7AC4FD shl rdx,20
+    0x7AC501 or rax,rdx
+    0x7AC504 sub rax,rbx
+    0x7AC507 mov r8,[rip+0A8683B2]
+    0x7AC50E xor edx,edx
+    0x7AC510 div r8
+    0x7AC513 mov rcx,rax
+    0x7AC516 imul rax,rdx,0F4240
+    0x7AC51D xor edx,edx
+lodThunk lea @0xC31628 func≈0xC31240  storeDisp=0x10 storeDisp=0x20 storeDisp=0x0 storeDisp=0x18 storeDisp=0x8 storeDisp=0x10 storeDisp=0x20 storeDisp=0x0 storeDisp=0x18 storeDisp=0x8 storeDisp=0x10 storeDisp=0x20 storeDisp=0x0 storeDisp=0x18 storeDisp=0x8 storeDisp=0x10 storeDisp=0x20 storeDisp=0x40 storeDisp=0x30
+    0xC315E8 mov rax,[rax+10]
+    0xC315EC vxorps xmm0,xmm0,xmm0
+    0xC315F0 lea rdx,[rsp+0E0]
+    0xC315F8 vmovups [rdx],ymm0
+    0xC315FC xor r8d,r8d
+    0xC315FF mov [rdx+20],r8
+    0xC31603 lea r10,[rsp+0B8]
+    0xC3160B mov [r10],rbx
+    0xC3160E lea r11,[rip+5B8C51B]
+    0xC31615 mov [r10+18],r11
+    0xC31619 lea r9,[rip-0A1C560]
+    0xC31620 mov [r10+8],r9
+    0xC31624 mov [r10+10],r8
+    0xC31628 lea rsi,[rip-0A8BC2F]
+    0xC3162F mov [r10+20],rsi
+    0xC31633 lea rdi,[rsp+90]
+    0xC3163B mov [rdi],rbx
+    0xC3163E lea r9,[rip+5B8C4EB]
+    0xC31645 mov [rdi+18],r9
+    0xC31649 lea r9,[rip+4773FB0]
+    0xC31650 mov [rdi+8],r9
+    0xC31654 mov [rdi+10],r8
+    0xC31658 lea r9,[rip+4773851]
+    0xC3165F mov [rdi+20],r9
+    0xC31663 lea r9,[rsp+68]
+    0xC31668 mov [r9],rbx
+    0xC3166B mov [r9+18],r11
+    0xC3166F lea r11,[rip+4A07D3A]
+    0xC31676 mov [r9+8],r11
+    0xC3167A mov [r9+10],r8
+    0xC3167E mov [r9+20],rsi
+    0xC31682 mov [rsp+40],rdx
+    0xC31687 mov [rsp+30],rax
+lodThunk lea @0xC31629 func≈0xC31240  storeDisp=0x10 storeDisp=0x20 storeDisp=0x0 storeDisp=0x18 storeDisp=0x8 storeDisp=0x10 storeDisp=0x20 storeDisp=0x0 storeDisp=0x18 storeDisp=0x8 storeDisp=0x10 storeDisp=0x20 storeDisp=0x0 storeDisp=0x18 storeDisp=0x8 storeDisp=0x10 storeDisp=0x20 storeDisp=0x40 storeDisp=0x30
+    0xC315E9 mov eax,[rax+10]
+    0xC315EC vxorps xmm0,xmm0,xmm0
+    0xC315F0 lea rdx,[rsp+0E0]
+    0xC315F8 vmovups [rdx],ymm0
+    0xC315FC xor r8d,r8d
+    0xC315FF mov [rdx+20],r8
+    0xC31603 lea r10,[rsp+0B8]
+    0xC3160B mov [r10],rbx
+    0xC3160E lea r11,[rip+5B8C51B]
+    0xC31615 mov [r10+18],r11
+    0xC31619 lea r9,[rip-0A1C560]
+    0xC31620 mov [r10+8],r9
+    0xC31624 mov [r10+10],r8
+    0xC31628 lea rsi,[rip-0A8BC2F]
+    0xC3162F mov [r10+20],rsi
+    0xC31633 lea rdi,[rsp+90]
+    0xC3163B mov [rdi],rbx
+    0xC3163E lea r9,[rip+5B8C4EB]
+    0xC31645 mov [rdi+18],r9
+    0xC31649 lea r9,[rip+4773FB0]
+    0xC31650 mov [rdi+8],r9
+    0xC31654 mov [rdi+10],r8
+    0xC31658 lea r9,[rip+4773851]
+    0xC3165F mov [rdi+20],r9
+    0xC31663 lea r9,[rsp+68]
+    0xC31668 mov [r9],rbx
+    0xC3166B mov [r9+18],r11
+    0xC3166F lea r11,[rip+4A07D3A]
+    0xC31676 mov [r9+8],r11
+    0xC3167A mov [r9+10],r8
+    0xC3167E mov [r9+20],rsi
+    0xC31682 mov [rsp+40],rdx
+    0xC31687 mov [rsp+30],rax
+lodThunk lea @0xC31824 func≈0xC31240  storeDisp=0x20 storeDisp=0x90 storeDisp=0x0 storeDisp=0x18 storeDisp=0x8 storeDisp=0x10 storeDisp=0x20 storeDisp=0x20 storeDisp=0x0 storeDisp=0x18 storeDisp=0x8 storeDisp=0x10 storeDisp=0x20 storeDisp=0x40 storeDisp=0x30 storeDisp=0x28 storeDisp=0x20 storeDisp=0x38
+    0xC317E4 push rdi
+    0xC317E5 ror byte ptr [rax-73],84
+    0xC317E9 and al,0E0
+    0xC317EB add [rax],al
+    0xC317ED add ch,al
+    0xC317EF cld
+    0xC317F0 adc [rax],eax
+    0xC317F2 xor edx,edx
+    0xC317F4 mov [rax+20],rdx
+    0xC317F8 mov r8,[rsi+90]
+    0xC317FF lea r10,[rsp+0B8]
+    0xC31807 mov [r10],rbx
+    0xC3180A lea r11,[rip+5B8C31F]
+    0xC31811 mov [r10+18],r11
+    0xC31815 lea r9,[rip-0A1C75C]
+    0xC3181C mov [r10+8],r9
+    0xC31820 mov [r10+10],rdx
+    0xC31824 lea rsi,[rip-0A8BE2B]
+    0xC3182B mov [r10+20],rsi
+    0xC3182F lea rdi,[rsp+90]
+    0xC31837 vmovups [rdi],ymm0
+    0xC3183B mov [rdi+20],rdx
+    0xC3183F lea r9,[rsp+68]
+    0xC31844 mov [r9],rbx
+    0xC31847 mov [r9+18],r11
+    0xC3184B lea r11,[rip+85A1BE]
+    0xC31852 mov [r9+8],r11
+    0xC31856 mov [r9+10],rdx
+    0xC3185A mov [r9+20],rsi
+    0xC3185E mov [rsp+40],rax
+    0xC31863 mov [rsp+30],r8
+    0xC31868 mov [rsp+28],r10
+    0xC3186D mov [rsp+20],rdi
+    0xC31872 mov dword ptr [rsp+38],0
+    0xC3187A vmovaps xmm2,xmm1
+    0xC3187E vzeroupper
+lodThunk lea @0xC31825 func≈0xC31240  storeDisp=0x20 storeDisp=0x90 storeDisp=0x0 storeDisp=0x18 storeDisp=0x8 storeDisp=0x10 storeDisp=0x20 storeDisp=0x20 storeDisp=0x0 storeDisp=0x18 storeDisp=0x8 storeDisp=0x10 storeDisp=0x20 storeDisp=0x40 storeDisp=0x30 storeDisp=0x28 storeDisp=0x20 storeDisp=0x38
+    0xC317E5 ror byte ptr [rax-73],84
+    0xC317E9 and al,0E0
+    0xC317EB add [rax],al
+    0xC317ED add ch,al
+    0xC317EF cld
+    0xC317F0 adc [rax],eax
+    0xC317F2 xor edx,edx
+    0xC317F4 mov [rax+20],rdx
+    0xC317F8 mov r8,[rsi+90]
+    0xC317FF lea r10,[rsp+0B8]
+    0xC31807 mov [r10],rbx
+    0xC3180A lea r11,[rip+5B8C31F]
+    0xC31811 mov [r10+18],r11
+    0xC31815 lea r9,[rip-0A1C75C]
+    0xC3181C mov [r10+8],r9
+    0xC31820 mov [r10+10],rdx
+    0xC31824 lea rsi,[rip-0A8BE2B]
+    0xC3182B mov [r10+20],rsi
+    0xC3182F lea rdi,[rsp+90]
+    0xC31837 vmovups [rdi],ymm0
+    0xC3183B mov [rdi+20],rdx
+    0xC3183F lea r9,[rsp+68]
+    0xC31844 mov [r9],rbx
+    0xC31847 mov [r9+18],r11
+    0xC3184B lea r11,[rip+85A1BE]
+    0xC31852 mov [r9+8],r11
+    0xC31856 mov [r9+10],rdx
+    0xC3185A mov [r9+20],rsi
+    0xC3185E mov [rsp+40],rax
+    0xC31863 mov [rsp+30],r8
+    0xC31868 mov [rsp+28],r10
+    0xC3186D mov [rsp+20],rdi
+    0xC31872 mov dword ptr [rsp+38],0
+    0xC3187A vmovaps xmm2,xmm1
+    0xC3187E vzeroupper
+    0xC31881 call 0000000141D725E0
+lodThunk lea @0x125501C func≈0x1254DB0  storeDisp=0x8 storeDisp=0x28 storeDisp=0x0 storeDisp=0x8 storeDisp=0x10 storeDisp=0x18 storeDisp=0x20 storeDisp=0x58
+    0x1254FDC add al,42
+    0x1254FDE cmp dword ptr [rcx+rbx],7DD701EC
+    0x1254FE5 jae short 0000000141254FCB
+    0x1254FE7 jmp short 0000000141254FBE
+    0x1254FE9 shl r8d,4
+    0x1254FED and r8d,3FFF0
+    0x1254FF4 add rdx,r8
+    0x1254FF7 cmp rcx,rdx
+    0x1254FFA je near ptr 0000000141255093
+    0x1255000 cmp dword ptr [rcx],7DD701EC
+    0x1255006 jne near ptr 0000000141255093
+    0x125500C mov rcx,[rcx+8]
+    0x1255010 lock dec dword ptr [rax+0AC]
+    0x1255017 test rcx,rcx
+    0x125501A je short 0000000141255063
+    0x125501C lea rax,[rip-10AF623]
+    0x1255023 mov [rsp+28],rax
+    0x1255028 add rcx,518
+    0x125502F lea r8,[rsp+30]
+    0x1255034 mov [r8],rsi
+    0x1255037 lea rdx,[rip-1049FAE]
+    0x125503E mov [r8+8],rdx
+    0x1255042 mov qword ptr [r8+10],0
+    0x125504A lea rdx,[rip+5568ADF]
+    0x1255051 mov [r8+18],rdx
+    0x1255055 mov [r8+20],rax
+    0x1255059 mov edx,3
+    0x125505E call 00000001412550A0
+    0x1255063 mov rcx,[rsp+58]
+    0x1255068 xor rcx,rsp
+    0x125506B call 0000000145014570
+    0x1255070 nop
+    0x1255071 add rsp,60
+    0x1255075 pop rbx
+    0x1255076 pop rbp
+    0x1255077 pop rdi
+lodThunk lea @0x125501D func≈0x1254DB0  storeDisp=0x8 storeDisp=0x28 storeDisp=0x0 storeDisp=0x8 storeDisp=0x10 storeDisp=0x18 storeDisp=0x20 storeDisp=0x58
+    0x1254FDD cmp dword ptr [rcx+r11],7DD701EC
+    0x1254FE5 jae short 0000000141254FCB
+    0x1254FE7 jmp short 0000000141254FBE
+    0x1254FE9 shl r8d,4
+    0x1254FED and r8d,3FFF0
+    0x1254FF4 add rdx,r8
+    0x1254FF7 cmp rcx,rdx
+    0x1254FFA je near ptr 0000000141255093
+    0x1255000 cmp dword ptr [rcx],7DD701EC
+    0x1255006 jne near ptr 0000000141255093
+    0x125500C mov rcx,[rcx+8]
+    0x1255010 lock dec dword ptr [rax+0AC]
+    0x1255017 test rcx,rcx
+    0x125501A je short 0000000141255063
+    0x125501C lea rax,[rip-10AF623]
+    0x1255023 mov [rsp+28],rax
+    0x1255028 add rcx,518
+    0x125502F lea r8,[rsp+30]
+    0x1255034 mov [r8],rsi
+    0x1255037 lea rdx,[rip-1049FAE]
+    0x125503E mov [r8+8],rdx
+    0x1255042 mov qword ptr [r8+10],0
+    0x125504A lea rdx,[rip+5568ADF]
+    0x1255051 mov [r8+18],rdx
+    0x1255055 mov [r8+20],rax
+    0x1255059 mov edx,3
+    0x125505E call 00000001412550A0
+    0x1255063 mov rcx,[rsp+58]
+    0x1255068 xor rcx,rsp
+    0x125506B call 0000000145014570
+    0x1255070 nop
+    0x1255071 add rsp,60
+    0x1255075 pop rbx
+    0x1255076 pop rbp
+    0x1255077 pop rdi
+    0x1255078 pop rsi
+lodThunk lea @0x134C3E8 func≈0x134BFA0  storeDisp=0x0 storeDisp=0x80 storeDisp=0x68 storeDisp=0x78 storeDisp=0x70 storeDisp=0x60 storeDisp=0x80 storeDisp=0x30 storeDisp=0x78 storeDisp=0x38 storeDisp=0x70 storeDisp=0x40 storeDisp=0x68 storeDisp=0x48 storeDisp=0x60 storeDisp=0x50 storeDisp=0x58 storeDisp=0x18 storeDisp=0x30 storeDisp=0x28 storeDisp=0x28
+    0x134C3A8 cmc
+    0x134C3AA add cl,[rax-7B]
+    0x134C3AD ror byte ptr [rax-75],5C
+    0x134C3B1 and al,28
+    0x134C3B3 je short 000000014134C3B8
+    0x134C3B5 mov rsi,[rax]
+    0x134C3B8 add rsi,1C0
+    0x134C3BF mov [rsp+80],r12
+    0x134C3C7 lea rax,[rip+5471762]
+    0x134C3CE mov [rsp+68],rax
+    0x134C3D3 lea rax,[rip-119631A]
+    0x134C3DA mov [rsp+78],rax
+    0x134C3DF mov qword ptr [rsp+70],0
+    0x134C3E8 lea rax,[rip-11A69EF]
+    0x134C3EF mov [rsp+60],rax
+    0x134C3F4 mov rax,[rsp+80]
+    0x134C3FC mov [r14+30],rax
+    0x134C400 mov rax,[rsp+78]
+    0x134C405 mov [r14+38],rax
+    0x134C409 mov rax,[rsp+70]
+    0x134C40E mov [r14+40],rax
+    0x134C412 mov rax,[rsp+68]
+    0x134C417 mov [r14+48],rax
+    0x134C41B mov rax,[rsp+60]
+    0x134C420 mov [r14+50],rax
+    0x134C424 mov dword ptr [r14+58],38D1B717
+    0x134C42C mov [r14+18],rsi
+    0x134C430 mov rdi,[r12+30]
+    0x134C435 mov eax,[rdi+28]
+    0x134C438 lea ecx,[rax+1]
+    0x134C43B mov [rdi+28],ecx
+    0x134C43E test eax,eax
+    0x134C440 jne short 000000014134C45E
+    0x134C442 cmp byte ptr [rdi+10],0
+    0x134C446 jne short 000000014134C45E
+lodThunk lea @0x134C3E9 func≈0x134BFA0  storeDisp=0x0 storeDisp=0x80 storeDisp=0x68 storeDisp=0x78 storeDisp=0x70 storeDisp=0x60 storeDisp=0x80 storeDisp=0x30 storeDisp=0x78 storeDisp=0x38 storeDisp=0x70 storeDisp=0x40 storeDisp=0x68 storeDisp=0x48 storeDisp=0x60 storeDisp=0x50 storeDisp=0x58 storeDisp=0x18 storeDisp=0x30 storeDisp=0x28 storeDisp=0x28 storeDisp=0x18
+    0x134C3A9 cmc
+    0x134C3AA add cl,[rax-7B]
+    0x134C3AD ror byte ptr [rax-75],5C
+    0x134C3B1 and al,28
+    0x134C3B3 je short 000000014134C3B8
+    0x134C3B5 mov rsi,[rax]
+    0x134C3B8 add rsi,1C0
+    0x134C3BF mov [rsp+80],r12
+    0x134C3C7 lea rax,[rip+5471762]
+    0x134C3CE mov [rsp+68],rax
+    0x134C3D3 lea rax,[rip-119631A]
+    0x134C3DA mov [rsp+78],rax
+    0x134C3DF mov qword ptr [rsp+70],0
+    0x134C3E8 lea rax,[rip-11A69EF]
+    0x134C3EF mov [rsp+60],rax
+    0x134C3F4 mov rax,[rsp+80]
+    0x134C3FC mov [r14+30],rax
+    0x134C400 mov rax,[rsp+78]
+    0x134C405 mov [r14+38],rax
+    0x134C409 mov rax,[rsp+70]
+    0x134C40E mov [r14+40],rax
+    0x134C412 mov rax,[rsp+68]
+    0x134C417 mov [r14+48],rax
+    0x134C41B mov rax,[rsp+60]
+    0x134C420 mov [r14+50],rax
+    0x134C424 mov dword ptr [r14+58],38D1B717
+    0x134C42C mov [r14+18],rsi
+    0x134C430 mov rdi,[r12+30]
+    0x134C435 mov eax,[rdi+28]
+    0x134C438 lea ecx,[rax+1]
+    0x134C43B mov [rdi+28],ecx
+    0x134C43E test eax,eax
+    0x134C440 jne short 000000014134C45E
+    0x134C442 cmp byte ptr [rdi+10],0
+    0x134C446 jne short 000000014134C45E
+    0x134C448 mov rcx,[rdi+18]
+lodThunk lea @0x1730E94 func≈0x1730C20  storeDisp=0x40 storeDisp=0x58 storeDisp=0x48 storeDisp=0x50 storeDisp=0x60 storeDisp=0x28 storeDisp=0x30 storeDisp=0x20 storeDisp=0x1500 storeDisp=0x1638
+    0x1730E54 push rdx
+    0x1730E55 dec dword ptr [rax-73]
+    0x1730E58 add eax,9842D7B
+    0x1730E5D cmp [r14],rax
+    0x1730E60 je short 0000000141730EC8
+    0x1730E62 mov rcx,[rip+0A8F12DF]
+    0x1730E69 test rcx,rcx
+    0x1730E6C je short 0000000141730EC8
+    0x1730E6E mov [rsp+40],rsi
+    0x1730E73 lea rax,[rip+508CCB6]
+    0x1730E7A mov [rsp+58],rax
+    0x1730E7F lea rax,[rip+16312A]
+    0x1730E86 mov [rsp+48],rax
+    0x1730E8B mov qword ptr [rsp+50],0
+    0x1730E94 lea rax,[rip-158B49B]
+    0x1730E9B mov [rsp+60],rax
+    0x1730EA0 lea r8,[rsi+3C]
+    0x1730EA4 mov [rsp+28],rdi
+    0x1730EA9 mov byte ptr [rsp+30],0
+    0x1730EAE mov dword ptr [rsp+20],11
+    0x1730EB6 mov rdx,rbx
+    0x1730EB9 mov r9,rbx
+    0x1730EBC call 0000000140F83010
+    0x1730EC1 mov [rsi+1500],rax
+    0x1730EC8 lea rcx,[rsp+70]
+    0x1730ECD call 0000000140C57940
+    0x1730ED2 mov rcx,[rsp+1638]
+    0x1730EDA xor rcx,rsp
+    0x1730EDD call 0000000145014570
+    0x1730EE2 nop
+    0x1730EE3 add rsp,1640
+    0x1730EEA pop rbx
+    0x1730EEB pop rdi
+    0x1730EEC pop rsi
+    0x1730EED pop r14
+    0x1730EEF pop r15
+lodThunk lea @0x1730E95 func≈0x1730C20  storeDisp=0x40 storeDisp=0x58 storeDisp=0x48 storeDisp=0x50 storeDisp=0x60 storeDisp=0x28 storeDisp=0x30 storeDisp=0x20 storeDisp=0x1500 storeDisp=0x1638
+    0x1730E55 dec dword ptr [rax-73]
+    0x1730E58 add eax,9842D7B
+    0x1730E5D cmp [r14],rax
+    0x1730E60 je short 0000000141730EC8
+    0x1730E62 mov rcx,[rip+0A8F12DF]
+    0x1730E69 test rcx,rcx
+    0x1730E6C je short 0000000141730EC8
+    0x1730E6E mov [rsp+40],rsi
+    0x1730E73 lea rax,[rip+508CCB6]
+    0x1730E7A mov [rsp+58],rax
+    0x1730E7F lea rax,[rip+16312A]
+    0x1730E86 mov [rsp+48],rax
+    0x1730E8B mov qword ptr [rsp+50],0
+    0x1730E94 lea rax,[rip-158B49B]
+    0x1730E9B mov [rsp+60],rax
+    0x1730EA0 lea r8,[rsi+3C]
+    0x1730EA4 mov [rsp+28],rdi
+    0x1730EA9 mov byte ptr [rsp+30],0
+    0x1730EAE mov dword ptr [rsp+20],11
+    0x1730EB6 mov rdx,rbx
+    0x1730EB9 mov r9,rbx
+    0x1730EBC call 0000000140F83010
+    0x1730EC1 mov [rsi+1500],rax
+    0x1730EC8 lea rcx,[rsp+70]
+    0x1730ECD call 0000000140C57940
+    0x1730ED2 mov rcx,[rsp+1638]
+    0x1730EDA xor rcx,rsp
+    0x1730EDD call 0000000145014570
+    0x1730EE2 nop
+    0x1730EE3 add rsp,1640
+    0x1730EEA pop rbx
+    0x1730EEB pop rdi
+    0x1730EEC pop rsi
+    0x1730EED pop r14
+    0x1730EEF pop r15
+    0x1730EF1 ret
+lodThunk lea @0x18665DF func≈0x1866310  storeDisp=0x58 storeDisp=0x40 storeDisp=0x50 storeDisp=0x48 storeDisp=0x38 storeDisp=0x58 storeDisp=0x1C0 storeDisp=0x50 storeDisp=0x1C8 storeDisp=0x48 storeDisp=0x1D0 storeDisp=0x40 storeDisp=0x1D8 storeDisp=0x38 storeDisp=0x1E0 storeDisp=0x238 storeDisp=0x218 storeDisp=0x358
+    0x186659F add [rcx-48],al
+    0x18665A2 add [rax],eax
+    0x18665A4 add [rax],al
+    0x18665A6 mov r9d,1
+    0x18665AC call 0000000144431BB0
+    0x18665B1 mov rcx,rsi
+    0x18665B4 call 0000000140E5B9C0
+    0x18665B9 mov [rsp+58],rsi
+    0x18665BE lea rax,[rip+4F5756B]
+    0x18665C5 mov [rsp+40],rax
+    0x18665CA lea rax,[rip-16BDD81]
+    0x18665D1 mov [rsp+50],rax
+    0x18665D6 mov qword ptr [rsp+48],0
+    0x18665DF lea rax,[rip-16C0BE6]
+    0x18665E6 mov [rsp+38],rax
+    0x18665EB mov rax,[rsp+58]
+    0x18665F0 mov [rsi+1C0],rax
+    0x18665F7 mov rax,[rsp+50]
+    0x18665FC mov [rsi+1C8],rax
+    0x1866603 mov rax,[rsp+48]
+    0x1866608 mov [rsi+1D0],rax
+    0x186660F mov rax,[rsp+40]
+    0x1866614 mov [rsi+1D8],rax
+    0x186661B mov rax,[rsp+38]
+    0x1866620 mov [rsi+1E0],rax
+    0x1866627 mov [rsi+238],r15
+    0x186662E mov dword ptr [rsi+218],3ECCCCCD
+    0x1866638 mov dword ptr [rsi+358],3F8CCCCD
+lodThunk lea @0x18665E0 func≈0x1866310  storeDisp=0x58 storeDisp=0x40 storeDisp=0x50 storeDisp=0x48 storeDisp=0x38 storeDisp=0x58 storeDisp=0x1C0 storeDisp=0x50 storeDisp=0x1C8 storeDisp=0x48 storeDisp=0x1D0 storeDisp=0x40 storeDisp=0x1D8 storeDisp=0x38 storeDisp=0x1E0 storeDisp=0x238 storeDisp=0x218 storeDisp=0x358
+    0x18665A0 mov r8d,1
+    0x18665A6 mov r9d,1
+    0x18665AC call 0000000144431BB0
+    0x18665B1 mov rcx,rsi
+    0x18665B4 call 0000000140E5B9C0
+    0x18665B9 mov [rsp+58],rsi
+    0x18665BE lea rax,[rip+4F5756B]
+    0x18665C5 mov [rsp+40],rax
+    0x18665CA lea rax,[rip-16BDD81]
+    0x18665D1 mov [rsp+50],rax
+    0x18665D6 mov qword ptr [rsp+48],0
+    0x18665DF lea rax,[rip-16C0BE6]
+    0x18665E6 mov [rsp+38],rax
+    0x18665EB mov rax,[rsp+58]
+    0x18665F0 mov [rsi+1C0],rax
+    0x18665F7 mov rax,[rsp+50]
+    0x18665FC mov [rsi+1C8],rax
+    0x1866603 mov rax,[rsp+48]
+    0x1866608 mov [rsi+1D0],rax
+    0x186660F mov rax,[rsp+40]
+    0x1866614 mov [rsi+1D8],rax
+    0x186661B mov rax,[rsp+38]
+    0x1866620 mov [rsi+1E0],rax
+    0x1866627 mov [rsi+238],r15
+    0x186662E mov dword ptr [rsi+218],3ECCCCCD
+    0x1866638 mov dword ptr [rsi+358],3F8CCCCD
+lodThunk lea @0x196F841 func≈0x196E9E0  storeDisp=0x30 storeDisp=0xB8 storeDisp=0xA0 storeDisp=0xB0 storeDisp=0xA8 storeDisp=0x98 storeDisp=0xB8 storeDisp=0x1F8 storeDisp=0xB0 storeDisp=0x200 storeDisp=0xA8 storeDisp=0x208 storeDisp=0xA0 storeDisp=0x210 storeDisp=0x98 storeDisp=0x218 storeDisp=0x28 storeDisp=0xA8
+    0x196F801 mov ecx,edi
+    0x196F803 call 0000000140006660
+    0x196F808 jmp short 000000014196F7A2
+    0x196F80A mov rcx,[rsp+30]
+    0x196F80F mov [rsp+0B8],rcx
+    0x196F817 lea rax,[rip+4E4E312]
+    0x196F81E mov [rsp+0A0],rax
+    0x196F826 lea rax,[rip-17C9E1D]
+    0x196F82D mov [rsp+0B0],rax
+    0x196F835 mov qword ptr [rsp+0A8],0
+    0x196F841 lea rax,[rip-17C9E48]
+    0x196F848 mov [rsp+98],rax
+    0x196F850 mov rax,[rsp+0B8]
+    0x196F858 mov [rcx+1F8],rax
+    0x196F85F mov rax,[rsp+0B0]
+    0x196F867 mov [rcx+200],rax
+    0x196F86E mov rax,[rsp+0A8]
+    0x196F876 mov [rcx+208],rax
+    0x196F87D mov rax,[rsp+0A0]
+    0x196F885 mov [rcx+210],rax
+    0x196F88C mov rax,[rsp+98]
+    0x196F894 mov [rcx+218],rax
+    0x196F89B mov rdx,[rsp+28]
+    0x196F8A0 mov rax,[rdx+0A8]
+lodThunk lea @0x196F842 func≈0x196E9E0  storeDisp=0x30 storeDisp=0xB8 storeDisp=0xA0 storeDisp=0xB0 storeDisp=0xA8 storeDisp=0x98 storeDisp=0xB8 storeDisp=0x1F8 storeDisp=0xB0 storeDisp=0x200 storeDisp=0xA8 storeDisp=0x208 storeDisp=0xA0 storeDisp=0x210 storeDisp=0x98 storeDisp=0x218 storeDisp=0x28 storeDisp=0xA8
+    0x196F802 stc
+    0x196F803 call 0000000140006660
+    0x196F808 jmp short 000000014196F7A2
+    0x196F80A mov rcx,[rsp+30]
+    0x196F80F mov [rsp+0B8],rcx
+    0x196F817 lea rax,[rip+4E4E312]
+    0x196F81E mov [rsp+0A0],rax
+    0x196F826 lea rax,[rip-17C9E1D]
+    0x196F82D mov [rsp+0B0],rax
+    0x196F835 mov qword ptr [rsp+0A8],0
+    0x196F841 lea rax,[rip-17C9E48]
+    0x196F848 mov [rsp+98],rax
+    0x196F850 mov rax,[rsp+0B8]
+    0x196F858 mov [rcx+1F8],rax
+    0x196F85F mov rax,[rsp+0B0]
+    0x196F867 mov [rcx+200],rax
+    0x196F86E mov rax,[rsp+0A8]
+    0x196F876 mov [rcx+208],rax
+    0x196F87D mov rax,[rsp+0A0]
+    0x196F885 mov [rcx+210],rax
+    0x196F88C mov rax,[rsp+98]
+    0x196F894 mov [rcx+218],rax
+    0x196F89B mov rdx,[rsp+28]
+    0x196F8A0 mov rax,[rdx+0A8]
+lodThunk lea @0x1A2C8AE func≈0x1A2BDC0 
+    0x1A2C86E xor eax,2E90954
+lodThunk lea @0x1A2C8AF func≈0x1A2BDC0 
+    0x1A2C86F xor eax,2E90954
+lodThunk lea @0x1A584B1 func≈0x1A57DD0  storeDisp=0x80 storeDisp=0x0 storeDisp=0x18 storeDisp=0x8 storeDisp=0x10 storeDisp=0x20 storeDisp=0x108 storeDisp=0x58 storeDisp=0x0 storeDisp=0x1C68
+    0x1A58471 xchg r10,rax
+    0x1A58473 dec dword ptr [rcx+r9*4+7C]
+    0x1A58478 and al,70
+    0x1A5847A mov eax,[rsp+80]
+    0x1A58481 bt eax,0E
+    0x1A58485 jb near ptr 0000000141A58510
+    0x1A5848B lea rdx,[rsp+70]
+    0x1A58490 mov [rdx],rsi
+    0x1A58493 lea rax,[rip+4D65696]
+    0x1A5849A mov [rdx+18],rax
+    0x1A5849E lea rax,[rip-18B29B5]
+    0x1A584A5 mov [rdx+8],rax
+    0x1A584A9 mov qword ptr [rdx+10],0
+    0x1A584B1 lea rax,[rip-18B2AB8]
+    0x1A584B8 mov [rdx+20],rax
+    0x1A584BC mov rcx,rbx
+    0x1A584BF call 0000000141458410
+    0x1A584C4 mov rcx,[rsp+108]
+    0x1A584CC xor rcx,rsp
+    0x1A584CF call 0000000145014570
+    0x1A584D4 vmovaps xmm6,[rsp+110]
+    0x1A584DD add rsp,128
+    0x1A584E4 pop rbx
+    0x1A584E5 pop rbp
+    0x1A584E6 pop rdi
+    0x1A584E7 pop rsi
+    0x1A584E8 pop r12
+    0x1A584EA pop r13
+    0x1A584EC pop r14
+    0x1A584EE pop r15
+    0x1A584F0 ret
+    0x1A584F1 mov eax,[rip+91336C9]
+    0x1A584F7 mov rcx,gs:[58]
+    0x1A58500 mov rax,[rcx+rax*8]
+    0x1A58504 mov r14,[rax+1C68]
+    0x1A5850B jmp near ptr 0000000141A585C3
+lodThunk lea @0x1A584B2 func≈0x1A57DD0  storeDisp=0x80 storeDisp=0x0 storeDisp=0x18 storeDisp=0x8 storeDisp=0x10 storeDisp=0x20 storeDisp=0x108 storeDisp=0x58 storeDisp=0x0 storeDisp=0x1C68
+    0x1A58472 xchg edx,eax
+    0x1A58473 dec dword ptr [rcx+r9*4+7C]
+    0x1A58478 and al,70
+    0x1A5847A mov eax,[rsp+80]
+    0x1A58481 bt eax,0E
+    0x1A58485 jb near ptr 0000000141A58510
+    0x1A5848B lea rdx,[rsp+70]
+    0x1A58490 mov [rdx],rsi
+    0x1A58493 lea rax,[rip+4D65696]
+    0x1A5849A mov [rdx+18],rax
+    0x1A5849E lea rax,[rip-18B29B5]
+    0x1A584A5 mov [rdx+8],rax
+    0x1A584A9 mov qword ptr [rdx+10],0
+    0x1A584B1 lea rax,[rip-18B2AB8]
+    0x1A584B8 mov [rdx+20],rax
+    0x1A584BC mov rcx,rbx
+    0x1A584BF call 0000000141458410
+    0x1A584C4 mov rcx,[rsp+108]
+    0x1A584CC xor rcx,rsp
+    0x1A584CF call 0000000145014570
+    0x1A584D4 vmovaps xmm6,[rsp+110]
+    0x1A584DD add rsp,128
+    0x1A584E4 pop rbx
+    0x1A584E5 pop rbp
+    0x1A584E6 pop rdi
+    0x1A584E7 pop rsi
+    0x1A584E8 pop r12
+    0x1A584EA pop r13
+    0x1A584EC pop r14
+    0x1A584EE pop r15
+    0x1A584F0 ret
+    0x1A584F1 mov eax,[rip+91336C9]
+    0x1A584F7 mov rcx,gs:[58]
+    0x1A58500 mov rax,[rcx+rax*8]
+    0x1A58504 mov r14,[rax+1C68]
+    0x1A5850B jmp near ptr 0000000141A585C3
+lodThunk lea @0x1C3C077 func≈0x1C3BEA0  storeDisp=0x0 storeDisp=0x40 storeDisp=0x28 storeDisp=0x38 storeDisp=0x30 storeDisp=0x20 storeDisp=0x40 storeDisp=0x20 storeDisp=0x38 storeDisp=0x28 storeDisp=0x30 storeDisp=0x30 storeDisp=0x28 storeDisp=0x38 storeDisp=0x20 storeDisp=0x40 storeDisp=0x48 storeDisp=0x58 storeDisp=0x0 storeDisp=0x1C60
+    0x1C3C037 cmp [r11+4E],r10d
+    0x1C3C03B ja short 0000000141C3C01B
+    0x1C3C03D jmp short 0000000141C3C042
+    0x1C3C03F mov rax,r8
+    0x1C3C042 mov rbx,[rax]
+    0x1C3C045 lea rcx,[rbx+0C0]
+    0x1C3C04C call 00000001405FF9C0
+    0x1C3C051 mov [rsp+40],rbx
+    0x1C3C056 lea r15,[rip+4B81AD3]
+    0x1C3C05D mov [rsp+28],r15
+    0x1C3C062 lea r12,[rip-8228A9]
+    0x1C3C069 mov [rsp+38],r12
+    0x1C3C06E mov qword ptr [rsp+30],0
+    0x1C3C077 lea r13,[rip-1A9667E]
+    0x1C3C07E mov [rsp+20],r13
+    0x1C3C083 mov rax,[rsp+40]
+    0x1C3C088 mov [rdi+20],rax
+    0x1C3C08C mov rax,[rsp+38]
+    0x1C3C091 mov [rdi+28],rax
+    0x1C3C095 mov rax,[rsp+30]
+    0x1C3C09A mov [rdi+30],rax
+    0x1C3C09E mov rax,[rsp+28]
+    0x1C3C0A3 mov [rdi+38],rax
+    0x1C3C0A7 mov rax,[rsp+20]
+    0x1C3C0AC mov [rdi+40],rax
+    0x1C3C0B0 mov byte ptr [rdi+48],1
+    0x1C3C0B4 mov rax,[rip+9333C8D]
+    0x1C3C0BB cmp byte ptr [rax+2A],0
+    0x1C3C0BF jne short 0000000141C3C0EE
+    0x1C3C0C1 mov ecx,[rip+8F4FAF9]
+    0x1C3C0C7 mov rdx,gs:[58]
+    0x1C3C0D0 mov rcx,[rdx+rcx*8]
+    0x1C3C0D4 mov rbx,[rcx+1C60]
+lodThunk lea @0x1C3C078 func≈0x1C3BEA0  storeDisp=0x0 storeDisp=0x40 storeDisp=0x28 storeDisp=0x38 storeDisp=0x30 storeDisp=0x20 storeDisp=0x40 storeDisp=0x20 storeDisp=0x38 storeDisp=0x28 storeDisp=0x30 storeDisp=0x30 storeDisp=0x28 storeDisp=0x38 storeDisp=0x20 storeDisp=0x40 storeDisp=0x48 storeDisp=0x58 storeDisp=0x0 storeDisp=0x1C60
+    0x1C3C038 cmp [rbx+4E],edx
+    0x1C3C03B ja short 0000000141C3C01B
+    0x1C3C03D jmp short 0000000141C3C042
+    0x1C3C03F mov rax,r8
+    0x1C3C042 mov rbx,[rax]
+    0x1C3C045 lea rcx,[rbx+0C0]
+    0x1C3C04C call 00000001405FF9C0
+    0x1C3C051 mov [rsp+40],rbx
+    0x1C3C056 lea r15,[rip+4B81AD3]
+    0x1C3C05D mov [rsp+28],r15
+    0x1C3C062 lea r12,[rip-8228A9]
+    0x1C3C069 mov [rsp+38],r12
+    0x1C3C06E mov qword ptr [rsp+30],0
+    0x1C3C077 lea r13,[rip-1A9667E]
+    0x1C3C07E mov [rsp+20],r13
+    0x1C3C083 mov rax,[rsp+40]
+    0x1C3C088 mov [rdi+20],rax
+    0x1C3C08C mov rax,[rsp+38]
+    0x1C3C091 mov [rdi+28],rax
+    0x1C3C095 mov rax,[rsp+30]
+    0x1C3C09A mov [rdi+30],rax
+    0x1C3C09E mov rax,[rsp+28]
+    0x1C3C0A3 mov [rdi+38],rax
+    0x1C3C0A7 mov rax,[rsp+20]
+    0x1C3C0AC mov [rdi+40],rax
+    0x1C3C0B0 mov byte ptr [rdi+48],1
+    0x1C3C0B4 mov rax,[rip+9333C8D]
+    0x1C3C0BB cmp byte ptr [rax+2A],0
+    0x1C3C0BF jne short 0000000141C3C0EE
+    0x1C3C0C1 mov ecx,[rip+8F4FAF9]
+    0x1C3C0C7 mov rdx,gs:[58]
+    0x1C3C0D0 mov rcx,[rdx+rcx*8]
+    0x1C3C0D4 mov rbx,[rcx+1C60]
+lodThunk lea @0x1CCA639 func≈0x1CCA1B0  storeDisp=0x10 storeDisp=0x20 storeDisp=0x20 storeDisp=0x1E0 storeDisp=0x0 storeDisp=0x18 storeDisp=0x8 storeDisp=0x10 storeDisp=0x20 storeDisp=0x1E0 storeDisp=0x0 storeDisp=0x18 storeDisp=0x8 storeDisp=0x10 storeDisp=0x20 storeDisp=0x158 storeDisp=0x58 storeDisp=0x0
+    0x1CCA5F9 mov [rdx+10],r14
+    0x1CCA5FD lea r9,[rip-1B23A44]
+    0x1CCA604 mov [rdx+20],r9
+    0x1CCA608 mov [rsp+20],rax
+    0x1CCA60D mov r9,rdi
+    0x1CCA610 call 0000000141C7E2B0
+    0x1CCA615 mov rcx,[rsi+1E0]
+    0x1CCA61C mov [rdi],r15
+    0x1CCA61F lea rax,[rip+4AF350A]
+    0x1CCA626 mov [rdi+18],rax
+    0x1CCA62A lea rax,[rip-1B14D81]
+    0x1CCA631 mov [rdi+8],rax
+    0x1CCA635 mov [rdi+10],r14
+    0x1CCA639 lea rax,[rip-1B24C40]
+    0x1CCA640 mov [rdi+20],rax
+    0x1CCA644 lea rdi,[rsp+0A8]
+    0x1CCA64C mov rdx,rdi
+    0x1CCA64F call 0000000143A57D40
+    0x1CCA654 mov rcx,[rsi+1E0]
+    0x1CCA65B mov [rdi],rsi
+    0x1CCA65E mov [rdi+18],rbx
+    0x1CCA662 lea rax,[rip-12F0FB9]
+    0x1CCA669 mov [rdi+8],rax
+    0x1CCA66D mov [rdi+10],r14d
+    0x1CCA671 mov [rdi+20],r13
+    0x1CCA675 lea rdx,[rsp+0A8]
+    0x1CCA67D call 0000000143A57D40
+    0x1CCA682 mov rcx,[rsi+158]
+    0x1CCA689 mov eax,[rip+8EC1531]
+    0x1CCA68F mov rdx,gs:[58]
+    0x1CCA698 mov rdx,[rdx+rax*8]
+lodThunk lea @0x1CCA63A func≈0x1CCA1B0  storeDisp=0x10 storeDisp=0x20 storeDisp=0x20 storeDisp=0x1E0 storeDisp=0x0 storeDisp=0x18 storeDisp=0x8 storeDisp=0x10 storeDisp=0x20 storeDisp=0x1E0 storeDisp=0x0 storeDisp=0x18 storeDisp=0x8 storeDisp=0x10 storeDisp=0x20 storeDisp=0x158 storeDisp=0x58 storeDisp=0x0
+    0x1CCA5FA mov [rdx+10],esi
+    0x1CCA5FD lea r9,[rip-1B23A44]
+    0x1CCA604 mov [rdx+20],r9
+    0x1CCA608 mov [rsp+20],rax
+    0x1CCA60D mov r9,rdi
+    0x1CCA610 call 0000000141C7E2B0
+    0x1CCA615 mov rcx,[rsi+1E0]
+    0x1CCA61C mov [rdi],r15
+    0x1CCA61F lea rax,[rip+4AF350A]
+    0x1CCA626 mov [rdi+18],rax
+    0x1CCA62A lea rax,[rip-1B14D81]
+    0x1CCA631 mov [rdi+8],rax
+    0x1CCA635 mov [rdi+10],r14
+    0x1CCA639 lea rax,[rip-1B24C40]
+    0x1CCA640 mov [rdi+20],rax
+    0x1CCA644 lea rdi,[rsp+0A8]
+    0x1CCA64C mov rdx,rdi
+    0x1CCA64F call 0000000143A57D40
+    0x1CCA654 mov rcx,[rsi+1E0]
+    0x1CCA65B mov [rdi],rsi
+    0x1CCA65E mov [rdi+18],rbx
+    0x1CCA662 lea rax,[rip-12F0FB9]
+    0x1CCA669 mov [rdi+8],rax
+    0x1CCA66D mov [rdi+10],r14d
+    0x1CCA671 mov [rdi+20],r13
+    0x1CCA675 lea rdx,[rsp+0A8]
+    0x1CCA67D call 0000000143A57D40
+    0x1CCA682 mov rcx,[rsi+158]
+    0x1CCA689 mov eax,[rip+8EC1531]
+    0x1CCA68F mov rdx,gs:[58]
+    0x1CCA698 mov rdx,[rdx+rax*8]
+lodThunk lea @0x1CD1584 func≈0x1CD1360  storeDisp=0x0 storeDisp=0x40 storeDisp=0x28 storeDisp=0x38 storeDisp=0x30 storeDisp=0x20 storeDisp=0x40 storeDisp=0x18 storeDisp=0x38 storeDisp=0x20 storeDisp=0x30 storeDisp=0x28 storeDisp=0x28 storeDisp=0x30 storeDisp=0x20 storeDisp=0x38 storeDisp=0x40
+    0x1CD1544 ja short 0000000141CD1525
+    0x1CD1547 jmp short 0000000141CD154C
+    0x1CD1549 mov rax,rdx
+    0x1CD154C mov rdi,[rax]
+    0x1CD154F lea rcx,[rdi+0C0]
+    0x1CD1556 mov rdx,rsi
+    0x1CD1559 call 00000001405FF9C0
+    0x1CD155E mov [rsp+40],rdi
+    0x1CD1563 lea rax,[rip+4AEC5C6]
+    0x1CD156A mov [rsp+28],rax
+    0x1CD156F lea rax,[rip-8B7DB6]
+    0x1CD1576 mov [rsp+38],rax
+    0x1CD157B mov qword ptr [rsp+30],0
+    0x1CD1584 lea rax,[rip-1B2BB8B]
+    0x1CD158B mov [rsp+20],rax
+    0x1CD1590 mov rax,[rsp+40]
+    0x1CD1595 mov [rsi+18],rax
+    0x1CD1599 mov rax,[rsp+38]
+    0x1CD159E mov [rsi+20],rax
+    0x1CD15A2 mov rax,[rsp+30]
+    0x1CD15A7 mov [rsi+28],rax
+    0x1CD15AB mov rax,[rsp+28]
+    0x1CD15B0 mov [rsi+30],rax
+    0x1CD15B4 mov rax,[rsp+20]
+    0x1CD15B9 mov [rsi+38],rax
+    0x1CD15BD mov byte ptr [rsi+40],1
+    0x1CD15C1 add rsp,48
+    0x1CD15C5 pop rdi
+    0x1CD15C6 pop rsi
+    0x1CD15C7 ret
+    0x1CD15C8 int 3
+lodThunk lea @0x1CD1585 func≈0x1CD1360  storeDisp=0x0 storeDisp=0x40 storeDisp=0x28 storeDisp=0x38 storeDisp=0x30 storeDisp=0x20 storeDisp=0x40 storeDisp=0x18 storeDisp=0x38 storeDisp=0x20 storeDisp=0x30 storeDisp=0x28 storeDisp=0x28 storeDisp=0x30 storeDisp=0x20 storeDisp=0x38 storeDisp=0x40
+    0x1CD1545 ja short 0000000141CD1525
+    0x1CD1547 jmp short 0000000141CD154C
+    0x1CD1549 mov rax,rdx
+    0x1CD154C mov rdi,[rax]
+    0x1CD154F lea rcx,[rdi+0C0]
+    0x1CD1556 mov rdx,rsi
+    0x1CD1559 call 00000001405FF9C0
+    0x1CD155E mov [rsp+40],rdi
+    0x1CD1563 lea rax,[rip+4AEC5C6]
+    0x1CD156A mov [rsp+28],rax
+    0x1CD156F lea rax,[rip-8B7DB6]
+    0x1CD1576 mov [rsp+38],rax
+    0x1CD157B mov qword ptr [rsp+30],0
+    0x1CD1584 lea rax,[rip-1B2BB8B]
+    0x1CD158B mov [rsp+20],rax
+    0x1CD1590 mov rax,[rsp+40]
+    0x1CD1595 mov [rsi+18],rax
+    0x1CD1599 mov rax,[rsp+38]
+    0x1CD159E mov [rsi+20],rax
+    0x1CD15A2 mov rax,[rsp+30]
+    0x1CD15A7 mov [rsi+28],rax
+    0x1CD15AB mov rax,[rsp+28]
+    0x1CD15B0 mov [rsi+30],rax
+    0x1CD15B4 mov rax,[rsp+20]
+    0x1CD15B9 mov [rsi+38],rax
+    0x1CD15BD mov byte ptr [rsi+40],1
+    0x1CD15C1 add rsp,48
+    0x1CD15C5 pop rdi
+    0x1CD15C6 pop rsi
+    0x1CD15C7 ret
+    0x1CD15C8 int 3
+lodThunk lea @0x1D4897B func≈0x1D48740  storeDisp=0x0 storeDisp=0x18 storeDisp=0x8 storeDisp=0x10 storeDisp=0x20 storeDisp=0x78 storeDisp=0x60 storeDisp=0x0
+    0x1D4893B mov rcx,[rip+92274D6]
+    0x1D48942 test rcx,rcx
+    0x1D48945 cmovne rax,rcx
+    0x1D48949 jmp near ptr 0000000141D48810
+    0x1D4894E mov rcx,[rip+9A01F7B]
+    0x1D48955 lea rdx,[rsp+38]
+    0x1D4895A mov [rdx],rsi
+    0x1D4895D lea rax,[rip+4A751CC]
+    0x1D48964 mov [rdx+18],rax
+    0x1D48968 lea rax,[rip-1BA2CBF]
+    0x1D4896F mov [rdx+8],rax
+    0x1D48973 mov qword ptr [rdx+10],0
+    0x1D4897B lea rax,[rip-1BA2F82]
+    0x1D48982 mov [rdx+20],rax
+    0x1D48986 mov r8d,1
+    0x1D4898C call 000000014089AFA0
+    0x1D48991 mov [rsi+78],rax
+    0x1D48995 mov [rip+9EF7544],rsi
+    0x1D4899C mov rcx,[rsp+60]
+    0x1D489A1 xor rcx,rsp
+    0x1D489A4 call 0000000145014570
+    0x1D489A9 nop
+    0x1D489AA add rsp,68
+    0x1D489AE pop rbx
+    0x1D489AF pop rbp
+    0x1D489B0 pop rdi
+    0x1D489B1 pop rsi
+    0x1D489B2 pop r12
+    0x1D489B4 pop r13
+    0x1D489B6 pop r14
+    0x1D489B8 pop r15
+    0x1D489BA ret
+    0x1D489BB mov rax,[r14]
+    0x1D489BE mov edx,70
+    0x1D489C3 mov rcx,r14
+    0x1D489C6 mov r8d,8
+lodThunk lea @0x1D4897C func≈0x1D48740  storeDisp=0x0 storeDisp=0x18 storeDisp=0x8 storeDisp=0x10 storeDisp=0x20 storeDisp=0x78 storeDisp=0x60 storeDisp=0x0
+    0x1D4893C mov ecx,[rip+92274D6]
+    0x1D48942 test rcx,rcx
+    0x1D48945 cmovne rax,rcx
+    0x1D48949 jmp near ptr 0000000141D48810
+    0x1D4894E mov rcx,[rip+9A01F7B]
+    0x1D48955 lea rdx,[rsp+38]
+    0x1D4895A mov [rdx],rsi
+    0x1D4895D lea rax,[rip+4A751CC]
+    0x1D48964 mov [rdx+18],rax
+    0x1D48968 lea rax,[rip-1BA2CBF]
+    0x1D4896F mov [rdx+8],rax
+    0x1D48973 mov qword ptr [rdx+10],0
+    0x1D4897B lea rax,[rip-1BA2F82]
+    0x1D48982 mov [rdx+20],rax
+    0x1D48986 mov r8d,1
+    0x1D4898C call 000000014089AFA0
+    0x1D48991 mov [rsi+78],rax
+    0x1D48995 mov [rip+9EF7544],rsi
+    0x1D4899C mov rcx,[rsp+60]
+    0x1D489A1 xor rcx,rsp
+    0x1D489A4 call 0000000145014570
+    0x1D489A9 nop
+    0x1D489AA add rsp,68
+    0x1D489AE pop rbx
+    0x1D489AF pop rbp
+    0x1D489B0 pop rdi
+    0x1D489B1 pop rsi
+    0x1D489B2 pop r12
+    0x1D489B4 pop r13
+    0x1D489B6 pop r14
+    0x1D489B8 pop r15
+    0x1D489BA ret
+    0x1D489BB mov rax,[r14]
+    0x1D489BE mov edx,70
+    0x1D489C3 mov rcx,r14
+    0x1D489C6 mov r8d,8
+lodThunk lea @0x1DC3AD6 func≈0x1DC39C0  storeDisp=0x8 storeDisp=0x10 storeDisp=0x20 storeDisp=0x0 storeDisp=0x18 storeDisp=0x8 storeDisp=0x10 storeDisp=0x20 storeDisp=0x0 storeDisp=0x18 storeDisp=0x8 storeDisp=0x10 storeDisp=0x20 storeDisp=0x0 storeDisp=0x18 storeDisp=0x8 storeDisp=0x10
+    0x1DC3A96 sbb [rax-73],cl
+    0x1DC3A99 adc eax,0FE3E3572
+    0x1DC3A9E mov [r11+8],rdx
+    0x1DC3AA2 mov [r11+10],rdi
+    0x1DC3AA6 lea rdx,[rip-1C1CEED]
+    0x1DC3AAD mov [r11+20],rdx
+    0x1DC3AB1 lea r9,[rsp+88]
+    0x1DC3AB9 mov [r9],rsi
+    0x1DC3ABC lea rdx,[rip+49FA06D]
+    0x1DC3AC3 mov [r9+18],rdx
+    0x1DC3AC7 lea rdx,[rip-1C1D9CE]
+    0x1DC3ACE mov [r9+8],rdx
+    0x1DC3AD2 mov [r9+10],rdi
+    0x1DC3AD6 lea rdx,[rip-1C1E0DD]
+    0x1DC3ADD mov [r9+20],rdx
+    0x1DC3AE1 lea r8,[rsp+60]
+    0x1DC3AE6 mov [r8],rsi
+    0x1DC3AE9 lea rdx,[rip+49FA040]
+    0x1DC3AF0 mov [r8+18],rdx
+    0x1DC3AF4 lea rdx,[rip-1C1DE5B]
+    0x1DC3AFB mov [r8+8],rdx
+    0x1DC3AFF mov [r8+10],rdi
+    0x1DC3B03 lea rdx,[rip-1C1E10A]
+    0x1DC3B0A mov [r8+20],rdx
+    0x1DC3B0E lea rdx,[rsp+38]
+    0x1DC3B13 mov [rdx],rsi
+    0x1DC3B16 lea rbx,[rip+49FA013]
+    0x1DC3B1D mov [rdx+18],rbx
+    0x1DC3B21 lea rbx,[rip-10240D8]
+    0x1DC3B28 mov [rdx+8],rbx
+    0x1DC3B2C mov [rdx+10],rdi
+    0x1DC3B30 lea rbx,[rip-10247C7]
+lodThunk lea @0x1DC3AD7 func≈0x1DC39C0  storeDisp=0x8 storeDisp=0x10 storeDisp=0x20 storeDisp=0x0 storeDisp=0x18 storeDisp=0x8 storeDisp=0x10 storeDisp=0x20 storeDisp=0x0 storeDisp=0x18 storeDisp=0x8 storeDisp=0x10 storeDisp=0x20 storeDisp=0x0 storeDisp=0x18 storeDisp=0x8 storeDisp=0x10
+    0x1DC3A97 lea rdx,[rip-1C1CA8E]
+    0x1DC3A9E mov [r11+8],rdx
+    0x1DC3AA2 mov [r11+10],rdi
+    0x1DC3AA6 lea rdx,[rip-1C1CEED]
+    0x1DC3AAD mov [r11+20],rdx
+    0x1DC3AB1 lea r9,[rsp+88]
+    0x1DC3AB9 mov [r9],rsi
+    0x1DC3ABC lea rdx,[rip+49FA06D]
+    0x1DC3AC3 mov [r9+18],rdx
+    0x1DC3AC7 lea rdx,[rip-1C1D9CE]
+    0x1DC3ACE mov [r9+8],rdx
+    0x1DC3AD2 mov [r9+10],rdi
+    0x1DC3AD6 lea rdx,[rip-1C1E0DD]
+    0x1DC3ADD mov [r9+20],rdx
+    0x1DC3AE1 lea r8,[rsp+60]
+    0x1DC3AE6 mov [r8],rsi
+    0x1DC3AE9 lea rdx,[rip+49FA040]
+    0x1DC3AF0 mov [r8+18],rdx
+    0x1DC3AF4 lea rdx,[rip-1C1DE5B]
+    0x1DC3AFB mov [r8+8],rdx
+    0x1DC3AFF mov [r8+10],rdi
+    0x1DC3B03 lea rdx,[rip-1C1E10A]
+    0x1DC3B0A mov [r8+20],rdx
+    0x1DC3B0E lea rdx,[rsp+38]
+    0x1DC3B13 mov [rdx],rsi
+    0x1DC3B16 lea rbx,[rip+49FA013]
+    0x1DC3B1D mov [rdx+18],rbx
+    0x1DC3B21 lea rbx,[rip-10240D8]
+    0x1DC3B28 mov [rdx+8],rbx
+    0x1DC3B2C mov [rdx+10],rdi
+    0x1DC3B30 lea rbx,[rip-10247C7]
+lodThunk lea @0x1DC3B03 func≈0x1DC39C0  storeDisp=0x18 storeDisp=0x8 storeDisp=0x10 storeDisp=0x20 storeDisp=0x0 storeDisp=0x18 storeDisp=0x8 storeDisp=0x10 storeDisp=0x20 storeDisp=0x0 storeDisp=0x18 storeDisp=0x8 storeDisp=0x10 storeDisp=0x20 storeDisp=0x30 storeDisp=0x28 storeDisp=0x20 storeDisp=0x819F0 storeDisp=0x819F8
+    0x1DC3AC3 mov [r9+18],rdx
+    0x1DC3AC7 lea rdx,[rip-1C1D9CE]
+    0x1DC3ACE mov [r9+8],rdx
+    0x1DC3AD2 mov [r9+10],rdi
+    0x1DC3AD6 lea rdx,[rip-1C1E0DD]
+    0x1DC3ADD mov [r9+20],rdx
+    0x1DC3AE1 lea r8,[rsp+60]
+    0x1DC3AE6 mov [r8],rsi
+    0x1DC3AE9 lea rdx,[rip+49FA040]
+    0x1DC3AF0 mov [r8+18],rdx
+    0x1DC3AF4 lea rdx,[rip-1C1DE5B]
+    0x1DC3AFB mov [r8+8],rdx
+    0x1DC3AFF mov [r8+10],rdi
+    0x1DC3B03 lea rdx,[rip-1C1E10A]
+    0x1DC3B0A mov [r8+20],rdx
+    0x1DC3B0E lea rdx,[rsp+38]
+    0x1DC3B13 mov [rdx],rsi
+    0x1DC3B16 lea rbx,[rip+49FA013]
+    0x1DC3B1D mov [rdx+18],rbx
+    0x1DC3B21 lea rbx,[rip-10240D8]
+    0x1DC3B28 mov [rdx+8],rbx
+    0x1DC3B2C mov [rdx+10],rdi
+    0x1DC3B30 lea rbx,[rip-10247C7]
+    0x1DC3B37 mov [rdx+20],rbx
+    0x1DC3B3B mov [rsp+30],rax
+    0x1DC3B40 mov [rsp+28],r10
+    0x1DC3B45 mov [rsp+20],r11
+    0x1DC3B4A call 00000001471DF030
+    0x1DC3B4F mov [rsi+819F0],edi
+    0x1DC3B55 lea rax,[rip+76AADB4]
+    0x1DC3B5C mov [rsi+819F8],rax
+lodThunk lea @0x1DC3B04 func≈0x1DC39C0  storeDisp=0x18 storeDisp=0x8 storeDisp=0x10 storeDisp=0x20 storeDisp=0x0 storeDisp=0x18 storeDisp=0x8 storeDisp=0x10 storeDisp=0x20 storeDisp=0x0 storeDisp=0x18 storeDisp=0x8 storeDisp=0x10 storeDisp=0x20 storeDisp=0x30 storeDisp=0x28 storeDisp=0x20 storeDisp=0x819F0 storeDisp=0x819F8 storeDisp=0x81A08
+    0x1DC3AC4 mov [rcx+18],edx
+    0x1DC3AC7 lea rdx,[rip-1C1D9CE]
+    0x1DC3ACE mov [r9+8],rdx
+    0x1DC3AD2 mov [r9+10],rdi
+    0x1DC3AD6 lea rdx,[rip-1C1E0DD]
+    0x1DC3ADD mov [r9+20],rdx
+    0x1DC3AE1 lea r8,[rsp+60]
+    0x1DC3AE6 mov [r8],rsi
+    0x1DC3AE9 lea rdx,[rip+49FA040]
+    0x1DC3AF0 mov [r8+18],rdx
+    0x1DC3AF4 lea rdx,[rip-1C1DE5B]
+    0x1DC3AFB mov [r8+8],rdx
+    0x1DC3AFF mov [r8+10],rdi
+    0x1DC3B03 lea rdx,[rip-1C1E10A]
+    0x1DC3B0A mov [r8+20],rdx
+    0x1DC3B0E lea rdx,[rsp+38]
+    0x1DC3B13 mov [rdx],rsi
+    0x1DC3B16 lea rbx,[rip+49FA013]
+    0x1DC3B1D mov [rdx+18],rbx
+    0x1DC3B21 lea rbx,[rip-10240D8]
+    0x1DC3B28 mov [rdx+8],rbx
+    0x1DC3B2C mov [rdx+10],rdi
+    0x1DC3B30 lea rbx,[rip-10247C7]
+    0x1DC3B37 mov [rdx+20],rbx
+    0x1DC3B3B mov [rsp+30],rax
+    0x1DC3B40 mov [rsp+28],r10
+    0x1DC3B45 mov [rsp+20],r11
+    0x1DC3B4A call 00000001471DF030
+    0x1DC3B4F mov [rsi+819F0],edi
+    0x1DC3B55 lea rax,[rip+76AADB4]
+    0x1DC3B5C mov [rsi+819F8],rax
+    0x1DC3B63 mov [rsi+81A08],edi
+lodThunk lea @0x1DC6406 func≈0x1DC6350  storeDisp=0x8 storeDisp=0x10 storeDisp=0x20 storeDisp=0x0 storeDisp=0x18 storeDisp=0x8 storeDisp=0x10 storeDisp=0x20 storeDisp=0x0 storeDisp=0x18 storeDisp=0x8 storeDisp=0x10 storeDisp=0x20 storeDisp=0x0 storeDisp=0x18 storeDisp=0x8 storeDisp=0x10
+    0x1DC63C6 sbb [rax-73],cl
+    0x1DC63C9 adc eax,0FE453902
+    0x1DC63CE mov [rax+8],rdx
+    0x1DC63D2 mov [rax+10],rdi
+    0x1DC63D6 lea rdx,[rip-1C1F81D]
+    0x1DC63DD mov [rax+20],rdx
+    0x1DC63E1 lea r10,[rsp+0D8]
+    0x1DC63E9 mov [r10],rsi
+    0x1DC63EC lea rdx,[rip+49F773D]
+    0x1DC63F3 mov [r10+18],rdx
+    0x1DC63F7 lea rdx,[rip-74FA8E]
+    0x1DC63FE mov [r10+8],rdx
+    0x1DC6402 mov [r10+10],rdi
+    0x1DC6406 lea rdx,[rip-1C20A0D]
+    0x1DC640D mov [r10+20],rdx
+    0x1DC6411 lea r11,[rsp+0B0]
+    0x1DC6419 mov [r11],rsi
+    0x1DC641C lea rdx,[rip+49F770D]
+    0x1DC6423 mov [r11+18],rdx
+    0x1DC6427 lea rdx,[rip-1C18D5E]
+    0x1DC642E mov [r11+8],rdx
+    0x1DC6432 mov [r11+10],rdi
+    0x1DC6436 lea rdx,[rip-1C1F87D]
+    0x1DC643D mov [r11+20],rdx
+    0x1DC6441 lea r9,[rsp+88]
+    0x1DC6449 mov [r9],rsi
+    0x1DC644C lea rdx,[rip+49F76DD]
+    0x1DC6453 mov [r9+18],rdx
+    0x1DC6457 lea rdx,[rip-1C1E8EE]
+    0x1DC645E mov [r9+8],rdx
+    0x1DC6462 mov [r9+10],rdi
+lodThunk lea @0x1DC6407 func≈0x1DC6350  storeDisp=0x8 storeDisp=0x10 storeDisp=0x20 storeDisp=0x0 storeDisp=0x18 storeDisp=0x8 storeDisp=0x10 storeDisp=0x20 storeDisp=0x0 storeDisp=0x18 storeDisp=0x8 storeDisp=0x10 storeDisp=0x20 storeDisp=0x0 storeDisp=0x18 storeDisp=0x8 storeDisp=0x10
+    0x1DC63C7 lea rdx,[rip-1BAC6FE]
+    0x1DC63CE mov [rax+8],rdx
+    0x1DC63D2 mov [rax+10],rdi
+    0x1DC63D6 lea rdx,[rip-1C1F81D]
+    0x1DC63DD mov [rax+20],rdx
+    0x1DC63E1 lea r10,[rsp+0D8]
+    0x1DC63E9 mov [r10],rsi
+    0x1DC63EC lea rdx,[rip+49F773D]
+    0x1DC63F3 mov [r10+18],rdx
+    0x1DC63F7 lea rdx,[rip-74FA8E]
+    0x1DC63FE mov [r10+8],rdx
+    0x1DC6402 mov [r10+10],rdi
+    0x1DC6406 lea rdx,[rip-1C20A0D]
+    0x1DC640D mov [r10+20],rdx
+    0x1DC6411 lea r11,[rsp+0B0]
+    0x1DC6419 mov [r11],rsi
+    0x1DC641C lea rdx,[rip+49F770D]
+    0x1DC6423 mov [r11+18],rdx
+    0x1DC6427 lea rdx,[rip-1C18D5E]
+    0x1DC642E mov [r11+8],rdx
+    0x1DC6432 mov [r11+10],rdi
+    0x1DC6436 lea rdx,[rip-1C1F87D]
+    0x1DC643D mov [r11+20],rdx
+    0x1DC6441 lea r9,[rsp+88]
+    0x1DC6449 mov [r9],rsi
+    0x1DC644C lea rdx,[rip+49F76DD]
+    0x1DC6453 mov [r9+18],rdx
+    0x1DC6457 lea rdx,[rip-1C1E8EE]
+    0x1DC645E mov [r9+8],rdx
+    0x1DC6462 mov [r9+10],rdi
+    0x1DC6466 lea rdx,[rip-1C20A6D]
+lodThunk lea @0x1DC6466 func≈0x1DC6350  storeDisp=0x8 storeDisp=0x10 storeDisp=0x20 storeDisp=0x0 storeDisp=0x18 storeDisp=0x8 storeDisp=0x10 storeDisp=0x20 storeDisp=0x0 storeDisp=0x18 storeDisp=0x8 storeDisp=0x10 storeDisp=0x20 storeDisp=0x0 storeDisp=0x18 storeDisp=0x8 storeDisp=0x10
+    0x1DC6426 sbb [rax-73],cl
+    0x1DC6429 adc eax,0FE3E72A2
+    0x1DC642E mov [r11+8],rdx
+    0x1DC6432 mov [r11+10],rdi
+    0x1DC6436 lea rdx,[rip-1C1F87D]
+    0x1DC643D mov [r11+20],rdx
+    0x1DC6441 lea r9,[rsp+88]
+    0x1DC6449 mov [r9],rsi
+    0x1DC644C lea rdx,[rip+49F76DD]
+    0x1DC6453 mov [r9+18],rdx
+    0x1DC6457 lea rdx,[rip-1C1E8EE]
+    0x1DC645E mov [r9+8],rdx
+    0x1DC6462 mov [r9+10],rdi
+    0x1DC6466 lea rdx,[rip-1C20A6D]
+    0x1DC646D mov [r9+20],rdx
+    0x1DC6471 lea r8,[rsp+60]
+    0x1DC6476 mov [r8],rsi
+    0x1DC6479 lea rdx,[rip+49F76B0]
+    0x1DC6480 mov [r8+18],rdx
+    0x1DC6484 lea rdx,[rip-1C207EB]
+    0x1DC648B mov [r8+8],rdx
+    0x1DC648F mov [r8+10],rdi
+    0x1DC6493 lea rdx,[rip-1C20A9A]
+    0x1DC649A mov [r8+20],rdx
+    0x1DC649E lea rdx,[rsp+38]
+    0x1DC64A3 mov [rdx],rsi
+    0x1DC64A6 lea rbx,[rip+49F7683]
+    0x1DC64AD mov [rdx+18],rbx
+    0x1DC64B1 lea rbx,[rip-1027128]
+    0x1DC64B8 mov [rdx+8],rbx
+    0x1DC64BC mov [rdx+10],rdi
+    0x1DC64C0 lea rbx,[rip-1027157]
+lodThunk lea @0x1DC6467 func≈0x1DC6350  storeDisp=0x8 storeDisp=0x10 storeDisp=0x20 storeDisp=0x0 storeDisp=0x18 storeDisp=0x8 storeDisp=0x10 storeDisp=0x20 storeDisp=0x0 storeDisp=0x18 storeDisp=0x8 storeDisp=0x10 storeDisp=0x20 storeDisp=0x0 storeDisp=0x18 storeDisp=0x8 storeDisp=0x10
+    0x1DC6427 lea rdx,[rip-1C18D5E]
+    0x1DC642E mov [r11+8],rdx
+    0x1DC6432 mov [r11+10],rdi
+    0x1DC6436 lea rdx,[rip-1C1F87D]
+    0x1DC643D mov [r11+20],rdx
+    0x1DC6441 lea r9,[rsp+88]
+    0x1DC6449 mov [r9],rsi
+    0x1DC644C lea rdx,[rip+49F76DD]
+    0x1DC6453 mov [r9+18],rdx
+    0x1DC6457 lea rdx,[rip-1C1E8EE]
+    0x1DC645E mov [r9+8],rdx
+    0x1DC6462 mov [r9+10],rdi
+    0x1DC6466 lea rdx,[rip-1C20A6D]
+    0x1DC646D mov [r9+20],rdx
+    0x1DC6471 lea r8,[rsp+60]
+    0x1DC6476 mov [r8],rsi
+    0x1DC6479 lea rdx,[rip+49F76B0]
+    0x1DC6480 mov [r8+18],rdx
+    0x1DC6484 lea rdx,[rip-1C207EB]
+    0x1DC648B mov [r8+8],rdx
+    0x1DC648F mov [r8+10],rdi
+    0x1DC6493 lea rdx,[rip-1C20A9A]
+    0x1DC649A mov [r8+20],rdx
+    0x1DC649E lea rdx,[rsp+38]
+    0x1DC64A3 mov [rdx],rsi
+    0x1DC64A6 lea rbx,[rip+49F7683]
+    0x1DC64AD mov [rdx+18],rbx
+    0x1DC64B1 lea rbx,[rip-1027128]
+    0x1DC64B8 mov [rdx+8],rbx
+    0x1DC64BC mov [rdx+10],rdi
+    0x1DC64C0 lea rbx,[rip-1027157]
+lodThunk lea @0x1DC6493 func≈0x1DC6350  storeDisp=0x18 storeDisp=0x8 storeDisp=0x10 storeDisp=0x20 storeDisp=0x0 storeDisp=0x18 storeDisp=0x8 storeDisp=0x10 storeDisp=0x20 storeDisp=0x0 storeDisp=0x18 storeDisp=0x8 storeDisp=0x10 storeDisp=0x20 storeDisp=0x30 storeDisp=0x28 storeDisp=0x20 storeDisp=0x819F0 storeDisp=0x819F8
+    0x1DC6453 mov [r9+18],rdx
+    0x1DC6457 lea rdx,[rip-1C1E8EE]
+    0x1DC645E mov [r9+8],rdx
+    0x1DC6462 mov [r9+10],rdi
+    0x1DC6466 lea rdx,[rip-1C20A6D]
+    0x1DC646D mov [r9+20],rdx
+    0x1DC6471 lea r8,[rsp+60]
+    0x1DC6476 mov [r8],rsi
+    0x1DC6479 lea rdx,[rip+49F76B0]
+    0x1DC6480 mov [r8+18],rdx
+    0x1DC6484 lea rdx,[rip-1C207EB]
+    0x1DC648B mov [r8+8],rdx
+    0x1DC648F mov [r8+10],rdi
+    0x1DC6493 lea rdx,[rip-1C20A9A]
+    0x1DC649A mov [r8+20],rdx
+    0x1DC649E lea rdx,[rsp+38]
+    0x1DC64A3 mov [rdx],rsi
+    0x1DC64A6 lea rbx,[rip+49F7683]
+    0x1DC64AD mov [rdx+18],rbx
+    0x1DC64B1 lea rbx,[rip-1027128]
+    0x1DC64B8 mov [rdx+8],rbx
+    0x1DC64BC mov [rdx+10],rdi
+    0x1DC64C0 lea rbx,[rip-1027157]
+    0x1DC64C7 mov [rdx+20],rbx
+    0x1DC64CB mov [rsp+30],rax
+    0x1DC64D0 mov [rsp+28],r10
+    0x1DC64D5 mov [rsp+20],r11
+    0x1DC64DA call 00000001471DF030
+    0x1DC64DF mov [rsi+819F0],edi
+    0x1DC64E5 lea rax,[rip+76A8424]
+    0x1DC64EC mov [rsi+819F8],rax
+lodThunk lea @0x1DC6494 func≈0x1DC6350  storeDisp=0x18 storeDisp=0x8 storeDisp=0x10 storeDisp=0x20 storeDisp=0x0 storeDisp=0x18 storeDisp=0x8 storeDisp=0x10 storeDisp=0x20 storeDisp=0x0 storeDisp=0x18 storeDisp=0x8 storeDisp=0x10 storeDisp=0x20 storeDisp=0x30 storeDisp=0x28 storeDisp=0x20 storeDisp=0x819F0 storeDisp=0x819F8 storeDisp=0x81A08
+    0x1DC6454 mov [rcx+18],edx
+    0x1DC6457 lea rdx,[rip-1C1E8EE]
+    0x1DC645E mov [r9+8],rdx
+    0x1DC6462 mov [r9+10],rdi
+    0x1DC6466 lea rdx,[rip-1C20A6D]
+    0x1DC646D mov [r9+20],rdx
+    0x1DC6471 lea r8,[rsp+60]
+    0x1DC6476 mov [r8],rsi
+    0x1DC6479 lea rdx,[rip+49F76B0]
+    0x1DC6480 mov [r8+18],rdx
+    0x1DC6484 lea rdx,[rip-1C207EB]
+    0x1DC648B mov [r8+8],rdx
+    0x1DC648F mov [r8+10],rdi
+    0x1DC6493 lea rdx,[rip-1C20A9A]
+    0x1DC649A mov [r8+20],rdx
+    0x1DC649E lea rdx,[rsp+38]
+    0x1DC64A3 mov [rdx],rsi
+    0x1DC64A6 lea rbx,[rip+49F7683]
+    0x1DC64AD mov [rdx+18],rbx
+    0x1DC64B1 lea rbx,[rip-1027128]
+    0x1DC64B8 mov [rdx+8],rbx
+    0x1DC64BC mov [rdx+10],rdi
+    0x1DC64C0 lea rbx,[rip-1027157]
+    0x1DC64C7 mov [rdx+20],rbx
+    0x1DC64CB mov [rsp+30],rax
+    0x1DC64D0 mov [rsp+28],r10
+    0x1DC64D5 mov [rsp+20],r11
+    0x1DC64DA call 00000001471DF030
+    0x1DC64DF mov [rsi+819F0],edi
+    0x1DC64E5 lea rax,[rip+76A8424]
+    0x1DC64EC mov [rsi+819F8],rax
+    0x1DC64F3 mov [rsi+81A08],edi
+lodThunk lea @0x1DCBF38 func≈0x1DCBE80  storeDisp=0x8 storeDisp=0x10 storeDisp=0x20 storeDisp=0x0 storeDisp=0x18 storeDisp=0x8 storeDisp=0x10 storeDisp=0x20 storeDisp=0x0 storeDisp=0x18 storeDisp=0x8 storeDisp=0x10 storeDisp=0x20 storeDisp=0x0 storeDisp=0x18 storeDisp=0x8 storeDisp=0x10
+    0x1DCBEF8 sbb [rax-73],cl
+    0x1DCBEFB adc eax,0FE446CA0
+    0x1DCBF00 mov [rax+8],rdx
+    0x1DCBF04 mov [rax+10],rbx
+    0x1DCBF08 lea rdx,[rip-1C2534F]
+    0x1DCBF0F mov [rax+20],rdx
+    0x1DCBF13 lea r10,[rsp+0E8]
+    0x1DCBF1B mov [r10],rsi
+    0x1DCBF1E lea rdx,[rip+49F1C0B]
+    0x1DCBF25 mov [r10+18],rdx
+    0x1DCBF29 lea rdx,[rip-7E96C0]
+    0x1DCBF30 mov [r10+8],rdx
+    0x1DCBF34 mov [r10+10],rbx
+    0x1DCBF38 lea rdx,[rip-1C2653F]
+    0x1DCBF3F mov [r10+20],rdx
+    0x1DCBF43 lea r11,[rsp+0C0]
+    0x1DCBF4B mov [r11],rsi
+    0x1DCBF4E lea rdx,[rip+49F1BDB]
+    0x1DCBF55 mov [r11+18],rdx
+    0x1DCBF59 lea rdx,[rip-1C24A90]
+    0x1DCBF60 mov [r11+8],rdx
+    0x1DCBF64 mov [r11+10],rbx
+    0x1DCBF68 lea rdx,[rip-1C253AF]
+    0x1DCBF6F mov [r11+20],rdx
+    0x1DCBF73 lea r9,[rsp+98]
+    0x1DCBF7B mov [r9],rsi
+    0x1DCBF7E lea rdx,[rip+49F1BAB]
+    0x1DCBF85 mov [r9+18],rdx
+    0x1DCBF89 lea rdx,[rip-1C25C40]
+    0x1DCBF90 mov [r9+8],rdx
+    0x1DCBF94 mov [r9+10],rbx
+lodThunk lea @0x1DCBF39 func≈0x1DCBE80  storeDisp=0x8 storeDisp=0x10 storeDisp=0x20 storeDisp=0x0 storeDisp=0x18 storeDisp=0x8 storeDisp=0x10 storeDisp=0x20 storeDisp=0x0 storeDisp=0x18 storeDisp=0x8 storeDisp=0x10 storeDisp=0x20 storeDisp=0x0 storeDisp=0x18 storeDisp=0x8 storeDisp=0x10
+    0x1DCBEF9 lea rdx,[rip-1BB9360]
+    0x1DCBF00 mov [rax+8],rdx
+    0x1DCBF04 mov [rax+10],rbx
+    0x1DCBF08 lea rdx,[rip-1C2534F]
+    0x1DCBF0F mov [rax+20],rdx
+    0x1DCBF13 lea r10,[rsp+0E8]
+    0x1DCBF1B mov [r10],rsi
+    0x1DCBF1E lea rdx,[rip+49F1C0B]
+    0x1DCBF25 mov [r10+18],rdx
+    0x1DCBF29 lea rdx,[rip-7E96C0]
+    0x1DCBF30 mov [r10+8],rdx
+    0x1DCBF34 mov [r10+10],rbx
+    0x1DCBF38 lea rdx,[rip-1C2653F]
+    0x1DCBF3F mov [r10+20],rdx
+    0x1DCBF43 lea r11,[rsp+0C0]
+    0x1DCBF4B mov [r11],rsi
+    0x1DCBF4E lea rdx,[rip+49F1BDB]
+    0x1DCBF55 mov [r11+18],rdx
+    0x1DCBF59 lea rdx,[rip-1C24A90]
+    0x1DCBF60 mov [r11+8],rdx
+    0x1DCBF64 mov [r11+10],rbx
+    0x1DCBF68 lea rdx,[rip-1C253AF]
+    0x1DCBF6F mov [r11+20],rdx
+    0x1DCBF73 lea r9,[rsp+98]
+    0x1DCBF7B mov [r9],rsi
+    0x1DCBF7E lea rdx,[rip+49F1BAB]
+    0x1DCBF85 mov [r9+18],rdx
+    0x1DCBF89 lea rdx,[rip-1C25C40]
+    0x1DCBF90 mov [r9+8],rdx
+    0x1DCBF94 mov [r9+10],rbx
+    0x1DCBF98 lea rdx,[rip-1C2659F]
+lodThunk lea @0x1DCBF98 func≈0x1DCBE80  storeDisp=0x8 storeDisp=0x10 storeDisp=0x20 storeDisp=0x0 storeDisp=0x18 storeDisp=0x8 storeDisp=0x10 storeDisp=0x20 storeDisp=0x0 storeDisp=0x18 storeDisp=0x8 storeDisp=0x10 storeDisp=0x20 storeDisp=0x0 storeDisp=0x18 storeDisp=0x8 storeDisp=0x10
+    0x1DCBF58 sbb [rax-73],cl
+    0x1DCBF5B adc eax,0FE3DB570
+    0x1DCBF60 mov [r11+8],rdx
+    0x1DCBF64 mov [r11+10],rbx
+    0x1DCBF68 lea rdx,[rip-1C253AF]
+    0x1DCBF6F mov [r11+20],rdx
+    0x1DCBF73 lea r9,[rsp+98]
+    0x1DCBF7B mov [r9],rsi
+    0x1DCBF7E lea rdx,[rip+49F1BAB]
+    0x1DCBF85 mov [r9+18],rdx
+    0x1DCBF89 lea rdx,[rip-1C25C40]
+    0x1DCBF90 mov [r9+8],rdx
+    0x1DCBF94 mov [r9+10],rbx
+    0x1DCBF98 lea rdx,[rip-1C2659F]
+    0x1DCBF9F mov [r9+20],rdx
+    0x1DCBFA3 lea r8,[rsp+70]
+    0x1DCBFA8 mov [r8],rsi
+    0x1DCBFAB lea rdx,[rip+49F1B7E]
+    0x1DCBFB2 mov [r8+18],rdx
+    0x1DCBFB6 lea rdx,[rip-1C2631D]
+    0x1DCBFBD mov [r8+8],rdx
+    0x1DCBFC1 mov [r8+10],rbx
+    0x1DCBFC5 lea rdx,[rip-1C265CC]
+    0x1DCBFCC mov [r8+20],rdx
+    0x1DCBFD0 lea rdx,[rsp+48]
+    0x1DCBFD5 mov [rdx],rsi
+    0x1DCBFD8 lea rdi,[rip+49F1B51]
+    0x1DCBFDF mov [rdx+18],rdi
+    0x1DCBFE3 lea rdi,[rip-102C92A]
+    0x1DCBFEA mov [rdx+8],rdi
+    0x1DCBFEE mov [rdx+10],rbx
+    0x1DCBFF2 lea rdi,[rip-102CC89]
+lodThunk lea @0x1DCBF99 func≈0x1DCBE80  storeDisp=0x8 storeDisp=0x10 storeDisp=0x20 storeDisp=0x0 storeDisp=0x18 storeDisp=0x8 storeDisp=0x10 storeDisp=0x20 storeDisp=0x0 storeDisp=0x18 storeDisp=0x8 storeDisp=0x10 storeDisp=0x20 storeDisp=0x0 storeDisp=0x18 storeDisp=0x8 storeDisp=0x10
+    0x1DCBF59 lea rdx,[rip-1C24A90]
+    0x1DCBF60 mov [r11+8],rdx
+    0x1DCBF64 mov [r11+10],rbx
+    0x1DCBF68 lea rdx,[rip-1C253AF]
+    0x1DCBF6F mov [r11+20],rdx
+    0x1DCBF73 lea r9,[rsp+98]
+    0x1DCBF7B mov [r9],rsi
+    0x1DCBF7E lea rdx,[rip+49F1BAB]
+    0x1DCBF85 mov [r9+18],rdx
+    0x1DCBF89 lea rdx,[rip-1C25C40]
+    0x1DCBF90 mov [r9+8],rdx
+    0x1DCBF94 mov [r9+10],rbx
+    0x1DCBF98 lea rdx,[rip-1C2659F]
+    0x1DCBF9F mov [r9+20],rdx
+    0x1DCBFA3 lea r8,[rsp+70]
+    0x1DCBFA8 mov [r8],rsi
+    0x1DCBFAB lea rdx,[rip+49F1B7E]
+    0x1DCBFB2 mov [r8+18],rdx
+    0x1DCBFB6 lea rdx,[rip-1C2631D]
+    0x1DCBFBD mov [r8+8],rdx
+    0x1DCBFC1 mov [r8+10],rbx
+    0x1DCBFC5 lea rdx,[rip-1C265CC]
+    0x1DCBFCC mov [r8+20],rdx
+    0x1DCBFD0 lea rdx,[rsp+48]
+    0x1DCBFD5 mov [rdx],rsi
+    0x1DCBFD8 lea rdi,[rip+49F1B51]
+    0x1DCBFDF mov [rdx+18],rdi
+    0x1DCBFE3 lea rdi,[rip-102C92A]
+    0x1DCBFEA mov [rdx+8],rdi
+    0x1DCBFEE mov [rdx+10],rbx
+    0x1DCBFF2 lea rdi,[rip-102CC89]
+lodThunk lea @0x1DCBFC5 func≈0x1DCBE80  storeDisp=0x18 storeDisp=0x8 storeDisp=0x10 storeDisp=0x20 storeDisp=0x0 storeDisp=0x18 storeDisp=0x8 storeDisp=0x10 storeDisp=0x20 storeDisp=0x0 storeDisp=0x18 storeDisp=0x8 storeDisp=0x10 storeDisp=0x20 storeDisp=0x30 storeDisp=0x28 storeDisp=0x20 storeDisp=0x819F0 storeDisp=0x819F8
+    0x1DCBF85 mov [r9+18],rdx
+    0x1DCBF89 lea rdx,[rip-1C25C40]
+    0x1DCBF90 mov [r9+8],rdx
+    0x1DCBF94 mov [r9+10],rbx
+    0x1DCBF98 lea rdx,[rip-1C2659F]
+    0x1DCBF9F mov [r9+20],rdx
+    0x1DCBFA3 lea r8,[rsp+70]
+    0x1DCBFA8 mov [r8],rsi
+    0x1DCBFAB lea rdx,[rip+49F1B7E]
+    0x1DCBFB2 mov [r8+18],rdx
+    0x1DCBFB6 lea rdx,[rip-1C2631D]
+    0x1DCBFBD mov [r8+8],rdx
+    0x1DCBFC1 mov [r8+10],rbx
+    0x1DCBFC5 lea rdx,[rip-1C265CC]
+    0x1DCBFCC mov [r8+20],rdx
+    0x1DCBFD0 lea rdx,[rsp+48]
+    0x1DCBFD5 mov [rdx],rsi
+    0x1DCBFD8 lea rdi,[rip+49F1B51]
+    0x1DCBFDF mov [rdx+18],rdi
+    0x1DCBFE3 lea rdi,[rip-102C92A]
+    0x1DCBFEA mov [rdx+8],rdi
+    0x1DCBFEE mov [rdx+10],rbx
+    0x1DCBFF2 lea rdi,[rip-102CC89]
+    0x1DCBFF9 mov [rdx+20],rdi
+    0x1DCBFFD mov [rsp+30],rax
+    0x1DCC002 mov [rsp+28],r10
+    0x1DCC007 mov [rsp+20],r11
+    0x1DCC00C call 00000001471DF030
+    0x1DCC011 mov [rsi+819F0],ebx
+    0x1DCC017 lea rax,[rip+76A28F2]
+    0x1DCC01E mov [rsi+819F8],rax
+lodThunk lea @0x1DCBFC6 func≈0x1DCBE80  storeDisp=0x18 storeDisp=0x8 storeDisp=0x10 storeDisp=0x20 storeDisp=0x0 storeDisp=0x18 storeDisp=0x8 storeDisp=0x10 storeDisp=0x20 storeDisp=0x0 storeDisp=0x18 storeDisp=0x8 storeDisp=0x10 storeDisp=0x20 storeDisp=0x30 storeDisp=0x28 storeDisp=0x20 storeDisp=0x819F0 storeDisp=0x819F8 storeDisp=0x81A08
+    0x1DCBF86 mov [rcx+18],edx
+    0x1DCBF89 lea rdx,[rip-1C25C40]
+    0x1DCBF90 mov [r9+8],rdx
+    0x1DCBF94 mov [r9+10],rbx
+    0x1DCBF98 lea rdx,[rip-1C2659F]
+    0x1DCBF9F mov [r9+20],rdx
+    0x1DCBFA3 lea r8,[rsp+70]
+    0x1DCBFA8 mov [r8],rsi
+    0x1DCBFAB lea rdx,[rip+49F1B7E]
+    0x1DCBFB2 mov [r8+18],rdx
+    0x1DCBFB6 lea rdx,[rip-1C2631D]
+    0x1DCBFBD mov [r8+8],rdx
+    0x1DCBFC1 mov [r8+10],rbx
+    0x1DCBFC5 lea rdx,[rip-1C265CC]
+    0x1DCBFCC mov [r8+20],rdx
+    0x1DCBFD0 lea rdx,[rsp+48]
+    0x1DCBFD5 mov [rdx],rsi
+    0x1DCBFD8 lea rdi,[rip+49F1B51]
+    0x1DCBFDF mov [rdx+18],rdi
+    0x1DCBFE3 lea rdi,[rip-102C92A]
+    0x1DCBFEA mov [rdx+8],rdi
+    0x1DCBFEE mov [rdx+10],rbx
+    0x1DCBFF2 lea rdi,[rip-102CC89]
+    0x1DCBFF9 mov [rdx+20],rdi
+    0x1DCBFFD mov [rsp+30],rax
+    0x1DCC002 mov [rsp+28],r10
+    0x1DCC007 mov [rsp+20],r11
+    0x1DCC00C call 00000001471DF030
+    0x1DCC011 mov [rsi+819F0],ebx
+    0x1DCC017 lea rax,[rip+76A28F2]
+    0x1DCC01E mov [rsi+819F8],rax
+    0x1DCC025 mov [rsi+81A08],ebx
+lodThunk lea @0x1DD5762 func≈0x1DD4CF0  str="UpdateSpray" storeDisp=0x1F8 storeDisp=0x98 storeDisp=0x80 storeDisp=0x90 storeDisp=0x88 storeDisp=0x78 storeDisp=0x98 storeDisp=0x210 storeDisp=0x90 storeDisp=0x218 storeDisp=0x88 storeDisp=0x220 storeDisp=0x80 storeDisp=0x228 storeDisp=0x78 storeDisp=0x230 storeDisp=0x200
+    0x1DD5722 lea rax,[rip+832CE61]
+    0x1DD5729 mov [rsi+1F8],rax
+    0x1DD5730 mov [rsp+98],rsi
+    0x1DD5738 lea rax,[rip+49E83F1]
+    0x1DD573F mov [rsp+80],rax
+    0x1DD5747 lea rax,[rip+27488A2]
+    0x1DD574E mov [rsp+90],rax
+    0x1DD5756 mov qword ptr [rsp+88],0
+    0x1DD5762 lea rax,[rip-1C2FD69]
+    0x1DD5769 mov [rsp+78],rax
+    0x1DD576E mov rax,[rsp+98]
+    0x1DD5776 mov [rsi+210],rax
+    0x1DD577D mov rax,[rsp+90]
+    0x1DD5785 mov [rsi+218],rax
+    0x1DD578C mov rax,[rsp+88]
+    0x1DD5794 mov [rsi+220],rax
+    0x1DD579B mov rax,[rsp+80]
+    0x1DD57A3 mov [rsi+228],rax
+    0x1DD57AA mov rax,[rsp+78]
+    0x1DD57AF mov [rsi+230],rax
+    0x1DD57B6 mov dword ptr [rsi+200],0
+    0x1DD57C0 mov edi,5578
+lodThunk lea @0x1DD5763 func≈0x1DD4CF0  str="UpdateSpray" storeDisp=0x1F8 storeDisp=0x98 storeDisp=0x80 storeDisp=0x90 storeDisp=0x88 storeDisp=0x78 storeDisp=0x98 storeDisp=0x210 storeDisp=0x90 storeDisp=0x218 storeDisp=0x88 storeDisp=0x220 storeDisp=0x80 storeDisp=0x228 storeDisp=0x78 storeDisp=0x230 storeDisp=0x200
+    0x1DD5723 lea eax,[rip+832CE61]
+    0x1DD5729 mov [rsi+1F8],rax
+    0x1DD5730 mov [rsp+98],rsi
+    0x1DD5738 lea rax,[rip+49E83F1]
+    0x1DD573F mov [rsp+80],rax
+    0x1DD5747 lea rax,[rip+27488A2]
+    0x1DD574E mov [rsp+90],rax
+    0x1DD5756 mov qword ptr [rsp+88],0
+    0x1DD5762 lea rax,[rip-1C2FD69]
+    0x1DD5769 mov [rsp+78],rax
+    0x1DD576E mov rax,[rsp+98]
+    0x1DD5776 mov [rsi+210],rax
+    0x1DD577D mov rax,[rsp+90]
+    0x1DD5785 mov [rsi+218],rax
+    0x1DD578C mov rax,[rsp+88]
+    0x1DD5794 mov [rsi+220],rax
+    0x1DD579B mov rax,[rsp+80]
+    0x1DD57A3 mov [rsi+228],rax
+    0x1DD57AA mov rax,[rsp+78]
+    0x1DD57AF mov [rsi+230],rax
+    0x1DD57B6 mov dword ptr [rsi+200],0
+    0x1DD57C0 mov edi,5578
+lodThunk lea @0x1E69874 func≈0x1E67F10  storeDisp=0xDD0 storeDisp=0xDD8 storeDisp=0xD00 storeDisp=0x8 storeDisp=0x60 storeDisp=0x40 storeDisp=0x50 storeDisp=0x48 storeDisp=0x38 storeDisp=0x60 storeDisp=0xFA8 storeDisp=0x50 storeDisp=0xFB0 storeDisp=0x48 storeDisp=0xFB8 storeDisp=0x40 storeDisp=0xFC0 storeDisp=0x38 storeDisp=0xFC8 storeDisp=0xF90 storeDisp=0xF98 storeDisp=0xEC0
+    0x1E69834 lea edx,[rip+82B56D9]
+    0x1E6983A mov [rsi+0DD0],rdx
+    0x1E69841 mov [rsi+0DD8],ecx
+    0x1E69847 mov [rsi+0D00],ax
+    0x1E6984E mov rdx,[rsi+8]
+    0x1E69852 mov [rsp+60],rdx
+    0x1E69857 lea rdx,[rip+49542D2]
+    0x1E6985E mov [rsp+40],rdx
+    0x1E69863 lea rdx,[rip-1CC35CA]
+    0x1E6986A mov [rsp+50],rdx
+    0x1E6986F mov [rsp+48],rax
+    0x1E69874 lea rdx,[rip-1CC3E7B]
+    0x1E6987B mov [rsp+38],rdx
+    0x1E69880 mov rdx,[rsp+60]
+    0x1E69885 mov [rsi+0FA8],rdx
+    0x1E6988C mov rdx,[rsp+50]
+    0x1E69891 mov [rsi+0FB0],rdx
+    0x1E69898 mov rdx,[rsp+48]
+    0x1E6989D mov [rsi+0FB8],rdx
+    0x1E698A4 mov rdx,[rsp+40]
+    0x1E698A9 mov [rsi+0FC0],rdx
+    0x1E698B0 mov rdx,[rsp+38]
+    0x1E698B5 mov [rsi+0FC8],rdx
+    0x1E698BC lea rdx,[rip+82E4F36]
+    0x1E698C3 mov [rsi+0F90],rdx
+    0x1E698CA mov [rsi+0F98],ecx
+    0x1E698D0 mov [rsi+0EC0],ax
+lodThunk lea @0x1E69875 func≈0x1E67F10  storeDisp=0xDD0 storeDisp=0xDD8 storeDisp=0xD00 storeDisp=0x8 storeDisp=0x60 storeDisp=0x40 storeDisp=0x50 storeDisp=0x48 storeDisp=0x38 storeDisp=0x60 storeDisp=0xFA8 storeDisp=0x50 storeDisp=0xFB0 storeDisp=0x48 storeDisp=0xFB8 storeDisp=0x40 storeDisp=0xFC0 storeDisp=0x38 storeDisp=0xFC8 storeDisp=0xF90 storeDisp=0xF98 storeDisp=0xEC0
+    0x1E69835 adc eax,82B56D9
+    0x1E6983A mov [rsi+0DD0],rdx
+    0x1E69841 mov [rsi+0DD8],ecx
+    0x1E69847 mov [rsi+0D00],ax
+    0x1E6984E mov rdx,[rsi+8]
+    0x1E69852 mov [rsp+60],rdx
+    0x1E69857 lea rdx,[rip+49542D2]
+    0x1E6985E mov [rsp+40],rdx
+    0x1E69863 lea rdx,[rip-1CC35CA]
+    0x1E6986A mov [rsp+50],rdx
+    0x1E6986F mov [rsp+48],rax
+    0x1E69874 lea rdx,[rip-1CC3E7B]
+    0x1E6987B mov [rsp+38],rdx
+    0x1E69880 mov rdx,[rsp+60]
+    0x1E69885 mov [rsi+0FA8],rdx
+    0x1E6988C mov rdx,[rsp+50]
+    0x1E69891 mov [rsi+0FB0],rdx
+    0x1E69898 mov rdx,[rsp+48]
+    0x1E6989D mov [rsi+0FB8],rdx
+    0x1E698A4 mov rdx,[rsp+40]
+    0x1E698A9 mov [rsi+0FC0],rdx
+    0x1E698B0 mov rdx,[rsp+38]
+    0x1E698B5 mov [rsi+0FC8],rdx
+    0x1E698BC lea rdx,[rip+82E4F36]
+    0x1E698C3 mov [rsi+0F90],rdx
+    0x1E698CA mov [rsi+0F98],ecx
+    0x1E698D0 mov [rsi+0EC0],ax
+lodThunk lea @0x1E8F504 func≈0x1E8E9B0  storeDisp=0x3B90 storeDisp=0x0 storeDisp=0x0 storeDisp=0x18 storeDisp=0x8 storeDisp=0x10 storeDisp=0x20 storeDisp=0x3B90 storeDisp=0x0
+    0x1E8F4C4 sar bh,0FF
+    0x1E8F4C7 or ecx,ebp
+    0x1E8F4C9 mov [rsi+3B90],ecx
+    0x1E8F4CF mov [r13+r15],rax
+    0x1E8F4D4 mov rax,[rip+98BB39D]
+    0x1E8F4DB lea rdx,[rsp+0B8]
+    0x1E8F4E3 mov [rdx],rax
+    0x1E8F4E6 lea rax,[rip+492E643]
+    0x1E8F4ED mov [rdx+18],rax
+    0x1E8F4F1 lea rax,[rip-1CE99D8]
+    0x1E8F4F8 mov [rdx+8],rax
+    0x1E8F4FC mov qword ptr [rdx+10],0
+    0x1E8F504 lea rax,[rip-1CE9B0B]
+    0x1E8F50B mov [rdx+20],rax
+    0x1E8F50F mov rcx,rdi
+    0x1E8F512 mov r8d,1
+    0x1E8F518 call 000000014089AFA0
+    0x1E8F51D mov ecx,[rsi+3B90]
+    0x1E8F523 mov r8d,ecx
+    0x1E8F526 and r8d,3FFF
+    0x1E8F52D mov edx,ecx
+    0x1E8F52F shr edx,10
+    0x1E8F532 and edx,r14d
+    0x1E8F535 cmp r8d,edx
+    0x1E8F538 jae near ptr 0000000141E8FEE2
+    0x1E8F53E mov r14,[rbx]
+    0x1E8F541 lea r15d,[rcx*8]
+    0x1E8F549 and r15d,1FFF8
+    0x1E8F550 mov edx,ecx
+    0x1E8F552 and edx,3FFF
+    0x1E8F558 lea ebx,[rdx+1]
+    0x1E8F55B cmp edx,3FFF
+    0x1E8F561 je near ptr 0000000141E900C4
+lodThunk lea @0x1E8F505 func≈0x1E8E9B0 
+lodThunk consumerCount=60 uniqueFuncs=22
+
+===== REGISTRAR STORES OF CMP/THUNK (control) =====
+  registrarLea 0x5CBE039 -> 0x67BDB30 *** lodCmp ***
+  registrarLea 0x5CBE045 -> 0x1A5A70 *** lodStub ***
+  registrarLea 0x5CBE059 -> 0x1A5A00 *** lodThunk ***
+  registrarLea 0x5CBE17E -> 0x1A5A00 *** lodThunk ***
+  registrarLea 0x5CBE2A8 -> 0x1A5A00 *** lodThunk ***
+  registrarLea 0x5CBE39A -> 0x67BDB30 *** lodCmp ***
+  registrarLea 0x5CBE72E -> 0x67BDB30 *** lodCmp ***
+  registrarLea 0x5CBE74F -> 0x1A5A00 *** lodThunk ***
+  phaseStr 0x5CBDFF1 "ActorComponent::Begin"
+  phaseStr 0x5CBE007 "ActorComponent::End"
+  phaseStr 0x5CBE01F "UpdateActorLOD"
+  phaseStr 0x5CBE0C7 "CreateActorsDeferredSingleThreaded"
+  phaseStr 0x5CBE156 "GatherActorComponentsForSingleThreadedUpdate"
+  phaseStr 0x5CBE1EC "GatherActorComponentsForMultiThreadedUpdate"
+  phaseStr 0x5CBE302 "UpdateActorControllersSingleThreaded"
+  phaseStr 0x5CBE36B "UpdateActorSingleThreaded"
+  phaseStr 0x5CBE47E "UpdateActorMultiThreaded"
+  phaseStr 0x5CBE541 "UpdateActorMultiThreadedInteractionGroups"
+  phaseStr 0x5CBE69D "ActorAfterAnimMultiThreadedInteraction"
+  phaseStr 0x5CBE6F0 "ActorAfterAnimMultiThreaded"
+  phaseStr 0x5CBE717 "ActorStateManagerUpdate"

@@ -1,0 +1,26 @@
+{
+  "schemaVersion": 1,
+  "milestone": "v0.6.9",
+  "generatedUtc": "2026-11-12T17:20:00Z",
+  "exeSha256": "19920F34BB2FAC814023EE3C27F0CECA1872E80A2AAFB37C092C419FFF77CC0D",
+  "anyCandidateLinksEnqueue": false,
+  "anyCandidateLinksWorker": false,
+  "anyCandidateLinksLookup": false,
+  "anyCandidateLinksDeferred": false,
+  "clothRagdollCandidate": "0x2D4F30",
+  "comparatorE8Callers": 0,
+  "thunkE8Callers": 0,
+  "comparatorConsumerFuncs": 22,
+  "thunkConsumerFuncs": 22,
+  "registrarStores": {
+    "lodCmp": ["0x5CBE039", "0x5CBE39A", "0x5CBE72E"],
+    "lodStub": ["0x5CBE045"],
+    "lodThunk": ["0x5CBE059", "0x5CBE17E", "0x5CBE2A8", "0x5CBE74F"]
+  },
+  "candidateSizes": {
+    "0x519E20": 8028,
+    "0x2D4F30": 5992,
+    "0x1D9CC0": 5820
+  },
+  "edwardOrPlayerTypeConfirmed": false
+}

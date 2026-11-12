@@ -1,14 +1,14 @@
 {
   "schemaVersion": 1,
-  "generatedUtc": "2026-11-12T17:10:00Z",
+  "generatedUtc": "2026-11-12T17:25:00Z",
   "handoffFor": "ChatGPT",
   "executor": "Cursor",
   "machine": "PC1",
   "repository": {
     "url": "https://github.com/zzyrrup/BlackFlagCoop",
     "defaultBranch": "main",
-    "featureBranch": "cursor/v068-subject-ctor-lod-8285",
-    "baseBranch": "cursor/v067-wrapper-dispatch-rtti-8285",
+    "featureBranch": "cursor/v069-ctor-deep-lod-consumers-8285",
+    "baseBranch": "cursor/v068-subject-ctor-lod-8285",
     "doNotPushMain": true,
     "initialCommit": "e12e70150656ac80742f10b496f7e5556e7985b7"
   },
@@ -18,10 +18,10 @@
     "functionalityChangedByThisMilestone": false
   },
   "milestone": {
-    "currentId": "v0.6.8",
-    "currentTitle": "Subject constructor fingerprint and LOD sibling decode",
+    "currentId": "v0.6.9",
+    "currentTitle": "Ctor deep-decode and LOD comparator/thunk consumers",
     "status": "complete",
-    "priorPreserved": ["v0.6.4", "v0.6.5", "v0.6.6", "v0.6.7"]
+    "priorPreserved": ["v0.6.4", "v0.6.5", "v0.6.6", "v0.6.7", "v0.6.8"]
   },
   "asi": {
     "version": "0.5.1",
@@ -37,7 +37,7 @@
   },
   "build": {
     "asiRebuilt": false,
-    "offlineTools": ["tools/offline/SubjectCtor068"]
+    "offlineTools": ["tools/offline/CtorDeep069"]
   },
   "network": {
     "changesAuthorized": false,
@@ -45,60 +45,59 @@
   },
   "engineFindings": {
     "summary": [
-      "0x67BDB30 is a 32-byte [arg+8] comparator stored at UpdateActorLOD +0xE28",
-      "0x1A5A00 thunk at +0xE30 jumps through [rax+8]",
-      "Fingerprint ctor candidates ranked; no MSVC RTTI for game types (~37 .?AV = CryptoPP/STL only)",
-      "No Edward/create/input path"
+      "0x2D4F30 is ClothRagdollObject — fingerprint false positive",
+      "0x519E20 / 0x2D4F30 / 0x1D9CC0 have no direct edges to enqueue/workers/lookup/deferred",
+      "LOD cmp 0x67BDB30 and thunk 0x1A5A00: 0 E8 callers; LEA-installed into ~22 funcs",
+      "No Edward/create path"
     ],
     "keyRvas": {
-      "phaseRegistrar": "0x5CBDFB0",
-      "updateActorLodPhase": "UpdateActorLOD",
-      "lodStub": "0x1A5A70",
+      "ctorCandidates": ["0x519E20", "0x2D4F30", "0x1D9CC0"],
+      "clothRagdoll": "0x2D4F30",
       "lodComparator": "0x67BDB30",
       "lodThunk": "0x1A5A00",
       "enqueueWrapper": "0x2E97FC0",
-      "enqueueHelper": "0x2E97B60",
-      "deferredHandler": "0x1AC380",
-      "ctorCandidates": ["0x519E20", "0x2D4F30", "0x1D9CC0"]
+      "deferredHandler": "0x1AC380"
     }
   },
   "confirmed": [
     "ASI v0.5.1 preserved; no deploy",
-    "LOD sibling 0x67BDB30 role = [arg+8] comparator (32 bytes)",
-    "No live memory this milestone",
-    "Subject RTTI name not recoverable via MSVC on this EXE"
+    "No candidate→queue helper edges",
+    "0x2D4F30 = ClothRagdollObject",
+    "LOD cmp/thunk widely LEA-installed; not E8-called",
+    "No live memory this milestone"
   ],
   "hypotheses": [
     "Queued subjects are LOD-tracked actor-like objects",
-    "0x519E20 / 0x2D4F30 / 0x1D9CC0 may initialize objects that share +0x61 flag layout"
+    "True subject ctors lie on nested-chain / wrapper backward paths"
   ],
   "blockers": [
     "Subject concrete type unknown",
+    "+0x61-only ranking produces false positives",
     "No input/possession path",
-    "Spawn tests not authorized",
-    "MSVC RTTI stripped for game types"
+    "Spawn tests not authorized"
   ],
   "mostRecentCompletedMilestone": {
-    "id": "v0.6.8",
-    "docs": ["docs/v0.6.8-subject-ctor-lod-sibling.md"],
+    "id": "v0.6.9",
+    "docs": ["docs/v0.6.9-ctor-deep-lod-consumers.md"],
     "reports": [
-      "reports/v0.6.8-lod-sibling-decode.json",
-      "reports/v0.6.8-subject-ctor-candidates.json",
-      "reports/v0.6.8-fingerprint-summary.json",
-      "reports/v0.6.8-second-edward-feasibility.json",
-      "reports/v068-raw/evidence.txt"
+      "reports/v0.6.9-ctor-candidates-deep.json",
+      "reports/v0.6.9-lod-consumers.json",
+      "reports/v0.6.9-deep-summary.json",
+      "reports/v0.6.9-second-edward-feasibility.json",
+      "reports/v069-raw/evidence.txt"
     ]
   },
   "nextRecommendedMilestone": {
-    "id": "v0.6.9",
-    "title": "Deep-decode fingerprint ctor candidates and LOD comparator consumers",
-    "primary": ["0x519E20", "0x2D4F30", "0x1D9CC0", "consumers of 0x67BDB30 / 0x1A5A00"],
-    "forbidden": ["spawn", "deploy", "live memory", "PC2", "save-data", "force-push main"]
+    "id": "v0.6.10",
+    "title": "Backward-trace enqueue/nested-chain to allocators; classify LOD consumers",
+    "primary": ["backward from 0x2E97FC0 / nested-chain", "classify ~22 LOD consumer funcs"],
+    "forbidden": ["spawn", "deploy", "live memory", "PC2", "save-data", "force-push main", "+0x61-only ranking"]
   },
   "tests": [
-    { "name": "SubjectCtor068_build_scan", "result": "pass" },
-    { "name": "lod_sibling_comparator_32b", "result": "pass" },
-    { "name": "subject_msvc_rtti_name", "result": "not_found" },
+    { "name": "CtorDeep069_build_scan", "result": "pass" },
+    { "name": "candidate_queue_edges", "result": "absent" },
+    { "name": "cloth_ragdoll_false_positive", "result": "confirmed" },
+    { "name": "lod_consumer_enumeration", "result": "pass" },
     { "name": "game_launch_deploy", "result": "not_run" },
     { "name": "spawn_live_memory", "result": "not_run" }
   ],
@@ -114,9 +113,9 @@
   },
   "chatgptNextReviewInstructions": [
     "Read docs/CHATGPT_HANDOFF.md and this JSON first",
-    "Review v0.6.8 PR; preserve v0.6.4-v0.6.7 history",
+    "Review v0.6.9 PR; preserve v0.6.4-v0.6.8 history",
     "Separate confirmed vs hypotheses",
-    "Propose v0.6.9 deep-decode of ctor candidates / LOD comparator consumers",
+    "Propose v0.6.10 backward-trace from wrapper/nested-chain",
     "Do not authorize deploy/spawn/live memory/PC2 unless user overrides",
     "Return PC1 branch+PR instructions"
   ]
