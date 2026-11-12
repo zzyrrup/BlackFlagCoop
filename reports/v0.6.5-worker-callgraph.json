@@ -1,0 +1,161 @@
+{
+  "schemaVersion": 1,
+  "generatedUtc": "2026-11-12T16:26:26Z",
+  "milestone": "v0.6.5",
+  "exeSha256": "19920F34BB2FAC814023EE3C27F0CECA1872E80A2AAFB37C092C419FFF77CC0D",
+  "handlerToWorkers": [
+    {
+      "site": "0x1AC4D3",
+      "dest": "0x725400",
+      "rcx": "qword at element+0",
+      "rdx": 1
+    },
+    {
+      "site": "0x1AC4DB",
+      "dest": "0xE95E80",
+      "rcx": "same qword",
+      "rdx": "unchanged from the caller's perspective; reloaded into rcx only"
+    },
+    {
+      "site": "0x1AC51B",
+      "dest": "0x725400",
+      "rcx": "qword at element+0 of a later slot",
+      "rdx": 1
+    },
+    {
+      "site": "0x1AC523",
+      "dest": "0xE95E80",
+      "rcx": "same qword"
+    }
+  ],
+  "callersOf_0x725400": [
+    {
+      "site": "0x1AC4D3",
+      "verifiedInstructionBoundary": true,
+      "section": ".impdata",
+      "dl": 1,
+      "inDeferredHandler": true
+    },
+    {
+      "site": "0x1AC51B",
+      "verifiedInstructionBoundary": true,
+      "section": ".impdata",
+      "dl": 1,
+      "inDeferredHandler": true
+    },
+    {
+      "site": "0x4B5A661",
+      "verifiedInstructionBoundary": true,
+      "section": ".impdata",
+      "setup": "mov rcx, rsi; xor edx, edx",
+      "inDeferredHandler": false
+    },
+    {
+      "site": "0x4D04D7C",
+      "verifiedInstructionBoundary": true,
+      "section": ".impdata",
+      "setup": "mov rcx, rsi; xor edx, edx",
+      "inDeferredHandler": false
+    },
+    {
+      "site": "0x129E51D8",
+      "verifiedInstructionBoundary": true,
+      "section": ".code",
+      "setup": "48 89 F1 31 D2 E8 (mov rcx, rsi; xor edx, edx; call)",
+      "note": "No INT3 pad within 0x4000 bytes. The rel32 still targets 0x725400 and the preceding bytes are a real call setup.",
+      "inDeferredHandler": false
+    }
+  ],
+  "callersOf_0xE95E80": [
+    {
+      "site": "0x1AC4DB",
+      "verifiedInstructionBoundary": true,
+      "inDeferredHandler": true
+    },
+    {
+      "site": "0x1AC523",
+      "verifiedInstructionBoundary": true,
+      "inDeferredHandler": true
+    }
+  ],
+  "addressTaken": {
+    "leaRipTo_0x725400": [],
+    "leaRipTo_0xE95E80": [],
+    "absoluteQwordTo_0x725400": [],
+    "absoluteQwordTo_0xE95E80": []
+  },
+  "meaningfulCallees": [
+    {
+      "rva": "0xD530",
+      "calledFrom": "0x1AC46C",
+      "sizeBytes": 22,
+      "role": "thunk: lea rcx, [0x97B7430]; call 0x421A990. XMM result is the blend mask for the score."
+    },
+    {
+      "rva": "0x53519E0",
+      "calledFrom": ["0x1AC578", "0xE96195", "0xE96398", "0xE96508"],
+      "role": "byte copy. In the handler the arguments are (array base, tail pointer, tail byte length) before the count shrink."
+    },
+    {
+      "rva": "0x426EE50",
+      "calledFrom": "0xE95ECA",
+      "role": "allocator used for the 0x160 side block (size 0x160, second size argument 8)"
+    },
+    {
+      "rva": "0x429F9E0",
+      "calledFrom": ["0x725451", "0x7255EC"],
+      "role": "lookup. rdx points at opaque data 0xB2898C8, which is not a string."
+    },
+    {
+      "rva": "0x725650",
+      "calledFrom": ["0x725482", "0x725495"],
+      "sizeBytes": 1386,
+      "role": "hashed insert/remove helper. Opens with a pointer hash. Strings are allocator and SmallArray overflow text."
+    },
+    {
+      "rva": "0x725DC0",
+      "calledFrom": "0x725621",
+      "role": "used on the dl==0 path, which the handler does not take. Arguments include the object pointer and a zero dword. Body not fully classified."
+    },
+    {
+      "rva": "0x4C9CF60",
+      "calledFrom": "0x725566",
+      "role": "count update after a 0x18-stride list compaction. SmallArray overflow string present."
+    },
+    {
+      "rva": "0x7B02D70",
+      "calledFrom": ["0xE9611C", "0xE9620E"],
+      "sizeBytes": 71,
+      "role": "stores the side pointer, sets a flag bit, tail-jumps through [vtable+0x50]. Not the phase handler 0x7B00B60."
+    },
+    {
+      "rva": "0x44FC200",
+      "calledFrom": "0xE964EF",
+      "role": "grows the pointer array at object+0x40. Nearby 0x44FCD00 is the known allocator validator; this call passes element size 8."
+    },
+    {
+      "rva": "0xB27210",
+      "calledFrom": ["0xE9691D", "0xE969AA"],
+      "role": "updates the header at object+0x68 (lock cmpxchg at +4, dwords at +8 and +0xC). Not the 16-byte queue slot."
+    },
+    {
+      "rva": "0x5014570",
+      "calledFrom": ["0x7254B5", "0xE969BA", "0x1AC5A6"],
+      "role": "security-cookie check on the epilogue, same helper as v0.6.4"
+    },
+    {
+      "rva": "0xE6E0",
+      "calledFrom": "overflow tails in the handler and 0xE95E80",
+      "role": "assert/fail path for the SmallArray capacity string"
+    }
+  ],
+  "virtualCallsOnQueuedObjectOrItsEntries": [
+    "[object vtable+0x230] at 0xE96A19",
+    "[entry vtable+0x20] at 0xE9626C",
+    "[entry vtable+0x68] at 0xE9631A and 0xE9640E",
+    "[entry vtable+0x48] at 0xE965D6",
+    "[entry vtable+0x50] at 0xE96642 and the tail of 0x7B02D70",
+    "[allocator vtable+0x40] size 0x160 fallback at 0xE96ABF",
+    "[allocator vtable+0x18] and [allocator vtable+0x88] on the temporary-buffer release path"
+  ]
+}

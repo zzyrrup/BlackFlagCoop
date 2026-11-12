@@ -1,0 +1,95 @@
+{
+  "schemaVersion": 1,
+  "generatedUtc": "2026-11-12T16:26:26Z",
+  "milestone": "v0.6.5",
+  "exeSha256": "19920F34BB2FAC814023EE3C27F0CECA1872E80A2AAFB37C092C419FFF77CC0D",
+  "imageBase": "0x140000000",
+  "decoder": "Iced 1.21 linear x64. Self-test: instruction at 0x1AC4D3 is call 0x725400 and instruction at 0x1AC4DB is call 0xE95E80.",
+  "handlerBoundaryCorrection": {
+    "entryRva": "0x1AC380",
+    "endRvaExclusive": "0x1AC61F",
+    "sizeBytes": 671,
+    "section": ".impdata",
+    "v064EndRva": "0x1ACA4A",
+    "reason": "v0.6.4 required a four-byte INT3 run. Linear decode reaches a single CC at 0x1AC61F and a new prologue at 0x1AC620 (41 57 41 56 41 55 41 54 56 57 55 53 48 83 EC 58). Both worker calls are inside the tighter range.",
+    "neighborNotAnalyzed": "0x1AC620"
+  },
+  "workerA": {
+    "entryRva": "0x725400",
+    "endRvaExclusive": "0x725649",
+    "sizeBytes": 585,
+    "section": ".impdata",
+    "boundary": "int3",
+    "stackSub": "0x38",
+    "prologue": "41 56 56 57 53 48 83 EC 38 48 89 CE",
+    "role": "shared_object_flag_and_hashed_list_helper",
+    "confidence": "high",
+    "arguments": {
+      "rcx": "object pointer loaded from element+0",
+      "dl": "1 at both handler sites; 0 at the other direct callers"
+    },
+    "confirmedOperations": [
+      "0x72541B mov al, [rcx+0x61]",
+      "bit 2 (0x04): if clear, skip the dl test; if set and dl==0, branch to 0x7255CE (not the queue path)",
+      "0x72542A and al, 0xFB stores the cleared bit 2 when that bit was set",
+      "bit 3 (0x08) gates a search of 0x18-byte records for this pointer, then compaction and call 0x4C9CF60",
+      "0x7254A8 and al, 0xFD clears bit 1 on the fall-through path",
+      "0x725482 and 0x725495 call 0x725650(container, object); 0x725650 opens with a pointer hash"
+    ],
+    "stringsInFunction": [],
+    "classificationNotes": "Not an allocator and not a constructor. Queue path edits flags and can unlink the object from a hashed list."
+  },
+  "workerB": {
+    "entryRva": "0xE95E80",
+    "endRvaExclusive": "0xE96BA4",
+    "sizeBytes": 3364,
+    "section": ".impdata",
+    "boundary": "int3",
+    "stackSub": "0x398",
+    "prologue": "41 57 41 56 41 55 41 54 56 57 55 53 48 81 EC 98 03 00 00 48 89 CE",
+    "role": "queue_only_attach_side_block_and_walk_object_arrays",
+    "confidence": "high",
+    "arguments": {
+      "rcx": "same object pointer, copied to rsi at 0xE95E93"
+    },
+    "confirmedOperations": [
+      "0xE95EBF mov edx, 0x160; mov r8d, 8; call 0x426EE50",
+      "null fallback at 0xE96AB6: virtual [rax+0x40] with edx=0x160, r8d=8",
+      "initializes small-array headers inside the block (0x3FFF counts, 0xFFFFC000 mask, 0x80000000 flag)",
+      "0xE9607C mov [rsi+0x98], rbx",
+      "0xE96083 mov [rbx+0x100], rsi",
+      "0xE9608A mov rax, [rsi+0x18]; 0xE9608E mov [rbx+0xF8], rax",
+      "walks pointer arrays at object+0x28/+0x30, +0x34/+0x3C, and +0x40/+0x48",
+      "0xE9691D call 0xB27210 with rcx = object+0x68"
+    ],
+    "functionPointersInstalled": [
+      {
+        "slot": "block+0x50",
+        "dataRva": "0x919BCB8",
+        "targetRva": "0x7B04200",
+        "kind": "function",
+        "body": "42 bytes. call 0x4B4EB70 on rcx+8, optional call 0x43F8CB0, return the object",
+        "msvcRtti": null
+      },
+      {
+        "slot": "block+0x130",
+        "dataRva": "0x919BC98",
+        "targetRva": "0x2E9FA60",
+        "kind": "function",
+        "body": "mov rax, [rcx+8]; cmp dword ptr [rax], 0; sete al; ret",
+        "msvcRtti": null
+      }
+    ],
+    "stringsInFunction": [
+      "Invalid pointer not allocated by our allocators or already freed: 0x%p",
+      "Too many elements for %sArray. Size: %u, Max Size: %u",
+      "Small"
+    ],
+    "descriptorWordFilter": {
+      "site": "0xE965F2",
+      "wordAtPlus4CComparedWith": { "rva": "0xB2888BC", "value": 65535 },
+      "wordAtPlus4EComparedWith": { "rva": "0xB2888BE", "value": 36084 },
+      "reading": "global limits on a descriptor reached via [vtable+0x30]. Not a queue-element entity id."
+    }
+  }
+}
