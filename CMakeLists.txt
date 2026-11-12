@@ -131,3 +131,26 @@ if(MSVC)
         /EHsc
     )
 endif()
+
+# Offline action/ground-blend planner and snapshot codec.
+# Not linked into BlackFlagCoop.asi. Native action calls stay refused.
+enable_testing()
+add_executable(BlackFlagCoopActionReplicationTest
+    tests/action_replication_test.cpp
+)
+target_include_directories(BlackFlagCoopActionReplicationTest PRIVATE src)
+target_compile_features(BlackFlagCoopActionReplicationTest PRIVATE cxx_std_17)
+if(MSVC)
+    target_compile_options(BlackFlagCoopActionReplicationTest PRIVATE
+        /W4
+        /permissive-
+        /EHsc
+    )
+else()
+    target_compile_options(BlackFlagCoopActionReplicationTest PRIVATE
+        -Wall
+        -Wextra
+        -Wpedantic
+    )
+endif()
+add_test(NAME ActionReplication COMMAND BlackFlagCoopActionReplicationTest)

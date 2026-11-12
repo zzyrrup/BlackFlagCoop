@@ -1,0 +1,134 @@
+{
+  "schemaVersion": 1,
+  "milestone": "v0.8.0",
+  "lane": "action-animation",
+  "generatedUtc": "2026-11-12T20:45:00Z",
+  "branch": "cursor/v080-action-animation-dce1",
+  "worktree": "/workspace",
+  "parentBranch": "cursor/v086-alloc-vt0-8285",
+  "parentCommit": "dae256e",
+  "implementationCommit": "01a65451a3e0bfd2e9e3a90edadf323b1afee149",
+  "exeSha256": "19920F34BB2FAC814023EE3C27F0CECA1872E80A2AAFB37C092C419FFF77CC0D",
+  "ac4coopUpstream": "68355c71eafa0baf913587605e9c330db6166057",
+  "ac4coopContractsCommit": "b570413711ed23857c00b5e4ee4d08ff705c0a0e",
+  "nativeActionApplyAuthorized": false,
+  "asiDeployed": false,
+  "installedAsiSha256": "63B38877DDA7CC7CD9AB2619F94D3941C37F54C95A435EFE47084DC4CF2A50BE",
+  "gameLaunch": false,
+  "ownership": {
+    "docs/v0.8.0-action-animation-map.md": "lane-a",
+    "reports/v0.8.0-action-animation.json": "lane-a",
+    "src/coop/action_replication.h": "lane-a",
+    "tests/action_replication_test.cpp": "lane-a",
+    "CMakeLists.txt": "shared-append-test-target-only"
+  },
+  "notEdited": [
+    "docs/v0.8.0-ac4coop-contracts.md",
+    "docs/v0.8.0-ac4coop-source-map.md",
+    "src/network/protocol.h",
+    "docs/CHATGPT_HANDOFF.md",
+    "PR #29 checkout"
+  ],
+  "snapshot": {
+    "magic": "0x31414642",
+    "magicAscii": "BFA1",
+    "version": 1,
+    "prefixBytes": 64,
+    "upstreamReferenceBlendSlots": 46,
+    "upstreamReferenceBlendSlotsIsResyncedLayout": false,
+    "safetyBlendSlotCap": 64,
+    "wireSafetyMaxTimeScale": 64,
+    "wireSafetyMaxBlendInSeconds": 30,
+    "upstreamAuthorityCooldownFrames": 4,
+    "controllerChannelPolicyDefault": 0,
+    "layerIsOpaque": true
+  },
+  "binaryConfirmed": [
+    {
+      "id": "animated-on-active-notify",
+      "claim": "0x2335040 LEAs AnimatedOnActiveChanged and calls shared notify 0x8CD620. The same function sets [obj+0x26]=1 and calls mode gate 0x479E440.",
+      "stringRva": "0xA179A9F",
+      "leaRva": "0x2335122",
+      "functionRva": "0x2335040",
+      "notifyRva": "0x8CD620",
+      "modeGateRva": "0x479E440",
+      "evidence": [
+        "reports/v079-raw/evidence.txt",
+        "docs/v0.6.19-mode-enroll-size.md",
+        "docs/v0.6.20-activ-heap-size.md"
+      ],
+      "isActionReplicationWriter": false
+    },
+    {
+      "id": "v0618-nearby-string-hypothesis-withdrawn",
+      "claim": "0x479E440 does not reference AnimatedOnActiveChanged. Absolute distance is 0x59DB65F. It compares [obj+0x26] to a mode and walks a SmallArray of stride 0x58.",
+      "evidence": [
+        "docs/v0.6.18-armwrap-installers.md",
+        "docs/v0.6.19-mode-enroll-size.md"
+      ]
+    },
+    {
+      "id": "input-action-vtable",
+      "vtableRva": "0x9255320",
+      "verifiedInputToCharacterConnection": false,
+      "associatedWithCharacterMovement": false,
+      "evidence": "reports/v0.6.4-input-action-consumers.json"
+    },
+    {
+      "id": "character-handler-no-anim-init",
+      "handlerRva": "0x1AC380",
+      "animationOrMovementInit": false,
+      "updateActorSingleThreaded": "0x29C6910 TLS bootstrap only",
+      "evidence": "reports/v0.6.4-character-connections.json"
+    }
+  ],
+  "stringOnly": [
+    {"text": "IKActionSetTransformedSource", "rva": "0x9994F6B"},
+    {"text": "IKActionSetTransformedSourceData", "rva": "0x9994F8B"},
+    {"text": "IKActionTransformData", "rva": "0x9994FB8"},
+    {"text": "IKActionTransformObject", "rva": "0x9994FD8"}
+  ],
+  "rttiArtifact": {
+    "path": "reports/acblackflag-rtti-dotqav.txt",
+    "hits": 37,
+    "coversGameActionOrHumanTypes": false,
+    "note": "Partial CryptoPP/std/winrt dump. Not evidence that ActionComponent is absent."
+  },
+  "resyncedActionComponentCallsite": "not-found-in-published-reports",
+  "resyncedPlayerHumanTick": "not-selected",
+  "matrix": [
+    {"claim": "player-human-tick-affinity", "source": "SC", "binary": "unproven", "hypothesis": "a filtered Human tick exists", "minProof": "player-only once-per-frame callsite"},
+    {"claim": "alias-channel-layer", "source": "SC", "binary": "unproven", "hypothesis": "equivalent target API", "minProof": "callee writes current action from those three arguments"},
+    {"claim": "blend-width-46", "source": "SC-upstream-wire", "binary": "unproven", "hypothesis": "x64 width differs", "minProof": "loop bound at the blend writer"},
+    {"claim": "time-scale-positive", "source": "SC", "binary": "unproven", "hypothesis": "different clock", "minProof": "time-scale store beside the blend writer"},
+    {"claim": "cas-once", "source": "SC", "binary": "unproven", "hypothesis": "set id is not a stable integer", "minProof": "activate call that resets idle when repeated"},
+    {"claim": "hybrid-ground-fsm-owns-blend", "source": "SC", "binary": "unproven", "hypothesis": "different ground enum", "minProof": "locomotion read plus behavior-enable bit"},
+    {"claim": "animated-on-active-is-replication-writer", "source": "no", "binary": "notify-and-active-byte-only", "hypothesis": "active flag event", "minProof": "data flow into a clip id or blend store"},
+    {"claim": "native-apply-safe", "source": "no", "binary": "no", "hypothesis": "no", "minProof": "separate authorization after the callsites above"}
+  ],
+  "tests": {
+    "compiler": "g++ -std=c++17 -Wall -Wextra -Wpedantic -Werror",
+    "command": "g++ -std=c++17 -Wall -Wextra -Wpedantic -Werror -I src tests/action_replication_test.cpp -o /tmp/action_replication_test && /tmp/action_replication_test",
+    "result": "pass",
+    "stdout": "action_replication_test: all checks passed",
+    "clangCompile": "warnings-as-errors compile succeeded; link failed because clang has no libstdc++ on this image",
+    "visualStudio2026": "not-run",
+    "reasonVisualStudioSkipped": "Linux cloud VM has no Visual Studio 18 2026",
+    "ctest": "registered as ActionReplication; not executed via ctest here"
+  },
+  "blockers": [
+    "No Resynced ActionComponent, blend-loop bound, or player Human tick in published reports",
+    "ACBlackFlag.exe is not on this VM, so no new xref pass was run",
+    "Visual Studio 18 2026 x64 Release was not run",
+    "Blend width 46 and controller channel 0 are upstream policy defaults, not recovered x64 layouts"
+  ],
+  "handoffQuestions": [
+    "PR #28: primary layer numeric value intentionally omitted?",
+    "PR #29: any later Human-tick or action-component RVA beside the builder path?",
+    "Network lane: do not add this snapshot to protocol.h until the field list is agreed",
+    "Transform lane: swim action apply stays refused pending swim controller proof",
+    "Lifecycle lane: call PuppetActionMemory::Reset on despawn",
+    "Build lane: CMakeLists.txt appends BlackFlagCoopActionReplicationTest only",
+    "Is a full .?AV RTTI scan already owned?"
+  ]
+}
