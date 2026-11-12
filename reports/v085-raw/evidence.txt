@@ -1,0 +1,455 @@
+===== v0.6.25 VT OWNER CTORS + ENROLLMENT LINK =====
+exeSha256=19920F34BB2FAC814023EE3C27F0CECA1872E80A2AAFB37C092C419FFF77CC0D
+
+===== INSTALLER CALLERS =====
+installer 0x13612B0 E8=0 LEA=0
+installer 0x5563CF0 E8=0 LEA=2
+  LEA @0x5E5B9C5 func=0x5E5AF20
+  LEA @0x5E5B9C6 func=0x5E5AF20
+installer 0x6CF34A0 E8=0 LEA=2
+  LEA @0x5E5BA14 func=0x5E5AF20
+  LEA @0x5E5BA15 func=0x5E5AF20
+installer 0x5563D30 E8=2 LEA=0
+  E8 @0x5563CF8 func=0x5563CF0
+  E8 @0x6CF3758 func=0x6CF3750
+
+===== VT BASE LEA SITES =====
+LEA -> 0x976B2D0 count=4
+  @0x13612BC func=0x13612B0
+  @0x13612BD func=0x13612B0
+  @0x3D522D4 func=0x3D522C0
+  @0x3D522D5 func=0x3D522C0
+LEA -> 0x9236E00 count=6
+  @0x5563CFD func=0x5563CF0
+  @0x5563CFE func=0x5563CF0
+  @0x578149B func=0x5781490
+  @0x578149C func=0x5781490
+  @0x6CF34A8 func=0x6CF34A0
+  @0x6CF34A9 func=0x6CF34A0
+
+===== INSTALLER QWORD EMBEDS =====
+QWORD 0x13612B0 embeds=1
+  slot @0x976B2D0 sec=.edata
+QWORD 0x5563CF0 embeds=0
+QWORD 0x6CF34A0 embeds=0
+QWORD 0x5563D30 embeds=0
+
+===== DEEP INSTALLERS =====
+--- neigh-inst 0x13612B0..0x1361330 ---
+0x13612B0 push rsi
+0x13612B1 push rdi
+0x13612B2 push rbx
+0x13612B3 sub rsp,20
+0x13612B7 mov edi,edx
+0x13612B9 mov rsi,rcx
+0x13612BC lea rax,[rip+840A00D] *** NEIGH_VT ***
+0x13612C3 mov [rcx],rax
+0x13612C6 lea rbx,[rcx+28]
+0x13612CA mov rcx,rbx
+0x13612CD call 0000000141361320
+0x13612D2 mov rcx,rbx
+0x13612D5 call 0000000141361320
+0x13612DA test byte ptr [rsi+31],40
+0x13612DE je short 00000001413612E8
+0x13612E0 mov rdx,[rbx]
+0x13612E3 test rdx,rdx
+0x13612E6 jne short 000000014136130B
+0x13612E8 lea rax,[rip+844CC81]
+0x13612EF mov [rsi],rax
+0x13612F2 test edi,edi
+0x13612F4 jne short 0000000141361301
+0x13612F6 mov rax,rsi
+0x13612F9 add rsp,20
+0x13612FD pop rbx
+0x13612FE pop rdi
+0x13612FF pop rsi
+0x1361300 ret
+0x1361301 mov rcx,rsi
+0x1361304 call 00000001443F8CB0
+0x1361309 jmp short 00000001413612F6
+0x136130B mov rcx,rbx
+0x136130E call 00000001445B64D0
+0x1361313 jmp short 00000001413612E8
+0x1361315 int 3
+0x1361316 int 3
+0x1361317 int 3
+0x1361318 int 3
+0x1361319 int 3
+0x136131A int 3
+0x136131B int 3
+0x136131C int 3
+0x136131D int 3
+0x136131E int 3
+0x136131F int 3
+0x1361320 push r15
+0x1361322 push r14
+0x1361324 push r13
+0x1361326 push r12
+0x1361328 push rsi
+0x1361329 push rdi
+0x136132A push rbp
+0x136132B push rbx
+0x136132C sub rsp,38
+--- spat-inst-A 0x5563CF0..0x5563D30 ---
+0x5563CF0 push rsi
+0x5563CF1 sub rsp,20
+0x5563CF5 mov rsi,rcx
+0x5563CF8 call 0000000145563D30 *** INSTALLER ***
+0x5563CFD lea rax,[rip+3CD30FC] *** SPAT_VT ***
+0x5563D04 mov [rsi],rax
+0x5563D07 lea rax,[rip+3CEA6C2]
+0x5563D0E mov [rsi+10],rax
+0x5563D12 add rsi,98
+0x5563D19 mov rcx,rsi
+0x5563D1C add rsp,20
+0x5563D20 pop rsi
+0x5563D21 jmp near ptr 0000000145563DC0
+0x5563D26 int 3
+0x5563D27 int 3
+0x5563D28 int 3
+0x5563D29 int 3
+0x5563D2A int 3
+0x5563D2B int 3
+0x5563D2C int 3
+0x5563D2D int 3
+0x5563D2E int 3
+0x5563D2F int 3
+--- spat-inst-B 0x6CF34A0..0x6CF34E0 ---
+0x6CF34A0 push rsi
+0x6CF34A1 sub rsp,20
+0x6CF34A5 mov rsi,rcx
+0x6CF34A8 lea rax,[rip+2543951] *** SPAT_VT ***
+0x6CF34AF mov [rcx],rax
+0x6CF34B2 lea rax,[rip+255AF17]
+0x6CF34B9 mov [rcx+10],rax
+0x6CF34BD add rcx,98
+0x6CF34C4 call 0000000145781570
+0x6CF34C9 mov rcx,rsi
+0x6CF34CC add rsp,20
+0x6CF34D0 pop rsi
+0x6CF34D1 jmp near ptr 00000001457814E0
+0x6CF34D6 int 3
+0x6CF34D7 int 3
+0x6CF34D8 int 3
+0x6CF34D9 int 3
+0x6CF34DA int 3
+0x6CF34DB int 3
+0x6CF34DC int 3
+0x6CF34DD int 3
+0x6CF34DE int 3
+0x6CF34DF int 3
+--- spat-inst-helper 0x5563D30..0x5563DD0 ---
+0x5563D30 push rsi
+0x5563D31 sub rsp,20
+0x5563D35 mov rsi,rcx
+0x5563D38 call 0000000140D2E190
+0x5563D3D lea rax,[rip+3CD303C]
+0x5563D44 mov [rsi],rax
+0x5563D47 lea rax,[rip+3CEA642]
+0x5563D4E mov [rsi+10],rax
+0x5563D52 lea rax,[rip+3E475A7]
+0x5563D59 mov [rsi+18],rax
+0x5563D5D lea rcx,[rsi+20]
+0x5563D61 call 0000000141691ED0
+0x5563D66 lea rcx,[rsi+40]
+0x5563D6A call 0000000141691ED0
+0x5563D6F lea rax,[rip+5A0FE62]
+0x5563D76 mov [rsi+60],rax
+0x5563D7A mov [rsi+68],rax
+0x5563D7E mov [rsi+70],rax
+0x5563D82 mov [rsi+78],rax
+0x5563D86 mov rax,40A00000DFA2AFF1
+0x5563D90 mov [rsi+80],rax
+0x5563D97 mov dword ptr [rsi+88],1000000
+0x5563DA1 mov word ptr [rsi+8C],1
+0x5563DAA mov qword ptr [rsi+90],0
+0x5563DB5 mov rax,rsi
+0x5563DB8 add rsp,20
+0x5563DBC pop rsi
+0x5563DBD ret
+0x5563DBE int 3
+0x5563DBF int 3
+0x5563DC0 push rsi
+0x5563DC1 sub rsp,20
+0x5563DC5 mov rsi,rcx
+0x5563DC8 lea rax,[rip+3E47581]
+0x5563DCF mov [rcx],rax
+
+===== CONSTRUCTOR / CALLER FUNCS =====
+
+===== FUNC 0x13612B0 (installer) size=101 sec=.impdata =====
+key=False alloc=False lookup=False enq=False wrap=False side98=False arm=False armWrap=False gate=False t98=False t61=False neighVt=True spatVt=False inst=False callees=3
+  NEIGH_VT @0x13612BC
+  callee 0x1361320
+  callee 0x43F8CB0
+  callee 0x45B64D0
+--- head ---
+0x13612B0 push rsi
+0x13612B1 push rdi
+0x13612B2 push rbx
+0x13612B3 sub rsp,20
+0x13612B7 mov edi,edx
+0x13612B9 mov rsi,rcx
+0x13612BC lea rax,[rip+840A00D] *** NEIGH_VT ***
+0x13612C3 mov [rcx],rax
+0x13612C6 lea rbx,[rcx+28]
+0x13612CA mov rcx,rbx
+0x13612CD call 0000000141361320
+0x13612D2 mov rcx,rbx
+0x13612D5 call 0000000141361320
+0x13612DA test byte ptr [rsi+31],40
+0x13612DE je short 00000001413612E8
+0x13612E0 mov rdx,[rbx]
+0x13612E3 test rdx,rdx
+0x13612E6 jne short 000000014136130B
+0x13612E8 lea rax,[rip+844CC81]
+0x13612EF mov [rsi],rax
+0x13612F2 test edi,edi
+0x13612F4 jne short 0000000141361301
+0x13612F6 mov rax,rsi
+0x13612F9 add rsp,20
+0x13612FD pop rbx
+0x13612FE pop rdi
+0x13612FF pop rsi
+0x1361300 ret
+0x1361301 mov rcx,rsi
+0x1361304 call 00000001443F8CB0
+0x1361309 jmp short 00000001413612F6
+0x136130B mov rcx,rbx
+
+===== FUNC 0x3D522C0 (ctor-or-caller) size=130 sec=.impdata =====
+key=False alloc=False lookup=False enq=False wrap=False side98=False arm=False armWrap=False gate=False t98=True t61=False neighVt=True spatVt=False inst=False callees=0
+  NEIGH_VT @0x3D522D4
+--- head ---
+0x3D522C0 mov dword ptr [rcx+8],0
+0x3D522C7 vmovaps ymm0,[rip+5A83471]
+0x3D522CF vmovups [rcx+10],ymm0
+0x3D522D4 lea rax,[rip+5A18FF5] *** NEIGH_VT ***
+0x3D522DB mov [rcx],rax
+0x3D522DE mov eax,80000000
+0x3D522E3 and eax,[rcx+30]
+0x3D522E6 or eax,0C000
+0x3D522EB mov [rcx+30],eax
+0x3D522EE xor eax,eax
+0x3D522F0 mov [rcx+34],al
+0x3D522F3 mov [rcx+0A0],rax
+0x3D522FA mov [rcx+90],rax
+0x3D52301 vmovups ymm0,[rip+72150C7]
+0x3D52309 vmovups [rcx+40],ymm0
+0x3D5230E vmovups ymm0,[rip+72150CA]
+0x3D52316 vmovups [rcx+50],ymm0
+0x3D5231B vmovaps xmm0,[rip+72150DD]
+0x3D52323 vmovaps [rcx+70],xmm0
+0x3D52328 vmovaps xmm0,[rip+72150E0]
+0x3D52330 vmovaps [rcx+80],xmm0
+0x3D52338 mov [rcx+98],al *** +98 ***
+0x3D5233E vzeroupper
+0x3D52341 ret
+
+===== FUNC 0x5563CF0 (installer) size=54 sec=.impdata =====
+key=False alloc=False lookup=False enq=False wrap=False side98=False arm=False armWrap=False gate=False t98=True t61=False neighVt=False spatVt=True inst=True callees=1
+  SPAT_INST 0x5563D30 @0x5563CF8
+  SPAT_VT @0x5563CFD
+  ADD_OR_LEA_98 @0x5563D12 add rsi,98
+  callee 0x5563D30 *** INSTALLER ***
+--- head ---
+0x5563CF0 push rsi
+0x5563CF1 sub rsp,20
+0x5563CF5 mov rsi,rcx
+0x5563CF8 call 0000000145563D30 *** INSTALLER ***
+0x5563CFD lea rax,[rip+3CD30FC] *** SPAT_VT ***
+0x5563D04 mov [rsi],rax
+0x5563D07 lea rax,[rip+3CEA6C2]
+0x5563D0E mov [rsi+10],rax
+0x5563D12 add rsi,98
+0x5563D19 mov rcx,rsi
+0x5563D1C add rsp,20
+0x5563D20 pop rsi
+0x5563D21 jmp near ptr 0000000145563DC0
+
+===== FUNC 0x5781490 (ctor-or-caller) size=76 sec=.impdata =====
+key=False alloc=False lookup=False enq=False wrap=False side98=False arm=False armWrap=False gate=False t98=True t61=False neighVt=False spatVt=True inst=False callees=3
+  SPAT_VT @0x578149B
+  ADD_OR_LEA_98 @0x57814B0 add rcx,98
+  callee 0x5781570
+  callee 0x57814E0
+  callee 0x43F8CB0
+--- head ---
+0x5781490 push rsi
+0x5781491 push rdi
+0x5781492 sub rsp,28
+0x5781496 mov edi,edx
+0x5781498 mov rsi,rcx
+0x578149B lea rax,[rip+3AB595E] *** SPAT_VT ***
+0x57814A2 mov [rcx],rax
+0x57814A5 lea rax,[rip+3ACCF24]
+0x57814AC mov [rcx+10],rax
+0x57814B0 add rcx,98
+0x57814B7 call 0000000145781570
+0x57814BC mov rcx,rsi
+0x57814BF call 00000001457814E0
+0x57814C4 test edi,edi
+0x57814C6 jne short 00000001457814D2
+0x57814C8 mov rax,rsi
+0x57814CB add rsp,28
+0x57814CF pop rdi
+0x57814D0 pop rsi
+0x57814D1 ret
+0x57814D2 mov rcx,rsi
+0x57814D5 call 00000001443F8CB0
+0x57814DA jmp short 00000001457814C8
+
+===== FUNC 0x5E5AF20 (ctor-or-caller) size=6149 sec=.impdata =====
+key=False alloc=False lookup=False enq=False wrap=False side98=False arm=False armWrap=False gate=False t98=False t61=False neighVt=False spatVt=False inst=False callees=6
+  str "AVVWSH"
+  callee 0x928FF0
+  callee 0xD510
+  callee 0xE578F0
+  callee 0x1277060
+  callee 0x1836C60
+  callee 0x4F69784
+--- head ---
+0x5E5AF20 push r15
+0x5E5AF22 push r14
+0x5E5AF24 push r13
+0x5E5AF26 push r12
+0x5E5AF28 push rsi
+0x5E5AF29 push rdi
+0x5E5AF2A push rbp
+0x5E5AF2B push rbx
+0x5E5AF2C sub rsp,88
+0x5E5AF33 vmovaps [rsp+70],xmm7
+0x5E5AF39 vmovaps [rsp+60],xmm6
+0x5E5AF3F mov rax,[rip+44582BA]
+0x5E5AF46 xor rax,rsp
+0x5E5AF49 mov [rsp+58],rax
+0x5E5AF4E mov qword ptr [rip+4E8C877],0FFFFFFFFFFFFFFFF
+0x5E5AF59 lea rcx,[rip+4E8C878]
+0x5E5AF60 lea rdx,[rip+1D1B39]
+0x5E5AF67 call 0000000140928FF0
+0x5E5AF6C lea rax,[rip+4E8CAB5]
+0x5E5AF73 mov [rip+4E8C86E],rax
+0x5E5AF7A lea rax,[rip+4E8C9AF]
+0x5E5AF81 mov [rip+4E8C868],rax
+0x5E5AF88 lea rax,[rip+4E8CC89]
+0x5E5AF8F mov [rip+4E8C862],rax
+0x5E5AF96 lea rax,[rip+4E8CB83]
+0x5E5AF9D mov [rip+4E8C85C],rax
+0x5E5AFA4 lea rax,[rip+4E8CE5D]
+0x5E5AFAB mov [rip+4E8C856],rax
+0x5E5AFB2 lea rax,[rip+4E8CD57]
+0x5E5AFB9 mov [rip+4E8C850],rax
+0x5E5AFC0 lea rax,[rip+4E8D031]
+0x5E5AFC7 mov [rip+4E8C84A],rax
+
+===== FUNC 0x6CF34A0 (installer) size=54 sec=.impdata =====
+key=False alloc=False lookup=False enq=False wrap=False side98=False arm=False armWrap=False gate=False t98=True t61=False neighVt=False spatVt=True inst=False callees=1
+  SPAT_VT @0x6CF34A8
+  ADD_OR_LEA_98 @0x6CF34BD add rcx,98
+  callee 0x5781570
+--- head ---
+0x6CF34A0 push rsi
+0x6CF34A1 sub rsp,20
+0x6CF34A5 mov rsi,rcx
+0x6CF34A8 lea rax,[rip+2543951] *** SPAT_VT ***
+0x6CF34AF mov [rcx],rax
+0x6CF34B2 lea rax,[rip+255AF17]
+0x6CF34B9 mov [rcx+10],rax
+0x6CF34BD add rcx,98
+0x6CF34C4 call 0000000145781570
+0x6CF34C9 mov rcx,rsi
+0x6CF34CC add rsp,20
+0x6CF34D0 pop rsi
+0x6CF34D1 jmp near ptr 00000001457814E0
+
+===== FUNC 0x6CF3750 (ctor-or-caller) size=242 sec=.impdata =====
+key=False alloc=False lookup=False enq=False wrap=False side98=False arm=False armWrap=False gate=False t98=True t61=False neighVt=False spatVt=False inst=True callees=6
+  SPAT_INST 0x5563D30 @0x6CF3758
+  ADD_OR_LEA_98 @0x6CF381B add rdi,98
+  ADD_OR_LEA_98 @0x6CF3825 add rcx,98
+  callee 0x5563D30 *** INSTALLER ***
+  callee 0x1691ED0
+  callee 0x43DCB00
+  callee 0x4CF96B0
+  callee 0x6CF31F0
+  callee 0x42F0690
+--- head ---
+0x6CF3750 push rsi
+0x6CF3751 sub rsp,20
+0x6CF3755 mov rsi,rcx
+0x6CF3758 call 0000000145563D30 *** INSTALLER ***
+0x6CF375D lea rax,[rip+254371C]
+0x6CF3764 mov [rsi],rax
+0x6CF3767 lea rax,[rip+255ACA2]
+0x6CF376E mov [rsi+10],rax
+0x6CF3772 lea rax,[rip+26B7C27]
+0x6CF3779 mov [rsi+98],rax *** +98 ***
+0x6CF3780 lea rcx,[rsi+0A0]
+0x6CF3787 call 0000000141691ED0
+0x6CF378C lea rcx,[rsi+0C0]
+0x6CF3793 call 0000000141691ED0
+0x6CF3798 lea rax,[rip+4280439]
+0x6CF379F mov [rsi+0E0],rax
+0x6CF37A6 mov [rsi+0E8],rax
+0x6CF37AD mov rax,3D4CCCCD3D4CCCCD
+0x6CF37B7 mov [rsi+0F0],rax
+0x6CF37BE mov word ptr [rsi+0F8],0
+0x6CF37C7 mov rax,rsi
+0x6CF37CA add rsp,20
+0x6CF37CE pop rsi
+0x6CF37CF ret
+0x6CF37D0 push rsi
+0x6CF37D1 push rdi
+0x6CF37D2 push rbx
+0x6CF37D3 sub rsp,20
+0x6CF37D7 mov esi,r8d
+0x6CF37DA mov rdi,rcx
+0x6CF37DD lea rcx,[rip+3FF4D24]
+0x6CF37E4 call 00000001443DCB00
+
+===== PRE-INSTALLER CALL WINDOWS =====
+
+===== ENROLLMENT / +0x98 / ARMING RELATION =====
+ctorReps=7 enrollLinked=5
+  LINK 0x3D522C0 role=ctor-or-caller key=False enq=False wrap=False side98=False arm=False wrapArm=False gate=False t98=True t61=False helper=False
+  LINK 0x5563CF0 role=installer key=False enq=False wrap=False side98=False arm=False wrapArm=False gate=False t98=True t61=False helper=False
+  LINK 0x5781490 role=ctor-or-caller key=False enq=False wrap=False side98=False arm=False wrapArm=False gate=False t98=True t61=False helper=False
+  LINK 0x6CF34A0 role=installer key=False enq=False wrap=False side98=False arm=False wrapArm=False gate=False t98=True t61=False helper=False
+  LINK 0x6CF3750 role=ctor-or-caller key=False enq=False wrap=False side98=False arm=False wrapArm=False gate=False t98=True t61=False helper=False
+
+===== ENROLL ANCHOR FUNCS THAT TOUCH OWNER VTS =====
+
+===== +0x98 SIDEBLOCK vs SPATIAL INSTALLERS =====
+E8->SideBlockAlloc(0xE95E80)=2
+sideCallersTouchingOwnerVtOrInst=0
+
+===== ARMING CROSS =====
+  0x21085D0 inCtorCallees=False inEnrollTouchSet=False E8count=0
+  0x2108620 inCtorCallees=False inEnrollTouchSet=False E8count=0
+  0x53F31A0 inCtorCallees=False inEnrollTouchSet=False E8count=0
+
+===== CROSS =====
+haveCtorCallers=True
+spatInstallerTouches98=True
+enrollLinkedCtorReps=5
+enrollFuncsTouchingOwnerVt=0
+neighInstCallers=0
+spatInstACallers=0
+spatInstBCallers=0
+
+===== v0.6.25 SYNTHESIS (deep follow-up) =====
+VT LAYOUT:
+- Neigh VT 0x976B2D0: [0]=ctor 0x13612B0; neighbor method at +0x110 (slot 0x976B3E0)
+- Spat VT 0x9236E00: [0]=ctor 0x5781490; spatial method at +0x58 (slot 0x9236E58)
+
+CONSTRUCTION (who builds objects receiving these VTs):
+- In-place ctors set vptr then init fields; ALL have 0 E8 callers offline
+- Neighbor family: 0x13612B0 (VT[0]), 0x3D522C0 (also LEA 0x976B2D0; clears [rcx+98]; inits +0x40 transform block; published @0xAAD22E0)
+- Spatial family: 0x5781490 (VT[0]; add rcx,98 then side-init), 0x5563CF0 (call helper; LEA spat VT; add rsi,98; jmp init), 0x6CF34A0 (same pattern), 0x6CF3750 (stores into [rsi+98])
+- Construction dispatch: via VT[0] / table publish / TypeInfo icall — no direct E8 Alloc+ctor site found for these installers
+
+ENROLLMENT / +0x98 / ARMING RELATION:
+- CONFIRMED: spatial ctors advance/init object+0x98 (same offset as enrollment side-block from 0xE95E80)
+- CONFIRMED: 0x3D522C0 zeros [rcx+98] on neigh-family objects (field present before side-block attach)
+- Arming 0x21085D0 / wrap 0x2108620 / gate 0x53F31A0: 0 E8 from these ctor bodies (also table-dispatched; no same-func call edge)
+- Hypothesis: once +0x98 side-block attached (0xE95E80 path), arming operates on these same owner objects

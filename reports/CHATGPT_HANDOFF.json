@@ -1,14 +1,14 @@
 {
   "schemaVersion": 1,
-  "generatedUtc": "2026-11-12T19:26:00Z",
+  "generatedUtc": "2026-11-12T19:34:00Z",
   "handoffFor": "ChatGPT",
   "executor": "Cursor",
   "machine": "PC1",
   "repository": {
     "url": "https://github.com/zzyrrup/BlackFlagCoop",
     "defaultBranch": "main",
-    "featureBranch": "cursor/v084-ctor-reverse-8285",
-    "baseBranch": "cursor/v083-factory-feed-8285",
+    "featureBranch": "cursor/v085-vt-owner-ctors-8285",
+    "baseBranch": "cursor/v084-ctor-reverse-8285",
     "doNotPushMain": true,
     "initialCommit": "e12e70150656ac80742f10b496f7e5556e7985b7"
   },
@@ -18,10 +18,10 @@
     "functionalityChangedByThisMilestone": false
   },
   "milestone": {
-    "currentId": "v0.6.24",
-    "currentTitle": "Outer ctor reverse + neighbor/spatial vtable ownership",
+    "currentId": "v0.6.25",
+    "currentTitle": "Owner VT constructors + enrollment +0x98 link",
     "status": "complete",
-    "priorPreserved": ["v0.6.4", "v0.6.5", "v0.6.6", "v0.6.7", "v0.6.8", "v0.6.9", "v0.6.10", "v0.6.11", "v0.6.12", "v0.6.13", "v0.6.14", "v0.6.15", "v0.6.16", "v0.6.17", "v0.6.18", "v0.6.19", "v0.6.20", "v0.6.21", "v0.6.22", "v0.6.23"]
+    "priorPreserved": ["v0.6.4", "v0.6.5", "v0.6.6", "v0.6.7", "v0.6.8", "v0.6.9", "v0.6.10", "v0.6.11", "v0.6.12", "v0.6.13", "v0.6.14", "v0.6.15", "v0.6.16", "v0.6.17", "v0.6.18", "v0.6.19", "v0.6.20", "v0.6.21", "v0.6.22", "v0.6.23", "v0.6.24"]
   },
   "asi": {
     "version": "0.5.1",
@@ -37,7 +37,7 @@
   },
   "build": {
     "asiRebuilt": false,
-    "offlineTools": ["tools/offline/CtorReverse084"]
+    "offlineTools": ["tools/offline/VtOwner085"]
   },
   "network": {
     "changesAuthorized": false,
@@ -45,65 +45,62 @@
   },
   "engineFindings": {
     "summary": [
-      "Outer ctor 0x59D9660 has 0 E8 callers; InstallerA LEA-registers into TypeInfo ctor field only",
-      "InstallerA published at .edata 0xA240B20; no direct E8 callers",
-      "Lookup+Alloc cands 0x1B6AFF0/0x26D28E0/0x2F2C1A0 not on Outer reverse path",
-      "Neighbor/Spatial are .edata vtable methods; owner bases 0x976B2D0 (+0x110) / 0x9236E00 (+0x58)",
-      "Installers 0x13612B0 / 0x5563CF0/0x6CF34A0; spatial inits +0x98",
+      "Neigh VT 0x976B2D0 [0]=ctor 0x13612B0; Neighbor at +0x110",
+      "Spat VT 0x9236E00 [0]=ctor 0x5781490; Spatial at +0x58",
+      "Owner VT[0] ctors have 0 E8 callers (table-dispatched)",
+      "Spatial/neigh ctors init shared +0x98 field (enrollment side-block offset)",
+      "No same-func ctor->arming edge",
       "No Edward/create path"
     ],
     "keyRvas": {
-      "outerCtor": "0x59D9660",
-      "installerA": "0x5F11A40",
-      "installerAEdata": "0xA240B20",
-      "lookupKey": "0xB2898C8",
-      "neighbor": "0x2335140",
-      "neighborEdata": "0x976B3E0",
-      "neighborVtBase": "0x976B2D0",
-      "neighborInstaller": "0x13612B0",
-      "spatial": "0x1D25E20",
-      "spatialEdata": "0x9236E58",
-      "spatialVtBase": "0x9236E00",
-      "spatialInstallers": ["0x5563CF0", "0x6CF34A0"]
+      "neighVt": "0x976B2D0",
+      "neighVt0Ctor": "0x13612B0",
+      "neighRelatedCtor": "0x3D522C0",
+      "spatVt": "0x9236E00",
+      "spatVt0Ctor": "0x5781490",
+      "spatInstA": "0x5563CF0",
+      "spatInstB": "0x6CF34A0",
+      "sideBlockAlloc": "0xE95E80",
+      "arming": "0x21085D0",
+      "armWrap": "0x2108620"
     }
   },
   "confirmed": [
     "ASI v0.5.1 preserved; no deploy",
-    "No direct Outer E8 create site",
-    "Lookup+Alloc cands not on Outer path",
-    "Neighbor/Spatial ownership via vtable installers",
+    "Owner VT[0] ctors identified for both vtables",
+    "Shared +0x98 field init links owners to enrollment side-block layout",
     "No live memory this milestone"
   ],
   "hypotheses": [
-    "Objects with vtables 0x976B2D0/0x9236E00 are enrollment/+0x98 subjects",
-    "Runtime TypeInfo feed into tight factories still possible"
+    "0xE95E80 attaches side-blocks onto these same owner instances before arming",
+    "TypeInfo/factory path invokes VT[0] after Allocator"
   ],
   "blockers": [
-    "Who constructs neighbor/spatial owner objects still open",
+    "Who Allocates then invokes owner VT[0] ctors still open",
+    "Side-block attach + arming on same instances unproven",
     "No input/possession path",
     "Spawn tests not authorized"
   ],
   "mostRecentCompletedMilestone": {
-    "id": "v0.6.24",
-    "docs": ["docs/v0.6.24-ctor-reverse.md"],
+    "id": "v0.6.25",
+    "docs": ["docs/v0.6.25-vt-owner-ctors.md"],
     "reports": [
-      "reports/v0.6.24-funcs-deep.json",
-      "reports/v0.6.24-summary.json",
-      "reports/v0.6.24-second-edward-feasibility.json",
-      "reports/v084-raw/evidence.txt"
+      "reports/v0.6.25-funcs-deep.json",
+      "reports/v0.6.25-summary.json",
+      "reports/v0.6.25-second-edward-feasibility.json",
+      "reports/v085-raw/evidence.txt"
     ]
   },
   "nextRecommendedMilestone": {
-    "id": "v0.6.25",
-    "title": "Deep-decode neighbor/spatial vtable installers; constructors of 0x976B2D0/0x9236E00 objects; +0x98 link",
-    "primary": ["0x13612B0", "0x5563CF0/0x6CF34A0", "vtable object constructors", "+0x98 enrollment"],
-    "forbidden": ["spawn", "deploy", "live memory", "PC2", "save-data", "force-push main", "expect E8 to Outer ctor", "treat helper position extract as possession"]
+    "id": "v0.6.26",
+    "title": "Allocator->owner VT[0] invoke; prove 0xE95E80 + arming on same instances",
+    "primary": ["Alloc then VT[0] ctor", "0xE95E80 on owner objects", "arming on same instances"],
+    "forbidden": ["spawn", "deploy", "live memory", "PC2", "save-data", "force-push main", "expect E8 to Outer/owner VT[0]", "treat helper position extract as possession"]
   },
   "tests": [
-    { "name": "CtorReverse084_build_scan", "result": "pass" },
-    { "name": "outer_ctor_reverse", "result": "pass_installerA_lea_only" },
-    { "name": "lookup_alloc_cand_on_path", "result": "pass_false" },
-    { "name": "vtable_ownership_map", "result": "pass" },
+    { "name": "VtOwner085_build_scan", "result": "pass" },
+    { "name": "vt0_ctor_map", "result": "pass" },
+    { "name": "plus98_enrollment_link", "result": "pass" },
     { "name": "game_launch_deploy", "result": "not_run" },
     { "name": "spawn_live_memory", "result": "not_run" }
   ],
@@ -119,9 +116,9 @@
   },
   "chatgptNextReviewInstructions": [
     "Read docs/CHATGPT_HANDOFF.md and this JSON first",
-    "Review v0.6.24 PR; preserve v0.6.4-v0.6.23 history",
+    "Review v0.6.25 PR; preserve v0.6.4-v0.6.24 history",
     "Separate confirmed vs hypotheses",
-    "Propose v0.6.25 vtable-installer / owner-object constructor follow",
+    "Propose v0.6.26 Alloc->VT[0] and side-block/arming identity proof",
     "Do not authorize deploy/spawn/live memory/PC2 unless user overrides",
     "Return PC1 branch+PR instructions"
   ]
