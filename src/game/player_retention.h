@@ -7,7 +7,7 @@
 namespace bfc {
 
 // Offline Resynced local-player Entity / handle retention leads.
-// Blueprint: Agent 1 docs/v0.8.0-ac4coop-source-map.md + PR #28 answers (reference-only).
+// Blueprint: Agent 1 critical path C1 + PR #28 answers (reference-only).
 // This type never calls the game.
 enum class PlayerRetentionStage {
     Idle = 0,
@@ -19,16 +19,31 @@ enum class PlayerRetentionStage {
     Blocked
 };
 
+// Clean-room C1 acquire result (docs/v0.8.0-ac4coop-contracts.md). Offline only.
+enum class C1AcquireState {
+    Failed = 0,
+    NeedReload,
+    Ready,
+    BlockedUnproven
+};
+
 struct PlayerRetentionLead {
     std::uint32_t rva;
     const char* role;
     const char* evidenceClass;  // binary-confirmed | source-derived | hypothesis
 };
 
+struct C1AcquireResult {
+    C1AcquireState state;
+    bool callEngine;
+    const char* reason;
+};
+
 class PlayerRetention {
 public:
     static constexpr bool kCallEngine = false;
     static constexpr const char* kVersion = "0.8.0-dev";
+    static constexpr const char* kContractId = "C1";
 
     // Confirmed offline. None of these is invoked.
     static constexpr PlayerRetentionLead kLeads[] = {
@@ -42,15 +57,21 @@ public:
         {0x7CA9B70u, "table[2] Process candidate (allocator resolve + virtual dispatch)",
          "binary-confirmed"},
         {0x16FAA0u,
-         "allocator-pointer resolve used by Process (error: Invalid pointer not allocated...)",
+         "allocator-pointer resolve used by Process (NOT ObjectID CreateReference)",
          "binary-confirmed"},
         {0x1214C00u, "ref/list clear helper called before Process virtuals",
          "binary-confirmed"},
         {0x50AB0u,
          "handleDeref shape sample: sign-bit dword@+8 masks object qword@+0",
          "binary-confirmed"},
+        {0x2C65A80u,
+         "FastLoadStreamerDirectStorageMainQueue LEA site (load queue; not proven reload-by-id)",
+         "binary-confirmed"},
         {0xA15C4FFu,
          "string LoadingAdvisorUpdate (phase name; not yet linked to player Entity)",
+         "binary-confirmed"},
+        {0x0u,
+         "CreateReference/HandleManager/AddLoadTask strings absent from Resynced",
          "binary-confirmed"},
         {0x0u,
          "AC4Coop GetPlayer = unresolved thiscall; no in-tree m_Player writer (PR#28 Q1)",
@@ -75,13 +96,23 @@ public:
     };
 
     static constexpr const char* kBlocker =
-        "Selector Process + allocator-pointer resolve + handleDeref-shaped validity checks "
-        "are identified, but the World/local-player Entity retention owner and any "
-        "builder/selector construction cache remain unproven. No engine function is called.";
+        "C1 blocked: no proven builder+selector cache and no proven ObjectID "
+        "CreateReference/reload-by-id. handleDeref shape and PlayerEntitySelector "
+        "Process exist, but construction resources for a second Edward are unproven. "
+        "No engine function is called.";
 
     static const char* StageName(PlayerRetentionStage stage);
+    static const char* AcquireStateName(C1AcquireState state);
     static std::size_t LeadCount();
     static PlayerRetentionStage CurrentStage();
+
+    // Offline C1 acquire evaluator. Never invokes the engine.
+    // readableObject / knownObjectId mirror AC4Coop reloadBuilder inputs.
+    static C1AcquireResult EvaluateAcquire(bool readableBuilderObject,
+                                           bool knownObjectId,
+                                           bool provenReloadPrimitive,
+                                           bool provenBuildTemplate);
+
     static std::string Describe();
     static std::string EvidenceTable();
     static std::string FlowGraph();

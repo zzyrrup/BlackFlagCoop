@@ -41,18 +41,70 @@ const char* PlayerRetention::StageName(PlayerRetentionStage stage) {
     return "Unknown";
 }
 
+const char* PlayerRetention::AcquireStateName(C1AcquireState state) {
+    switch (state) {
+    case C1AcquireState::Failed:
+        return "Failed";
+    case C1AcquireState::NeedReload:
+        return "NeedReload";
+    case C1AcquireState::Ready:
+        return "Ready";
+    case C1AcquireState::BlockedUnproven:
+        return "BlockedUnproven";
+    }
+    return "Unknown";
+}
+
 std::size_t PlayerRetention::LeadCount() {
     return sizeof(kLeads) / sizeof(kLeads[0]);
 }
 
 PlayerRetentionStage PlayerRetention::CurrentStage() {
-    // Offline evidence reached allocator resolve + handleDeref shape, but Entity owner
-    // remains unresolved.
     return PlayerRetentionStage::Blocked;
 }
 
+C1AcquireResult PlayerRetention::EvaluateAcquire(bool readableBuilderObject,
+                                                 bool knownObjectId,
+                                                 bool provenReloadPrimitive,
+                                                 bool provenBuildTemplate) {
+    C1AcquireResult result;
+    result.callEngine = false;
+
+    // Until Resynced proves a build template / reload primitive, stay blocked.
+    if (!provenBuildTemplate) {
+        result.state = C1AcquireState::BlockedUnproven;
+        result.reason =
+            "No proven Edward build template / selector cache on Resynced (C1)";
+        return result;
+    }
+
+    if (readableBuilderObject) {
+        result.state = C1AcquireState::Ready;
+        result.reason = "Builder object readable";
+        return result;
+    }
+
+    if (knownObjectId) {
+        if (!provenReloadPrimitive) {
+            result.state = C1AcquireState::BlockedUnproven;
+            result.reason =
+                "Object id known but CreateReference/reload-by-id not proven";
+            return result;
+        }
+        result.state = C1AcquireState::NeedReload;
+        result.reason = "Builder object released; reload-by-id required";
+        return result;
+    }
+
+    result.state = C1AcquireState::Failed;
+    result.reason = "No readable builder object and no object id";
+    return result;
+}
+
 std::string PlayerRetention::EvidenceTable() {
-    std::string text = "PlayerRetention evidence table\n";
+    std::string text = "PlayerRetention evidence table (contract ";
+    text += kContractId;
+    text += ")\n";
     text += "| RVA | Role | Class |\n";
     text += "|-----|------|-------|\n";
     for (const PlayerRetentionLead& lead : kLeads) {
@@ -73,37 +125,42 @@ std::string PlayerRetention::EvidenceTable() {
 
 std::string PlayerRetention::FlowGraph() {
     return
+        "critical path: C1 (this gate) -> C2 -> C3 -> C5 -> C4 -> C7/C6\n"
         "binary-confirmed call/data flow (offline):\n"
         "  registrar 0x62F12E0\n"
         "    ├─ hash/register \"PlayerEntitySelector::Process\" via 0x1ABC160\n"
         "    └─ store method table 0x919F9D0 into descriptor 0xB33D978\n"
-        "         table[0] 0x69B05F0  shared ctor wrapper -> 0x755F340\n"
-        "         table[1] 0x3016DB0  Alloc(0x30) + vt 0x919F8D0\n"
         "         table[2] 0x7CA9B70  Process candidate\n"
-        "              ├─ 0x16FAA0  allocator-pointer resolve (manager @ 0xAF676D8)\n"
-        "              ├─ 0x1214C00 ref/list clear on selector object\n"
+        "              ├─ 0x16FAA0  allocator-pointer resolve (NOT CreateReference)\n"
+        "              ├─ 0x1214C00 ref/list clear\n"
         "              ├─ virtual [vt+0x18]\n"
         "              └─ jmp virtual [vt+0x88]\n"
-        "  handleDeref shape (many sites; sample 0x50AB0):\n"
-        "    obj = *(qword*)HC; valid = (int32)HC[+8] >> 31; use (obj & valid)\n"
-        "source-derived (Agent 1 PR#28 answers, AC4Coop only):\n"
-        "  GetPlayer = unresolved thiscall; no in-tree m_Player writer\n"
-        "  builder/selector cache fill outside repo\n"
-        "  HandleContainer packed {obj*, soft, hard, objectId}; reload waits m_Object\n"
-        "  Human-update hook esi=Human*; filter GetHuman(GetPlayer())\n"
-        "  net puppet: AddEntity + empty pad; no RegisterPlayer\n"
-        "unresolved:\n"
-        "  which object owns the live local-player Entity*\n"
-        "  whether any builder/selector construction cache survives player spawn\n"
-        "  whether 0x16FAA0 is related to HandleManager::CreateReference(id)\n";
+        "  handleDeref shape (sample 0x50AB0): obj@[+0] masked by signbit@[+8]\n"
+        "C1 negatives (binary-confirmed):\n"
+        "  CreateReference / HandleManager / AddLoadTask strings absent\n"
+        "  B33D978 consumers are typeinfo dtor/getter only (0x7C8DE60 / 0x7C8DE70)\n"
+        "source-derived (Agent 1):\n"
+        "  GetPlayer opaque; cache fill outside repo; HandleContainer fingerprint;\n"
+        "  Human-update esi=Human*; net = AddEntity + empty pad\n"
+        "unresolved C1:\n"
+        "  builder+selector retention owner; ObjectID reload-by-id primitive\n";
 }
 
 std::string PlayerRetention::Describe() {
+    const C1AcquireResult acquire =
+        EvaluateAcquire(false, false, false, false);
+
     std::string text = "PlayerRetention ";
     text += kVersion;
+    text += " contract=";
+    text += kContractId;
     text += kCallEngine ? " callEngine=on" : " callEngine=off";
     text += "\nstage=";
     text += StageName(CurrentStage());
+    text += "\nacquire=";
+    text += AcquireStateName(acquire.state);
+    text += " reason=";
+    text += acquire.reason;
     text += "\n";
     text += kBlocker;
     text += "\n";
@@ -113,11 +170,10 @@ std::string PlayerRetention::Describe() {
 }
 
 void PlayerRetention::LogGate() {
-    Logger::Info(std::string("PlayerRetention ") + kVersion + " callEngine=off");
+    Logger::Info(std::string("PlayerRetention ") + kVersion + " contract=C1 callEngine=off");
     Logger::Info(kBlocker);
     Logger::Info(
-        "PlayerEntitySelector table 0x919F9D0; Process 0x7CA9B70; "
-        "allocator resolve 0x16FAA0; handleDeref shape sample 0x50AB0");
+        "C1 acquire stays BlockedUnproven until builder template + reload are proven");
 }
 
 }  // namespace bfc

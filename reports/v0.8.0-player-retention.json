@@ -1,42 +1,28 @@
-{
+﻿{
   "schemaVersion": 1,
   "milestone": "v0.8.0",
   "agent": "Agent2-player-retention",
+  "contract": "C1",
   "mode": "offline-pe-readonly",
   "exeSha256": "19920F34BB2FAC814023EE3C27F0CECA1872E80A2AAFB37C092C419FFF77CC0D",
-  "blueprint": "Agent1 docs/v0.8.0-ac4coop-source-map.md @ 45262db + PR#28 answers reference-only",
-  "firstChain": "PlayerEntitySelector::Process -> 0x62F12E0 -> table 0x919F9D0 -> Process 0x7CA9B70 -> allocator resolve 0x16FAA0",
-  "agent1AnswersIngested": true,
+  "criticalPath": "C1->C2->C3->C5->C4->C7/C6",
+  "c1AcquireState": "BlockedUnproven",
   "playerEntityAcquisitionResolved": false,
   "builderSelectorRetentionResolved": false,
+  "objectIdReloadProven": false,
   "callEngine": false,
-  "decision": "process-allocator-resolve-and-handleDeref-shape-found-entity-owner-unresolved",
-  "blocker": "Live local-player Entity* retention owner unproven; builder/selector construction cache unproven",
+  "decision": "c1-acquire-fsm-shipped-primitives-unproven",
+  "blocker": "C1: no proven builder+selector cache and no proven ObjectID CreateReference/reload-by-id",
   "binaryConfirmed": [
-    {"rva": "0xA118077", "role": "string PlayerEntitySelector::Process"},
-    {"rva": "0x62F12E0", "role": "selector family registrar"},
     {"rva": "0x919F9D0", "role": "PlayerEntitySelector method table"},
-    {"rva": "0x7CA9B70", "role": "table[2] Process candidate"},
-    {"rva": "0x16FAA0", "role": "allocator-pointer resolve (not proven CreateReference)"},
-    {"rva": "0x50AB0", "role": "handleDeref shape sample (+8 sign bit masks +0 object)"}
+    {"rva": "0x7CA9B70", "role": "Process candidate"},
+    {"rva": "0x16FAA0", "role": "allocator-pointer resolve (not CreateReference)"},
+    {"rva": "0x50AB0", "role": "handleDeref shape sample"},
+    {"rva": "0x7C8DE60", "role": "B33D978 typeinfo dtor trampoline only"},
+    {"note": "CreateReference/HandleManager/AddLoadTask strings absent"}
   ],
-  "sourceDerivedFromPr28": [
-    "GetPlayer unresolved thiscall; no in-tree m_Player writer",
-    "builder/selector cache fill outside AC4Coop repo",
-    "HandleContainer packed {obj*, soft, hard, objectId}; reload waits m_Object",
-    "Human-update hook esi=Human*; filter GetHuman(GetPlayer())",
-    "net puppet: AddEntity + empty pad; no RegisterPlayer"
-  ],
-  "hypotheses": [
-    "PlayerEntitySelector::Process resolves to the live local-player Entity*",
-    "Resynced dword@+8 validity bit is HandleContainer hard-ref equivalent"
-  ],
-  "corrections": [
-    "0x16FAA0 is allocator-pointer resolve (error string), not ObjectID CreateReference"
-  ],
-  "unresolved": [
-    "World/local-player Entity* retention owner",
-    "builder/selector construction cache after player spawn",
-    "main-thread Human update hook site on Resynced"
-  ]
+  "implementation": {
+    "c1AcquireEvaluator": true,
+    "puppetLifecycleContractIds": true
+  }
 }

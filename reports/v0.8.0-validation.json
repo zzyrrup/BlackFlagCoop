@@ -1,57 +1,55 @@
 ﻿{
-    "schemaVersion":  1,
-    "milestone":  "v0.8.0",
-    "generatedLocal":  "2026-11-12T13:40:00 America/Denver",
-    "exeSha256":  "19920F34BB2FAC814023EE3C27F0CECA1872E80A2AAFB37C092C419FFF77CC0D",
-    "nativeFactoryConfirmed":  false,
-    "cachedBuilderResolved":  false,
-    "playerEntityOwnerResolved":  false,
+    "generatedLocal":  "2026-11-12T13:50:00 America/Denver",
     "candidate":  {
                       "version":  "0.8.0-dev",
-                      "bytes":  106496,
-                      "sha256":  "67C201F083BCE7C0F1C94AFC9C995492ACD292E3B57344C72F1488DC54F6AE14",
-                      "invokeNativeSpawn":  false,
+                      "bytes":  105984,
+                      "deployed":  false,
+                      "sha256":  "C5DA42BA265456FE01EC4A736F87BCF8475C2B1E209A04BCE25A28D37C1CEECB",
                       "callEngine":  false,
-                      "deployed":  false
+                      "invokeNativeSpawn":  false
                   },
-    "installedAsi":  {
-                         "version":  "0.5.1",
-                         "bytes":  99840,
-                         "sha256":  "63B38877DDA7CC7CD9AB2619F94D3941C37F54C95A435EFE47084DC4CF2A50BE",
-                         "preserved":  true
-                     },
+    "exeSha256":  "19920F34BB2FAC814023EE3C27F0CECA1872E80A2AAFB37C092C419FFF77CC0D",
+    "nativeFactoryConfirmed":  false,
+    "c1AcquireState":  "BlockedUnproven",
+    "missingLink":  "C1 builder+selector cache or ObjectID reload-by-id still unproven.",
+    "contract":  "C1",
     "tests":  [
                   {
-                      "name":  "SpawnContract",
-                      "result":  "pass"
+                      "result":  "pass",
+                      "name":  "SpawnContract"
                   },
                   {
-                      "name":  "PuppetLifecycle",
-                      "result":  "pass"
+                      "result":  "pass",
+                      "name":  "PuppetLifecycle"
                   },
                   {
-                      "name":  "BuilderPath",
-                      "result":  "pass"
+                      "result":  "pass",
+                      "name":  "BuilderPath"
                   },
                   {
-                      "name":  "PlayerRetention",
-                      "result":  "pass"
+                      "result":  "pass",
+                      "name":  "PlayerRetention"
                   },
                   {
-                      "name":  "PlayerRetention080",
-                      "result":  "pass"
-                  },
-                  {
-                      "name":  "game_launch_deploy",
-                      "result":  "not_run"
+                      "result":  "not_run",
+                      "name":  "game_launch_deploy"
                   }
               ],
     "confirmed":  [
-                      "PlayerEntitySelector method table 0x919F9D0 registered at 0x62F12E0",
-                      "Process candidate 0x7CA9B70 uses allocator-pointer resolve 0x16FAA0",
-                      "handleDeref shape sample at 0x50AB0 (+8 sign bit)",
-                      "Agent 1 PR#28 answers ingested",
-                      "Gates remain default-off; installed ASI untouched"
+                      "C1 acquire FSM Ready/NeedReload/Failed/BlockedUnproven",
+                      "PlayerEntitySelector Process path mapped",
+                      "handleDeref shape present; CreateReference strings absent",
+                      "Gates callEngine=off; installed ASI untouched"
                   ],
-    "missingLink":  "World/local-player Entity* retention owner and builder/selector construction cache are not identified."
+    "objectIdReloadProven":  false,
+    "cachedBuilderResolved":  false,
+    "schemaVersion":  1,
+    "installedAsi":  {
+                         "preserved":  true,
+                         "sha256":  "63B38877DDA7CC7CD9AB2619F94D3941C37F54C95A435EFE47084DC4CF2A50BE",
+                         "version":  "0.5.1",
+                         "bytes":  99840
+                     },
+    "milestone":  "v0.8.0",
+    "playerEntityOwnerResolved":  false
 }

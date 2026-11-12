@@ -8,15 +8,16 @@ namespace bfc {
 // Source-confirmed AC4Coop puppet order, from Kamzik123/AC4Coop src/phase1.cpp
 // Phase1::TrySpawnPuppet and Phase1::DespawnPuppet. This type does not call the
 // game. The original x86 file addresses are not stored here.
+// Stages map to Agent 1 clean-room contracts C0–C10 (docs/v0.8.0-ac4coop-contracts.md).
 enum class PuppetStage {
-    Idle = 0,
-    NeedWorldAndPlayer,
-    NeedCachedBuilder,
-    DuplicateSelector,
-    BuildEntity,
-    AddToWorld,
-    PlaceTransform,
-    DriveOrTeardown,
+    Idle = 0,                 // pre-C0
+    NeedWorldAndPlayer,       // C0/C1 inputs
+    NeedCachedBuilder,        // C1
+    DuplicateSelector,        // C2
+    BuildEntity,              // C3
+    AddToWorld,               // C4 (+ C5 pad arming)
+    PlaceTransform,           // C7
+    DriveOrTeardown,          // C6/C8/C9/C10
     Blocked
 };
 
