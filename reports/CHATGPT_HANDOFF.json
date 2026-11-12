@@ -1,6 +1,6 @@
 ﻿{
     "schemaVersion":  1,
-    "generatedUtc":  "2026-11-12T21:16:23Z",
+    "generatedUtc":  "2026-11-12T21:22:36Z",
     "handoffFor":  "ChatGPT",
     "executor":  "Cursor",
     "machine":  "PC1",
@@ -20,8 +20,8 @@
                 },
     "milestone":  {
                       "currentId":  "v0.8.0",
-                      "currentTitle":  "C2 triad hunt; no confirmed Begin/Dup/End/Build site",
-                      "status":  "c2_triad_unproven",
+                      "currentTitle":  "C2 strict triad filter; Begin candidate 0x5001598 unproven",
+                      "status":  "c2_triad_strict_unproven",
                       "priorPreserved":  [
                                              "v0.6.4",
                                              "v0.6.5",
@@ -85,10 +85,10 @@
                 },
     "engineFindings":  {
                            "summary":  [
-                                           "Agent1 triad: Begin(1,0)-\u003eDuplicate(0,0)-\u003eEnd()-\u003eBuild(builder,\u0026out,dup)",
-                                           "TriadHunt080: begin10=64 sandwich=5 fullTriad=0 buildNearDup=59",
-                                           "Falsified sandwich callees 0xD75C50/0x6A0DC20/0x7A32F0 as Begin/Dup/End",
-                                           "Next: TLS/global-arming Begin leaves + last-def (0,0) Dup filter",
+                                           "TriadStrict080: strictBegin10=49 arming=7 fullTriad=0 dupWithBuild=28",
+                                           "Falsified 0x4DE1C40 (TLS [TEB+1CE8]=ecx) and 0x5014570 (cookie) as Begin/Dup",
+                                           "Candidate Begin(1,0) leaf 0x5001598 uses cl+dl returns al; caller 0x5305D2F",
+                                           "Next: follow 0x5001598 for Dup/End/Build; prefer cl+dl Begin leaves",
                                            "callEngine=off; ASI v0.5.1 preserved"
                                        ],
                            "keyRvas":  {

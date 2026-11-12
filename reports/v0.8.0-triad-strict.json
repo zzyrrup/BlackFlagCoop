@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "milestone": "v0.8.0",
+  "contract": "C2",
+  "mode": "offline-pe-readonly",
+  "exeSha256": "19920F34BB2FAC814023EE3C27F0CECA1872E80A2AAFB37C092C419FFF77CC0D",
+  "strictBegin10": 49,
+  "beginArming": 7,
+  "strictSandwich": 3,
+  "strictBeginDupEnd": 0,
+  "strictFullTriad": 0,
+  "strictDup00": 3000,
+  "dupWithBuild": 28,
+  "dupFullShape": 0,
+  "c2Proven": false,
+  "callEngine": false,
+  "falsified": [
+    {"id": "0x4DE1C40", "reason": "TLS dword setter [TEB+1CE8]=ecx — not Begin(1,0)"},
+    {"id": "0x5014570", "reason": "security cookie / fail — not Duplicate"},
+    {"id": "0xD75C50", "reason": "global getter — prior hop"}
+  ],
+  "candidates": [
+    {"id": "0x5001598", "role": "Begin(1,0)-shaped leaf", "note": "uses cl+dl, returns al=1; caller 0x5305D2F; identity unproven"},
+    {"id": "0x4420000", "role": "TLS frame stores cl+dl", "note": "callers not (1,0) in sample; weak"}
+  ],
+  "blocker": "No confirmed C2 triad under last-def filters",
+  "next": "Follow 0x5001598 callers for Dup/End/Build; prefer Begin leaves that consume both cl and dl"
+}

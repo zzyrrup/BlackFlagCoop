@@ -1,0 +1,126 @@
+===== v0.8.0 C2 TRIAD STRICT (last-def + BeginTLS) =====
+exeSha256=19920F34BB2FAC814023EE3C27F0CECA1872E80A2AAFB37C092C419FFF77CC0D
+callEngine=off
+strictBegin10=49
+beginArmingTlsOrRip=7
+uniqueBeginCallees=32
+
+===== BEGIN CALLEE PROFILES (arming first) =====
+beginCallee=0x4420000 n=3 size=432 tls=True ripStore=False retAl=False ripTargets=
+beginCallee=0x4DE1C40 n=2 size=26 tls=True ripStore=False retAl=False ripTargets=
+beginCallee=0x4F65C00 n=1 size=242 tls=False ripStore=True retAl=False ripTargets=0xAB87908|0xAB878D8
+beginCallee=0x6CA7710 n=1 size=155 tls=True ripStore=True retAl=False ripTargets=0xACE3E98
+beginCallee=0x6A110 n=4 size=23 tls=False ripStore=False retAl=False ripTargets=
+beginCallee=0x156B20 n=1 size=157 tls=False ripStore=False retAl=False ripTargets=
+beginCallee=0x3A9C70 n=1 size=384 tls=False ripStore=False retAl=False ripTargets=
+beginCallee=0xD75C50 n=6 size=23 tls=False ripStore=False retAl=False ripTargets=
+beginCallee=0xF2D1D0 n=1 size=503 tls=False ripStore=False retAl=False ripTargets=
+beginCallee=0x1A2FE00 n=2 size=23 tls=False ripStore=False retAl=False ripTargets=
+beginCallee=0x1CC5EE7 n=1 size=322 tls=False ripStore=False retAl=False ripTargets=
+beginCallee=0x2687CB0 n=1 size=327 tls=False ripStore=False retAl=False ripTargets=
+beginCallee=0x447CAA0 n=2 size=23 tls=False ripStore=False retAl=False ripTargets=
+beginCallee=0x4D4D5A0 n=1 size=23 tls=False ripStore=False retAl=False ripTargets=
+beginCallee=0x4DA7B50 n=3 size=23 tls=False ripStore=False retAl=False ripTargets=
+beginCallee=0x4DC0660 n=3 size=23 tls=False ripStore=False retAl=False ripTargets=
+beginCallee=0x4DCA550 n=1 size=23 tls=False ripStore=False retAl=False ripTargets=
+beginCallee=0x4DE25B0 n=1 size=23 tls=False ripStore=False retAl=False ripTargets=
+beginCallee=0x4F744C0 n=1 size=113 tls=False ripStore=False retAl=False ripTargets=
+beginCallee=0x4F766A8 n=1 size=17 tls=False ripStore=False retAl=False ripTargets=
+beginCallee=0x5001598 n=1 size=41 tls=False ripStore=False retAl=True ripTargets=
+beginCallee=0x513C2E8 n=1 size=81 tls=False ripStore=False retAl=True ripTargets=
+beginCallee=0x53219AC n=1 size=28 tls=False ripStore=False retAl=False ripTargets=
+beginCallee=0x584FFB0 n=1 size=12 tls=False ripStore=False retAl=False ripTargets=
+beginCallee=0x5AA89B0 n=1 size=212 tls=False ripStore=False retAl=True ripTargets=
+beginCallee=0x5CA4220 n=1 size=331 tls=False ripStore=False retAl=True ripTargets=
+beginCallee=0x5CEB5B0 n=1 size=81 tls=False ripStore=False retAl=False ripTargets=
+beginCallee=0x6E7C9D0 n=1 size=140 tls=False ripStore=False retAl=False ripTargets=
+beginCallee=0x7BD7C70 n=1 size=23 tls=False ripStore=False retAl=False ripTargets=
+beginCallee=0xC118512 n=1 size=240 tls=False ripStore=False retAl=False ripTargets=
+beginCallee=0x75EFA9B7 n=1 size=0 tls=False ripStore=False retAl=False ripTargets=
+beginCallee=0x88B3CABF n=1 size=0 tls=False ripStore=False retAl=False ripTargets=
+
+strictSandwich=3
+strictBeginDupEnd=0
+strictFullTriad=0
+armingSandwich=0
+
+===== STRICT FULL TRIAD =====
+
+===== STRICT BEGIN+DUP+END =====
+
+===== ARMING BEGIN SANDWICHES =====
+
+===== INVERT FROM STRICT DUP(0,0) =====
+strictDup00=3000
+dupWithBuild=28
+dupWithBegin=1
+dupWithEnd=791
+dupFullShape=0
+dup=0x9CCC->0x42EB170 begin=0 end=0 build=0 func=0x9B70
+dup=0x9CD9->0x5014570 begin=0 end=0 build=0 func=0x9B70
+dup=0x1EFA5->0x1EFAA begin=0 end=0 build=0 func=0x1EE40
+dup=0x21D77->0x42B85F0 begin=0 end=0 build=0 func=0x21B70
+dup=0x228D1->0x5014570 begin=0 end=0 build=0 func=0x22830
+dup=0x22924->0x42B85F0 begin=0 end=0 build=0 func=0x22830
+dup=0x23D57->0x42B85F0 begin=0 end=0 build=0 func=0x23CC0
+dup=0x24F9B->0x42B85F0 begin=0 end=0 build=0 func=0x24F10
+dup=0x281A6->0x430B790 begin=0 end=0 build=0 func=0x28110
+dup=0x2BAC7->0x429F9E0 begin=0 end=0x2BADA->0x430B5C0 build=0 func=0x2B9B0
+dup=0x2CA1F->0x42B85F0 begin=0 end=0x2CA35->0xD5BD40 build=0 func=0x2C940
+dup=0x32797->0x5014570 begin=0 end=0 build=0 func=0x32640
+dup=0x327A2->0x5B0327A7 begin=0 end=0 build=0 func=0x32640
+dup=0x33499->0x430B790 begin=0 end=0x334D0->0x1F2F0 build=0 func=0x32FF0
+dup=0x347DE->0x42B85F0 begin=0 end=0 build=0 func=0x34730
+dup=0x347F8->0xB0EFA0 begin=0 end=0 build=0 func=0x34730
+dup=0x3BD46->0x42EB170 begin=0 end=0 build=0 func=0x3BC40
+dup=0x3C107->0x45B64D0 begin=0 end=0 build=0 func=0x3BFD0
+dup=0x3D652->0x4D03D64B begin=0 end=0 build=0 func=0x3C490
+dup=0x3D659->0x42256B0 begin=0 end=0 build=0 func=0x3C490
+dup=0x3E07F->0x4DE569D0 begin=0 end=0 build=0 func=0x3DFA0
+dup=0x521CB->0x5354820 begin=0 end=0x5224D->0x42256B0 build=0 func=0x52020
+dup=0x6378B->0xCA7110 begin=0 end=0 build=0 func=0x63750
+dup=0x6BA85->0x42B85F0 begin=0 end=0 build=0 func=0x6B560
+dup=0x95256->0x42EB170 begin=0 end=0 build=0 func=0x95200
+dup=0x95275->0x5014570 begin=0 end=0 build=0 func=0x95200
+dup=0xB16DE->0x430B790 begin=0 end=0 build=0 func=0xB12D0
+dup=0xC6BD9->0x4375B70 begin=0 end=0xC6BEA->0x42256B0 build=0 func=0xC6950
+dup=0xC9000->0xC98B0 begin=0 end=0 build=0 func=0xC8270
+dup=0xC90CF->0xC98B0 begin=0 end=0 build=0 func=0xC8270
+dup=0xCAD30->0xE59370 begin=0 end=0 build=0xCAD63->0x43D1DA0 func=0xC9B60
+dup=0x136820->0xD530 begin=0 end=0 build=0 func=0x1365F0
+dup=0x13D481->0x477E0F0 begin=0 end=0 build=0 func=0x13D2C0
+dup=0x13D48E->0x42B85F0 begin=0 end=0 build=0 func=0x13D2C0
+dup=0x147955->0x42EB170 begin=0 end=0 build=0 func=0x1476B8
+dup=0x147972->0x42EB100 begin=0 end=0 build=0 func=0x1476B8
+dup=0x169EDF->0x45FF280 begin=0 end=0 build=0 func=0x169E50
+dup=0x1AB061->0x5014570 begin=0 end=0 build=0 func=0x1AADE0
+dup=0x1BA25C->0x42256B0 begin=0 end=0 build=0 func=0x1B9BA0
+dup=0x1C2C59->0x42EB170 begin=0 end=0 build=0 func=0x1C2510
+
+===== TOP STRICT DUP CALLEES =====
+dupCallee=0x5014570 n=448 size≈21 tls=False ripStore=False
+dupCallee=0x42EB170 n=401 size≈173 tls=False ripStore=False
+dupCallee=0x42B85F0 n=388 size≈392 tls=True ripStore=False
+dupCallee=0x48D51B0 n=86 size≈209 tls=False ripStore=False
+dupCallee=0x430B790 n=79 size≈442 tls=False ripStore=False
+dupCallee=0x42EB100 n=77 size≈90 tls=True ripStore=False
+dupCallee=0x477E0F0 n=69 size≈45 tls=False ripStore=False
+dupCallee=0x42256B0 n=48 size≈32 tls=False ripStore=False
+dupCallee=0x4371900 n=46 size≈394 tls=False ripStore=False
+dupCallee=0xFAE740 n=35 size≈36 tls=False ripStore=False
+dupCallee=0x4DF2B90 n=27 size≈308 tls=False ripStore=False
+dupCallee=0x45FF280 n=26 size≈31 tls=False ripStore=False
+dupCallee=0x429F9E0 n=21 size≈146 tls=False ripStore=False
+dupCallee=0x478F5B0 n=16 size≈168 tls=True ripStore=False
+dupCallee=0x14D8690 n=16 size≈22 tls=False ripStore=False
+dupCallee=0x11EF740 n=15 size≈508 tls=False ripStore=False
+dupCallee=0x473EC90 n=13 size≈104 tls=False ripStore=False
+dupCallee=0x5354820 n=12 size≈284 tls=False ripStore=False
+dupCallee=0x43B5010 n=11 size≈98 tls=False ripStore=False
+dupCallee=0x4F85F70 n=11 size≈41 tls=False ripStore=False
+
+===== VERDICT =====
+c2Proven=False
+callEngine=off
+decision=strict Dup(0,0)+Build pairs exist; Begin/End link missing under freestanding filter
+next=Widen Begin window; allow End via register-indirect; profile Dup callees for scope reads.
