@@ -1,0 +1,26 @@
+{
+  "schemaVersion": 1,
+  "milestone": "v0.6.16",
+  "generatedUtc": "2026-11-12T18:35:00Z",
+  "exeSha256": "19920F34BB2FAC814023EE3C27F0CECA1872E80A2AAFB37C092C419FFF77CC0D",
+  "createSecondEdward": {
+    "class": "unsupported",
+    "reason": "Vtable/arming/membership paths operate on existing objects; no Edward factory"
+  },
+  "edataConsumersFound": {
+    "class": "confirmed",
+    "reason": "Ctors 0x2E97A50/0x59D9B90/0x3225900 install .edata bases as vtables covering the slots"
+  },
+  "vcall2B0Mapped": {
+    "class": "confirmed",
+    "reason": "Arming helper tail-calls [vt+0x2B0] with edx=2; neighbor B compares [vt+0x2B0]/[vt+0x2B8]"
+  },
+  "liveMemoryProbe": {
+    "class": "blocked",
+    "reason": "Not authorized"
+  },
+  "next": {
+    "primary": "Deep-decode expected [vt+0x2B0]/[vt+0x2B8] callees from 0x43E7750; follow ctors 0x2E97A50/0x59D9B90 for type/size",
+    "avoid": ["live memory", "ASI deploy", "spawn", "PC2", "+0x61-only ranking"]
+  }
+}

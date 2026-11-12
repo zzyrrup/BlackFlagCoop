@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "milestone": "v0.6.16",
+  "generatedUtc": "2026-11-12T18:35:00Z",
+  "exeSha256": "19920F34BB2FAC814023EE3C27F0CECA1872E80A2AAFB37C092C419FFF77CC0D",
+  "edataConsumption": "vtable_install_via_ctors",
+  "armingTableBaseExample": "0x948FF50",
+  "armingSlotOffset": "0x128",
+  "bitTableBaseExample": "0x9303E28",
+  "bitSlotOffsets": ["0x8", "0x10"],
+  "neighborA": {
+    "thunk": "0x2108530",
+    "target": "0x129E5190",
+    "callsMembershipB": "0x4D04450",
+    "callsWorker": "0x725400"
+  },
+  "neighborB": {
+    "thunk": "0x2108830",
+    "target": "0x43E7750",
+    "validatesVt2B0": true,
+    "validatesVt2B8": true
+  },
+  "armingHelperVcall": {
+    "pattern": "mov rax,[vt+0x2B0]; mov edx,2; jmp rax",
+    "confirmed": true
+  },
+  "vcall2B0Count": 80,
+  "vcall2B0WithEdx2": 2,
+  "edwardOrPlayerTypeConfirmed": false
+}

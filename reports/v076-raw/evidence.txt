@@ -1,0 +1,500 @@
+===== v0.6.16 EDATA CONSUMERS + ARMING + VCALL +0x2B0 =====
+exeSha256=19920F34BB2FAC814023EE3C27F0CECA1872E80A2AAFB37C092C419FFF77CC0D
+
+===== SLOT 0x9490078 =====
+sec=.edata qword=0x1421085D0 ->0x21085D0 role=arming-helper-slot
+  q[-6] @0x9490048=0x140001000 ->0x1000 .impdata CODE
+  q[-5] @0x9490050=0x1467B1B50 ->0x67B1B50 .impdata CODE
+  q[-4] @0x9490058=0x1453741F0 ->0x53741F0 .impdata CODE
+  q[-3] @0x9490060=0x142108830 ->0x2108830 .impdata CODE
+  q[-2] @0x9490068=0x144259C90 ->0x4259C90 .impdata CODE
+  q[-1] @0x9490070=0x142108530 ->0x2108530 .impdata CODE
+  q[0] @0x9490078=0x1421085D0 ->0x21085D0 .impdata CODE
+  q[1] @0x9490080=0x144E76B10 ->0x4E76B10 .impdata CODE
+  q[2] @0x9490088=0x144259C90 ->0x4259C90 .impdata CODE
+  q[3] @0x9490090=0x1453741F0 ->0x53741F0 .impdata CODE
+  q[4] @0x9490098=0x1453741F0 ->0x53741F0 .impdata CODE
+  q[5] @0x94900A0=0x14535F280 ->0x535F280 .impdata CODE
+  q[6] @0x94900A8=0x1453741F0 ->0x53741F0 .impdata CODE
+  qwordTarget @0x9490078 sec=.edata func≈0x9490038 target=0x21085D0
+  nearBaseLea base=0x948FEB0 lea@0x193D2CDD func≈0x193D2C9D deltaToSlot=456 (0x1C8)
+    0x193D2CDD lea rax,[rip-0FF42E34] [BASE]
+  nearBaseLea base=0x948FEB0 lea@0x193D2CDE func≈0x193D2C9E deltaToSlot=456 (0x1C8)
+    0x193D2CDD lea rax,[rip-0FF42E34] [BASE]
+  nearBaseLea base=0x948FF18 lea@0x165809A func≈0x1657FE0 deltaToSlot=352 (0x160)
+    0x165809A lea rax,[rip+7E37E77] [BASE]
+  nearBaseLea base=0x948FF18 lea@0x165809B func≈0x1657FE0 deltaToSlot=352 (0x160)
+    0x165809A lea rax,[rip+7E37E77] [BASE]
+  nearBaseLea base=0x948FF18 lea@0x2E95EB5 func≈0x2E95D80 deltaToSlot=352 (0x160)
+    0x2E95EB5 lea rax,[rip+65FA05C] [BASE]
+    str "Invalid pointer not allocated by our allocators or already f"
+  nearBaseLea base=0x948FF18 lea@0x2E95EB6 func≈0x2E95D80 deltaToSlot=352 (0x160)
+    0x2E95EB5 lea rax,[rip+65FA05C] [BASE]
+    str "Invalid pointer not allocated by our allocators or already f"
+  nearBaseLea base=0x948FF38 lea@0x2E970BC func≈0x2E97010 deltaToSlot=320 (0x140)
+    0x2E970BC lea rax,[rip+65F8E75] [BASE]
+    str "Too many elements for %sArray. Size: %u, Max Size: %u"
+    str "Small"
+    str "Small"
+    str "Too many elements for %sArray. Size: %u, Max Size: %u"
+  nearBaseLea base=0x948FF38 lea@0x2E970BD func≈0x2E97010 deltaToSlot=320 (0x140)
+    0x2E970BC lea rax,[rip+65F8E75] [BASE]
+    str "Too many elements for %sArray. Size: %u, Max Size: %u"
+    str "Small"
+    str "Small"
+    str "Too many elements for %sArray. Size: %u, Max Size: %u"
+  nearBaseLea base=0x948FF38 lea@0x7AEF64B func≈0x7AEF5E0 deltaToSlot=320 (0x140)
+    0x7AEF64B lea rax,[rip+19A08E6] [BASE]
+  nearBaseLea base=0x948FF38 lea@0x7AEF64C func≈0x7AEF5E0 deltaToSlot=320 (0x140)
+    0x7AEF64B lea rax,[rip+19A08E6] [BASE]
+  nearBaseLea base=0x948FF50 lea@0x7153C5 func≈0x7153B0 deltaToSlot=296 (0x128)
+    0x7153C5 lea rax,[rip+8D7AB84] [BASE]
+  nearBaseLea base=0x948FF50 lea@0x7153C6 func≈0x7153B0 deltaToSlot=296 (0x128)
+    0x7153C5 lea rax,[rip+8D7AB84] [BASE]
+  nearBaseLea base=0x948FF50 lea@0x2E97A6D func≈0x2E97A50 deltaToSlot=296 (0x128)
+    0x2E97A6D lea rax,[rip+65F84DC] [BASE]
+  nearBaseLea base=0x948FF50 lea@0x2E97A6E func≈0x2E97A50 deltaToSlot=296 (0x128)
+    0x2E97A6D lea rax,[rip+65F84DC] [BASE]
+  nearBaseLea base=0x9490220 lea@0x210AA1E func≈0x210AA00 deltaToSlot=-424 (0xFFFFFE58)
+    0x210AA1E lea rax,[rip+73857FB] [BASE]
+    str "Invalid pointer not allocated by our allocators or already f"
+  nearBaseLea base=0x9490220 lea@0x210AA1F func≈0x210AA00 deltaToSlot=-424 (0xFFFFFE58)
+    0x210AA1E lea rax,[rip+73857FB] [BASE]
+    str "Invalid pointer not allocated by our allocators or already f"
+  nearBaseLea base=0x9490220 lea@0x2E97F49 func≈0x2E97F00 deltaToSlot=-424 (0xFFFFFE58)
+    0x2E97F49 lea rcx,[rip+65F82D0] [BASE]
+  nearBaseLea base=0x9490220 lea@0x2E97F4A func≈0x2E97F00 deltaToSlot=-424 (0xFFFFFE58)
+    0x2E97F49 lea rcx,[rip+65F82D0] [BASE]
+hitCount=19 byKind=qwordTarget:1,nearBaseLea:18
+
+===== SLOT 0x9303E30 =====
+sec=.edata qword=0x14210A9F0 ->0x210A9F0 role=bit-thunk0-slot
+  q[-6] @0x9303E00=0x1453741F0 ->0x53741F0 .impdata CODE
+  q[-5] @0x9303E08=0x14B487868 ->0xB487868 .trace
+  q[-4] @0x9303E10=0x1446DC120 ->0x46DC120 .impdata CODE
+  q[-3] @0x9303E18=0x1404D6790 ->0x4D6790 .impdata CODE
+  q[-2] @0x9303E20=0x143225930 ->0x3225930 .impdata CODE
+  q[-1] @0x9303E28=0x147B04290 ->0x7B04290 .impdata CODE
+  q[0] @0x9303E30=0x14210A9F0 ->0x210A9F0 .impdata CODE
+  q[1] @0x9303E38=0x140F1C230 ->0xF1C230 .impdata CODE
+  q[2] @0x9303E40=0x0
+  q[3] @0x9303E48=0x1466E67F0 ->0x66E67F0 .impdata CODE
+  q[4] @0x9303E50=0x1423374A0 ->0x23374A0 .impdata CODE
+  q[5] @0x9303E58=0x141117950 ->0x1117950 .impdata CODE
+  q[6] @0x9303E60=0x141237F30 ->0x1237F30 .impdata CODE
+  qwordTarget @0x9303E30 sec=.edata func≈0x9303DF0 target=0x210A9F0
+  nearBaseLea base=0x9303C60 lea@0x3283A98 func≈0x3283A90 deltaToSlot=464 (0x1D0)
+    0x3283A98 lea rax,[rip+60801C1] [BASE]
+  nearBaseLea base=0x9303C60 lea@0x3283A99 func≈0x3283A90 deltaToSlot=464 (0x1D0)
+    0x3283A98 lea rax,[rip+60801C1] [BASE]
+  nearBaseLea base=0x9303C60 lea@0x3287961 func≈0x3287950 deltaToSlot=464 (0x1D0)
+    0x3287961 lea rax,[rip+607C2F8] [BASE]
+  nearBaseLea base=0x9303C60 lea@0x3287962 func≈0x3287950 deltaToSlot=464 (0x1D0)
+    0x3287961 lea rax,[rip+607C2F8] [BASE]
+  nearBaseLea base=0x9303C70 lea@0x10535B7B func≈0x10535B3B deltaToSlot=448 (0x1C0)
+    0x10535B7B lea r12,[rip-7231F12] [BASE]
+  nearBaseLea base=0x9303C70 lea@0x10535B7C func≈0x10535B3C deltaToSlot=448 (0x1C0)
+  nearBaseLea base=0x9303CC0 lea@0x8C1F63 func≈0x8C1F40 deltaToSlot=368 (0x170)
+    0x8C1F63 lea rax,[rip+8A41D56] [BASE]
+  nearBaseLea base=0x9303CC0 lea@0x8C1F64 func≈0x8C1F40 deltaToSlot=368 (0x170)
+    0x8C1F63 lea rax,[rip+8A41D56] [BASE]
+  nearBaseLea base=0x9303CC0 lea@0x3141305 func≈0x3141110 deltaToSlot=368 (0x170)
+    0x3141305 lea rax,[rip+61C29B4] [BASE]
+  nearBaseLea base=0x9303CC0 lea@0x3141306 func≈0x3141110 deltaToSlot=368 (0x170)
+    0x3141305 lea rax,[rip+61C29B4] [BASE]
+  nearBaseLea base=0x9303D78 lea@0x55CD80B func≈0x55CD800 deltaToSlot=184 (0xB8)
+    0x55CD80B lea rax,[rip+3D36566] [BASE]
+  nearBaseLea base=0x9303D78 lea@0x55CD80C func≈0x55CD800 deltaToSlot=184 (0xB8)
+    0x55CD80B lea rax,[rip+3D36566] [BASE]
+  nearBaseLea base=0x9303D78 lea@0x7F64A80 func≈0x7F649F0 deltaToSlot=184 (0xB8)
+  nearBaseLea base=0x9303D78 lea@0x7F64A81 func≈0x7F649F0 deltaToSlot=184 (0xB8)
+  nearBaseLea base=0x9303DD8 lea@0x17E530B func≈0x17E5300 deltaToSlot=88 (0x58)
+    0x17E530B lea rax,[rip+7B1EAC6] [BASE]
+  nearBaseLea base=0x9303DD8 lea@0x17E530C func≈0x17E5300 deltaToSlot=88 (0x58)
+    0x17E530B lea rax,[rip+7B1EAC6] [BASE]
+  nearBaseLea base=0x9303DD8 lea@0x3225900 func≈0x3225900 deltaToSlot=88 (0x58)
+    0x3225900 lea rax,[rip+60DE4D1] [BASE]
+  nearBaseLea base=0x9303DD8 lea@0x3225901 func≈0x3225900 deltaToSlot=88 (0x58)
+    0x3225900 lea rax,[rip+60DE4D1] [BASE]
+  nearBaseLea base=0x9303E28 lea@0x59D9C3C func≈0x59D9B90 deltaToSlot=8 (0x8)
+    0x59D9C3C lea rax,[rip+392A1E5] [BASE]
+  nearBaseLea base=0x9303E28 lea@0x59D9C3D func≈0x59D9B90 deltaToSlot=8 (0x8)
+    0x59D9C3C lea rax,[rip+392A1E5] [BASE]
+  nearBaseLea base=0x9303E48 lea@0x19F87B2 func≈0x19F8790 deltaToSlot=-24 (0xFFFFFFE8)
+    0x19F87B2 lea rax,[rip+790B68F] [BASE]
+    str "Invalid pointer not allocated by our allocators or already f"
+  nearBaseLea base=0x9303E48 lea@0x19F87B3 func≈0x19F8790 deltaToSlot=-24 (0xFFFFFFE8)
+    0x19F87B2 lea rax,[rip+790B68F] [BASE]
+    str "Invalid pointer not allocated by our allocators or already f"
+  nearBaseLea base=0x9303E48 lea@0x11922AAA func≈0x11922A6A deltaToSlot=-24 (0xFFFFFFE8)
+    0x11922AAA lea rax,[rip-861EC69] [BASE]
+  nearBaseLea base=0x9303E48 lea@0x11922AAB func≈0x11922A6B deltaToSlot=-24 (0xFFFFFFE8)
+    0x11922AAA lea rax,[rip-861EC69] [BASE]
+  nearBaseLea base=0x9303E60 lea@0x1237F3C func≈0x1237F30 deltaToSlot=-48 (0xFFFFFFD0)
+    0x1237F3C lea rax,[rip+80CBF1D] [BASE]
+  nearBaseLea base=0x9303E60 lea@0x1237F3D func≈0x1237F30 deltaToSlot=-48 (0xFFFFFFD0)
+    0x1237F3C lea rax,[rip+80CBF1D] [BASE]
+  nearBaseLea base=0x9303E60 lea@0x237AF61 func≈0x237AEC0 deltaToSlot=-48 (0xFFFFFFD0)
+    0x237AF61 lea rcx,[rip+6F88EF8] [BASE]
+    str "scimitar::Online::OnlineProperties"
+    str "{}Unwrap"
+    str "Unwrap"
+  nearBaseLea base=0x9303E60 lea@0x237AF62 func≈0x237AEC0 deltaToSlot=-48 (0xFFFFFFD0)
+    0x237AF61 lea rcx,[rip+6F88EF8] [BASE]
+    str "scimitar::Online::OnlineProperties"
+    str "{}Unwrap"
+    str "Unwrap"
+  nearBaseLea base=0x9303EA0 lea@0x1B118CD func≈0x1B11820 deltaToSlot=-112 (0xFFFFFF90)
+    0x1B118CD lea rax,[rip+77F25CC] [BASE]
+  nearBaseLea base=0x9303EA0 lea@0x1B118CE func≈0x1B11820 deltaToSlot=-112 (0xFFFFFF90)
+    0x1B118CD lea rax,[rip+77F25CC] [BASE]
+  nearBaseLea base=0x9303EE0 lea@0x3F8B68E func≈0x3F8AD80 deltaToSlot=-176 (0xFFFFFF50)
+    str "(lambda at pipeline/packages/online/onlinecore/src/onlinecor"
+    str "scimitar::Async::Future<scimitar::Online::OnlineProperties>"
+  nearBaseLea base=0x9303EE0 lea@0x3F8B68F func≈0x3F8AD80 deltaToSlot=-176 (0xFFFFFF50)
+    str "(lambda at pipeline/packages/online/onlinecore/src/onlinecor"
+    str "scimitar::Async::Future<scimitar::Online::OnlineProperties>"
+  nearBaseLea base=0x9303F20 lea@0x3F8F3D7 func≈0x3F8EB80 deltaToSlot=-240 (0xFFFFFF10)
+    str "OnlineProperty"
+    str "Invalid pointer not allocated by our allocators or already f"
+    str "Invalid pointer not allocated by our allocators or already f"
+  nearBaseLea base=0x9303F20 lea@0x3F8F3D8 func≈0x3F8EB80 deltaToSlot=-240 (0xFFFFFF10)
+    str "OnlineProperty"
+    str "Invalid pointer not allocated by our allocators or already f"
+    str "Invalid pointer not allocated by our allocators or already f"
+  nearBaseLea base=0x9303F60 lea@0x3F96A1E func≈0x3F96110 deltaToSlot=-304 (0xFFFFFED0)
+    str "(lambda at pipeline/packages/online/onlinecore/src/onlinecor"
+    str "scimitar::Async::Future<scimitar::Online::OnlineProperties>"
+  nearBaseLea base=0x9303F60 lea@0x3F96A1F func≈0x3F96110 deltaToSlot=-304 (0xFFFFFED0)
+    str "(lambda at pipeline/packages/online/onlinecore/src/onlinecor"
+    str "scimitar::Async::Future<scimitar::Online::OnlineProperties>"
+  nearBaseLea base=0x9303FA0 lea@0x3F9A504 func≈0x3F99220 deltaToSlot=-368 (0xFFFFFE90)
+    str "OnlineProperty"
+    str "Invalid pointer not allocated by our allocators or already f"
+    str "Invalid pointer not allocated by our allocators or already f"
+  nearBaseLea base=0x9303FA0 lea@0x3F9A505 func≈0x3F99220 deltaToSlot=-368 (0xFFFFFE90)
+    str "OnlineProperty"
+    str "Invalid pointer not allocated by our allocators or already f"
+    str "Invalid pointer not allocated by our allocators or already f"
+  nearBaseLea base=0x9303FE0 lea@0x27BBFD2 func≈0x27BBDC0 deltaToSlot=-432 (0xFFFFFE50)
+  nearBaseLea base=0x9303FE0 lea@0x27BBFD3 func≈0x27BBDC0 deltaToSlot=-432 (0xFFFFFE50)
+  nearBaseLea base=0x9303FE0 lea@0x6C5EC23 func≈0x6C5EC10 deltaToSlot=-432 (0xFFFFFE50)
+    0x6C5EC23 lea rax,[rip+26A53B6] [BASE]
+  nearBaseLea base=0x9303FE0 lea@0x6C5EC24 func≈0x6C5EC10 deltaToSlot=-432 (0xFFFFFE50)
+    0x6C5EC23 lea rax,[rip+26A53B6] [BASE]
+hitCount=43 byKind=qwordTarget:1,nearBaseLea:42
+
+===== SLOT 0x9303E38 =====
+sec=.edata qword=0x140F1C230 ->0xF1C230 role=bit-thunk1-slot
+  q[-6] @0x9303E08=0x14B487868 ->0xB487868 .trace
+  q[-5] @0x9303E10=0x1446DC120 ->0x46DC120 .impdata CODE
+  q[-4] @0x9303E18=0x1404D6790 ->0x4D6790 .impdata CODE
+  q[-3] @0x9303E20=0x143225930 ->0x3225930 .impdata CODE
+  q[-2] @0x9303E28=0x147B04290 ->0x7B04290 .impdata CODE
+  q[-1] @0x9303E30=0x14210A9F0 ->0x210A9F0 .impdata CODE
+  q[0] @0x9303E38=0x140F1C230 ->0xF1C230 .impdata CODE
+  q[1] @0x9303E40=0x0
+  q[2] @0x9303E48=0x1466E67F0 ->0x66E67F0 .impdata CODE
+  q[3] @0x9303E50=0x1423374A0 ->0x23374A0 .impdata CODE
+  q[4] @0x9303E58=0x141117950 ->0x1117950 .impdata CODE
+  q[5] @0x9303E60=0x141237F30 ->0x1237F30 .impdata CODE
+  q[6] @0x9303E68=0x142531FE0 ->0x2531FE0 .impdata CODE
+  qwordTarget @0x9303E38 sec=.edata func≈0x9303DF8 target=0xF1C230
+  nearBaseLea base=0x9303C60 lea@0x3283A98 func≈0x3283A90 deltaToSlot=472 (0x1D8)
+    0x3283A98 lea rax,[rip+60801C1] [BASE]
+  nearBaseLea base=0x9303C60 lea@0x3283A99 func≈0x3283A90 deltaToSlot=472 (0x1D8)
+    0x3283A98 lea rax,[rip+60801C1] [BASE]
+  nearBaseLea base=0x9303C60 lea@0x3287961 func≈0x3287950 deltaToSlot=472 (0x1D8)
+    0x3287961 lea rax,[rip+607C2F8] [BASE]
+  nearBaseLea base=0x9303C60 lea@0x3287962 func≈0x3287950 deltaToSlot=472 (0x1D8)
+    0x3287961 lea rax,[rip+607C2F8] [BASE]
+  nearBaseLea base=0x9303C70 lea@0x10535B7B func≈0x10535B3B deltaToSlot=456 (0x1C8)
+    0x10535B7B lea r12,[rip-7231F12] [BASE]
+  nearBaseLea base=0x9303C70 lea@0x10535B7C func≈0x10535B3C deltaToSlot=456 (0x1C8)
+  nearBaseLea base=0x9303CC0 lea@0x8C1F63 func≈0x8C1F40 deltaToSlot=376 (0x178)
+    0x8C1F63 lea rax,[rip+8A41D56] [BASE]
+  nearBaseLea base=0x9303CC0 lea@0x8C1F64 func≈0x8C1F40 deltaToSlot=376 (0x178)
+    0x8C1F63 lea rax,[rip+8A41D56] [BASE]
+  nearBaseLea base=0x9303CC0 lea@0x3141305 func≈0x3141110 deltaToSlot=376 (0x178)
+    0x3141305 lea rax,[rip+61C29B4] [BASE]
+  nearBaseLea base=0x9303CC0 lea@0x3141306 func≈0x3141110 deltaToSlot=376 (0x178)
+    0x3141305 lea rax,[rip+61C29B4] [BASE]
+  nearBaseLea base=0x9303D78 lea@0x55CD80B func≈0x55CD800 deltaToSlot=192 (0xC0)
+    0x55CD80B lea rax,[rip+3D36566] [BASE]
+  nearBaseLea base=0x9303D78 lea@0x55CD80C func≈0x55CD800 deltaToSlot=192 (0xC0)
+    0x55CD80B lea rax,[rip+3D36566] [BASE]
+  nearBaseLea base=0x9303D78 lea@0x7F64A80 func≈0x7F649F0 deltaToSlot=192 (0xC0)
+  nearBaseLea base=0x9303D78 lea@0x7F64A81 func≈0x7F649F0 deltaToSlot=192 (0xC0)
+  nearBaseLea base=0x9303DD8 lea@0x17E530B func≈0x17E5300 deltaToSlot=96 (0x60)
+    0x17E530B lea rax,[rip+7B1EAC6] [BASE]
+  nearBaseLea base=0x9303DD8 lea@0x17E530C func≈0x17E5300 deltaToSlot=96 (0x60)
+    0x17E530B lea rax,[rip+7B1EAC6] [BASE]
+  nearBaseLea base=0x9303DD8 lea@0x3225900 func≈0x3225900 deltaToSlot=96 (0x60)
+    0x3225900 lea rax,[rip+60DE4D1] [BASE]
+  nearBaseLea base=0x9303DD8 lea@0x3225901 func≈0x3225900 deltaToSlot=96 (0x60)
+    0x3225900 lea rax,[rip+60DE4D1] [BASE]
+  nearBaseLea base=0x9303E28 lea@0x59D9C3C func≈0x59D9B90 deltaToSlot=16 (0x10)
+    0x59D9C3C lea rax,[rip+392A1E5] [BASE]
+  nearBaseLea base=0x9303E28 lea@0x59D9C3D func≈0x59D9B90 deltaToSlot=16 (0x10)
+    0x59D9C3C lea rax,[rip+392A1E5] [BASE]
+  nearBaseLea base=0x9303E48 lea@0x19F87B2 func≈0x19F8790 deltaToSlot=-16 (0xFFFFFFF0)
+    0x19F87B2 lea rax,[rip+790B68F] [BASE]
+    str "Invalid pointer not allocated by our allocators or already f"
+  nearBaseLea base=0x9303E48 lea@0x19F87B3 func≈0x19F8790 deltaToSlot=-16 (0xFFFFFFF0)
+    0x19F87B2 lea rax,[rip+790B68F] [BASE]
+    str "Invalid pointer not allocated by our allocators or already f"
+  nearBaseLea base=0x9303E48 lea@0x11922AAA func≈0x11922A6A deltaToSlot=-16 (0xFFFFFFF0)
+    0x11922AAA lea rax,[rip-861EC69] [BASE]
+  nearBaseLea base=0x9303E48 lea@0x11922AAB func≈0x11922A6B deltaToSlot=-16 (0xFFFFFFF0)
+    0x11922AAA lea rax,[rip-861EC69] [BASE]
+  nearBaseLea base=0x9303E60 lea@0x1237F3C func≈0x1237F30 deltaToSlot=-40 (0xFFFFFFD8)
+    0x1237F3C lea rax,[rip+80CBF1D] [BASE]
+  nearBaseLea base=0x9303E60 lea@0x1237F3D func≈0x1237F30 deltaToSlot=-40 (0xFFFFFFD8)
+    0x1237F3C lea rax,[rip+80CBF1D] [BASE]
+  nearBaseLea base=0x9303E60 lea@0x237AF61 func≈0x237AEC0 deltaToSlot=-40 (0xFFFFFFD8)
+    0x237AF61 lea rcx,[rip+6F88EF8] [BASE]
+    str "scimitar::Online::OnlineProperties"
+    str "{}Unwrap"
+    str "Unwrap"
+  nearBaseLea base=0x9303E60 lea@0x237AF62 func≈0x237AEC0 deltaToSlot=-40 (0xFFFFFFD8)
+    0x237AF61 lea rcx,[rip+6F88EF8] [BASE]
+    str "scimitar::Online::OnlineProperties"
+    str "{}Unwrap"
+    str "Unwrap"
+  nearBaseLea base=0x9303EA0 lea@0x1B118CD func≈0x1B11820 deltaToSlot=-104 (0xFFFFFF98)
+    0x1B118CD lea rax,[rip+77F25CC] [BASE]
+  nearBaseLea base=0x9303EA0 lea@0x1B118CE func≈0x1B11820 deltaToSlot=-104 (0xFFFFFF98)
+    0x1B118CD lea rax,[rip+77F25CC] [BASE]
+  nearBaseLea base=0x9303EE0 lea@0x3F8B68E func≈0x3F8AD80 deltaToSlot=-168 (0xFFFFFF58)
+    str "(lambda at pipeline/packages/online/onlinecore/src/onlinecor"
+    str "scimitar::Async::Future<scimitar::Online::OnlineProperties>"
+  nearBaseLea base=0x9303EE0 lea@0x3F8B68F func≈0x3F8AD80 deltaToSlot=-168 (0xFFFFFF58)
+    str "(lambda at pipeline/packages/online/onlinecore/src/onlinecor"
+    str "scimitar::Async::Future<scimitar::Online::OnlineProperties>"
+  nearBaseLea base=0x9303F20 lea@0x3F8F3D7 func≈0x3F8EB80 deltaToSlot=-232 (0xFFFFFF18)
+    str "OnlineProperty"
+    str "Invalid pointer not allocated by our allocators or already f"
+    str "Invalid pointer not allocated by our allocators or already f"
+  nearBaseLea base=0x9303F20 lea@0x3F8F3D8 func≈0x3F8EB80 deltaToSlot=-232 (0xFFFFFF18)
+    str "OnlineProperty"
+    str "Invalid pointer not allocated by our allocators or already f"
+    str "Invalid pointer not allocated by our allocators or already f"
+  nearBaseLea base=0x9303F60 lea@0x3F96A1E func≈0x3F96110 deltaToSlot=-296 (0xFFFFFED8)
+    str "(lambda at pipeline/packages/online/onlinecore/src/onlinecor"
+    str "scimitar::Async::Future<scimitar::Online::OnlineProperties>"
+  nearBaseLea base=0x9303F60 lea@0x3F96A1F func≈0x3F96110 deltaToSlot=-296 (0xFFFFFED8)
+    str "(lambda at pipeline/packages/online/onlinecore/src/onlinecor"
+    str "scimitar::Async::Future<scimitar::Online::OnlineProperties>"
+  nearBaseLea base=0x9303FA0 lea@0x3F9A504 func≈0x3F99220 deltaToSlot=-360 (0xFFFFFE98)
+    str "OnlineProperty"
+    str "Invalid pointer not allocated by our allocators or already f"
+    str "Invalid pointer not allocated by our allocators or already f"
+  nearBaseLea base=0x9303FA0 lea@0x3F9A505 func≈0x3F99220 deltaToSlot=-360 (0xFFFFFE98)
+    str "OnlineProperty"
+    str "Invalid pointer not allocated by our allocators or already f"
+    str "Invalid pointer not allocated by our allocators or already f"
+  nearBaseLea base=0x9303FE0 lea@0x27BBFD2 func≈0x27BBDC0 deltaToSlot=-424 (0xFFFFFE58)
+  nearBaseLea base=0x9303FE0 lea@0x27BBFD3 func≈0x27BBDC0 deltaToSlot=-424 (0xFFFFFE58)
+  nearBaseLea base=0x9303FE0 lea@0x6C5EC23 func≈0x6C5EC10 deltaToSlot=-424 (0xFFFFFE58)
+    0x6C5EC23 lea rax,[rip+26A53B6] [BASE]
+  nearBaseLea base=0x9303FE0 lea@0x6C5EC24 func≈0x6C5EC10 deltaToSlot=-424 (0xFFFFFE58)
+    0x6C5EC23 lea rax,[rip+26A53B6] [BASE]
+hitCount=43 byKind=qwordTarget:1,nearBaseLea:42
+
+===== TABLE BASE PROBES =====
+
+===== FUNC 0x2108530 =====
+entry=0x2108530 end=0x2108537 size=7 role=arming-neighbor-A prologue=E9 5B CC 8D 10 D1 DA 07 0F 8E 4C E4 42 00 E9 41
+  0x2108530 jmp near ptr 00000001529E5190
+  0x2108535 rcr edx,1
+nested=False key=False t61=False t98=False t2B0=False gateStub=False callersE8=0 installHits=1
+  install qword @0x9490070 sec=.edata
+-- callers --
+
+===== FUNC 0x2108830 =====
+entry=0x2108830 end=0x210883D size=13 role=arming-neighbor-B prologue=48 8B 41 18 48 89 41 50 E9 13 EF 2D 02 CC CC CC
+  0x2108830 mov rax,[rcx+18]
+  0x2108834 mov [rcx+50],rax
+  0x2108838 jmp near ptr 00000001443E7750
+nested=False key=False t61=False t98=False t2B0=False gateStub=False callersE8=0 installHits=3
+  install qword @0x9490060 sec=.edata
+  install rva32 @0xCC5549B sec=.code
+  install rva32 @0x1D71E504 sec=.vmp4
+-- callers --
+
+===== FUNC 0x21085D0 =====
+entry=0x21085D0 end=0x210861D size=77 role=arming-helper prologue=56 48 83 EC 20 48 89 CE 48 83 B9 98 00 00 00 00
+  0x21085D0 push rsi
+  0x21085D1 sub rsp,20
+  0x21085D5 mov rsi,rcx
+  0x21085D8 cmp qword ptr [rcx+98],0
+  0x21085E0 jne short 0000000142108603
+  0x21085E2 mov rax,[rsi+18]
+  0x21085E6 test rax,rax
+  0x21085E9 je short 0000000142108603
+  0x21085EB cmp qword ptr [rax+0A8],0
+  0x21085F3 je short 0000000142108603
+  0x21085F5 test byte ptr [rsi+61],2
+  0x21085F9 jne short 0000000142108603
+  0x21085FB mov rcx,rsi
+  0x21085FE call 00000001407BB020
+  *** GATE STUB @0x21085FE
+  0x2108603 mov rax,[rsi]
+  0x2108606 mov rax,[rax+2B0]
+  0x210860D mov rcx,rsi
+  0x2108610 mov edx,2
+  0x2108615 add rsp,20
+  0x2108619 pop rsi
+  0x210861A jmp rax
+nested=False key=False t61=True t98=True t2B0=True gateStub=True callersE8=0 installHits=2
+  gate 0x21085F5 test byte ptr [rsi+61],2
+  vcall mem 0x2108606 mov rax,[rax+2B0]
+  field +0x98 @0x21085D8 cmp qword ptr [rcx+98],0
+  callee 0x7BB020 *** GATE_STUB ***
+  install qword @0x9490078 sec=.edata
+  install rva32 @0x1D71E4F4 sec=.vmp4
+-- callers --
+
+===== VCALL +0x2B0 SITES =====
+  mov [reg+0x2B0] @0x36724 func≈0x36280 edx2=False or [rax],eax | add [rcx],al | mov [rsi+998],rdx | mov rcx,[r8+48] | jmp near ptr
+  mov [reg+0x2B0] @0x4C361 func≈0x4C130 edx2=False vcvttss2si r8,xmm0 | sar rdx,3F | and r8,rdx | or r8,rcx | add rax,r8 | mov [rsi
+  ff call [reg+0x2B0] @0x5DD62 func≈0x5DCE0 edx2=False
+  ff call [reg+0x2B0] @0x6AB19 func≈0x6A9E0 edx2=False
+  mov [reg+0x2B0] @0x75B68 func≈0x75250 edx2=False add eax,ecx | mov rcx,[r9+r10+10] | mov [rbp+0A0],rcx | shl eax,3 | lea ebx,[rax
+  mov [reg+0x2B0] @0x75C80 func≈0x75250 edx2=False clc | mov [rax+rcx-4],r13d | add r14d,r13d | add r15,2 | cmp [rbp+10],r15 | jne 
+  mov [reg+0x2B0] @0x91BE5 func≈0x919D0 edx2=False vcvttss2si r9,xmm0 | sar r8,3F | and r9,r8 | or r9,rdx | add rax,r9 | mov [rdi+2
+  mov [reg+0x2B0] @0xC43CA func≈0xC43A0 edx2=False add [rax],al | add [rdi],cl | test [rsi+48000000],esp | mov esi,ecx | cmp byte p
+  ff call [reg+0x2B0] @0xD6837 func≈0xD66E0 edx2=False
+  ff call [reg+0x2B0] @0xE84E0 func≈0xE7B90 edx2=False
+  ff call [reg+0x2B0] @0xED871 func≈0xED800 edx2=True
+  mov [reg+0x2B0] @0x102350 func≈0x102080 edx2=False test eax,48000007 | add ecx,1688 | vmovss xmm0,dword ptr [rax+10] | vmulss xmm6,
+  mov [reg+0x2B0] @0x10279C func≈0x102080 edx2=False or byte ptr [rax+3],0 | add [rax],al | add rcx,60 | call 0000000140C25280 | mov 
+  mov [reg+0x2B0] @0x165DEE func≈0x165420 edx2=False 
+  ff call [reg+0x2B0] @0x1B3161 func≈0x1B2C70 edx2=False
+  ff call [reg+0x2B0] @0x22123A func≈0x220E30 edx2=False
+  mov [reg+0x2B0] @0x29A933 func≈0x29A930 edx2=False jrcxz 000000014029A8B7 | adc eax,[rax] | divps xmm2,[rip+6B753DEC] | jmp near pt
+  mov [reg+0x2B0] @0x2B8A72 func≈0x2B8A50 edx2=False push r14 | push r12 | push rsi | push rdi | push rbp | push rbx | sub rsp,40 | m
+  ff call [reg+0x2B0] @0x2EC044 func≈0x2EBBA0 edx2=False
+  ff call [reg+0x2B0] @0x2EC120 func≈0x2EBBA0 edx2=False
+  ff call [reg+0x2B0] @0x356CDF func≈0x356C60 edx2=False
+  mov [reg+0x2B0] @0x39109B func≈0x390F00 edx2=False mov edx,[rax+r13] | mov [rbx],edx | mov eax,[rax+r13+4] | mov [rbx+4],eax | mov 
+  ff call [reg+0x2B0] @0x3BF4B2 func≈0x3BF350 edx2=False
+  ff call [reg+0x2B0] @0x3F4CCB func≈0x3F4BE0 edx2=False
+  mov [reg+0x2B0] @0x420600 func≈0x4204F0 edx2=False mov eax,[rdx+0E0] | test rax,rax | je short 0000000140420592 | mov rax,[r8+20] |
+  mov [reg+0x2B0] @0x4233E5 func≈0x423390 edx2=False dec dword ptr [rdi] | test ah,al | add [rax],al | add [rcx-75],cl | sbb [rax-7D]
+  mov [reg+0x2B0] @0x48479F func≈0x484740 edx2=False adc [rcx-7D],cl | stc | dec dword ptr [rdi] | test [rbp+1],bh | add [rax],al | c
+  ff call [reg+0x2B0] @0x51F8D0 func≈0x51F7F0 edx2=False
+  ff call [reg+0x2B0] @0x526B1A func≈0x526A40 edx2=False
+  ff call [reg+0x2B0] @0x526D5C func≈0x526B70 edx2=False
+  ff call [reg+0x2B0] @0x54EC3C func≈0x54EBF0 edx2=False
+  mov [reg+0x2B0] @0x598951 func≈0x598880 edx2=False dec dword ptr [rdi] | test [rbp+1],bl | add [rax],al | mov rax,[r14+10] | cmp qw
+  mov [reg+0x2B0] @0x599412 func≈0x598880 edx2=False jne short 0000000140599439 | jmp near ptr 0000000140598F78 | mov rax,[r14+10] | 
+  mov [reg+0x2B0] @0x5ABC07 func≈0x5AB920 edx2=False add [rax],al | add [rax],al | mov dword ptr [rsi+23C],0 | jmp near ptr 000000014
+  mov [reg+0x2B0] @0x5FC40A func≈0x5FB7C0 edx2=False mov edx,[rsp+50] | mov r11,0FFFFFFFFFFFF | je short 00000001405FC418 | mov [rax+
+  mov [reg+0x2B0] @0x62D7EA func≈0x62D1D0 edx2=False add [rax],eax | add [rcx-43],al | add [rax],eax | add [rax],al | xor esi,esi | x
+  ff call [reg+0x2B0] @0x6A37B6 func≈0x6A32C0 edx2=False
+  ff call [reg+0x2B0] @0x6A6823 func≈0x6A66D0 edx2=False
+  mov [reg+0x2B0] @0x6AB77F func≈0x6AA1C0 edx2=False test [rbp+48000041],edi | mov edx,[rdx+38] | mov r8,[rdx+20] | xor edx,edx | jmp
+  ff call [reg+0x2B0] @0x6C5EF2 func≈0x6C5C70 edx2=False
+  ff call [reg+0x2B0] @0x6C659A func≈0x6C5C70 edx2=False
+  mov [reg+0x2B0] @0x6F1C59 func≈0x6F1C40 edx2=False int 3 | int 3 | 
+  mov [reg+0x2B0] @0x6FC30E func≈0x6FC2D0 edx2=False xchg ecx,eax | adc [rcx],al | add [rax],al | lea rcx,[rsp+20] | xor r8d,r8d | ca
+  mov [reg+0x2B0] @0x70488B func≈0x7046E0 edx2=False add esi,8 | cmp r14,rdi | je near ptr 0000000140704752 | cmp qword ptr [rsi+298]
+  mov [reg+0x2B0] @0x71B8C2 func≈0x71B870 edx2=False or [rax-77],cl | or [r8-73],cl | add eax,8BC2F5A | mov [rcx+10],rax | mov rdi,[r
+  mov [reg+0x2B0] @0x72DB84 func≈0x72C7C0 edx2=False add al,[rax] | add [rax-75],cl | or [rax+39],cl | nop | 
+  mov [reg+0x2B0] @0x7469D7 func≈0x7458F0 edx2=False xchg edi,eax | mov eax,48000002 | test edx,edx | je near ptr 00000001407468C5 | 
+  mov [reg+0x2B0] @0x7B993B func≈0x7B9660 edx2=False add [rdx],al | add [rax],al | 
+  mov [reg+0x2B0] @0x7C5475 func≈0x7C5430 edx2=False add [rax],al | add [rdi],cl | test [rdx+48000000],bl | lea ecx,[rsi+298] | mov r
+  ff call [reg+0x2B0] @0x81099C func≈0x810970 edx2=False
+  ff call [reg+0x2B0] @0x8DB9C8 func≈0x8DB5D0 edx2=False
+  mov [reg+0x2B0] @0x925899 func≈0x9257D0 edx2=False add [rax],al | add [rax-75],cl | sbb [rax-75],r9b | sbb byte ptr [rax],2 | add [
+  mov [reg+0x2B0] @0x92F4EE func≈0x92E810 edx2=False and eax,80000001 | mov esi,2B8 | add [rdi+rbp+48],dh | lea ecx,[rsi+280] | call 
+  mov [reg+0x2B0] @0x92F535 func≈0x92E810 edx2=False jle short 000000014092F50A | 
+  mov [reg+0x2B0] @0x92F6A1 func≈0x92E810 edx2=False adc dh,dl | 
+  mov [reg+0x2B0] @0x94DF48 func≈0x94DEA0 edx2=False and eax,75C23801 | adc ecx,[rax-7D] | 
+  mov [reg+0x2B0] @0x969F45 func≈0x969E70 edx2=False add al,[rax] | add [rax-75],cl | or [rax+39],cl | mov [rax+0C],ah | add [rax],al
+  ff call [reg+0x2B0] @0x994D8C func≈0x994810 edx2=False
+  mov [reg+0x2B0] @0x99A2C8 func≈0x998C00 edx2=False or [rax+39],cl | mov [rax+0C],ah | add [rax],al | mov r13d,[rsp+54] | je short 0
+  ff call [reg+0x2B0] @0x9F8541 func≈0x9F5F80 edx2=False
+  ff call [reg+0x2B0] @0x9F85AB func≈0x9F5F80 edx2=False
+  ff call [reg+0x2B0] @0xAD1E44 func≈0xAD1C30 edx2=False
+  mov [reg+0x2B0] @0xB33AA4 func≈0xB33800 edx2=False add [rax+31D87],cl | add [rax-73],cl | xchg esi,eax | test al,2 | add [rax],al |
+  mov [reg+0x2B0] @0xB5267D func≈0xB52540 edx2=False sub al,0 | add cl,ch | push rdx | 
+  ff call [reg+0x2B0] @0xB98D86 func≈0xB97480 edx2=False
+  mov [reg+0x2B0] @0xC0D454 func≈0xC0CB20 edx2=False add al,[rax] | add [rax-75],cl | or [r8+39],cl | nop | 
+  ff call [reg+0x2B0] @0xC11E4B func≈0xC11C80 edx2=False
+  ff call [reg+0x2B0] @0xC12A3A func≈0xC129E0 edx2=False
+  ff call [reg+0x2B0] @0xC12AD8 func≈0xC12A50 edx2=True
+  mov [reg+0x2B0] @0xC1ED29 func≈0xC1EC80 edx2=False lock add [rax],al | add [rax+0F081],cl | add bl,ch | 
+  mov [reg+0x2B0] @0xCB65FA func≈0xCB65A0 edx2=False je short 0000000140CB65D0 | cmp byte ptr [rcx+22],0 | je short 0000000140CB65D0 
+  mov [reg+0x2B0] @0xCCE9D6 func≈0xCCDC60 edx2=False add al,[rax] | add [rax-75],cl | or [rax+39],cl | mov [rax+0C],ah | add [rax],al
+  mov [reg+0x2B0] @0xD1F523 func≈0xD1E980 edx2=False dec dword ptr [rbx-193949FB] | or [rbp+48],esp | mov ecx,[58] | mov rax,[rcx+rax
+  ff call [reg+0x2B0] @0xD406D2 func≈0xD406C0 edx2=False
+  ff call [reg+0x2B0] @0xD5F29C func≈0xD5F1D0 edx2=False
+  mov [reg+0x2B0] @0xD7DB81 func≈0xD7D820 edx2=False mov al,[rax+rax] | mov [rdx+0C8],al | mov rax,[rcx+110] | mov [rdx+98],rax | tes
+  mov [reg+0x2B0] @0xD8A63E func≈0xD8A540 edx2=False mov edi,[rax+rcx+8] | lea rbp,[r15+rdx*8] | cmp qword ptr [rdi+298],0 | je near 
+  mov [reg+0x2B0] @0xD8B439 func≈0xD8B400 edx2=False xor [rbp+0F],al | mov bh,48 | cmp r9w,[rip+0A6F2944] | jb short 0000000140D8B439
+  mov [reg+0x2B0] @0xD8C59F func≈0xD8C010 edx2=False jg short 0000000140D8C5A9 | add al,0C5 | clc | sub [rsp+100],dh | add rsp,118 | 
+  mov [reg+0x2B0] @0xD8C5C7 func≈0xD8C010 edx2=False test eax,eax | je short 0000000140D8C572 | movzx eax,word ptr [rax+0D4] | and ea
+  HIGHLIGHT @0xED871 func≈0xED800 edx2=True
+  HIGHLIGHT @0xC12AD8 func≈0xC12A50 edx2=True
+
+===== SUMMARY =====
+slot 0x9490078 ->0x21085D0 arming-helper-slot hits=19
+  qwordTarget @0x9490078 func≈0x9490038 target=0x21085D0
+  nearBaseLea @0x193D2CDD func≈0x193D2C9D base=0x948FEB0 delta=0x1C8
+  nearBaseLea @0x193D2CDE func≈0x193D2C9E base=0x948FEB0 delta=0x1C8
+  nearBaseLea @0x165809A func≈0x1657FE0 base=0x948FF18 delta=0x160
+  nearBaseLea @0x165809B func≈0x1657FE0 base=0x948FF18 delta=0x160
+  nearBaseLea @0x2E95EB5 func≈0x2E95D80 base=0x948FF18 delta=0x160
+  nearBaseLea @0x2E95EB6 func≈0x2E95D80 base=0x948FF18 delta=0x160
+  nearBaseLea @0x2E970BC func≈0x2E97010 base=0x948FF38 delta=0x140
+  nearBaseLea @0x2E970BD func≈0x2E97010 base=0x948FF38 delta=0x140
+  nearBaseLea @0x7AEF64B func≈0x7AEF5E0 base=0x948FF38 delta=0x140
+  nearBaseLea @0x7AEF64C func≈0x7AEF5E0 base=0x948FF38 delta=0x140
+  nearBaseLea @0x7153C5 func≈0x7153B0 base=0x948FF50 delta=0x128
+slot 0x9303E30 ->0x210A9F0 bit-thunk0-slot hits=43
+  qwordTarget @0x9303E30 func≈0x9303DF0 target=0x210A9F0
+  nearBaseLea @0x3283A98 func≈0x3283A90 base=0x9303C60 delta=0x1D0
+  nearBaseLea @0x3283A99 func≈0x3283A90 base=0x9303C60 delta=0x1D0
+  nearBaseLea @0x3287961 func≈0x3287950 base=0x9303C60 delta=0x1D0
+  nearBaseLea @0x3287962 func≈0x3287950 base=0x9303C60 delta=0x1D0
+  nearBaseLea @0x10535B7B func≈0x10535B3B base=0x9303C70 delta=0x1C0
+  nearBaseLea @0x10535B7C func≈0x10535B3C base=0x9303C70 delta=0x1C0
+  nearBaseLea @0x8C1F63 func≈0x8C1F40 base=0x9303CC0 delta=0x170
+  nearBaseLea @0x8C1F64 func≈0x8C1F40 base=0x9303CC0 delta=0x170
+  nearBaseLea @0x3141305 func≈0x3141110 base=0x9303CC0 delta=0x170
+  nearBaseLea @0x3141306 func≈0x3141110 base=0x9303CC0 delta=0x170
+  nearBaseLea @0x55CD80B func≈0x55CD800 base=0x9303D78 delta=0xB8
+slot 0x9303E38 ->0xF1C230 bit-thunk1-slot hits=43
+  qwordTarget @0x9303E38 func≈0x9303DF8 target=0xF1C230
+  nearBaseLea @0x3283A98 func≈0x3283A90 base=0x9303C60 delta=0x1D8
+  nearBaseLea @0x3283A99 func≈0x3283A90 base=0x9303C60 delta=0x1D8
+  nearBaseLea @0x3287961 func≈0x3287950 base=0x9303C60 delta=0x1D8
+  nearBaseLea @0x3287962 func≈0x3287950 base=0x9303C60 delta=0x1D8
+  nearBaseLea @0x10535B7B func≈0x10535B3B base=0x9303C70 delta=0x1C8
+  nearBaseLea @0x10535B7C func≈0x10535B3C base=0x9303C70 delta=0x1C8
+  nearBaseLea @0x8C1F63 func≈0x8C1F40 base=0x9303CC0 delta=0x178
+  nearBaseLea @0x8C1F64 func≈0x8C1F40 base=0x9303CC0 delta=0x178
+  nearBaseLea @0x3141305 func≈0x3141110 base=0x9303CC0 delta=0x178
+  nearBaseLea @0x3141306 func≈0x3141110 base=0x9303CC0 delta=0x178
+  nearBaseLea @0x55CD80B func≈0x55CD800 base=0x9303D78 delta=0xC0
+func 0x2108530 arming-neighbor-A size=7 t61=False t98=False t2B0=False gateStub=False callersE8=0 installHits=1
+func 0x2108830 arming-neighbor-B size=13 t61=False t98=False t2B0=False gateStub=False callersE8=0 installHits=3
+func 0x21085D0 arming-helper size=77 t61=True t98=True t2B0=True gateStub=True callersE8=0 installHits=2
+vcall2B0Sites=80 withEdx2=2
+
+===== DEEPENED NOTES (post-scan) =====
+Edata consumption: ctors install table bases as vtables
+  0x2E97A50 LEA 0x948FF50 -> [obj+0]; arming slot = base+0x128
+  0x59D9B90 LEA 0x9303E28 -> [obj+0x1D0]; bit slots = base+0x8/+0x10
+  0x3225900 LEA 0x9303DD8 -> [obj+0]
+  0x2E97F00/0x210AA00 LEA 0x9490220 -> [obj+0]
+
+Neighbor A 0x2108530 jmp 0x129E5190:
+  +98!=0 -> call 0x4D04450; test +61 bit1 -> 0x725400(dl=0)
+
+Neighbor B 0x2108830 jmp 0x43E7750:
+  compares [vt+0x2B0] and [vt+0x2B8] to expected code ptrs
+
+Arming helper: mov rax,[vt+0x2B0]; mov edx,2; jmp rax
