@@ -1,0 +1,42 @@
+{
+  "schemaVersion": 1,
+  "milestone": "v0.6.8",
+  "generatedUtc": "2026-11-12T16:59:11Z",
+  "exeSha256": "19920F34BB2FAC814023EE3C27F0CECA1872E80A2AAFB37C092C419FFF77CC0D",
+  "fingerprint": {
+    "+0x61": "flag byte bit2 enqueue",
+    "+0x98": "0x160 side block",
+    "nested": "+0x18 -> +0xA8 -> +0x3CD0"
+  },
+  "nestedChainSiteCount": 60,
+  "or61Bit2SiteCount": 5,
+  "or61Bit2Sites": ["0x2E98AA8", "0x2E9B3D6", "0x2E9B486", "0x2E9B487", "0x1D7AD9CC"],
+  "topFunctions": [
+    { "entry": "0x519E20", "score": 47, "hits61": 7, "hits98": 0, "hits3CD0": 0, "nestedChainHits": 0, "vtableInstalls": 13, "vtables": ["0xAF73B90", "0xAF73BD8", "0xD9EE10", "0xAF676B0", "0x3D2AF00", "0x452B390"], "rtti": [] },
+    { "entry": "0x2D4F30", "score": 36, "hits61": 6, "hits98": 0, "hits3CD0": 0, "nestedChainHits": 0, "vtableInstalls": 9, "vtables": ["0x9782870", "0xAF676B0"], "rtti": [] },
+    { "entry": "0x3D2C40", "score": 20, "hits61": 0, "hits98": 2, "hits3CD0": 2, "nestedChainHits": 0, "vtableInstalls": 1, "vtables": ["0xB0751C0"], "rtti": [] },
+    { "entry": "0x1D9CC0", "score": 33, "hits61": 3, "hits98": 2, "hits3CD0": 0, "nestedChainHits": 0, "vtableInstalls": 8, "vtables": ["0xAF73AE0", "0xAF73BD8", "0xAE86F28", "0xAF73B90", "0xAF676B0"], "rtti": [] },
+    { "entry": "0xB12D0", "score": 29, "hits61": 0, "hits98": 0, "hits3CD0": 1, "nestedChainHits": 1, "vtableInstalls": 7, "vtables": ["0xAF73BD8", "0xAF73B90", "0xB46A060", "0xAF676B0", "0x9977020"], "rtti": [] },
+    { "entry": "0x22CC70", "score": 15, "hits61": 0, "hits98": 0, "hits3CD0": 1, "nestedChainHits": 0, "vtableInstalls": 4, "vtables": ["0x928C568", "0xAF73BD0", "0x928C548", "0xB46A060"], "rtti": [] },
+    { "entry": "0x400B50", "score": 11, "hits61": 0, "hits98": 0, "hits3CD0": 1, "nestedChainHits": 0, "vtableInstalls": 2, "vtables": ["0xB46A060", "0x93DD990"], "rtti": [] },
+    { "entry": "0x4CD390", "score": 23, "hits61": 0, "hits98": 0, "hits3CD0": 3, "nestedChainHits": 0, "vtableInstalls": 4, "vtables": ["0xB33F540", "0xB305390", "0xA025188", "0xB324370"], "rtti": [] },
+    { "entry": "0xF2090", "score": 9, "hits61": 0, "hits98": 0, "hits3CD0": 1, "nestedChainHits": 0, "vtableInstalls": 2, "vtables": ["0xB2863E8", "0x913E190"], "rtti": [] },
+    { "entry": "0x2295E0", "score": 11, "hits61": 0, "hits98": 0, "hits3CD0": 1, "nestedChainHits": 0, "vtableInstalls": 3, "vtables": ["0xB46A060", "0xAF73BD0"], "rtti": [] },
+    { "entry": "0x307870", "score": 9, "hits61": 0, "hits98": 0, "hits3CD0": 1, "nestedChainHits": 0, "vtableInstalls": 2, "vtables": ["0xAF73BD0", "0xBECAB78"], "rtti": [] },
+    { "entry": "0x4444C0", "score": 33, "hits61": 0, "hits98": 0, "hits3CD0": 1, "nestedChainHits": 1, "vtableInstalls": 10, "vtables": ["0xB46A060", "0x9145218", "0x91452F0", "0x53B6A70", "0x10326A0", "0x535C840"], "rtti": [] },
+    { "entry": "0x4F3FA0", "score": 5, "hits61": 0, "hits98": 0, "hits3CD0": 1, "nestedChainHits": 0, "vtableInstalls": 0, "vtables": [], "rtti": [] },
+    { "entry": "0x1377D0", "score": 38, "hits61": 0, "hits98": 0, "hits3CD0": 2, "nestedChainHits": 0, "vtableInstalls": 13, "vtables": ["0xB46A060", "0xAF73BD8", "0xAF73B90", "0xAF676B0"], "rtti": [] },
+    { "entry": "0x1CB090", "score": 34, "hits61": 0, "hits98": 0, "hits3CD0": 2, "nestedChainHits": 0, "vtableInstalls": 11, "vtables": ["0xBFF71E8", "0xAF676B0", "0xB653158", "0xB653190", "0xAF73BD8", "0x96C7210"], "rtti": [] },
+    { "entry": "0x58F690", "score": 12, "hits61": 0, "hits98": 3, "hits3CD0": 0, "nestedChainHits": 0, "vtableInstalls": 0, "vtables": [], "rtti": [] },
+    { "entry": "0x32F950", "score": 10, "hits61": 0, "hits98": 2, "hits3CD0": 0, "nestedChainHits": 0, "vtableInstalls": 0, "vtables": [], "rtti": [] },
+    { "entry": "0x388170", "score": 18, "hits61": 0, "hits98": 0, "hits3CD0": 2, "nestedChainHits": 0, "vtableInstalls": 4, "vtables": ["0xAF676B0", "0xB33F540", "0xB33F730"], "rtti": [] },
+    { "entry": "0x389280", "score": 32, "hits61": 0, "hits98": 0, "hits3CD0": 2, "nestedChainHits": 0, "vtableInstalls": 11, "vtables": ["0xB33F540", "0xAF73BD8", "0xAF73B90", "0xB324370", "0xAF676B0"], "rtti": [] },
+    { "entry": "0x406A60", "score": 16, "hits61": 0, "hits98": 0, "hits3CD0": 2, "nestedChainHits": 0, "vtableInstalls": 3, "vtables": ["0xB305390", "0xB33F540", "0xB324370"], "rtti": [] },
+    { "entry": "0x54B090", "score": 16, "hits61": 0, "hits98": 0, "hits3CD0": 2, "nestedChainHits": 0, "vtableInstalls": 3, "vtables": ["0xBED8FE0", "0xA0993E8"], "rtti": [] },
+    { "entry": "0x2A9D0", "score": 15, "hits61": 0, "hits98": 1, "hits3CD0": 1, "nestedChainHits": 0, "vtableInstalls": 3, "vtables": ["0x913DCE0", "0xBFDE148", "0xAF73BD8"], "rtti": [] },
+    { "entry": "0xE5450", "score": 12, "hits61": 0, "hits98": 2, "hits3CD0": 0, "nestedChainHits": 0, "vtableInstalls": 2, "vtables": ["0x91685C0", "0x97B8A70"], "rtti": [] },
+    { "entry": "0x44DDF0", "score": 8, "hits61": 0, "hits98": 2, "hits3CD0": 0, "nestedChainHits": 0, "vtableInstalls": 0, "vtables": [], "rtti": [] },
+    { "entry": "0x500ED0", "score": 8, "hits61": 0, "hits98": 2, "hits3CD0": 0, "nestedChainHits": 0, "vtableInstalls": 0, "vtables": [], "rtti": [] }
+  ],
+  "msvcRttiNameRecovered": false
+}
