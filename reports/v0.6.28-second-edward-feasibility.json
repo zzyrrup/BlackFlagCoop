@@ -1,0 +1,15 @@
+{
+  "schemaVersion": 1,
+  "milestone": "v0.6.28",
+  "generatedUtc": "2026-11-12T20:46:57Z",
+  "exeSha256": "19920F34BB2FAC814023EE3C27F0CECA1872E80A2AAFB37C092C419FFF77CC0D",
+  "createSecondEdward": { "class": "unsupported", "reason": "NS construction paths are TypeInfo/VT dispatch; no Edward create/possession" },
+  "spatialConstructPath": { "class": "confirmed", "reason": "SpatRegistrar 0x5E5AF20 runtime-fills .trace SpatA/SpatB ctor fields; those ctors LEA Spat VT; invoke via factory [ti+0x50] or call[vt+0]" },
+  "neighborConstructPath": { "class": "partial", "reason": "Neighbor VT install only in NeighVT0/NeighRel; NeighRel PE-static; no runtime TypeInfo registrar; invoke remains table/call[vt+0]" },
+  "relocRuntimeTypeInfoLeads": { "class": "confirmed", "reason": "DIR64 relocs on VT bases/NeighRel; Spat .trace ctor fields runtime-filled by 0x5E5AF20" },
+  "liveMemoryProbe": { "class": "blocked", "reason": "Not authorized" },
+  "next": {
+    "primary": "Find Neighbor TypeInfo/.trace registration equivalent to SpatRegistrar; map which tight-factory TypeInfo keys use SpatA/SpatB fields",
+    "avoid": ["live memory", "ASI deploy", "spawn", "PC2", "treat Outer/InstallerA as NS factory", "expect E8 to VT[0]"]
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "schemaVersion": 1,
+  "milestone": "v0.6.28",
+  "generatedUtc": "2026-11-12T20:46:57Z",
+  "exeSha256": "19920F34BB2FAC814023EE3C27F0CECA1872E80A2AAFB37C092C419FFF77CC0D",
+  "spatial": {
+    "registrar": "0x5E5AF20",
+    "edataSlot": "0xA23E188",
+    "runtimeCtorFields": { "SpatA": "0xACE8448", "SpatB": "0xACE84C8" },
+    "vtInstallFuncs": ["0x5781490", "0x5563CF0", "0x6CF34A0"],
+    "runtimeRegistrationConfirmed": true,
+    "writerFuncs": ["0x5E5AF20"]
+  },
+  "neighbor": {
+    "vtInstallFuncs": ["0x13612B0", "0x3D522C0"],
+    "neighRelSlot": "0xAAD22E0",
+    "neighRelPeStatic": true,
+    "runtimeTypeInfoRegistrarFound": false,
+    "vtInstallOnly": true
+  },
+  "relocHits": 5,
+  "outerInstallerConstructsNs": false,
+  "edwardOrPlayerTypeConfirmed": false
+}
