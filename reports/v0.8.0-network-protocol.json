@@ -6,7 +6,7 @@
   "branch": "cursor/v080-network-protocol-954b",
   "worktree": "/workspace",
   "baseCommit": "441bd675a18b0db3255eb69c26fd86ec2cae2dc5",
-  "commit": "",
+  "commit": "977a4da0cd1b794013088ef833ca552bd58a89ab",
   "ownership": [
     "docs/v0.8.0-network-protocol.md",
     "reports/v0.8.0-network-protocol.json",
