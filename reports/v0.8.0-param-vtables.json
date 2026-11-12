@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "milestone": "v0.8.0",
+  "tables": [
+    {
+      "visitor": "0x80F2330",
+      "base": "0x92D19A8",
+      "index": 5,
+      "slots": [{"index": 0, "rva": "0x46DC120", "class": "unrelated", "callsAlloc": false}, {"index": 1, "rva": "0x53741F0", "class": "unrelated", "callsAlloc": false}, {"index": 2, "rva": "0x316BFC0", "class": "unrelated", "callsAlloc": false}, {"index": 3, "rva": "0x80FCA40", "class": "unrelated", "callsAlloc": false}, {"index": 4, "rva": "0x53741F0", "class": "unrelated", "callsAlloc": false}, {"index": 5, "rva": "0x80F2330", "class": "schema-visitor", "callsAlloc": false}, {"index": 6, "rva": "0x1207200", "class": "unrelated", "callsAlloc": false}, {"index": 7, "rva": "0x5E3DF0", "class": "unrelated", "callsAlloc": false}, {"index": 8, "rva": "0x53741F0", "class": "unrelated", "callsAlloc": false}]
+    },
+    {
+      "visitor": "0x8DFFB90",
+      "base": "0x92D2030",
+      "index": 8,
+      "slots": [{"index": 0, "rva": "0x53741F0", "class": "unrelated", "callsAlloc": false}, {"index": 1, "rva": "0x53741F0", "class": "unrelated", "callsAlloc": false}, {"index": 2, "rva": "0x8DFFD30", "class": "unrelated", "callsAlloc": false}, {"index": 3, "rva": "0x34730", "class": "unrelated", "callsAlloc": true}, {"index": 4, "rva": "0x8E02BA0", "class": "unrelated", "callsAlloc": false}, {"index": 5, "rva": "0x4CBD270", "class": "unrelated", "callsAlloc": false}, {"index": 6, "rva": "0x67C6A70", "class": "unrelated", "callsAlloc": false}, {"index": 7, "rva": "0x53741F0", "class": "unrelated", "callsAlloc": false}, {"index": 8, "rva": "0x8DFFB90", "class": "schema-visitor", "callsAlloc": false}, {"index": 9, "rva": "0x1060820", "class": "unrelated", "callsAlloc": false}, {"index": 10, "rva": "0x5E3EC0", "class": "unrelated", "callsAlloc": false}, {"index": 11, "rva": "0x53741F0", "class": "unrelated", "callsAlloc": false}]
+    },
+    {
+      "visitor": "0x8E02960",
+      "base": "0x92D1EB0",
+      "index": 8,
+      "slots": [{"index": 0, "rva": "0x53741F0", "class": "unrelated", "callsAlloc": false}, {"index": 1, "rva": "0x53741F0", "class": "unrelated", "callsAlloc": false}, {"index": 2, "rva": "0x8DFFD30", "class": "unrelated", "callsAlloc": false}, {"index": 3, "rva": "0x32FF450", "class": "unrelated", "callsAlloc": true}, {"index": 4, "rva": "0x8E02BA0", "class": "unrelated", "callsAlloc": false}, {"index": 5, "rva": "0x21F58B0", "class": "unrelated", "callsAlloc": false}, {"index": 6, "rva": "0xF97F70", "class": "unrelated", "callsAlloc": false}, {"index": 7, "rva": "0x53741F0", "class": "unrelated", "callsAlloc": false}, {"index": 8, "rva": "0x8E02960", "class": "schema-visitor", "callsAlloc": false}, {"index": 9, "rva": "0x1060770", "class": "unrelated", "callsAlloc": false}, {"index": 10, "rva": "0x671BD60", "class": "unrelated", "callsAlloc": false}, {"index": 11, "rva": "0x53741F0", "class": "unrelated", "callsAlloc": false}]
+    },
+    {
+      "visitor": "0x8E02960",
+      "base": "0x92D1F70",
+      "index": 8,
+      "slots": [{"index": 0, "rva": "0x53741F0", "class": "unrelated", "callsAlloc": false}, {"index": 1, "rva": "0x53741F0", "class": "unrelated", "callsAlloc": false}, {"index": 2, "rva": "0x8DFFD30", "class": "unrelated", "callsAlloc": false}, {"index": 3, "rva": "0x3DE6300", "class": "unrelated", "callsAlloc": true}, {"index": 4, "rva": "0x8E02BA0", "class": "unrelated", "callsAlloc": false}, {"index": 5, "rva": "0x4CBD270", "class": "unrelated", "callsAlloc": false}, {"index": 6, "rva": "0x780F30", "class": "unrelated", "callsAlloc": false}, {"index": 7, "rva": "0x53741F0", "class": "unrelated", "callsAlloc": false}, {"index": 8, "rva": "0x8E02960", "class": "schema-visitor", "callsAlloc": false}, {"index": 9, "rva": "0x10607C0", "class": "unrelated", "callsAlloc": false}, {"index": 10, "rva": "0x5E3E60", "class": "unrelated", "callsAlloc": false}, {"index": 11, "rva": "0x53741F0", "class": "unrelated", "callsAlloc": false}]
+    }
+  ]
+}

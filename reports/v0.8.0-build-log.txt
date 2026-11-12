@@ -1,0 +1,56 @@
+---
+pid: 18904
+cwd: "C:\\Users\\Frees\\OneDrive\\Documents\\BlackFlagCoop-v080-spawn"
+command: "cmake -S . -B build -G \"Visual Studio 18 2026\" -A x64; if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }; cmake --build build --config Release"
+title: "Configure and Release-build the v0.8.0 candidate"
+status: succeeded
+started_at: 2026-11-12T19:43:43.996Z
+running_for_ms: 9705     
+---
+-- Selecting Windows SDK version 10.0.26100.0 to target Windows 10.0.26200.
+-- The CXX compiler identification is MSVC 19.52.37029.0
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: C:/Program Files/Microsoft Visual Studio/18/Community/VC/Tools/MSVC/14.52.37025/bin/Hostx64/x64/cl.exe - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Configuring done (1.1s)
+-- Generating done (0.0s)
+-- Build files have been written to: C:/Users/Frees/OneDrive/Documents/BlackFlagCoop-v080-spawn/build
+MSBuild version 18.12.2-1.26514.2+04f6ca984 for .NET Framework
+
+  1>Checking Build System
+  Building Custom Rule C:/Users/Frees/OneDrive/Documents/BlackFlagCoop-v080-spawn/CMakeLists.txt
+  logger.cpp
+  network.cpp
+  session.cpp
+  player_state.cpp
+  runtime_diag.cpp
+  player_telemetry.cpp
+  player_probe.cpp
+  spawn_contract.cpp
+  Generating Code...
+  BlackFlagCoopNet.vcxproj -> C:\Users\Frees\OneDrive\Documents\BlackFlagCoop-v080-spawn\build\Release\BlackFlagCoopNet.lib
+  Building Custom Rule C:/Users/Frees/OneDrive/Documents/BlackFlagCoop-v080-spawn/CMakeLists.txt
+  main.cpp
+  splash.cpp
+  Generating Code...
+     Creating library C:/Users/Frees/OneDrive/Documents/BlackFlagCoop-v080-spawn/build/lib/Release/BlackFlagCoop.lib and object C:/Users/Frees/OneDrive/Documents/BlackFlagCoop-v080-spawn/build/lib/Release/BlackFlagCoop.exp
+  BlackFlagCoop.vcxproj -> C:\Users\Frees\OneDrive\Documents\BlackFlagCoop-v080-spawn\build\bin\Release\BlackFlagCoop.asi
+  Copying BlackFlagCoop startup artwork beside the ASI
+  Building Custom Rule C:/Users/Frees/OneDrive/Documents/BlackFlagCoop-v080-spawn/CMakeLists.txt
+  main.cpp
+  BlackFlagCoopExeStringProbe.vcxproj -> C:\Users\Frees\OneDrive\Documents\BlackFlagCoop-v080-spawn\build\bin\Release\BlackFlagCoopExeStringProbe.exe
+  Building Custom Rule C:/Users/Frees/OneDrive/Documents/BlackFlagCoop-v080-spawn/CMakeLists.txt
+  main.cpp
+  BlackFlagCoopNetTest.vcxproj -> C:\Users\Frees\OneDrive\Documents\BlackFlagCoop-v080-spawn\build\bin\Release\BlackFlagCoopNetTest.exe
+  Building Custom Rule C:/Users/Frees/OneDrive/Documents/BlackFlagCoop-v080-spawn/CMakeLists.txt
+  main.cpp
+  BlackFlagCoopSpawnContractTest.vcxproj -> C:\Users\Frees\OneDrive\Documents\BlackFlagCoop-v080-spawn\build\bin\Release\BlackFlagCoopSpawnContractTest.exe
+  Building Custom Rule C:/Users/Frees/OneDrive/Documents/BlackFlagCoop-v080-spawn/CMakeLists.txt
+
+---
+exit_code: 0
+elapsed_ms: 9705
+ended_at: 2026-11-12T19:43:53.701Z
+---

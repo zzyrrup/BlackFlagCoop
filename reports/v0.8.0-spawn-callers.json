@@ -1,0 +1,35 @@
+{
+  "schemaVersion": 1,
+  "milestone": "v0.8.0",
+  "mode": "offline-pe-readonly",
+  "exeSha256": "19920F34BB2FAC814023EE3C27F0CECA1872E80A2AAFB37C092C419FFF77CC0D",
+  "nativeSpawnConfirmed": false,
+  "schemaVisitorsConfirmed": 3,
+  "factoryCandidateCount": 0,
+  "missingLink": "A caller that fills SpawnEntityBuilderParams and invokes entity creation. The three *Params functions register schema names through 0x4572C60 and are not character factories.",
+  "excludedAsFactory": [
+    {"rva": "0x1AC380", "reason": "deferred queue drain"},
+    {"rva": "0x2E97B60", "reason": "LOD enqueue helper"},
+    {"rva": "0x2E97FC0", "reason": "LOD enqueue wrapper"},
+    {"rva": "0xE95E80", "reason": "side-block allocator"},
+    {"rva": "0x426EE50", "reason": "generic allocator"},
+    {"rva": "0x80F2330", "reason": "SpawnCharacterParams schema visitor"},
+    {"rva": "0x8DFFB90", "reason": "SpawnEntityParams schema visitor"},
+    {"rva": "0x8E02960", "reason": "SpawnEntityBuilderParams schema visitor"}
+  ],
+  "strings": [
+    {"needle": "SpawnEntityParams", "rva": "0xA11DC2D", "text": "SpawnEntityParams"},
+    {"needle": "SpawnCharacterParams", "rva": "0xA11DDC1", "text": "SpawnCharacterParams"},
+    {"needle": "SpawnEntityBuilderParams", "rva": "0xA11DDF0", "text": "SpawnEntityBuilderParams"}
+  ],
+  "functions": [
+    {"entry": "0x80F2330", "class": "schema-visitor", "callsSchema": true, "callsAlloc": false, "callsVisitor": true, "leasParams": true, "strings": ["SpawnCharacterParams"], "callees": ["0x4572C60", "0x8E02960", "0x166CD00", "0x48BA350", "0x4987180"]},
+    {"entry": "0x80F23E0", "class": "schema-caller", "callsSchema": true, "callsAlloc": false, "callsVisitor": true, "leasParams": true, "strings": ["SpawnNPCParams"], "callees": ["0x4572C60", "0x80F2330", "0x4987180"]},
+    {"entry": "0x80F2580", "class": "schema-caller", "callsSchema": true, "callsAlloc": false, "callsVisitor": true, "leasParams": true, "strings": ["SpawnFirstPersonPlayerParams"], "callees": ["0x4572C60", "0x80F2330", "0x4987180"]},
+    {"entry": "0x80F27E0", "class": "schema-caller", "callsSchema": true, "callsAlloc": false, "callsVisitor": true, "leasParams": true, "strings": ["SpawnInventoryParams"], "callees": ["0x4572C60", "0x8E02960", "0x914330", "0x4987180"]},
+    {"entry": "0x80F2A20", "class": "schema-caller", "callsSchema": true, "callsAlloc": false, "callsVisitor": true, "leasParams": true, "strings": ["SpawnPlayerParams"], "callees": ["0x4572C60", "0x80F2330", "0x4987180"]},
+    {"entry": "0x821ABC0", "class": "schema-caller", "callsSchema": true, "callsAlloc": false, "callsVisitor": true, "leasParams": true, "strings": ["SpawnPlayerBoatParams"], "callees": ["0x4572C60", "0x80F2330", "0x33B130", "0x4987180"]},
+    {"entry": "0x8DFFB90", "class": "schema-visitor", "callsSchema": true, "callsAlloc": false, "callsVisitor": false, "leasParams": true, "strings": ["SpawnEntityParams"], "callees": ["0x4572C60", "0x8DFFC30", "0x47204B0", "0xCF21D0", "0x4987180"]},
+    {"entry": "0x8E02960", "class": "schema-visitor", "callsSchema": true, "callsAlloc": false, "callsVisitor": true, "leasParams": true, "strings": ["SpawnEntityBuilderParams"], "callees": ["0x4572C60", "0x8DFFB90", "0x48BA350", "0x914330", "0x4987180"]}
+  ]
+}

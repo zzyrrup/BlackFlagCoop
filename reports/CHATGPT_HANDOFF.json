@@ -1,32 +1,40 @@
 {
   "schemaVersion": 1,
-  "generatedUtc": "2026-11-12T19:34:00Z",
+  "generatedUtc": "2026-11-12T19:46:00Z",
   "handoffFor": "ChatGPT",
   "executor": "Cursor",
   "machine": "PC1",
   "repository": {
     "url": "https://github.com/zzyrrup/BlackFlagCoop",
     "defaultBranch": "main",
-    "featureBranch": "cursor/v085-vt-owner-ctors-8285",
-    "baseBranch": "cursor/v084-ctor-reverse-8285",
+    "featureBranch": "cursor/v080-spawn-callers-a9fe",
+    "baseBranch": "cursor/v085-vt-owner-ctors-8285",
     "doNotPushMain": true,
     "initialCommit": "e12e70150656ac80742f10b496f7e5556e7985b7"
   },
   "project": {
     "name": "BlackFlagCoop",
     "goal": "Research path toward co-op for AC Black Flag Resynced (two Edwards / shared world / LAN-internet); not claimed achieved",
-    "functionalityChangedByThisMilestone": false
+    "functionalityChangedByThisMilestone": true,
+    "functionalityNote": "Candidate 0.8.0-dev logs a spawn refusal. It does not call a game factory. Installed ASI remains v0.5.1. Native Edward factory is not confirmed."
   },
   "milestone": {
-    "currentId": "v0.6.25",
-    "currentTitle": "Owner VT constructors + enrollment +0x98 link",
-    "status": "complete",
+    "currentId": "v0.8.0",
+    "currentTitle": "Second Edward proof-of-life: schema visitors identified, native factory not confirmed",
+    "status": "factory_not_confirmed_gate_off",
     "priorPreserved": ["v0.6.4", "v0.6.5", "v0.6.6", "v0.6.7", "v0.6.8", "v0.6.9", "v0.6.10", "v0.6.11", "v0.6.12", "v0.6.13", "v0.6.14", "v0.6.15", "v0.6.16", "v0.6.17", "v0.6.18", "v0.6.19", "v0.6.20", "v0.6.21", "v0.6.22", "v0.6.23", "v0.6.24"]
   },
   "asi": {
     "version": "0.5.1",
     "sha256": "63B38877DDA7CC7CD9AB2619F94D3941C37F54C95A435EFE47084DC4CF2A50BE",
     "deployAuthorized": false,
+    "candidate": {
+      "version": "0.8.0-dev",
+      "bytes": 101376,
+      "sha256": "AD1EE8C35CD99E3452E6330032E660C9FFC83AC01221423F3627A81344807711",
+      "invokeNativeSpawn": false,
+      "deployed": false
+    },
     "preserveWorkingAsi": true
   },
   "game": {
@@ -36,8 +44,12 @@
     "exeSha256": "19920F34BB2FAC814023EE3C27F0CECA1872E80A2AAFB37C092C419FFF77CC0D"
   },
   "build": {
-    "asiRebuilt": false,
-    "offlineTools": ["tools/offline/VtOwner085"]
+    "asiRebuilt": true,
+    "generator": "Visual Studio 18 2026",
+    "architecture": "x64",
+    "config": "Release",
+    "result": "pass",
+    "offlineTools": ["tools/offline/VtOwner085", "tools/offline/SpawnCallers080"]
   },
   "network": {
     "changesAuthorized": false,
@@ -50,7 +62,10 @@
       "Owner VT[0] ctors have 0 E8 callers (table-dispatched)",
       "Spatial/neigh ctors init shared +0x98 field (enrollment side-block offset)",
       "No same-func ctor->arming edge",
-      "No Edward/create path"
+      "No Edward/create path on the v0.6.25 owner VT",
+      "v0.8.0: Spawn*Params are schema visitors via 0x4572C60",
+      "Same-table alloc 0x34730 size 0x1528 and 0x3DE6300 size 0x1530 are unproven",
+      "Plugin SpawnContract invoke=off"
     ],
     "keyRvas": {
       "neighVt": "0x976B2D0",
@@ -66,38 +81,43 @@
     }
   },
   "confirmed": [
-    "ASI v0.5.1 preserved; no deploy",
-    "Owner VT[0] ctors identified for both vtables",
-    "Shared +0x98 field init links owners to enrollment side-block layout",
-    "No live memory this milestone"
+    "Installed ASI v0.5.1 hash re-read; candidate not deployed",
+    "SpawnCharacterParams 0x80F2330, SpawnEntityParams 0x8DFFB90, SpawnEntityBuilderParams 0x8E02960 are schema visitors via 0x4572C60",
+    "Direct callers of those visitors are also schema visitors",
+    "0x34730 allocates 0x1528 bytes and 0x3DE6300 allocates 0x1530 bytes on the same code-pointer runs; object identity unproven",
+    "SpawnContract invoke flag is false and AttemptSpawn returns target 0"
   ],
   "hypotheses": [
     "0xE95E80 attaches side-blocks onto these same owner instances before arming",
     "TypeInfo/factory path invokes VT[0] after Allocator"
   ],
   "blockers": [
-    "Who Allocates then invokes owner VT[0] ctors still open",
-    "Side-block attach + arming on same instances unproven",
+    "Native Edward factory not confirmed",
+    "Same-table allocation sizes do not identify the object",
     "No input/possession path",
-    "Spawn tests not authorized"
+    "No gameplay test authorized"
   ],
   "mostRecentCompletedMilestone": {
-    "id": "v0.6.25",
-    "docs": ["docs/v0.6.25-vt-owner-ctors.md"],
+    "id": "v0.8.0",
+    "docs": ["docs/v0.8.0-second-edward-plan.md", "docs/v0.8.0-manual-pc1-checklist.md", "docs/v0.6.25-vt-owner-ctors.md"],
     "reports": [
-      "reports/v0.6.25-funcs-deep.json",
-      "reports/v0.6.25-summary.json",
-      "reports/v0.6.25-second-edward-feasibility.json",
-      "reports/v085-raw/evidence.txt"
+      "reports/v0.8.0-validation.json",
+      "reports/v0.8.0-spawn-callers.json",
+      "reports/v0.8.0-param-vtables.json",
+      "reports/v080-spawn-raw/evidence.txt",
+      "reports/v0.8.0-build-log.txt",
+      "reports/v0.8.0-spawn-contract-test.txt"
     ]
   },
   "nextRecommendedMilestone": {
-    "id": "v0.6.26",
-    "title": "Allocator->owner VT[0] invoke; prove 0xE95E80 + arming on same instances",
-    "primary": ["Alloc then VT[0] ctor", "0xE95E80 on owner objects", "arming on same instances"],
-    "forbidden": ["spawn", "deploy", "live memory", "PC2", "save-data", "force-push main", "expect E8 to Outer/owner VT[0]", "treat helper position extract as possession"]
+    "id": "v0.8.1",
+    "title": "Vtable stored by 0x34730 and 0x3DE6300 after Allocator returns",
+    "primary": ["post-alloc vtable in 0x34730", "post-alloc vtable in 0x3DE6300", "stop unless that vtable is a character or actor"],
+    "forbidden": ["call the allocator from the plugin", "deploy", "game launch", "live memory", "PC2", "LAN", "treat schema visitors as factories", "treat 0x1528/0x1530 size alone as Edward"]
   },
   "tests": [
+    { "name": "SpawnCallers080_schema_visitors", "result": "pass" },
+    { "name": "SpawnContract_ctest_Release", "result": "pass" },
     { "name": "VtOwner085_build_scan", "result": "pass" },
     { "name": "vt0_ctor_map", "result": "pass" },
     { "name": "plus98_enrollment_link", "result": "pass" },
@@ -115,11 +135,11 @@
     "priorMilestonesPreserved": true
   },
   "chatgptNextReviewInstructions": [
-    "Read docs/CHATGPT_HANDOFF.md and this JSON first",
-    "Review v0.6.25 PR; preserve v0.6.4-v0.6.24 history",
-    "Separate confirmed vs hypotheses",
-    "Propose v0.6.26 Alloc->VT[0] and side-block/arming identity proof",
-    "Do not authorize deploy/spawn/live memory/PC2 unless user overrides",
+    "Read docs/v0.8.0-second-edward-plan.md and reports/v0.8.0-validation.json first",
+    "Schema visitors are not the Edward factory. Same-table alloc sizes are confirmed and the object identity is not",
+    "The v0.7.0 launch is an inconclusive overlay observation. Do not infer co-op success or failure and do not authorize another launch",
+    "Next offline step is the vtable stored after Allocator returns in 0x34730 and 0x3DE6300",
+    "Do not authorize deploy, gameplay, live memory, or PC2 unless the user asks",
     "Return PC1 branch+PR instructions"
   ]
 }

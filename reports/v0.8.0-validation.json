@@ -1,0 +1,42 @@
+{
+  "schemaVersion": 1,
+  "milestone": "v0.8.0",
+  "generatedUtc": "2026-11-12T19:46:00Z",
+  "machine": "PC1",
+  "nativeSpawnConfirmed": false,
+  "secondActorInstantiated": false,
+  "independentControlImplemented": false,
+  "gameLaunched": false,
+  "deployed": false,
+  "exeSha256": "19920F34BB2FAC814023EE3C27F0CECA1872E80A2AAFB37C092C419FFF77CC0D",
+  "build": {
+    "generator": "Visual Studio 18 2026",
+    "architecture": "x64",
+    "config": "Release",
+    "compiler": "MSVC 19.52.37029.0",
+    "result": "pass",
+    "warningsObserved": 0,
+    "log": "reports/v0.8.0-build-log.txt"
+  },
+  "candidate": {
+    "version": "0.8.0-dev",
+    "path": "build/bin/Release/BlackFlagCoop.asi",
+    "bytes": 101376,
+    "sha256": "AD1EE8C35CD99E3452E6330032E660C9FFC83AC01221423F3627A81344807711",
+    "invokeNativeSpawn": false,
+    "deployed": false
+  },
+  "installedAsi": {
+    "path": "C:\\Games\\AC Black Flag Resynced\\BlackFlagCoop.asi",
+    "version": "0.5.1",
+    "bytes": 99840,
+    "sha256": "63B38877DDA7CC7CD9AB2619F94D3941C37F54C95A435EFE47084DC4CF2A50BE",
+    "unchanged": true
+  },
+  "tests": [
+    { "name": "SpawnCallers080_exe_hash_and_schema_visitors", "result": "pass", "schemaVisitors": "3/3", "factoryCandidates": 0 },
+    { "name": "SpawnContract_ctest_Release", "result": "pass" },
+    { "name": "game_launch_deploy", "result": "not_run" }
+  ],
+  "missingLink": "A callsite that fills SpawnEntityBuilderParams and inserts a character into the world. The *Params functions are schema visitors via 0x4572C60."
+}
