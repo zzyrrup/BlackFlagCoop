@@ -25,9 +25,9 @@ Ultimate vision is **not claimed as achieved**. Dual-Edward co-op remains unprov
 
 ## 2. Current development milestone
 
-**v0.7.0 one-time PC1 smoke recorded** — gated co-op session roster panel (`0.7.0-dev`).
+**v0.7.0 one-time PC1 smoke recorded as an inconclusive launch/overlay observation.**
 
-The panel logs an idle two-slot roster from `InitializeASI` and draws a click-through sidebar only when `BFC_SESSION_PANEL=1`. It does not open a socket, spawn an actor, or claim an in-world Edward. The candidate `EF7EB82D…` was installed for one launch and then removed. The installed file is v0.5.1 again. The ASI loaded. The playable world was not confirmed on screen. Details: `docs/v0.7.0-pc1-smoke.md`.
+The panel logs an idle two-slot roster from `InitializeASI` and draws a click-through sidebar only when `BFC_SESSION_PANEL=1`. It does not open a socket, spawn an actor, or claim an in-world Edward. The candidate `EF7EB82D…` was installed for one launch and then removed. The installed file is v0.5.1 again. The plugin loaded and the overlay started. The playable world was not confirmed. No Continue click was sent. The process exited. No repeat test is authorized. Do not infer a co-op success or a co-op failure. Details: `docs/v0.7.0-pc1-smoke.md`. Active development is the second Edward, in its own checkout. This branch is the smoke record only.
 
 ---
 
@@ -205,7 +205,7 @@ Offline v0.6.7 (dispatch of `0x2E97FC0` and subject RTTI) stays a separate resea
 | `BlackFlagCoopSessionPanelTest` | Pass (`ALL PASSED`) |
 | VS 18 2026 x64 Release build | Pass, 0 warnings |
 | Installed ASI hash re-read | Restored v0.5.1 `63B38877…` (99840 bytes) |
-| One PC1 launch of candidate `EF7EB82D…` | ASI loaded (`0.7.0-dev`). World not confirmed. Not repeated |
+| One PC1 launch of candidate `EF7EB82D…` | Inconclusive. Plugin loaded, overlay started, world not confirmed, no Continue click, process exited. Not repeated |
 | Spawn / inject / live memory | **Not performed** |
 | Network protocol changes | **None** |
 
@@ -226,8 +226,8 @@ When reviewing the GitHub repository after a Cursor push:
 
 1. Read this file, `reports/CHATGPT_HANDOFF.json`, `reports/v0.7.0-validation.json`, and `docs/v0.7.0-pc1-smoke.md` first.
 2. Treat the session panel as a UI placeholder. Do not describe it as a second Edward.
-3. The candidate ASI loaded on one PC1 launch. The playable world was not confirmed. Do not treat that launch as co-op.
-4. Do not instruct another gameplay launch, PC2 test, or LAN test unless Cruz explicitly asks.
+3. Record the launch as an inconclusive overlay observation: the plugin loaded, the overlay started, the playable world was not confirmed, no Continue click was sent, and the process exited. Do not infer a co-op success or a co-op failure.
+4. No repeat gameplay test is authorized. Do not instruct another gameplay launch, PC2 test, or LAN test unless Cruz explicitly asks. Do not let this smoke record block the separate v0.8.0 second-Edward checkout.
 5. v0.6.7 RTTI/dispatch research remains optional and separate. Do not treat the deferred queue as character creation.
 6. Do not instruct Cursor to leave the candidate installed, spawn, or use live memory.
 7. Return instructions Cursor can execute verbatim on PC1 on a dedicated branch + PR (never push main).

@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedUtc": "2026-11-12T16:46:11Z",
+  "generatedUtc": "2026-11-12T19:45:00Z",
   "handoffFor": "ChatGPT",
   "executor": "Cursor",
   "machine": "PC1",
@@ -16,12 +16,12 @@
     "name": "BlackFlagCoop",
     "goal": "Research path toward co-op for AC Black Flag Resynced (two Edwards / shared world / LAN-internet); not claimed achieved",
     "functionalityChangedByThisMilestone": true,
-    "functionalityNote": "Candidate plugin logs an idle session roster and can draw it when BFC_SESSION_PANEL=1. One PC1 launch loaded 0.7.0-dev. The world was not confirmed. v0.5.1 is restored. No socket, spawn, or protocol change."
+    "functionalityNote": "Candidate plugin logs an idle session roster and can draw it when BFC_SESSION_PANEL=1. One PC1 launch is an inconclusive overlay observation: 0.7.0-dev loaded, overlay started, world not confirmed, no Continue click, process exited. No co-op success or failure is inferred. v0.5.1 is restored. No repeat test is authorized. No socket, spawn, or protocol change."
   },
   "milestone": {
     "currentId": "v0.7.0",
     "currentTitle": "Gated co-op session roster panel",
-    "status": "one_pc1_smoke_asi_loaded_world_not_confirmed",
+    "status": "inconclusive_launch_overlay_observation",
     "priorPreserved": ["v0.6.4", "v0.6.5", "v0.6.6"]
   },
   "asi": {
@@ -117,19 +117,20 @@
     ]
   },
   "nextRecommendedMilestone": {
-    "id": "v0.7.0-smoke-follow-up-offline-only",
-    "title": "Do not relaunch. Diagnose the unconfirmed world load from the smoke report, offline",
+    "id": "v0.8.0",
+    "title": "Second Edward proof-of-life in its own checkout. This smoke branch stays a record only.",
     "primary": [
-      "docs/v0.7.0-pc1-smoke.md",
-      "reports/v0.7.0-pc1-smoke.json"
+      "Do not relaunch",
+      "Do not infer co-op success or failure from the inconclusive overlay observation",
+      "Continue second-Edward work without editing this smoke worktree"
     ],
-    "forbidden": ["spawn", "deploy", "live memory", "PC2", "LAN", "second gameplay launch", "force-push main"]
+    "forbidden": ["spawn", "deploy", "live memory", "PC2", "LAN", "second gameplay launch", "force-push main", "more v0.7.0 panel work on this branch"]
   },
   "tests": [
     { "name": "SessionPanel_ctest_Release", "result": "pass" },
     { "name": "BlackFlagCoopSessionPanelTest", "result": "pass" },
     { "name": "installed_asi_hash_recheck", "result": "pass" },
-    { "name": "pc1_one_launch_smoke", "result": "asi_loaded_world_not_confirmed" },
+    { "name": "pc1_one_launch_smoke", "result": "inconclusive_launch_overlay_observation" },
     { "name": "spawn_live_memory", "result": "not_run" }
   ],
   "safety": {
@@ -145,8 +146,10 @@
   "chatgptNextReviewInstructions": [
     "Read docs/v0.7.0-pc1-smoke.md and reports/v0.7.0-pc1-smoke.json first",
     "The session panel is a placeholder roster, not a second Edward",
-    "ASI 0.7.0-dev loaded once on PC1; the playable world was not confirmed; v0.5.1 is restored",
+    "Verdict is an inconclusive launch/overlay observation: plugin loaded, overlay started, world not confirmed, no Continue click, process exited",
+    "Do not infer co-op success or failure. No repeat test is authorized. v0.5.1 is restored",
     "Do not authorize another gameplay launch, PC2, or LAN unless the user asks",
+    "Do not block the separate v0.8.0 second-Edward checkout",
     "Return PC1 branch+PR instructions and never push main"
   ]
 }

@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedUtc": "2026-11-12T19:40:00Z",
+  "generatedUtc": "2026-11-12T19:45:00Z",
   "milestone": "v0.7.0",
   "machine": "PC1",
   "branchUnderTest": "cursor/v070-session-panel-ba61",
@@ -94,6 +94,9 @@
     "pc2": false,
     "lan": false
   },
+  "verdict": "inconclusive_launch_overlay_observation",
+  "repeatAuthorized": false,
+  "coopInference": "none",
   "coopClaim": false,
   "narrative": "docs/v0.7.0-pc1-smoke.md"
 }
