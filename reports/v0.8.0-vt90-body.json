@@ -1,0 +1,24 @@
+{
+  "schemaVersion": 1,
+  "milestone": "v0.8.0",
+  "contract": "C2",
+  "mode": "offline-pe-readonly",
+  "agent1Ask": "disassemble vt+0x90 body at 0x1F75E9F; falsify if not new*; else find Build r8 consumer",
+  "exeSha256": "19920F34BB2FAC814023EE3C27F0CECA1872E80A2AAFB37C092C419FFF77CC0D",
+  "primary": "0x1F75EA7",
+  "sibling": "0x44A8A5",
+  "loadAt": "0x1F75E9F",
+  "slotBodyUniqueResolved": false,
+  "bf3100": {
+    "thunk": "0xBF3100",
+    "target": "0xE8C71F0",
+    "withEdx0": "returns this+0x90 interior pointer"
+  },
+  "buildConsumerHits": 0,
+  "rdataSlot90Bodies": 321,
+  "allocishBodies": 35,
+  "c2Proven": false,
+  "callEngine": false,
+  "verdict": "body unresolved offline; no vt+0x90→Build r8 consumer; sites' tails remain non-Build",
+  "next": "Pin vtable for object at 0x1F75E9F path, or new Duplicate shape from Agent1"
+}

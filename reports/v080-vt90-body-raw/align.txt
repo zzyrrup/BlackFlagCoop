@@ -1,0 +1,384 @@
+===== BYTE SCAN around 0x1F75E80 =====
+off+27 bytes FF 90 90 00 00 00
+hex dump:
+1F75E80 08 48 31 E0 48 89 44 24 28 48 8B 41 08 48 8B 40 
+1F75E90 20 F6 40 0B 80 74 44 48 8B 08 48 85 C9 74 3C 48 
+1F75EA0 8B 01 31 D2 45 31 C0 FF 90 90 00 00 00 48 85 C0 
+1F75EB0 74 29 48 89 C7 48 8B 1D 44 C0 71 09 48 89 C1 31 
+1F75EC0 D2 E8 3A D2 C7 FE 48 8D 15 B3 F3 A3 FE 48 89 D9 
+1F75ED0 49 89 F8 49 89 C1 E8 15 D0 C7 FE 48 8D 54 24 24 
+1F75EE0 C7 02 00 00 00 00 48 89 F1 E8 22 53 4D FE 48 8B 
+1F75EF0 4C 24 28 48 31 E1 E8 75 E6 09 03 48 89 F0 48 83 
+===== DECODE CANDIDATES near 0x1F75E80 =====
+-- start 0x1F75E80
+0x1F75E80 or [rax+31],cl
+0x1F75E83 loopne 0000000141F75ECD
+0x1F75E85 mov [rsp+28],eax
+0x1F75E89 mov rax,[rcx+8]
+0x1F75E8D mov rax,[rax+20]
+0x1F75E91 test byte ptr [rax+0B],80
+0x1F75E95 je short 0000000141F75EDB
+0x1F75E97 mov rcx,[rax]
+0x1F75E9A test rcx,rcx
+0x1F75E9D je short 0000000141F75EDB
+0x1F75E9F mov rax,[rcx]
+0x1F75EA2 xor edx,edx
+0x1F75EA4 xor r8d,r8d
+0x1F75EA7 call qword ptr [rax+90] ;call=mem disp=90
+0x1F75EAD test rax,rax
+0x1F75EB0 je short 0000000141F75EDB
+0x1F75EB2 mov rdi,rax
+0x1F75EB5 mov rbx,[rip+971C044] ;data=0xB691F00
+0x1F75EBC mov rcx,rax
+0x1F75EBF xor edx,edx
+0x1F75EC1 call 0000000140BF3100 ;call=0xBF3100
+0x1F75EC6 lea rdx,[rip-15C0C4D] ;data=0x9B5280
+0x1F75ECD mov rcx,rbx
+0x1F75ED0 mov r8,rdi
+-- start 0x1F75E88
+0x1F75E88 sub [rax-75],cl
+0x1F75E8B or [r8-75],cl
+0x1F75E8F and sil,sil
+0x1F75E92 or eax,[rax-74B7BB8C]
+0x1F75E99 or [rax-7B],cl
+0x1F75E9C leave
+0x1F75E9D je short 0000000141F75EDB
+0x1F75E9F mov rax,[rcx]
+0x1F75EA2 xor edx,edx
+0x1F75EA4 xor r8d,r8d
+0x1F75EA7 call qword ptr [rax+90] ;call=mem disp=90
+0x1F75EAD test rax,rax
+0x1F75EB0 je short 0000000141F75EDB
+0x1F75EB2 mov rdi,rax
+0x1F75EB5 mov rbx,[rip+971C044] ;data=0xB691F00
+0x1F75EBC mov rcx,rax
+0x1F75EBF xor edx,edx
+0x1F75EC1 call 0000000140BF3100 ;call=0xBF3100
+0x1F75EC6 lea rdx,[rip-15C0C4D] ;data=0x9B5280
+0x1F75ECD mov rcx,rbx
+0x1F75ED0 mov r8,rdi
+0x1F75ED3 mov r9,rax
+0x1F75ED6 call 0000000140BF2EF0 ;call=0xBF2EF0
+0x1F75EDB lea rdx,[rsp+24]
+-- start 0x1F75E90
+0x1F75E90 and dh,dh
+0x1F75E92 or eax,[rax-74B7BB8C]
+0x1F75E99 or [rax-7B],cl
+0x1F75E9C leave
+0x1F75E9D je short 0000000141F75EDB
+0x1F75E9F mov rax,[rcx]
+0x1F75EA2 xor edx,edx
+0x1F75EA4 xor r8d,r8d
+0x1F75EA7 call qword ptr [rax+90] ;call=mem disp=90
+0x1F75EAD test rax,rax
+0x1F75EB0 je short 0000000141F75EDB
+0x1F75EB2 mov rdi,rax
+0x1F75EB5 mov rbx,[rip+971C044] ;data=0xB691F00
+0x1F75EBC mov rcx,rax
+0x1F75EBF xor edx,edx
+0x1F75EC1 call 0000000140BF3100 ;call=0xBF3100
+0x1F75EC6 lea rdx,[rip-15C0C4D] ;data=0x9B5280
+0x1F75ECD mov rcx,rbx
+0x1F75ED0 mov r8,rdi
+0x1F75ED3 mov r9,rax
+0x1F75ED6 call 0000000140BF2EF0 ;call=0xBF2EF0
+0x1F75EDB lea rdx,[rsp+24]
+0x1F75EE0 mov dword ptr [rdx],0
+0x1F75EE6 mov rcx,rsi
+-- start 0x1F75E95
+0x1F75E95 je short 0000000141F75EDB
+0x1F75E97 mov rcx,[rax]
+0x1F75E9A test rcx,rcx
+0x1F75E9D je short 0000000141F75EDB
+0x1F75E9F mov rax,[rcx]
+0x1F75EA2 xor edx,edx
+0x1F75EA4 xor r8d,r8d
+0x1F75EA7 call qword ptr [rax+90] ;call=mem disp=90
+0x1F75EAD test rax,rax
+0x1F75EB0 je short 0000000141F75EDB
+0x1F75EB2 mov rdi,rax
+0x1F75EB5 mov rbx,[rip+971C044] ;data=0xB691F00
+0x1F75EBC mov rcx,rax
+0x1F75EBF xor edx,edx
+0x1F75EC1 call 0000000140BF3100 ;call=0xBF3100
+0x1F75EC6 lea rdx,[rip-15C0C4D] ;data=0x9B5280
+0x1F75ECD mov rcx,rbx
+0x1F75ED0 mov r8,rdi
+0x1F75ED3 mov r9,rax
+0x1F75ED6 call 0000000140BF2EF0 ;call=0xBF2EF0
+0x1F75EDB lea rdx,[rsp+24]
+0x1F75EE0 mov dword ptr [rdx],0
+0x1F75EE6 mov rcx,rsi
+0x1F75EE9 call 000000014044B210 ;call=0x44B210
+-- start 0x1F75E98
+0x1F75E98 mov ecx,[rax]
+0x1F75E9A test rcx,rcx
+0x1F75E9D je short 0000000141F75EDB
+0x1F75E9F mov rax,[rcx]
+0x1F75EA2 xor edx,edx
+0x1F75EA4 xor r8d,r8d
+0x1F75EA7 call qword ptr [rax+90] ;call=mem disp=90
+0x1F75EAD test rax,rax
+0x1F75EB0 je short 0000000141F75EDB
+0x1F75EB2 mov rdi,rax
+0x1F75EB5 mov rbx,[rip+971C044] ;data=0xB691F00
+0x1F75EBC mov rcx,rax
+0x1F75EBF xor edx,edx
+0x1F75EC1 call 0000000140BF3100 ;call=0xBF3100
+0x1F75EC6 lea rdx,[rip-15C0C4D] ;data=0x9B5280
+0x1F75ECD mov rcx,rbx
+0x1F75ED0 mov r8,rdi
+0x1F75ED3 mov r9,rax
+0x1F75ED6 call 0000000140BF2EF0 ;call=0xBF2EF0
+0x1F75EDB lea rdx,[rsp+24]
+0x1F75EE0 mov dword ptr [rdx],0
+0x1F75EE6 mov rcx,rsi
+0x1F75EE9 call 000000014044B210 ;call=0x44B210
+0x1F75EEE mov rcx,[rsp+28]
+-- start 0x1F75E9A
+0x1F75E9A test rcx,rcx
+0x1F75E9D je short 0000000141F75EDB
+0x1F75E9F mov rax,[rcx]
+0x1F75EA2 xor edx,edx
+0x1F75EA4 xor r8d,r8d
+0x1F75EA7 call qword ptr [rax+90] ;call=mem disp=90
+0x1F75EAD test rax,rax
+0x1F75EB0 je short 0000000141F75EDB
+0x1F75EB2 mov rdi,rax
+0x1F75EB5 mov rbx,[rip+971C044] ;data=0xB691F00
+0x1F75EBC mov rcx,rax
+0x1F75EBF xor edx,edx
+0x1F75EC1 call 0000000140BF3100 ;call=0xBF3100
+0x1F75EC6 lea rdx,[rip-15C0C4D] ;data=0x9B5280
+0x1F75ECD mov rcx,rbx
+0x1F75ED0 mov r8,rdi
+0x1F75ED3 mov r9,rax
+0x1F75ED6 call 0000000140BF2EF0 ;call=0xBF2EF0
+0x1F75EDB lea rdx,[rsp+24]
+0x1F75EE0 mov dword ptr [rdx],0
+0x1F75EE6 mov rcx,rsi
+0x1F75EE9 call 000000014044B210 ;call=0x44B210
+0x1F75EEE mov rcx,[rsp+28]
+0x1F75EF3 xor rcx,rsp
+-- start 0x1F75E9C
+0x1F75E9C leave
+0x1F75E9D je short 0000000141F75EDB
+0x1F75E9F mov rax,[rcx]
+0x1F75EA2 xor edx,edx
+0x1F75EA4 xor r8d,r8d
+0x1F75EA7 call qword ptr [rax+90] ;call=mem disp=90
+0x1F75EAD test rax,rax
+0x1F75EB0 je short 0000000141F75EDB
+0x1F75EB2 mov rdi,rax
+0x1F75EB5 mov rbx,[rip+971C044] ;data=0xB691F00
+0x1F75EBC mov rcx,rax
+0x1F75EBF xor edx,edx
+0x1F75EC1 call 0000000140BF3100 ;call=0xBF3100
+0x1F75EC6 lea rdx,[rip-15C0C4D] ;data=0x9B5280
+0x1F75ECD mov rcx,rbx
+0x1F75ED0 mov r8,rdi
+0x1F75ED3 mov r9,rax
+0x1F75ED6 call 0000000140BF2EF0 ;call=0xBF2EF0
+0x1F75EDB lea rdx,[rsp+24]
+0x1F75EE0 mov dword ptr [rdx],0
+0x1F75EE6 mov rcx,rsi
+0x1F75EE9 call 000000014044B210 ;call=0x44B210
+0x1F75EEE mov rcx,[rsp+28]
+0x1F75EF3 xor rcx,rsp
+-- start 0x1F75E9F
+0x1F75E9F mov rax,[rcx]
+0x1F75EA2 xor edx,edx
+0x1F75EA4 xor r8d,r8d
+0x1F75EA7 call qword ptr [rax+90] ;call=mem disp=90
+0x1F75EAD test rax,rax
+0x1F75EB0 je short 0000000141F75EDB
+0x1F75EB2 mov rdi,rax
+0x1F75EB5 mov rbx,[rip+971C044] ;data=0xB691F00
+0x1F75EBC mov rcx,rax
+0x1F75EBF xor edx,edx
+0x1F75EC1 call 0000000140BF3100 ;call=0xBF3100
+0x1F75EC6 lea rdx,[rip-15C0C4D] ;data=0x9B5280
+0x1F75ECD mov rcx,rbx
+0x1F75ED0 mov r8,rdi
+0x1F75ED3 mov r9,rax
+0x1F75ED6 call 0000000140BF2EF0 ;call=0xBF2EF0
+0x1F75EDB lea rdx,[rsp+24]
+0x1F75EE0 mov dword ptr [rdx],0
+0x1F75EE6 mov rcx,rsi
+0x1F75EE9 call 000000014044B210 ;call=0x44B210
+0x1F75EEE mov rcx,[rsp+28]
+0x1F75EF3 xor rcx,rsp
+0x1F75EF6 call 0000000145014570 ;call=0x5014570
+0x1F75EFB mov rax,rsi
+-- start 0x1F75EA0
+0x1F75EA0 mov eax,[rcx]
+0x1F75EA2 xor edx,edx
+0x1F75EA4 xor r8d,r8d
+0x1F75EA7 call qword ptr [rax+90] ;call=mem disp=90
+0x1F75EAD test rax,rax
+0x1F75EB0 je short 0000000141F75EDB
+0x1F75EB2 mov rdi,rax
+0x1F75EB5 mov rbx,[rip+971C044] ;data=0xB691F00
+0x1F75EBC mov rcx,rax
+0x1F75EBF xor edx,edx
+0x1F75EC1 call 0000000140BF3100 ;call=0xBF3100
+0x1F75EC6 lea rdx,[rip-15C0C4D] ;data=0x9B5280
+0x1F75ECD mov rcx,rbx
+0x1F75ED0 mov r8,rdi
+0x1F75ED3 mov r9,rax
+0x1F75ED6 call 0000000140BF2EF0 ;call=0xBF2EF0
+0x1F75EDB lea rdx,[rsp+24]
+0x1F75EE0 mov dword ptr [rdx],0
+0x1F75EE6 mov rcx,rsi
+0x1F75EE9 call 000000014044B210 ;call=0x44B210
+0x1F75EEE mov rcx,[rsp+28]
+0x1F75EF3 xor rcx,rsp
+0x1F75EF6 call 0000000145014570 ;call=0x5014570
+0x1F75EFB mov rax,rsi
+-- start 0x1F75EA2
+0x1F75EA2 xor edx,edx
+0x1F75EA4 xor r8d,r8d
+0x1F75EA7 call qword ptr [rax+90] ;call=mem disp=90
+0x1F75EAD test rax,rax
+0x1F75EB0 je short 0000000141F75EDB
+0x1F75EB2 mov rdi,rax
+0x1F75EB5 mov rbx,[rip+971C044] ;data=0xB691F00
+0x1F75EBC mov rcx,rax
+0x1F75EBF xor edx,edx
+0x1F75EC1 call 0000000140BF3100 ;call=0xBF3100
+0x1F75EC6 lea rdx,[rip-15C0C4D] ;data=0x9B5280
+0x1F75ECD mov rcx,rbx
+0x1F75ED0 mov r8,rdi
+0x1F75ED3 mov r9,rax
+0x1F75ED6 call 0000000140BF2EF0 ;call=0xBF2EF0
+0x1F75EDB lea rdx,[rsp+24]
+0x1F75EE0 mov dword ptr [rdx],0
+0x1F75EE6 mov rcx,rsi
+0x1F75EE9 call 000000014044B210 ;call=0x44B210
+0x1F75EEE mov rcx,[rsp+28]
+0x1F75EF3 xor rcx,rsp
+0x1F75EF6 call 0000000145014570 ;call=0x5014570
+0x1F75EFB mov rax,rsi
+0x1F75EFE add rsp,30
+===== FUNC 0x44A650 containing sibling =====
+0x44A650 push r15
+0x44A652 push r14
+0x44A654 push rsi
+0x44A655 push rdi
+0x44A656 push rbp
+0x44A657 push rbx
+0x44A658 sub rsp,38
+0x44A65C mov rsi,rdx
+0x44A65F mov rdi,rcx
+0x44A662 mov rax,[rip+9E68B97] ;data=0xA2B3200
+0x44A669 xor rax,rsp
+0x44A66C mov [rsp+30],rax
+0x44A671 mov rax,gs:[30]
+0x44A67A mov eax,[rax+48]
+0x44A67D cmp eax,[rcx+0C]
+0x44A680 je short 000000014044A6EB
+0x44A682 mov eax,[rip+0A741538] ;data=0xAB8BBC0
+0x44A688 mov rcx,gs:[58]
+0x44A691 mov rcx,[rcx+rax*8]
+0x44A695 lea rbx,[rcx+1D58]
+0x44A69C mov edx,[rbx]
+0x44A69E lea r14,[rcx+1D60]
+0x44A6A5 lea eax,[rdx+1]
+0x44A6A8 shl rdx,4
+0x44A6AC add rcx,rdx
+0x44A6AF add rcx,1D68
+0x44A6B6 dec eax
+0x44A6B8 test eax,eax
+0x44A6BA jg near ptr 000000014044A798
+0x44A6C0 mov rcx,rdi
+0x44A6C3 call qword ptr [rip+9DFED27] ;data=0xA2493F0 ;call=mem disp=14A2493F0
+0x44A6C9 test al,al
+0x44A6CB je near ptr 000000014044A8FF
+0x44A6D1 movsxd rax,dword ptr [rbx]
+0x44A6D4 shl rax,4
+0x44A6D8 mov [r14+rax],rdi
+0x44A6DC mov dword ptr [r14+rax+8],1
+0x44A6E5 inc dword ptr [rbx]
+0x44A6E7 lock inc dword ptr [rdi+8]
+0x44A6EB mov byte ptr [rsi],0
+0x44A6EE cmp qword ptr [rdi+130],0
+0x44A6F6 jne near ptr 000000014044A81A
+0x44A6FC mov rax,gs:[30]
+0x44A705 mov eax,[rax+48]
+0x44A708 cmp eax,[rdi+0C]
+0x44A70B je short 000000014044A77B
+0x44A70D lock dec dword ptr [rdi+8]
+0x44A711 mov eax,[rip+0A7414A9] ;data=0xAB8BBC0
+0x44A717 mov rcx,gs:[58]
+0x44A720 mov r8,[rcx+rax*8]
+0x44A724 lea rcx,[r8+1D58]
+0x44A72B mov edx,[rcx]
+0x44A72D lea rax,[r8+1D60]
+0x44A734 mov r9,rdx
+0x44A737 shl r9,4
+0x44A73B add r9,r8
+0x44A73E add r9,1D68
+0x44A745 test edx,edx
+0x44A747 jle short 000000014044A772
+0x44A749 lea r8,[r9-10]
+0x44A74D dec edx
+0x44A74F cmp [r9-18],rdi
+0x44A753 mov r9,r8
+0x44A756 jne short 000000014044A745
+0x44A758 dec dword ptr [r8]
+0x44A75B jne short 000000014044A77B
+0x44A75D inc edx
+0x44A75F mov r10d,[rcx]
+0x44A762 lea r9d,[r10-1]
+0x44A766 mov [rcx],r9d
+0x44A769 cmp r10d,edx
+0x44A76C jg near ptr 000000014044A94E
+0x44A772 mov rcx,rdi
+0x44A775 call qword ptr [rip+9DFEADD] ;data=0xA249258 ;call=mem disp=14A249258
+0x44A77B mov rcx,[rsp+30]
+0x44A780 xor rcx,rsp
+0x44A783 call 0000000145014570 ;call=0x5014570
+0x44A788 mov rax,rsi
+0x44A78B add rsp,38
+0x44A78F pop rbx
+===== SIBLING SITE FULL =====
+0x44A880 mov rax,[rdi+140]
+0x44A887 mov rax,[rax+8]
+0x44A88B mov rax,[rax+20]
+0x44A88F test byte ptr [rax+0B],80
+0x44A893 je short 000000014044A8D9
+0x44A895 mov rcx,[rax]
+0x44A898 test rcx,rcx
+0x44A89B je short 000000014044A8D9
+0x44A89D mov rax,[rcx]
+0x44A8A0 xor edx,edx
+0x44A8A2 xor r8d,r8d
+0x44A8A5 call qword ptr [rax+90] ;call=mem disp=90
+0x44A8AB test rax,rax
+0x44A8AE je short 000000014044A8D9
+0x44A8B0 mov rbx,rax
+0x44A8B3 mov r14,[rip+0B247646] ;data=0xB691F00
+0x44A8BA mov rcx,rax
+0x44A8BD xor edx,edx
+0x44A8BF call 0000000140BF3100 ;call=0xBF3100
+0x44A8C4 lea rdx,[rip+56A9B5] ;data=0x9B5280
+0x44A8CB mov rcx,r14
+0x44A8CE mov r8,rbx
+0x44A8D1 mov r9,rax
+0x44A8D4 call 0000000140BF2EF0 ;call=0xBF2EF0
+0x44A8D9 lea rdx,[rsp+2C]
+0x44A8DE mov dword ptr [rdx],0
+0x44A8E4 lea rbx,[rsp+2B]
+0x44A8E9 mov rcx,rbx
+0x44A8EC call 000000014044B210 ;call=0x44B210
+0x44A8F1 mov al,[rbx]
+0x44A8F3 test bpl,bpl
+0x44A8F6 jne short 000000014044A968
+0x44A8F8 mov [rsi],al
+0x44A8FA jmp near ptr 000000014044A6FC
+0x44A8FF mov rax,gs:[30]
+0x44A908 mov eax,[rax+48]
+0x44A90B cmp eax,[rdi+0C]
+0x44A90E je near ptr 000000014044A6EB
+0x44A914 mov ecx,[rbx]
+0x44A916 lea eax,[rcx+1]

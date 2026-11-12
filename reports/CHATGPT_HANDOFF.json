@@ -1,6 +1,6 @@
 ﻿{
     "schemaVersion":  1,
-    "generatedUtc":  "2026-11-12T21:32:45Z",
+    "generatedUtc":  "2026-11-12T21:38:45Z",
     "handoffFor":  "ChatGPT",
     "executor":  "Cursor",
     "machine":  "PC1",
@@ -20,8 +20,8 @@
                 },
     "milestone":  {
                       "currentId":  "v0.8.0",
-                      "currentTitle":  "C2: vt+0x90 (0,0) returns object*; no Build link yet",
-                      "status":  "c2_vt90_object_unproven",
+                      "currentTitle":  "C2: vt+0x90 body unresolved; Build-r8 follow-up empty",
+                      "status":  "c2_vt90_body_unresolved",
                       "priorPreserved":  [
                                              "v0.6.4",
                                              "v0.6.5",
@@ -85,10 +85,10 @@
                 },
     "engineFindings":  {
                            "summary":  [
-                                           "Vt90Dup080: 191x call [reg+0x90] with (0,0); unbrokenRetToBuild=0",
-                                           "Confirmed consumer: mov REG,[rax+88]; and REG,~1 after virtual call",
-                                           "Not proven as RowSelector::Duplicate or Build feeder",
-                                           "Next: trace [ret+0x88] into Build r8; widen Begin/End around vt90 sites",
+                                           "Agent1 xref 0x1F75EA7/0x44A8A5 confirmed; heap vtable at 0x1F75E9F not statically unique",
+                                           "BF3100-\u003e0xE8C71F0 with edx=0 returns this+0x90 (interior); not Build",
+                                           "All vt+0x90 (0,0) sites: 0 callers feed Build r8 (3-arg, no r9)",
+                                           "Do not falsify unknown slot body; do not keep Build-linked edge",
                                            "callEngine=off; ASI v0.5.1 preserved"
                                        ],
                            "keyRvas":  {
