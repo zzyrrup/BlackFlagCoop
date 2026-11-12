@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "milestone": "v0.6.20",
+  "generatedUtc": "2026-11-12T18:55:00Z",
+  "exeSha256": "19920F34BB2FAC814023EE3C27F0CECA1872E80A2AAFB37C092C419FFF77CC0D",
+  "createSecondEdward": { "class": "unsupported", "reason": "Activation/notify path mutates existing objects; no create factory" },
+  "activPathDecoded": { "class": "confirmed", "reason": "0x2335040 sets +0x26, calls 0x479E440 and shared notify 0x8CD620 with AnimatedOnActiveChanged" },
+  "notifyDecoded": { "class": "confirmed", "reason": "0x8CD620 is shared typed-event notify (30 E8 callers); dispatches via [handler+0xA0]" },
+  "neighborDecoded": { "class": "confirmed", "reason": "0x2335140 test edx,~2 then edx=3 vcall [vt+0x2B0]; copies nested transforms" },
+  "heapSize": { "class": "confirmed", "reason": "TypeInfo size field 0xB2898E8=0x20F0 registered with ctor 0x59D9660 at 0xB289918; matches layout bound 0x20E0+0x10" },
+  "allocatorCallSite": { "class": "unsupported", "reason": "No Allocator(0x20F0) E8 found in first 200 alloc sites; runtime TypeInfo path open" },
+  "liveMemoryProbe": { "class": "blocked", "reason": "Not authorized" },
+  "next": {
+    "primary": "Find TypeInfo alloc consumer of 0xB2898E8/0xB289918; deep-decode 0x546D150 and edx=3 arm-table callee",
+    "avoid": ["live memory", "ASI deploy", "spawn", "PC2", "+0x61-only ranking", "conflating wrap modes with gate"]
+  }
+}
