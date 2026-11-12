@@ -1,14 +1,14 @@
 {
   "schemaVersion": 1,
-  "generatedUtc": "2026-11-12T17:25:00Z",
+  "generatedUtc": "2026-11-12T17:30:00Z",
   "handoffFor": "ChatGPT",
   "executor": "Cursor",
   "machine": "PC1",
   "repository": {
     "url": "https://github.com/zzyrrup/BlackFlagCoop",
     "defaultBranch": "main",
-    "featureBranch": "cursor/v069-ctor-deep-lod-consumers-8285",
-    "baseBranch": "cursor/v068-subject-ctor-lod-8285",
+    "featureBranch": "cursor/v070-backward-lod-classify-8285",
+    "baseBranch": "cursor/v069-ctor-deep-lod-consumers-8285",
     "doNotPushMain": true,
     "initialCommit": "e12e70150656ac80742f10b496f7e5556e7985b7"
   },
@@ -18,10 +18,10 @@
     "functionalityChangedByThisMilestone": false
   },
   "milestone": {
-    "currentId": "v0.6.9",
-    "currentTitle": "Ctor deep-decode and LOD comparator/thunk consumers",
+    "currentId": "v0.6.10",
+    "currentTitle": "Backward trace from wrapper/nested-chain and LOD consumer classification",
     "status": "complete",
-    "priorPreserved": ["v0.6.4", "v0.6.5", "v0.6.6", "v0.6.7", "v0.6.8"]
+    "priorPreserved": ["v0.6.4", "v0.6.5", "v0.6.6", "v0.6.7", "v0.6.8", "v0.6.9"]
   },
   "asi": {
     "version": "0.5.1",
@@ -37,7 +37,7 @@
   },
   "build": {
     "asiRebuilt": false,
-    "offlineTools": ["tools/offline/CtorDeep069"]
+    "offlineTools": ["tools/offline/BackwardTrace070"]
   },
   "network": {
     "changesAuthorized": false,
@@ -45,59 +45,59 @@
   },
   "engineFindings": {
     "summary": [
-      "0x2D4F30 is ClothRagdollObject — fingerprint false positive",
-      "0x519E20 / 0x2D4F30 / 0x1D9CC0 have no direct edges to enqueue/workers/lookup/deferred",
-      "LOD cmp 0x67BDB30 and thunk 0x1A5A00: 0 E8 callers; LEA-installed into ~22 funcs",
+      "81 nested-chain seeds calling lookup/enqueue; 200 BFS nodes",
+      "21 nodes call allocator 0x426EE50; depth-0 highlights 0x400B50 and 0x4444C0",
+      "LOD consumers: only phase registrar installs stub+cmp+thunk (+0xE18 bundle)",
       "No Edward/create path"
     ],
     "keyRvas": {
-      "ctorCandidates": ["0x519E20", "0x2D4F30", "0x1D9CC0"],
-      "clothRagdoll": "0x2D4F30",
+      "allocator": "0x426EE50",
+      "allocNestedLeads": ["0x400B50", "0x4444C0"],
+      "enqueueWrapper": "0x2E97FC0",
+      "lookup": "0x429F9E0",
+      "phaseRegistrar": "0x5CBDFB0",
       "lodComparator": "0x67BDB30",
       "lodThunk": "0x1A5A00",
-      "enqueueWrapper": "0x2E97FC0",
-      "deferredHandler": "0x1AC380"
+      "lodStub": "0x1A5A70"
     }
   },
   "confirmed": [
     "ASI v0.5.1 preserved; no deploy",
-    "No candidate→queue helper edges",
-    "0x2D4F30 = ClothRagdollObject",
-    "LOD cmp/thunk widely LEA-installed; not E8-called",
+    "Avoided +0x61-only ranking",
+    "Allocator linked on nested-chain/lookup periphery",
+    "Registrar-only full LOD stub bundle",
     "No live memory this milestone"
   ],
   "hypotheses": [
-    "Queued subjects are LOD-tracked actor-like objects",
-    "True subject ctors lie on nested-chain / wrapper backward paths"
+    "0x400B50 / 0x4444C0 may allocate objects that later enroll in LOD/queue",
+    "Queued subjects remain LOD-tracked actor-like objects"
   ],
   "blockers": [
     "Subject concrete type unknown",
-    "+0x61-only ranking produces false positives",
     "No input/possession path",
     "Spawn tests not authorized"
   ],
   "mostRecentCompletedMilestone": {
-    "id": "v0.6.9",
-    "docs": ["docs/v0.6.9-ctor-deep-lod-consumers.md"],
+    "id": "v0.6.10",
+    "docs": ["docs/v0.6.10-backward-lod-classify.md"],
     "reports": [
-      "reports/v0.6.9-ctor-candidates-deep.json",
-      "reports/v0.6.9-lod-consumers.json",
-      "reports/v0.6.9-deep-summary.json",
-      "reports/v0.6.9-second-edward-feasibility.json",
-      "reports/v069-raw/evidence.txt"
+      "reports/v0.6.10-backward-trace.json",
+      "reports/v0.6.10-lod-consumer-classes.json",
+      "reports/v0.6.10-summary.json",
+      "reports/v0.6.10-second-edward-feasibility.json",
+      "reports/v070-raw/evidence.txt"
     ]
   },
   "nextRecommendedMilestone": {
-    "id": "v0.6.10",
-    "title": "Backward-trace enqueue/nested-chain to allocators; classify LOD consumers",
-    "primary": ["backward from 0x2E97FC0 / nested-chain", "classify ~22 LOD consumer funcs"],
+    "id": "v0.6.11",
+    "title": "Deep-decode allocator nested-chain leads 0x400B50 / 0x4444C0",
+    "primary": ["0x400B50", "0x4444C0", "callers toward enqueue enrollment"],
     "forbidden": ["spawn", "deploy", "live memory", "PC2", "save-data", "force-push main", "+0x61-only ranking"]
   },
   "tests": [
-    { "name": "CtorDeep069_build_scan", "result": "pass" },
-    { "name": "candidate_queue_edges", "result": "absent" },
-    { "name": "cloth_ragdoll_false_positive", "result": "confirmed" },
-    { "name": "lod_consumer_enumeration", "result": "pass" },
+    { "name": "BackwardTrace070_build_scan", "result": "pass" },
+    { "name": "allocator_nested_depth0", "result": "pass" },
+    { "name": "lod_consumer_classification", "result": "pass" },
     { "name": "game_launch_deploy", "result": "not_run" },
     { "name": "spawn_live_memory", "result": "not_run" }
   ],
@@ -113,9 +113,9 @@
   },
   "chatgptNextReviewInstructions": [
     "Read docs/CHATGPT_HANDOFF.md and this JSON first",
-    "Review v0.6.9 PR; preserve v0.6.4-v0.6.8 history",
+    "Review v0.6.10 PR; preserve v0.6.4-v0.6.9 history",
     "Separate confirmed vs hypotheses",
-    "Propose v0.6.10 backward-trace from wrapper/nested-chain",
+    "Propose v0.6.11 deep-decode of 0x400B50 / 0x4444C0",
     "Do not authorize deploy/spawn/live memory/PC2 unless user overrides",
     "Return PC1 branch+PR instructions"
   ]
