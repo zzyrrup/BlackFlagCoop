@@ -174,7 +174,7 @@ Handoff setup (this update), in addition to existing v0.6.4 research already on 
 
 ## 15a. C2 next edge (2026-11-12, branch `cursor/v080-c2-vt90-edge-530e`)
 
-Agent 2's strict triad at `768ad21` has no Begin/End/Build chain. The next Resynced edge is the virtual call at `0x1F75EA7` (`call [vt+0x90](this, 0, 0)`), sibling `0x44A8A5`. The scanner's dup/build tags in that window (`0xBF3100`, `0x44B210`) are the wrong instructions. Details: `docs/v0.8.0-c2-vt90-next-edge.md`. `callEngine` stays off. No ASI deploy, no game launch.
+`vt+0x90 (0,0)` is dropped as Duplicate after Agent 2 `a12d5b1`: 191 sites, zero Begin, zero unbroken return-to-Build, and the sampled consumer is `[rax+0x88]` with the tag bit cleared (`0x30F1D6`). Next xref is the callers of `0x30F0D0` only. Details: `docs/v0.8.0-c2-vt90-next-edge.md`. `callEngine` stays off. No ASI deploy, no game launch.
 
 ## 15. Exact instructions for ChatGPT's next review
 

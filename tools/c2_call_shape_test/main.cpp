@@ -28,6 +28,11 @@ int main() {
     Expect(!primary.buildShaped, "1F75EA7 is not BuildEntityWithSelector");
     Expect(!primary.callEngine, "1F75EA7 does not authorize an engine call");
 
+    const auto handleGet = Classify(bfc::c2::Site30F1D6());
+    Expect(handleGet.kind == EdgeKind::TaggedHandleGet, "30F1D6 reads [rax+0x88] and clears the tag");
+    Expect(!handleGet.duplicateShaped && !handleGet.buildShaped, "30F1D6 is not Duplicate or Build");
+    Expect(!handleGet.callEngine, "30F1D6 does not authorize an engine call");
+
     const auto sibling = Classify(bfc::c2::Site44A8A5());
     Expect(sibling.kind == primary.kind, "44A8A5 matches the same tail");
     Expect(sibling.duplicateShaped && !sibling.buildShaped, "44A8A5 is not a build");

@@ -20,6 +20,10 @@ enum class EdgeKind {
     VirtualDuplicateCandidate,
     BuildWithSelector,
     FourArgStaticRdx,
+    // call [vt+0x90](0,0) then [rax+0x88], low tag bit cleared.
+    // Callers use that as an existing object, not as a fresh selector
+    // passed into Build. Drop as RowSelector::Duplicate.
+    TaggedHandleGet,
 };
 
 struct ObservedCall {
@@ -34,6 +38,10 @@ struct ObservedCall {
     bool consumerRdxIsStackOut = false;
     bool consumerR8IsSavedReturn = false;
     bool consumerHasFourthArg = false;
+    // True when the next use of rax is a field load at +0x88, not a
+    // store of rax itself into Build's r8.
+    bool readsReturnField0x88 = false;
+    bool clearsLowTagBit = false;
 };
 
 struct Verdict {
@@ -56,8 +64,13 @@ inline Verdict Classify(const ObservedCall& call) {
     const bool fourArgStaticRdx =
         call.consumerArgCount == 4 && call.consumerHasFourthArg &&
         !call.consumerRdxIsStackOut && call.consumerR8IsSavedReturn;
+    const bool taggedHandleGet =
+        call.indirect && call.vtableSlot == 0x90 && call.edxIsZero &&
+        call.r8IsZero && call.readsReturnField0x88 && call.clearsLowTagBit;
 
-    if (virtualDuplicateArgs && fourArgStaticRdx) {
+    if (taggedHandleGet) {
+        verdict.kind = EdgeKind::TaggedHandleGet;
+    } else if (virtualDuplicateArgs && fourArgStaticRdx) {
         // Duplicate-shaped call whose immediate consumer is not Build.
         verdict.kind = EdgeKind::FourArgStaticRdx;
         verdict.duplicateShaped = true;
@@ -92,6 +105,20 @@ inline ObservedCall Site1F75EA7() {
     call.consumerRdxIsStackOut = false;
     call.consumerR8IsSavedReturn = true;
     call.consumerHasFourthArg = true;
+    return call;
+}
+
+// Agent 2 a12d5b1 sample. Same flag/[obj+0]/[vt+0x90](0,0) prologue as
+// 0x1F75EA7, then the return is consumed as a tagged pointer at +0x88.
+inline ObservedCall Site30F1D6() {
+    ObservedCall call;
+    call.siteRva = 0x30F1D6;
+    call.indirect = true;
+    call.vtableSlot = 0x90;
+    call.edxIsZero = true;
+    call.r8IsZero = true;
+    call.readsReturnField0x88 = true;
+    call.clearsLowTagBit = true;
     return call;
 }
 

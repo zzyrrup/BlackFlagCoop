@@ -42,11 +42,20 @@
     {"rva": "0x1F75EE9", "target": "0x44B210", "reason": "scanner build tag; does not consume the saved virtual return"},
     {"rva": "0x44A8EC", "target": "0x44B210", "reason": "same, not BuildEntityWithSelector"}
   ],
-  "nextXref": "Disassemble the function at vtable slot +0x90 of the object loaded at 0x1F75E9F. Falsify if it does not return a new object. Otherwise find a caller whose saved rax is r8 of a 3-arg (rcx, lea stack, r8) call with no r9.",
+  "followUp": {
+    "parentCommit": "a12d5b1",
+    "vt90Dup00": 191,
+    "unbrokenRetToBuild": 0,
+    "withBegin10": 0,
+    "decision": "drop vt+0x90 as Duplicate",
+    "reason": "Dominant consumer is [rax+0x88] with the low tag bit cleared. The working AC4 route requires Duplicate inside Begin/End and consumption by Build. These sites do neither.",
+    "sample": "0x30F1D6 in function 0x30F0D0"
+  },
+  "nextXref": "Callers of 0x30F0D0 only: is rbx a long-lived player owner that also stores a selector? If the callers are generic, close the +0x90 family and return to the C1 cache writer.",
   "offlineTest": {
     "command": "g++ -std=c++17 -Wall -Wextra -Wpedantic -Werror -Isrc tools/c2_call_shape_test/main.cpp",
     "compiler": "g++ 13.3.0",
-    "checksPassed": 13,
+    "checksPassed": 16,
     "visualStudio18": "not installed on this machine"
   },
   "advances": "C2",
