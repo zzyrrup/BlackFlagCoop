@@ -1,0 +1,387 @@
+===== v0.6.11 ALLOC LEADS + ENQUEUE ENROLLMENT =====
+exeSha256=19920F34BB2FAC814023EE3C27F0CECA1872E80A2AAFB37C092C419FFF77CC0D
+
+===== LEAD 0x400B50 =====
+entry=0x400B50 end=0x400D0F size=447 sec=.impdata prologue=41 57 41 56 56 57 53 48 83 EC 40 89 D3 48 89 CE
+  0x400B50 push r15
+  0x400B52 push r14
+  0x400B54 push rsi
+  0x400B55 push rdi
+  0x400B56 push rbx
+  0x400B57 sub rsp,40
+  0x400B5B mov ebx,edx
+  0x400B5D mov rsi,rcx
+  0x400B60 mov rax,[rip+9EB2699]
+  0x400B67 xor rax,rsp
+  0x400B6A mov [rsp+38],rax
+  0x400B6F mov rax,[rcx+38]
+  0x400B73 mov rax,[rax+58]
+  0x400B77 mov rax,[rax+0A8]
+  0x400B7E mov rcx,[rax+3CD0]
+  0x400B85 lea rdx,[rip+0B0694D4]
+  0x400B8C xor r8d,r8d
+  0x400B8F call 000000014429F9E0
+  *** call 0x429F9E0 *** LOOKUP *** @0x400B8F
+  0x400B94 mov rax,[rax]
+  0x400B97 mov rcx,[rax+18]
+  0x400B9B mov rax,[rsi+38]
+  0x400B9F mov edx,1C8
+  0x400BA4 add rdx,[rax+58]
+  0x400BA8 call 00000001445AADC0
+  0x400BAD test rax,rax
+  0x400BB0 jne short 0000000140400BCC
+  0x400BB2 mov rcx,[rsp+38]
+  0x400BB7 xor rcx,rsp
+  0x400BBA call 0000000145014570
+  0x400BBF nop
+  0x400BC0 add rsp,40
+  0x400BC4 pop rbx
+  0x400BC5 pop rdi
+  0x400BC6 pop rsi
+  0x400BC7 pop r14
+  0x400BC9 pop r15
+  0x400BCB ret
+  0x400BCC mov rdi,[rax+98]
+  0x400BD3 lea rdx,[rip+0A994D86]
+  0x400BDA mov rcx,rdi
+  0x400BDD call 0000000144C12A50
+  0x400BE2 mov r14,rax
+  0x400BE5 test rax,rax
+  0x400BE8 jne near ptr 0000000140400C92
+  0x400BEE mov rax,[rip+0AB6F153]
+  0x400BF5 cmp byte ptr [rax+2A],0
+  0x400BF9 jne short 0000000140400C28
+  0x400BFB mov ecx,[rip+0A78AFBF]
+  *** call 0x426EE50 *** ALLOCATOR *** @0x400C39
+  ... +57 ins ...
+nestedChain=True alloc=True lookup=True enqueue=False
+immSizes=[0x50,0x1C8]
+vtInstalls=2 : 0xB46A060, 0x93DD990
+  field disp0xA8 @0x400B77 mov rax,[rax+0A8]
+  field +0x3CD0 @0x400B7E mov rcx,[rax+3CD0]
+  field disp0x18 @0x400B97 mov rcx,[rax+18]
+  field disp0x98 @0x400BCC mov rdi,[rax+98]
+  0x400C39 call allocator :: 0x400C2E:mov edx,50
+  0x400B8F call lookup
+callersE8=3 callersLea=0
+  e8 @0x2972098 func≈0x2971ED0
+  e8 @0x485E248 func≈0x485CC20
+  e8 @0x6F19F1C func≈0x6F19CF0
+--- callee 0x45AADC0 ---
+  func 0x45AADC0 size=99 prologue=48 8B 02 48 8B 50 10 48 85 D2 0F 84
+    0x45AADC0 mov rax,[rdx]
+    0x45AADC3 mov rdx,[rax+10]
+    0x45AADC7 test rdx,rdx
+    0x45AADCA je near ptr 00000001445AAEE0
+    0x45AADD0 mov rax,gs:[30]
+    0x45AADD9 mov r8d,[rcx+4C4]
+    0x45AADE0 cmp r8d,[rax+48]
+    0x45AADE4 je near ptr 00000001445AAEE3
+    0x45AADEA mov eax,[rcx+4C0]
+    0x45AADF0 test eax,7FF00000
+    0x45AADF5 jne near ptr 00000001445AAED0
+    0x45AADFB mov eax,1
+    0x45AAE00 lock xadd [rcx+4C0],eax
+    0x45AAE08 inc eax
+    0x45AAE0A test eax,7FF00000
+    0x45AAE0F jne near ptr 00000001445AAEC9
+    0x45AAE15 cmp qword ptr [rcx+4D0],0
+    0x45AAE1D je near ptr 00000001445AAEC5
+--- callee 0x5014570 ---
+  func 0x5014570 size=21 prologue=48 3B 0D 89 EC 29 05 75 10 48 C1 C1
+    0x5014570 cmp rcx,[rip+529EC89]
+    0x5014577 jne short 0000000145014589
+    0x5014579 rol rcx,10
+    0x501457D test cx,0FFFF
+    0x5014582 jne short 0000000145014585
+    0x5014584 ret
+--- callee 0x4C12A50 ---
+  func 0x4C12A50 size=97 prologue=56 48 8B 81 90 00 00 00 8B 89 98 00
+    0x4C12A50 push rsi
+    0x4C12A51 mov rax,[rcx+90]
+    0x4C12A58 mov ecx,[rcx+98]
+    0x4C12A5E shl ecx,3
+    0x4C12A61 and ecx,1FFF8
+    0x4C12A67 je short 0000000144C12AA9
+    0x4C12A69 lea r8,[rax+rcx]
+    0x4C12A6D movzx r9d,word ptr [rdx+4C]
+    0x4C12A72 movzx r10d,word ptr [rdx+4E]
+    0x4C12A77 mov r11,rcx
+    0x4C12A7A mov rdx,rax
+    0x4C12A7D jmp short 0000000144C12A8A
+    0x4C12A7F nop
+    0x4C12A80 add rdx,8
+    0x4C12A84 add r11,0FFFFFFFFFFFFFFF8
+    0x4C12A88 je short 0000000144C12AA4
+    0x4C12A8A mov rsi,[rdx]
+    0x4C12A8D mov rsi,[rsi]
+    0x4C12A90 mov rsi,[rsi+30]
+    0x4C12A94 cmp [rsi+4C],r9w
+--- callee 0x5BBF60 ---
+  func 0x5BBF60 size=100 prologue=41 57 41 56 56 57 55 53 48 83 EC 58
+    0x5BBF60 push r15
+    0x5BBF62 push r14
+    0x5BBF64 push rsi
+    0x5BBF65 push rdi
+    0x5BBF66 push rbp
+    0x5BBF67 push rbx
+    0x5BBF68 sub rsp,58
+    0x5BBF6C mov rax,[rip+9CF728D]
+    0x5BBF73 xor rax,rsp
+    0x5BBF76 mov [rsp+50],rax
+    0x5BBF7B lea rsi,[rcx+90]
+    0x5BBF82 mov eax,[rcx+98]
+    0x5BBF88 mov r9d,eax
+    0x5BBF8B and r9d,3FFF
+    0x5BBF92 mov r8d,eax
+    0x5BBF95 shr r8d,10
+    0x5BBF99 and r8d,3FFF
+    0x5BBFA0 cmp r9d,r8d
+    0x5BBFA3 jae short 00000001405BBFF2
+    0x5BBFA5 mov rdi,[rsi]
+    str "Too many elements for %sArray. Size: %u, Max Size: %u"
+    str "Small"
+--- callee 0x4018A0 ---
+  func 0x4018A0 size=100 prologue=56 57 53 48 81 EC B0 00 00 00 C5 78
+    0x4018A0 push rsi
+    0x4018A1 push rdi
+    0x4018A2 push rbx
+    0x4018A3 sub rsp,0B0
+    0x4018AA vmovaps [rsp+0A0],xmm9
+    0x4018B3 vmovaps [rsp+90],xmm8
+    0x4018BC vmovaps [rsp+80],xmm7
+    0x4018C5 vmovaps [rsp+70],xmm6
+    0x4018CB mov rsi,rdx
+    0x4018CE mov rdi,rcx
+    0x4018D1 mov rax,[rip+9EB1928]
+    0x4018D8 xor rax,rsp
+    0x4018DB mov [rsp+68],rax
+    0x4018E0 mov rcx,[rcx+110]
+    0x4018E7 test rcx,rcx
+    0x4018EA je short 000000014040191C
+    0x4018EC lea rdx,[rsp+20]
+    0x4018F1 call 00000001470AB400
+    0x4018F6 test al,al
+    0x4018F8 je near ptr 0000000140401990
+--- callee 0x6A93BD0 ---
+  func 0x6A93BD0 size=100 prologue=41 57 41 56 41 55 41 54 56 57 55 53
+    0x6A93BD0 push r15
+    0x6A93BD2 push r14
+    0x6A93BD4 push r13
+    0x6A93BD6 push r12
+    0x6A93BD8 push rsi
+    0x6A93BD9 push rdi
+    0x6A93BDA push rbp
+    0x6A93BDB push rbx
+    0x6A93BDC sub rsp,28
+    0x6A93BE0 mov rsi,[rdx]
+    0x6A93BE3 lea rax,[rip+44DFFEE]
+    0x6A93BEA cmp rsi,rax
+    0x6A93BED je short 0000000146A93BFE
+    0x6A93BEF mov rdx,100000000
+    0x6A93BF9 lock add [rsi+8],rdx
+    0x6A93BFE xchg rsi,[rcx+40]
+    0x6A93C02 cmp rsi,rax
+    0x6A93C05 je near ptr 0000000146A93C8B
+    0x6A93C0B mov r12,0FFFFFFFF00000000
+    0x6A93C15 mov r13,7FFFFFFF01FFFFFF
+
+===== LEAD 0x4444C0 =====
+entry=0x4444C0 end=0x444C3A size=1914 sec=.impdata prologue=41 57 41 56 41 55 41 54 56 57 55 53 48 81 EC D8
+  0x4444C0 push r15
+  0x4444C2 push r14
+  0x4444C4 push r13
+  0x4444C6 push r12
+  0x4444C8 push rsi
+  0x4444C9 push rdi
+  0x4444CA push rbp
+  0x4444CB push rbx
+  0x4444CC sub rsp,0D8
+  0x4444D3 mov ebp,edx
+  0x4444D5 mov rax,[rip+9E6ED24]
+  0x4444DC xor rax,rsp
+  0x4444DF mov [rsp+0D0],rax
+  0x4444E7 mov rax,[rcx+38]
+  0x4444EB mov rdx,[rax+58]
+  0x4444EF mov r14,[rdx+0A8]
+  0x4444F6 test r14,r14
+  0x4444F9 je near ptr 0000000140444AD5
+  0x4444FF mov rsi,rcx
+  0x444502 add rdx,1C8
+  0x444509 mov rcx,r14
+  0x44450C call 0000000140444CA0
+  0x444511 add eax,0FFFFFFFC
+  0x444514 cmp eax,3
+  0x444517 jbe near ptr 0000000140444931
+  0x44451D vxorps xmm0,xmm0,xmm0
+  0x444521 lea rcx,[rsp+30]
+  0x444526 vmovaps [rcx],xmm0
+  0x44452A lea rdi,[rsi+2B70]
+  0x444531 mov dword ptr [rcx+10],0
+  0x444538 mov rax,[rsi+2B78]
+  0x44453F mov r8,[rax+38]
+  0x444543 mov rdx,rdi
+  0x444546 call 0000000140444E20
+  0x44454B lea rcx,[rax+80]
+  0x444552 lea rbx,[rsp+0C0]
+  0x44455A mov rdx,rbx
+  0x44455D mov r8,rax
+  0x444560 call 0000000140062D80
+  0x444565 cmp byte ptr [rbx],0
+  0x444568 jne near ptr 000000014044480F
+  0x44456E lea rdx,[rsp+30]
+  0x444573 mov rcx,rdi
+  0x444576 xor r8d,r8d
+  0x444579 call 000000014023E5A0
+  0x44457E mov rax,[rsi+38]
+  0x444582 mov r12,[rax+58]
+  0x444586 lea rbx,[r12+1C8]
+  *** call 0x429F9E0 *** LOOKUP *** @0x44459F
+  *** call 0x426EE50 *** ALLOCATOR *** @0x4445FE
+  *** call 0x426EE50 *** ALLOCATOR *** @0x444641
+  *** call 0x429F9E0 *** LOOKUP *** @0x44477C
+  ... +359 ins ...
+nestedChain=True alloc=True lookup=True enqueue=False
+immSizes=[0xE0,0x100,0x1C8]
+vtInstalls=8 : 0xB46A060, 0x9145218, 0x91452F0, 0x53B6A70, 0x10326A0, 0x535C840, 0x6ADEE10, 0x6ADEEE0
+  field disp0xA8 @0x4444EF mov r14,[rdx+0A8]
+  field +0x3CD0 @0x44458E mov rcx,[r14+3CD0]
+  field disp0x18 @0x4445A7 mov rcx,[rax+18]
+  field disp0x18 @0x44466B mov [rbp+18],rbx
+  field disp0x98 @0x4446D1 mov [rbp+98],rbx
+  field disp0xA8 @0x4446E6 mov [rbp+0A8],bl
+  field disp0x18 @0x444728 mov eax,[rdx+18]
+  field disp0xA8 @0x44475B mov rax,[rax+0A8]
+  field +0x3CD0 @0x44476B mov rcx,[rax+3CD0]
+  field disp0x18 @0x444784 mov rcx,[rax+18]
+  field disp0x98 @0x444A6C mov [rsp+98],rax
+  0x4445FE call allocator
+  0x444641 call allocator :: 0x444636:mov edx,0E0
+  0x44459F call lookup
+  0x44477C call lookup
+callersE8=3 callersLea=0
+  e8 @0xCD76CC4 func≈0xCD76C84
+  e8 @0xD7206D2 func≈0xD720692
+  e8 @0xD7225E3 func≈0xD7225A3
+--- callee 0x444CA0 ---
+  func 0x444CA0 size=100 prologue=56 57 48 83 EC 28 48 89 D7 48 8B 89
+    0x444CA0 push rsi
+    0x444CA1 push rdi
+    0x444CA2 sub rsp,28
+    0x444CA6 mov rdi,rdx
+    0x444CA9 mov rcx,[rcx+3CD0]
+    0x444CB0 lea rdx,[rip+0B0253A9]
+    0x444CB7 xor esi,esi
+    0x444CB9 xor r8d,r8d
+    0x444CBC call 000000014429F9E0
+    0x444CC1 mov rcx,[rdi]
+    0x444CC4 mov rcx,[rcx+10]
+    0x444CC8 test rcx,rcx
+    0x444CCB je near ptr 0000000140444DD7
+    0x444CD1 mov rax,[rax]
+    0x444CD4 mov rax,[rax+18]
+    0x444CD8 mov rdx,gs:[30]
+    0x444CE1 mov r8d,[rax+4C4]
+    0x444CE8 cmp r8d,[rdx+48]
+    0x444CEC je near ptr 0000000140444E07
+    0x444CF2 mov edx,[rax+4C0]
+--- callee 0x444E20 ---
+  func 0x444E20 size=100 prologue=41 57 41 56 41 54 56 57 53 48 83 EC
+    0x444E20 push r15
+    0x444E22 push r14
+    0x444E24 push r12
+    0x444E26 push rsi
+    0x444E27 push rdi
+    0x444E28 push rbx
+    0x444E29 sub rsp,28
+    0x444E2D mov rbx,r8
+    0x444E30 mov rdi,rdx
+    0x444E33 mov rsi,rcx
+    0x444E36 mov rax,[rip+0AB2AF0B]
+    0x444E3D cmp byte ptr [rax+2A],0
+    0x444E41 je near ptr 000000014044508B
+    0x444E47 mov r15,rax
+    0x444E4A mov rcx,r15
+    0x444E4D mov edx,8
+    0x444E52 mov r8d,8
+    0x444E58 call 000000014426EE50
+    0x444E5D mov r14,rax
+    0x444E60 test rax,rax
+--- callee 0x62D80 ---
+  func 0x62D80 size=5 prologue=E9 2B 17 D5 0C CC CC CC 36 FE C4 E9
+    0x62D80 jmp near ptr 000000014CDB44B0
+--- callee 0x23E5A0 ---
+  func 0x23E5A0 size=31 prologue=E9 DB E9 E3 0C 0F 82 D5 51 B8 F9 45
+    0x23E5A0 jmp near ptr 000000014D07CF80
+    0x23E5A5 jb near ptr 0000000139DC3780
+    0x23E5AB jmp near ptr 0000000140395517
+    0x23E5B1 sti
+    0x23E5B2 fimul word ptr [r11+0F]
+    0x23E5B6 adc dword ptr [rbp+7],0FFFFFFE2
+    0x23E5BA stc
+    0x23E5BB mov ch,0E9
+    0x23E5BD cmp al,7C
+--- callee 0x45AADC0 ---
+  func 0x45AADC0 size=99 prologue=48 8B 02 48 8B 50 10 48 85 D2 0F 84
+    0x45AADC0 mov rax,[rdx]
+    0x45AADC3 mov rdx,[rax+10]
+    0x45AADC7 test rdx,rdx
+    0x45AADCA je near ptr 00000001445AAEE0
+    0x45AADD0 mov rax,gs:[30]
+    0x45AADD9 mov r8d,[rcx+4C4]
+    0x45AADE0 cmp r8d,[rax+48]
+    0x45AADE4 je near ptr 00000001445AAEE3
+    0x45AADEA mov eax,[rcx+4C0]
+    0x45AADF0 test eax,7FF00000
+    0x45AADF5 jne near ptr 00000001445AAED0
+    0x45AADFB mov eax,1
+    0x45AAE00 lock xadd [rcx+4C0],eax
+    0x45AAE08 inc eax
+    0x45AAE0A test eax,7FF00000
+    0x45AAE0F jne near ptr 00000001445AAEC9
+    0x45AAE15 cmp qword ptr [rcx+4D0],0
+    0x45AAE1D je near ptr 00000001445AAEC5
+--- callee 0x48B6F80 ---
+  func 0x48B6F80 size=99 prologue=56 48 83 EC 20 E8 96 00 00 00 48 8B
+    0x48B6F80 push rsi
+    0x48B6F81 sub rsp,20
+    0x48B6F85 call 00000001448B7020
+    0x48B6F8A mov rax,[rax]
+    0x48B6F8D test byte ptr [rax+0B],80
+    0x48B6F91 je short 00000001448B700A
+    0x48B6F93 mov rcx,[rax]
+    0x48B6F96 test rcx,rcx
+    0x48B6F99 je short 00000001448B700A
+    0x48B6F9B mov rax,[rcx+84]
+    0x48B6FA2 mov ecx,[rcx+8C]
+    0x48B6FA8 shl ecx,3
+    0x48B6FAB and ecx,1FFF8
+    0x48B6FB1 je short 00000001448B700E
+    0x48B6FB3 lea r8,[rax+rcx]
+    0x48B6FB7 movzx r9d,word ptr [rip+6AD8BED]
+    0x48B6FBF movzx r10d,word ptr [rip+6AD8BE7]
+    0x48B6FC7 mov r11,rcx
+    0x48B6FCA mov rdx,rax
+    0x48B6FCD mov rsi,[rdx]
+
+===== CALLER → ENQUEUE ENROLLMENT =====
+-- callers of 0x400B50 --
+  e8 site=0x2972098 caller=0x2971ED0 enq=False wrap=False lookup=True nest=True alloc=False 
+    hop2 e8 site=0x29723A9 caller=0x2972360 enq=False wrap=False lookup=False nest=False
+  e8 site=0x485E248 caller=0x485CC20 enq=False wrap=False lookup=True nest=True alloc=False 
+    hop2 e8 site=0x485BB2A caller=0x485B760 enq=False wrap=False lookup=False nest=False
+    hop2 e8 site=0x485C6B3 caller=0x485B760 enq=False wrap=False lookup=False nest=False
+    hop2 e8 site=0x485C78D caller=0x485B760 enq=False wrap=False lookup=False nest=False
+    hop2 e8 site=0x485C856 caller=0x485B760 enq=False wrap=False lookup=False nest=False
+    hop2 e8 site=0x485C925 caller=0x485B760 enq=False wrap=False lookup=False nest=False
+  e8 site=0x6F19F1C caller=0x6F19CF0 enq=False wrap=False lookup=True nest=True alloc=False 
+-- callers of 0x4444C0 --
+  e8 site=0xCD76CC4 caller=0xCD76C84 enq=False wrap=False lookup=False nest=False alloc=False 
+  e8 site=0xD7206D2 caller=0xD720692 enq=False wrap=False lookup=False nest=False alloc=False 
+  e8 site=0xD7225E3 caller=0xD7225A3 enq=False wrap=False lookup=False nest=False alloc=False 
+-- enrollment summary --
+callerEdges=12 withEnqueueOrWrapper=0 withLookup=3
+
+===== CROSS: DO LEADS REACH WRAPPER/HELPER? =====
+0x400B50 forwardReachQueue=False
+0x4444C0 forwardReachQueue=False

@@ -3,7 +3,7 @@
 **Last updated:** 2026-11-12  
 **Machine:** PC1 only  
 **Repo:** https://github.com/zzyrrup/BlackFlagCoop  
-**Branch:** `cursor/v070-backward-lod-classify-8285` (PR into `cursor/v069-ctor-deep-lod-consumers-8285`; do not push main)  
+**Branch:** `cursor/v071-alloc-leads-enqueue-8285` (PR into `cursor/v070-backward-lod-classify-8285`; do not push main)  
 **Initial commit:** `e12e70150656ac80742f10b496f7e5556e7985b7`
 
 This document is the primary human-readable bridge between Cursor (local execution) and ChatGPT (review / next instructions). Update it after every completed milestone.
@@ -25,9 +25,9 @@ Ultimate vision is **not claimed as achieved**. Dual-Edward co-op remains unprov
 
 ## 2. Current development milestone
 
-**v0.6.10 complete** — Backward trace from wrapper/nested-chain to allocator; LOD consumer classification. Depth-0 leads **`0x400B50`** / **`0x4444C0`**. Registrar-only full LOD stub bundle.
+**v0.6.11 complete** — Deep-decode `0x400B50` / `0x4444C0`: allocator sizes `0x50` / `0xE0`, shared coordinator lookup path, **no** enqueue enrollment.
 
-Prior: v0.6.5–v0.6.9 preserved. Offline only. No ASI, spawn, or networking change.
+Prior: v0.6.5–v0.6.10 preserved. Offline only. No ASI, spawn, or networking change.
 
 ---
 
@@ -92,6 +92,7 @@ High-signal offline findings (see `docs/v0.6.*` and `reports/v0.6.*`):
 - **v0.6.8:** LOD sibling **`0x67BDB30`** is a **32-byte `[arg+8]` comparator** (bundle `+0xE28`); thunk **`0x1A5A00`** at `+0xE30`. Constructor/fingerprint scan yields candidates (`0x519E20`, `0x2D4F30`, `0x1D9CC0`) but **no** recoverable MSVC RTTI for game types (EXE has ~37 `.?AV` names, CryptoPP/STL only). Still no Edward/create path.
 - **v0.6.9:** Deep-decode shows **no** candidate→enqueue/worker edges. **`0x2D4F30`** is **`ClothRagdollObject`**. LOD cmp/thunk have **0** E8 callers; LEA-installed into ~22 funcs (shared bundle primitive). Still no Edward/create path.
 - **v0.6.10:** Backward nested-chain/wrapper BFS (200 nodes; 81 nest seeds). Allocator **`0x426EE50`** on **21** nodes; depth-0 highlights **`0x400B50`** / **`0x4444C0`**. LOD consumers classified; **only** phase registrar installs stub+cmp+thunk at `+0xE18` bundle. Still no Edward/create path.
+- **v0.6.11:** Deep-decode shows **`0x400B50`** alloc **`0x50`**, **`0x4444C0`** alloc **`0xE0`**; both use `[+0x38]→[+0x58]→[+0xA8]→[+0x3CD0]` lookup. **No** direct/caller enrollment into enqueue/wrapper. Still no Edward/create path.
 
 ---
 
@@ -112,7 +113,7 @@ High-signal offline findings (see `docs/v0.6.*` and `reports/v0.6.*`):
 - LOD cmp/thunk are LEA-installed into many (~22) bundle initializers; not called via E8.
 - `0x2D4F30` is a ClothRagdollObject path (fingerprint false positive for Edward).
 - Fingerprint top candidates `0x519E20` / `0x2D4F30` / `0x1D9CC0` do **not** call deferred-queue helpers.
-- Nested-chain + lookup + allocator depth-0 leads: `0x400B50`, `0x4444C0` (not proven as queued-subject ctors).
+- Nested-chain + lookup + allocator depth-0 leads: `0x400B50`, `0x4444C0` — allocate `0x50`/`0xE0`; **not** enqueue enrollers.
 - Only phase registrar `0x5CBDFB0` installs the full UpdateActorLOD stub+cmp+thunk bundle.
 - Input lead `0x187F0550` is action-name bind, not a movement controller.
 - No verified shared entity/ownership edge between input bind path and deferred handler.
@@ -138,7 +139,7 @@ High-signal offline findings (see `docs/v0.6.*` and `reports/v0.6.*`):
 ## 9. Current blockers
 
 - No confirmed character/Edward factory or archetype reuse path. Queue only enqueues/activates existing objects.
-- Subject concrete type still unknown; allocator-linked nested leads not yet proven as queued subjects.
+- Subject concrete type still unknown; enqueue enrollment ctor still unidentified.
 - No verified input→character ownership/control binding.
 - No safe authorized spawn/possession test design yet.
 - GitHub handoff must stay free of ASI/game binaries.
@@ -147,34 +148,34 @@ High-signal offline findings (see `docs/v0.6.*` and `reports/v0.6.*`):
 
 ## 10. Most recent completed milestone
 
-**v0.6.10 — Backward trace & LOD consumer classification**
+**v0.6.11 — Alloc leads deep-decode & enqueue enrollment**
 
 Deliverables:
 
-- `docs/v0.6.10-backward-lod-classify.md`
-- `reports/v0.6.10-backward-trace.json`
-- `reports/v0.6.10-lod-consumer-classes.json`
-- `reports/v0.6.10-summary.json`
-- `reports/v0.6.10-second-edward-feasibility.json`
-- `reports/v070-raw/evidence.txt`
-- `tools/offline/BackwardTrace070/`
+- `docs/v0.6.11-alloc-leads-enqueue.md`
+- `reports/v0.6.11-alloc-leads-deep.json`
+- `reports/v0.6.11-enqueue-enrollment.json`
+- `reports/v0.6.11-summary.json`
+- `reports/v0.6.11-second-edward-feasibility.json`
+- `reports/v071-raw/evidence.txt`
+- `tools/offline/AllocLead071/`
 
-v0.6.4–v0.6.9 reports were left in place.
+v0.6.4–v0.6.10 reports were left in place.
 
 ---
 
 ## 11. Next recommended milestone
 
-**v0.6.11 (proposed):** Offline deep-decode allocator nested-chain leads **`0x400B50`** / **`0x4444C0`** and callers toward enqueue enrollment. Still no spawn, deploy, live memory, or PC2 unless separately authorized.
+**v0.6.12 (proposed):** Offline **forward** from wrapper `0x2E97FC0` enrollment sites to allocators that feed `0x2E97B60` (find who creates the pointer that gets enqueued). Still no spawn, deploy, live memory, or PC2 unless separately authorized.
 
 ---
 
 ## 12. Files changed in the latest milestone
 
-- `docs/v0.6.10-backward-lod-classify.md`
-- `reports/v0.6.10-*.json`
-- `reports/v070-raw/evidence.txt`
-- `tools/offline/BackwardTrace070/`
+- `docs/v0.6.11-alloc-leads-enqueue.md`
+- `reports/v0.6.11-*.json`
+- `reports/v071-raw/evidence.txt`
+- `tools/offline/AllocLead071/`
 - `docs/CHATGPT_HANDOFF.md`
 - `reports/CHATGPT_HANDOFF.json`
 
@@ -190,6 +191,7 @@ v0.6.4–v0.6.9 reports were left in place.
 | Offline fingerprint/LOD v0.6.8 (`SubjectCtor068`) | Pass; `0x67BDB30` = 32 B comparator |
 | Offline deep-decode v0.6.9 (`CtorDeep069`) | Pass; no candidate→queue edges; ClothRagdoll false positive |
 | Offline backward/LOD v0.6.10 (`BackwardTrace070`) | Pass; allocator leads `0x400B50`/`0x4444C0`; registrar-only full LOD bundle |
+| Offline alloc leads v0.6.11 (`AllocLead071`) | Pass; alloc `0x50`/`0xE0`; **no** enqueue enrollment |
 | Subject MSVC RTTI name | **Not found** (game types RTTI-stripped) |
 | Game launch / ASI deploy | **Not performed** |
 | Spawn / inject / live memory | **Not performed** |
@@ -215,6 +217,6 @@ When reviewing the GitHub repository after a Cursor push:
 2. Diff against the previous handoff `milestoneId` / commit.
 3. Treat only **confirmed** items as facts; keep hypotheses labeled.
 4. Propose the **next single milestone** with: objective, in-scope RVAs/files, out-of-scope (spawn/deploy/PC2), required deliverables paths, and acceptance checks.
-5. Prefer **v0.6.11**: deep-decode `0x400B50` / `0x4444C0` toward enqueue enrollment. Do not treat LOD enqueue/comparator as character creation; avoid `+0x61`-only ranking; do not rely on MSVC RTTI for game types.
+5. Prefer **v0.6.12**: forward from wrapper enrollment sites to allocators feeding `0x2E97B60`. Do not treat LOD enqueue/comparator as character creation; avoid `+0x61`-only ranking; do not rely on MSVC RTTI for game types.
 6. Do not instruct Cursor to deploy ASI, spawn, use live memory, or touch PC2/save data unless the user explicitly overrides safety.
 7. Return instructions Cursor can execute verbatim on PC1 on a dedicated branch + PR (never push main).

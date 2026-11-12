@@ -1,0 +1,26 @@
+{
+  "schemaVersion": 1,
+  "milestone": "v0.6.11",
+  "generatedUtc": "2026-11-12T17:35:00Z",
+  "exeSha256": "19920F34BB2FAC814023EE3C27F0CECA1872E80A2AAFB37C092C419FFF77CC0D",
+  "createSecondEdward": {
+    "class": "unsupported",
+    "reason": "0x400B50/0x4444C0 allocate helper-sized blocks and use coordinator lookup but do not enroll into enqueue"
+  },
+  "leadsAreQueueSubjectCtors": {
+    "class": "unsupported",
+    "reason": "No direct or caller edge to enqueue helper/wrapper; forward reach to queue false"
+  },
+  "sharedCoordinatorLookup": {
+    "class": "confirmed",
+    "reason": "Both leads use [obj+0x38]->[+0x58]->[+0xA8]->[+0x3CD0] then 0x429F9E0"
+  },
+  "liveMemoryProbe": {
+    "class": "blocked",
+    "reason": "Not authorized"
+  },
+  "next": {
+    "primary": "Forward from wrapper 0x2E97FC0 enrollment sites to find allocators that feed 0x2E97B60",
+    "avoid": ["live memory", "ASI deploy", "spawn", "PC2", "+0x61-only ranking"]
+  }
+}

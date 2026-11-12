@@ -1,0 +1,46 @@
+{
+  "schemaVersion": 1,
+  "milestone": "v0.6.11",
+  "generatedUtc": "2026-11-12T17:27:43Z",
+  "exeSha256": "19920F34BB2FAC814023EE3C27F0CECA1872E80A2AAFB37C092C419FFF77CC0D",
+  "leads": [
+    {
+      "entry": "0x400B50",
+      "end": "0x400D0F",
+      "size": 447,
+      "nestedChain": true,
+      "callsAllocator": true,
+      "callsLookup": true,
+      "callsEnqueue": false,
+      "immSizes": ["0x50", "0x1C8"],
+      "vtables": ["0xB46A060", "0x93DD990"],
+      "strings": [],
+      "allocSites": ["0x400C39 call allocator :: 0x400C2E:mov edx,50"],
+      "lookupSites": ["0x400B8F call lookup"],
+      "fieldNotes": ["disp0xA8 @0x400B77 mov rax,[rax+0A8]", "+0x3CD0 @0x400B7E mov rcx,[rax+3CD0]", "disp0x18 @0x400B97 mov rcx,[rax+18]", "disp0x98 @0x400BCC mov rdi,[rax+98]"],
+      "calleesSample": ["0x429F9E0", "0x45AADC0", "0x5014570", "0x4C12A50", "0x426EE50", "0x5BBF60", "0x4018A0", "0x6A93BD0"],
+      "callersE8": ["0x2972098", "0x485E248", "0x6F19F1C"],
+      "callersLea": [],
+      "disasmHead": ["0x400B50 push r15", "0x400B52 push r14", "0x400B54 push rsi", "0x400B55 push rdi", "0x400B56 push rbx", "0x400B57 sub rsp,40", "0x400B5B mov ebx,edx", "0x400B5D mov rsi,rcx", "0x400B60 mov rax,[rip+9EB2699]", "0x400B67 xor rax,rsp", "0x400B6A mov [rsp+38],rax", "0x400B6F mov rax,[rcx+38]", "0x400B73 mov rax,[rax+58]", "0x400B77 mov rax,[rax+0A8]", "0x400B7E mov rcx,[rax+3CD0]", "0x400B85 lea rdx,[rip+0B0694D4]", "0x400B8C xor r8d,r8d", "0x400B8F call 000000014429F9E0", "0x400B94 mov rax,[rax]", "0x400B97 mov rcx,[rax+18]", "0x400B9B mov rax,[rsi+38]", "0x400B9F mov edx,1C8", "0x400BA4 add rdx,[rax+58]", "0x400BA8 call 00000001445AADC0"]
+    },
+    {
+      "entry": "0x4444C0",
+      "end": "0x444C3A",
+      "size": 1914,
+      "nestedChain": true,
+      "callsAllocator": true,
+      "callsLookup": true,
+      "callsEnqueue": false,
+      "immSizes": ["0xE0", "0x100", "0x1C8"],
+      "vtables": ["0xB46A060", "0x9145218", "0x91452F0", "0x53B6A70", "0x10326A0", "0x535C840", "0x6ADEE10", "0x6ADEEE0"],
+      "strings": [],
+      "allocSites": ["0x4445FE call allocator", "0x444641 call allocator :: 0x444636:mov edx,0E0"],
+      "lookupSites": ["0x44459F call lookup", "0x44477C call lookup"],
+      "fieldNotes": ["disp0xA8 @0x4444EF mov r14,[rdx+0A8]", "+0x3CD0 @0x44458E mov rcx,[r14+3CD0]", "disp0x18 @0x4445A7 mov rcx,[rax+18]", "disp0x18 @0x44466B mov [rbp+18],rbx", "disp0x98 @0x4446D1 mov [rbp+98],rbx", "disp0xA8 @0x4446E6 mov [rbp+0A8],bl", "disp0x18 @0x444728 mov eax,[rdx+18]", "disp0xA8 @0x44475B mov rax,[rax+0A8]", "+0x3CD0 @0x44476B mov rcx,[rax+3CD0]", "disp0x18 @0x444784 mov rcx,[rax+18]", "disp0x98 @0x444A6C mov [rsp+98],rax"],
+      "calleesSample": ["0x444CA0", "0x444E20", "0x62D80", "0x23E5A0", "0x429F9E0", "0x45AADC0", "0x48B6F80", "0x426EE50", "0x4D784D0", "0x445100", "0x5014570", "0x213C50", "0x444C40", "0x4451D0", "0x53B69C0", "0x53B6A90", "0xED6870", "0x10325F0", "0xA303C0", "0x6AF5C70"],
+      "callersE8": ["0xCD76CC4", "0xD7206D2", "0xD7225E3"],
+      "callersLea": [],
+      "disasmHead": ["0x4444C0 push r15", "0x4444C2 push r14", "0x4444C4 push r13", "0x4444C6 push r12", "0x4444C8 push rsi", "0x4444C9 push rdi", "0x4444CA push rbp", "0x4444CB push rbx", "0x4444CC sub rsp,0D8", "0x4444D3 mov ebp,edx", "0x4444D5 mov rax,[rip+9E6ED24]", "0x4444DC xor rax,rsp", "0x4444DF mov [rsp+0D0],rax", "0x4444E7 mov rax,[rcx+38]", "0x4444EB mov rdx,[rax+58]", "0x4444EF mov r14,[rdx+0A8]", "0x4444F6 test r14,r14", "0x4444F9 je near ptr 0000000140444AD5", "0x4444FF mov rsi,rcx", "0x444502 add rdx,1C8", "0x444509 mov rcx,r14", "0x44450C call 0000000140444CA0", "0x444511 add eax,0FFFFFFFC", "0x444514 cmp eax,3"]
+    }
+  ]
+}

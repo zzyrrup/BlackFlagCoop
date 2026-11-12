@@ -1,14 +1,14 @@
 {
   "schemaVersion": 1,
-  "generatedUtc": "2026-11-12T17:30:00Z",
+  "generatedUtc": "2026-11-12T17:35:00Z",
   "handoffFor": "ChatGPT",
   "executor": "Cursor",
   "machine": "PC1",
   "repository": {
     "url": "https://github.com/zzyrrup/BlackFlagCoop",
     "defaultBranch": "main",
-    "featureBranch": "cursor/v070-backward-lod-classify-8285",
-    "baseBranch": "cursor/v069-ctor-deep-lod-consumers-8285",
+    "featureBranch": "cursor/v071-alloc-leads-enqueue-8285",
+    "baseBranch": "cursor/v070-backward-lod-classify-8285",
     "doNotPushMain": true,
     "initialCommit": "e12e70150656ac80742f10b496f7e5556e7985b7"
   },
@@ -18,10 +18,10 @@
     "functionalityChangedByThisMilestone": false
   },
   "milestone": {
-    "currentId": "v0.6.10",
-    "currentTitle": "Backward trace from wrapper/nested-chain and LOD consumer classification",
+    "currentId": "v0.6.11",
+    "currentTitle": "Alloc leads deep-decode and enqueue enrollment check",
     "status": "complete",
-    "priorPreserved": ["v0.6.4", "v0.6.5", "v0.6.6", "v0.6.7", "v0.6.8", "v0.6.9"]
+    "priorPreserved": ["v0.6.4", "v0.6.5", "v0.6.6", "v0.6.7", "v0.6.8", "v0.6.9", "v0.6.10"]
   },
   "asi": {
     "version": "0.5.1",
@@ -37,7 +37,7 @@
   },
   "build": {
     "asiRebuilt": false,
-    "offlineTools": ["tools/offline/BackwardTrace070"]
+    "offlineTools": ["tools/offline/AllocLead071"]
   },
   "network": {
     "changesAuthorized": false,
@@ -45,59 +45,56 @@
   },
   "engineFindings": {
     "summary": [
-      "81 nested-chain seeds calling lookup/enqueue; 200 BFS nodes",
-      "21 nodes call allocator 0x426EE50; depth-0 highlights 0x400B50 and 0x4444C0",
-      "LOD consumers: only phase registrar installs stub+cmp+thunk (+0xE18 bundle)",
+      "0x400B50 allocates 0x50 via 0x426EE50; uses coordinator lookup path; no enqueue",
+      "0x4444C0 allocates 0xE0; inits +0x18/+0x98/+0xA8; no enqueue",
+      "Callers share lookup but do not call enqueue helper/wrapper",
       "No Edward/create path"
     ],
     "keyRvas": {
+      "leadA": "0x400B50",
+      "leadB": "0x4444C0",
       "allocator": "0x426EE50",
-      "allocNestedLeads": ["0x400B50", "0x4444C0"],
-      "enqueueWrapper": "0x2E97FC0",
       "lookup": "0x429F9E0",
-      "phaseRegistrar": "0x5CBDFB0",
-      "lodComparator": "0x67BDB30",
-      "lodThunk": "0x1A5A00",
-      "lodStub": "0x1A5A70"
+      "enqueueWrapper": "0x2E97FC0",
+      "enqueueHelper": "0x2E97B60"
     }
   },
   "confirmed": [
     "ASI v0.5.1 preserved; no deploy",
-    "Avoided +0x61-only ranking",
-    "Allocator linked on nested-chain/lookup periphery",
-    "Registrar-only full LOD stub bundle",
+    "Alloc sizes 0x50 / 0xE0 on the two leads",
+    "No enqueue enrollment from leads or their callers",
     "No live memory this milestone"
   ],
   "hypotheses": [
-    "0x400B50 / 0x4444C0 may allocate objects that later enroll in LOD/queue",
-    "Queued subjects remain LOD-tracked actor-like objects"
+    "Leads allocate helper/descriptor objects on the shared coordinator, not queued subjects",
+    "True subject ctor is reachable forward from wrapper enrollment sites"
   ],
   "blockers": [
     "Subject concrete type unknown",
+    "Enqueue enrollment ctor unidentified",
     "No input/possession path",
     "Spawn tests not authorized"
   ],
   "mostRecentCompletedMilestone": {
-    "id": "v0.6.10",
-    "docs": ["docs/v0.6.10-backward-lod-classify.md"],
+    "id": "v0.6.11",
+    "docs": ["docs/v0.6.11-alloc-leads-enqueue.md"],
     "reports": [
-      "reports/v0.6.10-backward-trace.json",
-      "reports/v0.6.10-lod-consumer-classes.json",
-      "reports/v0.6.10-summary.json",
-      "reports/v0.6.10-second-edward-feasibility.json",
-      "reports/v070-raw/evidence.txt"
+      "reports/v0.6.11-alloc-leads-deep.json",
+      "reports/v0.6.11-enqueue-enrollment.json",
+      "reports/v0.6.11-summary.json",
+      "reports/v0.6.11-second-edward-feasibility.json",
+      "reports/v071-raw/evidence.txt"
     ]
   },
   "nextRecommendedMilestone": {
-    "id": "v0.6.11",
-    "title": "Deep-decode allocator nested-chain leads 0x400B50 / 0x4444C0",
-    "primary": ["0x400B50", "0x4444C0", "callers toward enqueue enrollment"],
+    "id": "v0.6.12",
+    "title": "Forward from wrapper enrollment sites to allocators feeding 0x2E97B60",
+    "primary": ["0x2E97FC0 enrollment sites", "allocators of enqueued pointers"],
     "forbidden": ["spawn", "deploy", "live memory", "PC2", "save-data", "force-push main", "+0x61-only ranking"]
   },
   "tests": [
-    { "name": "BackwardTrace070_build_scan", "result": "pass" },
-    { "name": "allocator_nested_depth0", "result": "pass" },
-    { "name": "lod_consumer_classification", "result": "pass" },
+    { "name": "AllocLead071_build_scan", "result": "pass" },
+    { "name": "lead_enqueue_enrollment", "result": "absent" },
     { "name": "game_launch_deploy", "result": "not_run" },
     { "name": "spawn_live_memory", "result": "not_run" }
   ],
@@ -113,9 +110,9 @@
   },
   "chatgptNextReviewInstructions": [
     "Read docs/CHATGPT_HANDOFF.md and this JSON first",
-    "Review v0.6.10 PR; preserve v0.6.4-v0.6.9 history",
+    "Review v0.6.11 PR; preserve v0.6.4-v0.6.10 history",
     "Separate confirmed vs hypotheses",
-    "Propose v0.6.11 deep-decode of 0x400B50 / 0x4444C0",
+    "Propose v0.6.12 forward from wrapper enrollment to allocators",
     "Do not authorize deploy/spawn/live memory/PC2 unless user overrides",
     "Return PC1 branch+PR instructions"
   ]

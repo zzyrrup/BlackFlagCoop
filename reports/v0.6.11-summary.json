@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 1,
+  "milestone": "v0.6.11",
+  "generatedUtc": "2026-11-12T17:35:00Z",
+  "exeSha256": "19920F34BB2FAC814023EE3C27F0CECA1872E80A2AAFB37C092C419FFF77CC0D",
+  "leadsDecoded": ["0x400B50", "0x4444C0"],
+  "anyLeadCallsEnqueue": false,
+  "anyCallerCallsEnqueueOrWrapper": false,
+  "forwardReachQueue": false,
+  "allocSizes": {
+    "0x400B50": "0x50",
+    "0x4444C0": "0xE0"
+  },
+  "coordinatorPath": "[rcx+0x38] -> [+0x58] -> [+0xA8] -> [+0x3CD0] -> lookup 0x429F9E0",
+  "leadSizes": {
+    "0x400B50": 447,
+    "0x4444C0": 1914
+  },
+  "edwardOrPlayerTypeConfirmed": false
+}
