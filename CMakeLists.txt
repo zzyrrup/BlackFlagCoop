@@ -131,3 +131,8 @@ if(MSVC)
         /EHsc
     )
 endif()
+
+# Lane C owns this subdirectory only: engine-free pad/gamer isolation policy.
+# It does not link the ASI and does not call the game.
+enable_testing()
+add_subdirectory(tools/gamer_pad_policy_test)
