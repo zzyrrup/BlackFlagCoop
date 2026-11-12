@@ -1,0 +1,399 @@
+===== v0.8.0 C1 ROLE HUNT (Duplicate-this + handle/objectId) =====
+exeSha256=19920F34BB2FAC814023EE3C27F0CECA1872E80A2AAFB37C092C419FFF77CC0D
+agent1Shape=freestanding adjacent absolute reads proven in AC4; fill shape unknown
+hunt=long-lived roles, not adjacent-.bss hard requirement
+callEngine=off
+
+===== STRINGS =====
+Duplicate count=9 first=0xA102E1F,0xA10978E,0xA13FE51,0xA1A9C04
+Duplication count=0 ABSENT
+DuplicationManager count=0 ABSENT
+RowSelector count=0 ABSENT
+EntityBuilder count=0 ABSENT
+BuildEntityWithSelector count=0 ABSENT
+CreateReference count=0 ABSENT
+AddLoadTask count=0 ABSENT
+ObjectID count=1 first=0x999A866
+HandleContainer count=0 ABSENT
+ManagedObject count=0 ABSENT
+
+===== HANDLE/OBJECTID ROLE (RIP global -> +0x10 use) =====
+rawHits=77
+uniqueGlobals=25
+--- top few-writer objectId globals ---
+G=0xAF6FD48 readers=8 writers=0 sec=.trace loads=0x1E93A1,0x1E9595,0x1E9665,0x1E9E00,0x283B2E5,0x2928785,0x2E919D5,0x3272AF5 funcs=0x1E8FA0,0x283B1E0,0x2928780,0x2E919D0,0x32729F0
+G=0xBC384A0 readers=5 writers=0 sec=.trace loads=0x5D072E,0x76F254,0xD6CDAE,0x229F3BD,0x4A6AB63 funcs=0x5D0700,0x76EF50,0xD6CA80,0x229F370,0x4A6A690
+G=0xBC38458 readers=4 writers=0 sec=.trace loads=0x731F97,0x3773C2E,0x3776271,0x4E9F645 funcs=0x731F77,0x3773C00,0x3776240,0x4E9F620
+G=0xBC38498 readers=1 writers=0 sec=.trace loads=0x42F1765 funcs=0x42F1760
+G=0xA2B3200 readers=39 writers=1 sec=.trace loads=0x179131,0x4229EB,0x423640,0x42978D,0x429E22,0x5D071F,0x67AF39,0x8565EE funcs=0x1790F0,0x4229D0,0x423630,0x429770,0x429E10,0x5D0700,0x67AE30,0x856590
+G=0xABF25C0 readers=1 writers=1 sec=.trace loads=0x1F6A342 funcs=0x1F6A1E0
+G=0xABF25D0 readers=1 writers=1 sec=.trace loads=0x1F6A364 funcs=0x1F6A1E0
+G=0xB5CACB0 readers=1 writers=1 sec=.trace loads=0x221D8E1 funcs=0x221D8D0
+G=0xBE72A60 readers=1 writers=1 sec=.trace loads=0x22D23E8 funcs=0x22D23B0
+G=0xB45CD60 readers=1 writers=1 sec=.trace loads=0x31C815B funcs=0x31C7FB0
+G=0xBE65E80 readers=1 writers=1 sec=.trace loads=0x390BCEB funcs=0x390BA00
+G=0xB307510 readers=1 writers=1 sec=.trace loads=0x5D2ACF0 funcs=0x5D2ABA0
+G=0xB307520 readers=1 writers=1 sec=.trace loads=0x5D2AD11 funcs=0x5D2ABA0
+G=0xADE5570 readers=1 writers=1 sec=.trace loads=0x60B25A2 funcs=0x60B2590
+G=0xADE5580 readers=1 writers=1 sec=.trace loads=0x60B25C7 funcs=0x60B2590
+G=0xAE79980 readers=1 writers=1 sec=.trace loads=0x71EB6D1 funcs=0x71EB6C0
+G=0xB05EBA8 readers=1 writers=1 sec=.trace loads=0x76F76B6 funcs=0x76F75E0
+G=0xB2AE3A0 readers=1 writers=1 sec=.trace loads=0x7B4AE40 funcs=0x7B4A770
+G=0xB3FC7E0 readers=1 writers=1 sec=.trace loads=0x7E63251 funcs=0x7E63240
+G=0xB4A42E0 readers=1 writers=1 sec=.trace loads=0x7FB51B8 funcs=0x7FB5160
+G=0xBEC6700 readers=1 writers=1 sec=.trace loads=0x88C3D97 funcs=0x88C3D30
+G=0xB5AED70 readers=1 writers=1 sec=.trace loads=0xE102F21 funcs=0xE102F01
+G=0xAF20BF0 readers=1 writers=1 sec=.trace loads=0x1119540A funcs=0x111953EA
+G=0xBF72070 readers=1 writers=1 sec=.trace loads=0x1449E0C8 funcs=0x1449E0A8
+G=0xBFCD278 readers=1 writers=2 sec=.trace loads=0x8C9B55D funcs=0x8C9B550
+
+===== DISASM TOP OBJECTID GLOBALS =====
+### G=0xAF6FD48 writers=0 readers=8
+--- oid-use @0x1E93A1 ---
+### G=0xBC384A0 writers=0 readers=5
+--- oid-use @0x5D072E ---
+### G=0xBC38458 writers=0 readers=4
+--- oid-use @0x731F97 ---
+0x731F87 add al,0
+0x731F89 add [rax+50660F3D],al
+0x731F8F or eax,[rax]
+0x731F91 je near ptr 0000000140733907
+0x731F97 mov rsi,[rip+0B5064BA]  ;str=L3$$H
+0x731F9E mov rbx,[rsp+48]
+0x731FA3 cmp byte ptr [rsi+16],0
+0x731FA7 je near ptr 00000001407320E0
+0x731FAD mov rax,[rbx+648]
+0x731FB4 mov rcx,[rbx+50]
+0x731FB8 mov rcx,[rcx+8]
+0x731FBC mov rdx,[rcx]
+0x731FBF mov rcx,[rdx+1828]
+0x731FC6 mov rdx,[rdx+1830]
+0x731FCD and edx,3FFFFFFF
+0x731FD3 lea r8,[rip+0B00226E]  ;data=0xB734248
+0x731FDA mov r9,r8
+0x731FDD shr r9,21
+0x731FE1 xor r9,r8
+0x731FE4 mov r10,0FF51AFD7ED558CCD
+### G=0xA2B3200 writers=1 readers=39
+--- oid-use @0x179131 ---
+0x179121 add ch,al
+0x179123 clc
+0x179124 sub [rsp+90],esi
+0x17912B mov rsi,r8
+0x17912E mov r8,rcx
+0x179131 mov rax,[rip+0A13A0C8]  ;data=0xA2B3200
+0x179138 xor rax,rsp
+0x17913B mov [rsp+88],rax
+0x179143 lea rdi,[rsp+20]
+0x179148 mov rcx,rdi
+0x17914B call 0000000144885B30
+0x179150 mov rdi,[rdi]
+0x179153 test rdi,rdi
+0x179156 je near ptr 00000001401793D2
+0x17915C mov rax,[rsp+28]
+0x179161 test rax,rax
+0x179164 je near ptr 00000001401793D2
+0x17916A xor ebx,ebx
+0x17916C test byte ptr [rax+16],4
+0x179170 jne near ptr 0000000140179365
+0x179176 movzx eax,word ptr [rsp+30]
+0x17917B cmp ax,0FFFF
+0x17917F je near ptr 0000000140179365
+--- writer @0x14959E31 ---
+0x14959E11 xor eax,ecx
+0x14959E13 mov rcx,0FFFFFFFFFFFF
+0x14959E1D and rax,rcx
+0x14959E20 mov rcx,2B992DDFA233
+0x14959E2A cmp rax,rbx
+0x14959E2D cmove rax,rcx
+0x14959E31 mov [rip-0A6A6C38],rax  ;data=0xA2B3200
+0x14959E38 mov rbx,[rsp+50]
+0x14959E3D not rax
+0x14959E40 mov [rip-0A6A6C07],rax  ;data=0xA2B3240
+0x14959E47 add rsp,30
+0x14959E4B pop rbp
+0x14959E4C ret
+0x14959E4D int 3
+  writerStrings=
+
+===== DUPLICATE(0,0)-SHAPED CALLS (rcx from RIP global) =====
+rawHits=73
+selG=0xAF74F50 calls=9 writers=0 sec=.trace callees=0x429F9E0
+selG=0xAED3860 calls=4 writers=1 sec=.trace callees=0x5354820
+selG=0xB699FA8 calls=4 writers=1 sec=.trace callees=0x5ABFD80,0x5ABFD90,0x4DEA430
+selG=0xAC0E998 calls=3 writers=1 sec=.trace callees=0x299C90,0x53F11F0,0x5C76BD0
+selG=0xB74A878 calls=3 writers=1 sec=.trace callees=0x5503E40,0x5503C20,0x55047E0
+selG=0xAF73D00 calls=2 writers=1 sec=.trace callees=0x5432870
+selG=0xB45E798 calls=2 writers=1 sec=.trace callees=0x429F9E0
+selG=0xB051590 calls=2 writers=1 sec=.trace callees=0x75F0A10,0x474CE30
+selG=0xB74A9B0 calls=2 writers=1 sec=.trace callees=0x4C176E0,0x897450
+selG=0xAC0E898 calls=1 writers=1 sec=.trace callees=0x4A51920
+selG=0xB6E67A8 calls=1 writers=1 sec=.trace callees=0x45FF280
+selG=0xAC0E8A8 calls=1 writers=1 sec=.trace callees=0x68B3F50
+selG=0xB74E718 calls=1 writers=1 sec=.trace callees=0x380B720
+selG=0xB74E720 calls=1 writers=1 sec=.trace callees=0x380B720
+selG=0xB691F00 calls=1 writers=1 sec=.trace callees=0x162430
+selG=0xBEF3818 calls=1 writers=1 sec=.trace callees=0x7A7590
+selG=0xAC5E610 calls=1 writers=1 sec=.trace callees=0x874210
+selG=0xC02DCA8 calls=1 writers=1 sec=.trace callees=0x55B2440
+selG=0xAC0E8D8 calls=1 writers=1 sec=.trace callees=0x6A2640
+selG=0xB683600 calls=1 writers=1 sec=.trace callees=0x84562C0
+selG=0xC0F28F0 calls=1 writers=1 sec=.trace callees=0x76E2F0
+selG=0xAE04AE8 calls=1 writers=1 sec=.trace callees=0x1593B90
+selG=0xAC5F570 calls=7 writers=2 sec=.trace callees=0x55ABC60,0x1320730,0x129B370,0x979BBE3A,0xD76250
+selG=0xABE2080 calls=3 writers=2 sec=.trace callees=0x1864F60,0x1B3B7E0
+
+===== DISASM TOP DUPLICATE-SHAPED =====
+--- dup-call @0x8EBB7A ---
+0x8EBB5A loope 00000001408EBB4C
+0x8EBB5C inc dword ptr [rbx]
+0x8EBB5E add [rbp+56],dh
+0x8EBB61 bt eax,1E
+0x8EBB65 jb short 00000001408EBB6E
+0x8EBB67 xor edx,edx
+0x8EBB69 jmp near ptr 00000001408EBA13
+0x8EBB6E lea rcx,[rip+0A68801B]  ;data=0xAF73B90
+0x8EBB75 call 00000001442256B0
+0x8EBB7A mov rcx,[rip+0A6893CF]  ;data=0xAF74F50
+0x8EBB81 xor ebx,ebx
+0x8EBB83 mov rdx,rdi
+0x8EBB86 xor r8d,r8d
+0x8EBB89 call 000000014429F9E0
+0x8EBB8E test rax,rax
+0x8EBB91 je short 00000001408EBB96
+0x8EBB93 mov rbx,[rax]
+0x8EBB96 lea rcx,[rip+0A687FF3]  ;data=0xAF73B90
+0x8EBB9D call qword ptr [rip+995D5ED]  ;data=0xA249190
+0x8EBBA3 mov rdx,rbx
+0x8EBBA6 jmp near ptr 00000001408EBA13
+0x8EBBAB mov dil,[rip+0A67C362]  ;data=0xAF67F14
+0x8EBBB2 jmp near ptr 00000001408EBA95
+0x8EBBB7 mov rdx,[rdx]
+--- callee @0x429F9E0 ---
+0x429F9E0 push r15
+0x429F9E2 push r14
+0x429F9E4 push r13
+0x429F9E6 push r12
+0x429F9E8 push rsi
+0x429F9E9 push rdi
+0x429F9EA push rbp
+0x429F9EB push rbx
+0x429F9EC mov eax,ecx
+0x429F9EE and eax,7
+0x429F9F1 cmp eax,3
+0x429F9F4 jne short 000000014429FA55
+0x429F9F6 mov r9,0FFFFFFFFFFFFFF
+0x429FA00 mov r10,0FFFFFF00000000
+0x429FA0A mov r11,0FFFF0000000000
+0x429FA14 mov rsi,0FF000000000000
+0x429FA1E and rcx,0FFFFFFFFFFFFFFF8
+--- dup-call @0x3BA2B12 ---
+0x3BA2AF2 push r14
+0x3BA2AF4 push r13
+0x3BA2AF6 push r12
+0x3BA2AF8 push rsi
+0x3BA2AF9 push rdi
+0x3BA2AFA push rbp
+0x3BA2AFB push rbx
+0x3BA2AFC sub rsp,78
+0x3BA2B00 mov rsi,rcx
+0x3BA2B03 mov rax,[rip+67106F6]  ;data=0xA2B3200
+0x3BA2B0A xor rax,rsp
+0x3BA2B0D mov [rsp+70],rax
+0x3BA2B12 mov rcx,[rip+7330D47]  ;data=0xAED3860
+0x3BA2B19 test rcx,rcx
+0x3BA2B1C je short 0000000143BA2B2F
+0x3BA2B1E lea rdx,[rip+6E91D1B]  ;data=0xAA34840
+0x3BA2B25 call 00000001444D5940
+0x3BA2B2A mov r8,rax
+0x3BA2B2D jmp short 0000000143BA2B32
+0x3BA2B2F xor r8d,r8d
+0x3BA2B32 lea rcx,[rip+73D0FA7]  ;data=0xAF73AE0
+0x3BA2B39 lea r9,[rip+6E91D00]  ;data=0xAA34840
+0x3BA2B40 xor edx,edx
+0x3BA2B42 call 0000000145354820
+--- callee @0x5354820 ---
+0x5354820 push r15
+0x5354822 push r14
+0x5354824 push r13
+0x5354826 push r12
+0x5354828 push rsi
+0x5354829 push rdi
+0x535482A push rbp
+0x535482B push rbx
+0x535482C sub rsp,0D8
+0x5354833 vmovdqa xmmword ptr [rsp+0C0],xmm10
+0x535483C vmovapd [rsp+0B0],xmm9
+0x5354845 vmovapd [rsp+0A0],xmm8
+0x535484E vmovdqa xmmword ptr [rsp+90],xmm7
+0x5354857 vmovdqa xmmword ptr [rsp+80],xmm6
+--- dup-call @0x5ABFC0E ---
+0x5ABFBEE stc
+0x5ABFBEF call 0000000144642DB0
+0x5ABFBF4 mov rcx,rsi
+0x5ABFBF7 mov rdx,rdi
+0x5ABFBFA call 0000000145ABFE20
+0x5ABFBFF mov rcx,[rip+5BDA3A2]  ;data=0xB699FA8
+0x5ABFC06 mov rdx,rsi
+0x5ABFC09 call 0000000141C0C5B0
+0x5ABFC0E mov rcx,[rip+5BDA393]  ;data=0xB699FA8
+0x5ABFC15 mov rax,[rcx+18]
+0x5ABFC19 mov byte ptr [rax+0D],0
+0x5ABFC1D mov rdi,[rip+5BD22DC]  ;data=0xB691F00
+0x5ABFC24 xor edx,edx
+0x5ABFC26 xor r8d,r8d
+0x5ABFC29 call 0000000145ABFD80
+0x5ABFC2E mov rcx,rdi
+0x5ABFC31 mov rdx,rax
+0x5ABFC34 call 0000000145ABFD90
+0x5ABFC39 mov rcx,[rsi+660]
+0x5ABFC40 call 0000000144B64960
+0x5ABFC45 call 0000000144DEA430
+0x5ABFC4A test rax,rax
+0x5ABFC4D jne short 0000000145ABFC7C
+--- callee @0x5ABFD80 ---
+0x5ABFD80 jmp near ptr 0000000145ABFDA0
+0x5ABFD85 int 3
+--- dup-call @0x6117AC ---
+0x61178C mov edx,0B841001A
+0x611791 or al,0
+0x611793 add [rax],al
+0x611795 call 00000001445067C0
+0x61179A mov [rax+4],rbx
+0x61179E mov rax,[rip+0A5FD1F3]  ;data=0xAC0E998
+0x6117A5 lock dec dword ptr [rax+0B4]
+0x6117AC mov rcx,[rip+0A5FD1E5]  ;data=0xAC0E998
+0x6117B3 xor edx,edx
+0x6117B5 xor r8d,r8d
+0x6117B8 call 0000000140299C90
+0x6117BD mov eax,1
+0x6117C2 add rsp,20
+0x6117C6 pop rbx
+0x6117C7 pop rdi
+0x6117C8 pop rsi
+0x6117C9 ret
+0x6117CA int 3
+--- callee @0x299C90 ---
+0x299C90 push r15
+0x299C92 push r14
+0x299C94 push r13
+0x299C96 push r12
+0x299C98 push rsi
+0x299C99 push rdi
+0x299C9A push rbx
+0x299C9B sub rsp,40
+0x299C9F mov edi,edx
+0x299CA1 mov ebx,r8d
+0x299CA4 mov rsi,rcx
+0x299CA7 mov rax,[rip+0A019552]  ;data=0xA2B3200
+0x299CAE xor rax,rsp
+0x299CB1 mov [rsp+38],rax
+0x299CB6 mov r12,[rcx+10]
+0x299CBA mov r13,[rcx+18]
+0x299CBE cmp r12,r13
+0x299CC1 je short 0000000140299CEE
+0x299CC3 mov rcx,rsi
+0x299CC6 xor edx,edx
+0x299CC8 mov r8d,4
+0x299CCE call 00000001445067C0
+--- dup-call @0x5503785 ---
+0x5503765 and [rax-77],cl
+0x5503768 stc
+0x5503769 xor edx,edx
+0x550376B xor r8d,r8d
+0x550376E xor r9d,r9d
+0x5503771 call 00000001448D51B0
+0x5503776 call 0000000145504070
+0x550377B call 00000001455053A0
+0x5503780 call 0000000145505160
+0x5503785 mov rcx,[rip+62470EC]  ;data=0xB74A878
+0x550378C call 0000000145503E40
+0x5503791 call 0000000145503C20
+0x5503796 call 00000001455047E0
+0x550379B call 00000001453741F0
+0x55037A0 call 0000000145503CE0
+0x55037A5 call 0000000145503D50
+0x55037AA mov rdx,[rsi+2120]
+0x55037B1 test rdx,rdx
+0x55037B4 je short 0000000145503822
+0x55037B6 lea rcx,[rip+5B0DD43]  ;data=0xB011500
+0x55037BD call 0000000141797270
+0x55037C2 mov rdi,[rsi+2120]
+--- callee @0x5503E40 ---
+0x5503E40 push rsi
+0x5503E41 push rdi
+0x5503E42 push rbx
+0x5503E43 sub rsp,20
+0x5503E47 mov rsi,rcx
+0x5503E4A call 0000000145503EC0
+0x5503E4F call 0000000145504C10
+0x5503E54 mov rdi,[rsi+10]
+0x5503E58 test rdi,rdi
+0x5503E5B je short 0000000145503EA6
+0x5503E5D lea rcx,[rip+5A63874]  ;data=0xAF676D8
+0x5503E64 mov rdx,rdi
+0x5503E67 call 000000014016FAA0
+0x5503E6C mov rbx,rax
+0x5503E6F mov rcx,rdi
+0x5503E72 call 00000001414C99E0
+0x5503E77 mov rax,[rbx]
+0x5503E7A mov rcx,rbx
+0x5503E7D mov rdx,rdi
+--- dup-call @0xBCED45 ---
+0xBCED25 mov r9,rdi
+0xBCED28 call 000000014033C3B0
+0xBCED2D mov rax,[rdi+8]
+0xBCED31 test rax,rax
+0xBCED34 je short 0000000140BCED45
+0xBCED36 lea rcx,[rsp+0E0]
+0xBCED3E xor edx,edx
+0xBCED40 xor r8d,r8d
+0xBCED43 call rax
+0xBCED45 mov rcx,[rip+0A3A4FB4]  ;data=0xAF73D00
+0xBCED4C call 0000000145432870
+0xBCED51 mov rax,[rip+0AB050D0]  ;data=0xB6D3E28
+0xBCED58 mov rcx,[rax+0A0]
+0xBCED5F movsxd rdx,dword ptr [rcx+8]
+0xBCED63 sar rdx,1F
+0xBCED67 and rdx,[rcx]
+0xBCED6A mov [rip+0AB1799F],rdx  ;data=0xB6E6710
+0xBCED71 mov rcx,[rax+88]
+0xBCED78 movsxd rdx,dword ptr [rcx+8]
+0xBCED7C sar rdx,1F
+0xBCED80 and rdx,[rcx]
+0xBCED83 mov [rip+0AB17A36],rdx  ;data=0xB6E67C0
+--- callee @0x5432870 ---
+0x5432870 push rsi
+0x5432871 push rdi
+0x5432872 push rbx
+0x5432873 sub rsp,20
+0x5432877 mov rsi,rcx
+0x543287A call 0000000144D1B560
+0x543287F lea rcx,[rip+5B4125A]  ;data=0xAF73AE0
+0x5432886 call 00000001408AE9B0
+0x543288B xor ecx,ecx
+0x543288D call 0000000144941100
+0x5432892 test rax,rax
+0x5432895 je short 0000000145432914
+0x5432897 mov rdi,rax
+0x543289A mov rbx,[rsi+0E8]
+0x54328A1 mov rax,[rax]
+0x54328A4 mov rcx,rdi
+0x54328A7 mov rdx,rbx
+0x54328AA call qword ptr [rax+8]
+0x54328AD mov rcx,rsi
+
+===== INTERSECTION (same global in oid-role AND dup-role) =====
+count=0
+
+===== SAME-FUNC PAIR (dup-global + oid-global) =====
+sameFuncPairsListed=0
+
+===== VERDICT =====
+objectIdRoleCandidates=4
+duplicateRoleCandidates=38
+sameFuncDupPlusOidPairs=0
+c1Proven=false
+callEngine=off
+decision=role candidates found separately — no same-func pair yet
+next=Widen same-func window to callers-of-callers; or match by shared publisher func.

@@ -1,0 +1,22 @@
+{
+  "schemaVersion": 1,
+  "milestone": "v0.8.0",
+  "contract": "C1",
+  "mode": "offline-pe-readonly",
+  "exeSha256": "19920F34BB2FAC814023EE3C27F0CECA1872E80A2AAFB37C092C419FFF77CC0D",
+  "agent1Shape": "roles-not-adjacent-bss-hard-requirement",
+  "c1Proven": false,
+  "callEngine": false,
+  "falsified": [
+    {"id": "Duplicate-strings", "reason": "Havok/crypto/inventory messages, not RowSelector::Duplicate"},
+    {"id": "objectId@0xA17B42F", "reason": "schema field binder title/nameId/itemId at 0x18F4610"},
+    {"id": "ObjectID@0x999A866", "reason": "zero LEAs"}
+  ],
+  "heuristic": {
+    "dup00Hits": 73,
+    "oidRoleGlobals": 25,
+    "sameFuncDupPlusOidPairs": 0
+  },
+  "blocker": "Duplicate-this and handle/objectId roles not identified; strings do not map",
+  "next": "Agent1 string-free Duplicate/Begin/End fingerprint; HC* via +0/+8/+10 without ObjectID string"
+}

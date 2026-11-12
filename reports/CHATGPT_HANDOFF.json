@@ -1,6 +1,6 @@
 ﻿{
     "schemaVersion":  1,
-    "generatedUtc":  "2026-11-12T21:02:13Z",
+    "generatedUtc":  "2026-11-12T21:11:09Z",
     "handoffFor":  "ChatGPT",
     "executor":  "Cursor",
     "machine":  "PC1",
@@ -20,8 +20,8 @@
                 },
     "milestone":  {
                       "currentId":  "v0.8.0",
-                      "currentTitle":  "C1 dual-adjacent BSS hunt; top candidates falsified; cache unproven",
-                      "status":  "c1_dual_bss_falsified_cache_unproven",
+                      "currentTitle":  "C1 role hunt; Duplicate/objectId strings falsified",
+                      "status":  "c1_roles_unproven_strings_falsified",
                       "priorPreserved":  [
                                              "v0.6.4",
                                              "v0.6.5",
@@ -54,7 +54,7 @@
                 "candidate":  {
                                   "version":  "0.8.0-dev",
                                   "bytes":  105984,
-                                  "sha256":  "74BAD8604EAA589A2AB2B368FA224EB26344B137593C9510869BEFD69B1D0341",
+                                  "sha256":  "5EB940695F318955AF0632567D1CCA9F49C4CA46D40771C4CF10092BED463D34",
                                   "invokeNativeSpawn":  false,
                                   "callEngine":  false,
                                   "deployed":  false
@@ -85,11 +85,11 @@
                 },
     "engineFindings":  {
                            "summary":  [
-                                           "EntitySelector Process 0x7CA9B70 falsified as C1 (Agent1 confirms GetCached* only)",
-                                           "Dual-adjacent static hunt: 176401 .trace pairs; 0 .bss tight pairs",
-                                           "Falsified 0xAC028E0@0x67FD520 dual CLEAR; 0xA998888@0x520180 rorx pack; 0x1C6FD50 registrar",
-                                           "No proven selector*+HandleContainer* fill; next singleton member-pair [obj+0]/[obj+8]",
-                                           "callEngine=off; installed ASI v0.5.1 preserved"
+                                           "Agent1: hunt Duplicate-this + handle/objectId roles; adjacent-bss not hard requirement",
+                                           "Duplicate* strings falsified (Havok/crypto/inventory)",
+                                           "objectId@0xA17B42F LEA is item schema binder 0x18F4610 — not HC GetObjectID",
+                                           "ObjectID string has zero LEAs; same-func dup+oid heuristic pairs = 0",
+                                           "callEngine=off; ASI v0.5.1 preserved"
                                        ],
                            "keyRvas":  {
                                            "spawnPlayerParams":  "0x80F2A20",

@@ -118,13 +118,28 @@ public:
         {0x0u,
          ".bss has zero RIP-rel tight (dist<=16) adjacent QWORD co-publishes",
          "binary-confirmed"},
+        {0x0u,
+         "Agent1 shape: AC4 only proves freestanding adjacent reads; fill may be "
+         "freestanding or singleton members. Hunt Duplicate-this + handle/objectId "
+         "roles (adjacent-.bss not a hard requirement).",
+         "source-derived"},
+        {0xA102E1Fu,
+         "Duplicate* strings (9) LEA to Havok/crypto/inventory — NOT RowSelector::Duplicate",
+         "binary-confirmed"},
+        {0xA17B42Fu,
+         "objectId string LEA 0x18F4769 / func 0x18F4610 is item schema binder "
+         "(title/nameId/itemId) — NOT HandleContainer::GetObjectID",
+         "binary-confirmed"},
+        {0x999A866u,
+         "ObjectID string present but zero LEAs",
+         "binary-confirmed"},
     };
 
     static constexpr const char* kBlocker =
-        "C1 blocked: dual-adjacent static publish hunted; top RIP-rel candidates "
-        "falsified as teardown/rorx-pack/registrar. No proven selector*+"
-        "HandleContainer* fill. Next: singleton member-pair [obj+0]/[obj+8] "
-        "then one static publish of obj*. callEngine=off.";
+        "C1 blocked: Duplicate-this and handle/objectId roles unproven after "
+        "Agent1 shape shift. Duplicate/objectId strings falsified. Next: "
+        "string-free Duplicate/Begin/End fingerprint + HC* via +0/+8/+10. "
+        "callEngine=off.";
 
     static const char* StageName(PlayerRetentionStage stage);
     static const char* AcquireStateName(C1AcquireState state);
