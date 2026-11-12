@@ -1,0 +1,16 @@
+{
+  "schemaVersion": 1,
+  "milestone": "v0.6.14",
+  "generatedUtc": "2026-11-12T17:52:17Z",
+  "exeSha256": "19920F34BB2FAC814023EE3C27F0CECA1872E80A2AAFB37C092C419FFF77CC0D",
+  "typeInfoClass": "anvil_typeinfo_key_blob_no_inline_name",
+  "gateSetter": { "rva": "0x53F31A0", "usesKey": true, "nestedChain": true, "gateOps": 1, "callersE8": 0 },
+  "bitWriter": { "rva": "0xF1C240", "gateOps": 2, "callersE8": 0, "usesKey": true },
+  "membershipLeads": [
+    { "rva": "0x4B5A560", "touches98": true, "smallArray": true, "callersE8": 0, "indexedStores": 0 },
+    { "rva": "0x4D04450", "touches98": true, "smallArray": true, "callersE8": 2, "indexedStores": 3 },
+    { "rva": "0x2EA0B00", "touches98": true, "smallArray": false, "callersE8": 2, "indexedStores": 11 }
+  ],
+  "anyLeadCallsHelper": false,
+  "edwardOrPlayerTypeConfirmed": false
+}

@@ -1,0 +1,709 @@
+===== v0.6.14 GATE/INSERT DEEP-DECODE + TYPEINFO =====
+exeSha256=19920F34BB2FAC814023EE3C27F0CECA1872E80A2AAFB37C092C419FFF77CC0D
+
+===== TYPEINFO 0xB2898C8 =====
+sec=.trace hex128=A2 C3 FF FF FF FF 06 C4 C2 3B EB F0 5D 3C 00 00 00 00 09 F0 5D 3C 00 00 00 00 E8 10 AF 5A 01 00 00 00 35 21 43 57 01 00 00 00 C5 DF CB FF 8E 87 B1 3C 00 00 00 00 BC B7 90 60 00 00 00 00 39 7C 97 4D 01 00 00 00 0A 1C 0F A2 24 0F A2 C3 FF FF FF FF 00 00 00 00 00 00 00 00 4A DC F0 5D 00 00 00 00 0C 7F 80 59 01 00 00 00 40 0E 41 80 C6 0F A2 C3 FF FF FF FF C0 18 43 56 01 00 00 00 69 01
+  +0x00 d=0xFFFFC3A2 tagged_hi high16=0xFFFF_tag_or_reloc
+  +0x04 d=0xC406FFFF dword
+  +0x08 d=0xF0EB3BC2 dword
+  +0x0C d=0x00003C5D rva32? asRva->.impdata hex=FF FF F0 FF 05 D2 54 F3
+  +0x10 d=0xF0090000 dword
+  +0x14 d=0x00003C5D rva32? asRva->.impdata hex=FF FF F0 FF 05 D2 54 F3
+  +0x18 d=0x10E80000 rva32? asRva->.code hex=01 0F A2 C3 48 81 EA 56
+  +0x1C d=0x00015AAF rva32? asRva->.impdata hex=0D 84 36 F2 0A 40 0F B6
+  +0x20 d=0x21350000 dword
+  +0x24 d=0x00015743 rva32? asRva->.impdata hex=24 28 01 00 00 00 01 00
+  +0x28 d=0xDFC50000 dword
+  +0x2C d=0x878EFFCB dword
+  +0x30 d=0x00003CB1 rva32? asRva->.impdata hex=E8 FF FF 48 FF C1 49 89
+  +0x34 d=0xB7BC0000 dword
+  +0x38 d=0x00006090 rva32? asRva->.impdata hex=48 8B 05 19 49 74 0B 48
+  +0x3C d=0x7C390000 dword
+absQwordRefsToKey=1
+  abs @0x9491000 sec=.edata ctx=00 3F B0 47 01 00 00 00 F0 41 37 45 01 00 00 00 C8 98 28 4B 01 00 00 00 E0 3E B0 47 01 00 00 00
+classification=anvil_typeinfo_key_blob_no_inline_name
+
+===== LOOKUP 0x429F9E0 KEY CONSUMPTION =====
+lookup size~146 prologue=41 57 41 56 41 55 41 54 56 57 55 53 89 C8 83 E0
+  0x429F9E0 push r15
+  0x429F9E2 push r14
+  0x429F9E4 push r13
+  0x429F9E6 push r12
+  0x429F9E8 push rsi
+  0x429F9E9 push rdi
+  0x429F9EA push rbp
+  0x429F9EB push rbx
+  0x429F9EC mov eax,ecx
+  0x429F9EE and eax,7
+  0x429F9F1 cmp eax,3
+  0x429F9F4 jne short 000000014429FA55
+  0x429F9F6 mov r9,0FFFFFFFFFFFFFF
+  0x429FA00 mov r10,0FFFFFF00000000
+  0x429FA0A mov r11,0FFFF0000000000
+  0x429FA14 mov rsi,0FF000000000000
+  0x429FA1E and rcx,0FFFFFFFFFFFFFFF8
+  0x429FA22 lea rax,[rcx+8]
+    fieldDisp 0x8
+  0x429FA26 cmp byte ptr [rcx+17],23
+    fieldDisp 0x17
+  0x429FA2A jne near ptr 000000014429FBEE
+  0x429FA30 mov rcx,[rax]
+  0x429FA33 and rcx,0FFFFFFFFFFFFFFF8
+  0x429FA37 mov rdi,rdx
+  0x429FA3A shr rdi,38
+  0x429FA3E shl edi,4
+  0x429FA41 lea rax,[rcx+rdi]
+  0x429FA45 cmp byte ptr [rcx+rdi+0F],22
+    fieldDisp 0xF
+  0x429FA4A jne near ptr 000000014429FBEE
+  0x429FA50 jmp near ptr 000000014429FADC
+  0x429FA55 cmp eax,1
+  0x429FA58 je short 000000014429FA72
+  0x429FA5A test rcx,rcx
+  0x429FA5D jne near ptr 00000001442A08AF
+  0x429FA63 xor eax,eax
+  0x429FA65 pop rbx
+  0x429FA66 pop rbp
+  0x429FA67 pop rdi
+  0x429FA68 pop rsi
+  0x429FA69 pop r12
+  0x429FA6B pop r13
+
+===== LEAD 0x53F31A0 =====
+entry=0x53F31A0 end=0x53F3288 size=232 role=gate-setter prologue=56 57 53 48 83 EC 30 C5 F8 29 74 24 20 48 89 CE
+  0x53F31A0 push rsi
+  0x53F31A1 push rdi
+  0x53F31A2 push rbx
+  0x53F31A3 sub rsp,30
+  0x53F31A7 vmovaps [rsp+20],xmm6
+  0x53F31AD mov rsi,rcx
+  0x53F31B0 mov rax,[rcx+18]
+  0x53F31B4 mov rax,[rax+0A8]
+  0x53F31BB mov rcx,[rax+3CD0]
+  0x53F31C2 lea rdx,[rip+5E966FF]
+  *** KEY LEA/MOV @0x53F31C2 lea rdx,[rip+5E966FF]
+  0x53F31C9 xor edi,edi
+  0x53F31CB xor r8d,r8d
+  0x53F31CE call 000000014429F9E0
+  *** call 0x429F9E0 *** LOOKUP *** @0x53F31CE
+  0x53F31D3 test rax,rax
+  0x53F31D6 je short 00000001453F31DB
+  0x53F31D8 mov rdi,[rax]
+  0x53F31DB mov rax,[rsi+18]
+  0x53F31DF vmovaps xmm6,[rax+50]
+  0x53F31E4 call 000000014000D530
+  0x53F31E9 vxorps xmm1,xmm1,xmm1
+  0x53F31ED vblendvps xmm6,xmm6,xmm1,xmm0
+  0x53F31F3 lea rbx,[rdi+1C0]
+  0x53F31FA mov rcx,rbx
+  0x53F31FD call 00000001442256B0
+  0x53F3202 add rdi,30
+  0x53F3206 vmovss xmm0,dword ptr [rip+3C7E932]
+  0x53F320E vmulss xmm1,xmm6,xmm0
+  0x53F3212 vbroadcastss xmm1,xmm1
+  0x53F3217 vroundps xmm1,xmm1,1
+  0x53F321D vmovss xmm2,dword ptr [rip+4C2C8CB]
+  0x53F3225 vmaxss xmm1,xmm1,xmm2
+  0x53F3229 vmovss xmm3,dword ptr [rip+45399FB]
+  0x53F3231 vminss xmm1,xmm1,xmm3
+  0x53F3235 vcvttss2si r9d,xmm1
+  0x53F3239 vmovshdup xmm1,xmm6
+  0x53F323D vmulss xmm0,xmm1,xmm0
+  0x53F3241 vbroadcastss xmm0,xmm0
+  0x53F3246 vroundps xmm0,xmm0,1
+  0x53F324C vmaxss xmm0,xmm0,xmm2
+  0x53F3250 vminss xmm0,xmm0,xmm3
+  0x53F3254 vcvttss2si eax,xmm0
+  0x53F3258 shl rax,20
+  0x53F325C or r9,rax
+  0x53F325F mov rcx,rdi
+  0x53F3262 mov rdx,rsi
+  0x53F3265 xor r8d,r8d
+  0x53F3268 call 0000000142EA1CF0
+  0x53F326D mov rcx,rbx
+  0x53F3270 call qword ptr [rip+4E55F1A]
+  0x53F3276 or byte ptr [rsi+61],0A
+  *** GATE 0x53F3276 or byte ptr [rsi+61],0A
+  *** OR61 imm=0xA
+  0x53F327A vmovaps xmm6,[rsp+20]
+  0x53F3280 add rsp,30
+  0x53F3284 pop rbx
+  0x53F3285 pop rdi
+  0x53F3286 pop rsi
+  0x53F3287 ret
+nested=True key=True lookup=True alloc=False helper=False listScan=False +98=False small=False
+gateOps=1 indexedStores=0 callersE8=0
+  gate 0x53F3276 or byte ptr [rsi+61],0A
+  callee 0x42256B0
+  callee 0x2EA1CF0
+-- callers --
+--- callee dump 0x42256B0 ---
+  func 0x42256B0 size~32 prologue=56 57 53 48 83 EC 20 48 89 CE FF 15
+    0x42256B0 push rsi
+    0x42256B1 push rdi
+    0x42256B2 push rbx
+    0x42256B3 sub rsp,20
+    0x42256B7 mov rsi,rcx
+    0x42256BA call qword ptr [rip+6023D38]
+    0x42256C0 xor edi,edi
+    0x42256C2 test eax,eax
+    0x42256C4 je short 00000001442256E8
+    0x42256C6 mov eax,edi
+    0x42256C8 add rsp,20
+    0x42256CC pop rbx
+    0x42256CD pop rdi
+    0x42256CE pop rsi
+--- callee dump 0x2EA1CF0 ---
+  func 0x2EA1CF0 size~83 prologue=41 57 41 56 41 55 41 54 56 57 55 53
+    0x2EA1CF0 push r15
+    0x2EA1CF2 push r14
+    0x2EA1CF4 push r13
+    0x2EA1CF6 push r12
+    0x2EA1CF8 push rsi
+    0x2EA1CF9 push rdi
+    0x2EA1CFA push rbp
+    0x2EA1CFB push rbx
+    0x2EA1CFC sub rsp,78
+    0x2EA1D00 mov r14,r9
+    0x2EA1D03 mov ebx,r8d
+    0x2EA1D06 mov rsi,rdx
+    0x2EA1D09 mov rdi,rcx
+    0x2EA1D0C mov rax,[rip+74114ED]
+
+===== LEAD 0xF1C240 =====
+entry=0xF1C240 end=0xF1C36D size=301 role=bit-writer prologue=41 56 56 57 53 48 83 EC 28 0F B6 81 65 01 00 00
+  0xF1C240 push r14
+  0xF1C242 push rsi
+  0xF1C243 push rdi
+  0xF1C244 push rbx
+  0xF1C245 sub rsp,28
+  0xF1C249 movzx eax,byte ptr [rcx+165]
+  0xF1C250 cmp rax,0FF
+  0xF1C256 je near ptr 0000000140F1C362
+  0xF1C25C mov ebx,edx
+  0xF1C25E mov rdx,[rcx+138]
+  0xF1C265 mov rdi,[rdx+rax*8]
+  0xF1C269 test rdi,rdi
+  0xF1C26C je near ptr 0000000140F1C362
+  0xF1C272 mov al,[rdi+61]
+  *** GATE 0xF1C272 mov al,[rdi+61]
+  0xF1C275 and al,0FE
+  0xF1C277 or al,bl
+  0xF1C279 mov [rdi+61],al
+  *** GATE 0xF1C279 mov [rdi+61],al
+  0xF1C27C mov rax,[rcx+0A8]
+  0xF1C283 mov rcx,[rax+3CD0]
+  0xF1C28A lea rdx,[rip+0A36D637]
+  *** KEY LEA/MOV @0xF1C28A lea rdx,[rip+0A36D637]
+  0xF1C291 xor r14d,r14d
+  0xF1C294 xor r8d,r8d
+  0xF1C297 call 000000014429F9E0
+  *** call 0x429F9E0 *** LOOKUP *** @0xF1C297
+  0xF1C29C test rax,rax
+  0xF1C29F je short 0000000140F1C2A4
+  0xF1C2A1 mov r14,[rax]
+  0xF1C2A4 lea rsi,[r14+1C0]
+  0xF1C2AB mov rcx,rsi
+  0xF1C2AE call 00000001442256B0
+  0xF1C2B3 mov ecx,[r14+2070]
+  0xF1C2BA and ecx,3FFF
+  0xF1C2C0 je short 0000000140F1C2E7
+  0xF1C2C2 mov rax,[r14+2068]
+  0xF1C2C9 shl ecx,3
+  0xF1C2CC lea rdx,[rcx+rcx*4]
+  0xF1C2D0 xor ecx,ecx
+  0xF1C2D2 cmp [rax+rcx],rdi
+  0xF1C2D6 je short 0000000140F1C2E3
+  0xF1C2D8 add rcx,28
+  0xF1C2DC cmp rdx,rcx
+  0xF1C2DF jne short 0000000140F1C2D2
+  0xF1C2E1 jmp short 0000000140F1C2E7
+  0xF1C2E3 mov [rax+rcx+20],bl
+  0xF1C2E7 mov ecx,[r14+2080]
+  0xF1C2EE and ecx,3FFF
+  0xF1C2F4 je short 0000000140F1C31B
+  0xF1C2F6 mov rax,[r14+2078]
+  0xF1C2FD shl ecx,3
+  0xF1C300 lea rdx,[rcx+rcx*4]
+  0xF1C304 xor ecx,ecx
+  0xF1C306 cmp [rax+rcx],rdi
+  0xF1C30A je short 0000000140F1C317
+  0xF1C30C add rcx,28
+  0xF1C310 cmp rdx,rcx
+  0xF1C313 jne short 0000000140F1C306
+  0xF1C315 jmp short 0000000140F1C31B
+  ... +29 ins ...
+nested=False key=True lookup=True alloc=False helper=False listScan=False +98=False small=True
+gateOps=2 indexedStores=3 callersE8=0
+  gate 0xF1C272 mov al,[rdi+61]
+  gate 0xF1C279 mov [rdi+61],al
+  store 0xF1C2E3 mov [rax+rcx+20],bl
+  store 0xF1C317 mov [rax+rcx+20],bl
+  store 0xF1C34B mov [rax+rcx+20],bl
+  callee 0x42256B0
+-- callers --
+--- callee dump 0x42256B0 ---
+  func 0x42256B0 size~32 prologue=56 57 53 48 83 EC 20 48 89 CE FF 15
+    0x42256B0 push rsi
+    0x42256B1 push rdi
+    0x42256B2 push rbx
+    0x42256B3 sub rsp,20
+    0x42256B7 mov rsi,rcx
+    0x42256BA call qword ptr [rip+6023D38]
+    0x42256C0 xor edi,edi
+    0x42256C2 test eax,eax
+    0x42256C4 je short 00000001442256E8
+    0x42256C6 mov eax,edi
+    0x42256C8 add rsp,20
+    0x42256CC pop rbx
+    0x42256CD pop rdi
+    0x42256CE pop rsi
+
+===== LEAD 0x4B5A560 =====
+entry=0x4B5A560 end=0x4B5A6FF size=415 role=membership-A prologue=41 57 41 56 56 57 53 48 83 EC 30 48 89 CE 48 8B
+  0x4B5A560 push r15
+  0x4B5A562 push r14
+  0x4B5A564 push rsi
+  0x4B5A565 push rdi
+  0x4B5A566 push rbx
+  0x4B5A567 sub rsp,30
+  0x4B5A56B mov rsi,rcx
+  0x4B5A56E mov rax,[rip+5758C8B]
+  0x4B5A575 xor rax,rsp
+  0x4B5A578 mov [rsp+28],rax
+  0x4B5A57D mov al,[rcx+61]
+  *** GATE 0x4B5A57D mov al,[rcx+61]
+  0x4B5A580 test al,2
+  0x4B5A582 jne near ptr 0000000144B5A65C
+  0x4B5A588 mov rdx,[rsi+98]
+  0x4B5A58F test byte ptr [rdx+84],2
+  0x4B5A596 je short 0000000144B5A60D
+  0x4B5A598 lea rcx,[rsi+68]
+  0x4B5A59C lea r8,[rsp+24]
+  0x4B5A5A1 mov dword ptr [r8],3
+  0x4B5A5A8 call 0000000140B27210
+  0x4B5A5AD mov rdi,[rsi+98]
+  0x4B5A5B4 mov byte ptr [rdi+158],3
+  0x4B5A5BB lea rcx,[rdi+78]
+  0x4B5A5BF call 00000001407250E0
+  0x4B5A5C4 lea rcx,[rdi+0D8]
+  0x4B5A5CB call 0000000140725000
+  0x4B5A5D0 mov eax,[rdi+8]
+  0x4B5A5D3 and eax,3FFF
+  0x4B5A5D8 je short 0000000144B5A603
+  0x4B5A5DA mov rbx,[rdi]
+  0x4B5A5DD shl eax,3
+  0x4B5A5E0 lea r14,[rax+rax*2]
+  0x4B5A5E4 xor r15d,r15d
+  0x4B5A5E7 jmp short 0000000144B5A5F7
+  0x4B5A5E9 call 0000000140724EE0
+  0x4B5A5EE add r15,18
+  0x4B5A5F2 cmp r14,r15
+  0x4B5A5F5 je short 0000000144B5A603
+  0x4B5A5F7 mov rcx,[rbx+r15+10]
+  0x4B5A5FC test rcx,rcx
+  0x4B5A5FF jne short 0000000144B5A5E9
+  0x4B5A601 jmp short 0000000144B5A5EE
+  0x4B5A603 mov byte ptr [rdi+158],0
+  0x4B5A60A mov al,[rsi+61]
+  *** GATE 0x4B5A60A mov al,[rsi+61]
+  0x4B5A60D test al,1
+  0x4B5A60F jne short 0000000144B5A668
+  0x4B5A611 and byte ptr [rsi+23],0FB
+  0x4B5A615 mov rax,[rsi+18]
+  0x4B5A619 test rax,rax
+  0x4B5A61C je near ptr 0000000144B5A6E5
+  0x4B5A622 mov rdi,[rax+0A8]
+  0x4B5A629 test rdi,rdi
+  0x4B5A62C je near ptr 0000000144B5A6E5
+  0x4B5A632 add rdi,68
+  0x4B5A636 mov rcx,[rsp+28]
+  0x4B5A63B xor rcx,rsp
+  *** call 0x725400 *** WORKER_A *** @0x4B5A661
+  *** KEY LEA/MOV @0x4B5A677 lea rdx,[rip+672F24A]
+  *** call 0x429F9E0 *** LOOKUP *** @0x4B5A683
+  ... +56 ins ...
+nested=True key=True lookup=True alloc=False helper=False listScan=False +98=True small=True
+gateOps=2 indexedStores=0 callersE8=0
+  gate 0x4B5A57D mov al,[rcx+61]
+  gate 0x4B5A60A mov al,[rsi+61]
+  field +0x98 @0x4B5A588 mov rdx,[rsi+98]
+  field +0x98 @0x4B5A5AD mov rdi,[rsi+98]
+  callee 0xB27210
+  callee 0x7250E0
+  callee 0x725000
+  callee 0x724EE0
+  callee 0x5014570
+  callee 0x725400 *** WORKER_A ***
+  callee 0x4B5A700
+  callee 0x42256B0
+  callee 0xF06B80
+-- callers --
+--- callee dump 0xB27210 ---
+  func 0xB27210 size~80 prologue=41 57 41 56 41 55 41 54 56 57 55 53
+    0xB27210 push r15
+    0xB27212 push r14
+    0xB27214 push r13
+    0xB27216 push r12
+    0xB27218 push rsi
+    0xB27219 push rdi
+    0xB2721A push rbp
+    0xB2721B push rbx
+    0xB2721C sub rsp,6C8
+    0xB27223 mov [rsp+70],r8
+    0xB27228 mov rax,[rip+978BFD1]
+    0xB2722F xor rax,rsp
+    0xB27232 mov [rsp+6C0],rax
+    0xB2723A lea r15,[rcx+10]
+    str "Too many elements for %sArray. Size: %u, Max Size: %u"
+--- callee dump 0x7250E0 ---
+  func 0x7250E0 size~81 prologue=41 57 41 56 41 55 41 54 56 57 55 53
+    0x7250E0 push r15
+    0x7250E2 push r14
+    0x7250E4 push r13
+    0x7250E6 push r12
+    0x7250E8 push rsi
+    0x7250E9 push rdi
+    0x7250EA push rbp
+    0x7250EB push rbx
+    0x7250EC sub rsp,48
+    0x7250F0 mov rsi,rcx
+    0x7250F3 mov rax,[rip+9B8E106]
+    0x7250FA xor rax,rsp
+    0x7250FD mov [rsp+40],rax
+    0x725102 mov cl,[rcx+0C]
+    str "Too many elements for %sArray. Size: %u, Max Size: %u"
+    str "Small"
+--- callee dump 0x725000 ---
+  func 0x725000 size~15 prologue=E9 7B C3 54 0D E9 0D 7E 11 00 CD F9
+    0x725000 jmp near ptr 000000014DC71380
+    0x725005 jmp near ptr 000000014083CE17
+    0x72500A int 0F9
+    0x72500C cmp al,[rbp+43]
+--- callee dump 0x724EE0 ---
+  func 0x724EE0 size~14 prologue=E9 4B 5B 54 0D FC AA 0F 87 A3 95 60
+    0x724EE0 jmp near ptr 000000014DC6AA30
+    0x724EE5 cld
+    0x724EE6 stosb
+    0x724EE7 ja near ptr 0000000140D2E490
+    0x724EED std
+
+===== LEAD 0x4D04450 =====
+entry=0x4D04450 end=0x4D05034 size=3044 role=membership-B prologue=41 57 41 56 41 55 41 54 56 57 55 53 48 83 EC 78
+  0x4D04450 push r15
+  0x4D04452 push r14
+  0x4D04454 push r13
+  0x4D04456 push r12
+  0x4D04458 push rsi
+  0x4D04459 push rdi
+  0x4D0445A push rbp
+  0x4D0445B push rbx
+  0x4D0445C sub rsp,78
+  0x4D04460 mov rsi,rcx
+  0x4D04463 mov rax,[rip+55AED96]
+  0x4D0446A xor rax,rsp
+  0x4D0446D mov [rsp+70],rax
+  0x4D04472 test byte ptr [rcx+61],2
+  *** GATE 0x4D04472 test byte ptr [rcx+61],2
+  0x4D04476 jne near ptr 0000000144D04D77
+  0x4D0447C mov rdx,[rsi+98]
+  0x4D04483 test rdx,rdx
+  0x4D04486 je near ptr 0000000144D04C57
+  0x4D0448C test byte ptr [rdx+84],2
+  0x4D04493 jne near ptr 0000000144D04DE1
+  0x4D04499 lea rcx,[rsi+68]
+  0x4D0449D lea r8,[rsp+60]
+  0x4D044A2 mov dword ptr [r8],1
+  0x4D044A9 call 0000000140B27210
+  0x4D044AE mov r14,[rsi+98]
+  0x4D044B5 mov al,[r14+84]
+  0x4D044BC test al,1
+  0x4D044BE mov [rsp+58],rsi
+  0x4D044C3 je near ptr 0000000144D04974
+  0x4D044C9 mov ecx,eax
+  0x4D044CB and cl,0FE
+  0x4D044CE mov [r14+84],cl
+  0x4D044D5 mov r15d,[r14+80]
+  0x4D044DC and r15d,3FFF
+  0x4D044E3 test al,10
+  0x4D044E5 je short 0000000144D044F8
+  0x4D044E7 test r15d,r15d
+  0x4D044EA je near ptr 0000000144D04802
+  0x4D044F0 xor r12d,r12d
+  0x4D044F3 jmp near ptr 0000000144D0467A
+  0x4D044F8 or cl,10
+  0x4D044FB mov [r14+84],cl
+  0x4D04502 test r15d,r15d
+  0x4D04505 je near ptr 0000000144D0462A
+  0x4D0450B mov r15d,r15d
+  0x4D0450E xor r12d,r12d
+  0x4D04511 jmp short 0000000144D04523
+  0x4D04513 and byte ptr [rdi+0C],0FD
+  0x4D04517 inc r12
+  0x4D0451A cmp r12,r15
+  0x4D0451D je near ptr 0000000144D04623
+  0x4D04523 mov rax,[r14+78]
+  0x4D04527 mov rdi,[rax+r12*8]
+  0x4D0452B test rdi,rdi
+  0x4D0452E je short 0000000144D04517
+  0x4D04530 mov eax,[r14+88]
+  *** KEY LEA/MOV @0x4D0482D lea rdx,[rip+6585094]
+  *** call 0x429F9E0 *** LOOKUP *** @0x4D04839
+  *** call 0x429F9E0 *** LOOKUP *** @0x4D04BC7
+  *** call 0x725400 *** WORKER_A *** @0x4D04D7C
+  ... +626 ins ...
+nested=True key=True lookup=True alloc=False helper=False listScan=False +98=True small=True
+gateOps=1 indexedStores=3 callersE8=2
+  gate 0x4D04472 test byte ptr [rcx+61],2
+  store 0x4D049BC mov [rcx+rdx],rax
+  store 0x4D04B3D mov [rax+rcx],rdx
+  store 0x4D04C43 mov [rbx+r12],r15
+  field +0x98 @0x4D0447C mov rdx,[rsi+98]
+  field +0x98 @0x4D044AE mov r14,[rsi+98]
+  field +0x98 @0x4D04966 mov r14,[rax+98]
+  field +0x98 @0x4D04BD9 mov r15,[rax+98]
+  field +0x98 @0x4D04C4C mov qword ptr [rax+98],0
+  field +0x98 @0x4D04DF6 mov rcx,[rsi+98]
+  field +0x98 @0x4D04E02 mov rdx,[rsi+98]
+  str "Too many elements for %sArray. Size: %u, Max Size: %u"
+  str "Small"
+  callee 0xB27210
+  callee 0x53519E0
+  callee 0x5F4110
+  callee 0x5F41D0
+  callee 0x42256B0
+  callee 0x5014570
+  callee 0x42EB100
+  callee 0x42BA040
+  callee 0x725400 *** WORKER_A ***
+  callee 0x2E979E0
+-- callers --
+  e8 @0xE74C488 func≈0xE74C448 key=False t61=False helper=False alloc=False
+  e8 @0x129E51A9 func≈0x129E5169 key=False t61=False helper=False alloc=False
+--- callee dump 0xB27210 ---
+  func 0xB27210 size~80 prologue=41 57 41 56 41 55 41 54 56 57 55 53
+    0xB27210 push r15
+    0xB27212 push r14
+    0xB27214 push r13
+    0xB27216 push r12
+    0xB27218 push rsi
+    0xB27219 push rdi
+    0xB2721A push rbp
+    0xB2721B push rbx
+    0xB2721C sub rsp,6C8
+    0xB27223 mov [rsp+70],r8
+    0xB27228 mov rax,[rip+978BFD1]
+    0xB2722F xor rax,rsp
+    0xB27232 mov [rsp+6C0],rax
+    0xB2723A lea r15,[rcx+10]
+    str "Too many elements for %sArray. Size: %u, Max Size: %u"
+--- callee dump 0x53519E0 ---
+  func 0x53519E0 size~47 prologue=48 8B C1 4C 8D 15 16 E6 CA FA 49 83
+    0x53519E0 mov rax,rcx
+    0x53519E3 lea r10,[rip-53519EA]
+    0x53519EA cmp r8,0F
+    0x53519EE ja near ptr 0000000145351B00
+    0x53519F4 nop word ptr [rax+rax]
+    0x5351A00 mov r9d,[r10+r8*4+0A0F44D0]
+    0x5351A08 add r9,r10
+    0x5351A0B jmp r9
+    0x5351A0E ret
+--- callee dump 0x5F4110 ---
+  func 0x5F4110 size~74 prologue=56 57 48 83 EC 28 48 89 D6 80 62 0C
+    0x5F4110 push rsi
+    0x5F4111 push rdi
+    0x5F4112 sub rsp,28
+    0x5F4116 mov rsi,rdx
+    0x5F4119 and byte ptr [rdx+0C],0F7
+    0x5F411D mov rdi,rcx
+    0x5F4120 mov al,[rcx+0C]
+    0x5F4123 test al,10
+    0x5F4125 je short 00000001405F415A
+    0x5F4127 mov edx,[rdi+8]
+    0x5F412A shl edx,3
+    0x5F412D and edx,1FFF8
+    0x5F4133 je short 00000001405F4153
+    0x5F4135 mov rcx,[rdi]
+--- callee dump 0x5F41D0 ---
+  func 0x5F41D0 size~82 prologue=56 57 53 48 83 EC 40 48 8B 05 22 F0
+    0x5F41D0 push rsi
+    0x5F41D1 push rdi
+    0x5F41D2 push rbx
+    0x5F41D3 sub rsp,40
+    0x5F41D7 mov rax,[rip+9CBF022]
+    0x5F41DE xor rax,rsp
+    0x5F41E1 mov [rsp+38],rax
+    0x5F41E6 test rcx,rcx
+    0x5F41E9 je near ptr 00000001405F4438
+    0x5F41EF mov rsi,rcx
+    0x5F41F2 mov eax,[rip+0A5979C8]
+    0x5F41F8 mov rcx,gs:[58]
+    0x5F4201 mov rax,[rcx+rax*8]
+    0x5F4205 cmp dword ptr [rax+1CF0],8
+    str "Invalid pointer not allocated by our allocators or already freed: 0x%p"
+
+===== LEAD 0x2EA0B00 =====
+entry=0x2EA0B00 end=0x2EA1348 size=2120 role=near-wrapper-list prologue=41 57 41 56 41 55 41 54 56 57 55 53 48 81 EC A8
+  0x2EA0B00 push r15
+  0x2EA0B02 push r14
+  0x2EA0B04 push r13
+  0x2EA0B06 push r12
+  0x2EA0B08 push rsi
+  0x2EA0B09 push rdi
+  0x2EA0B0A push rbp
+  0x2EA0B0B push rbx
+  0x2EA0B0C sub rsp,0A8
+  0x2EA0B13 mov rdi,r8
+  0x2EA0B16 mov r14,rdx
+  0x2EA0B19 mov rax,[rip+74126E0]
+  0x2EA0B20 xor rax,rsp
+  0x2EA0B23 mov [rsp+0A0],rax
+  0x2EA0B2B lea r15,[rcx+18]
+  0x2EA0B2F mov eax,[rcx+20]
+  0x2EA0B32 shl eax,4
+  0x2EA0B35 and eax,3FFF0
+  0x2EA0B3A je short 0000000142EA0B6B
+  0x2EA0B3C mov rdx,[rcx+18]
+  0x2EA0B40 xor r8d,r8d
+  0x2EA0B43 jmp short 0000000142EA0B4E
+  0x2EA0B45 add r8,10
+  0x2EA0B49 cmp rax,r8
+  0x2EA0B4C je short 0000000142EA0B6B
+  0x2EA0B4E mov r9,[rdx+r8+8]
+  0x2EA0B53 test r9,r9
+  0x2EA0B56 je short 0000000142EA0B45
+  0x2EA0B58 movzx r9d,word ptr [r9+8]
+  0x2EA0B5D test r9d,3FFF
+  0x2EA0B64 je short 0000000142EA0B45
+  0x2EA0B66 jmp near ptr 0000000142EA0EE7
+  0x2EA0B6B mov sil,[rcx+0B4]
+  0x2EA0B72 cmp sil,3
+  0x2EA0B76 jne near ptr 0000000142EA0C9B
+  0x2EA0B7C mov rax,[rcx+8]
+  0x2EA0B80 lea rdx,[rip+25753B9]
+  0x2EA0B87 mov r8d,[rcx+10]
+  0x2EA0B8B cmp rax,rdx
+  0x2EA0B8E jne short 0000000142EA0B9D
+  0x2EA0B90 cmp r8d,8365D591
+  0x2EA0B97 je near ptr 0000000142EA0F44
+  0x2EA0B9D lea rdx,[rip+3923E7C]
+  0x2EA0BA4 cmp rax,rdx
+  0x2EA0BA7 jne short 0000000142EA0BB6
+  0x2EA0BA9 cmp r8d,8365D591
+  0x2EA0BB0 je near ptr 0000000142EA12F7
+  0x2EA0BB6 lea rdx,[rip+2886133]
+  0x2EA0BBD cmp rax,rdx
+  0x2EA0BC0 jne short 0000000142EA0BCF
+  0x2EA0BC2 cmp r8d,8365D591
+  0x2EA0BC9 je near ptr 0000000142EA0F18
+  0x2EA0BCF lea rdx,[rip+253AE3A]
+  0x2EA0BD6 cmp rax,rdx
+  0x2EA0BD9 jne short 0000000142EA0BE8
+  0x2EA0BDB cmp r8d,8365D591
+  *** KEY LEA/MOV @0x2EA0CBD lea rdx,[rip+83E8C04]
+  *** call 0x429F9E0 *** LOOKUP *** @0x2EA0CCA
+  *** GATE 0x2EA0D8A mov r14b,[rbx+61]
+  ... +402 ins ...
+nested=True key=True lookup=True alloc=False helper=False listScan=False +98=True small=False
+gateOps=1 indexedStores=11 callersE8=2
+  gate 0x2EA0D8A mov r14b,[rbx+61]
+  store 0x2EA0DC8 mov [rax+rdx*8-28],rbx
+  store 0x2EA0DCD mov [rax+rdx*8-20],r9b
+  store 0x2EA0DDC mov [rax+rdx*8-8],r14b
+  store 0x2EA0DE1 mov byte ptr [rax+rdx*8-7],0
+  store 0x2EA0E82 mov [rax+rcx+18],r11
+  store 0x2EA0E89 mov byte ptr [rax+rcx+21],1
+  store 0x2EA0ED8 mov byte ptr [r13+r12+0C],1
+  store 0x2EA0FB6 mov byte ptr [rcx+rdx+21],1
+  store 0x2EA1049 mov [rcx+rdx+18],r11
+  store 0x2EA10BD mov [rax+rcx+10],r11
+  store 0x2EA1196 mov [rcx+rdx+10],r11
+  field +0x98 @0x2EA0D54 mov rcx,[rbx+98]
+  field +0x98 @0x2EA0EBB mov rax,[rax+98]
+  field +0x98 @0x2EA0FD3 mov rcx,[rbx+98]
+  str "Too many elements for %sArray. Size: %u, Max Size: %u"
+  str "Small"
+  callee 0x3D9D20
+  callee 0x42256B0
+  callee 0x5014570
+  callee 0x3D2B370
+  callee 0x39CA1E0
+  callee 0x42EB100
+  callee 0x4265F00
+  callee 0x7B03840
+-- callers --
+  e8 @0xE2CA86 func≈0xE2C8A0 key=False t61=False helper=False alloc=True
+  e8 @0xE2CB7B func≈0xE2C8A0 key=False t61=False helper=False alloc=True
+--- callee dump 0x3D9D20 ---
+  func 0x3D9D20 size~83 prologue=41 56 56 57 53 48 83 EC 38 4C 89 C3
+    0x3D9D20 push r14
+    0x3D9D22 push rsi
+    0x3D9D23 push rdi
+    0x3D9D24 push rbx
+    0x3D9D25 sub rsp,38
+    0x3D9D29 mov rbx,r8
+    0x3D9D2C mov rsi,rdx
+    0x3D9D2F mov r14,rcx
+    0x3D9D32 lea rdi,[rcx+11D0]
+    0x3D9D39 mov rcx,rdi
+    0x3D9D3C call 00000001442256B0
+    0x3D9D41 movsxd rdx,dword ptr [rbx]
+    0x3D9D44 mov rax,[rsi+10]
+    0x3D9D48 imul rcx,rdx,58
+--- callee dump 0x42256B0 ---
+  func 0x42256B0 size~32 prologue=56 57 53 48 83 EC 20 48 89 CE FF 15
+    0x42256B0 push rsi
+    0x42256B1 push rdi
+    0x42256B2 push rbx
+    0x42256B3 sub rsp,20
+    0x42256B7 mov rsi,rcx
+    0x42256BA call qword ptr [rip+6023D38]
+    0x42256C0 xor edi,edi
+    0x42256C2 test eax,eax
+    0x42256C4 je short 00000001442256E8
+    0x42256C6 mov eax,edi
+    0x42256C8 add rsp,20
+    0x42256CC pop rbx
+    0x42256CD pop rdi
+    0x42256CE pop rsi
+--- callee dump 0x5014570 ---
+  func 0x5014570 size~21 prologue=48 3B 0D 89 EC 29 05 75 10 48 C1 C1
+    0x5014570 cmp rcx,[rip+529EC89]
+    0x5014577 jne short 0000000145014589
+    0x5014579 rol rcx,10
+    0x501457D test cx,0FFFF
+    0x5014582 jne short 0000000145014585
+    0x5014584 ret
+--- callee dump 0x3D2B370 ---
+  func 0x3D2B370 size~80 prologue=41 56 56 57 53 48 81 EC 88 00 00 00
+    0x3D2B370 push r14
+    0x3D2B372 push rsi
+    0x3D2B373 push rdi
+    0x3D2B374 push rbx
+    0x3D2B375 sub rsp,88
+    0x3D2B37C mov rax,[rip+6587E7D]
+    0x3D2B383 xor rax,rsp
+    0x3D2B386 mov [rsp+80],rax
+    0x3D2B38E mov rax,[rdx+20]
+    0x3D2B392 mov [rsp+70],rax
+    0x3D2B397 vmovups ymm0,[rdx]
+    0x3D2B39B vmovups [rsp+50],ymm0
+    0x3D2B3A1 lea rsi,[rcx+30]
+    0x3D2B3A5 mov eax,[rcx+38]
+    str "Too many elements for %sArray. Size: %u, Max Size: %u"
+    str "Small"
+
+===== CROSS RELATIONS =====
+0x53F31A0 role=gate-setter callersE8=0 key=True nest=True lookup=True helper=False listScan=False +98=False small=False
+0xF1C240 role=bit-writer callersE8=0 key=True nest=False lookup=True helper=False listScan=False +98=False small=True
+0x4B5A560 role=membership-A callersE8=0 key=True nest=True lookup=True helper=False listScan=False +98=True small=True
+0x4D04450 role=membership-B callersE8=2 key=True nest=True lookup=True helper=False listScan=False +98=True small=True
+  e8 @0xE74C488 func≈0xE74C448 key=False t61=False helper=False alloc=False
+  e8 @0x129E51A9 func≈0x129E5169 key=False t61=False helper=False alloc=False
+0x2EA0B00 role=near-wrapper-list callersE8=2 key=True nest=True lookup=True helper=False listScan=False +98=True small=False
+  e8 @0xE2CA86 func≈0xE2C8A0 key=False t61=False helper=False alloc=True
+  e8 @0xE2CB7B func≈0xE2C8A0 key=False t61=False helper=False alloc=True
+-- lead→lead calls --
+
+===== SUMMARY =====
+leads=5 typeInfoClass=anvil_typeinfo_key_blob_no_inline_name namedFields=8

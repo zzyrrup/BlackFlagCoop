@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "milestone": "v0.6.14",
+  "generatedUtc": "2026-11-12T17:52:17Z",
+  "exeSha256": "19920F34BB2FAC814023EE3C27F0CECA1872E80A2AAFB37C092C419FFF77CC0D",
+  "rva": "0xB2898C8",
+  "section": ".trace",
+  "classification": "anvil_typeinfo_key_blob_no_inline_name",
+  "hex128": "A2 C3 FF FF FF FF 06 C4 C2 3B EB F0 5D 3C 00 00 00 00 09 F0 5D 3C 00 00 00 00 E8 10 AF 5A 01 00 00 00 35 21 43 57 01 00 00 00 C5 DF CB FF 8E 87 B1 3C 00 00 00 00 BC B7 90 60 00 00 00 00 39 7C 97 4D 01 00 00 00 0A 1C 0F A2 24 0F A2 C3 FF FF FF FF 00 00 00 00 00 00 00 00 4A DC F0 5D 00 00 00 00 0C 7F 80 59 01 00 00 00 40 0E 41 80 C6 0F A2 C3 FF FF FF FF C0 18 43 56 01 00 00 00 69 01",
+  "fields": [
+    { "off": "0x0", "hex": "FFFFC3A2", "kind": "tagged_hi", "interp": "high16=0xFFFF_tag_or_reloc", "detail": "" },
+    { "off": "0x4", "hex": "C406FFFF", "kind": "dword", "interp": "", "detail": "" },
+    { "off": "0x8", "hex": "F0EB3BC2", "kind": "dword", "interp": "", "detail": "" },
+    { "off": "0xC", "hex": "00003C5D", "kind": "rva32?", "interp": "asRva->.impdata", "detail": "hex=FF FF F0 FF 05 D2 54 F3" },
+    { "off": "0x10", "hex": "F0090000", "kind": "dword", "interp": "", "detail": "" },
+    { "off": "0x14", "hex": "00003C5D", "kind": "rva32?", "interp": "asRva->.impdata", "detail": "hex=FF FF F0 FF 05 D2 54 F3" },
+    { "off": "0x18", "hex": "10E80000", "kind": "rva32?", "interp": "asRva->.code", "detail": "hex=01 0F A2 C3 48 81 EA 56" },
+    { "off": "0x1C", "hex": "00015AAF", "kind": "rva32?", "interp": "asRva->.impdata", "detail": "hex=0D 84 36 F2 0A 40 0F B6" },
+    { "off": "0x20", "hex": "21350000", "kind": "dword", "interp": "", "detail": "" },
+    { "off": "0x24", "hex": "00015743", "kind": "rva32?", "interp": "asRva->.impdata", "detail": "hex=24 28 01 00 00 00 01 00" },
+    { "off": "0x28", "hex": "DFC50000", "kind": "dword", "interp": "", "detail": "" },
+    { "off": "0x2C", "hex": "878EFFCB", "kind": "dword", "interp": "", "detail": "" },
+    { "off": "0x30", "hex": "00003CB1", "kind": "rva32?", "interp": "asRva->.impdata", "detail": "hex=E8 FF FF 48 FF C1 49 89" },
+    { "off": "0x34", "hex": "B7BC0000", "kind": "dword", "interp": "", "detail": "" },
+    { "off": "0x38", "hex": "00006090", "kind": "rva32?", "interp": "asRva->.impdata", "detail": "hex=48 8B 05 19 49 74 0B 48" },
+    { "off": "0x3C", "hex": "7C390000", "kind": "dword", "interp": "", "detail": "" }
+  ],
+  "notes": ["used_as_lookup_rdx_key", "shared_wrapper_and_worker"],
+  "nearbyStrings": []
+}
