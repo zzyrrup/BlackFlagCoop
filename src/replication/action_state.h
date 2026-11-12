@@ -20,6 +20,9 @@
 namespace bfc::action {
 
 inline constexpr uint16_t kReferenceBlendCapacity = 46;
+// Blend, time-scale, and action-set controller ops use these literals.
+// They are mod-local constants (value 0), not a recovered engine enum.
+// Target-action channel and layer stay separate wire fields.
 inline constexpr uint16_t kPrimaryControllerChannel = 0;
 inline constexpr uint16_t kPrimaryLayer = 0;
 inline constexpr int kBehaviorSwitchCooldownFrames = 4;
@@ -127,6 +130,13 @@ struct FakeActionComponent {
     uint16_t lastBlendLayer = 0xFFFF;
     std::array<float, kReferenceBlendCapacity> blends{};
 };
+
+// Seek gate from the original apply path: open interval (0, 1).
+// 0 and 1 stay valid wire values and are not sought. A comment that calls
+// the ratio a normalized [0, 1] range is author-documented only.
+inline bool RatioWarrantsSeek(float ratio) {
+    return ratio > 0.0f && ratio < 1.0f;
+}
 
 ValidationResult Validate(const ActionSnapshot& snapshot);
 

@@ -59,7 +59,17 @@
     "referenceBlendCapacity": 46,
     "capacityMeaning": "AC4Coop transport width. Not a recovered Resynced array size.",
     "wiredIntoSessionProtocol": false,
-    "ratioAndBlendDomain": "finite only; 0..1 was not claimed by the clean-room contract"
+    "ratioAndBlendDomain": "ratio finite on the wire; seek only in open interval (0,1); blend factors raw finite floats; count clamped to 46; no [0,1] factor rejection",
+    "sourceLock": {
+      "comment": "https://github.com/zzyrrup/BlackFlagCoop/pull/28#issuecomment-6835360174",
+      "upstream": "68355c71eafa0baf913587605e9c330db6166057",
+      "seek": "phase1.cpp L731-732, open interval (0,1), source-confirmed",
+      "ratioNormalizedClosedInterval": "netstate.h L77, author-documented only",
+      "blendFactors": "raw GetBlendFactor/SetBlendFactor, no in-tree normalization",
+      "blendCount": "clamped to peer count, puppet count, and BLEND_MAX 46",
+      "blendChannelLayer": "literals 0 and mod-local ACTLAYER_PRIMARY = 0",
+      "targetChannelLayer": "wire fields, separate from blend channel/layer"
+    }
   },
   "matrix": [
     {
@@ -133,7 +143,8 @@
     "primaryBlendLayer": 0,
     "behaviorSwitchCooldownFrames": 4,
     "notes": [
-      "Blend channel 0 is planner policy, not a recovered field offset.",
+      "Blend channel 0 and layer 0 are literals, not a recovered field offset.",
+      "Seek runs only when the ratio is inside (0, 1). 0 and 1 remain valid wire values.",
       "The host sets behaviorEnabled from ground vs air. The planner does not detect ground.",
       "HybridGround with behavior enabled refuses as behavior-owns-gait.",
       "Refused plans do not mutate FakeActionComponent."
@@ -145,7 +156,7 @@
     "compiler": "Clang 18.1.3",
     "configure": "cmake -S tools/action_state_test -B /tmp/action-state-build",
     "ctest": "ActionState passed",
-    "checkCount": 30,
+    "checkCount": 36,
     "failed": 0,
     "inGame": "not run"
   },
@@ -157,11 +168,10 @@
     {"priority": "P4", "status": "blocked", "item": "Capture and apply only after a second Human is confirmed rendered."}
   ],
   "handoffQuestions": {
-    "agent1": [
-      "Is actionRatio range-checked in AC4Coop, or only forwarded to SetCurrentActionRatio?",
-      "Are blend factors raw floats, or range-checked?",
-      "Are controller channel 0 and the primary layer named enums or literals?"
-    ],
+    "agent1": {
+      "status": "answered",
+      "comment": "https://github.com/zzyrrup/BlackFlagCoop/pull/28#issuecomment-6835360174"
+    },
     "agent2": [
       "What function is the per-frame player Human update?",
       "Does any component reached from that object write a repeated blend-factor array?"

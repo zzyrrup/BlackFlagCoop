@@ -290,7 +290,7 @@ ApplyPlan PlanApply(const ActionSnapshot& snapshot,
     plan.blendCount = validation.acceptedBlendCount;
     plan.activateActionSet = !memory.actionSetActivated;
     plan.setTarget = !memory.hasAlias || memory.lastAlias != snapshot.alias;
-    plan.seekRatio = plan.setTarget;
+    plan.seekRatio = plan.setTarget && RatioWarrantsSeek(snapshot.ratio);
     plan.fixBlendIn = plan.setTarget;
     plan.persistBlends = true;
     plan.writeBlends = true;

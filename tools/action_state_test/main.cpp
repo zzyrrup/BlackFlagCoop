@@ -143,8 +143,9 @@ int main() {
                "same-alias-does-not-retarget");
         Expect(ApplyToFake(second, snapshot, component), "second-frame-apply");
         Expect(component.actionSetActivations == 1 && component.setTargetCalls == 1
-                   && component.persistCalls == 2 && component.blendWrites == 2
-                   && component.lastBlendChannel == 0 && component.currentAlias == 42
+                   && component.seekCalls == 1 && component.persistCalls == 2
+                   && component.blendWrites == 2 && component.lastBlendChannel == 0
+                   && component.lastBlendLayer == 0 && component.currentAlias == 42
                    && component.currentTargetChannel == 7 && component.blends[3] == 0.4f
                    && component.currentTimeScale == 1.5f,
                "fake-component-counts");
@@ -154,8 +155,43 @@ int main() {
         const ApplyPlan third = PlanApply(changed, memory, ThreadAffinity::Main);
         Expect(third.allowed && third.setTarget && !third.activateActionSet, "alias-edge");
         Expect(ApplyToFake(third, changed, component) && component.setTargetCalls == 2
-                   && component.actionSetActivations == 1 && component.currentAlias == 99,
+                   && component.seekCalls == 2 && component.actionSetActivations == 1
+                   && component.currentAlias == 99,
                "alias-edge-applied");
+    }
+
+    {
+        DriveMemory memory = ReplicationDrive();
+        ActionSnapshot endpoint = Sample();
+        endpoint.ratio = 0.0f;
+        const ApplyPlan atZero = PlanApply(endpoint, memory, ThreadAffinity::Main);
+        Expect(atZero.allowed && atZero.setTarget && !atZero.seekRatio, "ratio-zero-skips-seek");
+        endpoint.alias = 43;
+        endpoint.ratio = 1.0f;
+        const ApplyPlan atOne = PlanApply(endpoint, memory, ThreadAffinity::Main);
+        Expect(atOne.allowed && atOne.setTarget && !atOne.seekRatio, "ratio-one-skips-seek");
+        endpoint.alias = 44;
+        endpoint.ratio = 2.0f;
+        const ApplyPlan outside = PlanApply(endpoint, memory, ThreadAffinity::Main);
+        Expect(outside.allowed && outside.setTarget && !outside.seekRatio, "ratio-outside-unit-skips-seek");
+        FakeActionComponent component;
+        Expect(ApplyToFake(outside, endpoint, component) && component.seekCalls == 0
+                   && component.setTargetCalls == 1 && component.currentRatio == 0.0f,
+               "unseeked-ratio-is-not-written");
+    }
+
+    {
+        ActionSnapshot snapshot = Sample();
+        snapshot.blend[0] = -0.25f;
+        snapshot.blend[1] = 1.5f;
+        const ValidationResult result = Validate(snapshot);
+        Expect(result.ok && result.acceptedBlendCount == 4, "blend-factors-stay-raw-finite");
+        DriveMemory memory = ReplicationDrive();
+        const ApplyPlan plan = PlanApply(snapshot, memory, ThreadAffinity::Main);
+        FakeActionComponent component;
+        Expect(plan.allowed && ApplyToFake(plan, snapshot, component)
+                   && component.blends[0] == -0.25f && component.blends[1] == 1.5f,
+               "raw-blend-factors-applied");
     }
 
     {
