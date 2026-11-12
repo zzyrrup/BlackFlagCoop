@@ -1,0 +1,131 @@
+{
+  "schemaVersion": 1,
+  "generatedUtc": "2026-11-12T20:46:57Z",
+  "milestone": "v0.8.0-network-protocol",
+  "lane": "E",
+  "branch": "cursor/v080-network-protocol-954b",
+  "worktree": "/workspace",
+  "baseCommit": "441bd675a18b0db3255eb69c26fd86ec2cae2dc5",
+  "commit": "977a4da0cd1b794013088ef833ca552bd58a89ab",
+  "ownership": [
+    "docs/v0.8.0-network-protocol.md",
+    "reports/v0.8.0-network-protocol.json",
+    "src/network/peer_protocol.h",
+    "src/network/peer_protocol.cpp",
+    "tests/peer_protocol/main.cpp",
+    "tests/peer_protocol/CMakeLists.txt",
+    "CMakeLists.txt"
+  ],
+  "untouched": [
+    "src/network/protocol.h",
+    "src/network/network.h",
+    "src/network/network.cpp",
+    "src/network/session.h",
+    "src/network/session.cpp",
+    "src/network/player_state.h",
+    "src/network/player_state.cpp",
+    "src/main.cpp",
+    "src/ui/**"
+  ],
+  "existingTransport": {
+    "evidence": "source on main",
+    "framing": "uint32 type, uint32 payloadSize, payload bytes, little-endian",
+    "maxPayloadBytes": 16777216,
+    "magic": "BFC1",
+    "magicValue": 826492482,
+    "version": 1,
+    "messageTypes": {
+      "1": "HandshakeRequest",
+      "2": "HandshakeResponse",
+      "3": "Ping",
+      "4": "Pong",
+      "5": "PlayerPresence",
+      "6": "PlayerState",
+      "7": "PlayerStateEx",
+      "8": "Heartbeat"
+    },
+    "playerIds": {"invalid": 0, "host": 1, "client": 2},
+    "handshake": "exact version 1 match, host assigns client local id 2 and remote id 1",
+    "reliabilityDefault": "disabled; heartbeat 5000 ms and idle 30000 ms when enabled",
+    "staleHandling": "none; older ticks overwrite PlayerStateTracker",
+    "disconnectMessage": false,
+    "errorMessage": false,
+    "actionSnapshot": false,
+    "capabilityNegotiation": false,
+    "peerIdentityString": false,
+    "ctest": false,
+    "changedByThisLane": false
+  },
+  "v2": {
+    "magic": "BFC2",
+    "magicValue": 843269698,
+    "headerVersion": 2,
+    "protocolVersion": 2,
+    "headerBytes": 28,
+    "maxPacketBytes": 512,
+    "maxPayloadBytes": 484,
+    "maxIdentityBytes": 24,
+    "maxBuildTagBytes": 16,
+    "maxErrorTextBytes": 160,
+    "maxActionParams": 4,
+    "actionSchemaVersion": 0,
+    "actionSchemaFrozen": false,
+    "transformContract": "provisional",
+    "sequenceSpace": "per message type",
+    "sequenceZero": "rejected",
+    "gapsAllowed": true,
+    "timestampAuthority": "informational; sequence wins",
+    "timestampZero": "unspecified",
+    "requiredCapability": "heartbeat",
+    "optionalIgnoredCapabilityBits": "4-15",
+    "criticalCapabilityBits": "16-31",
+    "slotAssignment": {"host": 1, "peer": 2, "remoteMayTakeHostSlot": false},
+    "verifiedPose": "stripped on decode, refused on encode",
+    "remoteActionMayApplyToLocalInput": false,
+    "faultBudget": 8,
+    "wiredToSockets": false,
+    "wiredToAsi": false,
+    "engineCalls": false
+  },
+  "tests": {
+    "visualStudio2026": {
+      "ran": false,
+      "reason": "This environment is Linux and does not have Visual Studio 18 2026. Root CMakeLists.txt refuses non-Windows configures."
+    },
+    "portableRelease": {
+      "compiler": "g++ (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0",
+      "cmake": "3.28.3",
+      "flags": "-Wall -Wextra -Werror -Wpedantic -O3",
+      "commands": [
+        "cmake -S tests/peer_protocol -B build/peer-protocol -DCMAKE_BUILD_TYPE=Release -DCMAKE_CXX_COMPILER=g++",
+        "cmake --build build/peer-protocol",
+        "ctest --test-dir build/peer-protocol --output-on-failure"
+      ],
+      "ctestName": "PeerProtocolCodec",
+      "result": "Passed",
+      "assertions": 1259
+    },
+    "asanUbsan": {
+      "result": "Passed",
+      "assertions": 1259,
+      "flags": "-fsanitize=address,undefined"
+    }
+  },
+  "integrationQuestions": [
+    "Keep action schemaVersion at 0 until the pad/input lane and the puppet lifecycle lane publish an action id list.",
+    "Confirm or replace the provisional transform fields before any replication claim.",
+    "Choose whether a future socket change uses v2 as its own frame or nests it inside a new v1 message. This lane did not change Network::Send.",
+    "PR #6 session panel can later display Hello identity and HelloAck slots. Heartbeat time can feed last-seen. No adapter was added.",
+    "Agree which sender owns per-type sequence counters when a socket loop is added."
+  ],
+  "safety": {
+    "gameLaunched": false,
+    "asiDeployed": false,
+    "saveEdited": false,
+    "pc2Touched": false,
+    "engineCalled": false,
+    "coopClaimed": false,
+    "workingAsi": "v0.5.1",
+    "workingAsiSha256": "63B38877DDA7CC7CD9AB2619F94D3941C37F54C95A435EFE47084DC4CF2A50BE"
+  }
+}
