@@ -1,0 +1,11 @@
+{
+  "schemaVersion": 1,
+  "milestone": "v0.6.19",
+  "generatedUtc": "2026-11-12T18:48:14Z",
+  "exeSha256": "19920F34BB2FAC814023EE3C27F0CECA1872E80A2AAFB37C092C419FFF77CC0D",
+  "modeSites": ["0x21086CC mov byte ptr [rdi+158],2", "0x21086F0 mov dword ptr [r8],2", "0x2108726 mov dword ptr [r8],3", "0x210873C mov byte ptr [rsi+158],3"],
+  "enrollHits": {
+  },
+  "allocNotes": ["call CtorB @0x59D96CB", "0x59D9B90 call Fill 0x5352080 @0x59D9BB3"],
+  "sizeNotesImm": ["0x140"]
+}

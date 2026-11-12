@@ -1,14 +1,14 @@
 {
   "schemaVersion": 1,
-  "generatedUtc": "2026-11-12T18:45:00Z",
+  "generatedUtc": "2026-11-12T18:50:00Z",
   "handoffFor": "ChatGPT",
   "executor": "Cursor",
   "machine": "PC1",
   "repository": {
     "url": "https://github.com/zzyrrup/BlackFlagCoop",
     "defaultBranch": "main",
-    "featureBranch": "cursor/v078-armwrap-installers-8285",
-    "baseBranch": "cursor/v077-vt-slot-ctors-8285",
+    "featureBranch": "cursor/v079-mode-enroll-size-8285",
+    "baseBranch": "cursor/v078-armwrap-installers-8285",
     "doNotPushMain": true,
     "initialCommit": "e12e70150656ac80742f10b496f7e5556e7985b7"
   },
@@ -18,10 +18,10 @@
     "functionalityChangedByThisMilestone": false
   },
   "milestone": {
-    "currentId": "v0.6.18",
-    "currentTitle": "Deep-decode arm wrap 0x2108620 / 0x479E440; follow installers 0x5F11A40 / 0x59D96A0",
+    "currentId": "v0.6.19",
+    "currentTitle": "Modes 2/3 vs enrollment; installerB size bounds; AnimatedOnActiveChanged xref",
     "status": "complete",
-    "priorPreserved": ["v0.6.4", "v0.6.5", "v0.6.6", "v0.6.7", "v0.6.8", "v0.6.9", "v0.6.10", "v0.6.11", "v0.6.12", "v0.6.13", "v0.6.14", "v0.6.15", "v0.6.16", "v0.6.17"]
+    "priorPreserved": ["v0.6.4", "v0.6.5", "v0.6.6", "v0.6.7", "v0.6.8", "v0.6.9", "v0.6.10", "v0.6.11", "v0.6.12", "v0.6.13", "v0.6.14", "v0.6.15", "v0.6.16", "v0.6.17", "v0.6.18"]
   },
   "asi": {
     "version": "0.5.1",
@@ -37,7 +37,7 @@
   },
   "build": {
     "asiRebuilt": false,
-    "offlineTools": ["tools/offline/ArmWrap078"]
+    "offlineTools": ["tools/offline/ModeEnroll079"]
   },
   "network": {
     "changesAuthorized": false,
@@ -45,64 +45,60 @@
   },
   "engineFindings": {
     "summary": [
-      "Arm wrap 0x2108620 calls canonical 0x479E3B0 then +0x98 side-block modes 0-3 at +0x158",
-      "Arm-table .edata 0x9490208 = 0x948FF50+0x2B8 stores the wrap itself",
-      "Post-2B8 0x479E440 gates on [obj+0x26] vs mode; nearby AnimatedOnActiveChanged",
-      "InstallerA 0x5F11A40 LEA-registers ctorA (does not call); uses LookupKey",
-      "InstallerB 0x59D96A0 calls ctorB then continues large composite init through +0xE38",
+      "Modes 2/3 write side-block +0x158 / listHelper args; no edge to enqueue/wrapper/gate/membership; not the (+0x61&6)==2 gate",
+      "0x59D9660: header via 0xB169D0 then InstallerB at +0x20; outer lower bound 0x20E0; Fill 0x140 in ctorB; no allocator",
+      "AnimatedOnActiveChanged at 0xA179A9F; same-owner 0x2335040 LEAs string and E8-calls 0x479E440",
       "No Edward/create path"
     ],
     "keyRvas": {
       "armWrap": "0x2108620",
-      "canonical2B8": "0x479E3B0",
       "post2B8": "0x479E440",
-      "armTable": "0x948FF50",
-      "armTable2B8Slot": "0x9490208",
-      "installerA": "0x5F11A40",
-      "ctorA": "0x2E97A50",
+      "installerBCaller": "0x59D9660",
       "installerB": "0x59D96A0",
-      "ctorB": "0x59D9B90",
-      "lookupKey": "0xB2898C8"
+      "headerInit": "0xB169D0",
+      "animString": "0xA179A9F",
+      "animOwner": "0x2335040",
+      "animNotify": "0x8CD620",
+      "animNeighbor": "0x2335140"
     }
   },
   "confirmed": [
     "ASI v0.5.1 preserved; no deploy",
-    "Arm wrap modes and +0x98 / +0x158 semantics decoded",
-    "Post-2B8 deep-decoded; installers followed",
+    "Modes 2/3 ≠ enrollment gate; no enroll edge from mode paths",
+    "InstallerB chain layout lower bound 0x20E0; no heap size",
+    "AnimatedOnActiveChanged same-owner xref via 0x2335040",
     "No live memory this milestone"
   ],
   "hypotheses": [
-    "0x479E440 is an AnimatedOnActiveChanged-style activation dispatcher",
-    "Modes 2/3 drive listHelper membership that feeds enrollment eligibility"
+    "0x8CD620 is an event/notify dispatcher for AnimatedOnActiveChanged",
+    "0x2335140 edx=3 path is a related arming specialization"
   ],
   "blockers": [
-    "Subject concrete type name / single heap size unknown",
-    "Mode 2/3 → enrollment eligibility not fully mapped",
+    "Composite heap allocation size unknown",
     "No input/possession path",
     "Spawn tests not authorized"
   ],
   "mostRecentCompletedMilestone": {
-    "id": "v0.6.18",
-    "docs": ["docs/v0.6.18-armwrap-installers.md"],
+    "id": "v0.6.19",
+    "docs": ["docs/v0.6.19-mode-enroll-size.md"],
     "reports": [
-      "reports/v0.6.18-funcs-deep.json",
-      "reports/v0.6.18-summary.json",
-      "reports/v0.6.18-second-edward-feasibility.json",
-      "reports/v078-raw/evidence.txt"
+      "reports/v0.6.19-mode-enroll-deep.json",
+      "reports/v0.6.19-summary.json",
+      "reports/v0.6.19-second-edward-feasibility.json",
+      "reports/v079-raw/evidence.txt"
     ]
   },
   "nextRecommendedMilestone": {
-    "id": "v0.6.19",
-    "title": "Map modes 2/3 to enrollment; size from installerB/ctorB chain; AnimatedOnActiveChanged xref",
-    "primary": ["0x2108620 modes 2/3", "0xB27210", "0x59D9660", "0x479E440 string xref"],
+    "id": "v0.6.20",
+    "title": "Deep-decode 0x2335040 / 0x8CD620; neighbor 0x2335140 edx=3; heap size from 0x59D9660 registration",
+    "primary": ["0x2335040", "0x8CD620", "0x2335140", "0x5F11A40/0x59D9660 consumers"],
     "forbidden": ["spawn", "deploy", "live memory", "PC2", "save-data", "force-push main", "+0x61-only ranking"]
   },
   "tests": [
-    { "name": "ArmWrap078_build_scan", "result": "pass" },
-    { "name": "wrap_calls_canonical", "result": "pass" },
-    { "name": "wrap_touches_98", "result": "pass" },
-    { "name": "installerB_calls_ctorB", "result": "pass" },
-    { "name": "arm_table_2B8_slot", "result": "pass" },
+    { "name": "ModeEnroll079_build_scan", "result": "pass" },
+    { "name": "modes23_enroll_edge", "result": "pass_no_edge" },
+    { "name": "installerB_chain_layout", "result": "pass" },
+    { "name": "animated_same_owner_xref", "result": "pass" },
     { "name": "game_launch_deploy", "result": "not_run" },
     { "name": "spawn_live_memory", "result": "not_run" }
   ],
@@ -118,9 +114,9 @@
   },
   "chatgptNextReviewInstructions": [
     "Read docs/CHATGPT_HANDOFF.md and this JSON first",
-    "Review v0.6.18 PR; preserve v0.6.4-v0.6.17 history",
+    "Review v0.6.19 PR; preserve v0.6.4-v0.6.18 history",
     "Separate confirmed vs hypotheses",
-    "Propose v0.6.19 mode 2/3 → enrollment + object-size recovery",
+    "Propose v0.6.20 0x2335040/0x8CD620/0x2335140 + heap-size registration",
     "Do not authorize deploy/spawn/live memory/PC2 unless user overrides",
     "Return PC1 branch+PR instructions"
   ]

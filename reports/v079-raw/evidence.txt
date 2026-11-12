@@ -1,0 +1,91 @@
+===== v0.6.19 MODE→ENROLL + SIZE + ANIMATED XREF =====
+exeSha256=19920F34BB2FAC814023EE3C27F0CECA1872E80A2AAFB37C092C419FFF77CC0D
+
+===== ARM WRAP MODE 2/3 PATH =====
+modeSites=4
+  0x21086CC mov byte ptr [rdi+158],2
+  0x21086F0 mov dword ptr [r8],2
+  0x2108726 mov dword ptr [r8],3
+  0x210873C mov byte ptr [rsi+158],3
+mode2Callees=[0xB27210,0x7250E0,0x725000]
+mode3Callees=[0xB27210,0x7250E0,0x725000,0x724EE0,0x5014570,0x42256B0,0xC46460]
+
+===== MODE→ENROLL BFS =====
+0xB27210 d=0 size=1259 t61=False t98=True t158=False callees=4
+0x7250E0 d=0 size=531 t61=False t98=False t158=False callees=2
+0x725000 d=0 size=15 t61=False t98=False t158=False callees=0
+0x724EE0 d=0 size=14 t61=False t98=False t158=False callees=0
+0x5014570 d=0 size=21 t61=False t98=False t158=False callees=0
+0x42256B0 d=0 size=32 t61=False t98=False t158=False callees=0
+0xC46460 d=0 size=1003 t61=False t98=True t158=False callees=3
+0xC45FB0 d=0 size=16 t61=False t98=False t158=False callees=0
+0xC46110 d=0 size=561 t61=False t98=False t158=False callees=2
+0x2108620 d=0 size=68 t61=False t98=True t158=False callees=2
+enrollHits=0 bfsNodes=23
+
+===== DIRECT ENROLL EDGE CHECK =====
+wrap->helper=False wrapper=False worker=False gate=False membership=False
+list 0xB27210 size~1028 t61=False ->helper=False ->worker=False ->memb=False str="AWAVAUATVWUSH"
+list 0xC45FB0 size~16 t61=False ->helper=False ->worker=False ->memb=False str="AWAVAUATVWUSH"
+list 0xC46110 size~561 t61=False ->helper=False ->worker=False ->memb=False str="AWAVAUATVWUSH"
+list 0x7250E0 size~531 t61=False ->helper=False ->worker=False ->memb=False str="AWAVAUATVWUSH"
+list 0x725000 size~15 t61=False ->helper=False ->worker=False ->memb=False str="AWAVAUATVWUSH"
+list 0x724EE0 size~14 t61=False ->helper=False ->worker=False ->memb=False
+
+===== MODE vs GATE RELATION =====
+NOTE: enrollment gate is ([obj+0x61]&6)==2 (object flag bits).
+Arm-wrap modes 2/3 write side-block [+0x158] and listHelper args — NOT +0x61.
+wrapTouches+0x61=False (expected false)
+
+===== INSTALLERB CHAIN 0x59D9660 =====
+0x59D9660 end=0x59D9691 size=49 sec=.impdata prologue=56 48 83 EC 20 48 89 CE E8 63 D3 13
+0x59D96A0 end=0x59D9B81 size=1249
+0x59D9B90 end=0x59D9C6F size=223
+E8->0x59D9660 count=0
+LEA->0x59D9660=2 LEA->0x59D96A0=0
+  leaChain @0x5F14901 func≈0x5F11A40
+  leaChain @0x5F14902 func≈0x5F11A40
+allocCalls=2
+  call CtorB @0x59D96CB
+  0x59D9B90 call Fill 0x5352080 @0x59D9BB3
+immSizes=[0x140]
+  imm@0x59D9BAB mov r8d,140
+maxFieldDisp=0x20C0 (lower-bound object span, not heap size)
+--- disasm 0x59D9660 head ---
+0x59D9660 push rsi
+0x59D9661 sub rsp,20
+0x59D9665 mov rsi,rcx
+0x59D9668 call 0000000140B169D0
+0x59D966D lea rcx,[rsi+20]
+0x59D9671 call 00000001459D96A0
+0x59D9676 lea rax,[rip+3AB7953]
+0x59D967D mov [rsi],rax
+0x59D9680 lea rax,[rip+37C2629]
+0x59D9687 mov [rsi+20],rax
+0x59D968B add rsp,20
+0x59D968F pop rsi
+0x59D9690 ret
+
+===== AnimatedOnActiveChanged XREF =====
+stringHits=1
+  file=0xA17909F rva=0xA179A9F sec=.edata
+LEA->string=2 QWORD->string=0
+  lea @0x2335122 func≈0x2335040 sec=.impdata
+  lea @0x2335123 func≈0x2335040 sec=.impdata
+stringRva=0xA179A9F post2B8=0x479E440 absDist=0x59DB65F nearby400=False
+postOrCalleeXrefsString=False
+xrefFuncCount=1
+  xrefFunc 0x2335040 callsPost=True hasAnimLea=True isPostCallee=False near="L$@H1"
+  CONFIRMED same-owner: 0x2335040 LEAs AnimatedOnActiveChanged and E8-calls 0x479E440
+
+===== CROSS =====
+mode2/3_directEnrollEdge=False
+mode2/3_bfsEnrollHit=False hitKeys=[]
+wrapTouches61=False
+heapSizeConfirmed=False
+maxField=0x20C0
+outerLowerBound=0x20E0 (0x20 + subobj maxField; not heap alloc size)
+subobjAtPlus20=True fillImm=0x140 (ctorB zero-fill region)
+animatedXrefProven=True
+animatedNearbyOnly=False
+animatedSameOwnerAsPostCaller=True
