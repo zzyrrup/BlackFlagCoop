@@ -1,0 +1,158 @@
+{
+  "schemaVersion": 1,
+  "workstream": "6/7 remote puppet lifecycle and world transitions",
+  "generatedUtc": "2026-11-12T20:45:00Z",
+  "branch": "cursor/v080-remote-puppet-lifecycle-f464",
+  "base": "main",
+  "baseCommit": "441bd675a18b0db3255eb69c26fd86ec2cae2dc5",
+  "ownership": [
+    "docs/v0.8.0-puppet-lifecycle.md",
+    "reports/v0.8.0-puppet-lifecycle.json",
+    "src/coop/remote_puppet_lifecycle.h",
+    "src/coop/remote_puppet_lifecycle.cpp",
+    "tools/remote_puppet_lifecycle_test/main.cpp",
+    "tools/remote_puppet_lifecycle_test/CMakeLists.txt"
+  ],
+  "sharedEdit": {
+    "path": "CMakeLists.txt",
+    "change": "Append-only static lib BlackFlagCoopPuppetLifecycle, test BlackFlagCoopPuppetLifecycleTest, CTest name remote_puppet_lifecycle. ASI target not linked."
+  },
+  "notEdited": [
+    "src/game/puppet_lifecycle.h",
+    "src/game/puppet_lifecycle.cpp",
+    "src/game/builder_path.cpp",
+    "src/game/second_edward.cpp",
+    "src/main.cpp",
+    "docs/v0.8.0-ac4coop-lifecycle.md",
+    "docs/v0.8.0-ac4coop-source-map.md",
+    "docs/CHATGPT_HANDOFF.md",
+    "reports/CHATGPT_HANDOFF.json"
+  ],
+  "upstream": {
+    "repo": "https://github.com/Kamzik123/AC4Coop",
+    "commit": "68355c71eafa0baf913587605e9c330db6166057",
+    "license": "none in tree; reference only; no source copied",
+    "vendored": false
+  },
+  "engineCalls": {
+    "default": "refused and not invoked",
+    "scriptedOps": "tests only via AllowScriptedOpsForTests(true)",
+    "claimsLocalPad": false,
+    "spawnClaimed": false
+  },
+  "sourceConfirmed": [
+    {
+      "topic": "main-thread Human update, not LinkUpdateAction",
+      "where": "phase1.h:5-7 disagrees with phase1.cpp:43-47 and OnFrame at phase1.cpp:1013"
+    },
+    {
+      "topic": "spawn order: world, player, cached selector and builder, optional reload, Begin/Duplicate/End, then BuildEntityWithSelector",
+      "where": "phase1.cpp:249-309, reloadBuilder phase1.cpp:207-227, DuplicationManager.h:5-9"
+    },
+    {
+      "topic": "integrate is optional; networked path sets g_blockReg, AddEntity, SetPosition, then g_puppet; pad register is local-only",
+      "where": "phase1.cpp:321-354, World.cpp:14-21"
+    },
+    {
+      "topic": "despawn clears g_puppet before RemoveEntity and is idempotent when already null",
+      "where": "phase1.cpp:852-875"
+    },
+    {
+      "topic": "vtable loss drops the pointer without RemoveEntity and sets spawn cooldown 180",
+      "where": "phase1.cpp:1055-1064"
+    },
+    {
+      "topic": "failed local capture preserves a live puppet; peer absence uses ++grace > 180 then DespawnPuppet",
+      "where": "phase1.cpp:1066-1072, CaptureLocalState 365-377"
+    },
+    {
+      "topic": "spawn requires local capture, fresh same-world peer, stable > 60, and not LoadingManager::IsLoading",
+      "where": "phase1.cpp:1005-1009 and 1080-1088"
+    },
+    {
+      "topic": "death/fast-travel comments gate ambient spawn suppression while the local player is absent; they are not a puppet-death transition",
+      "where": "phase1.cpp:96-100 and 1196-1230"
+    },
+    {
+      "topic": "process detach does not call DespawnPuppet",
+      "where": "dllmain.cpp:181-183"
+    }
+  ],
+  "existingGaps": [
+    "SessionState has no puppet, world, or handle phases; Leave returns to Idle without entity teardown",
+    "PlayerStateTracker stores presence and pose only",
+    "PR #29 PuppetLifecycle::Tick always refuses at NeedCachedBuilder and has no transition function"
+  ],
+  "phases": [
+    "Absent",
+    "Waiting",
+    "AwaitingReload",
+    "Building",
+    "Unintegrated",
+    "Integrating",
+    "Present",
+    "Preserved",
+    "PeerGrace",
+    "Removing",
+    "RemovalBlocked",
+    "Dropped",
+    "TornDown"
+  ],
+  "defaultThresholds": {
+    "minStableFrames": 60,
+    "comparison": "spawn when stableFrames > minStableFrames",
+    "peerAbsentGraceFrames": 180,
+    "graceComparison": "remove when grace > peerAbsentGraceFrames",
+    "retryCooldownFrames": 120,
+    "worldSettleFrames": 180,
+    "note": "The tick that decrements a cooldown to zero does not also build, matching phase1.cpp:1082-1088"
+  },
+  "safeNow": [
+    "Session join, prerequisite wait, cooldown, and refused spawn with zero engine calls",
+    "Pause/menu preserve while the entity is marked alive, including across a world-id change",
+    "Loading suppresses drive and does not despawn",
+    "Entity-freed drop without RemoveFromWorld, then settle cooldown",
+    "Peer grace and explicit PeerLeft bookkeeping",
+    "Drive handle cleared before a remove request",
+    "Duplicate failure still ends the duplication scope",
+    "Add failure discards an unintegrated handle and does not call Remove",
+    "Stale generation completions ignored",
+    "Shutdown idempotent; unconfirmed remove stays unconfirmed",
+    "Reset refused while a handle or removal is outstanding"
+  ],
+  "blockedOnPr29": [
+    "Cached EntityBuilder and RowSelector",
+    "Duplication Begin/Duplicate/End against the game",
+    "Build of a second Human-like entity",
+    "World add and world remove",
+    "Proof those calls are legal on the simulation thread"
+  ],
+  "tests": {
+    "compiler": "g++ (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0",
+    "flags": "-std=c++17 -Wall -Wextra -Wpedantic -Werror",
+    "directResult": "pass",
+    "ctest": {
+      "command": "cmake -S tools/remote_puppet_lifecycle_test -B /tmp/puppet-lifecycle-build -DCMAKE_CXX_COMPILER=g++ && cmake --build /tmp/puppet-lifecycle-build && ctest --test-dir /tmp/puppet-lifecycle-build",
+      "name": "remote_puppet_lifecycle",
+      "result": "pass",
+      "passed": 1,
+      "failed": 0
+    },
+    "visualStudio18_2026": {
+      "result": "not_run",
+      "reason": "This agent is Linux. Root CMakeLists.txt rejects non-Windows before the new target. No ASI was produced."
+    },
+    "gameLaunch": "not_run",
+    "asiDeploy": "not_run"
+  },
+  "intentionalDivergence": [
+    "Explicit PeerLeft and session drop remove immediately; AC4Coop infers absence and waits grace plus the 2000 ms freshness window",
+    "Shutdown requests teardown; AC4Coop DLL_PROCESS_DETACH does not despawn"
+  ],
+  "questions": {
+    "pr29": "Plug a proven Resynced add/remove behind bfc::puppet::EngineOps and keep it default-off. Do not read phase Present as a successful factory.",
+    "pr28": "Confirm detach-without-despawn is accepted as a source gap, with Shutdown as bookkeeping only.",
+    "workstreams3and4": "Consume driveAllowed() and the drive handle. This machine does not write transforms or actions.",
+    "workstream5": "Pad enrollment stays outside. ClaimsLocalPad() is fixed false."
+  }
+}
