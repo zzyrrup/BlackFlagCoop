@@ -1,0 +1,1166 @@
+===== v0.8.0 DUAL-BSS HOP =====
+exeSha256=19920F34BB2FAC814023EE3C27F0CECA1872E80A2AAFB37C092C419FFF77CC0D
+agent1=adjacent selector* + HandleContainer* (AC4 0x04DEEF90/0x04DEEF94)
+prove=single co-publish of two pointers; HC consumer uses +0/+8 signbit/+10 objectId
+falsify=table fill, registrar, telemetry, shared selector Process family
+
+##### SEED lo=0xAC028E0 hi=0xAC028E8 func=0x67FD520 — tight dist7 readers457
+secLo=.trace secHi=.trace
+consecutiveQwordRunFromLo=2 ok-small
+--- publish @0x67FD57B ---
+0x67FD54B setae r8b
+0x67FD54F and dl,r8b
+0x67FD552 mov dword ptr [rcx+44],0
+0x67FD559 test rax,rax
+0x67FD55C je short 00000001467FD58F
+0x67FD55E test dl,dl
+0x67FD560 jne short 00000001467FD595
+0x67FD562 call qword ptr [rip+3A4B810]  ;data=0xA248D78
+0x67FD568 mov rcx,[rip+4405371]  ;data=0xAC028E0
+0x67FD56F test rcx,rcx
+0x67FD572 je short 00000001467FD579
+0x67FD574 call 0000000144DF2B90
+0x67FD579 xor eax,eax
+0x67FD57B mov [rip+440535E],rax  ;data=0xAC028E0
+0x67FD582 mov [rip+440535F],rax  ;data=0xAC028E8
+0x67FD589 add rsp,20
+0x67FD58D pop rsi
+0x67FD58E ret
+0x67FD58F test dl,dl
+0x67FD591 je short 00000001467FD562
+0x67FD593 jmp short 00000001467FD5A3
+0x67FD595 mov rsi,rcx
+0x67FD598 mov rcx,rax
+0x67FD59B call 0000000144DF2B90
+0x67FD5A0 mov rcx,rsi
+0x67FD5A3 mov qword ptr [rcx+48],0
+0x67FD5AB mov qword ptr [rcx+40],1
+0x67FD5B3 jmp short 00000001467FD562
+--- funcHead @0x67FD520 ---
+0x67FD520 push rsi
+0x67FD521 sub rsp,20
+0x67FD525 mov rcx,[rip+44053B4]  ;data=0xAC028E0
+0x67FD52C test rcx,rcx
+0x67FD52F je near ptr 00000001467FD5B5
+0x67FD535 call 000000014685F610
+0x67FD53A mov rcx,[rip+440539F]  ;data=0xAC028E0
+0x67FD541 mov edx,[rcx+40]
+0x67FD544 mov rax,[rcx+48]
+0x67FD548 cmp edx,2
+0x67FD54B setae r8b
+0x67FD54F and dl,r8b
+0x67FD552 mov dword ptr [rcx+44],0
+0x67FD559 test rax,rax
+0x67FD55C je short 00000001467FD58F
+0x67FD55E test dl,dl
+funcStrings=games\obd\tmp\nugetsymlinks\phoenixcore\106.2.13\source\extc
+readersLo=64 readersHi=2
+bothRead=True
+  LO sampleReaders=0x231B07,0x231E68,0x231EB9,0x231ED7,0x2B10BB,0x2B1713
+  --- reader LO @0x231B07 ---
+    0x231B07 mov rax,[rip+0A9D0DD2]
+    0x231B0E test rax,rax
+    0x231B11 je near ptr 0000000140231E77
+    0x231B17 cmp rax,1
+    0x231B1B jbe near ptr 0000000140231DF7
+    0x231B21 shl rdx,3
+    0x231B25 cmp rdx,90
+    0x231B2C ja near ptr 0000000140231BB2
+    0x231B32 lea rcx,[rdx-1]
+    0x231B36 shr rcx,4
+    0x231B3A inc rcx
+    0x231B3D xor r8d,r8d
+    0x231B40 cmp rdx,9
+    0x231B44 cmovae r8,rcx
+  handleShapeHint=False
+  --- reader LO @0x231E68 ---
+    0x231E68 mov rax,[rip+0A9D0A71]
+    0x231E6F mov rdx,rdi
+    0x231E72 jmp near ptr 0000000140231B21
+    0x231E77 lea rax,[rip+9F91E39]
+    0x231E7E mov [rip+0AE101C3],rax
+    0x231E85 ud2
+    0x231E87 xor edi,edi
+    0x231E89 jmp near ptr 0000000140231B8D
+    0x231E8E mov [rax],rcx
+    0x231E91 mov rdx,[rcx+8]  <<handle-shape?
+    0x231E95 mov [rax+8],rdx  <<handle-shape?
+    0x231E99 mov [rcx+8],rax  <<handle-shape?
+    0x231E9D mov rcx,[rax+8]  <<handle-shape?
+    0x231EA1 test rcx,rcx
+    0x231EA4 je short 0000000140231EB1
+    0x231EA6 mov [rcx],rax
+  handleShapeHint=True
+  --- reader LO @0x231EB9 ---
+    0x231EB9 mov rax,[rip+0A9D0A20]
+    0x231EC0 cmp rax,1
+    0x231EC4 mov rdx,rdi
+    0x231EC7 jne near ptr 0000000140231B21
+    0x231ECD xor ecx,ecx
+    0x231ECF call 0000000145A65A20
+    0x231ED4 mov rdx,rdi
+    0x231ED7 mov rax,[rip+0A9D0A02]
+    0x231EDE cmp rax,1
+    0x231EE2 je short 0000000140231ECD
+    0x231EE4 jmp near ptr 0000000140231B21
+    0x231EE9 int 3
+  handleShapeHint=False
+  HI sampleReaders=0x550C208,0x550C965
+  --- reader HI @0x550C208 ---
+    0x550C208 mov rax,[rip+56F66D9]
+    0x550C20F cmp rax,1
+    0x550C213 ja short 000000014550C247
+    0x550C215 mov ecx,1
+    0x550C21A xor eax,eax
+    0x550C21C lock cmpxchg [rip+56F66C3],rcx
+    0x550C225 jne near ptr 000000014550C965
+    0x550C22B lea rax,[rip+3C27D5E]
+    0x550C232 mov [rip+56F59D7],rax
+    0x550C239 lea rax,[rip+56F59D0]
+    0x550C240 xchg rax,[rip+56F66A1]
+    0x550C247 lea rcx,[rsp+44]
+  handleShapeHint=False
+  --- reader HI @0x550C965 ---
+    0x550C965 mov rax,[rip+56F5F7C]
+    0x550C96C cmp rax,1
+    0x550C970 je short 000000014550C95E
+    0x550C972 jmp near ptr 000000014550C247
+    0x550C977 xor ecx,ecx
+    0x550C979 call 0000000145A65A20
+    0x550C97E mov rax,[rip+56F5E4B]
+    0x550C985 cmp rax,1
+    0x550C989 je short 000000014550C977
+    0x550C98B jmp near ptr 000000014550C2B0
+    0x550C990 xor ecx,ecx
+    0x550C992 call 0000000145A65A20
+    0x550C997 mov rax,[rip+56F5ED2]
+    0x550C99E cmp rax,1
+    0x550C9A2 je short 000000014550C990
+    0x550C9A4 jmp near ptr 000000014550C2F9
+  handleShapeHint=False
+class=candidate-needs-handleDeref-proof
+
+##### SEED lo=0xAC027C8 hi=0xAC027D0 func=0x67FD220 — tight dist7 readers74
+secLo=.trace secHi=.trace
+consecutiveQwordRunFromLo=2 ok-small
+--- publish @0x67FD252 ---
+0x67FD222 in al,dx
+0x67FD223 sub [rax-7D],cl
+0x67FD226 cmp eax,440559C
+0x67FD22B add [rdi+rsi-18],dh
+0x67FD22F sbb eax,48000006
+0x67FD234 mov ecx,[rip+440558E]  ;data=0xAC027C8
+0x67FD23A call 0000000146817530
+0x67FD23F mov rcx,[rip+4405582]  ;data=0xAC027C8
+0x67FD246 test rcx,rcx
+0x67FD249 je short 00000001467FD250
+0x67FD24B call 0000000144DF2B90
+0x67FD250 xor eax,eax
+0x67FD252 mov [rip+440556F],rax  ;data=0xAC027C8
+0x67FD259 mov [rip+4405570],rax  ;data=0xAC027D0
+0x67FD260 add rsp,28
+0x67FD264 ret
+0x67FD265 lea rax,[rip+39C679C]  ;str=games\obd\tmp\blob\win64\PhoenixCore\..\..\..\Nu
+0x67FD26C mov [rip+4844DD5],rax  ;data=0xB042048
+0x67FD273 ud2
+0x67FD275 int 3
+--- funcHead @0x67FD220 ---
+0x67FD220 sub rsp,28
+0x67FD224 cmp qword ptr [rip+440559C],0  ;data=0xAC027C8
+0x67FD22C je short 00000001467FD265
+0x67FD22E call 00000001467FD850
+0x67FD233 mov rcx,[rip+440558E]  ;data=0xAC027C8
+0x67FD23A call 0000000146817530
+0x67FD23F mov rcx,[rip+4405582]  ;data=0xAC027C8
+0x67FD246 test rcx,rcx
+0x67FD249 je short 00000001467FD250
+0x67FD24B call 0000000144DF2B90
+0x67FD250 xor eax,eax
+0x67FD252 mov [rip+440556F],rax  ;data=0xAC027C8
+0x67FD259 mov [rip+4405570],rax  ;data=0xAC027D0
+funcStrings=games\obd\tmp\blob\win64\PhoenixCore\..\..\..\NugetSymlinks\
+readersLo=64 readersHi=2
+bothRead=True
+  LO sampleReaders=0x2AF84A,0x2AF93D,0x2AF96A,0x2AFE82,0x2B01DA,0x2B0304
+  --- reader LO @0x2AF84A ---
+    0x2AF84A mov rax,[rip+0A952F77]
+    0x2AF851 test rax,rax
+    0x2AF854 je near ptr 00000001402AF953
+    0x2AF85A cmp rax,1
+    0x2AF85E jbe near ptr 00000001402AF8FC
+    0x2AF864 mov rdi,[rax+188]
+    0x2AF86B lea rbx,[rdi+8]  <<handle-shape?
+    0x2AF86F mov rcx,rbx
+    0x2AF872 call 00000001442256B0
+    0x2AF877 lea rax,[rsi+250]
+    0x2AF87E mov rdx,[rsi+258]
+    0x2AF885 test rdx,rdx
+    0x2AF888 je short 00000001402AF8E3
+  handleShapeHint=True
+  --- reader LO @0x2AF93D ---
+    0x2AF93D mov rax,[rip+0A952E84]
+    0x2AF944 jmp near ptr 00000001402AF864
+    0x2AF949 call 0000000144753B20
+    0x2AF94E jmp near ptr 00000001402AF84A
+    0x2AF953 lea rax,[rip+9F14061]
+    0x2AF95A mov [rip+0AD926E7],rax
+    0x2AF961 ud2
+    0x2AF963 xor ecx,ecx
+    0x2AF965 call 0000000145A65A20
+    0x2AF96A mov rax,[rip+0A952E57]
+    0x2AF971 cmp rax,1
+    0x2AF975 je short 00000001402AF963
+    0x2AF977 jmp near ptr 00000001402AF864
+    0x2AF97C int 3
+  handleShapeHint=False
+  --- reader LO @0x2AF96A ---
+    0x2AF96A mov rax,[rip+0A952E57]
+    0x2AF971 cmp rax,1
+    0x2AF975 je short 00000001402AF963
+    0x2AF977 jmp near ptr 00000001402AF864
+    0x2AF97C int 3
+  handleShapeHint=False
+  HI sampleReaders=0x550C271,0x550C97E
+  --- reader HI @0x550C271 ---
+    0x550C271 mov rax,[rip+56F6558]
+    0x550C278 cmp rax,1
+    0x550C27C ja short 000000014550C2B0
+    0x550C27E mov ecx,1
+    0x550C283 xor eax,eax
+    0x550C285 lock cmpxchg [rip+56F6542],rcx
+    0x550C28E jne near ptr 000000014550C97E
+    0x550C294 lea rax,[rip+3C27D15]
+    0x550C29B mov [rip+56F5976],rax
+    0x550C2A2 lea rax,[rip+56F596F]
+    0x550C2A9 xchg rax,[rip+56F6520]
+    0x550C2B0 lea rcx,[rsp+44]
+  handleShapeHint=False
+  --- reader HI @0x550C97E ---
+    0x550C97E mov rax,[rip+56F5E4B]
+    0x550C985 cmp rax,1
+    0x550C989 je short 000000014550C977
+    0x550C98B jmp near ptr 000000014550C2B0
+    0x550C990 xor ecx,ecx
+    0x550C992 call 0000000145A65A20
+    0x550C997 mov rax,[rip+56F5ED2]
+    0x550C99E cmp rax,1
+    0x550C9A2 je short 000000014550C990
+    0x550C9A4 jmp near ptr 000000014550C2F9
+    0x550C9A9 xor ecx,ecx
+    0x550C9AB call 0000000145A65A20
+    0x550C9B0 mov rax,[rip+56F5179]
+    0x550C9B7 cmp rax,1
+    0x550C9BB je short 000000014550C9A9
+    0x550C9BD jmp near ptr 000000014550C33D
+  handleShapeHint=False
+class=candidate-needs-handleDeref-proof
+
+##### SEED lo=0xB1CFC68 hi=0xB1CFC70 func=0x20E3DF0 — tight dist7 readers67
+secLo=.trace secHi=.trace
+consecutiveQwordRunFromLo=0 ok-small
+--- publish @0x20E4B7B ---
+0x20E4B4B or eax,0F5058909
+--- funcHead @0x20E3DF0 ---
+0x20E3DF0 push r15
+0x20E3DF2 push r14
+0x20E3DF4 push r13
+0x20E3DF6 push r12
+0x20E3DF8 push rsi
+0x20E3DF9 push rdi
+0x20E3DFA push rbp
+0x20E3DFB push rbx
+0x20E3DFC sub rsp,0D8
+0x20E3E03 vmovaps [rsp+0C0],xmm12
+0x20E3E0C vmovdqa xmmword ptr [rsp+0B0],xmm11
+0x20E3E15 vmovdqa xmmword ptr [rsp+0A0],xmm10
+0x20E3E1E vmovdqa xmmword ptr [rsp+90],xmm9
+0x20E3E27 vmovaps [rsp+80],xmm8
+funcStrings=
+readersLo=0 readersHi=64
+bothRead=False
+  LO readers=0
+  HI sampleReaders=0x306C04,0x4FBA3B,0x4FBABB,0x4FBB3C,0x4FBBBD,0x4FBC3E
+  --- reader HI @0x306C04 ---
+    0x306C04 mov rax,[rip+0AEC9065]
+    0x306C0B mov [rsp+38],rax
+    0x306C10 test eax,0FFFFF800
+    0x306C15 jne near ptr 0000000140306D4D
+    0x306C1B mov r11,rax
+    0x306C1E shr r11,20
+    0x306C22 and eax,7FF
+    0x306C27 imul r10,rax,38
+    0x306C2B mov eax,[r10+r9+10]
+    0x306C30 inc r11d
+    0x306C33 mov [rsp+30],eax
+    0x306C37 mov [rsp+34],r11d
+    0x306C3C mov r11,[rsp+30]
+    0x306C41 mov rax,[rsp+38]
+  handleShapeHint=False
+  --- reader HI @0x4FBA3B ---
+    0x4FBA3B mov rax,[rip+0ACD422E]
+    0x4FBA42 mov [rsp+20],rax
+    0x4FBA47 mov eax,[rsp+20]
+    0x4FBA4B mov r9d,[rsp+24]
+    0x4FBA50 inc r9d
+    0x4FBA53 mov [rsp+28],r8d
+    0x4FBA58 mov [rsp+2C],r9d
+    0x4FBA5D mov [rdx],eax
+    0x4FBA5F mov r9,[rsp+28]
+    0x4FBA64 mov rax,[rsp+20]
+    0x4FBA69 lock cmpxchg [rip+0ACD41FE],r9
+    0x4FBA72 mov r9,[rsp+20]
+    0x4FBA77 cmp rax,r9
+    0x4FBA7A jne short 00000001404FBA3B
+  handleShapeHint=False
+  --- reader HI @0x4FBABB ---
+    0x4FBABB mov rax,[rip+0ACD41AE]
+    0x4FBAC2 mov [rsp+20],rax
+    0x4FBAC7 mov eax,[rsp+20]
+    0x4FBACB mov r9d,[rsp+24]
+    0x4FBAD0 inc r9d
+    0x4FBAD3 mov [rsp+28],r8d
+    0x4FBAD8 mov [rsp+2C],r9d
+    0x4FBADD mov [rdx],eax
+    0x4FBADF mov r9,[rsp+28]
+    0x4FBAE4 mov rax,[rsp+20]
+    0x4FBAE9 lock cmpxchg [rip+0ACD417E],r9
+    0x4FBAF2 mov r9,[rsp+20]
+    0x4FBAF7 cmp rax,r9
+    0x4FBAFA jne short 00000001404FBABB
+  handleShapeHint=False
+class=weak-not-both-consumed
+
+##### SEED lo=0xABF8178 hi=0xABF8180 func=0x75B0030 — tight dist21 readers62
+secLo=.trace secHi=.trace
+consecutiveQwordRunFromLo=2 ok-small
+--- publish @0x75B0090 ---
+0x75B0060 call rbx
+0x75B0062 mov rcx,[rip+364810F]  ;data=0xABF8178
+0x75B0069 mov rdx,[rip+3648110]  ;data=0xABF8180
+0x75B0070 mov rax,[rcx]
+0x75B0073 mov r8,rsi
+0x75B0076 call qword ptr [rax+10]
+0x75B0079 xor esi,esi
+0x75B007B mov [rip+36480FE],rsi  ;data=0xABF8180
+0x75B0082 mov rcx,[rip+36480EF]  ;data=0xABF8178
+0x75B0089 mov rax,[rcx]
+0x75B008C xor edx,edx
+0x75B008E call qword ptr [rax]
+0x75B0090 mov [rip+36480E1],rsi  ;data=0xABF8178
+0x75B0097 add rsp,20
+0x75B009B pop rbx
+0x75B009C pop rdi
+0x75B009D pop rsi
+0x75B009E ret
+0x75B009F lea rax,[rip+2C13B60]  ;str=pipeline\git\mandatory\gearcore\gear_core/servic
+0x75B00A6 mov [rip+3A91F9B],rax  ;data=0xB042048
+0x75B00AD ud2
+0x75B00AF int 3
+--- funcHead @0x75B0030 ---
+0x75B0030 push rsi
+0x75B0031 push rdi
+0x75B0032 push rbx
+0x75B0033 sub rsp,20
+0x75B0037 mov rdi,[rip+3648142]  ;data=0xABF8180
+0x75B003E test rdi,rdi
+0x75B0041 je short 00000001475B009F
+0x75B0043 mov rsi,rcx
+0x75B0046 lea rcx,[rdi+1248]
+0x75B004D mov rbx,[rip+2C98D24]  ;data=0xA248D78
+0x75B0054 call rbx
+0x75B0056 add rdi,1218
+0x75B005D mov rcx,rdi
+0x75B0060 call rbx
+0x75B0062 mov rcx,[rip+364810F]  ;data=0xABF8178
+0x75B0069 mov rdx,[rip+3648110]  ;data=0xABF8180
+funcStrings=pipeline\git\mandatory\gearcore\gear_core/services/random/ra
+readersLo=29 readersHi=33
+bothRead=True
+  LO sampleReaders=0x8045A4,0x2DF51D6,0x2DF520F,0x2DF5240,0x2DF527B,0x2DF529C
+  --- reader LO @0x8045A4 ---
+    0x8045A4 mov rcx,[rip+0A3F3BCD]
+    0x8045AB mov rax,[rcx]
+    0x8045AE lea rdx,[rsp+27]
+    0x8045B3 call qword ptr [rax+8]  <<handle-shape?
+    0x8045B6 test rax,rax
+    0x8045B9 je short 00000001408045D9
+    0x8045BB mov rsi,rax
+    0x8045BE mov rcx,rax
+    0x8045C1 call 00000001453DB7B0
+    0x8045C6 xchg rsi,[rip+0A3F3BB3]
+    0x8045CD mov rcx,[rip+0A3F3BAC]
+    0x8045D4 jmp near ptr 000000014080454E
+    0x8045D9 lea rax,[rip+99BF626]
+    0x8045E0 mov [rip+0A83DA61],rax
+  handleShapeHint=True
+  --- reader LO @0x2DF51D6 ---
+    0x2DF51D6 mov rcx,[rip+7E02F9B]
+    0x2DF51DD mov rax,[rcx]
+    0x2DF51E0 lea rdx,[rsp+30]
+    0x2DF51E5 call qword ptr [rax+8]  <<handle-shape?
+    0x2DF51E8 test rax,rax
+    0x2DF51EB je near ptr 0000000142DF5328
+    0x2DF51F1 mov rdi,rax
+    0x2DF51F4 mov rcx,rax
+    0x2DF51F7 call 00000001453DB7B0
+    0x2DF51FC xchg rdi,[rip+7E02F7D]
+    0x2DF5203 mov r14,[rip+7E02F76]
+    0x2DF520A jmp near ptr 0000000142DF4EC3
+    0x2DF520F mov rax,[rip+7E02F62]
+  handleShapeHint=True
+  --- reader LO @0x2DF520F ---
+    0x2DF520F mov rax,[rip+7E02F62]
+    0x2DF5216 cmp rax,1
+    0x2DF521A jbe short 0000000142DF528A
+    0x2DF521C cmp qword ptr [rip+7E02F5C],1
+    0x2DF5224 ja near ptr 0000000142DF4EB2
+    0x2DF522A mov ecx,1
+    0x2DF522F xor eax,eax
+    0x2DF5231 lock cmpxchg [rip+7E02F46],rcx
+    0x2DF523A jne near ptr 0000000142DF52FC
+    0x2DF5240 mov rcx,[rip+7E02F31]
+    0x2DF5247 mov rax,[rcx]
+    0x2DF524A lea rdx,[rsp+30]
+  handleShapeHint=False
+  HI sampleReaders=0x804530,0x8045CD,0x8045E9,0x804603,0x2DF4EB2,0x2DF5203
+  --- reader HI @0x804530 ---
+    0x804530 mov rcx,[rip+0A3F3C49]
+    0x804537 test rcx,rcx
+    0x80453A je near ptr 00000001408045D9
+    0x804540 vmovaps xmm7,xmm1
+    0x804544 vmovaps xmm6,xmm0
+    0x804548 cmp rcx,1
+    0x80454C jbe short 0000000140804592
+    0x80454E add rcx,1248
+    0x804555 call 0000000144BE5C60
+    0x80455A vcvtsi2ss xmm0,xmm2,eax
+    0x80455E vsubss xmm1,xmm7,xmm6
+    0x804562 vmulss xmm7,xmm1,dword ptr [rip+892D926]
+    0x80456A vfmadd213ss xmm7,xmm0,xmm6
+    0x80456F mov rcx,[rsp+28]
+  handleShapeHint=False
+  --- reader HI @0x8045CD ---
+    0x8045CD mov rcx,[rip+0A3F3BAC]
+    0x8045D4 jmp near ptr 000000014080454E
+    0x8045D9 lea rax,[rip+99BF626]
+    0x8045E0 mov [rip+0A83DA61],rax
+    0x8045E7 ud2
+    0x8045E9 mov rcx,[rip+0A3F3B90]
+    0x8045F0 cmp rcx,1
+    0x8045F4 jne near ptr 000000014080454E
+    0x8045FA mov rsi,[rip+9A44D9F]
+    0x804601 call rsi
+    0x804603 mov rcx,[rip+0A3F3B76]
+    0x80460A cmp rcx,1
+  handleShapeHint=False
+  --- reader HI @0x8045E9 ---
+    0x8045E9 mov rcx,[rip+0A3F3B90]
+    0x8045F0 cmp rcx,1
+    0x8045F4 jne near ptr 000000014080454E
+    0x8045FA mov rsi,[rip+9A44D9F]
+    0x804601 call rsi
+    0x804603 mov rcx,[rip+0A3F3B76]
+    0x80460A cmp rcx,1
+    0x80460E je short 0000000140804601
+    0x804610 jmp near ptr 000000014080454E
+    0x804615 int 3
+  handleShapeHint=False
+class=candidate-needs-handleDeref-proof
+
+##### SEED lo=0xB0B6F28 hi=0xB0B6F30 func=0x5D9AC20 — tight dist14 readers46
+secLo=.trace secHi=.trace
+consecutiveQwordRunFromLo=2 ok-small
+--- publish @0x5D9AC77 ---
+0x5D9AC47 add [rax-75],cl
+0x5D9AC4A add eax,51D5119
+0x5D9AC4F mov ecx,[rip+4DF0F6B]  ;data=0xAB8BBC0
+0x5D9AC55 mov rdx,gs:[58]
+0x5D9AC5E mov rdi,[rdx+rcx*8]
+0x5D9AC62 mov rbx,[rdi+1C60]
+0x5D9AC69 mov [rdi+1C60],rax
+0x5D9AC70 lea rax,[rip+415339]  ;data=0x61AFFB0
+0x5D9AC77 mov [rip+531C2AA],rax  ;data=0xB0B6F28
+0x5D9AC7E lea rax,[rip-312BF55]  ;data=0x2C6ED30
+0x5D9AC85 mov [rip+531C2A4],rax  ;data=0xB0B6F30
+0x5D9AC8C call 0000000141DCC990
+0x5D9AC91 mov [rdi+1C60],rbx
+0x5D9AC98 mov rax,rsi
+0x5D9AC9B add rsp,20
+0x5D9AC9F pop rbx
+0x5D9ACA0 pop rdi
+0x5D9ACA1 pop rsi
+0x5D9ACA2 ret
+0x5D9ACA3 int 3
+--- funcHead @0x5D9AC20 ---
+0x5D9AC20 push rsi
+0x5D9AC21 push rdi
+0x5D9AC22 push rbx
+0x5D9AC23 sub rsp,20
+0x5D9AC27 mov rsi,rcx
+0x5D9AC2A lea rax,[rip+35854E7]  ;data=0x9320118
+0x5D9AC31 mov [rcx],rax
+0x5D9AC34 xor eax,eax
+0x5D9AC36 mov [rcx+40],rax
+0x5D9AC3A mov [rcx+80],rax
+0x5D9AC41 mov byte ptr [rcx+88],0
+0x5D9AC48 mov rax,[rip+51D5119]  ;data=0xAF6FD68
+0x5D9AC4F mov ecx,[rip+4DF0F6B]  ;data=0xAB8BBC0
+0x5D9AC55 mov rdx,gs:[58]
+0x5D9AC5E mov rdi,[rdx+rcx*8]
+funcStrings=
+readersLo=5 readersHi=41
+bothRead=True
+  LO sampleReaders=0x57843D,0x578463,0xFA5036,0x2D8B9EA,0x77B2808
+  --- reader LO @0x57843D ---
+    0x57843D mov rax,[rip+0AB3EAE4]
+    0x578444 test rax,rax
+    0x578447 je near ptr 00000001405784E3
+    0x57844D lea r8,[rip+9BD378B]
+    0x578454 mov ecx,56178
+    0x578459 mov edx,40F00000
+    0x57845E call rax
+    0x578460 mov rdi,rax
+    0x578463 mov rax,[rip+0AB3EABE]
+    0x57846A test rax,rax
+    0x57846D je near ptr 0000000140578500
+    0x578473 lea r8,[rip+9BDFB7E]
+    0x57847A mov ecx,56178
+  handleShapeHint=False
+  --- reader LO @0x578463 ---
+    0x578463 mov rax,[rip+0AB3EABE]
+    0x57846A test rax,rax
+    0x57846D je near ptr 0000000140578500
+    0x578473 lea r8,[rip+9BDFB7E]
+    0x57847A mov ecx,56178
+    0x57847F mov edx,40F00000
+    0x578484 call rax
+    0x578486 mov rbx,rax
+    0x578489 mov [rsi],rdi
+    0x57848C mov r14d,56178
+    0x578492 mov r8d,56178
+    0x578498 mov rcx,rdi
+    0x57849B mov dl,0CC
+    0x57849D call 0000000145352080
+    0x5784A2 mov [rsi+8],rbx  <<handle-shape?
+  handleShapeHint=True
+  --- reader LO @0xFA5036 ---
+    0xFA5036 mov rax,[rip+0A111EEB]
+    0xFA503D test rax,rax
+    0xFA5040 jne short 0000000140FA5063
+    0xFA5042 mov ecx,8000
+    0xFA5047 mov edx,8
+    0xFA504C xor r8d,r8d
+    0xFA504F mov r9d,40F00000
+    0xFA5055 call 00000001442AA700
+    0xFA505A mov [rip+0A112247],rax
+    0xFA5061 jmp short 0000000140FA500E
+    0xFA5063 lea r8,[rip+918D672]
+    0xFA506A mov ecx,8000
+    0xFA506F mov edx,40F00000
+    0xFA5074 call rax
+  handleShapeHint=False
+  HI sampleReaders=0x1E4F784,0x1F0109B,0x1F0183F,0x1F01C41,0x1F023F2,0x2D89AD4
+  --- reader HI @0x1E4F784 ---
+    0x1E4F784 mov rax,[rip+92677A5]
+    0x1E4F78B test rax,rax
+    0x1E4F78E je near ptr 0000000141E4F6AD
+    0x1E4F794 mov rcx,rsi
+    0x1E4F797 call rax
+    0x1E4F799 xor eax,eax
+    0x1E4F79B mov [r14],rax
+    0x1E4F79E mov qword ptr [rbx],1
+    0x1E4F7A5 mov rcx,[rbp+20]
+    0x1E4F7A9 mov [rcx],rax
+    0x1E4F7AC jmp short 0000000141E4F812
+    0x1E4F7AE xchg ax,ax
+    0x1E4F7B0 mov [rsp+10],rdx
+    0x1E4F7B5 push rbp
+    0x1E4F7B6 push r14
+    0x1E4F7B8 push rsi
+  handleShapeHint=False
+  --- reader HI @0x1F0109B ---
+    0x1F0109B mov rax,[rip+91B5E8E]
+    0x1F010A2 test rax,rax
+    0x1F010A5 je short 0000000141F010B1
+    0x1F010A7 mov rcx,r15
+    0x1F010AA call rax
+    0x1F010AC jmp near ptr 0000000141EFFAC5
+    0x1F010B1 mov rax,[rip+9066650]
+    0x1F010B8 mov rcx,r15
+    0x1F010BB shr rcx,1C
+    0x1F010BF mov rdx,7FFFFFFF8
+    0x1F010C9 and rdx,rcx
+    0x1F010CC mov rax,[rax+rdx]
+    0x1F010D0 test rax,rax
+    0x1F010D3 je near ptr 0000000141F01238
+    0x1F010D9 mov ecx,r15d
+  handleShapeHint=False
+  --- reader HI @0x1F0183F ---
+    0x1F0183F mov rax,[rip+91B56EA]
+    0x1F01846 test rax,rax
+    0x1F01849 je short 0000000141F01879
+    0x1F0184B mov rcx,rsi
+    0x1F0184E call rax
+    0x1F01850 mov rax,[rbp+328]
+    0x1F01857 mov qword ptr [rax+330],0
+    0x1F01862 vmovaps xmm6,[rsp+40]
+    0x1F01868 add rsp,58
+    0x1F0186C pop rbx
+    0x1F0186D pop rdi
+    0x1F0186E pop rsi
+    0x1F0186F pop r12
+    0x1F01871 pop r13
+    0x1F01873 pop r14
+    0x1F01875 pop r15
+  handleShapeHint=False
+class=candidate-needs-handleDeref-proof
+
+##### SEED lo=0xAC56D70 hi=0xAC56D78 func=0x1468230 — tight dist14 readers30
+secLo=.trace secHi=.trace
+consecutiveQwordRunFromLo=2 ok-small
+--- publish @0x1468270 ---
+0x1468240 or [rax-42],ecx
+0x1468243 add [rax],al
+0x1468245 add [rax],al
+0x1468247 add [rax],al
+0x1468249 add [rax+26058B48],al
+0x146824F jmp short 00000001414682CF
+0x1468251 or [rax+21],ecx
+--- funcHead @0x1468230 ---
+0x1468230 push r14
+0x1468232 push rsi
+0x1468233 push rdi
+0x1468234 push rbp
+0x1468235 push rbx
+0x1468236 sub rsp,20
+0x146823A lea rcx,[rip+97EEB2F]  ;data=0xAC56D70
+0x1468241 mov rsi,8000000000000000
+0x146824B mov rax,[rip+97EEB26]  ;data=0xAC56D78
+0x1468252 and rax,rsi
+0x1468255 mov rdx,1080000000
+0x146825F or rdx,rax
+0x1468262 mov [rip+97EEB0F],rdx  ;data=0xAC56D78
+0x1468269 lea rax,[rip+97EEB10]  ;data=0xAC56D80
+funcStrings=
+readersLo=15 readersHi=15
+bothRead=True
+  LO sampleReaders=0x14682C9,0x14687D3,0x146897A,0x146898B,0x146899C,0x14689AD
+  --- reader LO @0x14682C9 ---
+    0x14682C9 mov rax,[rip+97EEAA0]
+    0x14682D0 mov rdx,[rip+97EEAA1]
+    0x14682D7 lea ecx,[rdx-1]
+    0x14682DA and ecx,0F36D839
+    0x14682E0 lea rcx,[rax+rcx*8]
+    0x14682E4 mov r8d,[rcx]
+    0x14682E7 cmp r8d,14DC14B5
+    0x14682EE je short 0000000141468330
+    0x14682F0 mov r9d,edx
+    0x14682F3 and r9d,3FFFFFFF
+    0x14682FA cmp r8d,811C9DC5
+    0x1468301 jne near ptr 0000000141468AA8
+    0x1468307 mov edx,[rip+97EEAF3]
+  handleShapeHint=False
+  --- reader LO @0x14687D3 ---
+    0x14687D3 mov rax,[rip+97EE596]
+    0x14687DA jmp short 0000000141468761
+    0x14687DC inc r8d
+    0x14687DF mov [rip+97EE61A],r8d
+    0x14687E6 mov dword ptr [rcx],5558EDC5
+    0x14687EC mov byte ptr [rcx+4],0A4
+    0x14687F0 mov r8,[rip+97EE581]
+    0x14687F7 mov edx,r8d
+    0x14687FA and edx,3FFFFFFF
+    0x1468800 lea ecx,[rdx-1]
+    0x1468803 and ecx,777E2E29
+    0x1468809 lea rcx,[rax+rcx*8]
+    0x146880D mov r9d,[rcx]
+    0x1468810 cmp r9d,980630F5
+  handleShapeHint=False
+  --- reader LO @0x146897A ---
+    0x146897A mov rax,[rip+97EE3EF]
+    0x1468981 jmp near ptr 0000000141468334
+    0x1468986 call 0000000141468D70
+    0x146898B mov rax,[rip+97EE3DE]
+    0x1468992 jmp near ptr 00000001414683B9
+    0x1468997 call 0000000141468D70
+    0x146899C mov rax,[rip+97EE3CD]
+    0x14689A3 jmp near ptr 000000014146841E
+    0x14689A8 call 0000000141468D70
+    0x14689AD mov rax,[rip+97EE3BC]
+    0x14689B4 jmp near ptr 0000000141468483
+    0x14689B9 call 0000000141468D70
+  handleShapeHint=False
+  HI sampleReaders=0x146824B,0x14682D0,0x1468334,0x14683B9,0x146841E,0x1468483
+  --- reader HI @0x146824B ---
+    0x146824B mov rax,[rip+97EEB26]
+    0x1468252 and rax,rsi
+    0x1468255 mov rdx,1080000000
+    0x146825F or rdx,rax
+    0x1468262 mov [rip+97EEB0F],rdx
+    0x1468269 lea rax,[rip+97EEB10]
+    0x1468270 mov [rip+97EEAF9],rax
+    0x1468277 mov edx,10
+    0x146827C call 0000000141468BC0
+    0x1468281 xor edi,edi
+    0x1468283 mov [rip+97EEB77],edi
+    0x1468289 lea rcx,[rip+97EEB74]
+  handleShapeHint=False
+  --- reader HI @0x14682D0 ---
+    0x14682D0 mov rdx,[rip+97EEAA1]
+    0x14682D7 lea ecx,[rdx-1]
+    0x14682DA and ecx,0F36D839
+    0x14682E0 lea rcx,[rax+rcx*8]
+    0x14682E4 mov r8d,[rcx]
+    0x14682E7 cmp r8d,14DC14B5
+    0x14682EE je short 0000000141468330
+    0x14682F0 mov r9d,edx
+    0x14682F3 and r9d,3FFFFFFF
+    0x14682FA cmp r8d,811C9DC5
+    0x1468301 jne near ptr 0000000141468AA8
+    0x1468307 mov edx,[rip+97EEAF3]
+    0x146830D lea r8d,[rdx*4+4]
+  handleShapeHint=False
+  --- reader HI @0x1468334 ---
+    0x1468334 mov r8,[rip+97EEA3D]
+    0x146833B mov edx,r8d
+    0x146833E and edx,3FFFFFFF
+    0x1468344 lea ecx,[rdx-1]
+    0x1468347 and ecx,9D82AF59
+    0x146834D lea rcx,[rax+rcx*8]
+    0x1468351 mov r9d,[rcx]
+    0x1468354 cmp r9d,10CD03DF
+    0x146835B je short 00000001414683B5
+    0x146835D and r8d,3FFFFFFF
+    0x1468364 lea r8,[rax+r8*8]
+    0x1468368 cmp r9d,811C9DC5
+    0x146836F je short 000000014146838A
+    0x1468371 add rcx,8
+  handleShapeHint=False
+class=candidate-needs-handleDeref-proof
+
+##### SEED lo=0xA95F210 hi=0xA95F218 func=0x58DAD00 — tight dist28 readers30
+secLo=.trace secHi=.trace
+consecutiveQwordRunFromLo=2 ok-small
+--- publish @0x58DAD23 ---
+0x58DACF3 jns short 00000001458DAC8D
+0x58DACF5 jae short 00000001458DACF6
+0x58DACF7 nop
+0x58DACF8 add rsp,30
+0x58DACFC pop rsi
+0x58DACFD ret
+0x58DACFE int 3
+--- funcHead @0x58DAD00 ---
+0x58DAD00 lea rax,[rip-12182D7]  ;data=0x46C2A30
+0x58DAD07 mov [rip+508450A],rax  ;data=0xA95F218
+0x58DAD0E lea rax,[rip-0FAED55]  ;data=0x492BFC0
+0x58DAD15 mov [rip+50844EC],rax  ;data=0xA95F208
+0x58DAD1C lea rax,[rip-4E8723]  ;data=0x53F2600
+0x58DAD23 mov [rip+50844E6],rax  ;data=0xA95F210
+0x58DAD2A ret
+0x58DAD2B int 3
+funcStrings=
+readersLo=0 readersHi=30
+bothRead=False
+  LO readers=0
+  HI sampleReaders=0x2D7F49,0x7ED900,0x445C404,0x445F25B,0x4460509,0x4460633
+  --- reader HI @0x2D7F49 ---
+    0x2D7F49 mov rax,[rip+0A6872C8]
+    0x2D7F50 and ecx,0FFF
+    0x2D7F56 lea r8,[rip+43EAAD3]
+    0x2D7F5D cmp rax,r8
+    0x2D7F60 mov [rsp+44],r9d
+    0x2D7F65 jne near ptr 00000001402D8628
+    0x2D7F6B movzx eax,cx
+    0x2D7F6E test eax,edx
+    0x2D7F70 jne near ptr 00000001402D83B3
+    0x2D7F76 test r14b,8
+    0x2D7F7A jne short 00000001402D7F91
+    0x2D7F7C lea rax,[r15*8+16]  <<handle-shape?
+    0x2D7F84 add rax,rbp
+    0x2D7F87 test byte ptr [rax+1],1C
+  handleShapeHint=True
+  --- reader HI @0x7ED900 ---
+    0x7ED900 mov rax,[rip+0A171911]
+    0x7ED907 and ecx,0FFF
+    0x7ED90D lea rdx,[rip+3ED511C]
+    0x7ED914 cmp rax,rdx
+    0x7ED917 jne near ptr 00000001407EDA75
+    0x7ED91D movzx eax,cx
+    0x7ED920 test [rsp+44],eax
+    0x7ED924 jne near ptr 00000001407ED9FF
+    0x7ED92A test byte ptr [rsp+3F],8
+    0x7ED92F jne short 00000001407ED93B
+    0x7ED931 test byte ptr [rbx+17],1C
+    0x7ED935 jne near ptr 00000001407ED9FF
+    0x7ED93B movzx ecx,word ptr [rbx+0C]
+    0x7ED93F mov rax,[rsi+120]
+  handleShapeHint=False
+  --- reader HI @0x445C404 ---
+    0x445C404 mov r8,[rip+6502E0D]
+    0x445C40B movzx ecx,word ptr [rax+14]
+    0x445C40F and ecx,0FFF
+    0x445C415 lea rax,[rip+266614]
+    0x445C41C cmp r8,rax
+    0x445C41F mov [rsp+78],r10
+    0x445C424 mov [rsp+90],r11d
+    0x445C42C jne near ptr 000000014445F243
+    0x445C432 movzx eax,cx
+    0x445C435 test eax,ebp
+    0x445C437 jne short 000000014445C450
+    0x445C439 movzx ecx,word ptr [rdi+r12*8+14]
+    0x445C43F and ecx,0FFF
+  handleShapeHint=False
+class=weak-not-both-consumed
+
+##### SEED lo=0xAB86280 hi=0xAB86288 func=0x4F84AE0 — tight dist26 readers32
+secLo=.trace secHi=.trace
+consecutiveQwordRunFromLo=3 ok-small
+--- publish @0x4F84B3F ---
+0x4F84B0F sal byte ptr [rdx+48],8D
+0x4F84B14 adc eax,0FFFFFFA7
+0x4F84B19 lea rcx,[rip-0A0]  ;data=0x4F84A80
+0x4F84B20 call 0000000145021BB0
+0x4F84B25 mov [rip+5C0175C],rax  ;data=0xAB86288
+0x4F84B2C test rax,rax
+0x4F84B2F jne short 0000000144F84B51
+0x4F84B31 mov rcx,[rip+5C01748]  ;data=0xAB86280
+0x4F84B38 call 000000014501C340
+0x4F84B3D xor eax,eax
+0x4F84B3F mov [rip+5C0173A],rax  ;data=0xAB86280
+0x4F84B46 mov [rip+5C01744],eax  ;data=0xAB86290
+0x4F84B4C add rsp,28
+0x4F84B50 ret
+0x4F84B51 mov dword ptr [rip+5C01735],1  ;data=0xAB86290
+0x4F84B5B add rsp,28
+0x4F84B5F ret
+0x4F84B60 push rbx
+0x4F84B62 sub rsp,20
+0x4F84B66 lea rcx,[rip+5C0170B]  ;data=0xAB86278
+0x4F84B6D call 000000014501C470
+0x4F84B72 mov rbx,rax
+0x4F84B75 test rax,rax
+0x4F84B78 je short 0000000144F84B95
+0x4F84B7A xor edx,edx
+0x4F84B7C lea rcx,[rip+5C016F5]  ;data=0xAB86278
+0x4F84B83 call 000000014501C4B0
+0x4F84B88 mov rcx,rbx
+--- funcHead @0x4F84AE0 ---
+0x4F84AE0 sub rsp,28
+0x4F84AE4 xor edx,edx
+0x4F84AE6 mov ecx,40000
+0x4F84AEB call 0000000144F744C0
+0x4F84AF0 test eax,eax
+0x4F84AF2 jne short 0000000144F84B01
+0x4F84AF4 xor eax,eax
+0x4F84AF6 mov [rip+5C01794],eax  ;data=0xAB86290
+0x4F84AFC add rsp,28
+0x4F84B00 ret
+0x4F84B01 call 000000014501C270
+0x4F84B06 mov [rip+5C01773],rax  ;data=0xAB86280
+0x4F84B0D test rax,rax
+0x4F84B10 je short 0000000144F84AF4
+0x4F84B12 lea rdx,[rip-59]  ;data=0x4F84AC0
+0x4F84B19 lea rcx,[rip-0A0]  ;data=0x4F84A80
+funcStrings=
+readersLo=22 readersHi=10
+bothRead=True
+  LO sampleReaders=0x4F83C5C,0x4F83C96,0x4F83CAA,0x4F83CCF,0x4F83F9B,0x4F83FC8
+  --- reader LO @0x4F83C5C ---
+    0x4F83C5C mov rcx,[rip+5C0261D]
+    0x4F83C63 mov [rsp+40],rsi
+    0x4F83C68 mov esi,ebx
+    0x4F83C6A and esi,7FFFFF
+    0x4F83C70 and ebx,0FF800000
+    0x4F83C76 or ebx,esi
+    0x4F83C78 mov [rsp+20],ebx
+    0x4F83C7C call 000000014501C2B0
+    0x4F83C81 test eax,eax
+    0x4F83C83 je short 0000000144F83CAA
+    0x4F83C85 mov rcx,[rip+5C025FC]
+    0x4F83C8C lea rdx,[rsp+20]
+    0x4F83C91 call 0000000145022130
+    0x4F83C96 mov rcx,[rip+5C025E3]
+  handleShapeHint=False
+  --- reader LO @0x4F83C96 ---
+    0x4F83C96 mov rcx,[rip+5C025E3]
+    0x4F83C9D mov rbx,rax
+    0x4F83CA0 call 000000014501C300
+    0x4F83CA5 test rbx,rbx
+    0x4F83CA8 jne short 0000000144F83CE3
+    0x4F83CAA mov rcx,[rip+5C025CF]
+    0x4F83CB1 mov [rsp+20],esi
+    0x4F83CB5 call 000000014501C2B0
+    0x4F83CBA test eax,eax
+    0x4F83CBC je short 0000000144F83CE7
+    0x4F83CBE mov rcx,[rip+5C025C3]
+    0x4F83CC5 lea rdx,[rsp+20]
+    0x4F83CCA call 0000000145022130
+    0x4F83CCF mov rcx,[rip+5C025AA]
+  handleShapeHint=False
+  --- reader LO @0x4F83CAA ---
+    0x4F83CAA mov rcx,[rip+5C025CF]
+    0x4F83CB1 mov [rsp+20],esi
+    0x4F83CB5 call 000000014501C2B0
+    0x4F83CBA test eax,eax
+    0x4F83CBC je short 0000000144F83CE7
+    0x4F83CBE mov rcx,[rip+5C025C3]
+    0x4F83CC5 lea rdx,[rsp+20]
+    0x4F83CCA call 0000000145022130
+    0x4F83CCF mov rcx,[rip+5C025AA]
+    0x4F83CD6 mov rbx,rax
+    0x4F83CD9 call 000000014501C300
+    0x4F83CDE test rbx,rbx
+    0x4F83CE1 je short 0000000144F83CE7
+    0x4F83CE3 mov rdi,[rbx+8]  <<handle-shape?
+    0x4F83CE7 mov rsi,[rsp+40]
+  handleShapeHint=True
+  HI sampleReaders=0x4F83C85,0x4F83CBE,0x4F83FB0,0x4F842B0,0x4F84300,0x4F84365
+  --- reader HI @0x4F83C85 ---
+    0x4F83C85 mov rcx,[rip+5C025FC]
+    0x4F83C8C lea rdx,[rsp+20]
+    0x4F83C91 call 0000000145022130
+    0x4F83C96 mov rcx,[rip+5C025E3]
+    0x4F83C9D mov rbx,rax
+    0x4F83CA0 call 000000014501C300
+    0x4F83CA5 test rbx,rbx
+    0x4F83CA8 jne short 0000000144F83CE3
+    0x4F83CAA mov rcx,[rip+5C025CF]
+    0x4F83CB1 mov [rsp+20],esi
+    0x4F83CB5 call 000000014501C2B0
+    0x4F83CBA test eax,eax
+    0x4F83CBC je short 0000000144F83CE7
+    0x4F83CBE mov rcx,[rip+5C025C3]
+  handleShapeHint=False
+  --- reader HI @0x4F83CBE ---
+    0x4F83CBE mov rcx,[rip+5C025C3]
+    0x4F83CC5 lea rdx,[rsp+20]
+    0x4F83CCA call 0000000145022130
+    0x4F83CCF mov rcx,[rip+5C025AA]
+    0x4F83CD6 mov rbx,rax
+    0x4F83CD9 call 000000014501C300
+    0x4F83CDE test rbx,rbx
+    0x4F83CE1 je short 0000000144F83CE7
+    0x4F83CE3 mov rdi,[rbx+8]  <<handle-shape?
+    0x4F83CE7 mov rsi,[rsp+40]
+    0x4F83CEC mov rax,rdi
+    0x4F83CEF mov rbx,[rsp+48]
+    0x4F83CF4 add rsp,30
+    0x4F83CF8 pop rdi
+    0x4F83CF9 ret
+    0x4F83CFA mov rbx,[rsp+48]
+  handleShapeHint=True
+  --- reader HI @0x4F83FB0 ---
+    0x4F83FB0 mov rcx,[rip+5C022D1]
+    0x4F83FB7 mov rdx,rbx
+    0x4F83FBA call 0000000145021FC0
+    0x4F83FBF add rbx,10
+    0x4F83FC3 cmp dword ptr [rbx],0
+    0x4F83FC6 jne short 0000000144F83FB0
+    0x4F83FC8 mov rcx,[rip+5C022B1]
+    0x4F83FCF call 000000014501C300
+    0x4F83FD4 mov eax,1
+    0x4F83FD9 add rsp,20
+    0x4F83FDD pop rbx
+    0x4F83FDE ret
+    0x4F83FDF xor eax,eax
+    0x4F83FE1 add rsp,20
+    0x4F83FE5 pop rbx
+    0x4F83FE6 ret
+  handleShapeHint=False
+class=candidate-needs-handleDeref-proof
+
+##### SEED lo=0xB2EB998 hi=0xB2EB9A0 func=0x1C6FD50 — PlayerProgression registrar proximate
+secLo=.trace secHi=.trace
+consecutiveQwordRunFromLo=2 ok-small
+--- publish @0x1C7013C ---
+0x1C7010C jb short 0000000141C700C2
+--- funcHead @0x1C6FD50 ---
+0x1C6FD50 push r15
+0x1C6FD52 push r14
+0x1C6FD54 push r13
+0x1C6FD56 push r12
+0x1C6FD58 push rsi
+0x1C6FD59 push rdi
+0x1C6FD5A push rbp
+0x1C6FD5B push rbx
+0x1C6FD5C sub rsp,58
+0x1C6FD60 mov rsi,rdx
+0x1C6FD63 mov rax,[rip+8643496]  ;data=0xA2B3200
+0x1C6FD6A xor rax,rsp
+0x1C6FD6D mov [rsp+50],rax
+0x1C6FD72 mov rdi,[rdx+8]
+0x1C6FD76 mov r12d,edi
+0x1C6FD79 and r12d,3FFFFFFF
+0x1C6FD80 mov rax,[rip+92FFFC1]  ;data=0xAF6FD48
+0x1C6FD87 mov [rsp+30],rax
+0x1C6FD8C mov byte ptr [rsp+28],0
+funcStrings=Invalid pointer not allocated by our allocators or already f
+readersLo=1 readersHi=0
+bothRead=False
+  LO sampleReaders=0x7BDF214
+  --- reader LO @0x7BDF214 ---
+    0x7BDF214 mov rcx,[rip+370C77D]
+    0x7BDF21B test rcx,rcx
+    0x7BDF21E je short 0000000147BDF23E
+    0x7BDF220 lea rax,[rip+370C739]
+    0x7BDF227 cmp rcx,rax
+    0x7BDF22A setne dl
+    0x7BDF22D mov rax,[rcx]
+    0x7BDF230 call qword ptr [rax+20]
+    0x7BDF233 mov qword ptr [rip+370C75A],0
+    0x7BDF23E add rsp,28
+    0x7BDF242 ret
+    0x7BDF243 int 3
+  handleShapeHint=False
+  HI readers=0
+class=falsify-playerprogression-name-registrar
+
+##### SEED lo=0xB74A928 hi=0xB74A930 func=0x37D7120 — high readers but dist3704 — expect falsify
+secLo=.trace secHi=.trace
+consecutiveQwordRunFromLo=1 ok-small
+--- publish @0x37D766B ---
+0x37D763B mov al,[2824448948000006]
+0x37D7644 mov dword ptr [rsp+30],10000008
+0x37D764C mov dword ptr [rsp+20],1
+0x37D7654 mov rcx,r14
+0x37D7657 mov rdx,rsi
+0x37D765A mov r8d,4
+0x37D7660 mov r9d,4
+0x37D7666 call 000000014024A5D0
+0x37D766B mov [rip+7F732B6],r14  ;data=0xB74A928
+0x37D7672 mov rax,[rip+77986CF]  ;data=0xAF6FD48
+0x37D7679 cmp byte ptr [rax+2A],0
+0x37D767D je near ptr 00000001437DA63B
+0x37D7683 mov r15,rax
+0x37D7686 mov rcx,r15
+0x37D7689 mov edx,2F0
+0x37D768E mov r8d,10
+0x37D7694 call 000000014426EE50
+0x37D7699 mov r14,rax
+0x37D769C test rax,rax
+0x37D769F je near ptr 00000001437DB275
+0x37D76A5 vxorps xmm0,xmm0,xmm0
+0x37D76A9 vmovaps [rsp+0B0],xmm0
+0x37D76B2 mov dword ptr [rsp+0C0],3F800000
+--- funcHead @0x37D7120 ---
+0x37D7120 push r15
+0x37D7122 push r14
+0x37D7124 push r13
+0x37D7126 push r12
+0x37D7128 push rsi
+0x37D7129 push rdi
+0x37D712A push rbp
+0x37D712B push rbx
+0x37D712C mov eax,1518
+0x37D7131 call 00000001450098A0
+0x37D7136 sub rsp,rax
+0x37D7139 vmovdqa xmmword ptr [rsp+1500],xmm7
+0x37D7142 vmovaps [rsp+14F0],xmm6
+0x37D714B mov rax,[rip+6ADC0AE]  ;data=0xA2B3200
+0x37D7152 xor rax,rsp
+0x37D7155 mov [rsp+14E8],rax
+0x37D715D mov rax,[rip+7F7384C]  ;data=0xB74A9B0
+funcStrings=
+readersLo=64 readersHi=64
+bothRead=True
+  LO sampleReaders=0x30E5FC,0x30E663,0x30E6CC,0x30E733,0x30F23A,0x35EACF
+  --- reader LO @0x30E5FC ---
+    0x30E5FC mov rax,[rip+0B43C325]
+    0x30E603 lea rdx,[rsp+0A0]
+    0x30E60B mov [rdx],rax
+    0x30E60E mov rcx,[rip+0B92AE43]
+    0x30E615 mov [rsp+28],rdx
+    0x30E61A mov byte ptr [rsp+30],10
+    0x30E61F mov dword ptr [rsp+20],1
+    0x30E627 lea rbx,[rsp+40]
+    0x30E62C mov rdx,rbx
+    0x30E62F mov r9d,1
+    0x30E635 call 000000014030EB50
+    0x30E63A mov rax,[rbx+10]
+  handleShapeHint=False
+  --- reader LO @0x30E663 ---
+    0x30E663 mov rax,[rip+0B43C2BE]
+    0x30E66A lea rdx,[rsp+0A0]
+    0x30E672 mov [rdx],rax
+    0x30E675 mov rcx,[rip+0B92ADDC]
+    0x30E67C mov [rsp+28],rdx
+    0x30E681 mov byte ptr [rsp+30],10
+    0x30E686 mov dword ptr [rsp+20],1
+    0x30E68E lea rbx,[rsp+40]
+    0x30E693 mov rdx,rbx
+    0x30E696 mov r9d,1
+    0x30E69C call 000000014030EB50
+    0x30E6A1 mov rax,[rbx+10]
+  handleShapeHint=False
+  --- reader LO @0x30E6CC ---
+    0x30E6CC mov rax,[rip+0B43C255]
+    0x30E6D3 lea rdx,[rsp+0A0]
+    0x30E6DB mov [rdx],rax
+    0x30E6DE mov rcx,[rip+0B92AD73]
+    0x30E6E5 mov [rsp+28],rdx
+    0x30E6EA mov byte ptr [rsp+30],10
+    0x30E6EF mov dword ptr [rsp+20],1
+    0x30E6F7 lea rbx,[rsp+40]
+    0x30E6FC mov rdx,rbx
+    0x30E6FF mov r9d,1
+    0x30E705 call 000000014030EB50
+    0x30E70A mov rax,[rbx+10]
+  handleShapeHint=False
+  HI sampleReaders=0x58DDC5,0x58DE2C,0x591B0C,0x591B73,0x64A4E8,0x729FC9
+  --- reader HI @0x58DDC5 ---
+    0x58DDC5 mov r8,[rip+0B1BCB64]
+    0x58DDCC test r8,r8
+    0x58DDCF je near ptr 000000014058F59E
+    0x58DDD5 mov r9,[r8+60]
+    0x58DDD9 mov [rcx],r9
+    0x58DDDC lea rcx,[r8+40]
+    0x58DDE0 mov [rdx+50],rcx
+    0x58DDE4 mov qword ptr [rdx+58],0
+    0x58DDEC test byte ptr [r8+80],46
+    0x58DDF4 jne near ptr 000000014058F368
+    0x58DDFA mov rdx,[rsp+208]
+    0x58DE02 sub rax,[rdx+98]
+  handleShapeHint=False
+  --- reader HI @0x58DE2C ---
+    0x58DE2C mov rcx,[rip+0B1BCAFD]
+    0x58DE33 test rcx,rcx
+    0x58DE36 je near ptr 000000014058F4CA
+    0x58DE3C mov rax,[rcx+60]
+    0x58DE40 lea rdx,[rcx+40]
+    0x58DE44 test rcx,rcx
+    0x58DE47 mov r8,[rsp+220]
+    0x58DE4F mov [r8+8],rax  <<handle-shape?
+    0x58DE53 cmove rdx,rcx
+    0x58DE57 mov rax,[rsp+240]
+    0x58DE5F mov [rax+10],rdx
+    0x58DE63 mov qword ptr [rax+18],0
+    0x58DE6B mov rdx,[rsp+240]
+  handleShapeHint=True
+  --- reader HI @0x591B0C ---
+    0x591B0C mov r8,[rip+0B1B8E1D]
+    0x591B13 test r8,r8
+    0x591B16 je near ptr 0000000140593456
+    0x591B1C mov r9,[r8+60]
+    0x591B20 mov [rcx],r9
+    0x591B23 lea rcx,[r8+40]
+    0x591B27 mov [rdx+70],rcx
+    0x591B2B mov qword ptr [rdx+78],0
+    0x591B33 test byte ptr [r8+80],46
+    0x591B3B jne near ptr 0000000140593185
+    0x591B41 mov rdx,[rsp+1B8]
+    0x591B49 sub rax,[rdx+98]
+  handleShapeHint=False
+class=weak-not-co-publish
+
+===== .bss TIGHT PAIRS (dist<=16) =====
+bssTightCount=0
+
+===== SPRINT HOP VERDICT =====
+c1Proven=false
+callEngine=off
+agent1Consumed=yes — Process falsify stands; dual-adjacent fingerprint hunted
+result=RIP-rel adjacent QWORD co-publishes exist in .trace; identities unproven
+strongestStructural=0xAC028E0/0xAC028E8 @0x67FD520 dist=7 (if not table/telemetry)
+playerProgressionRegistrar=0x1C6FD50 still name-range (not cache fill) — pairs near it have 1 reader
+next=Prove/falsify 0x67FD520 pair via reader handleDeref(+0/+8/+10) and object lifetime;
+     if falsified, hunt member-pair on singleton (reg+0 / reg+8) published once to a static.

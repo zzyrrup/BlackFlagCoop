@@ -1,0 +1,990 @@
+===== Duplicate / ObjectID string LEA hunt =====
+exeSha256=19920F34BB2FAC814023EE3C27F0CECA1872E80A2AAFB37C092C419FFF77CC0D
+
+## needle=Duplicate hits=9
+str=0xA102E1F text=Duplicate reference to 0x%llx
+  leaCount=2
+  lea=0x21291AE func=0x2129000
+  --- lea @0x21291AE ---
+  0x212916E mov r11d,4
+  0x2129174 jne near ptr 0000000142129055
+  0x212917A mov rcx,[rsp+70]
+  0x212917F xor rcx,rsp
+  0x2129182 call 0000000145014570  ;call=0x5014570
+  0x2129187 mov eax,esi
+  0x2129189 add rsp,78
+  0x212918D pop rbx
+  0x212918E pop rbp
+  0x212918F pop rdi
+  0x2129190 pop rsi
+  0x2129191 pop r12
+  0x2129193 pop r13
+  0x2129195 pop r14
+  0x2129197 pop r15
+  0x2129199 ret
+  E8_callers=2
+    callerSite=0x16A6C1A callerFunc=0x16A6AE0
+    callerSite=0x16A6C5E callerFunc=0x16A6AE0
+  lea=0x21291AF func=0x2129000
+  --- lea @0x21291AF ---
+  0x212916F mov ebx,4
+  0x2129174 jne near ptr 0000000142129055
+  0x212917A mov rcx,[rsp+70]
+  0x212917F xor rcx,rsp
+  0x2129182 call 0000000145014570  ;call=0x5014570
+  0x2129187 mov eax,esi
+  0x2129189 add rsp,78
+  0x212918D pop rbx
+  0x212918E pop rbp
+  0x212918F pop rdi
+  0x2129190 pop rsi
+  0x2129191 pop r12
+  0x2129193 pop r13
+  0x2129195 pop r14
+  0x2129197 pop r15
+  0x2129199 ret
+  E8_callers=2
+    callerSite=0x16A6C1A callerFunc=0x16A6AE0
+    callerSite=0x16A6C5E callerFunc=0x16A6AE0
+str=0xA10978E text=Duplicated Request
+  leaCount=2
+  lea=0x9EFE8D func=0x9EF320
+  --- lea @0x9EFE8D ---
+  E8_callers=2
+    callerSite=0x5414E51 callerFunc=0x5414E30
+    callerSite=0x67AE298 callerFunc=0x67AE240
+  lea=0x9EFE8E func=0x9EF320
+  --- lea @0x9EFE8E ---
+  E8_callers=2
+    callerSite=0x5414E51 callerFunc=0x5414E30
+    callerSite=0x67AE298 callerFunc=0x67AE240
+str=0xA13FE51 text=Duplicate section
+  leaCount=12
+  lea=0x4C26FE6 func=0x4C25B60
+  --- lea @0x4C26FE6 ---
+  0x4C26FA6 add [rax],al
+  0x4C26FA8 xor edi,edi
+  0x4C26FAA lea rbx,[rsp+60]
+  0x4C26FAF mov [rbx-28],rdi
+  0x4C26FB3 lea rax,[rip+721B14E]  ;data=0xBE42108
+  0x4C26FBA mov [rbx-18],rax
+  0x4C26FBE mov qword ptr [rbx-10],2
+  0x4C26FC6 call 0000000140955260  ;call=0x955260
+  0x4C26FCB mov [rbx-8],rax
+  0x4C26FCF vxorps xmm0,xmm0,xmm0
+  0x4C26FD3 vmovups [rbx],ymm0
+  0x4C26FD7 mov [rbx+20],rdi
+  0x4C26FDB lea r8,[rsp+1A8]
+  0x4C26FE3 mov [r8],rdi
+  0x4C26FE6 lea rdx,[rip+5518E64]  ;str=Duplicate section
+  0x4C26FED lea r14,[rsp+38]
+  0x4C26FF2 mov rcx,r14
+  0x4C26FF5 xor r9d,r9d
+  0x4C26FF8 vzeroupper
+  0x4C26FFB call 000000014540CB20  ;call=0x540CB20
+  0x4C27000 lea rcx,[rip+550E0B6]  ;str=pipeline\extern\HavokSDK\Source\Common\Serialize
+  0x4C27007 mov [rax+38],rcx
+  0x4C2700B mov qword ptr [rax+40],551
+  0x4C27013 jmp near ptr 0000000144C26E21
+  0x4C27018 lea rdx,[rip+721B0E9]  ;data=0xBE42108
+  0x4C2701F lea rbx,[rsp+38]
+  0x4C27024 mov rcx,rbx
+  0x4C27027 mov r8b,2
+  0x4C2702A call 000000014540CE90  ;call=0x540CE90
+  0x4C2702F lea r8,[rsp+1A8]
+  0x4C27037 mov qword ptr [r8],0
+  0x4C2703E lea rdx,[rip+5505C82]  ;str=IO error
+  0x4C27045 mov rcx,rbx
+  0x4C27048 xor r9d,r9d
+  0x4C2704B call 000000014540CB20  ;call=0x540CB20
+  0x4C27050 lea rcx,[rip+550E066]  ;str=pipeline\extern\HavokSDK\Source\Common\Serialize
+  0x4C27057 mov [rax+38],rcx
+  0x4C2705B mov qword ptr [rax+40],52F
+  0x4C27063 mov rcx,rbx
+  E8_callers=1
+    callerSite=0x8B74E0 callerFunc=0x8B74B0
+  lea=0x4C26FE7 func=0x4C25B60
+  --- lea @0x4C26FE7 ---
+  0x4C26FA7 add [rcx],dh
+  0x4C26FA9 dec dword ptr [rax-73]
+  0x4C26FAC pop rsp
+  0x4C26FAD and al,60
+  0x4C26FAF mov [rbx-28],rdi
+  0x4C26FB3 lea rax,[rip+721B14E]  ;data=0xBE42108
+  0x4C26FBA mov [rbx-18],rax
+  0x4C26FBE mov qword ptr [rbx-10],2
+  0x4C26FC6 call 0000000140955260  ;call=0x955260
+  0x4C26FCB mov [rbx-8],rax
+  0x4C26FCF vxorps xmm0,xmm0,xmm0
+  0x4C26FD3 vmovups [rbx],ymm0
+  0x4C26FD7 mov [rbx+20],rdi
+  0x4C26FDB lea r8,[rsp+1A8]
+  0x4C26FE3 mov [r8],rdi
+  0x4C26FE6 lea rdx,[rip+5518E64]  ;str=Duplicate section
+  0x4C26FED lea r14,[rsp+38]
+  0x4C26FF2 mov rcx,r14
+  0x4C26FF5 xor r9d,r9d
+  0x4C26FF8 vzeroupper
+  0x4C26FFB call 000000014540CB20  ;call=0x540CB20
+  0x4C27000 lea rcx,[rip+550E0B6]  ;str=pipeline\extern\HavokSDK\Source\Common\Serialize
+  0x4C27007 mov [rax+38],rcx
+  0x4C2700B mov qword ptr [rax+40],551
+  0x4C27013 jmp near ptr 0000000144C26E21
+  0x4C27018 lea rdx,[rip+721B0E9]  ;data=0xBE42108
+  0x4C2701F lea rbx,[rsp+38]
+  0x4C27024 mov rcx,rbx
+  0x4C27027 mov r8b,2
+  0x4C2702A call 000000014540CE90  ;call=0x540CE90
+  0x4C2702F lea r8,[rsp+1A8]
+  0x4C27037 mov qword ptr [r8],0
+  0x4C2703E lea rdx,[rip+5505C82]  ;str=IO error
+  0x4C27045 mov rcx,rbx
+  0x4C27048 xor r9d,r9d
+  0x4C2704B call 000000014540CB20  ;call=0x540CB20
+  0x4C27050 lea rcx,[rip+550E066]  ;str=pipeline\extern\HavokSDK\Source\Common\Serialize
+  0x4C27057 mov [rax+38],rcx
+  0x4C2705B mov qword ptr [rax+40],52F
+  0x4C27063 mov rcx,rbx
+  E8_callers=1
+    callerSite=0x8B74E0 callerFunc=0x8B74B0
+  lea=0x4C27147 func=0x4C25B60
+  --- lea @0x4C27147 ---
+  0x4C27107 jle short 0000000144C27109
+  0x4C27109 lea rcx,[rip+550DFAD]  ;str=pipeline\extern\HavokSDK\Source\Common\Serialize
+  0x4C27110 mov [rax+38],rcx
+  0x4C27114 mov qword ptr [rax+40],558
+  0x4C2711C jmp near ptr 0000000144C27063
+  0x4C27121 lea rdx,[rip+721AFE0]  ;data=0xBE42108
+  0x4C27128 lea rbx,[rsp+38]
+  0x4C2712D mov rcx,rbx
+  0x4C27130 mov r8b,2
+  0x4C27133 call 000000014540CE90  ;call=0x540CE90
+  0x4C27138 lea r8,[rsp+1A8]
+  0x4C27140 mov qword ptr [r8],0
+  0x4C27147 lea rdx,[rip+5518D03]  ;str=Duplicate section
+  0x4C2714E mov rcx,rbx
+  0x4C27151 xor r9d,r9d
+  0x4C27154 call 000000014540CB20  ;call=0x540CB20
+  0x4C27159 lea rcx,[rip+550DF5D]  ;str=pipeline\extern\HavokSDK\Source\Common\Serialize
+  0x4C27160 mov [rax+38],rcx
+  0x4C27164 mov qword ptr [rax+40],551
+  0x4C2716C jmp near ptr 0000000144C27063
+  0x4C27171 int 3
+  E8_callers=1
+    callerSite=0x8B74E0 callerFunc=0x8B74B0
+  lea=0x4C27148 func=0x4C25B60
+  --- lea @0x4C27148 ---
+  0x4C27108 add [rax-73],cl
+  0x4C2710B or eax,550DFAD
+  0x4C27110 mov [rax+38],rcx
+  0x4C27114 mov qword ptr [rax+40],558
+  0x4C2711C jmp near ptr 0000000144C27063
+  0x4C27121 lea rdx,[rip+721AFE0]  ;data=0xBE42108
+  0x4C27128 lea rbx,[rsp+38]
+  0x4C2712D mov rcx,rbx
+  0x4C27130 mov r8b,2
+  0x4C27133 call 000000014540CE90  ;call=0x540CE90
+  0x4C27138 lea r8,[rsp+1A8]
+  0x4C27140 mov qword ptr [r8],0
+  0x4C27147 lea rdx,[rip+5518D03]  ;str=Duplicate section
+  0x4C2714E mov rcx,rbx
+  0x4C27151 xor r9d,r9d
+  0x4C27154 call 000000014540CB20  ;call=0x540CB20
+  0x4C27159 lea rcx,[rip+550DF5D]  ;str=pipeline\extern\HavokSDK\Source\Common\Serialize
+  0x4C27160 mov [rax+38],rcx
+  0x4C27164 mov qword ptr [rax+40],551
+  0x4C2716C jmp near ptr 0000000144C27063
+  0x4C27171 int 3
+  E8_callers=1
+    callerSite=0x8B74E0 callerFunc=0x8B74B0
+  lea=0x4C27792 func=0x4C27180
+  --- lea @0x4C27792 ---
+  0x4C27752 add [rax],al
+  0x4C27754 xor ebx,ebx
+  0x4C27756 lea rdi,[rsp+78]
+  0x4C2775B mov [rdi-28],rbx
+  0x4C2775F lea rax,[rip+721A9A2]  ;data=0xBE42108
+  0x4C27766 mov [rdi-18],rax
+  0x4C2776A mov qword ptr [rdi-10],2
+  0x4C27772 call 0000000140955260  ;call=0x955260
+  0x4C27777 mov [rdi-8],rax
+  0x4C2777B vxorps xmm0,xmm0,xmm0
+  0x4C2777F vmovups [rdi],ymm0
+  0x4C27783 mov [rdi+20],rbx
+  0x4C27787 lea r8,[rsp+1C0]
+  0x4C2778F mov [r8],rbx
+  0x4C27792 lea rdx,[rip+55186B8]  ;str=Duplicate section
+  0x4C27799 lea rbx,[rsp+50]
+  0x4C2779E mov rcx,rbx
+  0x4C277A1 xor r9d,r9d
+  0x4C277A4 vzeroupper
+  0x4C277A7 call 000000014540CB20  ;call=0x540CB20
+  0x4C277AC lea rcx,[rip+550D90A]  ;str=pipeline\extern\HavokSDK\Source\Common\Serialize
+  0x4C277B3 mov [rax+38],rcx
+  0x4C277B7 mov qword ptr [rax+40],551
+  0x4C277BF jmp near ptr 0000000144C275E3
+  0x4C277C4 or cl,1
+  0x4C277C7 mov [rsi+18],cl
+  0x4C277CA mov ecx,80040200
+  0x4C277CF jmp near ptr 0000000144C2732B
+  0x4C277D4 lea rdx,[rip+721A92D]  ;data=0xBE42108
+  0x4C277DB lea rdi,[rsp+50]
+  0x4C277E0 mov rcx,rdi
+  0x4C277E3 mov r8b,2
+  0x4C277E6 call 000000014540CE90  ;call=0x540CE90
+  0x4C277EB lea r8,[rsp+1C0]
+  0x4C277F3 mov qword ptr [r8],0
+  0x4C277FA lea rdx,[rip+55054C6]  ;str=IO error
+  0x4C27801 mov rcx,rdi
+  0x4C27804 xor r9d,r9d
+  0x4C27807 call 000000014540CB20  ;call=0x540CB20
+  0x4C2780C lea rcx,[rip+550D8AA]  ;str=pipeline\extern\HavokSDK\Source\Common\Serialize
+  E8_callers=3
+    callerSite=0x8BC1C3 callerFunc=0x8BC130
+    callerSite=0x8BC2B3 callerFunc=0x8BC220
+    callerSite=0xE313C94 callerFunc=0xE313C74
+  lea=0x4C27793 func=0x4C27180
+  --- lea @0x4C27793 ---
+  0x4C27753 add [rcx],dh
+  0x4C27755 fisttp dword ptr [rax-73]
+  0x4C27758 jl short 0000000144C2777E
+  0x4C2775A js short 0000000144C277A4
+  0x4C2775C mov [rdi-28],ebx
+  0x4C2775F lea rax,[rip+721A9A2]  ;data=0xBE42108
+  0x4C27766 mov [rdi-18],rax
+  0x4C2776A mov qword ptr [rdi-10],2
+  0x4C27772 call 0000000140955260  ;call=0x955260
+  0x4C27777 mov [rdi-8],rax
+  0x4C2777B vxorps xmm0,xmm0,xmm0
+  0x4C2777F vmovups [rdi],ymm0
+  0x4C27783 mov [rdi+20],rbx
+  0x4C27787 lea r8,[rsp+1C0]
+  0x4C2778F mov [r8],rbx
+  0x4C27792 lea rdx,[rip+55186B8]  ;str=Duplicate section
+  0x4C27799 lea rbx,[rsp+50]
+  0x4C2779E mov rcx,rbx
+  0x4C277A1 xor r9d,r9d
+  0x4C277A4 vzeroupper
+  0x4C277A7 call 000000014540CB20  ;call=0x540CB20
+  0x4C277AC lea rcx,[rip+550D90A]  ;str=pipeline\extern\HavokSDK\Source\Common\Serialize
+  0x4C277B3 mov [rax+38],rcx
+  0x4C277B7 mov qword ptr [rax+40],551
+  0x4C277BF jmp near ptr 0000000144C275E3
+  0x4C277C4 or cl,1
+  0x4C277C7 mov [rsi+18],cl
+  0x4C277CA mov ecx,80040200
+  0x4C277CF jmp near ptr 0000000144C2732B
+  0x4C277D4 lea rdx,[rip+721A92D]  ;data=0xBE42108
+  0x4C277DB lea rdi,[rsp+50]
+  0x4C277E0 mov rcx,rdi
+  0x4C277E3 mov r8b,2
+  0x4C277E6 call 000000014540CE90  ;call=0x540CE90
+  0x4C277EB lea r8,[rsp+1C0]
+  0x4C277F3 mov qword ptr [r8],0
+  0x4C277FA lea rdx,[rip+55054C6]  ;str=IO error
+  0x4C27801 mov rcx,rdi
+  0x4C27804 xor r9d,r9d
+  0x4C27807 call 000000014540CB20  ;call=0x540CB20
+  E8_callers=3
+    callerSite=0x8BC1C3 callerFunc=0x8BC130
+    callerSite=0x8BC2B3 callerFunc=0x8BC220
+    callerSite=0xE313C94 callerFunc=0xE313C74
+  lea=0x4C27903 func=0x4C27180
+  --- lea @0x4C27903 ---
+  0x4C278C3 jle short 0000000144C278C5
+  0x4C278C5 lea rcx,[rip+550D7F1]  ;str=pipeline\extern\HavokSDK\Source\Common\Serialize
+  0x4C278CC mov [rax+38],rcx
+  0x4C278D0 mov qword ptr [rax+40],558
+  0x4C278D8 jmp near ptr 0000000144C2781F
+  0x4C278DD lea rdx,[rip+721A824]  ;data=0xBE42108
+  0x4C278E4 lea rdi,[rsp+50]
+  0x4C278E9 mov rcx,rdi
+  0x4C278EC mov r8b,2
+  0x4C278EF call 000000014540CE90  ;call=0x540CE90
+  0x4C278F4 lea r8,[rsp+1C0]
+  0x4C278FC mov qword ptr [r8],0
+  0x4C27903 lea rdx,[rip+5518547]  ;str=Duplicate section
+  0x4C2790A mov rcx,rdi
+  0x4C2790D xor r9d,r9d
+  0x4C27910 call 000000014540CB20  ;call=0x540CB20
+  0x4C27915 lea rcx,[rip+550D7A1]  ;str=pipeline\extern\HavokSDK\Source\Common\Serialize
+  0x4C2791C mov [rax+38],rcx
+  0x4C27920 mov qword ptr [rax+40],551
+  0x4C27928 jmp near ptr 0000000144C2781F
+  0x4C2792D int 3
+  E8_callers=3
+    callerSite=0x8BC1C3 callerFunc=0x8BC130
+    callerSite=0x8BC2B3 callerFunc=0x8BC220
+    callerSite=0xE313C94 callerFunc=0xE313C74
+  lea=0x4C27904 func=0x4C27180
+  --- lea @0x4C27904 ---
+  0x4C278C4 add [rax-73],cl
+  0x4C278C7 or eax,550D7F1
+  0x4C278CC mov [rax+38],rcx
+  0x4C278D0 mov qword ptr [rax+40],558
+  0x4C278D8 jmp near ptr 0000000144C2781F
+  0x4C278DD lea rdx,[rip+721A824]  ;data=0xBE42108
+  0x4C278E4 lea rdi,[rsp+50]
+  0x4C278E9 mov rcx,rdi
+  0x4C278EC mov r8b,2
+  0x4C278EF call 000000014540CE90  ;call=0x540CE90
+  0x4C278F4 lea r8,[rsp+1C0]
+  0x4C278FC mov qword ptr [r8],0
+  0x4C27903 lea rdx,[rip+5518547]  ;str=Duplicate section
+  0x4C2790A mov rcx,rdi
+  0x4C2790D xor r9d,r9d
+  0x4C27910 call 000000014540CB20  ;call=0x540CB20
+  0x4C27915 lea rcx,[rip+550D7A1]  ;str=pipeline\extern\HavokSDK\Source\Common\Serialize
+  0x4C2791C mov [rax+38],rcx
+  0x4C27920 mov qword ptr [rax+40],551
+  0x4C27928 jmp near ptr 0000000144C2781F
+  0x4C2792D int 3
+  E8_callers=3
+    callerSite=0x8BC1C3 callerFunc=0x8BC130
+    callerSite=0x8BC2B3 callerFunc=0x8BC220
+    callerSite=0xE313C94 callerFunc=0xE313C74
+  lea=0x867E6F1 func=0x867E1F0
+  --- lea @0x867E6F1 ---
+  0x867E6B1 add [rbp+31],al
+  0x867E6B4 test byte ptr [rax-73],5C
+  0x867E6B8 and al,58
+  0x867E6BA mov [rbx-28],r14
+  0x867E6BE lea rax,[rip+37C3A43]  ;data=0xBE42108
+  0x867E6C5 mov [rbx-18],rax
+  0x867E6C9 mov qword ptr [rbx-10],2
+  0x867E6D1 call 0000000140955260  ;call=0x955260
+  0x867E6D6 mov [rbx-8],rax
+  0x867E6DA vxorps xmm0,xmm0,xmm0
+  0x867E6DE vmovups [rbx],ymm0
+  0x867E6E2 mov [rbx+20],r14
+  0x867E6E6 lea r8,[rsp+1A0]
+  0x867E6EE mov [r8],r14
+  0x867E6F1 lea rdx,[rip+1AC1759]  ;str=Duplicate section
+  0x867E6F8 lea r14,[rsp+30]
+  0x867E6FD mov rcx,r14
+  0x867E700 xor r9d,r9d
+  0x867E703 vzeroupper
+  0x867E706 call 000000014540CB20  ;call=0x540CB20
+  0x867E70B lea rcx,[rip+1AB69AB]  ;str=pipeline\extern\HavokSDK\Source\Common\Serialize
+  0x867E712 mov [rax+38],rcx
+  0x867E716 mov qword ptr [rax+40],551
+  0x867E71E jmp near ptr 000000014867E570
+  0x867E723 lea rdx,[rip+37C39DE]  ;data=0xBE42108
+  0x867E72A lea rbx,[rsp+30]
+  0x867E72F mov rcx,rbx
+  0x867E732 mov r8b,2
+  0x867E735 call 000000014540CE90  ;call=0x540CE90
+  0x867E73A lea r8,[rsp+1A0]
+  0x867E742 mov qword ptr [r8],0
+  0x867E749 lea rdx,[rip+1AAE577]  ;str=IO error
+  0x867E750 mov rcx,rbx
+  0x867E753 xor r9d,r9d
+  0x867E756 call 000000014540CB20  ;call=0x540CB20
+  0x867E75B lea rcx,[rip+1AB695B]  ;str=pipeline\extern\HavokSDK\Source\Common\Serialize
+  0x867E762 mov [rax+38],rcx
+  0x867E766 mov qword ptr [rax+40],52F
+  0x867E76E jmp short 000000014867E7CF
+  0x867E770 lea rdx,[rip+37C3991]  ;data=0xBE42108
+  E8_callers=1
+    callerSite=0x867E055 callerFunc=0x867DFE0
+  lea=0x867E6F2 func=0x867E1F0
+  --- lea @0x867E6F2 ---
+  0x867E6B2 xor r14d,r14d
+  0x867E6B5 lea rbx,[rsp+58]
+  0x867E6BA mov [rbx-28],r14
+  0x867E6BE lea rax,[rip+37C3A43]  ;data=0xBE42108
+  0x867E6C5 mov [rbx-18],rax
+  0x867E6C9 mov qword ptr [rbx-10],2
+  0x867E6D1 call 0000000140955260  ;call=0x955260
+  0x867E6D6 mov [rbx-8],rax
+  0x867E6DA vxorps xmm0,xmm0,xmm0
+  0x867E6DE vmovups [rbx],ymm0
+  0x867E6E2 mov [rbx+20],r14
+  0x867E6E6 lea r8,[rsp+1A0]
+  0x867E6EE mov [r8],r14
+  0x867E6F1 lea rdx,[rip+1AC1759]  ;str=Duplicate section
+  0x867E6F8 lea r14,[rsp+30]
+  0x867E6FD mov rcx,r14
+  0x867E700 xor r9d,r9d
+  0x867E703 vzeroupper
+  0x867E706 call 000000014540CB20  ;call=0x540CB20
+  0x867E70B lea rcx,[rip+1AB69AB]  ;str=pipeline\extern\HavokSDK\Source\Common\Serialize
+  0x867E712 mov [rax+38],rcx
+  0x867E716 mov qword ptr [rax+40],551
+  0x867E71E jmp near ptr 000000014867E570
+  0x867E723 lea rdx,[rip+37C39DE]  ;data=0xBE42108
+  0x867E72A lea rbx,[rsp+30]
+  0x867E72F mov rcx,rbx
+  0x867E732 mov r8b,2
+  0x867E735 call 000000014540CE90  ;call=0x540CE90
+  0x867E73A lea r8,[rsp+1A0]
+  0x867E742 mov qword ptr [r8],0
+  0x867E749 lea rdx,[rip+1AAE577]  ;str=IO error
+  0x867E750 mov rcx,rbx
+  0x867E753 xor r9d,r9d
+  0x867E756 call 000000014540CB20  ;call=0x540CB20
+  0x867E75B lea rcx,[rip+1AB695B]  ;str=pipeline\extern\HavokSDK\Source\Common\Serialize
+  0x867E762 mov [rax+38],rcx
+  0x867E766 mov qword ptr [rax+40],52F
+  0x867E76E jmp short 000000014867E7CF
+  0x867E770 lea rdx,[rip+37C3991]  ;data=0xBE42108
+  E8_callers=1
+    callerSite=0x867E055 callerFunc=0x867DFE0
+  lea=0x867E802 func=0x867E1F0
+  --- lea @0x867E802 ---
+  0x867E7C2 add [rax-77],ecx
+  0x867E7C5 cmp [rax-39],cl
+  0x867E7C9 pop rax
+  0x867E7CC add eax,89480000
+  0x867E7D1 fld1
+  0x867E7D3 pop rcx
+  0x867E7D4 out 0D8,al
+  0x867E7D6 cld
+  0x867E7D7 jmp near ptr 000000014867E580
+  0x867E7DC lea rdx,[rip+37C3925]  ;data=0xBE42108
+  0x867E7E3 lea rbx,[rsp+30]
+  0x867E7E8 mov rcx,rbx
+  0x867E7EB mov r8b,2
+  0x867E7EE call 000000014540CE90  ;call=0x540CE90
+  0x867E7F3 lea r8,[rsp+1A0]
+  0x867E7FB mov qword ptr [r8],0
+  0x867E802 lea rdx,[rip+1AC1648]  ;str=Duplicate section
+  0x867E809 mov rcx,rbx
+  0x867E80C xor r9d,r9d
+  0x867E80F call 000000014540CB20  ;call=0x540CB20
+  0x867E814 lea rcx,[rip+1AB68A2]  ;str=pipeline\extern\HavokSDK\Source\Common\Serialize
+  0x867E81B mov [rax+38],rcx
+  0x867E81F mov qword ptr [rax+40],551
+  0x867E827 jmp short 000000014867E7CF
+  0x867E829 int 3
+  E8_callers=1
+    callerSite=0x867E055 callerFunc=0x867DFE0
+  lea=0x867E803 func=0x867E1F0
+  --- lea @0x867E803 ---
+  0x867E7C3 mov [rax+38],rcx
+  0x867E7C7 mov qword ptr [rax+40],558
+  0x867E7CF mov rcx,rbx
+  0x867E7D2 call 000000014540CE30  ;call=0x540CE30
+  0x867E7D7 jmp near ptr 000000014867E580
+  0x867E7DC lea rdx,[rip+37C3925]  ;data=0xBE42108
+  0x867E7E3 lea rbx,[rsp+30]
+  0x867E7E8 mov rcx,rbx
+  0x867E7EB mov r8b,2
+  0x867E7EE call 000000014540CE90  ;call=0x540CE90
+  0x867E7F3 lea r8,[rsp+1A0]
+  0x867E7FB mov qword ptr [r8],0
+  0x867E802 lea rdx,[rip+1AC1648]  ;str=Duplicate section
+  0x867E809 mov rcx,rbx
+  0x867E80C xor r9d,r9d
+  0x867E80F call 000000014540CB20  ;call=0x540CB20
+  0x867E814 lea rcx,[rip+1AB68A2]  ;str=pipeline\extern\HavokSDK\Source\Common\Serialize
+  0x867E81B mov [rax+38],rcx
+  0x867E81F mov qword ptr [rax+40],551
+  0x867E827 jmp short 000000014867E7CF
+  0x867E829 int 3
+  E8_callers=1
+    callerSite=0x867E055 callerFunc=0x867DFE0
+str=0xA1A9C04 text=Duplicate PrimaryStore inventory consumable items found:
+  leaCount=2
+  lea=0x5908575 func=0x5908520
+  --- lea @0x5908575 ---
+  E8_callers=1
+    callerSite=0x1B45B8D callerFunc=0x1B45A20
+  lea=0x5908576 func=0x5908520
+  --- lea @0x5908576 ---
+  0x5908536 lodsb
+  E8_callers=1
+    callerSite=0x1B45B8D callerFunc=0x1B45A20
+str=0xA1B9FE1 text=Duplicate was ignored because it has a lower balance.
+  leaCount=2
+  lea=0x5908666 func=0x5908520
+  --- lea @0x5908666 ---
+  E8_callers=1
+    callerSite=0x1B45B8D callerFunc=0x1B45A20
+  lea=0x5908667 func=0x5908520
+  --- lea @0x5908667 ---
+  0x5908627 fdiv qword ptr [rdi]
+  0x5908629 sti
+  0x590862A mov rcx,rbx
+  0x590862D mov rdx,r14
+  0x5908630 call 0000000140582780  ;call=0x582780
+  0x5908635 lea rdx,[rip+48C53B8]  ;str=Balance of duplicate: 
+  0x590863C mov rcx,rbx
+  0x590863F call 0000000140582780  ;call=0x582780
+  0x5908644 mov edx,[r15+24]
+  0x5908648 mov rcx,rbx
+  0x590864B call 0000000140C86240  ;call=0xC86240
+  0x5908650 mov rcx,rbx
+  0x5908653 mov rdx,r14
+  0x5908656 call 0000000140582780  ;call=0x582780
+  0x590865B mov eax,[r15+24]
+  0x590865F cmp eax,[r12+24]
+  0x5908664 jg short 000000014590866F
+  0x5908666 lea rdx,[rip+48B1974]  ;str=Duplicate was ignored because it has a lower bal
+  0x590866D jmp short 000000014590867B
+  0x590866F mov [r12+24],eax
+  0x5908674 lea rdx,[rip+48B199C]  ;str=Duplicate was used because it has a larger balan
+  0x590867B mov rcx,rdi
+  0x590867E call 0000000140582780  ;call=0x582780
+  0x5908683 mov rcx,[rsi+28]
+  0x5908687 mov edx,40C049C0
+  0x590868C call 0000000140BDA030  ;call=0xBDA030
+  0x5908691 add eax,0FFFFFFFE
+  0x5908694 cmp eax,3
+  0x5908697 jb near ptr 0000000145908720
+  0x590869D mov rax,[rsi+28]
+  0x59086A1 mov rax,[rax+198]
+  0x59086A8 cmp byte ptr [rax],0
+  0x59086AB je short 0000000145908720
+  0x59086AD lea rsi,[rsp+218]
+  0x59086B5 mov rax,[rsi-0A0]
+  0x59086BC movsxd rax,dword ptr [rax+4]
+  0x59086C0 lea rcx,[rip+38927B9]  ;data=0x919AE80
+  0x59086C7 mov [rsp+rax+178],rcx
+  0x59086CF mov rax,[rsi-0A0]
+  0x59086D6 movsxd rax,dword ptr [rax+4]
+  E8_callers=1
+    callerSite=0x1B45B8D callerFunc=0x1B45A20
+str=0xA1BA017 text=Duplicate was used because it has a larger balance.
+  leaCount=2
+  lea=0x5908674 func=0x5908520
+  --- lea @0x5908674 ---
+  0x5908634 cli
+  0x5908635 lea rdx,[rip+48C53B8]  ;str=Balance of duplicate: 
+  0x590863C mov rcx,rbx
+  0x590863F call 0000000140582780  ;call=0x582780
+  0x5908644 mov edx,[r15+24]
+  0x5908648 mov rcx,rbx
+  0x590864B call 0000000140C86240  ;call=0xC86240
+  0x5908650 mov rcx,rbx
+  0x5908653 mov rdx,r14
+  0x5908656 call 0000000140582780  ;call=0x582780
+  0x590865B mov eax,[r15+24]
+  0x590865F cmp eax,[r12+24]
+  0x5908664 jg short 000000014590866F
+  0x5908666 lea rdx,[rip+48B1974]  ;str=Duplicate was ignored because it has a lower bal
+  0x590866D jmp short 000000014590867B
+  0x590866F mov [r12+24],eax
+  0x5908674 lea rdx,[rip+48B199C]  ;str=Duplicate was used because it has a larger balan
+  0x590867B mov rcx,rdi
+  0x590867E call 0000000140582780  ;call=0x582780
+  0x5908683 mov rcx,[rsi+28]
+  0x5908687 mov edx,40C049C0
+  0x590868C call 0000000140BDA030  ;call=0xBDA030
+  0x5908691 add eax,0FFFFFFFE
+  0x5908694 cmp eax,3
+  0x5908697 jb near ptr 0000000145908720
+  0x590869D mov rax,[rsi+28]
+  0x59086A1 mov rax,[rax+198]
+  0x59086A8 cmp byte ptr [rax],0
+  0x59086AB je short 0000000145908720
+  0x59086AD lea rsi,[rsp+218]
+  0x59086B5 mov rax,[rsi-0A0]
+  0x59086BC movsxd rax,dword ptr [rax+4]
+  0x59086C0 lea rcx,[rip+38927B9]  ;data=0x919AE80
+  0x59086C7 mov [rsp+rax+178],rcx
+  0x59086CF mov rax,[rsi-0A0]
+  0x59086D6 movsxd rax,dword ptr [rax+4]
+  0x59086DA lea ecx,[rax-98]
+  0x59086E0 mov [rsp+rax+174],ecx
+  0x59086E7 lea rdi,[rsp+190]
+  0x59086EF lea rax,[rip+389279A]  ;data=0x919AE90
+  E8_callers=1
+    callerSite=0x1B45B8D callerFunc=0x1B45A20
+  lea=0x5908675 func=0x5908520
+  --- lea @0x5908675 ---
+  0x5908635 lea rdx,[rip+48C53B8]  ;str=Balance of duplicate: 
+  0x590863C mov rcx,rbx
+  0x590863F call 0000000140582780  ;call=0x582780
+  0x5908644 mov edx,[r15+24]
+  0x5908648 mov rcx,rbx
+  0x590864B call 0000000140C86240  ;call=0xC86240
+  0x5908650 mov rcx,rbx
+  0x5908653 mov rdx,r14
+  0x5908656 call 0000000140582780  ;call=0x582780
+  0x590865B mov eax,[r15+24]
+  0x590865F cmp eax,[r12+24]
+  0x5908664 jg short 000000014590866F
+  0x5908666 lea rdx,[rip+48B1974]  ;str=Duplicate was ignored because it has a lower bal
+  0x590866D jmp short 000000014590867B
+  0x590866F mov [r12+24],eax
+  0x5908674 lea rdx,[rip+48B199C]  ;str=Duplicate was used because it has a larger balan
+  0x590867B mov rcx,rdi
+  0x590867E call 0000000140582780  ;call=0x582780
+  0x5908683 mov rcx,[rsi+28]
+  0x5908687 mov edx,40C049C0
+  0x590868C call 0000000140BDA030  ;call=0xBDA030
+  0x5908691 add eax,0FFFFFFFE
+  0x5908694 cmp eax,3
+  0x5908697 jb near ptr 0000000145908720
+  0x590869D mov rax,[rsi+28]
+  0x59086A1 mov rax,[rax+198]
+  0x59086A8 cmp byte ptr [rax],0
+  0x59086AB je short 0000000145908720
+  0x59086AD lea rsi,[rsp+218]
+  0x59086B5 mov rax,[rsi-0A0]
+  0x59086BC movsxd rax,dword ptr [rax+4]
+  0x59086C0 lea rcx,[rip+38927B9]  ;data=0x919AE80
+  0x59086C7 mov [rsp+rax+178],rcx
+  0x59086CF mov rax,[rsi-0A0]
+  0x59086D6 movsxd rax,dword ptr [rax+4]
+  0x59086DA lea ecx,[rax-98]
+  0x59086E0 mov [rsp+rax+174],ecx
+  0x59086E7 lea rdi,[rsp+190]
+  0x59086EF lea rax,[rip+389279A]  ;data=0x919AE90
+  E8_callers=1
+    callerSite=0x1B45B8D callerFunc=0x1B45A20
+str=0xA1BE5EE text=Duplicate unnamed type found in input list passed to type registry addMany().
+  leaCount=4
+  lea=0x8FF1754 func=0x8FF0CB0
+  --- lea @0x8FF1754 ---
+  0x8FF1714 adc [rbx],al
+  0x8FF1716 add [rbx+rcx*4+6C],cl
+  0x8FF171A and al,28
+  0x8FF171C je short 0000000148FF1705
+  0x8FF171E call 00000001454A1A80  ;call=0x54A1A80
+  0x8FF1723 lea rdx,[rip+31006DE]  ;data=0xC0F1E08
+  0x8FF172A lea rdi,[rsp+0A8]
+  0x8FF1732 mov rcx,rdi
+  0x8FF1735 mov r8b,1
+  0x8FF1738 test al,al
+  0x8FF173A jne near ptr 0000000148FF18C7
+  0x8FF1740 call 00000001490172D0  ;call=0x90172D0
+  0x8FF1745 lea r8,[rsp+1F8]
+  0x8FF174D mov qword ptr [r8],0
+  0x8FF1754 lea rdx,[rip+11CCE93]  ;str=Duplicate unnamed type found in input list passe
+  0x8FF175B mov rcx,rdi
+  0x8FF175E xor r9d,r9d
+  0x8FF1761 call 000000014540CB20  ;call=0x540CB20
+  0x8FF1766 lea rcx,[rip+1145796]  ;str=pipeline\extern\HavokSDK\Source\Common\Base\Refl
+  0x8FF176D mov [rax+38],rcx
+  0x8FF1771 mov qword ptr [rax+40],0C4
+  0x8FF1779 mov rcx,rdi
+  0x8FF177C call 00000001454C30D0  ;call=0x54C30D0
+  0x8FF1781 mov dword ptr [r13],80040257
+  0x8FF1789 mov rdx,[rsp+98]
+  0x8FF1791 test rdx,rdx
+  0x8FF1794 je short 0000000148FF17B8
+  0x8FF1796 cmp dword ptr [rdx+4],0FFFFFFFE
+  0x8FF179A je short 0000000148FF17B8
+  0x8FF179C mov cl,[rip+30FF286]  ;data=0xC0F0A28
+  0x8FF17A2 xor r8d,r8d
+  0x8FF17A5 call qword ptr [rip+30FF2F5]  ;data=0xC0F0AA0
+  0x8FF17AB lea rcx,[rsp+98]
+  0x8FF17B3 call 00000001416C66A0  ;call=0x16C66A0
+  0x8FF17B8 mov dword ptr [rsp+90],0
+  0x8FF17C3 mov r8d,[rsp+94]
+  0x8FF17CB test r8d,r8d
+  0x8FF17CE js short 0000000148FF17F2
+  0x8FF17D0 mov rdx,[rsp+88]
+  E8_callers=0
+  lea=0x8FF1755 func=0x8FF0CB0
+  --- lea @0x8FF1755 ---
+  0x8FF1715 add eax,[rax]
+  0x8FF1717 mov r13,[rsp+28]
+  0x8FF171C je short 0000000148FF1705
+  0x8FF171E call 00000001454A1A80  ;call=0x54A1A80
+  0x8FF1723 lea rdx,[rip+31006DE]  ;data=0xC0F1E08
+  0x8FF172A lea rdi,[rsp+0A8]
+  0x8FF1732 mov rcx,rdi
+  0x8FF1735 mov r8b,1
+  0x8FF1738 test al,al
+  0x8FF173A jne near ptr 0000000148FF18C7
+  0x8FF1740 call 00000001490172D0  ;call=0x90172D0
+  0x8FF1745 lea r8,[rsp+1F8]
+  0x8FF174D mov qword ptr [r8],0
+  0x8FF1754 lea rdx,[rip+11CCE93]  ;str=Duplicate unnamed type found in input list passe
+  0x8FF175B mov rcx,rdi
+  0x8FF175E xor r9d,r9d
+  0x8FF1761 call 000000014540CB20  ;call=0x540CB20
+  0x8FF1766 lea rcx,[rip+1145796]  ;str=pipeline\extern\HavokSDK\Source\Common\Base\Refl
+  0x8FF176D mov [rax+38],rcx
+  0x8FF1771 mov qword ptr [rax+40],0C4
+  0x8FF1779 mov rcx,rdi
+  0x8FF177C call 00000001454C30D0  ;call=0x54C30D0
+  0x8FF1781 mov dword ptr [r13],80040257
+  0x8FF1789 mov rdx,[rsp+98]
+  0x8FF1791 test rdx,rdx
+  0x8FF1794 je short 0000000148FF17B8
+  0x8FF1796 cmp dword ptr [rdx+4],0FFFFFFFE
+  0x8FF179A je short 0000000148FF17B8
+  0x8FF179C mov cl,[rip+30FF286]  ;data=0xC0F0A28
+  0x8FF17A2 xor r8d,r8d
+  0x8FF17A5 call qword ptr [rip+30FF2F5]  ;data=0xC0F0AA0
+  0x8FF17AB lea rcx,[rsp+98]
+  0x8FF17B3 call 00000001416C66A0  ;call=0x16C66A0
+  0x8FF17B8 mov dword ptr [rsp+90],0
+  0x8FF17C3 mov r8d,[rsp+94]
+  0x8FF17CB test r8d,r8d
+  0x8FF17CE js short 0000000148FF17F2
+  0x8FF17D0 mov rdx,[rsp+88]
+  E8_callers=0
+  lea=0x8FF18DB func=0x8FF0CB0
+  --- lea @0x8FF18DB ---
+  0x8FF189B or [rcx-77],cl
+  0x8FF189E pop rax
+  0x8FF189F adc [rax-73],cl
+  0x8FF18A2 adc eax,11CCD95
+  0x8FF18A7 mov rcx,rdi
+  0x8FF18AA xor r9d,r9d
+  0x8FF18AD call 000000014540CB20  ;call=0x540CB20
+  0x8FF18B2 lea rcx,[rip+114564A]  ;str=pipeline\extern\HavokSDK\Source\Common\Base\Refl
+  0x8FF18B9 mov [rax+38],rcx
+  0x8FF18BD mov qword ptr [rax+40],0BE
+  0x8FF18C5 jmp short 0000000148FF1900
+  0x8FF18C7 call 000000014540CE90  ;call=0x540CE90
+  0x8FF18CC lea r8,[rsp+1F8]
+  0x8FF18D4 mov qword ptr [r8],0
+  0x8FF18DB lea rdx,[rip+11CCD0C]  ;str=Duplicate unnamed type found in input list passe
+  0x8FF18E2 mov rcx,rdi
+  0x8FF18E5 xor r9d,r9d
+  0x8FF18E8 call 000000014540CB20  ;call=0x540CB20
+  0x8FF18ED lea rcx,[rip+114560F]  ;str=pipeline\extern\HavokSDK\Source\Common\Base\Refl
+  0x8FF18F4 mov [rax+38],rcx
+  0x8FF18F8 mov qword ptr [rax+40],0C4
+  0x8FF1900 mov rcx,rdi
+  0x8FF1903 call 000000014540CE30  ;call=0x540CE30
+  0x8FF1908 jmp near ptr 0000000148FF1781
+  0x8FF190D int 3
+  E8_callers=0
+  lea=0x8FF18DC func=0x8FF0CB0
+  --- lea @0x8FF18DC ---
+  0x8FF189C mov [r8+10],rbx
+  0x8FF18A0 lea rdx,[rip+11CCD95]  ;str=Duplicate type '{}' found in input list passed t
+  0x8FF18A7 mov rcx,rdi
+  0x8FF18AA xor r9d,r9d
+  0x8FF18AD call 000000014540CB20  ;call=0x540CB20
+  0x8FF18B2 lea rcx,[rip+114564A]  ;str=pipeline\extern\HavokSDK\Source\Common\Base\Refl
+  0x8FF18B9 mov [rax+38],rcx
+  0x8FF18BD mov qword ptr [rax+40],0BE
+  0x8FF18C5 jmp short 0000000148FF1900
+  0x8FF18C7 call 000000014540CE90  ;call=0x540CE90
+  0x8FF18CC lea r8,[rsp+1F8]
+  0x8FF18D4 mov qword ptr [r8],0
+  0x8FF18DB lea rdx,[rip+11CCD0C]  ;str=Duplicate unnamed type found in input list passe
+  0x8FF18E2 mov rcx,rdi
+  0x8FF18E5 xor r9d,r9d
+  0x8FF18E8 call 000000014540CB20  ;call=0x540CB20
+  0x8FF18ED lea rcx,[rip+114560F]  ;str=pipeline\extern\HavokSDK\Source\Common\Base\Refl
+  0x8FF18F4 mov [rax+38],rcx
+  0x8FF18F8 mov qword ptr [rax+40],0C4
+  0x8FF1900 mov rcx,rdi
+  0x8FF1903 call 000000014540CE30  ;call=0x540CE30
+  0x8FF1908 jmp near ptr 0000000148FF1781
+  0x8FF190D int 3
+  E8_callers=0
+str=0xA1BE63C text=Duplicate type '{}' found in input list passed to type registry addMany().
+  leaCount=4
+  lea=0x8FF16C9 func=0x8FF0CB0
+  --- lea @0x8FF16C9 ---
+  0x8FF1689 test al,al
+  0x8FF168B jne near ptr 0000000148FF1868
+  0x8FF1691 call 00000001490172D0  ;call=0x90172D0
+  0x8FF1696 mov rcx,[rsp+80]
+  0x8FF169E lea rbx,[rsp+70]
+  0x8FF16A3 mov rdx,rbx
+  0x8FF16A6 call 0000000144BA8FB0  ;call=0x4BA8FB0
+  0x8FF16AB lea r8,[rsp+1F8]
+  0x8FF16B3 mov qword ptr [r8],1
+  0x8FF16BA lea rax,[rip-983871]  ;data=0x866DE50
+  0x8FF16C1 mov [r8+8],rax
+  0x8FF16C5 mov [r8+10],rbx
+  0x8FF16C9 lea rdx,[rip+11CCF6C]  ;str=Duplicate type '{}' found in input list passed t
+  0x8FF16D0 mov rcx,rdi
+  0x8FF16D3 xor r9d,r9d
+  0x8FF16D6 call 000000014540CB20  ;call=0x540CB20
+  0x8FF16DB lea rcx,[rip+1145821]  ;str=pipeline\extern\HavokSDK\Source\Common\Base\Refl
+  0x8FF16E2 mov [rax+38],rcx
+  0x8FF16E6 mov qword ptr [rax+40],0BE
+  0x8FF16EE jmp near ptr 0000000148FF1779
+  0x8FF16F3 call 00000001454A1A80  ;call=0x54A1A80
+  0x8FF16F8 test al,al
+  0x8FF16FA je near ptr 0000000148FF1781
+  0x8FF1700 jmp near ptr 0000000148FF166F
+  0x8FF1705 call 00000001454A1A80  ;call=0x54A1A80
+  0x8FF170A test al,al
+  0x8FF170C je short 0000000148FF1781
+  0x8FF170E jmp short 0000000148FF171E
+  0x8FF1710 cmp byte ptr [rip+3100741],0  ;data=0xC0F1E58
+  0x8FF1717 mov r13,[rsp+28]
+  0x8FF171C je short 0000000148FF1705
+  0x8FF171E call 00000001454A1A80  ;call=0x54A1A80
+  0x8FF1723 lea rdx,[rip+31006DE]  ;data=0xC0F1E08
+  0x8FF172A lea rdi,[rsp+0A8]
+  0x8FF1732 mov rcx,rdi
+  0x8FF1735 mov r8b,1
+  0x8FF1738 test al,al
+  0x8FF173A jne near ptr 0000000148FF18C7
+  0x8FF1740 call 00000001490172D0  ;call=0x90172D0
+  0x8FF1745 lea r8,[rsp+1F8]
+  E8_callers=0
+  lea=0x8FF16CA func=0x8FF0CB0
+  --- lea @0x8FF16CA ---
+  0x8FF168A ror byte ptr [rdi],85
+  0x8FF168D xlatb
+  0x8FF168E add [rax],eax
+  0x8FF1690 add al,ch
+  0x8FF1692 cmp bl,[rdx+rax]
+  0x8FF1696 mov rcx,[rsp+80]
+  0x8FF169E lea rbx,[rsp+70]
+  0x8FF16A3 mov rdx,rbx
+  0x8FF16A6 call 0000000144BA8FB0  ;call=0x4BA8FB0
+  0x8FF16AB lea r8,[rsp+1F8]
+  0x8FF16B3 mov qword ptr [r8],1
+  0x8FF16BA lea rax,[rip-983871]  ;data=0x866DE50
+  0x8FF16C1 mov [r8+8],rax
+  0x8FF16C5 mov [r8+10],rbx
+  0x8FF16C9 lea rdx,[rip+11CCF6C]  ;str=Duplicate type '{}' found in input list passed t
+  0x8FF16D0 mov rcx,rdi
+  0x8FF16D3 xor r9d,r9d
+  0x8FF16D6 call 000000014540CB20  ;call=0x540CB20
+  0x8FF16DB lea rcx,[rip+1145821]  ;str=pipeline\extern\HavokSDK\Source\Common\Base\Refl
+  0x8FF16E2 mov [rax+38],rcx
+  0x8FF16E6 mov qword ptr [rax+40],0BE
+  0x8FF16EE jmp near ptr 0000000148FF1779
+  0x8FF16F3 call 00000001454A1A80  ;call=0x54A1A80
+  0x8FF16F8 test al,al
+  0x8FF16FA je near ptr 0000000148FF1781
+  0x8FF1700 jmp near ptr 0000000148FF166F
+  0x8FF1705 call 00000001454A1A80  ;call=0x54A1A80
+  0x8FF170A test al,al
+  0x8FF170C je short 0000000148FF1781
+  0x8FF170E jmp short 0000000148FF171E
+  0x8FF1710 cmp byte ptr [rip+3100741],0  ;data=0xC0F1E58
+  0x8FF1717 mov r13,[rsp+28]
+  0x8FF171C je short 0000000148FF1705
+  0x8FF171E call 00000001454A1A80  ;call=0x54A1A80
+  0x8FF1723 lea rdx,[rip+31006DE]  ;data=0xC0F1E08
+  0x8FF172A lea rdi,[rsp+0A8]
+  0x8FF1732 mov rcx,rdi
+  0x8FF1735 mov r8b,1
+  0x8FF1738 test al,al
+  0x8FF173A jne near ptr 0000000148FF18C7
+  E8_callers=0
+  lea=0x8FF18A0 func=0x8FF0CB0
+  --- lea @0x8FF18A0 ---
+  0x8FF1860 call qword ptr [rax+18]
+  0x8FF1863 jmp near ptr 0000000148FF0E61
+  0x8FF1868 call 000000014540CE90  ;call=0x540CE90
+  0x8FF186D mov rcx,[rsp+80]
+  0x8FF1875 lea rbx,[rsp+60]
+  0x8FF187A mov rdx,rbx
+  0x8FF187D call 0000000144BA8FB0  ;call=0x4BA8FB0
+  0x8FF1882 lea r8,[rsp+1F8]
+  0x8FF188A mov qword ptr [r8],1
+  0x8FF1891 lea rax,[rip-983A48]  ;data=0x866DE50
+  0x8FF1898 mov [r8+8],rax
+  0x8FF189C mov [r8+10],rbx
+  0x8FF18A0 lea rdx,[rip+11CCD95]  ;str=Duplicate type '{}' found in input list passed t
+  0x8FF18A7 mov rcx,rdi
+  0x8FF18AA xor r9d,r9d
+  0x8FF18AD call 000000014540CB20  ;call=0x540CB20
+  0x8FF18B2 lea rcx,[rip+114564A]  ;str=pipeline\extern\HavokSDK\Source\Common\Base\Refl
+  0x8FF18B9 mov [rax+38],rcx
+  0x8FF18BD mov qword ptr [rax+40],0BE
+  0x8FF18C5 jmp short 0000000148FF1900
+  0x8FF18C7 call 000000014540CE90  ;call=0x540CE90
+  0x8FF18CC lea r8,[rsp+1F8]
+  0x8FF18D4 mov qword ptr [r8],0
+  0x8FF18DB lea rdx,[rip+11CCD0C]  ;str=Duplicate unnamed type found in input list passe
+  0x8FF18E2 mov rcx,rdi
+  0x8FF18E5 xor r9d,r9d
+  0x8FF18E8 call 000000014540CB20  ;call=0x540CB20
+  0x8FF18ED lea rcx,[rip+114560F]  ;str=pipeline\extern\HavokSDK\Source\Common\Base\Refl
+  0x8FF18F4 mov [rax+38],rcx
+  0x8FF18F8 mov qword ptr [rax+40],0C4
+  0x8FF1900 mov rcx,rdi
+  0x8FF1903 call 000000014540CE30  ;call=0x540CE30
+  0x8FF1908 jmp near ptr 0000000148FF1781
+  0x8FF190D int 3
+  E8_callers=0
+  lea=0x8FF18A1 func=0x8FF0CB0
+  --- lea @0x8FF18A1 ---
+  0x8FF1861 push rax
+  0x8FF1862 sbb cl,ch
+  0x8FF1864 stc
+  0x8FF1865 cmc
+  E8_callers=0
+str=0xA22EE48 text=Duplicated name `%s'
+  leaCount=2
+  lea=0x514BCA0 func=0x514BB70
+  --- lea @0x514BCA0 ---
+  0x514BC60 add [rax],eax
+  0x514BC62 add [rax-73],cl
+  0x514BC65 adc eax,50D157E
+  0x514BC6A mov rcx,r14
+  0x514BC6D call 0000000144F72490  ;call=0x4F72490
+  0x514BC72 call 00000001450140B0  ;call=0x50140B0
+  0x514BC77 lea r8,[rip+50A87C2]  ;str=stack_to_property_list
+  0x514BC7E mov edx,14D
+  0x514BC83 lea rcx,[rip+50D155E]  ;str=D:\b\0\55069\crypto\property\property_parse.c
+  0x514BC8A call 00000001450141C0  ;call=0x50141C0
+  0x514BC8F mov rcx,[rsp+50]
+  0x514BC94 mov edx,edi
+  0x514BC96 call 000000014520B7D0  ;call=0x520B7D0
+  0x514BC9B mov edx,6C
+  0x514BCA0 lea r8,[rip+50E31A1]  ;str=Duplicated name `%s'
+  0x514BCA7 mov r9,rax
+  0x514BCAA lea ecx,[rdx-35]
+  0x514BCAD call 00000001450142C0  ;call=0x50142C0
+  0x514BCB2 xor eax,eax
+  0x514BCB4 jmp short 000000014514BC3D
+  0x514BCB6 int 3
+  E8_callers=2
+    callerSite=0x514A74F callerFunc=0x514A500
+    callerSite=0x514AA92 callerFunc=0x514A7B0
+  lea=0x514BCA1 func=0x514BB70
+  --- lea @0x514BCA1 ---
+  0x514BC61 add [rax],al
+  0x514BC63 lea rdx,[rip+50D157E]  ;str=D:\b\0\55069\crypto\property\property_parse.c
+  0x514BC6A mov rcx,r14
+  0x514BC6D call 0000000144F72490  ;call=0x4F72490
+  0x514BC72 call 00000001450140B0  ;call=0x50140B0
+  0x514BC77 lea r8,[rip+50A87C2]  ;str=stack_to_property_list
+  0x514BC7E mov edx,14D
+  0x514BC83 lea rcx,[rip+50D155E]  ;str=D:\b\0\55069\crypto\property\property_parse.c
+  0x514BC8A call 00000001450141C0  ;call=0x50141C0
+  0x514BC8F mov rcx,[rsp+50]
+  0x514BC94 mov edx,edi
+  0x514BC96 call 000000014520B7D0  ;call=0x520B7D0
+  0x514BC9B mov edx,6C
+  0x514BCA0 lea r8,[rip+50E31A1]  ;str=Duplicated name `%s'
+  0x514BCA7 mov r9,rax
+  0x514BCAA lea ecx,[rdx-35]
+  0x514BCAD call 00000001450142C0  ;call=0x50142C0
+  0x514BCB2 xor eax,eax
+  0x514BCB4 jmp short 000000014514BC3D
+  0x514BCB6 int 3
+  E8_callers=2
+    callerSite=0x514A74F callerFunc=0x514A500
+    callerSite=0x514AA92 callerFunc=0x514A7B0
+
+## needle=ObjectID hits=1
+str=0x999A866 text=ObjectID
+  leaCount=0
+
+## needle=ObjectId hits=0
+
+## needle=objectId hits=2
+str=0xA128399 text=objectIds
+  leaCount=0
+str=0xA17B42F text=objectId
+  leaCount=2
+  lea=0x18F4769 func=0x18F4610
+  --- lea @0x18F4769 ---
+  0x18F4729 cmpsd
+  0x18F472A dec dword ptr [rax-75]
+  E8_callers=2
+    callerSite=0x18F4505 callerFunc=0x18F4410
+    callerSite=0x668B770 callerFunc=0x668B6C0
+  lea=0x18F476A func=0x18F4610
+  --- lea @0x18F476A ---
+  0x18F472A dec dword ptr [rax-75]
+  E8_callers=2
+    callerSite=0x18F4505 callerFunc=0x18F4410
+    callerSite=0x668B770 callerFunc=0x668B6C0
+
+===== VERDICT =====
+c1Proven=false
+callEngine=off
+note=Duplicate string present; classify LEA funcs as type-name vs method vs UI

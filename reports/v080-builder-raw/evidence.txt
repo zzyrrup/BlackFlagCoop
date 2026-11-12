@@ -1,0 +1,344 @@
+===== v0.8.0 BUILDER / PLAYERPROGRESSION PATH =====
+exeSha256=19920F34BB2FAC814023EE3C27F0CECA1872E80A2AAFB37C092C419FFF77CC0D
+imageBase=0x140000000
+goal=locate Resynced equivalents of PlayerProgression cached
+      EntityBuilder handle + RowSelector (AC4Coop source path)
+
+===== STRING HITS =====
+Duplicate reference to 0x%llx rva=0xA102E1F text=Duplicate reference to 0x%llx
+Duplicated Request rva=0xA10978E text=Duplicated Request
+PlayerProgressions rva=0xA11C861 text=PlayerProgressions
+SpawnInventoryParams rva=0xA11DC3F text=SpawnInventoryParams
+SpawnPlayerBoatParams rva=0xA11DD1C text=SpawnPlayerBoatParams
+SpawnEntityBuilderParams rva=0xA11DDF0 text=SpawnEntityBuilderParams
+SpawnNPCParams rva=0xA11E28C text=SpawnNPCParams
+PlayerProgression rva=0xA14482A text=PlayerProgression
+LoadingAdvisorUpdate rva=0xA15C4FF text=LoadingAdvisorUpdate
+CreateActorsDeferredSingleThreaded rva=0xA17A4F0 text=CreateActorsDeferredSingleThreaded
+
+===== STRING LEA SITES =====
+LEA Duplicate reference to 0x%llx @0xA102E1F count=2
+  site=0x21291AE func=0x2129000
+  site=0x21291AF func=0x2129000
+LEA Duplicated Request @0xA10978E count=2
+  site=0x9EFE8D func=0x9EF320
+  site=0x9EFE8E func=0x9EF320
+LEA PlayerProgressions @0xA11C861 count=0
+LEA SpawnInventoryParams @0xA11DC3F count=2
+  site=0x80F2800 func=0x80F27E0
+  site=0x80F2801 func=0x80F27E0
+LEA SpawnPlayerBoatParams @0xA11DD1C count=2
+  site=0x821ABE0 func=0x821ABC0
+  site=0x821ABE1 func=0x821ABC0
+LEA SpawnEntityBuilderParams @0xA11DDF0 count=2
+  site=0x8E02980 func=0x8E02960
+  site=0x8E02981 func=0x8E02960
+LEA SpawnNPCParams @0xA11E28C count=2
+  site=0x80F23FC func=0x80F23E0
+  site=0x80F23FD func=0x80F23E0
+LEA PlayerProgression @0xA14482A count=4
+  site=0x1C71A0B func=0x1C6FD50
+  site=0x1C71A0C func=0x1C6FD50
+  site=0x6386663 func=0x6383FE0
+  site=0x6386664 func=0x6383FE0
+LEA LoadingAdvisorUpdate @0xA15C4FF count=2
+  site=0x1ED29C8 func=0x1ED0FC0
+  site=0x1ED29C9 func=0x1ED0FC0
+LEA CreateActorsDeferredSingleThreaded @0xA17A4F0 count=2
+  site=0x5CBE0C7 func=0x5CBDFB0
+  site=0x5CBE0C8 func=0x5CBDFB0
+
+===== FOCUS FUNCTIONS =====
+0x9EF320 class=alloc-user size=2308 schema=False alloc=True deferred=False stores=4 loads=32 callees=0x3C99880,0x426EE50,0x42256B0,0x450D890,0x4213840,0x6660,0x42BB220,0x4200C10,0x42B85F0,0xE6E0,0x1311DF0,0x14D5FA0,0x429F9E0,0x42F6850
+    str Invalid pointer not allocated by our allocators or already freed: 0x%p (allocatorId:%d)
+    0x9EF320 push r15
+    0x9EF322 push r14
+    0x9EF324 push r13
+    0x9EF326 push r12
+    0x9EF328 push rsi
+    0x9EF329 push rdi
+    0x9EF32A push rbp
+    0x9EF32B push rbx
+    0x9EF32C sub rsp,0E8
+    0x9EF333 mov r13,rdx
+    0x9EF336 mov r12,rcx
+    0x9EF339 mov rbx,[rsp+150]
+    0x9EF341 mov rax,[rip+98C3EB8]
+    0x9EF348 xor rax,rsp
+    0x9EF34B mov [rsp+0E0],rax
+    0x9EF353 mov rax,[rip+0B5C82A6]
+    0x9EF35A mov [rsp+68],rax
+    0x9EF35F mov rcx,[rip+0B5C830A]
+    0x9EF366 test rcx,rcx
+    0x9EF369 je near ptr 00000001409EFDE2
+    globalStores=0xAF39138
+    globalLoads=0xA2B3200,0xBFB7600,0xBFB7670,0xAF73BD8,0xAB8BBC0,0xAF6FED8,0xAF6FD48,0x91EA6A0,0xAF73B90,0xAF73AE0
+  E8_callers count=2
+    site=0x5414E51 func=0x5414E30
+0x5414E30 class=unrelated size=47 schema=False alloc=False deferred=False stores=0 loads=0 callees=0x9EF320
+    0x5414E30 push rsi
+    0x5414E31 sub rsp,40
+    0x5414E35 mov rsi,rdx
+    0x5414E38 vmovaps xmm0,[rsp+70]
+    0x5414E3E mov rax,[rsp+80]
+    0x5414E46 mov [rsp+30],rax
+    0x5414E4B vmovups [rsp+20],xmm0
+    0x5414E51 call 00000001409EF320
+    0x5414E56 mov rax,rsi
+    0x5414E59 add rsp,40
+    0x5414E5D pop rsi
+    0x5414E5E ret
+    site=0x67AE298 func=0x67AE240
+0x67AE240 class=unrelated size=228 schema=False alloc=False deferred=False stores=0 loads=2 callees=0x9EF320,0x5014570,0x16FAA0
+    0x67AE240 push rsi
+    0x67AE241 push rdi
+    0x67AE242 push rbx
+    0x67AE243 sub rsp,80
+    0x67AE24A mov rsi,rdx
+    0x67AE24D mov rdi,[rsp+0C0]
+    0x67AE255 mov rax,[rsp+0C8]
+    0x67AE25D mov rdx,[rip+3B04F9C]
+    0x67AE264 xor rdx,rsp
+    0x67AE267 mov [rsp+78],rdx
+    0x67AE26C lea rdx,[rip-67AD273]
+    0x67AE273 lea rbx,[rsp+40]
+    0x67AE278 mov [rbx+8],rdx
+    0x67AE27C lea rdx,[rip-143A093]
+    0x67AE283 mov [rbx],rdx
+    0x67AE286 mov [rsp+30],rax
+    0x67AE28B mov [rsp+28],rdi
+    0x67AE290 mov [rsp+20],rbx
+    0x67AE295 mov rdx,rsi
+    0x67AE298 call 00000001409EF320
+    globalLoads=0xA2B3200,0xAF676D8
+0x1C6FD50 class=multi-global-store size=2304 schema=False alloc=False deferred=False stores=142 loads=96 callees=0x4D2F1E0,0x5014570,0xE6E0,0xD510,0x4F69784,0xE578F0,0x1277060,0x5B65C60
+    str Invalid pointer not allocated by our allocators or already freed: 0x%p (allocatorId:%d)
+    0x1C6FD50 push r15
+    0x1C6FD52 push r14
+    0x1C6FD54 push r13
+    0x1C6FD56 push r12
+    0x1C6FD58 push rsi
+    0x1C6FD59 push rdi
+    0x1C6FD5A push rbp
+    0x1C6FD5B push rbx
+    0x1C6FD5C sub rsp,58
+    0x1C6FD60 mov rsi,rdx
+    0x1C6FD63 mov rax,[rip+8643496]
+    0x1C6FD6A xor rax,rsp
+    0x1C6FD6D mov [rsp+50],rax
+    0x1C6FD72 mov rdi,[rdx+8]
+    0x1C6FD76 mov r12d,edi
+    0x1C6FD79 and r12d,3FFFFFFF
+    0x1C6FD80 mov rax,[rip+92FFFC1]
+    0x1C6FD87 mov [rsp+30],rax
+    0x1C6FD8C mov byte ptr [rsp+28],0
+    0x1C6FD91 mov dword ptr [rsp+20],8
+    globalStores=0xAF39138,0xB2EB830,0xB2EB820,0xB2EB840,0xB2EB850,0xB2EB854,0xB2EB858,0xB2EB85C,0xB2EB860,0xB2EB864
+    globalLoads=0xA2B3200,0xAF6FD48,0xAF676B0,0xAF39138,0xAF38F39,0xAF67708,0xAF67F14,0x904EA4C,0x97B6AC0,0xB2EB8D0
+  E8_callers count=1
+    site=0x5B65BEE func=0x5B65B50
+0x5B65B50 class=unrelated size=79 schema=False alloc=False deferred=False stores=0 loads=1 callees=0x16B82C0,0x45B64D0
+    0x5B65B50 push rsi
+    0x5B65B51 push rdi
+    0x5B65B52 sub rsp,28
+    0x5B65B56 mov rdi,rcx
+    0x5B65B59 lea rax,[rip+3BC7A50]
+    0x5B65B60 mov [rcx],rax
+    0x5B65B63 lea rsi,[rcx+18]
+    0x5B65B67 mov rcx,rsi
+    0x5B65B6A call 00000001416B82C0
+    0x5B65B6F lea rcx,[rdi+28]
+    0x5B65B73 call qword ptr [rip+46E31FF]
+    0x5B65B79 test byte ptr [rdi+21],40
+    0x5B65B7D je short 0000000145B65B87
+    0x5B65B7F mov rdx,[rsi]
+    0x5B65B82 test rdx,rdx
+    0x5B65B85 jne short 0000000145B65B95
+    0x5B65B87 mov rcx,rdi
+    0x5B65B8A add rsp,28
+    0x5B65B8E pop rdi
+    0x5B65B8F pop rsi
+    globalLoads=0x972D5B0
+0x1ED0FC0 class=unrelated size=2306 schema=False alloc=False deferred=False stores=0 loads=5 callees=0x42256B0,0x2D9A70
+    0x1ED0FC0 push r15
+    0x1ED0FC2 push r14
+    0x1ED0FC4 push r13
+    0x1ED0FC6 push r12
+    0x1ED0FC8 push rsi
+    0x1ED0FC9 push rdi
+    0x1ED0FCA push rbp
+    0x1ED0FCB push rbx
+    0x1ED0FCC sub rsp,0A8
+    0x1ED0FD3 cmp byte ptr [rcx+779],0
+    0x1ED0FDA je short 0000000141ED0FF0
+    0x1ED0FDC add rsp,0A8
+    0x1ED0FE3 pop rbx
+    0x1ED0FE4 pop rbp
+    0x1ED0FE5 pop rdi
+    0x1ED0FE6 pop rsi
+    0x1ED0FE7 pop r12
+    0x1ED0FE9 pop r13
+    0x1ED0FEB pop r14
+    0x1ED0FED pop r15
+    globalLoads=0xACE77C8,0xB65309C,0xA249190,0xAE4C230
+  E8_callers count=0
+0x2129000 class=named-ref size=718 schema=False alloc=False deferred=False stores=0 loads=3 callees=0x4431BB0,0x1193200,0x5014570,0x43A04A0,0x42EB100,0x4265F00,0x461B6F0
+    str Duplicate reference to 0x%llx
+    0x2129000 push r15
+    0x2129002 push r14
+    0x2129004 push r13
+    0x2129006 push r12
+    0x2129008 push rsi
+    0x2129009 push rdi
+    0x212900A push rbp
+    0x212900B push rbx
+    0x212900C sub rsp,78
+    0x2129010 mov rax,[rip+818A1E9]
+    0x2129017 xor rax,rsp
+    0x212901A mov [rsp+70],rax
+    0x212901F mov ebx,[rdx+18]
+    0x2129022 shl ebx,4
+    0x2129025 mov sil,1
+    0x2129028 je near ptr 000000014212917A
+    0x212902E mov ebp,r8d
+    0x2129031 mov r14,rdx
+    0x2129034 mov rdi,rcx
+    0x2129037 mov r15,[rdx+10]
+    globalLoads=0xA2B3200,0xAF6FD48
+  E8_callers count=2
+    site=0x16A6C1A func=0x16A6AE0
+0x16A6AE0 class=multi-global-store size=2168 schema=False alloc=False deferred=False stores=6 loads=27 callees=0x2129000,0x2F3D240,0x429F9E0,0x42F6850,0x156BD20,0xE6E0,0x20AF020,0x5014570,0x42EB100,0x42BA040
+    str Invalid pointer not allocated by our allocators or already freed: 0x%p (allocatorId:%d)
+    0x16A6AE0 push rbp
+    0x16A6AE1 push r15
+    0x16A6AE3 push r14
+    0x16A6AE5 push r13
+    0x16A6AE7 push r12
+    0x16A6AE9 push rsi
+    0x16A6AEA push rdi
+    0x16A6AEB push rbx
+    0x16A6AEC sub rsp,7F8
+    0x16A6AF3 lea rbp,[rsp+80]
+    0x16A6AFB and rsp,0FFFFFFFFFFFFFFC0
+    0x16A6AFF mov r14,rdx
+    0x16A6B02 mov rdi,rcx
+    0x16A6B05 mov rbx,[rbp+7E8]
+    0x16A6B0C mov rax,[rip+8C0C6ED]
+    0x16A6B13 xor rax,rbp
+    0x16A6B16 mov [rsp+7F0],rax
+    0x16A6B1E mov [rsp+80],rcx
+    0x16A6B26 vmovups xmm0,[rdx]
+    0x16A6B2A vmovups [rsp+88],xmm0
+    globalStores=0xAF39138
+    globalLoads=0xA2B3200,0xAB8BBC0,0xAF6FD48,0xAF67708,0xAF67F14,0xAF39138,0xAF38F39,0xAF676B0
+    site=0x16A6C5E func=0x16A6AE0
+0x6383FE0 class=multi-global-store size=2309 schema=False alloc=False deferred=False stores=240 loads=28 callees=0xD510
+    str jcZW
+    0x6383FE0 push r15
+    0x6383FE2 push r14
+    0x6383FE4 push r13
+    0x6383FE6 push r12
+    0x6383FE8 push rsi
+    0x6383FE9 push rdi
+    0x6383FEA push rbp
+    0x6383FEB push rbx
+    0x6383FEC sub rsp,68
+    0x6383FF0 vmovaps [rsp+50],xmm6
+    0x6383FF6 mov rax,[rip+3F2F203]
+    0x6383FFD xor rax,rsp
+    0x6384000 mov [rsp+48],rax
+    0x6384005 vbroadcastss xmm0,dword ptr [rip+2CCAA3E]
+    0x638400E vmovaps [rip+508345A],xmm0
+    0x6384016 mov qword ptr [rip+508343F],0FFFFFFFFFFFFFFFF
+    0x6384021 vbroadcastss xmm6,dword ptr [rip+3432A96]
+    0x638402A vmovaps [rip+508344E],xmm6
+    0x6384032 mov dword ptr [rip+5083454],41000000
+    0x638403C mov dword ptr [rip+508344E],41000001
+    globalStores=0xB407470,0xB407460,0xB407480,0xB407490,0xB407494,0xB407498,0xB40749C,0xB4074A0,0xB4074A4,0xB4074A8
+    globalLoads=0xA2B3200,0x904EA4C,0x97B6AC0,0xB407510,0x97B7370,0xB407530,0xB407550,0x97B7374,0xA02AD40,0xA02AD50
+  E8_callers count=0
+0x80F23E0 class=schema size=101 schema=True alloc=False deferred=False stores=0 loads=0 callees=0x4572C60,0x80F2330,0x4987180
+    str SpawnNPCParams
+    0x80F23E0 push rsi
+    0x80F23E1 push rdi
+    0x80F23E2 sub rsp,28
+    0x80F23E6 mov rsi,rdx
+    0x80F23E9 mov [rdx+38],rcx
+    0x80F23ED mov rax,[rdx+8]
+    0x80F23F1 cmp byte ptr [rax+0A],0
+    0x80F23F5 jne short 00000001480F241A
+    0x80F23F7 mov [rsp+20],rcx
+    0x80F23FC lea rdx,[rip+202BE89]
+    0x80F2403 mov rdi,rcx
+    0x80F2406 mov rcx,rsi
+    0x80F2409 xor r8d,r8d
+    0x80F240C mov r9d,94D05600
+    0x80F2412 call 0000000144572C60
+    0x80F2417 mov rcx,rdi
+    0x80F241A mov edi,[rsi+40]
+    0x80F241D mov dword ptr [rsi+40],0
+    0x80F2424 mov rdx,rsi
+    0x80F2427 call 00000001480F2330
+0x821ABC0 class=schema size=133 schema=True alloc=False deferred=False stores=0 loads=1 callees=0x4572C60,0x80F2330,0x33B130,0x4987180
+    str SpawnPlayerBoatParams
+    0x821ABC0 push rsi
+    0x821ABC1 push rdi
+    0x821ABC2 push rbx
+    0x821ABC3 sub rsp,30
+    0x821ABC7 mov rsi,rdx
+    0x821ABCA mov rdi,rcx
+    0x821ABCD mov [rdx+38],rcx
+    0x821ABD1 mov rax,[rdx+8]
+    0x821ABD5 cmp byte ptr [rax+0A],0
+    0x821ABD9 jne short 000000014821ABF8
+    0x821ABDB mov [rsp+20],rdi
+    0x821ABE0 lea rdx,[rip+1F03135]
+    0x821ABE7 mov rcx,rsi
+    0x821ABEA xor r8d,r8d
+    0x821ABED mov r9d,3DF9C374
+    0x821ABF3 call 0000000144572C60
+    0x821ABF8 mov ebx,[rsi+40]
+    0x821ABFB mov dword ptr [rsi+40],0
+    0x821AC02 mov rcx,rdi
+    0x821AC05 mov rdx,rsi
+    globalLoads=0xB5B9680
+0x8E02960 class=schema size=151 schema=True alloc=False deferred=False stores=0 loads=3 callees=0x4572C60,0x8DFFB90,0x48BA350,0x914330,0x4987180
+    str SpawnEntityBuilderParams
+    0x8E02960 push rsi
+    0x8E02961 push rdi
+    0x8E02962 push rbx
+    0x8E02963 sub rsp,30
+    0x8E02967 mov rsi,rdx
+    0x8E0296A mov rdi,rcx
+    0x8E0296D mov [rdx+38],rcx
+    0x8E02971 mov rax,[rdx+8]
+    0x8E02975 cmp byte ptr [rax+0A],0
+    0x8E02979 jne short 0000000148E02998
+    0x8E0297B mov [rsp+20],rdi
+    0x8E02980 lea rdx,[rip+131B469]
+    0x8E02987 mov rcx,rsi
+    0x8E0298A xor r8d,r8d
+    0x8E0298D mov r9d,6A484E77
+    0x8E02993 call 0000000144572C60
+    0x8E02998 mov ebx,[rsi+40]
+    0x8E0299B mov dword ptr [rsi+40],0
+    0x8E029A2 mov rcx,rdi
+    0x8E029A5 mov rdx,rsi
+    globalLoads=0xC05D010,0xC01FA58,0xC05D028
+
+===== SUMMARY =====
+focusFuncs=12
+schemaOnly=3
+allocHits=1
+deferredHits=0
+playerProgressionFuncs=0
+cacheStoreCandidates=4
+  CACHE 0x6383FE0 class=multi-global-store stores=0xB407470,0xB407460,0xB407480,0xB407490,0xB407494,0xB407498,0xB40749C,0xB4074A0 loads=0xA2B3200,0x904EA4C,0x97B6AC0,0xB407510,0x97B7370,0xB407530,0xB407550,0x97B7374
+  CACHE 0x1C6FD50 class=multi-global-store stores=0xAF39138,0xB2EB830,0xB2EB820,0xB2EB840,0xB2EB850,0xB2EB854,0xB2EB858,0xB2EB85C loads=0xA2B3200,0xAF6FD48,0xAF676B0,0xAF39138,0xAF38F39,0xAF67708,0xAF67F14,0x904EA4C
+  CACHE 0x16A6AE0 class=multi-global-store stores=0xAF39138 loads=0xA2B3200,0xAB8BBC0,0xAF6FD48,0xAF67708,0xAF67F14,0xAF39138,0xAF38F39,0xAF676B0
+  CACHE 0x9EF320 class=alloc-user stores=0xAF39138 loads=0xA2B3200,0xBFB7600,0xBFB7670,0xAF73BD8,0xAB8BBC0,0xAF6FED8,0xAF6FD48,0x91EA6A0
+playerProgressionStringFound=True
+cachedBuilderResolved=False
+decision=player-progression-string-found-builder-cache-unresolved
+blocker=PlayerProgression name exists, but LoadEntityBuilderAndSelectorsForPlayer /
+        cached selector+builder handle globals are not yet identified.

@@ -1,6 +1,10 @@
+#include "game/builder_path.h"
 #include "game/player_probe.h"
+#include "game/player_retention.h"
+#include "game/puppet_lifecycle.h"
 #include "game/player_telemetry.h"
 #include "game/runtime_diag.h"
+#include "game/spawn_contract.h"
 #include "logger.h"
 #include "network/network.h"
 #include "splash.h"
@@ -11,7 +15,7 @@
 
 namespace {
 
-constexpr const char* kPluginVersion = "0.5.1";
+constexpr const char* kPluginVersion = "0.8.0-dev";
 
 // 0 = not started, 1 = initialization in progress or finished.
 volatile LONG g_initializeOnce = 0;
@@ -49,7 +53,12 @@ extern "C" __declspec(dllexport) void InitializeASI() {
         std::to_string(static_cast<unsigned long long>(processId)));
     bfc::Logger::Info("Initialization timestamp " + timestamp);
     bfc::Logger::Info(
-        "Phase: v0.5.1 safe runtime diagnostics (no full-module scans at init)");
+        "Phase: v0.8.0-dev second Edward gate "
+        "(native spawn refused, no factory proven)");
+    bfc::SpawnContract::LogGate();
+    bfc::PuppetLifecycle::LogGate();
+    bfc::BuilderPath::LogGate();
+    bfc::PlayerRetention::LogGate();
 
     // Prepare Winsock foundation only. Do not open host/client sessions yet.
     if (bfc::Network::Initialize()) {

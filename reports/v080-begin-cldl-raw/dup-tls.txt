@@ -1,0 +1,182 @@
+===== 0x42B85F0 =====
+0x42B85F0 push r15
+0x42B85F2 push r14
+0x42B85F4 push r13
+0x42B85F6 push r12
+0x42B85F8 push rsi
+0x42B85F9 push rdi
+0x42B85FA push rbp
+0x42B85FB push rbx
+0x42B85FC sub rsp,0A8
+0x42B8603 mov rax,[rip+5FFABF6] ;data=0xA2B3200
+0x42B860A xor rax,rsp
+0x42B860D mov [rsp+0A0],rax
+0x42B8615 mov eax,[rip+68D35A5] ;data=0xAB8BBC0
+0x42B861B mov rcx,gs:[58]
+0x42B8624 mov rcx,[rcx+rax*8]
+0x42B8628 mov rdi,[rcx+1C78]
+0x42B862F mov eax,[rdi+0BC0]
+0x42B8635 imul rbp,rax,178
+0x42B863C lea rbx,[rdi+rbp]
+0x42B8640 cmp byte ptr [rdi+rbp+161],0
+0x42B8648 mov rdx,rdi
+0x42B864B mov [rsp+88],rdi
+0x42B8653 je near ptr 00000001442B8718
+0x42B8659 lea r13,[rcx+1C78]
+0x42B8660 mov rcx,[rdi+rbp+164]
+0x42B8668 mov r8d,[rdi+rbp+16C]
+0x42B8670 mov edx,r8d
+0x42B8673 shl edx,4
+0x42B8676 add rdx,rcx
+0x42B8679 and r8d,0FFFFFFF
+0x42B8680 call 00000001442BCB30 ;call=0x42BCB30
+0x42B8685 mov byte ptr [rdi+rbp+162],1
+0x42B868D mov eax,[rbx+8]
+0x42B8690 shl eax,4
+0x42B8693 jne near ptr 00000001442B8FBE
+0x42B8699 mov r12d,[rdi+rbp+18]
+0x42B869E shl r12d,4
+0x42B86A2 jne near ptr 00000001442B8EBC
+0x42B86A8 lea r14,[rdi+rbp]
+0x42B86AC add r14,16C
+0x42B86B3 mov r15d,[rdi+rbp+28]
+0x42B86B8 shl r15d,4
+0x42B86BC mov rdx,rdi
+0x42B86BF jne near ptr 00000001442B8D8C
+0x42B86C5 lea rsi,[rdx+rbp]
+0x42B86C9 add rsi,162
+0x42B86D0 mov rax,[r14]
+0x42B86D3 mov ecx,eax
+0x42B86D5 and ecx,3FFFFFFF
+0x42B86DB cmp ecx,201
+0x42B86E1 jae near ptr 00000001442B98E1
+0x42B86E7 and rax,0FFFFFFFFC0000000
+0x42B86ED mov [r14],rax
+0x42B86F0 mov byte ptr [rsi],0
+0x42B86F3 and dword ptr [rbx+8],0C0000000
+0x42B86FA and dword ptr [rsi-14A],0C0000000
+0x42B8704 and dword ptr [rsi-13A],0C0000000
+0x42B870E mov rdx,[r13]
+0x42B8712 mov eax,[rdx+0BC0]
+===== 0x42EB100 =====
+0x42EB100 mov eax,[rip+68A0ABA] ;data=0xAB8BBC0
+0x42EB106 mov r8,gs:[58]
+0x42EB10F mov rax,[r8+rax*8]
+0x42EB113 mov rax,[rax+1C68]
+0x42EB11A test rax,rax
+0x42EB11D je short 00000001442EB157
+0x42EB11F mov r8,gs:[8]
+0x42EB128 mov r9,gs:[10]
+0x42EB131 mov r10,rcx
+0x42EB134 sub r10,r9
+0x42EB137 not r9
+0x42EB13A add r9,r8
+0x42EB13D cmp r10,r9
+0x42EB140 jbe short 00000001442EB15A
+0x42EB142 mov r9,[rax+30]
+0x42EB146 cmp r9,rcx
+0x42EB149 ja short 00000001442EB157
+0x42EB14B mov r8d,[rax+38]
+0x42EB14F add r9,r8
+0x42EB152 cmp r9,rcx
+0x42EB155 ja short 00000001442EB15E
+0x42EB157 xor eax,eax
+0x42EB159 ret
+===== 0x478F5B0 =====
+0x478F5B0 push r15
+0x478F5B2 push r14
+0x478F5B4 push rsi
+0x478F5B5 push rdi
+0x478F5B6 push rbp
+0x478F5B7 push rbx
+0x478F5B8 sub rsp,28
+0x478F5BC mov r9,rdx
+0x478F5BF mov edx,[rcx+20]
+0x478F5C2 cmp dl,2
+0x478F5C5 jae near ptr 000000014478F67A
+0x478F5CB cmp dl,1
+0x478F5CE jne near ptr 000000014478F6E9
+0x478F5D4 add rcx,10
+0x478F5D8 mov rcx,[rcx]
+0x478F5DB mov eax,[rip+63FC5DF] ;data=0xAB8BBC0
+0x478F5E1 mov r8,gs:[58]
+0x478F5EA mov r8,[r8+rax*8]
+0x478F5EE movsxd rax,dword ptr [rcx+8]
+0x478F5F2 sar rax,1F
+0x478F5F6 or rax,[r8+1C88]
+0x478F5FD and rax,[rcx]
+0x478F600 je short 000000014478F649
+0x478F602 movzx ecx,dh
+0x478F605 mov rsi,[rax+rcx*8+10]
+0x478F60A lea rcx,[rip+67E45C7] ;data=0xAF73BD8
+0x478F611 cmp rsi,rcx
+0x478F614 jne short 000000014478F658
+0x478F616 mov eax,[rip+63FC5A4] ;data=0xAB8BBC0
+0x478F61C mov rdx,gs:[58]
+0x478F625 mov rdx,[rdx+rax*8]
+0x478F629 movsxd rax,dword ptr [rsi+8]
+0x478F62D sar rax,1F
+0x478F631 or rax,[rdx+1C88]
+0x478F638 and rax,[rsi]
+0x478F63B cmp rsi,rcx
+0x478F63E jne near ptr 000000014478F72D
+0x478F644 test rax,rax
+0x478F647 jne short 000000014478F65F
+0x478F649 xor eax,eax
+0x478F64B add rsp,28
+0x478F64F pop rbx
+0x478F650 pop rbp
+0x478F651 pop rdi
+0x478F652 pop rsi
+0x478F653 pop r14
+0x478F655 pop r15
+0x478F657 ret
+===== 0x42EB170 =====
+0x42EB170 push r15
+0x42EB172 push r14
+0x42EB174 push r12
+0x42EB176 push rsi
+0x42EB177 push rdi
+0x42EB178 push rbp
+0x42EB179 push rbx
+0x42EB17A sub rsp,40
+0x42EB17E mov rax,[rip+5FC807B] ;data=0xA2B3200
+0x42EB185 xor rax,rsp
+0x42EB188 mov [rsp+38],rax
+0x42EB18D mov rsi,[rcx]
+0x42EB190 test rsi,rsi
+0x42EB193 jne near ptr 00000001442EB21D
+0x42EB199 mov edi,[rcx+8]
+0x42EB19C cmp r9d,4000
+0x42EB1A3 jae near ptr 00000001442EB36B
+0x42EB1A9 movzx ebx,byte ptr [rsp+0C8]
+0x42EB1B1 movzx ebp,byte ptr [rsp+0B0]
+0x42EB1B9 cmp r8d,4000
+0x42EB1C0 jae near ptr 00000001442EB3DB
+0x42EB1C6 and edi,0C0000000
+0x42EB1CC shl r9d,10
+0x42EB1D0 and r9d,3FFF0000
+0x42EB1D7 and r8d,3FFF
+0x42EB1DE or r8d,r9d
+0x42EB1E1 movzx eax,bpl
+0x42EB1E5 shl eax,0E
+0x42EB1E8 or eax,r8d
+0x42EB1EB movzx r8d,bl
+0x42EB1EF shl r8d,0F
+0x42EB1F3 or r8d,eax
+0x42EB1F6 or r8d,edi
+0x42EB1F9 mov [rcx],rdx
+0x42EB1FC mov [rcx+8],r8d
+0x42EB200 mov rcx,[rsp+38]
+0x42EB205 xor rcx,rsp
+0x42EB208 call 0000000145014570 ;call=0x5014570
+0x42EB20D nop
+0x42EB20E add rsp,40
+0x42EB212 pop rbx
+0x42EB213 pop rbp
+0x42EB214 pop rdi
+0x42EB215 pop rsi
+0x42EB216 pop r12
+0x42EB218 pop r14
+0x42EB21A pop r15
+0x42EB21C ret

@@ -1,0 +1,120 @@
+===== FOLLOW BeginCand 0x5001598 =====
+exeSha256=19920F34BB2FAC814023EE3C27F0CECA1872E80A2AAFB37C092C419FFF77CC0D
+--- leaf @0x5001598 ---
+0x5001598 push rbx
+0x500159A sub rsp,20
+0x500159E cmp byte ptr [rip+5B86123],0
+0x50015A5 mov bl,cl
+0x50015A7 je short 00000001450015AD
+0x50015A9 test dl,dl
+0x50015AB jne short 00000001450015B9
+0x50015AD call 000000014530A77C  ;call=0x530A77C
+0x50015B2 mov cl,bl
+0x50015B4 call 0000000145307784  ;call=0x5307784
+0x50015B9 mov al,1
+0x50015BB add rsp,20
+0x50015BF pop rbx
+0x50015C0 ret
+0x50015C1 int 3
+callers=1
+site=0x5305D2F func=0x5305C10 begin10=True dup=0->0 end=0->0 build=0->0
+--- caller @0x5305D2F ---
+0x5305CFF sbb [rdx],al
+0x5305D01 add [rbx+rcx*4-35],al
+0x5305D05 mov r8,rax
+0x5305D08 xor edx,edx
+0x5305D0A lea rcx,[rip-5305D11]
+0x5305D11 call 000000014574ECE0  ;call=0x574ECE0
+0x5305D16 mov ebx,eax
+0x5305D18 call 000000014513C2E8  ;call=0x513C2E8
+0x5305D1D test al,al
+0x5305D1F je short 0000000145305D71
+0x5305D21 test dil,dil
+0x5305D24 jne short 0000000145305D2B
+0x5305D26 call 000000014532199C  ;call=0x532199C
+0x5305D2B xor edx,edx
+0x5305D2D mov cl,1
+0x5305D2F call 0000000145001598  ;call=0x5001598
+0x5305D34 mov eax,ebx
+0x5305D36 jmp short 0000000145305D51
+0x5305D38 mov ebx,eax
+0x5305D3A call 000000014513C2E8  ;call=0x513C2E8
+0x5305D3F test al,al
+0x5305D41 je short 0000000145305D79
+0x5305D43 cmp byte ptr [rsp+20],0
+0x5305D48 jne short 0000000145305D4F
+0x5305D4A call 00000001453219AC  ;call=0x53219AC
+0x5305D4F mov eax,ebx
+0x5305D51 mov rbx,[rsp+40]
+0x5305D56 add rsp,30
+0x5305D5A pop rdi
+0x5305D5B ret
+0x5305D5C mov ecx,7
+0x5305D61 call 000000014513C354  ;call=0x513C354
+0x5305D66 nop
+0x5305D67 mov ecx,7
+0x5305D6C call 000000014513C354  ;call=0x513C354
+0x5305D71 mov ecx,ebx
+0x5305D73 call 0000000145321984  ;call=0x5321984
+0x5305D78 nop
+0x5305D79 mov ecx,ebx
+0x5305D7B call 0000000145321990  ;call=0x5321990
+0x5305D80 nop
+0x5305D81 int 3
+callersBegin10=1 withDup=0 withEnd=0 withBuild=0
+
+===== LEAF INTERNAL CALLEES =====
+callee=0x530A77C
+--- inner @0x530A77C ---
+0x530A77C sub rsp,28
+0x530A780 test cl,cl
+0x530A782 je short 000000014530A79A
+0x530A784 cmp qword ptr [rip+58D2404],0
+0x530A78C je short 000000014530A793
+0x530A78E call 00000001453309B4  ;call=0x53309B4
+0x530A793 mov al,1
+0x530A795 add rsp,28
+0x530A799 ret
+0x530A79A lea rdx,[rip+3E1A0DF]
+0x530A7A1 lea rcx,[rip+3E19FD8]
+0x530A7A8 add rsp,28
+0x530A7AC jmp near ptr 000000014534213C
+0x530A7B1 int 3
+callee=0x5307784
+--- inner @0x5307784 ---
+0x5307784 sub rsp,28
+0x5307788 test cl,cl
+0x530778A jne short 0000000145307796
+0x530778C call 000000014533B18C  ;call=0x533B18C
+0x5307791 call 000000014533E5B8  ;call=0x533E5B8
+0x5307796 mov al,1
+0x5307798 add rsp,28
+0x530779C ret
+0x530779D int 3
+
+===== COMPANION 0x513C2E8 =====
+--- companion @0x513C2E8 ---
+0x513C2E8 sub rsp,28
+0x513C2EC xor ecx,ecx
+0x513C2EE call qword ptr [rip+510CCA4]
+0x513C2F4 test rax,rax
+0x513C2F7 je short 000000014513C332
+0x513C2F9 mov ecx,5A4D
+0x513C2FE cmp [rax],cx
+0x513C301 jne short 000000014513C332
+0x513C303 movsxd rcx,dword ptr [rax+3C]
+0x513C307 add rcx,rax
+0x513C30A cmp dword ptr [rcx],4550
+0x513C310 jne short 000000014513C332
+0x513C312 mov eax,20B
+0x513C317 cmp [rcx+18],ax
+0x513C31B jne short 000000014513C332
+0x513C31D cmp dword ptr [rcx+84],0E
+0x513C324 jbe short 000000014513C332
+0x513C326 cmp dword ptr [rcx+0F8],0
+0x513C32D setne al
+0x513C330 jmp short 000000014513C334
+0x513C332 xor al,al
+0x513C334 add rsp,28
+0x513C338 ret
+0x513C339 int 3

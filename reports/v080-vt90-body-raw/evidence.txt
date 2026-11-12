@@ -1,0 +1,1115 @@
+===== v0.8.0 Agent1 vt+0x90 body xref =====
+exeSha256=19920F34BB2FAC814023EE3C27F0CECA1872E80A2AAFB37C092C419FFF77CC0D
+primary=0x1F75EA7 sibling=0x44A8A5 loadAt=0x1F75E9F
+callEngine=off
+
+===== PRIMARY WINDOW (aligned) =====
+0x1F75E70 push rsi
+0x1F75E71 push rdi
+0x1F75E72 push rbx
+0x1F75E73 sub rsp,30
+0x1F75E77 mov rsi,rdx
+0x1F75E7A mov rax,[rip+833D37F]
+0x1F75E81 xor rax,rsp
+0x1F75E84 mov [rsp+28],rax
+0x1F75E89 mov rax,[rcx+8]
+0x1F75E8D mov rax,[rax+20]
+0x1F75E91 test byte ptr [rax+0B],80
+0x1F75E95 je short 0000000141F75EDB
+0x1F75E97 mov rcx,[rax]
+0x1F75E9A test rcx,rcx
+0x1F75E9D je short 0000000141F75EDB
+0x1F75E9F mov rax,[rcx]
+0x1F75EA2 xor edx,edx
+0x1F75EA4 xor r8d,r8d
+0x1F75EA7 call qword ptr [rax+90]
+0x1F75EAD test rax,rax
+0x1F75EB0 je short 0000000141F75EDB
+0x1F75EB2 mov rdi,rax
+0x1F75EB5 mov rbx,[rip+971C044]
+0x1F75EBC mov rcx,rax
+0x1F75EBF xor edx,edx
+0x1F75EC1 call 0000000140BF3100  ;call=0xBF3100
+0x1F75EC6 lea rdx,[rip-15C0C4D]
+0x1F75ECD mov rcx,rbx
+0x1F75ED0 mov r8,rdi
+0x1F75ED3 mov r9,rax
+0x1F75ED6 call 0000000140BF2EF0  ;call=0xBF2EF0
+0x1F75EDB lea rdx,[rsp+24]
+0x1F75EE0 mov dword ptr [rdx],0
+0x1F75EE6 mov rcx,rsi
+0x1F75EE9 call 000000014044B210  ;call=0x44B210
+0x1F75EEE mov rcx,[rsp+28]
+0x1F75EF3 xor rcx,rsp
+0x1F75EF6 call 0000000145014570  ;call=0x5014570
+0x1F75EFB mov rax,rsi
+0x1F75EFE add rsp,30
+0x1F75F02 pop rbx
+0x1F75F03 pop rdi
+0x1F75F04 pop rsi
+0x1F75F05 ret
+0x1F75F06 int 3
+===== SIBLING WINDOW =====
+0x44A880 mov rax,[rdi+140]
+0x44A887 mov rax,[rax+8]
+0x44A88B mov rax,[rax+20]
+0x44A88F test byte ptr [rax+0B],80
+0x44A893 je short 000000014044A8D9
+0x44A895 mov rcx,[rax]
+0x44A898 test rcx,rcx
+0x44A89B je short 000000014044A8D9
+0x44A89D mov rax,[rcx]
+0x44A8A0 xor edx,edx
+0x44A8A2 xor r8d,r8d
+0x44A8A5 call qword ptr [rax+90]
+0x44A8AB test rax,rax
+0x44A8AE je short 000000014044A8D9
+0x44A8B0 mov rbx,rax
+0x44A8B3 mov r14,[rip+0B247646]
+0x44A8BA mov rcx,rax
+0x44A8BD xor edx,edx
+0x44A8BF call 0000000140BF3100  ;call=0xBF3100
+0x44A8C4 lea rdx,[rip+56A9B5]
+0x44A8CB mov rcx,r14
+0x44A8CE mov r8,rbx
+0x44A8D1 mov r9,rax
+0x44A8D4 call 0000000140BF2EF0  ;call=0xBF2EF0
+0x44A8D9 lea rdx,[rsp+2C]
+0x44A8DE mov dword ptr [rdx],0
+0x44A8E4 lea rbx,[rsp+2B]
+0x44A8E9 mov rcx,rbx
+0x44A8EC call 000000014044B210  ;call=0x44B210
+0x44A8F1 mov al,[rbx]
+0x44A8F3 test bpl,bpl
+0x44A8F6 jne short 000000014044A968
+0x44A8F8 mov [rsi],al
+0x44A8FA jmp near ptr 000000014044A6FC
+0x44A8FF mov rax,gs:[30]
+0x44A908 mov eax,[rax+48]
+0x44A90B cmp eax,[rdi+0C]
+0x44A90E je near ptr 000000014044A6EB
+
+===== 0xBF3100 (return consumer; not factory) =====
+0xBF3100 jmp near ptr 000000014E8C71F0
+0xBF3105 xchg dh,bh
+0xBF3107 adc [rbx-1C],edi
+0xBF310A jnp near ptr 0000000140EAAB53
+0xBF3111 jrcxz 0000000140BF30B3
+0xBF3113 jb near ptr 00000001401D0FAC
+0xBF3119 pop rbx
+0xBF311A nop
+0xBF311B retf 129
+0xBF311E jl near ptr 000000013BDEA112
+0xBF3124 xlatb
+0xBF3125 nop
+0xBF3126 add r13b,[rbx+364FEBCC]
+0xBF312D out dx,eax
+0xBF312E cmp esp,edx
+0xBF3130 or al,84
+0xBF3132 jl near ptr 0000000140F4B14D
+0xBF3138 or ch,cl
+0xBF313A adc [rbx+12],ecx
+0xBF313D add ah,al
+0xBF313F in eax,dx
+0xBF3140 or edi,[rbp+44E9366E]
+BF3100 size=0 alloc=False retRax=False
+
+===== vt+0x90 SAVED-RAX → Build r8 (3-arg, no r9) =====
+hits=0
+
+===== CANDIDATE vt+0x90 BODIES (rdata) =====
+vtablesScanned=911 uniqueSlot90=321
+body=0x5132180 score=5 size=277 alloc=True retRax=True uses0=True nVtbl=10 sampleVtbl=0x9051AE8
+0x5132180 push rdi
+0x5132182 sub rsp,30
+0x5132186 mov rdi,rcx
+0x5132189 add rcx,0D78
+0x5132190 call 0000000145139A70  ;call=0x5139A70
+0x5132195 mov rax,[rdi+4B8]
+0x513219C test rax,rax
+0x513219F je near ptr 0000000145132283
+0x51321A5 mov [rsp+40],rbx
+0x51321AA mov rcx,rdi
+0x51321AD mov rbx,[rax+200]
+0x51321B4 mov [rsp+48],rbp
+0x51321B9 mov rbp,[rax+120]
+0x51321C0 mov [rsp+50],rsi
+0x51321C5 mov rsi,[rax+118]
+0x51321CC mov [rsp+28],r14
+0x51321D1 mov r14,[rax+130]
+0x51321D8 mov [rsp+20],r15
+0x51321DD mov r15,[rax+128]
+0x51321E4 call 0000000145132440  ;call=0x5132440
+0x51321E9 mov rcx,[rdi+4B8]
+0x51321F0 xor edx,edx
+0x51321F2 mov r8d,208
+0x51321F8 call 0000000145352080  ;call=0x5352080
+0x51321FD mov rax,[rdi+4B8]
+0x5132204 mov [rax+200],rbx
+0x513220B cmp dword ptr [rdi+38],0
+0x513220F mov rbx,[rsp+40]
+0x5132214 je short 0000000145132228
+0x5132216 mov rax,[rdi+4B8]
+0x513221D mov qword ptr [rax+100],0FF
+body=0x513DE80 score=5 size=316 alloc=True retRax=True uses0=True nVtbl=1 sampleVtbl=0x9080F68
+0x513DE80 mov [rsp+8],rbx
+0x513DE85 mov [rsp+10],rsi
+0x513DE8A push rdi
+0x513DE8B sub rsp,20
+0x513DE8F mov edi,r8d
+0x513DE92 mov rsi,rdx
+0x513DE95 mov rbx,rcx
+0x513DE98 call 000000014513E490  ;call=0x513E490
+0x513DE9D mov [rbx+70],edi
+0x513DEA0 lea r8,[rip+50F8F49]
+0x513DEA7 mov rax,[rsi]
+0x513DEAA mov edx,edi
+0x513DEAC shl rdx,3
+0x513DEB0 mov r9d,0FE
+0x513DEB6 mov rcx,rsi
+0x513DEB9 call qword ptr [rax+8]
+0x513DEBC mov [rbx+58],rax
+0x513DEC0 test rax,rax
+0x513DEC3 je near ptr 000000014513DFA7
+0x513DEC9 mov r8d,[rbx+70]
+0x513DECD xor edx,edx
+0x513DECF shl r8d,3
+0x513DED3 mov rcx,rax
+0x513DED6 call 0000000145352080  ;call=0x5352080
+0x513DEDB mov ecx,[rbx+2C]
+0x513DEDE test ecx,ecx
+0x513DEE0 je near ptr 000000014513DF75
+0x513DEE6 imul ecx,[rbx+70]
+0x513DEEA lea r8,[rip+50F8EFF]
+0x513DEF1 mov rax,[rsi]
+0x513DEF4 mov r9d,104
+0x513DEFA mov edx,ecx
+0x513DEFC mov rcx,rsi
+0x513DEFF shl rdx,2
+0x513DF03 call qword ptr [rax+8]
+0x513DF06 mov [rbx+60],rax
+body=0x520A490 score=5 size=71 alloc=True retRax=True uses0=True nVtbl=3 sampleVtbl=0x9080FA8
+0x520A490 push rbx
+0x520A492 sub rsp,20
+0x520A496 inc dword ptr [rcx+8]
+0x520A499 mov rbx,rcx
+0x520A49C cmp dword ptr [rcx+8],2
+0x520A4A0 ja short 000000014520A4D1
+0x520A4A2 mov rax,[rcx]
+0x520A4A5 call qword ptr [rax+40]
+0x520A4A8 xor r8d,r8d
+0x520A4AB mov edx,r8d
+0x520A4AE cmp [rbx+0C],edx
+0x520A4B1 jbe short 000000014520A4D1
+0x520A4B3 nop dword ptr [rax]
+0x520A4B7 nop word ptr [rax+rax]
+0x520A4C0 mov rax,[rbx+10]
+0x520A4C4 mov ecx,edx
+0x520A4C6 inc edx
+0x520A4C8 mov [rax+rcx*4],r8d
+0x520A4CC cmp edx,[rbx+0C]
+0x520A4CF jb short 000000014520A4C0
+0x520A4D1 add rsp,20
+0x520A4D5 pop rbx
+0x520A4D6 ret
+0x520A4D7 int 3
+body=0x503CCF0 score=5 size=111 alloc=True retRax=True uses0=True nVtbl=4 sampleVtbl=0x908FF08
+0x503CCF0 mov [rsp+8],rbx
+0x503CCF5 mov [rsp+10],rsi
+0x503CCFA push rdi
+0x503CCFB sub rsp,20
+0x503CCFF mov rax,[rcx+28]
+0x503CD03 mov rdi,r8
+0x503CD06 mov rsi,rdx
+0x503CD09 mov rbx,rcx
+0x503CD0C test rax,rax
+0x503CD0F jne short 000000014503CD5F
+0x503CD11 call 0000000144F81310  ;call=0x4F81310
+0x503CD16 mov [rbx+28],rax
+0x503CD1A test rax,rax
+0x503CD1D jne short 000000014503CD5F
+0x503CD1F call 00000001450140B0  ;call=0x50140B0
+0x503CD24 lea r8,[rip+51B6145]
+0x503CD2B mov edx,3BD
+0x503CD30 lea rcx,[rip+51DD569]
+0x503CD37 call 00000001450141C0  ;call=0x50141C0
+0x503CD3C xor r8d,r8d
+0x503CD3F mov edx,0C0100
+0x503CD44 lea ecx,[r8+10]
+0x503CD48 call 00000001450142C0  ;call=0x50142C0
+0x503CD4D xor eax,eax
+0x503CD4F mov rbx,[rsp+30]
+0x503CD54 mov rsi,[rsp+38]
+0x503CD59 add rsp,20
+0x503CD5D pop rdi
+0x503CD5E ret
+0x503CD5F mov r8,rax
+0x503CD62 mov edx,edi
+0x503CD64 mov rcx,rsi
+body=0x52F4D10 score=5 size=214 alloc=True retRax=True uses0=True nVtbl=4 sampleVtbl=0x911B478
+0x52F4D10 push rbx
+0x52F4D12 sub rsp,20
+0x52F4D16 mov eax,[rcx+40]
+0x52F4D19 mov r9,r8
+0x52F4D1C dec eax
+0x52F4D1E lea r8,[rcx+0C0]
+0x52F4D25 mov [rcx+0B0],r8
+0x52F4D2C mov r10,rdx
+0x52F4D2F mov rbx,rcx
+0x52F4D32 cmp eax,1
+0x52F4D35 ja short 00000001452F4D6A
+0x52F4D37 test byte ptr [rcx+6C],2
+0x52F4D3B jne short 00000001452F4D6A
+0x52F4D3D lea edx,[r9*8]
+0x52F4D45 mov rcx,r10
+0x52F4D48 call 000000014238D2D0  ;call=0x238D2D0
+0x52F4D4D mov r8d,eax
+0x52F4D50 lea rdx,[rip-2F684F7]
+0x52F4D57 lea rax,[rip-2F6BF4E]
+0x52F4D5E xor ecx,ecx
+0x52F4D60 cmp dword ptr [rbx+40],2
+0x52F4D64 mov [rbx+30],rax
+0x52F4D68 jmp short 00000001452F4DA5
+0x52F4D6A lea edx,[r9*8]
+0x52F4D72 mov rcx,r10
+0x52F4D75 call 000000014238D350  ;call=0x238D350
+0x52F4D7A mov r8d,eax
+0x52F4D7D lea rax,[rip-2F6BFC4]
+0x52F4D84 mov [rbx+30],rax
+0x52F4D88 mov eax,[rbx+40]
+0x52F4D8B cmp eax,2
+0x52F4D8E jne short 00000001452F4D99
+0x52F4D90 lea rcx,[rip-2F68537]
+0x52F4D97 jmp short 00000001452F4DA9
+0x52F4D99 xor ecx,ecx
+0x52F4D9B lea rdx,[rip-2F6AF32]
+body=0x510D760 score=4 size=61 alloc=True retRax=True uses0=False nVtbl=25 sampleVtbl=0x9050E88
+0x510D760 add edx,0FFFFFFFA
+0x510D763 cmp edx,49
+0x510D766 ja near ptr 000000014510D80D
+0x510D76C movsxd rax,edx
+0x510D76F lea r9,[rip-510D776]
+0x510D776 movzx eax,byte ptr [r9+rax+510D834]
+0x510D77F mov edx,[r9+rax*4+510D810]
+0x510D787 add rdx,r9
+0x510D78A jmp rdx
+0x510D78C mov rax,[rcx+150]
+0x510D793 mov [rax+10],r8
+0x510D797 mov eax,1
+0x510D79C ret
+0x510D79D mov [rcx+210],r8
+0x510D7A4 mov eax,1
+body=0x5010710 score=4 size=346 alloc=True retRax=True uses0=False nVtbl=1 sampleVtbl=0x9071C68
+0x5010710 mov rax,rsp
+0x5010713 push rbx
+0x5010714 sub rsp,60
+0x5010718 cmp dword ptr [rcx+124],0
+0x501071F mov rbx,rcx
+0x5010722 mov [rax-28],r15
+0x5010726 mov r15d,[rdx]
+0x5010729 jbe near ptr 00000001450107EF
+0x501072F mov [rax+10],rbp
+0x5010733 mov [rax+18],rsi
+0x5010737 mov [rax-10],rdi
+0x501073B lea rdi,[rcx+44]
+0x501073F mov [rax-18],r12
+0x5010743 xor r12d,r12d
+0x5010746 mov [rax-20],r14
+0x501074A mov ebp,r12d
+0x501074D movaps [rax-38],xmm6
+0x5010751 mov esi,r12d
+0x5010754 movaps [rax-48],xmm7
+0x5010758 xorps xmm6,xmm6
+0x501075B movss xmm7,dword ptr [rcx+38]
+0x5010760 lea r14d,[r12+7]
+0x5010765 divss xmm7,dword ptr [rcx+3C]
+0x501076A nop word ptr [rax+rax]
+0x5010770 mov rax,[rbx+8]
+0x5010774 cmp [rsi+rax+108],r12b
+0x501077C je short 00000001450107B0
+0x501077E lea rcx,[rax+8]
+0x5010782 movaps xmm1,xmm7
+0x5010785 mulss xmm1,dword ptr [rbx+34]
+0x501078A add rcx,rbp
+0x501078D cmp [rcx],r12
+0x5010790 je short 00000001450107B0
+0x5010792 inc dword ptr [rdi]
+0x5010794 lea r9,[rsp+70]
+0x5010799 mov r8,rdi
+body=0x5081FE0 score=4 size=76 alloc=True retRax=True uses0=False nVtbl=1 sampleVtbl=0x907BC90
+0x5081FE0 mov [rsp+8],rcx
+0x5081FE5 push rbx
+0x5081FE6 push rsi
+0x5081FE7 push rdi
+0x5081FE8 push r12
+0x5081FEA push r13
+0x5081FEC sub rsp,50
+0x5081FF0 mov rbx,[rdx+10]
+0x5081FF4 mov r12,r9
+0x5081FF7 mov r13,r8
+0x5081FFA mov rdi,rdx
+0x5081FFD mov rsi,rcx
+0x5082000 cmp byte ptr [rbx+61],0
+0x5082004 je short 000000014508202C
+0x5082006 mov rax,[rsp+0A0]
+0x508200E xor edi,edi
+0x5082010 mov [rax],rdi
+0x5082013 mov rax,[rsp+0A8]
+0x508201B mov byte ptr [rax],1
+0x508201E xor eax,eax
+0x5082020 add rsp,50
+0x5082024 pop r13
+0x5082026 pop r12
+0x5082028 pop rdi
+0x5082029 pop rsi
+0x508202A pop rbx
+0x508202B ret
+0x508202C mov [rsp+90],rbp
+body=0x51FC1D0 score=4 size=46 alloc=True retRax=True uses0=False nVtbl=3 sampleVtbl=0x907D9F0
+0x51FC1D0 mov rax,rsp
+0x51FC1D3 push rbx
+0x51FC1D4 push rdi
+0x51FC1D5 sub rsp,98
+0x51FC1DC xor edi,edi
+0x51FC1DE mov rbx,rcx
+0x51FC1E1 mov [rax+8],edi
+0x51FC1E4 mov [rax+18],rdi
+0x51FC1E8 cmp [rcx+310],rdi
+0x51FC1EF je short 00000001451FC1FE
+0x51FC1F1 lea eax,[rdi+1]
+0x51FC1F4 add rsp,98
+0x51FC1FB pop rdi
+0x51FC1FC pop rbx
+0x51FC1FD ret
+0x51FC1FE mov eax,[rcx+0BE4]
+0x51FC204 lea r9,[rsp+0C8]
+body=0x52F5070 score=4 size=174 alloc=True retRax=True uses0=False nVtbl=2 sampleVtbl=0x911B530
+0x52F5070 mov r9,rcx
+0x52F5073 mov rax,rcx
+0x52F5076 mov r8d,5
+0x52F507C nop dword ptr [rax]
+0x52F5080 lea rax,[rax+80]
+0x52F5087 movups xmm0,[rdx]
+0x52F508A lea rdx,[rdx+80]
+0x52F5091 movups [rax-80],xmm0
+0x52F5095 movups xmm1,[rdx-70]
+0x52F5099 movups [rax-70],xmm1
+0x52F509D movups xmm0,[rdx-60]
+0x52F50A1 movups [rax-60],xmm0
+0x52F50A5 movups xmm1,[rdx-50]
+0x52F50A9 movups [rax-50],xmm1
+0x52F50AD movups xmm0,[rdx-40]
+0x52F50B1 movups [rax-40],xmm0
+0x52F50B5 movups xmm1,[rdx-30]
+0x52F50B9 movups [rax-30],xmm1
+0x52F50BD movups xmm0,[rdx-20]
+0x52F50C1 movups [rax-20],xmm0
+0x52F50C5 movups xmm1,[rdx-10]
+0x52F50C9 movups [rax-10],xmm1
+0x52F50CD sub r8,1
+0x52F50D1 jne short 00000001452F5080
+0x52F50D3 movups xmm0,[rdx]
+0x52F50D6 movups [rax],xmm0
+0x52F50D9 movups xmm1,[rdx+10]
+0x52F50DD movups [rax+10],xmm1
+0x52F50E1 movups xmm0,[rdx+20]
+0x52F50E5 movups [rax+20],xmm0
+0x52F50E9 movups xmm1,[rdx+30]
+0x52F50ED movups [rax+30],xmm1
+0x52F50F1 movups xmm0,[rdx+40]
+0x52F50F5 movups [rax+40],xmm0
+0x52F50F9 mov rcx,[rdx+50]
+0x52F50FD mov [rax+50],rcx
+body=0x52F7A80 score=4 size=160 alloc=True retRax=True uses0=False nVtbl=9 sampleVtbl=0x911B6B8
+0x52F7A80 mov r9,rcx
+0x52F7A83 mov rax,rcx
+0x52F7A86 mov r8d,3
+0x52F7A8C nop dword ptr [rax]
+0x52F7A90 lea rax,[rax+80]
+0x52F7A97 movups xmm0,[rdx]
+0x52F7A9A lea rdx,[rdx+80]
+0x52F7AA1 movups [rax-80],xmm0
+0x52F7AA5 movups xmm1,[rdx-70]
+0x52F7AA9 movups [rax-70],xmm1
+0x52F7AAD movups xmm0,[rdx-60]
+0x52F7AB1 movups [rax-60],xmm0
+0x52F7AB5 movups xmm1,[rdx-50]
+0x52F7AB9 movups [rax-50],xmm1
+0x52F7ABD movups xmm0,[rdx-40]
+0x52F7AC1 movups [rax-40],xmm0
+0x52F7AC5 movups xmm1,[rdx-30]
+0x52F7AC9 movups [rax-30],xmm1
+0x52F7ACD movups xmm0,[rdx-20]
+0x52F7AD1 movups [rax-20],xmm0
+0x52F7AD5 movups xmm1,[rdx-10]
+0x52F7AD9 movups [rax-10],xmm1
+0x52F7ADD sub r8,1
+0x52F7AE1 jne short 00000001452F7A90
+0x52F7AE3 movups xmm0,[rdx]
+0x52F7AE6 movups [rax],xmm0
+0x52F7AE9 movups xmm1,[rdx+10]
+0x52F7AED movups [rax+10],xmm1
+0x52F7AF1 movups xmm0,[rdx+20]
+0x52F7AF5 movups [rax+20],xmm0
+0x52F7AF9 movups xmm1,[rdx+30]
+0x52F7AFD movups [rax+30],xmm1
+0x52F7B01 movups xmm0,[rdx+40]
+0x52F7B05 movups [rax+40],xmm0
+0x52F7B09 mov rcx,[rdx+50]
+0x52F7B0D mov [rax+50],rcx
+body=0x4F789D0 score=3 size=43 alloc=False retRax=True uses0=True nVtbl=1 sampleVtbl=0x90360C8
+0x4F789D0 push rbx
+0x4F789D2 sub rsp,20
+0x4F789D6 lea rax,[rip+40BD77B]
+0x4F789DD mov rbx,rcx
+0x4F789E0 mov [rcx],rax
+0x4F789E3 test dl,1
+0x4F789E6 je short 0000000144F789F2
+0x4F789E8 mov edx,8
+0x4F789ED call 00000001443F8CB0  ;call=0x43F8CB0
+0x4F789F2 mov rax,rbx
+0x4F789F5 add rsp,20
+0x4F789F9 pop rbx
+0x4F789FA ret
+0x4F789FB int 3
+body=0x4F78D20 score=3 size=43 alloc=False retRax=True uses0=True nVtbl=1 sampleVtbl=0x90360F8
+0x4F78D20 push rbx
+0x4F78D22 sub rsp,20
+0x4F78D26 lea rax,[rip+40BD41B]
+0x4F78D2D mov rbx,rcx
+0x4F78D30 mov [rcx],rax
+0x4F78D33 test dl,1
+0x4F78D36 je short 0000000144F78D42
+0x4F78D38 mov edx,48
+0x4F78D3D call 00000001443F8CB0  ;call=0x43F8CB0
+0x4F78D42 mov rax,rbx
+0x4F78D45 add rsp,20
+0x4F78D49 pop rbx
+0x4F78D4A ret
+0x4F78D4B int 3
+body=0x4F78AD0 score=3 size=56 alloc=False retRax=True uses0=True nVtbl=4 sampleVtbl=0x9036118
+0x4F78AD0 mov [rsp+8],rbx
+0x4F78AD5 push rdi
+0x4F78AD6 sub rsp,20
+0x4F78ADA mov rdi,rdx
+0x4F78ADD mov rbx,rcx
+0x4F78AE0 test rcx,rcx
+0x4F78AE3 je short 0000000144F78AF8
+0x4F78AE5 mov rax,[rcx]
+0x4F78AE8 xor edx,edx
+0x4F78AEA call qword ptr [rax]
+0x4F78AEC mov rax,[rdi]
+0x4F78AEF mov rdx,rbx
+0x4F78AF2 mov rcx,rdi
+0x4F78AF5 call qword ptr [rax+10]
+0x4F78AF8 mov rbx,[rsp+30]
+0x4F78AFD mov eax,1
+0x4F78B02 add rsp,20
+0x4F78B06 pop rdi
+0x4F78B07 ret
+0x4F78B08 int 3
+body=0x4F78B10 score=3 size=97 alloc=False retRax=True uses0=True nVtbl=1 sampleVtbl=0x9036120
+0x4F78B10 mov r9,rcx
+0x4F78B13 test rdx,rdx
+0x4F78B16 je short 0000000144F78B71
+0x4F78B18 cmp r8d,20
+0x4F78B1C jb short 0000000144F78B71
+0x4F78B1E movups xmm0,[rdx]
+0x4F78B21 lea rax,[rdx+20]
+0x4F78B25 xor r8d,r8d
+0x4F78B28 movups [rcx+8],xmm0
+0x4F78B2C movups xmm1,[rdx+10]
+0x4F78B30 movups [rcx+18],xmm1
+0x4F78B34 movzx edx,byte ptr [rax]
+0x4F78B37 mov [rcx+28],dl
+0x4F78B3A movzx ecx,byte ptr [rax+1]
+0x4F78B3E add rax,2
+0x4F78B42 mov [r9+29],cl
+0x4F78B46 test dl,dl
+0x4F78B48 je short 0000000144F78B6B
+0x4F78B4A lea rdx,[r9+2A]
+0x4F78B4E xchg ax,ax
+0x4F78B50 movzx ecx,word ptr [rax]
+0x4F78B53 lea rax,[rax+2]
+0x4F78B57 mov [rdx],cx
+0x4F78B5A lea rdx,[rdx+2]
+0x4F78B5E movzx ecx,byte ptr [r9+28]
+0x4F78B63 inc r8d
+0x4F78B66 cmp r8d,ecx
+0x4F78B69 jl short 0000000144F78B50
+0x4F78B6B mov eax,1
+0x4F78B70 ret
+0x4F78B71 mov eax,1F
+0x4F78B76 ret
+0x4F78B77 int 3
+body=0x4F791B0 score=3 size=43 alloc=False retRax=True uses0=True nVtbl=1 sampleVtbl=0x9036128
+0x4F791B0 push rbx
+0x4F791B2 sub rsp,20
+0x4F791B6 lea rax,[rip+40BCF9B]
+0x4F791BD mov rbx,rcx
+0x4F791C0 mov [rcx],rax
+0x4F791C3 test dl,1
+0x4F791C6 je short 0000000144F791D2
+0x4F791C8 mov edx,38
+0x4F791CD call 00000001443F8CB0  ;call=0x43F8CB0
+0x4F791D2 mov rax,rbx
+0x4F791D5 add rsp,20
+0x4F791D9 pop rbx
+0x4F791DA ret
+0x4F791DB int 3
+body=0x510C3B0 score=3 size=106 alloc=False retRax=True uses0=True nVtbl=24 sampleVtbl=0x9050ED8
+0x510C3B0 mov [rsp+8],rbx
+0x510C3B5 mov [rsp+10],rbp
+0x510C3BA mov [rsp+18],rsi
+0x510C3BF push rdi
+0x510C3C0 sub rsp,30
+0x510C3C4 mov rbx,rcx
+0x510C3C7 mov rdi,r9
+0x510C3CA xor ecx,ecx
+0x510C3CC mov rsi,r8
+0x510C3CF mov rbp,rdx
+0x510C3D2 call qword ptr [rip+513CF48]
+0x510C3D8 cmp dword ptr [rbx+1AC],0
+0x510C3DF je short 000000014510C3EB
+0x510C3E1 xor edx,edx
+0x510C3E3 mov rcx,rbx
+0x510C3E6 call 000000014510BD10  ;call=0x510BD10
+0x510C3EB mov rax,[rbx+8]
+0x510C3EF mov r9,rsi
+0x510C3F2 mov r8,rbp
+0x510C3F5 mov [rsp+20],rdi
+0x510C3FA mov edx,17
+0x510C3FF mov rcx,rbx
+0x510C402 call qword ptr [rax+70]
+0x510C405 mov rbx,[rsp+40]
+0x510C40A mov rbp,[rsp+48]
+0x510C40F mov rsi,[rsp+50]
+0x510C414 add rsp,30
+0x510C418 pop rdi
+0x510C419 ret
+0x510C41A int 3
+body=0x512F4D0 score=3 size=139 alloc=False retRax=True uses0=True nVtbl=14 sampleVtbl=0x9050F08
+0x512F4D0 mov [rsp+18],rbx
+0x512F4D5 mov [rsp+20],rsi
+0x512F4DA push rdi
+0x512F4DB sub rsp,40
+0x512F4DF mov rbx,rcx
+0x512F4E2 mov qword ptr [rsp+50],2
+0x512F4EB xor ecx,ecx
+0x512F4ED mov rax,[rbx+0C78]
+0x512F4F4 mov [rbx+1A4],ecx
+0x512F4FA test rax,rax
+0x512F4FD je near ptr 000000014512F5FF
+0x512F503 movzx r8d,byte ptr [rbx+1A9]
+0x512F50B mov rcx,rbx
+0x512F50E mov edx,[rbx+0C44]
+0x512F514 call qword ptr [rax+18]
+0x512F517 test eax,eax
+0x512F519 jne short 000000014512F55B
+0x512F51B call 00000001450140B0  ;call=0x50140B0
+0x512F520 lea r8,[rip+50C5B21]
+0x512F527 mov edx,58
+0x512F52C lea rcx,[rip+50ED60D]
+0x512F533 call 00000001450141C0  ;call=0x50141C0
+0x512F538 xor r8d,r8d
+0x512F53B mov edx,0C0103
+0x512F540 lea ecx,[r8+14]
+0x512F544 call 00000001450142C0  ;call=0x50142C0
+0x512F549 xor eax,eax
+0x512F54B mov rbx,[rsp+60]
+0x512F550 mov rsi,[rsp+68]
+0x512F555 add rsp,40
+0x512F559 pop rdi
+0x512F55A ret
+0x512F55B mov esi,1
+0x512F560 lea rdi,[rbx+1A8]
+body=0x502BBD0 score=3 size=208 alloc=False retRax=True uses0=True nVtbl=4 sampleVtbl=0x9072B18
+0x502BBD0 mov [rsp+18],rbx
+0x502BBD5 push rsi
+0x502BBD6 sub rsp,60
+0x502BBDA mov rax,[rdx+20]
+0x502BBDE mov rbx,rdx
+0x502BBE1 mov qword ptr [rsp+78],0
+0x502BBEA mov rsi,rcx
+0x502BBED test rax,rax
+0x502BBF0 je near ptr 000000014502BD20
+0x502BBF6 mov rdx,[rax+50]
+0x502BBFA test rdx,rdx
+0x502BBFD je near ptr 000000014502BD20
+0x502BC03 mov rax,[rbx+8]
+0x502BC07 mov [rsp+48],rdx
+0x502BC0C mov [rsp+70],rdi
+0x502BC11 mov ecx,[rax]
+0x502BC13 cmp ecx,40A
+0x502BC19 je short 000000014502BC37
+0x502BC1B cmp ecx,43F
+0x502BC21 je short 000000014502BC37
+0x502BC23 xor eax,eax
+0x502BC25 cmp ecx,40B
+0x502BC2B setne al
+0x502BC2E add eax,38
+0x502BC31 mov [rsp+40],eax
+0x502BC35 jmp short 000000014502BC3F
+0x502BC37 mov dword ptr [rsp+40],20
+0x502BC3F lea rdx,[rsp+78]
+0x502BC44 mov dword ptr [rsp+50],0
+0x502BC4C lea rcx,[rsp+40]
+0x502BC51 call 0000000144F7A210  ;call=0x4F7A210
+0x502BC56 movsxd rdi,eax
+0x502BC59 test eax,eax
+0x502BC5B jns short 000000014502BCA0
+0x502BC5D call 00000001450140B0  ;call=0x50140B0
+0x502BC62 lea r8,[rip+51E5197]
+body=0x5082350 score=3 size=20 alloc=False retRax=True uses0=True nVtbl=1 sampleVtbl=0x907BD78
+0x5082350 test r8d,r8d
+0x5082353 jne short 0000000145082361
+0x5082355 mov rax,[rdx+10]
+0x5082359 mov qword ptr [rax+30],0
+0x5082361 xor eax,eax
+0x5082363 ret
+0x5082364 int 3
+body=0x5088700 score=3 size=130 alloc=False retRax=True uses0=True nVtbl=1 sampleVtbl=0x907BDF0
+0x5088700 mov [rsp+8],rbx
+0x5088705 mov [rsp+10],rsi
+0x508870A push rdi
+0x508870B sub rsp,20
+0x508870F mov rsi,rdx
+0x5088712 lea rax,[rip+837]
+0x5088719 mov [rdx+4058],rax
+0x5088720 lea r8,[rip+5166779]
+0x5088727 mov r9d,58
+0x508872D lea rax,[rip+82C]
+0x5088734 mov [rdx+4060],rax
+0x508873B mov rdi,rcx
+0x508873E lea rcx,[rsi+4028]
+0x5088745 lea edx,[r9-29]
+0x5088749 call 0000000144F77380  ;call=0x4F77380
+0x508874E test eax,eax
+0x5088750 je short 00000001450887A3
+0x5088752 mov r8,[rsi+4048]
+0x5088759 mov rcx,rdi
+0x508875C test r8,r8
+0x508875F je short 0000000145088782
+0x5088761 lea rdx,[rip+5174CB8]
+0x5088768 call 0000000145080CD0  ;call=0x5080CD0
+0x508876D mov eax,3D
+0x5088772 mov rbx,[rsp+30]
+0x5088777 mov rsi,[rsp+38]
+0x508877C add rsp,20
+0x5088780 pop rdi
+0x5088781 ret
+0x5088782 lea rdx,[rip+51B19A7]
+0x5088789 call 0000000145080CD0  ;call=0x5080CD0
+body=0x51FC5B0 score=3 size=303 alloc=False retRax=True uses0=True nVtbl=3 sampleVtbl=0x907D9F8
+0x51FC5B0 push rbx
+0x51FC5B2 push rbp
+0x51FC5B3 push rsi
+0x51FC5B4 push rdi
+0x51FC5B5 push r14
+0x51FC5B7 sub rsp,120
+0x51FC5BE mov rax,[rip+50B6C3B]
+0x51FC5C5 xor rax,rsp
+0x51FC5C8 mov [rsp+110],rax
+0x51FC5D0 mov rax,[rcx+9D0]
+0x51FC5D7 mov r14,r9
+0x51FC5DA mov rdi,[rsp+170]
+0x51FC5E2 mov rbp,r8
+0x51FC5E5 mov rsi,rdx
+0x51FC5E8 mov rbx,rcx
+0x51FC5EB test byte ptr [rax+378],1
+0x51FC5F2 je near ptr 00000001451FC6DF
+0x51FC5F8 mov edx,1
+0x51FC5FD call 00000001451F70F0  ;call=0x51F70F0
+0x51FC602 test eax,eax
+0x51FC604 je near ptr 00000001451FC752
+0x51FC60A lea r9,[rsp+80]
+0x51FC612 mov r8d,80
+0x51FC618 lea rdx,[rsp+90]
+0x51FC620 mov rcx,rbx
+0x51FC623 call 0000000144FF9330  ;call=0x4FF9330
+0x51FC628 test eax,eax
+0x51FC62A je near ptr 00000001451FC752
+0x51FC630 mov rax,[rsp+80]
+0x51FC638 lea r9,[rsp+90]
+0x51FC640 mov dword ptr [rsp+78],1
+0x51FC648 xor edx,edx
+0x51FC64A mov qword ptr [rsp+70],30
+body=0x51FC480 score=3 size=295 alloc=False retRax=True uses0=True nVtbl=3 sampleVtbl=0x907DA08
+0x51FC480 push rbx
+0x51FC482 push rbp
+0x51FC483 push rsi
+0x51FC484 push rdi
+0x51FC485 push r14
+0x51FC487 sub rsp,0E0
+0x51FC48E mov rax,[rip+50B6D6B]
+0x51FC495 xor rax,rsp
+0x51FC498 mov [rsp+0D0],rax
+0x51FC4A0 mov rax,[rcx+2E0]
+0x51FC4A7 mov rsi,rdx
+0x51FC4AA mov edi,20
+0x51FC4AF mov r14,r9
+0x51FC4B2 mov rbp,r8
+0x51FC4B5 mov rbx,rcx
+0x51FC4B8 test dword ptr [rax+1C],200
+0x51FC4BF mov eax,0C
+0x51FC4C4 cmove edi,eax
+0x51FC4C7 xor edx,edx
+0x51FC4C9 call 00000001451F70F0  ;call=0x51F70F0
+0x51FC4CE test eax,eax
+0x51FC4D0 je near ptr 00000001451FC587
+0x51FC4D6 lea r9,[rsp+80]
+0x51FC4DE mov r8d,40
+0x51FC4E4 lea rdx,[rsp+90]
+0x51FC4EC mov rcx,rbx
+0x51FC4EF call 0000000144FF9330  ;call=0x4FF9330
+0x51FC4F4 test eax,eax
+0x51FC4F6 je near ptr 00000001451FC587
+0x51FC4FC mov rax,[rbx+9D0]
+0x51FC503 mov r8,rbp
+0x51FC506 mov dword ptr [rsp+78],1
+0x51FC50E mov rdx,rsi
+0x51FC511 mov [rsp+70],rdi
+0x51FC516 mov rcx,rbx
+0x51FC519 mov [rsp+68],r14
+body=0x512B0C0 score=3 size=106 alloc=False retRax=True uses0=True nVtbl=1 sampleVtbl=0x907F120
+0x512B0C0 push rbx
+0x512B0C2 sub rsp,20
+0x512B0C6 cmp dword ptr [rcx+38],0
+0x512B0CA mov rbx,rcx
+0x512B0CD je short 000000014512B12A
+0x512B0CF cmp dword ptr [rcx+4D0],0
+0x512B0D6 je short 000000014512B12A
+0x512B0D8 mov rax,[rcx+9D0]
+0x512B0DF movzx edx,byte ptr [rax+358]
+0x512B0E6 dec dl
+0x512B0E8 cmp dl,3
+0x512B0EB ja short 000000014512B12A
+0x512B0ED test r8d,r8d
+0x512B0F0 jne short 000000014512B12A
+0x512B0F2 call 00000001450140B0  ;call=0x50140B0
+0x512B0F7 lea r8,[rip+50D985A]
+0x512B0FE mov edx,6B9
+0x512B103 lea rcx,[rip+50F01A6]
+0x512B10A call 00000001450141C0  ;call=0x50141C0
+0x512B10F xor r9d,r9d
+0x512B112 mov rcx,rbx
+0x512B115 lea edx,[r9+6D]
+0x512B119 lea r8d,[r9+6E]
+0x512B11D call 00000001450000F0  ;call=0x50000F0
+0x512B122 xor eax,eax
+0x512B124 add rsp,20
+0x512B128 pop rbx
+0x512B129 ret
+0x512B12A mov rax,[rcx+9D0]
+0x512B131 test rax,rax
+body=0x512A630 score=3 size=176 alloc=False retRax=True uses0=True nVtbl=1 sampleVtbl=0x907F190
+0x512A630 push rbx
+0x512A632 sub rsp,20
+0x512A636 cmp dword ptr [rcx+38],0
+0x512A63A mov rbx,rcx
+0x512A63D jne near ptr 000000014512A6E0
+0x512A643 cmp qword ptr [rcx+0B60],0
+0x512A64B je near ptr 000000014512A6E0
+0x512A651 cmp qword ptr [rcx+0B58],0
+0x512A659 jbe near ptr 000000014512A6E0
+0x512A65F mov rdx,[rcx+0B70]
+0x512A666 test rdx,rdx
+0x512A669 je short 000000014512A6E0
+0x512A66B mov r8,[rcx+0B68]
+0x512A672 test r8,r8
+0x512A675 je short 000000014512A6E0
+0x512A677 mov rax,[rcx+2E0]
+0x512A67E test byte ptr [rax+1C],4
+0x512A682 jne short 000000014512A68A
+0x512A684 test byte ptr [rax+20],8
+0x512A688 je short 000000014512A6E0
+0x512A68A xor ecx,ecx
+0x512A68C nop dword ptr [rax]
+0x512A690 movzx eax,byte ptr [rdx]
+0x512A693 lea rdx,[rdx+1]
+0x512A697 test al,al
+0x512A699 je short 000000014512A6A3
+0x512A69B inc rcx
+0x512A69E cmp rcx,r8
+0x512A6A1 jb short 000000014512A690
+0x512A6A3 cmp rcx,r8
+0x512A6A6 jne short 000000014512A6E0
+0x512A6A8 call 00000001450140B0  ;call=0x50140B0
+0x512A6AD lea r8,[rip+50CE25C]
+0x512A6B4 mov edx,443
+0x512A6B9 lea rcx,[rip+50F0BF0]
+0x512A6C0 call 00000001450141C0  ;call=0x50141C0
+body=0x5205660 score=3 size=114 alloc=False retRax=True uses0=True nVtbl=1 sampleVtbl=0x907F268
+0x5205660 mov [rsp+8],rbx
+0x5205665 push rdi
+0x5205666 sub rsp,20
+0x520566A mov rax,[rcx+0A60]
+0x5205671 mov rdi,rdx
+0x5205674 mov rbx,rcx
+0x5205677 cmp qword ptr [rax+2C0],0
+0x520567F je near ptr 0000000145205711
+0x5205685 cmp qword ptr [rcx+240],0
+0x520568D je short 0000000145205699
+0x520568F cmp qword ptr [rcx+2C8],0
+0x5205697 jne short 0000000145205711
+0x5205699 mov edx,3374
+0x520569E mov r8d,2
+0x52056A4 mov rcx,rdi
+0x52056A7 call 000000014512ED50  ;call=0x512ED50
+0x52056AC test eax,eax
+0x52056AE je short 00000001452056D2
+0x52056B0 xor edx,edx
+0x52056B2 mov rcx,rdi
+0x52056B5 lea r8d,[rdx+2]
+0x52056B9 call 000000014512ED50  ;call=0x512ED50
+0x52056BE test eax,eax
+0x52056C0 je short 00000001452056D2
+0x52056C2 mov eax,1
+0x52056C7 mov rbx,[rsp+30]
+0x52056CC add rsp,20
+0x52056D0 pop rdi
+0x52056D1 ret
+0x52056D2 call 00000001450140B0  ;call=0x50140B0
+0x52056D7 lea r8,[rip+4FFD01A]
+body=0x512A800 score=3 size=41 alloc=False retRax=True uses0=True nVtbl=1 sampleVtbl=0x907F2A8
+0x512A800 cmp dword ptr [rcx+38],0
+0x512A804 jne short 000000014512A829
+0x512A806 test r8d,r8d
+0x512A809 jne short 000000014512A823
+0x512A80B mov rax,[rcx+9D0]
+0x512A812 cmp qword ptr [rax+348],0
+0x512A81A je short 000000014512A823
+0x512A81C mov [rcx+0BEC],r8d
+0x512A823 mov eax,1
+0x512A828 ret
+0x512A829 mov rdx,[rcx+8]
+0x512A82D mov rax,[rdx+0C0]
+body=0x512B180 score=3 size=106 alloc=False retRax=True uses0=True nVtbl=1 sampleVtbl=0x907F698
+0x512B180 push rbx
+0x512B182 sub rsp,20
+0x512B186 cmp dword ptr [rcx+38],0
+0x512B18A mov rbx,rcx
+0x512B18D je short 000000014512B1EA
+0x512B18F test r8d,r8d
+0x512B192 je short 000000014512B1EA
+0x512B194 mov rax,[rcx+0C80]
+0x512B19B test rax,rax
+0x512B19E je short 000000014512B1EA
+0x512B1A0 mov rax,[rax+288]
+0x512B1A7 cmp dword ptr [rax+2E0],0
+0x512B1AE jne short 000000014512B1EA
+0x512B1B0 call 00000001450140B0  ;call=0x50140B0
+0x512B1B5 lea r8,[rip+50DBE14]
+0x512B1BC mov edx,6D9
+0x512B1C1 lea rcx,[rip+50F00E8]
+0x512B1C8 call 00000001450141C0  ;call=0x50141C0
+0x512B1CD xor r9d,r9d
+0x512B1D0 mov r8d,136
+0x512B1D6 mov rcx,rbx
+0x512B1D9 lea edx,[r9+6D]
+0x512B1DD call 00000001450000F0  ;call=0x50000F0
+0x512B1E2 xor eax,eax
+0x512B1E4 add rsp,20
+0x512B1E8 pop rbx
+0x512B1E9 ret
+0x512B1EA mov eax,1
+0x512B1EF add rsp,20
+body=0x513DE30 score=3 size=72 alloc=False retRax=True uses0=True nVtbl=1 sampleVtbl=0x9080F60
+0x513DE30 mov rax,[rcx+78]
+0x513DE34 mov r10,rdx
+0x513DE37 sub r10,r8
+0x513DE3A test rax,rax
+0x513DE3D je short 000000014513DE46
+0x513DE3F add rax,r10
+0x513DE42 mov [rcx+78],rax
+0x513DE46 cmp qword ptr [rcx+50],0
+0x513DE4B je short 000000014513DE72
+0x513DE4D movzx eax,byte ptr [rcx+1C]
+0x513DE51 xor edx,edx
+0x513DE53 test eax,eax
+0x513DE55 je short 000000014513DE72
+0x513DE57 nop word ptr [rax+rax]
+0x513DE60 mov rax,[rcx+50]
+0x513DE64 add [rax+rdx*8],r10
+0x513DE68 inc edx
+0x513DE6A movzx eax,byte ptr [rcx+1C]
+0x513DE6E cmp edx,eax
+0x513DE70 jb short 000000014513DE60
+0x513DE72 mov eax,1
+0x513DE77 ret
+0x513DE78 int 3
+body=0x5171AA0 score=3 size=68 alloc=False retRax=True uses0=True nVtbl=1 sampleVtbl=0x908FB50
+0x5171AA0 sub rsp,28
+0x5171AA4 mov rax,[rcx+20]
+0x5171AA8 mov rcx,[rax+18]
+0x5171AAC test rcx,rcx
+0x5171AAF jne short 0000000145171AE4
+0x5171AB1 call 00000001450140B0  ;call=0x50140B0
+0x5171AB6 lea r8,[rip+5095973]
+0x5171ABD mov edx,1CA
+0x5171AC2 lea rcx,[rip+50AAC9F]
+0x5171AC9 call 00000001450141C0  ;call=0x50141C0
+0x5171ACE xor r8d,r8d
+0x5171AD1 lea edx,[r8+7C]
+0x5171AD5 lea ecx,[rdx-6C]
+0x5171AD8 call 00000001450142C0  ;call=0x50142C0
+0x5171ADD xor eax,eax
+0x5171ADF add rsp,28
+0x5171AE3 ret
+0x5171AE4 xor edx,edx
+0x5171AE6 add rsp,28
+0x5171AEA jmp near ptr 0000000145218040
+body=0x5173890 score=3 size=302 alloc=False retRax=True uses0=True nVtbl=1 sampleVtbl=0x908FEB8
+0x5173890 push rsi
+0x5173892 push rdi
+0x5173893 push r13
+0x5173895 push r14
+0x5173897 push r15
+0x5173899 sub rsp,0B0
+0x51738A0 mov rax,[rip+513F959]
+0x51738A7 xor rax,rsp
+0x51738AA mov [rsp+90],rax
+0x51738B2 xor eax,eax
+0x51738B4 mov rsi,rdx
+0x51738B7 mov edi,eax
+0x51738B9 mov [rsp+30],rax
+0x51738BE mov r15d,eax
+0x51738C1 mov [rsp+38],rax
+0x51738C6 mov r14,rcx
+0x51738C9 call 000000014503B890  ;call=0x503B890
+0x51738CE mov rcx,r14
+0x51738D1 call 0000000144F7AA50  ;call=0x4F7AA50
+0x51738D6 mov [rsp+48],rax
+0x51738DB mov r13,rax
+0x51738DE test rax,rax
+0x51738E1 jne short 0000000145173916
+0x51738E3 call 00000001450140B0  ;call=0x50140B0
+0x51738E8 lea r8,[rip+5097DB1]
+0x51738EF mov edx,344
+0x51738F4 lea rcx,[rip+50AAAED]
+0x51738FB call 00000001450141C0  ;call=0x50141C0
+0x5173900 lea edx,[r15+71]
+0x5173904 xor r8d,r8d
+0x5173907 lea ecx,[rdx-61]
+0x517390A call 00000001450142C0  ;call=0x50142C0
+0x517390F xor eax,eax
+0x5173911 jmp near ptr 000000014517399E
+0x5173916 mov rcx,r13
+0x5173919 mov [rsp+0F0],rbx
+body=0x519F080 score=3 size=202 alloc=False retRax=True uses0=True nVtbl=1 sampleVtbl=0x909F990
+0x519F080 push rbx
+0x519F082 push rsi
+0x519F083 sub rsp,98
+0x519F08A mov rax,[rip+511416F]
+0x519F091 xor rax,rsp
+0x519F094 mov [rsp+80],rax
+0x519F09C mov eax,[rip+5086EEE]
+0x519F0A2 lea r10,[rip+504F53F]
+0x519F0A9 movups xmm0,[rip+5086ED0]
+0x519F0B0 mov [rsp+38],eax
+0x519F0B4 mov rbx,rcx
+0x519F0B7 movzx eax,word ptr [rip+5086ED6]
+0x519F0BE mov rsi,r8
+0x519F0C1 mov [rsp+3C],ax
+0x519F0C6 movsxd rcx,edx
+0x519F0C9 mov rax,[rbx+20]
+0x519F0CD movups [rsp+28],xmm0
+0x519F0D2 mov rdx,[rax+rcx*8+1A8]
+0x519F0DA nop word ptr [rax+rax]
+0x519F0E0 mov rax,[rdx]
+0x519F0E3 mov r9,[rdx+10]
+0x519F0E7 mov r8,[rax]
+0x519F0EA test r8,r8
+0x519F0ED je short 000000014519F14A
+0x519F0EF xor eax,eax
+0x519F0F1 movzx ecx,byte ptr [r8+rax]
+0x519F0F6 inc rax
+0x519F0F9 cmp cl,[r10+rax-1]
+0x519F0FE jne short 000000014519F14A
+0x519F100 cmp rax,4
+0x519F104 jne short 000000014519F0F1
+0x519F106 mov rcx,[r9+40]
+0x519F10A test rcx,rcx
+0x519F10D je short 000000014519F153
+0x519F10F mov rcx,[rcx+8]
+0x519F113 mov [rsp+90],rdi
+body=0x51AF8B0 score=3 size=0 alloc=True retRax=False uses0=True nVtbl=1 sampleVtbl=0x909FBC8
+0x51AF8B0 mov [rsp+18],rbp
+0x51AF8B5 mov [rsp+20],rsi
+body=0x52F7830 score=3 size=125 alloc=False retRax=True uses0=True nVtbl=1 sampleVtbl=0x911B618
+0x52F7830 mov [rsp+8],rbx
+0x52F7835 push rdi
+0x52F7836 sub rsp,30
+0x52F783A mov rax,rdx
+0x52F783D mov rdi,rcx
+0x52F7840 lea edx,[r8*8]
+0x52F7848 lea r8,[rcx+0A8]
+0x52F784F mov rcx,rax
+0x52F7852 call 000000014238D350  ;call=0x238D350
+0x52F7857 mov r8d,[rdi+8]
+0x52F785B lea rax,[rip-2F6EAA2]
+0x52F7862 mov edx,[rdi+10]
+0x52F7865 lea rcx,[rdi+50]
+0x52F7869 lea r9,[rdi+0A8]
+0x52F7870 mov [rsp+20],rax
+0x52F7875 call 0000000145045A60  ;call=0x5045A60
+0x52F787A mov edx,[rdi]
+0x52F787C lea rax,[rip-2F6DBF3]
+0x52F7883 mov rbx,[rsp+40]
+0x52F7888 lea rcx,[rip-2F6DD6F]
+0x52F788F test dl,1
+0x52F7892 cmovne rax,rcx
+0x52F7896 or edx,2
+0x52F7899 mov [rdi+88],rax
+0x52F78A0 mov eax,1
+0x52F78A5 mov [rdi],edx
+0x52F78A7 add rsp,30
+0x52F78AB pop rdi
+0x52F78AC ret
+0x52F78AD int 3
+body=0x52F7B90 score=3 size=112 alloc=False retRax=True uses0=True nVtbl=3 sampleVtbl=0x911B750
+0x52F7B90 mov [rsp+8],rbx
+0x52F7B95 push rdi
+0x52F7B96 sub rsp,20
+0x52F7B9A mov edi,[rcx+40]
+0x52F7B9D mov rax,r8
+0x52F7BA0 lea r8,[rcx+0C0]
+0x52F7BA7 mov r9,rdx
+0x52F7BAA mov rbx,rcx
+0x52F7BAD mov [rcx+0B0],r8
+0x52F7BB4 mov rcx,r9
+0x52F7BB7 lea edx,[rax*8]
+0x52F7BBE call 000000014522A060  ;call=0x522A060
+0x52F7BC3 test eax,eax
+0x52F7BC5 jns short 00000001452F7C00
+0x52F7BC7 call 00000001450140B0  ;call=0x50140B0
+0x52F7BCC lea r8,[rip+4EF8A45]
+0x52F7BD3 mov edx,1E
+0x52F7BD8 lea rcx,[rip+4F40B61]
+0x52F7BDF call 00000001450141C0  ;call=0x50141C0
+0x52F7BE4 xor r8d,r8d
+0x52F7BE7 lea edx,[r8+65]
+0x52F7BEB lea ecx,[rdx-2C]
+0x52F7BEE call 00000001450142C0  ;call=0x50142C0
+0x52F7BF3 xor eax,eax
+0x52F7BF5 mov rbx,[rsp+30]
+0x52F7BFA add rsp,20
+0x52F7BFE pop rdi
+0x52F7BFF ret
+0x52F7C00 test byte ptr [rbx+6C],2
+0x52F7C04 jne short 00000001452F7C27
+0x52F7C06 lea eax,[rdi-1]
+body=0x4F78A10 score=2 size=154 alloc=False retRax=True uses0=False nVtbl=1 sampleVtbl=0x9036108
+body=0x4FCDC40 score=2 size=68 alloc=False retRax=True uses0=False nVtbl=1 sampleVtbl=0x904EDF0
+body=0x4FCBFD0 score=2 size=41 alloc=False retRax=True uses0=False nVtbl=1 sampleVtbl=0x904EE08
+body=0x4FD4EF0 score=2 size=108 alloc=False retRax=True uses0=False nVtbl=1 sampleVtbl=0x904F030
+body=0x4FD5190 score=2 size=219 alloc=False retRax=True uses0=False nVtbl=1 sampleVtbl=0x904F038
+allocishBodies=35
+
+===== VERDICT =====
+slotBodyUniqueResolved=False
+buildConsumerHits=0
+c2Proven=false
+callEngine=off
+decision=no Build-r8 consumer yet; some rdata vt+0x90 bodies look alloc/return-new
+next=Match an allocish body to the object type at 0x1F75E9F path, or keep hunting Build consumers.

@@ -1,0 +1,313 @@
+===== v0.8.0 SPAWN PARAM CALLERS =====
+exeSha256=19920F34BB2FAC814023EE3C27F0CECA1872E80A2AAFB37C092C419FFF77CC0D
+imageBase=0x140000000
+
+===== STRING HITS =====
+SpawnEntityParams rva=0xA11DC2D text=SpawnEntityParams
+SpawnCharacterParams rva=0xA11DDC1 text=SpawnCharacterParams
+SpawnEntityBuilderParams rva=0xA11DDF0 text=SpawnEntityBuilderParams
+
+===== STRING LEA SITES =====
+LEA SpawnEntityParams @0xA11DC2D count=2
+  site=0x8DFFBB0 func=0x8DFFB90
+  site=0x8DFFBB1 func=0x8DFFB90
+LEA SpawnCharacterParams @0xA11DDC1 count=2
+  site=0x80F2350 func=0x80F2330
+  site=0x80F2351 func=0x80F2330
+LEA SpawnEntityBuilderParams @0xA11DDF0 count=2
+  site=0x8E02980 func=0x8E02960
+  site=0x8E02981 func=0x8E02960
+
+===== VISITOR E8 CALLERS =====
+E8 -> 0x80F2330 count=4
+  site=0x80F2427 func=0x80F23E0
+  site=0x80F25C7 func=0x80F2580
+  site=0x80F2A67 func=0x80F2A20
+  site=0x821AC08 func=0x821ABC0
+E8 -> 0x8DFFB90 count=1
+  site=0x8E029A8 func=0x8E02960
+E8 -> 0x8E02960 count=2
+  site=0x80F2378 func=0x80F2330
+  site=0x80F2828 func=0x80F27E0
+
+===== FUNCTIONS =====
+0x80F2330 class=schema-visitor size=165 schema=True alloc=False visitor=True paramsLea=True callees=0x4572C60,0x8E02960,0x166CD00,0x48BA350,0x4987180
+    0x80F2330 push rsi
+    0x80F2331 push rdi
+    0x80F2332 push rbx
+    0x80F2333 sub rsp,30
+    0x80F2337 mov rsi,rdx
+    0x80F233A mov rdi,rcx
+    0x80F233D mov [rdx+38],rcx
+    0x80F2341 mov rax,[rdx+8]
+    0x80F2345 cmp byte ptr [rax+0A],0
+    0x80F2349 jne short 00000001480F2368
+    0x80F234B mov [rsp+20],rdi
+    0x80F2350 lea rdx,[rip+202BA6A]
+    0x80F2357 mov rcx,rsi
+    0x80F235A xor r8d,r8d
+    0x80F235D mov r9d,0FB7FF6A5
+    0x80F2363 call 0000000144572C60
+    0x80F2368 mov ebx,[rsi+40]
+    0x80F236B mov dword ptr [rsi+40],0
+0x80F23E0 class=schema-caller size=101 schema=True alloc=False visitor=True paramsLea=True callees=0x4572C60,0x80F2330,0x4987180
+    0x80F23E0 push rsi
+    0x80F23E1 push rdi
+    0x80F23E2 sub rsp,28
+    0x80F23E6 mov rsi,rdx
+    0x80F23E9 mov [rdx+38],rcx
+    0x80F23ED mov rax,[rdx+8]
+    0x80F23F1 cmp byte ptr [rax+0A],0
+    0x80F23F5 jne short 00000001480F241A
+    0x80F23F7 mov [rsp+20],rcx
+    0x80F23FC lea rdx,[rip+202BE89]
+    0x80F2403 mov rdi,rcx
+    0x80F2406 mov rcx,rsi
+    0x80F2409 xor r8d,r8d
+    0x80F240C mov r9d,94D05600
+    0x80F2412 call 0000000144572C60
+    0x80F2417 mov rcx,rdi
+    0x80F241A mov edi,[rsi+40]
+    0x80F241D mov dword ptr [rsi+40],0
+0x80F2580 class=schema-caller size=101 schema=True alloc=False visitor=True paramsLea=True callees=0x4572C60,0x80F2330,0x4987180
+    0x80F2580 push rsi
+    0x80F2581 push rdi
+    0x80F2582 sub rsp,28
+    0x80F2586 mov rsi,rdx
+    0x80F2589 mov [rdx+38],rcx
+    0x80F258D mov rax,[rdx+8]
+    0x80F2591 cmp byte ptr [rax+0A],0
+    0x80F2595 jne short 00000001480F25BA
+    0x80F2597 mov [rsp+20],rcx
+    0x80F259C lea rdx,[rip+202B801]
+    0x80F25A3 mov rdi,rcx
+    0x80F25A6 mov rcx,rsi
+    0x80F25A9 xor r8d,r8d
+    0x80F25AC mov r9d,0AAB0218F
+    0x80F25B2 call 0000000144572C60
+    0x80F25B7 mov rcx,rdi
+    0x80F25BA mov edi,[rsi+40]
+    0x80F25BD mov dword ptr [rsi+40],0
+0x80F27E0 class=schema-caller size=125 schema=True alloc=False visitor=True paramsLea=True callees=0x4572C60,0x8E02960,0x914330,0x4987180
+    0x80F27E0 push rsi
+    0x80F27E1 push rdi
+    0x80F27E2 push rbx
+    0x80F27E3 sub rsp,30
+    0x80F27E7 mov rsi,rdx
+    0x80F27EA mov rdi,rcx
+    0x80F27ED mov [rdx+38],rcx
+    0x80F27F1 mov rax,[rdx+8]
+    0x80F27F5 cmp byte ptr [rax+0A],0
+    0x80F27F9 jne short 00000001480F2818
+    0x80F27FB mov [rsp+20],rdi
+    0x80F2800 lea rdx,[rip+202B438]
+    0x80F2807 mov rcx,rsi
+    0x80F280A xor r8d,r8d
+    0x80F280D mov r9d,0D920BAC7
+    0x80F2813 call 0000000144572C60
+    0x80F2818 mov ebx,[rsi+40]
+    0x80F281B mov dword ptr [rsi+40],0
+0x80F2A20 class=schema-caller size=101 schema=True alloc=False visitor=True paramsLea=True callees=0x4572C60,0x80F2330,0x4987180
+    0x80F2A20 push rsi
+    0x80F2A21 push rdi
+    0x80F2A22 sub rsp,28
+    0x80F2A26 mov rsi,rdx
+    0x80F2A29 mov [rdx+38],rcx
+    0x80F2A2D mov rax,[rdx+8]
+    0x80F2A31 cmp byte ptr [rax+0A],0
+    0x80F2A35 jne short 00000001480F2A5A
+    0x80F2A37 mov [rsp+20],rcx
+    0x80F2A3C lea rdx,[rip+202B34F]
+    0x80F2A43 mov rdi,rcx
+    0x80F2A46 mov rcx,rsi
+    0x80F2A49 xor r8d,r8d
+    0x80F2A4C mov r9d,51BA3541
+    0x80F2A52 call 0000000144572C60
+    0x80F2A57 mov rcx,rdi
+    0x80F2A5A mov edi,[rsi+40]
+    0x80F2A5D mov dword ptr [rsi+40],0
+0x821ABC0 class=schema-caller size=133 schema=True alloc=False visitor=True paramsLea=True callees=0x4572C60,0x80F2330,0x33B130,0x4987180
+    0x821ABC0 push rsi
+    0x821ABC1 push rdi
+    0x821ABC2 push rbx
+    0x821ABC3 sub rsp,30
+    0x821ABC7 mov rsi,rdx
+    0x821ABCA mov rdi,rcx
+    0x821ABCD mov [rdx+38],rcx
+    0x821ABD1 mov rax,[rdx+8]
+    0x821ABD5 cmp byte ptr [rax+0A],0
+    0x821ABD9 jne short 000000014821ABF8
+    0x821ABDB mov [rsp+20],rdi
+    0x821ABE0 lea rdx,[rip+1F03135]
+    0x821ABE7 mov rcx,rsi
+    0x821ABEA xor r8d,r8d
+    0x821ABED mov r9d,3DF9C374
+    0x821ABF3 call 0000000144572C60
+    0x821ABF8 mov ebx,[rsi+40]
+    0x821ABFB mov dword ptr [rsi+40],0
+0x8DFFB90 class=schema-visitor size=151 schema=True alloc=False visitor=False paramsLea=True callees=0x4572C60,0x8DFFC30,0x47204B0,0xCF21D0,0x4987180
+    0x8DFFB90 push rsi
+    0x8DFFB91 push rdi
+    0x8DFFB92 push rbx
+    0x8DFFB93 sub rsp,30
+    0x8DFFB97 mov rsi,rdx
+    0x8DFFB9A mov rdi,rcx
+    0x8DFFB9D mov [rdx+38],rcx
+    0x8DFFBA1 mov rax,[rdx+8]
+    0x8DFFBA5 cmp byte ptr [rax+0A],0
+    0x8DFFBA9 jne short 0000000148DFFBC8
+    0x8DFFBAB mov [rsp+20],rdi
+    0x8DFFBB0 lea rdx,[rip+131E076]
+    0x8DFFBB7 mov rcx,rsi
+    0x8DFFBBA xor r8d,r8d
+    0x8DFFBBD mov r9d,0B5BAEE39
+    0x8DFFBC3 call 0000000144572C60
+    0x8DFFBC8 mov ebx,[rsi+40]
+    0x8DFFBCB mov dword ptr [rsi+40],0
+0x8E02960 class=schema-visitor size=151 schema=True alloc=False visitor=True paramsLea=True callees=0x4572C60,0x8DFFB90,0x48BA350,0x914330,0x4987180
+    0x8E02960 push rsi
+    0x8E02961 push rdi
+    0x8E02962 push rbx
+    0x8E02963 sub rsp,30
+    0x8E02967 mov rsi,rdx
+    0x8E0296A mov rdi,rcx
+    0x8E0296D mov [rdx+38],rcx
+    0x8E02971 mov rax,[rdx+8]
+    0x8E02975 cmp byte ptr [rax+0A],0
+    0x8E02979 jne short 0000000148E02998
+    0x8E0297B mov [rsp+20],rdi
+    0x8E02980 lea rdx,[rip+131B469]
+    0x8E02987 mov rcx,rsi
+    0x8E0298A xor r8d,r8d
+    0x8E0298D mov r9d,6A484E77
+    0x8E02993 call 0000000144572C60
+    0x8E02998 mov ebx,[rsi+40]
+    0x8E0299B mov dword ptr [rsi+40],0
+
+===== PARAM VT SLOTS =====
+QWORD 0x80F2330 embeds=1
+  slot=0x92D19D0 base=0x92D19A8 index=5
+    [0] 0x46DC120 class=unrelated alloc=False schema=False
+    [1] 0x53741F0 class=unrelated alloc=False schema=False
+    [2] 0x316BFC0 class=unrelated alloc=False schema=False
+    [3] 0x80FCA40 class=unrelated alloc=False schema=False
+    [4] 0x53741F0 class=unrelated alloc=False schema=False
+    [5] 0x80F2330 class=schema-visitor alloc=False schema=True
+    [6] 0x1207200 class=unrelated alloc=False schema=False
+    [7] 0x5E3DF0 class=unrelated alloc=False schema=False
+    [8] 0x53741F0 class=unrelated alloc=False schema=False
+    [9] 0xB5377F8 not-code
+QWORD 0x8DFFB90 embeds=1
+  slot=0x92D2070 base=0x92D2030 index=8
+    [0] 0x53741F0 class=unrelated alloc=False schema=False
+    [1] 0x53741F0 class=unrelated alloc=False schema=False
+    [2] 0x8DFFD30 class=unrelated alloc=False schema=False
+    [3] 0x34730 class=unrelated alloc=True schema=False
+      0x34730 push r14
+      0x34732 push rsi
+      0x34733 push rdi
+      0x34734 push rbx
+      0x34735 sub rsp,38
+      0x34739 mov rsi,rcx
+      0x3473C mov rax,[rip+0A27EABD]
+      0x34743 xor rax,rsp
+      0x34746 mov [rsp+30],rax
+      0x3474B mov rdi,[rip+0AF3B5F6]
+      0x34752 cmp byte ptr [rdi+2A],0
+      0x34756 jne short 0000000140034779
+      0x34758 mov eax,[rip+0AB57462]
+      0x3475E mov rcx,gs:[58]
+      0x34767 mov rax,[rcx+rax*8]
+      0x3476B mov rax,[rax+1C60]
+      0x34772 test rax,rax
+      0x34775 cmovne rdi,rax
+      0x34779 mov rcx,rdi
+      0x3477C mov edx,1528
+      0x34781 mov r8d,8
+      0x34787 call 000000014426EE50
+    [4] 0x8E02BA0 class=unrelated alloc=False schema=False
+    [5] 0x4CBD270 class=unrelated alloc=False schema=False
+    [6] 0x67C6A70 class=unrelated alloc=False schema=False
+    [7] 0x53741F0 class=unrelated alloc=False schema=False
+    [8] 0x8DFFB90 class=schema-visitor alloc=False schema=True
+    [9] 0x1060820 class=unrelated alloc=False schema=False
+    [10] 0x5E3EC0 class=unrelated alloc=False schema=False
+    [11] 0x53741F0 class=unrelated alloc=False schema=False
+QWORD 0x8E02960 embeds=2
+  slot=0x92D1EF0 base=0x92D1EB0 index=8
+    [0] 0x53741F0 class=unrelated alloc=False schema=False
+    [1] 0x53741F0 class=unrelated alloc=False schema=False
+    [2] 0x8DFFD30 class=unrelated alloc=False schema=False
+    [3] 0x32FF450 class=unrelated alloc=True schema=False
+      0x32FF450 push r15
+      0x32FF452 push r14
+      0x32FF454 push r13
+      0x32FF456 push r12
+      0x32FF458 push rsi
+      0x32FF459 push rdi
+      0x32FF45A push rbp
+      0x32FF45B push rbx
+      0x32FF45C sub rsp,0D8
+      0x32FF463 mov rsi,rcx
+      0x32FF466 mov rax,[rip+6FB3D93]
+      0x32FF46D xor rax,rsp
+      0x32FF470 mov [rsp+0D0],rax
+      0x32FF478 lea rdi,[rcx+78]
+      0x32FF47C mov rcx,rdi
+      0x32FF47F call 00000001443D8270
+      0x32FF484 test al,al
+      0x32FF486 jne short 00000001432FF49F
+      0x32FF488 mov rcx,[rsi+60]
+      0x32FF48C test rcx,rcx
+      0x32FF48F je short 00000001432FF49F
+      0x32FF491 mov rax,[rcx]
+    [4] 0x8E02BA0 class=unrelated alloc=False schema=False
+    [5] 0x21F58B0 class=unrelated alloc=False schema=False
+    [6] 0xF97F70 class=unrelated alloc=False schema=False
+    [7] 0x53741F0 class=unrelated alloc=False schema=False
+    [8] 0x8E02960 class=schema-visitor alloc=False schema=True
+    [9] 0x1060770 class=unrelated alloc=False schema=False
+    [10] 0x671BD60 class=unrelated alloc=False schema=False
+    [11] 0x53741F0 class=unrelated alloc=False schema=False
+  slot=0x92D1FB0 base=0x92D1F70 index=8
+    [0] 0x53741F0 class=unrelated alloc=False schema=False
+    [1] 0x53741F0 class=unrelated alloc=False schema=False
+    [2] 0x8DFFD30 class=unrelated alloc=False schema=False
+    [3] 0x3DE6300 class=unrelated alloc=True schema=False
+      0x3DE6300 push r14
+      0x3DE6302 push rsi
+      0x3DE6303 push rdi
+      0x3DE6304 push rbx
+      0x3DE6305 sub rsp,38
+      0x3DE6309 mov rsi,rcx
+      0x3DE630C mov rax,[rip+64CCEED]
+      0x3DE6313 xor rax,rsp
+      0x3DE6316 mov [rsp+30],rax
+      0x3DE631B mov rdi,[rip+7189A26]
+      0x3DE6322 cmp byte ptr [rdi+2A],0
+      0x3DE6326 jne short 0000000143DE6349
+      0x3DE6328 mov eax,[rip+6DA5892]
+      0x3DE632E mov rcx,gs:[58]
+      0x3DE6337 mov rax,[rcx+rax*8]
+      0x3DE633B mov rax,[rax+1C60]
+      0x3DE6342 test rax,rax
+      0x3DE6345 cmovne rdi,rax
+      0x3DE6349 mov rcx,rdi
+      0x3DE634C mov edx,1530
+      0x3DE6351 mov r8d,8
+      0x3DE6357 call 000000014426EE50
+    [4] 0x8E02BA0 class=unrelated alloc=False schema=False
+    [5] 0x4CBD270 class=unrelated alloc=False schema=False
+    [6] 0x780F30 class=unrelated alloc=False schema=False
+    [7] 0x53741F0 class=unrelated alloc=False schema=False
+    [8] 0x8E02960 class=schema-visitor alloc=False schema=True
+    [9] 0x10607C0 class=unrelated alloc=False schema=False
+    [10] 0x5E3E60 class=unrelated alloc=False schema=False
+    [11] 0x53741F0 class=unrelated alloc=False schema=False
+allocSiblingsOutsideSchema=3
+SELF PASS visitor 0x80F2330 class=schema-visitor
+SELF PASS visitor 0x8DFFB90 class=schema-visitor
+SELF PASS visitor 0x8E02960 class=schema-visitor
+factoryCandidates=0
+decision=native-spawn-not-confirmed
+missingLink=caller that fills SpawnEntityBuilderParams and invokes entity creation; the three *Params functions only register schema names via 0x4572C60

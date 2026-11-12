@@ -1,0 +1,51 @@
+callers of 0x4420000 with last-def (1,0):
+site=0x2397A9 ecx= edx= begin10=False
+site=0x23AEAC ecx= edx= begin10=False
+site=0x561AD5 ecx= edx= begin10=False
+site=0x763D41 ecx= edx= begin10=False
+site=0xD80842 ecx= edx= begin10=False
+site=0xD869B8 ecx= edx= begin10=False
+site=0x15B7159 ecx= edx= begin10=False
+site=0x22F80D1 ecx= edx= begin10=False
+site=0x24B067B ecx= edx= begin10=False
+site=0x28A48D8 ecx= edx= begin10=False
+site=0x2965757 ecx= edx= begin10=False
+site=0x2C15A69 ecx= edx= begin10=False
+site=0x2C163B6 ecx= edx= begin10=False
+site=0x2F92876 ecx= edx= begin10=False
+site=0x2F92B0F ecx= edx= begin10=False
+site=0x39F1BD1 ecx= edx= begin10=False
+site=0x3A16170 ecx= edx= begin10=False
+site=0x3EBDBB2 ecx= edx= begin10=False
+site=0x43FFC90 ecx= edx= begin10=False
+site=0x4419B44 ecx= edx= begin10=False
+site=0x4419B72 ecx= edx= begin10=False
+site=0x4419F3B ecx= edx= begin10=False
+site=0x4419FFC ecx= edx= begin10=False
+site=0x441A597 ecx= edx= begin10=False
+site=0x4C2FB23 ecx= edx= begin10=False
+site=0x4C301B1 ecx= edx= begin10=False
+site=0x582F56C ecx= edx= begin10=False
+site=0x755370F ecx= edx= begin10=False
+site=0x7556FE6 ecx= edx= begin10=False
+site=0x7C01847 ecx= edx= begin10=False
+site=0x8ADC37C ecx= edx= begin10=False
+site=0x8D414CF ecx= edx= begin10=False
+site=0xD7D4F05 ecx= edx= begin10=False
+site=0xDF9D7CD ecx= edx= begin10=False
+site=0xE32048B ecx= edx= begin10=False
+site=0xE5EBA2C ecx= edx= begin10=False
+site=0xFE9EC57 ecx= edx= begin10=False
+site=0x115DF0C4 ecx= edx= begin10=False
+
+Begin-shaped leaves that read BOTH cl and dl:
+0x4420000 usesCl=False usesDl=False
+0x4DE1C40 usesCl=False usesDl=False
+0x4F65C00 usesCl=False usesDl=False
+0x6CA7710 usesCl=False usesDl=False
+0x6A110 usesCl=False usesDl=False
+0xD75C50 usesCl=False usesDl=False
+0x5001598 usesCl=True usesDl=True
+0x513C2E8 usesCl=False usesDl=False
+0x5AA89B0 usesCl=False usesDl=False
+0x5CA4220 usesCl=False usesDl=False

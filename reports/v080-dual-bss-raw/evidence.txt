@@ -1,0 +1,832 @@
+===== v0.8.0 DUAL ADJACENT BSS POINTER PUBLISH =====
+exeSha256=19920F34BB2FAC814023EE3C27F0CECA1872E80A2AAFB37C092C419FFF77CC0D
+agent1Fingerprint=AC4 PlayerProgression.h adjacent 0x04DEEF90/0x04DEEF94
+resyncedHunt=RIP-rel QWORD stores to DataRva and DataRva+8
+callEngine=off
+qwordStores=430882
+qwordLoads=397172
+adjacentPairs=176401
+
+===== TOP CANDIDATES (few writers, many readers, not EntitySelector) =====
+lo=0xB74A928 hi=0xB74A930 delta=8 siteA=0x37D766B siteB=0x37D84E3 dist=3704 func=0x37D7120 writers=1 readers=697 sec=.trace
+lo=0xB74A920 hi=0xB74A928 delta=8 siteA=0x37D7AAE siteB=0x37D766B dist=1091 func=0x37D7120 writers=1 readers=626 sec=.trace
+lo=0xAC028E0 hi=0xAC028E8 delta=8 siteA=0x67FD57B siteB=0x67FD582 dist=7 func=0x67FD520 writers=1 readers=457 sec=.trace
+lo=0xAC0E8C0 hi=0xAC0E8C8 delta=8 siteA=0x57E5414 siteB=0x57E50CB dist=841 func=0x57E4D00 writers=1 readers=218 sec=.trace
+lo=0xAC0E8A0 hi=0xAC0E8A8 delta=8 siteA=0x57E5243 siteB=0x57E5387 dist=324 func=0x57E4D00 writers=1 readers=155 sec=.trace
+lo=0xAC0E8A8 hi=0xAC0E8B0 delta=8 siteA=0x57E5387 siteB=0x57E5338 dist=79 func=0x57E4D00 writers=1 readers=130 sec=.trace
+lo=0xAC0E898 hi=0xAC0E8A0 delta=8 siteA=0x57E52E2 siteB=0x57E5243 dist=159 func=0x57E4D00 writers=1 readers=109 sec=.trace
+lo=0xAC0E8B8 hi=0xAC0E8C0 delta=8 siteA=0x57E5497 siteB=0x57E5414 dist=131 func=0x57E4D00 writers=1 readers=96 sec=.trace
+lo=0xB74A930 hi=0xB74A938 delta=8 siteA=0x37D84E3 siteB=0x37D834B dist=408 func=0x37D7120 writers=1 readers=94 sec=.trace
+lo=0xB74E718 hi=0xB74E720 delta=8 siteA=0x2984958 siteB=0x29849AD dist=85 func=0x2983320 writers=1 readers=85 sec=.trace
+lo=0xB6FF4C8 hi=0xB6FF4D0 delta=8 siteA=0x3736D7F siteB=0x3737151 dist=978 func=0x3736990 writers=1 readers=80 sec=.trace
+lo=0xAC027C8 hi=0xAC027D0 delta=8 siteA=0x67FD252 siteB=0x67FD259 dist=7 func=0x67FD220 writers=1 readers=74 sec=.trace
+lo=0xB1CFC68 hi=0xB1CFC70 delta=8 siteA=0x20E4B7B siteB=0x20E4B82 dist=7 func=0x20E3DF0 writers=1 readers=67 sec=.trace
+lo=0xBE95BD8 hi=0xBE95BE0 delta=8 siteA=0x5A7868B siteB=0x5A787FD dist=370 func=0x5A78640 writers=1 readers=66 sec=.trace
+lo=0xAC65180 hi=0xAC65188 delta=8 siteA=0x69310CB siteB=0x69310D2 dist=7 func=0x69310B0 writers=1 readers=64 sec=.trace
+lo=0xAC65188 hi=0xAC65190 delta=8 siteA=0x69310D2 siteB=0x69310D9 dist=7 func=0x69310B0 writers=1 readers=64 sec=.trace
+lo=0xAC65190 hi=0xAC65198 delta=8 siteA=0x69310D9 siteB=0x69310E0 dist=7 func=0x69310B0 writers=1 readers=64 sec=.trace
+lo=0xAC65198 hi=0xAC651A0 delta=8 siteA=0x69310E0 siteB=0x69310E7 dist=7 func=0x69310B0 writers=1 readers=64 sec=.trace
+lo=0xAC651A0 hi=0xAC651A8 delta=8 siteA=0x69310E7 siteB=0x69310EE dist=7 func=0x69310B0 writers=1 readers=64 sec=.trace
+lo=0xAC651A8 hi=0xAC651B0 delta=8 siteA=0x69310EE siteB=0x69310F5 dist=7 func=0x69310B0 writers=1 readers=64 sec=.trace
+lo=0xAC651B0 hi=0xAC651B8 delta=8 siteA=0x69310F5 siteB=0x69310FC dist=7 func=0x69310B0 writers=1 readers=64 sec=.trace
+lo=0xAC651B8 hi=0xAC651C0 delta=8 siteA=0x69310FC siteB=0x6931103 dist=7 func=0x69310B0 writers=1 readers=64 sec=.trace
+lo=0xABF8178 hi=0xABF8180 delta=8 siteA=0x75B0090 siteB=0x75B007B dist=21 func=0x75B0030 writers=1 readers=62 sec=.trace
+lo=0xAC0E8B0 hi=0xAC0E8B8 delta=8 siteA=0x57E5338 siteB=0x57E5497 dist=351 func=0x57E4D00 writers=1 readers=58 sec=.trace
+lo=0xB0151C0 hi=0xB0151C8 delta=8 siteA=0x75AE30D siteB=0x75AE314 dist=7 func=0x75AE2E0 writers=1 readers=50 sec=.trace
+lo=0xB74A890 hi=0xB74A898 delta=8 siteA=0x37D89E4 siteB=0x37D772C dist=4792 func=0x37D7120 writers=1 readers=49 sec=.trace
+lo=0xAC02808 hi=0xAC02810 delta=8 siteA=0x67FD884 siteB=0x67FD88B dist=7 func=0x67FD850 writers=1 readers=47 sec=.trace
+lo=0xB0B6F28 hi=0xB0B6F30 delta=8 siteA=0x5D9AC77 siteB=0x5D9AC85 dist=14 func=0x5D9AC20 writers=1 readers=46 sec=.trace
+lo=0xAC02840 hi=0xAC02848 delta=8 siteA=0x67FD128 siteB=0x67FD12F dist=7 func=0x67FD100 writers=1 readers=41 sec=.trace
+lo=0xADE3C38 hi=0xADE3C40 delta=8 siteA=0x2984CF3 siteB=0x2984C79 dist=122 func=0x2983320 writers=1 readers=40 sec=.trace
+lo=0xB6E67A0 hi=0xB6E67A8 delta=8 siteA=0x650567E siteB=0x65055CE dist=176 func=0x6504DC0 writers=1 readers=33 sec=.trace
+lo=0xAC64B40 hi=0xAC64B48 delta=8 siteA=0x6930140 siteB=0x6930147 dist=7 func=0x6930130 writers=1 readers=32 sec=.trace
+lo=0xAC64B38 hi=0xAC64B40 delta=8 siteA=0x6930130 siteB=0x6930140 dist=16 func=0x6930130 writers=1 readers=32 sec=.trace
+lo=0xAB86280 hi=0xAB86288 delta=8 siteA=0x4F84B3F siteB=0x4F84B25 dist=26 func=0x4F84AE0 writers=1 readers=32 sec=.trace
+lo=0xC071D88 hi=0xC071D90 delta=8 siteA=0x672A06B siteB=0x6729F93 dist=216 func=0x6729030 writers=1 readers=32 sec=.trace
+lo=0xAC01B28 hi=0xAC01B30 delta=8 siteA=0x67FD39D siteB=0x67FD3A4 dist=7 func=0x67FD360 writers=1 readers=30 sec=.trace
+lo=0xAC56D70 hi=0xAC56D78 delta=8 siteA=0x1468270 siteB=0x1468262 dist=14 func=0x1468230 writers=1 readers=30 sec=.trace
+lo=0xA95F210 hi=0xA95F218 delta=8 siteA=0x58DAD23 siteB=0x58DAD07 dist=28 func=0x58DAD00 writers=1 readers=30 sec=.trace
+lo=0xB74A898 hi=0xB74A8A0 delta=8 siteA=0x37D772C siteB=0x37D8AA3 dist=4983 func=0x37D7120 writers=1 readers=30 sec=.trace
+lo=0xAC02868 hi=0xAC02870 delta=8 siteA=0x67FD4ED siteB=0x67FD4F4 dist=7 func=0x67FD4B0 writers=1 readers=27 sec=.trace
+
+===== SINGLE-WRITER PAIRS (strongest publish shape) =====
+lo=0xB74A928 hi=0xB74A930 delta=8 siteA=0x37D766B siteB=0x37D84E3 dist=3704 func=0x37D7120 writers=1 readers=697 sec=.trace
+lo=0xB74A920 hi=0xB74A928 delta=8 siteA=0x37D7AAE siteB=0x37D766B dist=1091 func=0x37D7120 writers=1 readers=626 sec=.trace
+lo=0xAC028E0 hi=0xAC028E8 delta=8 siteA=0x67FD57B siteB=0x67FD582 dist=7 func=0x67FD520 writers=1 readers=457 sec=.trace
+lo=0xAC0E8C0 hi=0xAC0E8C8 delta=8 siteA=0x57E5414 siteB=0x57E50CB dist=841 func=0x57E4D00 writers=1 readers=218 sec=.trace
+lo=0xAC0E8A0 hi=0xAC0E8A8 delta=8 siteA=0x57E5243 siteB=0x57E5387 dist=324 func=0x57E4D00 writers=1 readers=155 sec=.trace
+lo=0xAC0E8A8 hi=0xAC0E8B0 delta=8 siteA=0x57E5387 siteB=0x57E5338 dist=79 func=0x57E4D00 writers=1 readers=130 sec=.trace
+lo=0xAC0E898 hi=0xAC0E8A0 delta=8 siteA=0x57E52E2 siteB=0x57E5243 dist=159 func=0x57E4D00 writers=1 readers=109 sec=.trace
+lo=0xAC0E8B8 hi=0xAC0E8C0 delta=8 siteA=0x57E5497 siteB=0x57E5414 dist=131 func=0x57E4D00 writers=1 readers=96 sec=.trace
+lo=0xB74A930 hi=0xB74A938 delta=8 siteA=0x37D84E3 siteB=0x37D834B dist=408 func=0x37D7120 writers=1 readers=94 sec=.trace
+lo=0xB74E718 hi=0xB74E720 delta=8 siteA=0x2984958 siteB=0x29849AD dist=85 func=0x2983320 writers=1 readers=85 sec=.trace
+lo=0xB6FF4C8 hi=0xB6FF4D0 delta=8 siteA=0x3736D7F siteB=0x3737151 dist=978 func=0x3736990 writers=1 readers=80 sec=.trace
+lo=0xAC027C8 hi=0xAC027D0 delta=8 siteA=0x67FD252 siteB=0x67FD259 dist=7 func=0x67FD220 writers=1 readers=74 sec=.trace
+lo=0xB1CFC68 hi=0xB1CFC70 delta=8 siteA=0x20E4B7B siteB=0x20E4B82 dist=7 func=0x20E3DF0 writers=1 readers=67 sec=.trace
+lo=0xBE95BD8 hi=0xBE95BE0 delta=8 siteA=0x5A7868B siteB=0x5A787FD dist=370 func=0x5A78640 writers=1 readers=66 sec=.trace
+lo=0xAC65180 hi=0xAC65188 delta=8 siteA=0x69310CB siteB=0x69310D2 dist=7 func=0x69310B0 writers=1 readers=64 sec=.trace
+lo=0xAC65188 hi=0xAC65190 delta=8 siteA=0x69310D2 siteB=0x69310D9 dist=7 func=0x69310B0 writers=1 readers=64 sec=.trace
+lo=0xAC65190 hi=0xAC65198 delta=8 siteA=0x69310D9 siteB=0x69310E0 dist=7 func=0x69310B0 writers=1 readers=64 sec=.trace
+lo=0xAC65198 hi=0xAC651A0 delta=8 siteA=0x69310E0 siteB=0x69310E7 dist=7 func=0x69310B0 writers=1 readers=64 sec=.trace
+lo=0xAC651A0 hi=0xAC651A8 delta=8 siteA=0x69310E7 siteB=0x69310EE dist=7 func=0x69310B0 writers=1 readers=64 sec=.trace
+lo=0xAC651A8 hi=0xAC651B0 delta=8 siteA=0x69310EE siteB=0x69310F5 dist=7 func=0x69310B0 writers=1 readers=64 sec=.trace
+lo=0xAC651B0 hi=0xAC651B8 delta=8 siteA=0x69310F5 siteB=0x69310FC dist=7 func=0x69310B0 writers=1 readers=64 sec=.trace
+lo=0xAC651B8 hi=0xAC651C0 delta=8 siteA=0x69310FC siteB=0x6931103 dist=7 func=0x69310B0 writers=1 readers=64 sec=.trace
+lo=0xABF8178 hi=0xABF8180 delta=8 siteA=0x75B0090 siteB=0x75B007B dist=21 func=0x75B0030 writers=1 readers=62 sec=.trace
+lo=0xAC0E8B0 hi=0xAC0E8B8 delta=8 siteA=0x57E5338 siteB=0x57E5497 dist=351 func=0x57E4D00 writers=1 readers=58 sec=.trace
+singleWriterCount=81046
+
+===== DISASM WINDOWS (top 12 non-excluded) =====
+--- pair lo=0xB74A928 center=0x37D766B ---
+0x37D762B add [rax],al
+0x37D762D mov [rsp+40],rbp
+0x37D7632 mov [rsp+38],r13
+0x37D7637 lea rax,[rsp+6A0]
+0x37D763F mov [rsp+28],rax
+0x37D7644 mov dword ptr [rsp+30],10000008
+0x37D764C mov dword ptr [rsp+20],1
+0x37D7654 mov rcx,r14
+0x37D7657 mov rdx,rsi
+0x37D765A mov r8d,4
+0x37D7660 mov r9d,4
+0x37D7666 call 000000014024A5D0  ;call=0x24A5D0
+0x37D766B mov [rip+7F732B6],r14  ;data=0xB74A928
+0x37D7672 mov rax,[rip+77986CF]  ;data=0xAF6FD48
+0x37D7679 cmp byte ptr [rax+2A],0
+0x37D767D je near ptr 00000001437DA63B
+0x37D7683 mov r15,rax
+0x37D7686 mov rcx,r15
+0x37D7689 mov edx,2F0
+0x37D768E mov r8d,10
+0x37D7694 call 000000014426EE50  ;call=0x426EE50
+0x37D7699 mov r14,rax
+0x37D769C test rax,rax
+0x37D769F je near ptr 00000001437DB275
+0x37D76A5 vxorps xmm0,xmm0,xmm0
+0x37D76A9 vmovaps [rsp+0B0],xmm0
+0x37D76B2 mov dword ptr [rsp+0C0],3F800000
+0x37D76BD mov byte ptr [rsp+0C4],0
+0x37D76C5 vmovaps [rsp+320],xmm0
+0x37D76CE mov [rsp+330],r12
+0x37D76D6 mov dword ptr [rsp+6A0],1C
+0x37D76E1 mov [rsp+50],rbp
+0x37D76E6 mov [rsp+48],r13
+--- func=0x37D7120 center=0x37D7120 ---
+0x37D7120 push r15
+0x37D7122 push r14
+0x37D7124 push r13
+0x37D7126 push r12
+0x37D7128 push rsi
+0x37D7129 push rdi
+0x37D712A push rbp
+0x37D712B push rbx
+0x37D712C mov eax,1518
+0x37D7131 call 00000001450098A0  ;call=0x50098A0
+0x37D7136 sub rsp,rax
+0x37D7139 vmovdqa xmmword ptr [rsp+1500],xmm7
+0x37D7142 vmovaps [rsp+14F0],xmm6
+0x37D714B mov rax,[rip+6ADC0AE]  ;data=0xA2B3200
+0x37D7152 xor rax,rsp
+0x37D7155 mov [rsp+14E8],rax
+0x37D715D mov rax,[rip+7F7384C]  ;data=0xB74A9B0
+0x37D7164 mov ecx,[rip+73B4A56]  ;data=0xAB8BBC0
+0x37D716A mov rdx,gs:[58]
+0x37D7173 mov rcx,[rdx+rcx*8]
+0x37D7177 mov ecx,[rcx+1CE8]
+0x37D717D cmp ecx,2
+--- pair lo=0xB74A920 center=0x37D7AAE ---
+0x37D7A6E add [rax],al
+0x37D7A70 mov [rsp+40],rbp
+0x37D7A75 mov [rsp+38],r13
+0x37D7A7A lea rax,[rsp+6A0]
+0x37D7A82 mov [rsp+28],rax
+0x37D7A87 mov dword ptr [rsp+30],10000008
+0x37D7A8F mov dword ptr [rsp+20],4
+0x37D7A97 mov rcx,r14
+0x37D7A9A mov rdx,rsi
+0x37D7A9D mov r8d,4
+0x37D7AA3 mov r9d,4
+0x37D7AA9 call 000000014024A5D0  ;call=0x24A5D0
+0x37D7AAE mov [rip+7F72E6B],r14  ;data=0xB74A920
+0x37D7AB5 mov rax,[rip+779828C]  ;data=0xAF6FD48
+0x37D7ABC cmp byte ptr [rax+2A],0
+0x37D7AC0 je near ptr 00000001437DA749
+0x37D7AC6 mov r15,rax
+0x37D7AC9 mov rcx,r15
+0x37D7ACC mov edx,2F0
+0x37D7AD1 mov r8d,10
+0x37D7AD7 call 000000014426EE50  ;call=0x426EE50
+0x37D7ADC mov r14,rax
+0x37D7ADF test rax,rax
+0x37D7AE2 je near ptr 00000001437DB301
+0x37D7AE8 vxorps xmm0,xmm0,xmm0
+0x37D7AEC vmovaps [rsp+0B0],xmm0
+0x37D7AF5 mov dword ptr [rsp+0C0],3F800000
+0x37D7B00 mov byte ptr [rsp+0C4],0
+0x37D7B08 mov [rsp+320],rdi
+0x37D7B10 mov qword ptr [rsp+328],0
+0x37D7B1C mov rax,7F00000000080001
+0x37D7B26 mov [rsp+330],rax
+--- func=0x37D7120 center=0x37D7120 ---
+0x37D7120 push r15
+0x37D7122 push r14
+0x37D7124 push r13
+0x37D7126 push r12
+0x37D7128 push rsi
+0x37D7129 push rdi
+0x37D712A push rbp
+0x37D712B push rbx
+0x37D712C mov eax,1518
+0x37D7131 call 00000001450098A0  ;call=0x50098A0
+0x37D7136 sub rsp,rax
+0x37D7139 vmovdqa xmmword ptr [rsp+1500],xmm7
+0x37D7142 vmovaps [rsp+14F0],xmm6
+0x37D714B mov rax,[rip+6ADC0AE]  ;data=0xA2B3200
+0x37D7152 xor rax,rsp
+0x37D7155 mov [rsp+14E8],rax
+0x37D715D mov rax,[rip+7F7384C]  ;data=0xB74A9B0
+0x37D7164 mov ecx,[rip+73B4A56]  ;data=0xAB8BBC0
+0x37D716A mov rdx,gs:[58]
+0x37D7173 mov rcx,[rdx+rcx*8]
+0x37D7177 mov ecx,[rcx+1CE8]
+0x37D717D cmp ecx,2
+--- pair lo=0xAC028E0 center=0x67FD57B ---
+0x67FD53B mov ecx,[rip+440539F]  ;data=0xAC028E0
+0x67FD541 mov edx,[rcx+40]
+0x67FD544 mov rax,[rcx+48]
+0x67FD548 cmp edx,2
+0x67FD54B setae r8b
+0x67FD54F and dl,r8b
+0x67FD552 mov dword ptr [rcx+44],0
+0x67FD559 test rax,rax
+0x67FD55C je short 00000001467FD58F
+0x67FD55E test dl,dl
+0x67FD560 jne short 00000001467FD595
+0x67FD562 call qword ptr [rip+3A4B810]  ;data=0xA248D78
+0x67FD568 mov rcx,[rip+4405371]  ;data=0xAC028E0
+0x67FD56F test rcx,rcx
+0x67FD572 je short 00000001467FD579
+0x67FD574 call 0000000144DF2B90  ;call=0x4DF2B90
+0x67FD579 xor eax,eax
+0x67FD57B mov [rip+440535E],rax  ;data=0xAC028E0
+0x67FD582 mov [rip+440535F],rax  ;data=0xAC028E8
+0x67FD589 add rsp,20
+0x67FD58D pop rsi
+0x67FD58E ret
+--- func=0x67FD520 center=0x67FD520 ---
+0x67FD520 push rsi
+0x67FD521 sub rsp,20
+0x67FD525 mov rcx,[rip+44053B4]  ;data=0xAC028E0
+0x67FD52C test rcx,rcx
+0x67FD52F je near ptr 00000001467FD5B5
+0x67FD535 call 000000014685F610  ;call=0x685F610
+0x67FD53A mov rcx,[rip+440539F]  ;data=0xAC028E0
+0x67FD541 mov edx,[rcx+40]
+0x67FD544 mov rax,[rcx+48]
+0x67FD548 cmp edx,2
+0x67FD54B setae r8b
+0x67FD54F and dl,r8b
+0x67FD552 mov dword ptr [rcx+44],0
+0x67FD559 test rax,rax
+0x67FD55C je short 00000001467FD58F
+0x67FD55E test dl,dl
+0x67FD560 jne short 00000001467FD595
+0x67FD562 call qword ptr [rip+3A4B810]  ;data=0xA248D78
+0x67FD568 mov rcx,[rip+4405371]  ;data=0xAC028E0
+0x67FD56F test rcx,rcx
+0x67FD572 je short 00000001467FD579
+0x67FD574 call 0000000144DF2B90  ;call=0x4DF2B90
+0x67FD579 xor eax,eax
+0x67FD57B mov [rip+440535E],rax  ;data=0xAC028E0
+--- pair lo=0xAC0E8C0 center=0x57E5414 ---
+0x57E53D4 xor ecx,ecx
+0x57E53D6 call 00000001446616C0  ;call=0x46616C0
+0x57E53DB vxorps xmm0,xmm0,xmm0
+0x57E53DF vmovups [rax],ymm0
+0x57E53E3 vmovups [rax+20],ymm0
+0x57E53E8 vmovups [rax+40],ymm0
+0x57E53ED mov [rdi],rax
+0x57E53F0 cmp qword ptr [rip+54294C8],0  ;data=0xAC0E8C0
+0x57E53F8 jne short 00000001457E541B
+0x57E53FA mov edx,20
+0x57E53FF mov ecx,10
+0x57E5404 vzeroupper
+0x57E5407 call 00000001446616C0  ;call=0x46616C0
+0x57E540C vxorps xmm0,xmm0,xmm0
+0x57E5410 vmovups [rax],ymm0
+0x57E5414 mov [rip+54294A5],rax  ;data=0xAC0E8C0
+0x57E541B cmp qword ptr [rip+542888D],0  ;data=0xAC0DCB0
+0x57E5423 jne short 00000001457E5470
+0x57E5425 mov edx,18
+0x57E542A mov ecx,10
+0x57E542F vzeroupper
+0x57E5432 call 00000001446616C0  ;call=0x46616C0
+0x57E5437 vxorps xmm0,xmm0,xmm0
+0x57E543B vmovups [rax],xmm0
+0x57E543F mov dword ptr [rax+10],0
+0x57E5446 mov [rip+5428863],rax  ;data=0xAC0DCB0
+0x57E544D mov ecx,[rip+5429495]  ;data=0xAC0E8E8
+0x57E5453 test ecx,ecx
+0x57E5455 mov edx,0FF
+0x57E545A cmovne edx,ecx
+0x57E545D mov [rax+10],edx
+0x57E5460 mov rcx,rax
+0x57E5463 call 00000001457E5810  ;call=0x57E5810
+0x57E5468 test al,al
+0x57E546A je near ptr 00000001457E550D
+0x57E5470 cmp qword ptr [rip+5429440],0  ;data=0xAC0E8B8
+0x57E5478 jne short 00000001457E54AB
+0x57E547A mov edx,0B0
+0x57E547F mov ecx,10
+0x57E5484 vzeroupper
+--- func=0x57E4D00 center=0x57E4D00 ---
+0x57E4D00 push r15
+0x57E4D02 push r14
+0x57E4D04 push rsi
+0x57E4D05 push rdi
+0x57E4D06 push rbx
+0x57E4D07 sub rsp,30
+0x57E4D0B vmovaps [rsp+20],xmm6
+0x57E4D11 mov rsi,rcx
+0x57E4D14 cmp qword ptr [rip+5429BAC],0  ;data=0xAC0E8C8
+0x57E4D1C jne near ptr 00000001457E50E2
+0x57E4D22 mov edx,4D0
+0x57E4D27 mov ecx,10
+0x57E4D2C call 00000001446616C0  ;call=0x46616C0
+0x57E4D31 mov rdi,rax
+0x57E4D34 lea rbx,[rax+8]
+0x57E4D38 xor r14d,r14d
+0x57E4D3B mov r8d,4C8
+0x57E4D41 mov rcx,rbx
+0x57E4D44 xor edx,edx
+0x57E4D46 call 0000000145352080  ;call=0x5352080
+0x57E4D4B mov [rdi],r14d
+0x57E4D4E mov [rdi+4],r14d
+0x57E4D52 mov r15,[rip+4A643A7]  ;data=0xA249100
+0x57E4D59 mov rcx,rbx
+0x57E4D5C call r15
+0x57E4D5F mov [rdi+30],r14d
+--- pair lo=0xAC0E8A0 center=0x57E5243 ---
+0x57E5203 cmp eax,5429697
+0x57E5208 add [rbp+51],dh
+0x57E520B cmp byte ptr [rip+5429732],0  ;data=0xAC0E944
+0x57E5212 je near ptr 00000001457E5522
+0x57E5218 lea rax,[rip-3F0B4F]  ;data=0x53F46D0
+0x57E521F mov [rip+5428D9A],rax  ;data=0xAC0DFC0
+0x57E5226 mov edx,158
+0x57E522B mov ecx,10
+0x57E5230 vzeroupper
+0x57E5233 call 00000001446616C0  ;call=0x46616C0
+0x57E5238 mov rdi,rax
+0x57E523B mov rcx,rax
+0x57E523E call 00000001457E55A0  ;call=0x57E55A0
+0x57E5243 mov [rip+5429656],rdi  ;data=0xAC0E8A0
+0x57E524A mov rax,[rdi]
+0x57E524D mov rcx,rdi
+0x57E5250 call qword ptr [rax+8]
+0x57E5253 cmp eax,1
+0x57E5256 jne near ptr 00000001457E54DD
+0x57E525C cmp qword ptr [rip+5429634],0  ;data=0xAC0E898
+0x57E5264 jne near ptr 00000001457E52FA
+0x57E526A mov edx,0A8
+0x57E526F mov ecx,10
+0x57E5274 vzeroupper
+0x57E5277 call 00000001446616C0  ;call=0x46616C0
+0x57E527C mov rdi,rax
+0x57E527F vxorps xmm0,xmm0,xmm0
+0x57E5283 vmovups [rax],ymm0
+0x57E5287 vmovups [rax+20],ymm0
+0x57E528C vmovups [rax+40],ymm0
+0x57E5291 vmovups [rax+60],ymm0
+0x57E5296 vmovups [rax+80],ymm0
+0x57E529E lea rcx,[rax+18]
+0x57E52A2 xor r14d,r14d
+0x57E52A5 mov [rax+0A0],r14
+0x57E52AC lea rbx,[rax+80]
+0x57E52B3 mov r15,[rip+4A63E46]  ;data=0xA249100
+0x57E52BA vzeroupper
+0x57E52BD call r15
+0x57E52C0 mov [rdi+40],r14
+--- func=0x57E4D00 center=0x57E4D00 ---
+0x57E4D00 push r15
+0x57E4D02 push r14
+0x57E4D04 push rsi
+0x57E4D05 push rdi
+0x57E4D06 push rbx
+0x57E4D07 sub rsp,30
+0x57E4D0B vmovaps [rsp+20],xmm6
+0x57E4D11 mov rsi,rcx
+0x57E4D14 cmp qword ptr [rip+5429BAC],0  ;data=0xAC0E8C8
+0x57E4D1C jne near ptr 00000001457E50E2
+0x57E4D22 mov edx,4D0
+0x57E4D27 mov ecx,10
+0x57E4D2C call 00000001446616C0  ;call=0x46616C0
+0x57E4D31 mov rdi,rax
+0x57E4D34 lea rbx,[rax+8]
+0x57E4D38 xor r14d,r14d
+0x57E4D3B mov r8d,4C8
+0x57E4D41 mov rcx,rbx
+0x57E4D44 xor edx,edx
+0x57E4D46 call 0000000145352080  ;call=0x5352080
+0x57E4D4B mov [rdi],r14d
+0x57E4D4E mov [rdi+4],r14d
+0x57E4D52 mov r15,[rip+4A643A7]  ;data=0xA249100
+0x57E4D59 mov rcx,rbx
+0x57E4D5C call r15
+0x57E4D5F mov [rdi+30],r14d
+--- pair lo=0xAC0E8A8 center=0x57E5387 ---
+0x57E5347 mov edx,8
+0x57E534C sub edx,eax
+0x57E534E mov rcx,rdi
+0x57E5351 call 00000001457E5700  ;call=0x57E5700
+0x57E5356 test al,al
+0x57E5358 je near ptr 00000001457E550D
+0x57E535E cmp qword ptr [rip+5429542],0  ;data=0xAC0E8A8
+0x57E5366 jne short 00000001457E53A2
+0x57E5368 mov edx,40
+0x57E536D mov ecx,10
+0x57E5372 vzeroupper
+0x57E5375 call 00000001446616C0  ;call=0x46616C0
+0x57E537A vxorps xmm0,xmm0,xmm0
+0x57E537E vmovups [rax],ymm0
+0x57E5382 vmovups [rax+1C],ymm0
+0x57E5387 mov [rip+542951A],rax  ;data=0xAC0E8A8
+0x57E538E mov rcx,rax
+0x57E5391 vzeroupper
+0x57E5394 call 0000000141A88EB0  ;call=0x1A88EB0
+0x57E5399 cmp eax,1
+0x57E539C jne near ptr 00000001457E54DD
+0x57E53A2 cmp qword ptr [rip+54294DE],0  ;data=0xAC0E888
+0x57E53AA jne short 00000001457E53F0
+0x57E53AC mov edx,8
+0x57E53B1 mov ecx,10
+0x57E53B6 vzeroupper
+0x57E53B9 call 00000001446616C0  ;call=0x46616C0
+0x57E53BE mov rdi,rax
+0x57E53C1 mov qword ptr [rax],0
+0x57E53C8 mov [rip+54294B9],rax  ;data=0xAC0E888
+0x57E53CF mov edx,60
+0x57E53D4 xor ecx,ecx
+0x57E53D6 call 00000001446616C0  ;call=0x46616C0
+0x57E53DB vxorps xmm0,xmm0,xmm0
+0x57E53DF vmovups [rax],ymm0
+0x57E53E3 vmovups [rax+20],ymm0
+0x57E53E8 vmovups [rax+40],ymm0
+0x57E53ED mov [rdi],rax
+0x57E53F0 cmp qword ptr [rip+54294C8],0  ;data=0xAC0E8C0
+0x57E53F8 jne short 00000001457E541B
+--- func=0x57E4D00 center=0x57E4D00 ---
+0x57E4D00 push r15
+0x57E4D02 push r14
+0x57E4D04 push rsi
+0x57E4D05 push rdi
+0x57E4D06 push rbx
+0x57E4D07 sub rsp,30
+0x57E4D0B vmovaps [rsp+20],xmm6
+0x57E4D11 mov rsi,rcx
+0x57E4D14 cmp qword ptr [rip+5429BAC],0  ;data=0xAC0E8C8
+0x57E4D1C jne near ptr 00000001457E50E2
+0x57E4D22 mov edx,4D0
+0x57E4D27 mov ecx,10
+0x57E4D2C call 00000001446616C0  ;call=0x46616C0
+0x57E4D31 mov rdi,rax
+0x57E4D34 lea rbx,[rax+8]
+0x57E4D38 xor r14d,r14d
+0x57E4D3B mov r8d,4C8
+0x57E4D41 mov rcx,rbx
+0x57E4D44 xor edx,edx
+0x57E4D46 call 0000000145352080  ;call=0x5352080
+0x57E4D4B mov [rdi],r14d
+0x57E4D4E mov [rdi+4],r14d
+0x57E4D52 mov r15,[rip+4A643A7]  ;data=0xA249100
+0x57E4D59 mov rcx,rbx
+0x57E4D5C call r15
+0x57E4D5F mov [rdi+30],r14d
+--- pair lo=0xAC0E898 center=0x57E52E2 ---
+0x57E52A2 xor r14d,r14d
+0x57E52A5 mov [rax+0A0],r14
+0x57E52AC lea rbx,[rax+80]
+0x57E52B3 mov r15,[rip+4A63E46]  ;data=0xA249100
+0x57E52BA vzeroupper
+0x57E52BD call r15
+0x57E52C0 mov [rdi+40],r14
+0x57E52C4 mov dword ptr [rdi+48],0
+0x57E52CB vxorps xmm0,xmm0,xmm0
+0x57E52CF vmovups [rdi+50],ymm0
+0x57E52D4 vmovups [rdi+60],ymm0
+0x57E52D9 mov rcx,rbx
+0x57E52DC vzeroupper
+0x57E52DF call r15
+0x57E52E2 mov [rip+54295AF],rdi  ;data=0xAC0E898
+0x57E52E9 mov rcx,rdi
+0x57E52EC call 00000001457E5680  ;call=0x57E5680
+0x57E52F1 cmp eax,1
+0x57E52F4 jne near ptr 00000001457E551B
+0x57E52FA cmp qword ptr [rip+54295AE],0  ;data=0xAC0E8B0
+0x57E5302 jne short 00000001457E535E
+0x57E5304 mov edx,50
+0x57E5309 mov ecx,10
+0x57E530E vzeroupper
+0x57E5311 call 00000001446616C0  ;call=0x46616C0
+0x57E5316 mov rdi,rax
+0x57E5319 lea rcx,[rax+20]
+0x57E531D vxorps xmm0,xmm0,xmm0
+0x57E5321 vmovups [rax],ymm0
+0x57E5325 vmovups [rax+20],ymm0
+0x57E532A vmovups [rax+30],ymm0
+0x57E532F vzeroupper
+0x57E5332 call qword ptr [rip+4A63DC8]  ;data=0xA249100
+0x57E5338 mov [rip+5429571],rdi  ;data=0xAC0E8B0
+0x57E533F mov eax,[rdi+0C]
+0x57E5342 cmp eax,7
+0x57E5345 ja short 00000001457E535E
+0x57E5347 mov edx,8
+0x57E534C sub edx,eax
+0x57E534E mov rcx,rdi
+--- func=0x57E4D00 center=0x57E4D00 ---
+0x57E4D00 push r15
+0x57E4D02 push r14
+0x57E4D04 push rsi
+0x57E4D05 push rdi
+0x57E4D06 push rbx
+0x57E4D07 sub rsp,30
+0x57E4D0B vmovaps [rsp+20],xmm6
+0x57E4D11 mov rsi,rcx
+0x57E4D14 cmp qword ptr [rip+5429BAC],0  ;data=0xAC0E8C8
+0x57E4D1C jne near ptr 00000001457E50E2
+0x57E4D22 mov edx,4D0
+0x57E4D27 mov ecx,10
+0x57E4D2C call 00000001446616C0  ;call=0x46616C0
+0x57E4D31 mov rdi,rax
+0x57E4D34 lea rbx,[rax+8]
+0x57E4D38 xor r14d,r14d
+0x57E4D3B mov r8d,4C8
+0x57E4D41 mov rcx,rbx
+0x57E4D44 xor edx,edx
+0x57E4D46 call 0000000145352080  ;call=0x5352080
+0x57E4D4B mov [rdi],r14d
+0x57E4D4E mov [rdi+4],r14d
+0x57E4D52 mov r15,[rip+4A643A7]  ;data=0xA249100
+0x57E4D59 mov rcx,rbx
+0x57E4D5C call r15
+0x57E4D5F mov [rdi+30],r14d
+--- pair lo=0xAC0E8B8 center=0x57E5497 ---
+0x57E5457 add [rax],al
+0x57E5459 add [rdi],cl
+0x57E545B ror dword ptr [r9-76B7EFB0],1
+0x57E5462 shr eax,0A8
+0x57E5465 add eax,[rax]
+0x57E5467 add [rax+rax*8+9D840F],al
+0x57E546E add [rax],al
+0x57E5470 cmp qword ptr [rip+5429440],0  ;data=0xAC0E8B8
+0x57E5478 jne short 00000001457E54AB
+0x57E547A mov edx,0B0
+0x57E547F mov ecx,10
+0x57E5484 vzeroupper
+0x57E5487 call 00000001446616C0  ;call=0x46616C0
+0x57E548C mov rdi,rax
+0x57E548F mov rcx,rax
+0x57E5492 call 00000001457E5550  ;call=0x57E5550
+0x57E5497 mov [rip+542941A],rdi  ;data=0xAC0E8B8
+0x57E549E mov rcx,rdi
+0x57E54A1 call 00000001457E5A30  ;call=0x57E5A30
+0x57E54A6 cmp eax,1
+0x57E54A9 jne short 00000001457E54DD
+0x57E54AB cmp qword ptr [rip+670E365],0  ;data=0xBEF3818
+0x57E54B3 jne short 00000001457E54C7
+0x57E54B5 vzeroupper
+0x57E54B8 call 00000001457E5600  ;call=0x57E5600
+0x57E54BD cmp qword ptr [rip+670E353],0  ;data=0xBEF3818
+0x57E54C5 je short 00000001457E550D
+0x57E54C7 xor ecx,ecx
+0x57E54C9 vzeroupper
+0x57E54CC call 0000000144F65838  ;call=0x4F65838
+0x57E54D1 mov [rip+5429558],rax  ;data=0xAC0EA30
+0x57E54D8 mov eax,1
+0x57E54DD mov edi,eax
+0x57E54DF test rsi,rsi
+0x57E54E2 je short 00000001457E54F9
+0x57E54E4 lea rdx,[rip+54293F5]  ;data=0xAC0E8E0
+0x57E54EB mov r8d,0B8
+0x57E54F1 mov rcx,rsi
+0x57E54F4 call 00000001453519E0  ;call=0x53519E0
+0x57E54F9 mov eax,edi
+--- func=0x57E4D00 center=0x57E4D00 ---
+0x57E4D00 push r15
+0x57E4D02 push r14
+0x57E4D04 push rsi
+0x57E4D05 push rdi
+0x57E4D06 push rbx
+0x57E4D07 sub rsp,30
+0x57E4D0B vmovaps [rsp+20],xmm6
+0x57E4D11 mov rsi,rcx
+0x57E4D14 cmp qword ptr [rip+5429BAC],0  ;data=0xAC0E8C8
+0x57E4D1C jne near ptr 00000001457E50E2
+0x57E4D22 mov edx,4D0
+0x57E4D27 mov ecx,10
+0x57E4D2C call 00000001446616C0  ;call=0x46616C0
+0x57E4D31 mov rdi,rax
+0x57E4D34 lea rbx,[rax+8]
+0x57E4D38 xor r14d,r14d
+0x57E4D3B mov r8d,4C8
+0x57E4D41 mov rcx,rbx
+0x57E4D44 xor edx,edx
+0x57E4D46 call 0000000145352080  ;call=0x5352080
+0x57E4D4B mov [rdi],r14d
+0x57E4D4E mov [rdi+4],r14d
+0x57E4D52 mov r15,[rip+4A643A7]  ;data=0xA249100
+0x57E4D59 mov rcx,rbx
+0x57E4D5C call r15
+0x57E4D5F mov [rdi+30],r14d
+--- pair lo=0xB74A930 center=0x37D84E3 ---
+0x37D84A3 lea eax,[rsp+6A0]
+0x37D84AA mov [rsp+38],rax
+0x37D84AF mov eax,1
+0x37D84B4 mov [rsp+30],eax
+0x37D84B8 mov [rsp+20],eax
+0x37D84BC mov dword ptr [rsp+40],10000008
+0x37D84C4 mov dword ptr [rsp+28],2
+0x37D84CC mov rcx,rbx
+0x37D84CF mov rdx,rsi
+0x37D84D2 mov r8d,4
+0x37D84D8 mov r9d,4
+0x37D84DE call 00000001404DEAF0  ;call=0x4DEAF0
+0x37D84E3 mov [rip+7F72446],rbx  ;str=L+<$H
+0x37D84EA mov rax,[rip+7797857]  ;data=0xAF6FD48
+0x37D84F1 cmp byte ptr [rax+2A],0
+0x37D84F5 je near ptr 00000001437DA99B
+0x37D84FB mov r14,rax
+0x37D84FE mov rcx,r14
+0x37D8501 mov edx,2F0
+0x37D8506 mov r8d,10
+0x37D850C call 000000014426EE50  ;call=0x426EE50
+0x37D8511 mov rbx,rax
+0x37D8514 test rax,rax
+0x37D8517 je near ptr 00000001437DB452
+0x37D851D vpxor xmm0,xmm0,xmm0
+0x37D8521 vmovdqa xmmword ptr [rsp+0B0],xmm0
+0x37D852A mov dword ptr [rsp+0C0],3F800000
+0x37D8535 mov byte ptr [rsp+0C4],0
+0x37D853D mov [rsp+320],rdi
+0x37D8545 xor edi,edi
+0x37D8547 mov [rsp+328],rdi
+0x37D854F mov [rsp+330],r12
+0x37D8557 mov dword ptr [rsp+6A0],1C
+0x37D8562 mov [rsp+50],rbp
+--- func=0x37D7120 center=0x37D7120 ---
+0x37D7120 push r15
+0x37D7122 push r14
+0x37D7124 push r13
+0x37D7126 push r12
+0x37D7128 push rsi
+0x37D7129 push rdi
+0x37D712A push rbp
+0x37D712B push rbx
+0x37D712C mov eax,1518
+0x37D7131 call 00000001450098A0  ;call=0x50098A0
+0x37D7136 sub rsp,rax
+0x37D7139 vmovdqa xmmword ptr [rsp+1500],xmm7
+0x37D7142 vmovaps [rsp+14F0],xmm6
+0x37D714B mov rax,[rip+6ADC0AE]  ;data=0xA2B3200
+0x37D7152 xor rax,rsp
+0x37D7155 mov [rsp+14E8],rax
+0x37D715D mov rax,[rip+7F7384C]  ;data=0xB74A9B0
+0x37D7164 mov ecx,[rip+73B4A56]  ;data=0xAB8BBC0
+0x37D716A mov rdx,gs:[58]
+0x37D7173 mov rcx,[rdx+rcx*8]
+0x37D7177 mov ecx,[rcx+1CE8]
+0x37D717D cmp ecx,2
+--- pair lo=0xB74E718 center=0x2984958 ---
+0x2984918 je near ptr 000000014298563C
+0x298491E mov rdi,rax
+0x2984921 mov rcx,rdi
+0x2984924 mov edx,140
+0x2984929 mov r8d,8
+0x298492F call 000000014426EE50  ;call=0x426EE50
+0x2984934 mov rbx,rax
+0x2984937 test rax,rax
+0x298493A je near ptr 0000000142985C23
+0x2984940 mov rdx,[rsi+1E0]
+0x2984947 mov rcx,rbx
+0x298494A xor r8d,r8d
+0x298494D mov r9d,4000000
+0x2984953 call 0000000146540C10  ;call=0x6540C10
+0x2984958 mov [rip+8DC9DB9],rbx  ;data=0xB74E718
+0x298495F mov rax,[rip+85EB3E2]  ;data=0xAF6FD48
+0x2984966 cmp byte ptr [rax+2A],0
+0x298496A je near ptr 0000000142985672
+0x2984970 mov rdi,rax
+0x2984973 mov rcx,rdi
+0x2984976 mov edx,140
+0x298497B mov r8d,8
+0x2984981 call 000000014426EE50  ;call=0x426EE50
+0x2984986 mov rbx,rax
+0x2984989 test rax,rax
+0x298498C je near ptr 0000000142985C3F
+0x2984992 mov rdx,[rsi+1E0]
+0x2984999 mov rcx,rbx
+0x298499C mov r8d,1
+0x29849A2 mov r9d,2000000
+0x29849A8 call 0000000146540C10  ;call=0x6540C10
+0x29849AD mov [rip+8DC9D6C],rbx  ;data=0xB74E720
+0x29849B4 mov rax,[rip+85EB38D]  ;data=0xAF6FD48
+0x29849BB cmp byte ptr [rax+2A],0
+0x29849BF je near ptr 00000001429856A8
+0x29849C5 mov rbx,rax
+0x29849C8 mov rcx,rbx
+0x29849CB mov edx,58
+0x29849D0 mov r8d,8
+0x29849D6 call 000000014426EE50  ;call=0x426EE50
+--- func=0x2983320 center=0x2983320 ---
+0x2983320 push r15
+0x2983322 push r14
+0x2983324 push r13
+0x2983326 push r12
+0x2983328 push rsi
+0x2983329 push rdi
+0x298332A push rbp
+0x298332B push rbx
+0x298332C sub rsp,158
+0x2983333 vmovaps [rsp+140],xmm7
+0x298333C vmovaps [rsp+130],xmm6
+0x2983345 mov rsi,rcx
+0x2983348 mov rax,[rip+792FEB1]  ;data=0xA2B3200
+0x298334F xor rax,rsp
+0x2983352 mov [rsp+128],rax
+0x298335A call 00000001438516C0  ;call=0x38516C0
+0x298335F mov rbx,[rsi+70]
+0x2983363 cmp byte ptr [rbx],0
+0x2983366 je near ptr 000000014298340F
+0x298336C cmp byte ptr [rip+9476B15],0  ;data=0xBDF9E88
+0x2983373 je near ptr 000000014298340F
+0x2983379 mov ebp,[rip+9476DB9]  ;data=0xBDFA138
+0x298337F test ebp,ebp
+--- pair lo=0xB6FF4C8 center=0x3736D7F ---
+0x3736D3F add [rbx+8D8086],cl
+0x3736D45 add cl,al
+0x3736D47 loopne 0000000143736D4D
+0x3736D49 jne near ptr 00000001437373DA
+0x3736D4F mov [rsi+9D88],ebp
+0x3736D55 lea rdi,[rsi+9D90]
+0x3736D5C mov rcx,rdi
+0x3736D5F mov edx,1
+0x3736D64 call qword ptr [rip+6B1239E]  ;data=0xA249108
+0x3736D6A mov rcx,rdi
+0x3736D6D xor edx,edx
+0x3736D6F call qword ptr [rip+6B12553]  ;data=0xA2492C8
+0x3736D75 mov dword ptr [rsi+9DB8],64
+0x3736D7F mov [rip+7FC8742],rsi  ;data=0xB6FF4C8
+0x3736D86 mov dword ptr [r15+8],0FFFFFFFF
+0x3736D8E mov qword ptr [r15],0FFFFFFFFFFFFFFFF
+0x3736D95 mov [rsp+20],ebp
+0x3736D99 lea rdi,[rsp+30]
+0x3736D9E vmovss xmm6,dword ptr [rip+591802A]  ;data=0x904EDD0
+0x3736DA6 mov rcx,rsi
+0x3736DA9 mov rdx,rdi
+0x3736DAC xor r8d,r8d
+0x3736DAF vmovaps xmm3,xmm6
+0x3736DB3 call 000000014584DD90  ;call=0x584DD90
+0x3736DB8 mov eax,[rdi]
+0x3736DBA mov [rsi+48],eax
+0x3736DBD mov [rsp+20],ebp
+0x3736DC1 lea rdi,[rsp+30]
+0x3736DC6 mov rcx,rsi
+0x3736DC9 mov rdx,rdi
+0x3736DCC mov r8d,1
+0x3736DD2 vmovaps xmm3,xmm6
+0x3736DD6 call 000000014584DD90  ;call=0x584DD90
+0x3736DDB mov eax,[rdi]
+0x3736DDD mov [rsi+4C],eax
+0x3736DE0 mov dword ptr [rsp+20],47C35000
+0x3736DE8 lea rdi,[rsp+30]
+0x3736DED vmovss xmm6,dword ptr [rip+58FF42B]  ;data=0x9036220
+0x3736DF5 mov rcx,rsi
+0x3736DF8 mov rdx,rdi
+--- func=0x3736990 center=0x3736990 ---
+0x3736990 push r15
+0x3736992 push r14
+0x3736994 push r12
+0x3736996 push rsi
+0x3736997 push rdi
+0x3736998 push rbp
+0x3736999 push rbx
+0x373699A sub rsp,0A0
+0x37369A1 vmovaps [rsp+90],xmm6
+0x37369AA mov rsi,rcx
+0x37369AD mov rax,[rip+6B7C84C]  ;data=0xA2B3200
+0x37369B4 xor rax,rsp
+0x37369B7 mov [rsp+88],rax
+0x37369BF lea rax,[rip+5A7FF9A]  ;data=0x91B6960
+0x37369C6 mov [rcx],rax
+0x37369C9 add rcx,8
+0x37369CD call 00000001419A0D40  ;call=0x19A0D40
+0x37369D2 lea rax,[rip+5A7FB17]  ;data=0x91B64F0
+0x37369D9 mov [rsi],rax
+0x37369DC lea rax,[rip+5A7FB2D]  ;data=0x91B6510
+0x37369E3 mov [rsi+8],rax
+0x37369E7 mov rax,[rip+783935A]  ;data=0xAF6FD48
+0x37369EE cmp byte ptr [rax+2A],0
+--- pair lo=0xAC027C8 center=0x67FD252 ---
+0x67FD212 or ecx,esp
+0x67FD214 int 3
+--- func=0x67FD220 center=0x67FD220 ---
+0x67FD220 sub rsp,28
+0x67FD224 cmp qword ptr [rip+440559C],0  ;data=0xAC027C8
+0x67FD22C je short 00000001467FD265
+0x67FD22E call 00000001467FD850  ;call=0x67FD850
+0x67FD233 mov rcx,[rip+440558E]  ;data=0xAC027C8
+0x67FD23A call 0000000146817530  ;call=0x6817530
+0x67FD23F mov rcx,[rip+4405582]  ;data=0xAC027C8
+0x67FD246 test rcx,rcx
+0x67FD249 je short 00000001467FD250
+0x67FD24B call 0000000144DF2B90  ;call=0x4DF2B90
+0x67FD250 xor eax,eax
+0x67FD252 mov [rip+440556F],rax  ;data=0xAC027C8
+0x67FD259 mov [rip+4405570],rax  ;data=0xAC027D0
+0x67FD260 add rsp,28
+0x67FD264 ret
+
+===== STRING PROXIMITY (PlayerProgression/LocalPlayer/StartupPlayerSpawner) =====
+PlayerProgression hits=2
+  str=0xA11C861 leas=0
+  str=0xA14482A leas=4
+    lea=0x1C71A0B func=0x1C6FD50 nearPairs=4
+      lo=0xB2EB998 hi=0xB2EB9A0 delta=8 siteA=0x1C7013C siteB=0x1C70156 dist=26 func=0x1C6FD50 writers=1 readers=1 sec=.trace
+      lo=0xB2F4CD0 hi=0xB2F4CD8 delta=8 siteA=0x1C71C26 siteB=0x1C71BB9 dist=109 func=0x1C6FD50 writers=1 readers=1 sec=.trace
+      lo=0xB2F4AC0 hi=0xB2F4AC8 delta=8 siteA=0x1C71AE0 siteB=0x1C71A6A dist=118 func=0x1C6FD50 writers=1 readers=1 sec=.trace
+      lo=0xB2F4BC0 hi=0xB2F4BC8 delta=8 siteA=0x1C71B87 siteB=0x1C71B10 dist=119 func=0x1C6FD50 writers=1 readers=1 sec=.trace
+    lea=0x1C71A0C func=0x1C6FD50 nearPairs=4
+      lo=0xB2EB998 hi=0xB2EB9A0 delta=8 siteA=0x1C7013C siteB=0x1C70156 dist=26 func=0x1C6FD50 writers=1 readers=1 sec=.trace
+      lo=0xB2F4CD0 hi=0xB2F4CD8 delta=8 siteA=0x1C71C26 siteB=0x1C71BB9 dist=109 func=0x1C6FD50 writers=1 readers=1 sec=.trace
+      lo=0xB2F4AC0 hi=0xB2F4AC8 delta=8 siteA=0x1C71AE0 siteB=0x1C71A6A dist=118 func=0x1C6FD50 writers=1 readers=1 sec=.trace
+      lo=0xB2F4BC0 hi=0xB2F4BC8 delta=8 siteA=0x1C71B87 siteB=0x1C71B10 dist=119 func=0x1C6FD50 writers=1 readers=1 sec=.trace
+    lea=0x6386663 func=0x6386643 nearPairs=4
+      lo=0xB40A0B8 hi=0xB40A0C0 delta=8 siteA=0x6386590 siteB=0x6386507 dist=137 func=0x0 writers=2 readers=1 sec=.trace
+      lo=0xB40A0B0 hi=0xB40A0B8 delta=8 siteA=0x63864F9 siteB=0x6386590 dist=151 func=0x0 writers=2 readers=1 sec=.trace
+      lo=0xB40A0E8 hi=0xB40A0F0 delta=8 siteA=0x6386537 siteB=0x638653E dist=7 func=0x6386517 writers=2 readers=0 sec=.trace
+      lo=0xB40A210 hi=0xB40A218 delta=8 siteA=0x63866B2 siteB=0x63866B9 dist=7 func=0x6386692 writers=2 readers=0 sec=.trace
+    lea=0x6386664 func=0x6386644 nearPairs=4
+      lo=0xB40A0B8 hi=0xB40A0C0 delta=8 siteA=0x6386590 siteB=0x6386507 dist=137 func=0x0 writers=2 readers=1 sec=.trace
+      lo=0xB40A0B0 hi=0xB40A0B8 delta=8 siteA=0x63864F9 siteB=0x6386590 dist=151 func=0x0 writers=2 readers=1 sec=.trace
+      lo=0xB40A0E8 hi=0xB40A0F0 delta=8 siteA=0x6386537 siteB=0x638653E dist=7 func=0x6386517 writers=2 readers=0 sec=.trace
+      lo=0xB40A210 hi=0xB40A218 delta=8 siteA=0x63866B2 siteB=0x63866B9 dist=7 func=0x6386692 writers=2 readers=0 sec=.trace
+LocalPlayer hits=0
+StartupPlayerSpawner hits=0
+LoadEntityBuilder hits=0
+RowSelector hits=0
+EntityBuilder hits=0
+
+===== VERDICT =====
+dualAdjacentPublishCandidates=176401
+singleWriterPublishCandidates=24
+bestLo=0xB74A928
+bestHi=0xB74A930
+bestSite=0x37D766B
+bestFunc=0x37D7120
+bestWriters=1 bestReaders=697
+decision=dual-adjacent-publish-candidates-found-identity-unproven
+blocker=Need to prove which single-writer pair is selector*+HandleContainer*
+next=Disasm best publisher; follow HandleContainer* consumer that reads objectId (+0x10);
+     structural CreateReference/load-task by handle layout, not string names.
+c1Proven=false
+callEngine=off

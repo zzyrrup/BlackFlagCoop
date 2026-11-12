@@ -1,0 +1,14 @@
+﻿{
+  "schemaVersion": 1,
+  "virtDup00": 3359,
+  "virtRetToBuildAuto": 1,
+  "virtRetToBuildConfirmed": 0,
+  "directDup00": 4000,
+  "directRetToBuildAuto": 3,
+  "directRetToBuildConfirmed": 0,
+  "vt90VirtDup00": 191,
+  "withBegin10": 0,
+  "c2Proven": false,
+  "callEngine": false,
+  "next": "Unbroken rax->REG->r8 Build chain; focus call [rax+0x90]"
+}

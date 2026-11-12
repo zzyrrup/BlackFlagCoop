@@ -1,0 +1,13 @@
+﻿{
+  "schemaVersion": 1,
+  "milestone": "v0.8.0",
+  "agent": "Agent2-player-retention",
+  "contract": "C1",
+  "mode": "offline-pe-readonly",
+  "exeSha256": "19920F34BB2FAC814023EE3C27F0CECA1872E80A2AAFB37C092C419FFF77CC0D",
+  "c1AcquireState": "BlockedUnproven",
+  "callEngine": false,
+  "decision": "role-hunt-duplicate-objectid-strings-falsified",
+  "blocker": "Duplicate-this and handle/objectId roles unproven",
+  "next": "Agent1 string-free Duplicate/Begin/End fingerprint; HC* via +0/+8/+10"
+}

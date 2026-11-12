@@ -1,0 +1,46 @@
+===== BF3100 target 0xE8C71F0 =====
+0xE8C71F0 push rsi
+0xE8C71F1 push rdi
+0xE8C71F2 push rbx
+0xE8C71F3 sub rsp,20
+0xE8C71F7 mov rsi,rcx
+0xE8C71FA test dl,dl
+0xE8C71FC je near ptr 000000014E8C7288
+0xE8C7202 cmp qword ptr [rsi+0A0],0
+0xE8C720A jne short 000000014E8C7288
+0xE8C720C mov eax,[rsi+74]
+0xE8C720F imul eax,[rsi+70]
+0xE8C7213 movsxd rcx,dword ptr [rsi+58]
+0xE8C7217 lea rdx,[rip-409EE6E] ;data=0xA8283B0
+0xE8C721E movzx ecx,byte ptr [rcx+rdx]
+0xE8C7222 imul ecx,eax
+0xE8C7225 mov r8d,ecx
+0xE8C7228 shr r8d,3
+0xE8C722C mov edi,r8d
+0xE8C722F mov edx,[rip+0B915F97] ;data=0x1A1DD1CC
+0xE8C7235 xor edx,0A8
+0xE8C723B cmp ecx,edx
+0xE8C723D jb near ptr 000000014E8C73CD
+0xE8C7243 mov rcx,[rip-3957502] ;data=0xAF6FD48
+0xE8C724A cmp byte ptr [rcx+2A],0
+0xE8C724E je short 000000014E8C729A
+0xE8C7250 mov rbx,rcx
+0xE8C7253 mov rcx,rbx
+0xE8C7256 mov edx,r8d
+0xE8C7259 mov r8d,80
+0xE8C725F call 000000014426EE50 ;call=0x426EE50
+0xE8C7264 mov rcx,rax
+0xE8C7267 test rax,rax
+0xE8C726A je near ptr 000000014E8C73B8
+0xE8C7270 mov [rsi+0A0],rcx
+0xE8C7277 xor edx,edx
+0xE8C7279 mov r8,rdi
+0xE8C727C call 0000000145352080 ;call=0x5352080
+0xE8C7281 lock inc dword ptr [rsi+98]
+0xE8C7288 add rsi,90
+0xE8C728F mov rax,rsi
+0xE8C7292 add rsp,20
+0xE8C7296 pop rbx
+0xE8C7297 pop rdi
+0xE8C7298 pop rsi
+0xE8C7299 ret

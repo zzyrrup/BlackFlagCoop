@@ -1,0 +1,480 @@
+===== v0.8.0 ALLOC VPTR =====
+exeSha256=19920F34BB2FAC814023EE3C27F0CECA1872E80A2AAFB37C092C419FFF77CC0D
+
+===== FUNC 0x34730 =====
+insns=400 end=0x34D71
+directE8Callers=0
+allocCall=0x34787 edx=0x1528
+  0x3478C test rax,rax
+  0x3478F je near ptr 000000014003483D
+  0x34795 lea rcx,[rip+92C4A2C]
+VPTR write @0x3479C base=alloc disp=0x0 vt=0x92F91C8 src=mov [rax],rcx
+  0x3479C mov [rax],rcx
+  0x3479F vxorps xmm0,xmm0,xmm0
+  0x347A3 vmovups [rax+8],xmm0
+  0x347A8 mov dword ptr [rax+18],0
+  0x347AF xor r14d,r14d
+  0x347B2 lea rbx,[rsp+2F]
+  0x347B7 mov rcx,rbx
+  0x347BA xor edx,edx
+  0x347BC mov r8b,1
+  0x347BF mov r9b,1
+  0x347C2 mov rdi,rax
+  0x347C5 call 00000001442BB220
+  0x347CA mov rax,[rsi]
+  0x347CD mov rcx,rsi
+  0x347D0 xor edx,edx
+  0x347D2 xor r8d,r8d
+  0x347D5 call qword ptr [rax+20]
+  0x347D8 mov rsi,rax
+  0x347DB mov rcx,rbx
+  0x347DE call 00000001442B85F0
+  0x347E3 mov [rdi+8],rsi
+  0x347E7 lea rax,[rip+92C491A]
+VPTR write @0x347EE base=alloc disp=0x0 vt=0x92F9108 src=mov [rdi],rax
+  0x347EE mov [rdi],rax
+  0x347F1 mov rcx,rdi
+  0x347F4 add rcx,20
+CALL on alloc -> 0xB0EFA0 @0x347F8
+  0x347F8 call 0000000140B0EFA0
+  0x347FD vxorps xmm0,xmm0,xmm0
+  0x34801 vmovups [rdi+14F0],ymm0
+  0x34809 mov [rdi+1510],r14
+  0x34810 mov [rdi+1518],r14
+  0x34817 mov word ptr [rdi+1520],0
+  0x34820 mov rcx,[rsp+30]
+  0x34825 xor rcx,rsp
+  0x34828 vzeroupper
+  0x3482B call 0000000145014570
+  0x34830 mov rax,rdi
+  0x34833 add rsp,38
+  0x34837 pop rbx
+  0x34838 pop rdi
+  0x34839 pop rsi
+  0x3483A pop r14
+  0x3483C ret
+  0x3483D mov r10,[rdi]
+  0x34840 mov edx,1528
+  0x34845 mov rcx,rdi
+  0x34848 mov r8d,8
+  0x3484E xor r9d,r9d
+  0x34851 mov rdi,rax
+  0x34854 call qword ptr [r10+40]
+  0x34858 mov rax,rdi
+  0x3485B jmp near ptr 0000000140034795
+  0x34860 push r15
+  0x34862 push r14
+  0x34864 push r13
+  0x34866 push r12
+  0x34868 push rsi
+  0x34869 push rdi
+  0x3486A push rbp
+  0x3486B push rbx
+  0x3486C sub rsp,48
+  0x34870 mov r14,rdx
+  0x34873 mov rsi,rcx
+  0x34876 mov rax,[rip+0A27E983]
+  0x3487D xor rax,rsp
+  0x34880 mov [rsp+40],rax
+  0x34885 cmp qword ptr [rcx],0
+  0x34889 je near ptr 0000000140034A32
+  0x3488F cmp dword ptr [rsi+8],1B6DB94
+  0x34896 ja short 00000001400348A8
+  0x34898 mov eax,[rsi+40]
+  0x3489B cdq
+  0x3489C idiv dword ptr [rsi+8]
+  0x3489F cmp eax,2
+  0x348A2 jge near ptr 0000000140034CFB
+  0x348A8 mov rax,gs:[30]
+  0x348B1 mov ecx,[rsi+84]
+  0x348B7 cmp ecx,[rax+48]
+CALL on alloc -> 0x5014570 @0x34A1B
+CALL on alloc -> 0x31FC8B0 @0x34D4C
+VPTR sequence: 0x3479C base=alloc+0x0 vt=0x92F91C8 ; 0x347EE base=alloc+0x0 vt=0x92F9108
+-- embedded +0x20 ctor 0xB0EFA0 --
+embedded vptr @0xB0EFB1 disp=0x0 vt=0xAF73BD8
+  0xB0EFA0 push rsi
+  0xB0EFA1 push rdi
+  0xB0EFA2 push rbx
+  0xB0EFA3 sub rsp,20
+  0xB0EFA7 mov rsi,rcx
+  0xB0EFAA lea rax,[rip+0A464C27]
+  0xB0EFB1 mov [rcx],rax
+  0xB0EFB4 lea rax,[rip+88182F5]
+  0xB0EFBB mov [rcx+8],rax
+  0xB0EFBF mov ebx,80000000
+  0xB0EFC4 mov eax,[rcx+18]
+  0xB0EFC7 and eax,ebx
+  0xB0EFC9 or eax,0C000
+  0xB0EFCE mov [rcx+18],eax
+  0xB0EFD1 xor edi,edi
+  0xB0EFD3 mov [rcx+10],rdi
+  0xB0EFD7 mov [rcx+20],edi
+  0xB0EFDA mov eax,[rcx+2C]
+vt-8 raw=0x0 sec=.edata
+SLOTS vt=0x92F91C8
+  [0] 0x67C6A70
+  [1] 0x53741F0
+  [2] 0x53741F0
+  [3] 0x53741F0
+  [4] 0x8DFFB50
+  [5] 0x53741F0
+  [6] 0xC059DE0 not-code
+vt-8 raw=0x0 sec=.edata
+SLOTS vt=0x92F9108
+  [0] 0xCF5CC0
+  [1] 0x53741F0
+  [2] 0x53741F0
+  [3] 0x53741F0
+  [4] 0x8E00440
+  [5] 0x53741F0
+  [6] 0xC05CF10 not-code
+-- embedded table --
+vt-8 raw=0x0 sec=.trace
+SLOTS vt=0xAF73BD8
+  [0] 0x0 not-code
+CLASS not-character owner=allocation-owns-vptr rtti=no-col name=
+
+===== FUNC 0x3DE6300 =====
+insns=80 end=0x3DE6441
+directE8Callers=0
+allocCall=0x3DE6357 edx=0x1530
+  0x3DE635C test rax,rax
+  0x3DE635F je near ptr 0000000143DE641E
+  0x3DE6365 lea rcx,[rip+5512E5C]
+VPTR write @0x3DE636C base=alloc disp=0x0 vt=0x92F91C8 src=mov [rax],rcx
+  0x3DE636C mov [rax],rcx
+  0x3DE636F vxorps xmm0,xmm0,xmm0
+  0x3DE6373 vmovups [rax+8],xmm0
+  0x3DE6378 mov dword ptr [rax+18],0
+  0x3DE637F xor r14d,r14d
+  0x3DE6382 lea rbx,[rsp+2F]
+  0x3DE6387 mov rcx,rbx
+  0x3DE638A xor edx,edx
+  0x3DE638C mov r8b,1
+  0x3DE638F mov r9b,1
+  0x3DE6392 mov rdi,rax
+  0x3DE6395 call 00000001442BB220
+  0x3DE639A mov rax,[rsi]
+  0x3DE639D mov rcx,rsi
+  0x3DE63A0 xor edx,edx
+  0x3DE63A2 xor r8d,r8d
+  0x3DE63A5 call qword ptr [rax+20]
+  0x3DE63A8 mov rsi,rax
+  0x3DE63AB mov rcx,rbx
+  0x3DE63AE call 00000001442B85F0
+  0x3DE63B3 mov [rdi+8],rsi
+  0x3DE63B7 lea rax,[rip+5512D4A]
+VPTR write @0x3DE63BE base=alloc disp=0x0 vt=0x92F9108 src=mov [rdi],rax
+  0x3DE63BE mov [rdi],rax
+  0x3DE63C1 mov rcx,rdi
+  0x3DE63C4 add rcx,20
+CALL on alloc -> 0xB0EFA0 @0x3DE63C8
+  0x3DE63C8 call 0000000140B0EFA0
+  0x3DE63CD vxorps xmm0,xmm0,xmm0
+  0x3DE63D1 vmovups [rdi+14F0],ymm0
+  0x3DE63D9 mov [rdi+1510],r14
+  0x3DE63E0 mov [rdi+1518],r14
+  0x3DE63E7 mov word ptr [rdi+1520],0
+  0x3DE63F0 lea rax,[rip+5512C51]
+VPTR write @0x3DE63F7 base=alloc disp=0x0 vt=0x92F9048 src=mov [rdi],rax
+  0x3DE63F7 mov [rdi],rax
+  0x3DE63FA mov byte ptr [rdi+1528],0
+  0x3DE6401 mov rcx,[rsp+30]
+  0x3DE6406 xor rcx,rsp
+  0x3DE6409 vzeroupper
+  0x3DE640C call 0000000145014570
+  0x3DE6411 mov rax,rdi
+  0x3DE6414 add rsp,38
+  0x3DE6418 pop rbx
+  0x3DE6419 pop rdi
+  0x3DE641A pop rsi
+  0x3DE641B pop r14
+  0x3DE641D ret
+  0x3DE641E mov r10,[rdi]
+  0x3DE6421 mov edx,1530
+  0x3DE6426 mov rcx,rdi
+  0x3DE6429 mov r8d,8
+  0x3DE642F xor r9d,r9d
+  0x3DE6432 mov rdi,rax
+  0x3DE6435 call qword ptr [r10+40]
+  0x3DE6439 mov rax,rdi
+  0x3DE643C jmp near ptr 0000000143DE6365
+  0x3DE6441 int 3
+VPTR sequence: 0x3DE636C base=alloc+0x0 vt=0x92F91C8 ; 0x3DE63BE base=alloc+0x0 vt=0x92F9108 ; 0x3DE63F7 base=alloc+0x0 vt=0x92F9048
+-- embedded +0x20 ctor 0xB0EFA0 --
+embedded vptr @0xB0EFB1 disp=0x0 vt=0xAF73BD8
+  0xB0EFA0 push rsi
+  0xB0EFA1 push rdi
+  0xB0EFA2 push rbx
+  0xB0EFA3 sub rsp,20
+  0xB0EFA7 mov rsi,rcx
+  0xB0EFAA lea rax,[rip+0A464C27]
+  0xB0EFB1 mov [rcx],rax
+  0xB0EFB4 lea rax,[rip+88182F5]
+  0xB0EFBB mov [rcx+8],rax
+  0xB0EFBF mov ebx,80000000
+  0xB0EFC4 mov eax,[rcx+18]
+  0xB0EFC7 and eax,ebx
+  0xB0EFC9 or eax,0C000
+  0xB0EFCE mov [rcx+18],eax
+  0xB0EFD1 xor edi,edi
+  0xB0EFD3 mov [rcx+10],rdi
+  0xB0EFD7 mov [rcx+20],edi
+  0xB0EFDA mov eax,[rcx+2C]
+vt-8 raw=0x0 sec=.edata
+SLOTS vt=0x92F91C8
+  [0] 0x67C6A70
+  [1] 0x53741F0
+  [2] 0x53741F0
+  [3] 0x53741F0
+  [4] 0x8DFFB50
+  [5] 0x53741F0
+  [6] 0xC059DE0 not-code
+vt-8 raw=0x0 sec=.edata
+SLOTS vt=0x92F9108
+  [0] 0xCF5CC0
+  [1] 0x53741F0
+  [2] 0x53741F0
+  [3] 0x53741F0
+  [4] 0x8E00440
+  [5] 0x53741F0
+  [6] 0xC05CF10 not-code
+vt-8 raw=0x0 sec=.edata
+SLOTS vt=0x92F9048
+  [0] 0x671C1A0
+  [1] 0x53741F0
+  [2] 0x53741F0
+  [3] 0x53741F0
+  [4] 0x8E00400
+  [5] 0x53741F0
+  [6] 0xC05AA10 not-code
+-- embedded table --
+vt-8 raw=0x0 sec=.trace
+SLOTS vt=0xAF73BD8
+  [0] 0x0 not-code
+CLASS not-character owner=allocation-owns-vptr rtti=no-col name=
+
+===== SPAWNNPC HASH 0x94D05600 =====
+immSites=1
+  imm=0x80F240E func=0x80F23E0
+    str 0x80F23FC SpawnNPCParams
+    call 0x4572C60 @0x80F2412
+    call 0x80F2330 @0x80F2427
+    call 0x4987180 @0x80F2432
+
+===== SLOT METHODS =====
+-- 0x67C6A70 --
+  0x67C6A70 ud2
+  0x67C6A72 int 3
+-- 0x8DFFB50 --
+  0x8DFFB50 push rsi
+  0x8DFFB51 sub rsp,30
+  0x8DFFB55 mov r9d,r8d
+  0x8DFFB58 mov rsi,rdx
+  0x8DFFB5B mov rdx,rcx
+  0x8DFFB5E mov rax,[rsi]
+  0x8DFFB61 mov rax,[rax+30]
+  0x8DFFB65 mov eax,[rax+28]
+  0x8DFFB68 shr eax,0B
+  0x8DFFB6B and eax,1
+  0x8DFFB6E mov [rsp+20],al
+  0x8DFFB72 lea rcx,[rip+325A267]
+  0x8DFFB79 mov r8,rsi
+  0x8DFFB7C call 00000001442ABA10
+  0x8DFFB81 mov rax,rsi
+  0x8DFFB84 add rsp,30
+  CALL 0x42ABA10
+-- 0xCF5CC0 --
+  0xCF5CC0 push rsi
+  0xCF5CC1 push rdi
+  0xCF5CC2 sub rsp,28
+  0xCF5CC6 mov edi,edx
+  0xCF5CC8 mov rsi,rcx
+  0xCF5CCB call 0000000140CF5CF0
+  0xCF5CD0 test edi,edi
+  0xCF5CD2 jne short 0000000140CF5CDE
+  0xCF5CD4 mov rax,rsi
+  0xCF5CD7 add rsp,28
+  0xCF5CDB pop rdi
+  0xCF5CDC pop rsi
+  0xCF5CDD ret
+  0xCF5CDE mov rcx,rsi
+  0xCF5CE1 call 00000001443F8CB0
+  0xCF5CE6 jmp short 0000000140CF5CD4
+  CALL 0xCF5CF0
+  CALL 0x43F8CB0
+-- 0x8E00440 --
+  0x8E00440 push rsi
+  0x8E00441 push rdi
+  0x8E00442 sub rsp,28
+  0x8E00446 mov esi,r8d
+  0x8E00449 mov rdi,rcx
+  0x8E0044C lea rcx,[rip+325CABD]
+  0x8E00453 call 00000001443DCB00
+  0x8E00458 mov rcx,rdi
+  0x8E0045B mov rdx,rax
+  0x8E0045E mov r8d,esi
+  0x8E00461 add rsp,28
+  0x8E00465 pop rdi
+  0x8E00466 pop rsi
+  0x8E00467 jmp near ptr 0000000148DFFB50
+  0x8E0046C int 3
+  CALL 0x43DCB00
+-- 0x671C1A0 --
+  0x671C1A0 push rsi
+  0x671C1A1 push rdi
+  0x671C1A2 sub rsp,28
+  0x671C1A6 mov edi,edx
+  0x671C1A8 mov rsi,rcx
+  0x671C1AB call 0000000140CF5CF0
+  0x671C1B0 test edi,edi
+  0x671C1B2 jne short 000000014671C1BE
+  0x671C1B4 mov rax,rsi
+  0x671C1B7 add rsp,28
+  0x671C1BB pop rdi
+  0x671C1BC pop rsi
+  0x671C1BD ret
+  0x671C1BE mov rcx,rsi
+  0x671C1C1 call 00000001443F8CB0
+  0x671C1C6 jmp short 000000014671C1B4
+  CALL 0xCF5CF0
+  CALL 0x43F8CB0
+-- 0x8E00400 --
+  0x8E00400 push rsi
+  0x8E00401 push rdi
+  0x8E00402 push rbx
+  0x8E00403 sub rsp,20
+  0x8E00407 mov esi,r8d
+  0x8E0040A mov rdi,rcx
+  0x8E0040D lea rcx,[rip+325A5FC]
+  0x8E00414 call 00000001443DCB00
+  0x8E00419 mov rbx,rax
+  0x8E0041C mov rcx,rdi
+  0x8E0041F mov rdx,rax
+  0x8E00422 mov r8d,esi
+  0x8E00425 call 0000000148E00440
+  0x8E0042A mov rax,rbx
+  0x8E0042D add rsp,20
+  0x8E00431 pop rbx
+  CALL 0x43DCB00
+  CALL 0x8E00440
+-- 0xB0EFA0 --
+  0xB0EFA0 push rsi
+  0xB0EFA1 push rdi
+  0xB0EFA2 push rbx
+  0xB0EFA3 sub rsp,20
+  0xB0EFA7 mov rsi,rcx
+  0xB0EFAA lea rax,[rip+0A464C27]
+  0xB0EFB1 mov [rcx],rax
+  0xB0EFB4 lea rax,[rip+88182F5]
+  0xB0EFBB mov [rcx+8],rax
+  0xB0EFBF mov ebx,80000000
+  0xB0EFC4 mov eax,[rcx+18]
+  0xB0EFC7 and eax,ebx
+  0xB0EFC9 or eax,0C000
+  0xB0EFCE mov [rcx+18],eax
+  0xB0EFD1 xor edi,edi
+  0xB0EFD3 mov [rcx+10],rdi
+
+===== TYPE KEY BLOBS =====
+-- blob 0xC059DE0 sec=.trace --
+  +0 0x2148D0F748240489 rva=0x8240489 sec=.impdata
+  +8 0x834824048B482404 rva=0x4B482404 sec=?
+  +10 0x8885034808C4 rva=0xC34808C4 sec=?
+  +18 0x48D4F7411B8D4800 rva=0xDB8D4800 sec=?
+  +20 0xF741C3A20FA6EB81 rva=0xCFA6EB81 sec=?
+  +28 0x3C5DF056EB8148D4 rva=0xAB8148D4 sec=?
+  +30 0xA48D482424334450 rva=0xE4334450 sec=?
+  +38 0x2D8B4C0000000824 rva=0xC0000824 sec=?
+-- blob 0xC05CF10 sec=.trace --
+  +0 0xB6850F02F88300 rva=0xC2F88300 sec=?
+  +8 0x8D48C057F8C50000 rva=0xB8C50000 sec=?
+  +10 0xC70129F8C520244C rva=0x8520244C sec=?
+  +18 0x8B48000000001041 rva=0xC0001041 sec=?
+  +20 0x408B4C00002B7886 rva=0xC02B7886 sec=?
+  +28 0xE6F4DFE8FA894838 rva=0xBA894838 sec=?
+  +30 0x80888D48F2 rva=0x488D48F2 sec=?
+  +38 0xDA894847245C8D48 rva=0xE45C8D48 sec=?
+-- blob 0xC05AA10 sec=.trace --
+  +0 0x5B00000114998966 rva=0xD4998966 sec=?
+  +8 0x665D112C6DE88141 rva=0x2DE88141 sec=?
+  +10 0xC2C10CC2C106508B rva=0x8106508B sec=?
+  +18 0x66C2314410EAC104 rva=0xD0EAC104 sec=?
+  +20 0x6600000116818B44 rva=0xD6818B44 sec=?
+  +28 0x66D0294166C20144 rva=0x26C20144 sec=?
+  +30 0x1681894466D8F741 rva=0x26D8F741 sec=?
+  +38 0x4FDE058B44000001 rva=0x4000001 sec=.impdata
+-- dtor body 0xCF5CF0 --
+  0xCF5CF0 push rsi
+  0xCF5CF1 push rdi
+  0xCF5CF2 push rbx
+  0xCF5CF3 sub rsp,40
+  0xCF5CF7 mov rsi,rcx
+  0xCF5CFA mov rax,[rip+95BD4FF]
+  0xCF5D01 xor rax,rsp
+  0xCF5D04 mov [rsp+38],rax
+  0xCF5D09 lea rax,[rip+86033F8]
+  0xCF5D10 mov [rcx],rax
+  0xCF5D13 mov rdx,[rcx+1518]
+  0xCF5D1A test rdx,rdx
+  0xCF5D1D je short 0000000140CF5D36
+  0xCF5D1F mov rcx,[rip+0B32C422]
+  0xCF5D26 call 0000000140443A80
+  0xCF5D2B mov qword ptr [rsi+1518],0
+  0xCF5D36 lea rcx,[rsi+20]
+  0xCF5D3A call 0000000144D4C8F0
+  0xCF5D3F lea rax,[rip+8603482]
+  STR pj|F
+  0xCF5D46 mov [rsi],rax
+
+===== COPY HELPER 0x5E3DB0 =====
+insns=19
+  0x5E3DB0 push rsi
+  0x5E3DB1 push rdi
+  0x5E3DB2 push rbx
+  0x5E3DB3 sub rsp,20
+  0x5E3DB7 mov esi,r8d
+  0x5E3DBA mov rdi,rcx
+  0x5E3DBD lea rcx,[rip+0AF53B2C]
+  0x5E3DC4 call 00000001443DCB00
+  0x5E3DC9 mov rbx,rax
+  0x5E3DCC mov rcx,rdi
+  0x5E3DCF mov rdx,rax
+  0x5E3DD2 mov r8d,esi
+  0x5E3DD5 call 00000001405E3DF0
+  0x5E3DDA mov rax,rbx
+  0x5E3DDD add rsp,20
+  0x5E3DE1 pop rbx
+  0x5E3DE2 pop rdi
+  0x5E3DE3 pop rsi
+  0x5E3DE4 ret
+callees=0x43DCB00,0x5E3DF0
+directE8=0
+qwordEmbeds=1
+  slot=0x92D1AC0 sec=.edata
+-- 0x5E3DF0 --
+  0x5E3DF0 push rsi
+  0x5E3DF1 push rdi
+  0x5E3DF2 push rbx
+  0x5E3DF3 sub rsp,20
+  0x5E3DF7 mov esi,r8d
+  0x5E3DFA mov rdi,rcx
+  0x5E3DFD lea rcx,[rip+0AF539F4]
+  0x5E3E04 call 00000001443DCB00
+  0x5E3E09 mov rbx,rax
+  0x5E3E0C mov rcx,rdi
+  0x5E3E0F mov rdx,rax
+  0x5E3E12 mov r8d,esi
+  0x5E3E15 call 00000001405E3E60
+  0x5E3E1A lea rdx,[rdi+0A8]
+  0x5E3E21 lea rcx,[rbx+0A8]
+  0x5E3E28 mov r8d,esi
+  0x5E3E2B xor r9d,r9d
+  0x5E3E2E call 0000000144401410
+  0x5E3E33 add rdi,58
+  0x5E3E37 lea rdx,[rbx+58]
+  0x5E3E3B mov rcx,rdi
+  0x5E3E3E mov r8d,esi
+  0x5E3E41 call qword ptr [rip+0B872CF9]
+  0x5E3E47 mov rax,rbx

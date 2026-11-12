@@ -1,0 +1,405 @@
+===== v0.8.0 LOCAL-PLAYER ENTITY RETENTION =====
+exeSha256=19920F34BB2FAC814023EE3C27F0CECA1872E80A2AAFB37C092C419FFF77CC0D
+blueprint=Agent1 docs/v0.8.0-ac4coop-source-map.md (reference-only)
+firstChain=LoadingAdvisor / PlayerSpace / FakeEntities / HumanBehavior roles
+avoided=Spawn*Params schema visitors; PlayerProgression name-range registrar
+
+===== STRING HITS =====
+ObjectID rva=0x999A866 text=ObjectID
+PlayerEntity rva=0xA118077 text=PlayerEntitySelector::Process
+HumanBehaviorState rva=0xA142D69 text=HumanBehaviorState_DangerAnticipation
+LoadingAdvisorUpdate rva=0xA15C4FF text=LoadingAdvisorUpdate
+
+===== STRING LEA SITES =====
+LEA ObjectID @0x999A866 count=0
+LEA PlayerEntity @0xA118077 count=2
+  site=0x62F2790 func=0x62F12E0
+  site=0x62F2791 func=0x62F12E0
+LEA HumanBehaviorState @0xA142D69 count=2
+  site=0x6D17FC0 func=0x6D17EB0
+  site=0x6D17FC1 func=0x6D17EB0
+LEA LoadingAdvisorUpdate @0xA15C4FF count=2
+  site=0x1ED29C8 func=0x1ED0FC0
+  site=0x1ED29C9 func=0x1ED0FC0
+
+===== FOCUS FUNCTIONS =====
+0x1ED0FC0 class=retention-role-ref size=391 stores=0 loads=0 callees=
+    str PreStep
+    str LoadingAdvisorUpdate
+    str UpdateOnline
+    str VWSH
+    str UpdateInput
+    0x1ED2948 mov [rsi+35F0],rcx
+    0x1ED294F lea rcx,[rip+82676C5]
+    0x1ED2956 mov [rsi+35B8],rcx
+    0x1ED295D mov [rsi+35C0],r14d
+    0x1ED2964 mov [rsi+34E8],r14w
+    0x1ED296C mov [rsp+50],rax
+    0x1ED2971 mov [rsp+38],rdi
+    0x1ED2976 lea rcx,[rip-1E96FBD]
+    0x1ED297D mov [rsp+48],rcx
+    0x1ED2982 mov [rsp+40],r14
+    0x1ED2987 mov [rsp+30],rbx
+    0x1ED298C mov rcx,[rsp+50]
+    0x1ED2991 mov [rsi+1DB0],rcx
+    0x1ED2998 mov rcx,[rsp+48]
+    0x1ED299D mov [rsi+1DB8],rcx
+    0x1ED29A4 mov rcx,[rsp+40]
+  E8_callers count=0
+0x62F12E0 class=retention-role-multi-store size=386 stores=14 loads=14 callees=0x1ABC160,0x4F69784
+    str ReferenceEntitySelector::Process
+    str PlayerEntitySelector::Process
+    str DistanceEntitySelector::Process
+    str CharacterWithinRangeSelectorWithEntityCache::Process
+    str ActiveMinionEntitySelector::Process
+    str DeadMinionEntitySelector::Process
+    str FightTargetEntitySelector::Process
+    0x62F2710 push rsp
+    0x62F2711 mov cl,4
+    0x62F2713 add eax,511FCC5
+    0x62F2718 lodsb
+    0x62F2719 mov cl,4
+    0x62F271B add eax,0B2263589
+    0x62F2720 add al,5
+    0x62F2722 lea rax,[rip+199B257]
+    0x62F2729 mov [rip+504B210],rax
+    0x62F2730 mov [rip+504B222],esi
+    0x62F2736 mov [rip+504B213],rbx
+    0x62F273D mov [rip+504B21C],cx
+    0x62F2744 mov [rip+504B217],sil
+    0x62F274B mov [rip+504B212],si
+    0x62F2752 mov [rip+504B20D],r14b
+    0x62F2759 lea rcx,[rip+504B208]
+    globalStores=0xB33D940,0xB33D958,0xB33D950,0xB33D960,0xB33D962,0xB33D964,0xB33D966,0xB33D968,0xB33D978,0xB33D988
+  E8_callers count=0
+0x6D17EB0 class=retention-role-ref size=250 stores=0 loads=0 callees=0x4403960,0x11FEE20,0x4DE03A0,0x1E5A3C0,0x717830,0x6D18120
+    str HumanBehaviorState_DangerAnticipation
+    0x6D17F40 add al,0
+    0x6D17F42 add [rax-39],cl
+    0x6D17F45 and al,20
+    0x6D17F48 add [rax],al
+    0x6D17F4A add [rax],al
+    0x6D17F4C mov edx,4F814CE0
+    0x6D17F51 mov r8b,1
+    0x6D17F54 xor r9d,r9d
+    0x6D17F57 call 0000000144403960
+    0x6D17F5C mov rdx,[rsi+8]
+    0x6D17F60 mov rax,[rdx+0A8]
+    0x6D17F67 mov rax,[rax+38]
+    0x6D17F6B mov rax,[rax+58]
+    0x6D17F6F movzx ecx,byte ptr [rax+165]
+    0x6D17F76 cmp rcx,0FF
+    0x6D17F7D je short 0000000146D17FA9
+  E8_callers count=0
+
+===== LEA WINDOWS (retention needles) =====
+--- PlayerEntity center=0x62F2790 ---
+0x62F2730 mov [rip+504B222],esi  ;data=0xB33D958
+0x62F2736 mov [rip+504B213],rbx  ;data=0xB33D950
+0x62F273D mov [rip+504B21C],cx  ;data=0xB33D960
+0x62F2744 mov [rip+504B217],sil  ;data=0xB33D962
+0x62F274B mov [rip+504B212],si  ;data=0xB33D964
+0x62F2752 mov [rip+504B20D],r14b  ;data=0xB33D966
+0x62F2759 lea rcx,[rip+504B208]  ;data=0xB33D968
+0x62F2760 lea rdx,[rip+3E259A1]  ;str=ReferenceEntitySelector::Process
+0x62F2767 vzeroupper
+0x62F276A call 0000000141ABC160  ;call=0x1ABC160
+0x62F276F lea rax,[rip+2EAD23A]  ;data=0x919F9B0
+0x62F2776 mov [rip+504B1EB],rax  ;data=0xB33D968
+0x62F277D lea rcx,[rip+199B6BC]  ;data=0x7C8DE40
+0x62F2784 call 0000000144F69784  ;call=0x4F69784
+0x62F2789 lea rcx,[rip+504B1E8]  ;data=0xB33D978
+0x62F2790 lea rdx,[rip+3E258E0]  ;str=PlayerEntitySelector::Process <<<
+0x62F2797 call 0000000141ABC160  ;call=0x1ABC160
+0x62F279C lea rax,[rip+2EAD22D]  ;data=0x919F9D0
+0x62F27A3 mov [rip+504B1CE],rax  ;data=0xB33D978
+0x62F27AA lea rcx,[rip+199B6AF]  ;data=0x7C8DE60
+0x62F27B1 call 0000000144F69784  ;call=0x4F69784
+0x62F27B6 lea rcx,[rip+504B1CB]  ;data=0xB33D988
+0x62F27BD lea rdx,[rip+3E25965]  ;str=DistanceEntitySelector::Process
+0x62F27C4 call 0000000141ABC160  ;call=0x1ABC160
+0x62F27C9 lea rax,[rip+2EAD220]  ;data=0x919F9F0
+0x62F27D0 mov [rip+504B1B1],rax  ;data=0xB33D988
+0x62F27D7 lea rcx,[rip+199B6A2]  ;data=0x7C8DE80
+0x62F27DE call 0000000144F69784  ;call=0x4F69784
+0x62F27E3 lea rcx,[rip+504B1AE]  ;data=0xB33D998
+0x62F27EA lea rdx,[rip+3E259C3]  ;str=CharacterWithinRangeSelectorWithEntityCache::Process
+0x62F27F1 call 0000000141ABC160  ;call=0x1ABC160
+0x62F27F6 lea rax,[rip+2EAD213]  ;data=0x919FA10
+0x62F27FD mov [rip+504B194],rax  ;data=0xB33D998
+0x62F2804 lea rcx,[rip+199B695]  ;data=0x7C8DEA0
+0x62F280B call 0000000144F69784  ;call=0x4F69784
+0x62F2810 lea rcx,[rip+504B191]  ;data=0xB33D9A8
+0x62F2817 lea rdx,[rip+3E258A4]  ;str=ActiveMinionEntitySelector::Process
+0x62F281E call 0000000141ABC160  ;call=0x1ABC160
+0x62F2823 lea rax,[rip+2EAD206]  ;data=0x919FA30
+0x62F282A mov [rip+504B177],rax  ;data=0xB33D9A8
+0x62F2831 lea rcx,[rip+199B688]  ;data=0x7C8DEC0
+0x62F2838 call 0000000144F69784  ;call=0x4F69784
+0x62F283D lea rcx,[rip+504B174]  ;data=0xB33D9B8
+0x62F2844 lea rdx,[rip+3E2589B]  ;str=DeadMinionEntitySelector::Process
+0x62F284B call 0000000141ABC160  ;call=0x1ABC160
+0x62F2850 lea rax,[rip+2EAD1F9]  ;data=0x919FA50
+0x62F2857 mov [rip+504B15A],rax  ;data=0xB33D9B8
+0x62F285E lea rcx,[rip+199B6FB]  ;data=0x7C8DF60
+--- PlayerEntity center=0x62F2791 ---
+0x62F2731 xor eax,504B222
+0x62F2736 mov [rip+504B213],rbx  ;data=0xB33D950
+0x62F273D mov [rip+504B21C],cx  ;data=0xB33D960
+0x62F2744 mov [rip+504B217],sil  ;data=0xB33D962
+0x62F274B mov [rip+504B212],si  ;data=0xB33D964
+0x62F2752 mov [rip+504B20D],r14b  ;data=0xB33D966
+0x62F2759 lea rcx,[rip+504B208]  ;data=0xB33D968
+0x62F2760 lea rdx,[rip+3E259A1]  ;str=ReferenceEntitySelector::Process
+0x62F2767 vzeroupper
+0x62F276A call 0000000141ABC160  ;call=0x1ABC160
+0x62F276F lea rax,[rip+2EAD23A]  ;data=0x919F9B0
+0x62F2776 mov [rip+504B1EB],rax  ;data=0xB33D968
+0x62F277D lea rcx,[rip+199B6BC]  ;data=0x7C8DE40
+0x62F2784 call 0000000144F69784  ;call=0x4F69784
+0x62F2789 lea rcx,[rip+504B1E8]  ;data=0xB33D978
+0x62F2790 lea rdx,[rip+3E258E0]  ;str=PlayerEntitySelector::Process <<<
+0x62F2797 call 0000000141ABC160  ;call=0x1ABC160
+0x62F279C lea rax,[rip+2EAD22D]  ;data=0x919F9D0
+0x62F27A3 mov [rip+504B1CE],rax  ;data=0xB33D978
+0x62F27AA lea rcx,[rip+199B6AF]  ;data=0x7C8DE60
+0x62F27B1 call 0000000144F69784  ;call=0x4F69784
+0x62F27B6 lea rcx,[rip+504B1CB]  ;data=0xB33D988
+0x62F27BD lea rdx,[rip+3E25965]  ;str=DistanceEntitySelector::Process
+0x62F27C4 call 0000000141ABC160  ;call=0x1ABC160
+0x62F27C9 lea rax,[rip+2EAD220]  ;data=0x919F9F0
+0x62F27D0 mov [rip+504B1B1],rax  ;data=0xB33D988
+0x62F27D7 lea rcx,[rip+199B6A2]  ;data=0x7C8DE80
+0x62F27DE call 0000000144F69784  ;call=0x4F69784
+0x62F27E3 lea rcx,[rip+504B1AE]  ;data=0xB33D998
+0x62F27EA lea rdx,[rip+3E259C3]  ;str=CharacterWithinRangeSelectorWithEntityCache::Process
+0x62F27F1 call 0000000141ABC160  ;call=0x1ABC160
+0x62F27F6 lea rax,[rip+2EAD213]  ;data=0x919FA10
+0x62F27FD mov [rip+504B194],rax  ;data=0xB33D998
+0x62F2804 lea rcx,[rip+199B695]  ;data=0x7C8DEA0
+0x62F280B call 0000000144F69784  ;call=0x4F69784
+0x62F2810 lea rcx,[rip+504B191]  ;data=0xB33D9A8
+0x62F2817 lea rdx,[rip+3E258A4]  ;str=ActiveMinionEntitySelector::Process
+0x62F281E call 0000000141ABC160  ;call=0x1ABC160
+0x62F2823 lea rax,[rip+2EAD206]  ;data=0x919FA30
+0x62F282A mov [rip+504B177],rax  ;data=0xB33D9A8
+0x62F2831 lea rcx,[rip+199B688]  ;data=0x7C8DEC0
+0x62F2838 call 0000000144F69784  ;call=0x4F69784
+0x62F283D lea rcx,[rip+504B174]  ;data=0xB33D9B8
+0x62F2844 lea rdx,[rip+3E2589B]  ;str=DeadMinionEntitySelector::Process
+0x62F284B call 0000000141ABC160  ;call=0x1ABC160
+0x62F2850 lea rax,[rip+2EAD1F9]  ;data=0x919FA50
+0x62F2857 mov [rip+504B15A],rax  ;data=0xB33D9B8
+0x62F285E lea rcx,[rip+199B6FB]  ;data=0x7C8DF60
+--- HumanBehaviorState center=0x6D17FC0 ---
+0x6D17F60 mov rax,[rdx+0A8]
+0x6D17F67 mov rax,[rax+38]
+0x6D17F6B mov rax,[rax+58]
+0x6D17F6F movzx ecx,byte ptr [rax+165]
+0x6D17F76 cmp rcx,0FF
+0x6D17F7D je short 0000000146D17FA9
+0x6D17F7F mov rax,[rax+138]
+0x6D17F86 mov rax,[rax+rcx*8]
+0x6D17F8A test rax,rax
+0x6D17F8D je short 0000000146D17FA9
+0x6D17F8F mov rcx,[rax+98]
+0x6D17F96 test rcx,rcx
+0x6D17F99 je short 0000000146D17FA9
+0x6D17F9B call 00000001411FEE20  ;call=0x11FEE20
+0x6D17FA0 mov rdx,[rsi+8]
+0x6D17FA4 test rax,rax
+0x6D17FA7 jne short 0000000146D17FE0
+0x6D17FA9 mov rdx,[rdx+0A8]
+0x6D17FB0 mov rcx,rsi
+0x6D17FB3 call 0000000144DE03A0  ;call=0x4DE03A0
+0x6D17FB8 lea rdi,[rax+28]
+0x6D17FBC add rsi,54
+0x6D17FC0 lea rcx,[rip+342ADA2]  ;str=HumanBehaviorState_DangerAnticipation <<<
+0x6D17FC7 call 0000000141E5A3C0  ;call=0x1E5A3C0
+0x6D17FCC mov rcx,rdi
+0x6D17FCF mov edx,eax
+0x6D17FD1 mov r8,rsi
+0x6D17FD4 add rsp,30
+0x6D17FD8 pop rbx
+0x6D17FD9 pop rdi
+0x6D17FDA pop rsi
+0x6D17FDB jmp near ptr 0000000140E2D420
+0x6D17FE0 mov rcx,[rdx+0A8]
+0x6D17FE7 mov edx,[rcx+220]
+0x6D17FED mov rcx,rax
+0x6D17FF0 mov rbx,rax
+0x6D17FF3 call 0000000140717830  ;call=0x717830
+0x6D17FF8 mov rax,[rsi+8]
+0x6D17FFC mov rax,[rax+0A8]
+0x6D18003 mov edx,[rax+224]
+0x6D18009 mov rcx,rbx
+0x6D1800C call 0000000140717830  ;call=0x717830
+0x6D18011 mov rax,[rsi+8]
+0x6D18015 mov rdx,[rax+0A8]
+0x6D1801C mov rcx,rsi
+0x6D1801F call 0000000144DE03A0  ;call=0x4DE03A0
+0x6D18024 mov rcx,[rax+20]
+0x6D18028 mov rdx,rdi
+--- HumanBehaviorState center=0x6D17FC1 ---
+0x6D17F61 mov eax,[rdx+0A8]
+0x6D17F67 mov rax,[rax+38]
+0x6D17F6B mov rax,[rax+58]
+0x6D17F6F movzx ecx,byte ptr [rax+165]
+0x6D17F76 cmp rcx,0FF
+0x6D17F7D je short 0000000146D17FA9
+0x6D17F7F mov rax,[rax+138]
+0x6D17F86 mov rax,[rax+rcx*8]
+0x6D17F8A test rax,rax
+0x6D17F8D je short 0000000146D17FA9
+0x6D17F8F mov rcx,[rax+98]
+0x6D17F96 test rcx,rcx
+0x6D17F99 je short 0000000146D17FA9
+0x6D17F9B call 00000001411FEE20  ;call=0x11FEE20
+0x6D17FA0 mov rdx,[rsi+8]
+0x6D17FA4 test rax,rax
+0x6D17FA7 jne short 0000000146D17FE0
+0x6D17FA9 mov rdx,[rdx+0A8]
+0x6D17FB0 mov rcx,rsi
+0x6D17FB3 call 0000000144DE03A0  ;call=0x4DE03A0
+0x6D17FB8 lea rdi,[rax+28]
+0x6D17FBC add rsi,54
+0x6D17FC0 lea rcx,[rip+342ADA2]  ;str=HumanBehaviorState_DangerAnticipation <<<
+0x6D17FC7 call 0000000141E5A3C0  ;call=0x1E5A3C0
+0x6D17FCC mov rcx,rdi
+0x6D17FCF mov edx,eax
+0x6D17FD1 mov r8,rsi
+0x6D17FD4 add rsp,30
+0x6D17FD8 pop rbx
+0x6D17FD9 pop rdi
+0x6D17FDA pop rsi
+0x6D17FDB jmp near ptr 0000000140E2D420
+0x6D17FE0 mov rcx,[rdx+0A8]
+0x6D17FE7 mov edx,[rcx+220]
+0x6D17FED mov rcx,rax
+0x6D17FF0 mov rbx,rax
+0x6D17FF3 call 0000000140717830  ;call=0x717830
+0x6D17FF8 mov rax,[rsi+8]
+0x6D17FFC mov rax,[rax+0A8]
+0x6D18003 mov edx,[rax+224]
+0x6D18009 mov rcx,rbx
+0x6D1800C call 0000000140717830  ;call=0x717830
+0x6D18011 mov rax,[rsi+8]
+0x6D18015 mov rdx,[rax+0A8]
+0x6D1801C mov rcx,rsi
+0x6D1801F call 0000000144DE03A0  ;call=0x4DE03A0
+0x6D18024 mov rcx,[rax+20]
+0x6D18028 mov rdx,rdi
+--- LoadingAdvisorUpdate center=0x1ED29C8 ---
+0x1ED2968 call 0000000189ED29A1  ;call=0x49ED29A1
+0x1ED296D mov [rsp+50],eax
+0x1ED2971 mov [rsp+38],rdi
+0x1ED2976 lea rcx,[rip-1E96FBD]  ;data=0x3B9C0
+0x1ED297D mov [rsp+48],rcx
+0x1ED2982 mov [rsp+40],r14
+0x1ED2987 mov [rsp+30],rbx
+0x1ED298C mov rcx,[rsp+50]
+0x1ED2991 mov [rsi+1DB0],rcx
+0x1ED2998 mov rcx,[rsp+48]
+0x1ED299D mov [rsi+1DB8],rcx
+0x1ED29A4 mov rcx,[rsp+40]
+0x1ED29A9 mov [rsi+1DC0],rcx
+0x1ED29B0 mov rcx,[rsp+38]
+0x1ED29B5 mov [rsi+1DC8],rcx
+0x1ED29BC mov rcx,[rsp+30]
+0x1ED29C1 mov [rsi+1DD0],rcx
+0x1ED29C8 lea rcx,[rip+8289B30]  ;str=LoadingAdvisorUpdate <<<
+0x1ED29CF mov [rsi+1D98],rcx
+0x1ED29D6 mov [rsi+1DA0],r14d
+0x1ED29DD mov [rsp+50],rax
+0x1ED29E2 mov [rsp+38],rdi
+0x1ED29E7 lea rcx,[rip-13F86CE]  ;data=0xADA320
+0x1ED29EE mov [rsp+48],rcx
+0x1ED29F3 mov [rsp+40],r14
+0x1ED29F8 mov [rsp+30],rbx
+0x1ED29FD mov rcx,[rsp+50]
+0x1ED2A02 mov [rsi+4050],rcx
+0x1ED2A09 mov rcx,[rsp+48]
+0x1ED2A0E mov [rsi+4058],rcx
+0x1ED2A15 mov rcx,[rsp+40]
+0x1ED2A1A mov [rsi+4060],rcx
+0x1ED2A21 mov rcx,[rsp+38]
+0x1ED2A26 mov [rsi+4068],rcx
+0x1ED2A2D mov rcx,[rsp+30]
+0x1ED2A32 mov [rsi+4070],rcx
+0x1ED2A39 lea rcx,[rip+8290A9F]  ;str=UpdateOnline
+0x1ED2A40 mov [rsi+4038],rcx
+0x1ED2A47 mov [rsi+4040],r14d
+0x1ED2A4E mov [rsi+3F68],r14w
+0x1ED2A56 mov [rsp+50],rax
+0x1ED2A5B mov [rsp+38],rdi
+0x1ED2A60 lea rax,[rip-0F9BE37]  ;str=VWSH
+0x1ED2A67 mov [rsp+48],rax
+0x1ED2A6C mov [rsp+40],r14
+0x1ED2A71 mov [rsp+30],rbx
+0x1ED2A76 mov rax,[rsp+50]
+0x1ED2A7B mov [rsi+3950],rax
+--- LoadingAdvisorUpdate center=0x1ED29C9 ---
+0x1ED2969 xor al,0
+0x1ED296B add [rax-77],cl
+0x1ED296E and al,50
+0x1ED2971 mov [rsp+38],rdi
+0x1ED2976 lea rcx,[rip-1E96FBD]  ;data=0x3B9C0
+0x1ED297D mov [rsp+48],rcx
+0x1ED2982 mov [rsp+40],r14
+0x1ED2987 mov [rsp+30],rbx
+0x1ED298C mov rcx,[rsp+50]
+0x1ED2991 mov [rsi+1DB0],rcx
+0x1ED2998 mov rcx,[rsp+48]
+0x1ED299D mov [rsi+1DB8],rcx
+0x1ED29A4 mov rcx,[rsp+40]
+0x1ED29A9 mov [rsi+1DC0],rcx
+0x1ED29B0 mov rcx,[rsp+38]
+0x1ED29B5 mov [rsi+1DC8],rcx
+0x1ED29BC mov rcx,[rsp+30]
+0x1ED29C1 mov [rsi+1DD0],rcx
+0x1ED29C8 lea rcx,[rip+8289B30]  ;str=LoadingAdvisorUpdate <<<
+0x1ED29CF mov [rsi+1D98],rcx
+0x1ED29D6 mov [rsi+1DA0],r14d
+0x1ED29DD mov [rsp+50],rax
+0x1ED29E2 mov [rsp+38],rdi
+0x1ED29E7 lea rcx,[rip-13F86CE]  ;data=0xADA320
+0x1ED29EE mov [rsp+48],rcx
+0x1ED29F3 mov [rsp+40],r14
+0x1ED29F8 mov [rsp+30],rbx
+0x1ED29FD mov rcx,[rsp+50]
+0x1ED2A02 mov [rsi+4050],rcx
+0x1ED2A09 mov rcx,[rsp+48]
+0x1ED2A0E mov [rsi+4058],rcx
+0x1ED2A15 mov rcx,[rsp+40]
+0x1ED2A1A mov [rsi+4060],rcx
+0x1ED2A21 mov rcx,[rsp+38]
+0x1ED2A26 mov [rsi+4068],rcx
+0x1ED2A2D mov rcx,[rsp+30]
+0x1ED2A32 mov [rsi+4070],rcx
+0x1ED2A39 lea rcx,[rip+8290A9F]  ;str=UpdateOnline
+0x1ED2A40 mov [rsi+4038],rcx
+0x1ED2A47 mov [rsi+4040],r14d
+0x1ED2A4E mov [rsi+3F68],r14w
+0x1ED2A56 mov [rsp+50],rax
+0x1ED2A5B mov [rsp+38],rdi
+0x1ED2A60 lea rax,[rip-0F9BE37]  ;str=VWSH
+0x1ED2A67 mov [rsp+48],rax
+0x1ED2A6C mov [rsp+40],r14
+0x1ED2A71 mov [rsp+30],rbx
+0x1ED2A76 mov rax,[rsp+50]
+
+===== SUMMARY =====
+stringHits=4
+leaSites=6
+focusFuncs=3
+multiGlobalStoreFuncs=1
+  STORE 0x62F12E0 class=retention-role-multi-store stores=0xB33D940,0xB33D958,0xB33D950,0xB33D960,0xB33D962,0xB33D964,0xB33D966,0xB33D968 strs=ReferenceEntitySelector::Process|PlayerEntitySelector::Process|DistanceEntitySelector::Process|CharacterWithinRangeSelectorWithEntityCache::Process
+playerSpaceString=False
+fakeEntitiesString=False
+humanBehaviorString=True
+loadingAdvisorUpdateString=True
+playerEntityAcquisitionResolved=false
+builderSelectorRetentionResolved=false
+decision=retention-role-strings-found-entity-owner-unresolved
+blocker=Local-player Entity*/HandleContainer retention owner not yet identified;
+        builder/selector-equivalent cache remains unresolved.

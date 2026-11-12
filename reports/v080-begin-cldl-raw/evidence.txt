@@ -1,0 +1,156 @@
+===== v0.8.0 Begin cl+dl multi-caller rank =====
+exeSha256=19920F34BB2FAC814023EE3C27F0CECA1872E80A2AAFB37C092C419FFF77CC0D
+strictBegin10=49
+calleesUsingClDl=4
+calleesClDlTlsOrRip=1
+
+===== RANKED cl+dl BEGIN CALLEES =====
+leaf=0x4420000 callers=38 begin10=3 size=232 tls=True ripStore=False retAl=False
+leaf=0xF2D1D0 callers=3 begin10=1 size=272 tls=False ripStore=False retAl=False
+leaf=0x2687CB0 callers=2 begin10=1 size=284 tls=False ripStore=False retAl=False
+leaf=0x5001598 callers=1 begin10=1 size=41 tls=False ripStore=False retAl=True
+
+===== TOP cl+dl (+TLS preferred) DEEP =====
+--- leaf @0x4420000 ---
+0x4420000 push r15
+0x4420002 push r14
+0x4420004 push r13
+0x4420006 push r12
+0x4420008 push rsi
+0x4420009 push rdi
+0x442000A push rbp
+0x442000B push rbx
+0x442000C sub rsp,98
+0x4420013 mov rax,[rip+5E931E6]
+0x442001A xor rax,rsp
+0x442001D mov [rsp+90],rax
+0x4420025 mov eax,[rip+676BB95]
+0x442002B mov r8,gs:[58]
+0x4420034 mov rax,[r8+rax*8]
+0x4420038 mov rbp,[rax+1C78]
+0x442003F mov eax,[rbp+0BC0]
+0x4420045 inc eax
+0x4420047 mov [rbp+0BC0],eax
+0x442004D imul rsi,rax,178
+0x4420054 mov rax,[rbp+rsi+16C]
+0x442005C mov r8d,eax
+0x442005F and r8d,3FFFFFFF
+0x4420066 cmp r8d,201
+0x442006D mov [rsp+67],cl
+0x4420071 mov [rsp+66],dl
+0x4420075 jae near ptr 00000001444206CE
+0x442007B lea rcx,[rsi+rbp]
+0x442007F add rcx,16C
+0x4420086 and rax,0FFFFFFFFC0000000
+0x442008C mov [rcx],rax
+0x442008F mov [rsp+78],rsi
+0x4420094 lea r15,[rsi+rbp]
+0x4420098 add r15,150
+0x442009F mov byte ptr [r15+12],0
+site=0x561AD5 func=0x5616D0 dup=0->0 end=0->0 build=0->0
+site=0x4C2FB23 func=0x4C2F790 dup=0->0 end=0->0 build=0->0
+site=0x4C301B1 func=0x4C2FDD0 dup=0->0 end=0->0 build=0->0
+--- leaf @0xF2D1D0 ---
+0xF2D1D0 push r15
+0xF2D1D2 push r14
+0xF2D1D4 push r13
+0xF2D1D6 push r12
+0xF2D1D8 push rsi
+0xF2D1D9 push rdi
+0xF2D1DA push rbp
+0xF2D1DB push rbx
+0xF2D1DC sub rsp,78
+0xF2D1E0 mov [rsp+5E],dl
+0xF2D1E4 mov [rsp+5F],cl
+0xF2D1E8 mov rax,[rip+9386011]
+0xF2D1EF xor rax,rsp
+0xF2D1F2 mov [rsp+70],rax
+0xF2D1F7 mov rax,[rip+9CBDC82]
+0xF2D1FE test rax,rax
+0xF2D201 je near ptr 0000000140F2D4C9
+0xF2D207 mov rcx,[rax+30]
+0xF2D20B mov [rsp+68],rcx
+0xF2D210 lea r12,[rip+0A0469C1]
+0xF2D217 mov rdx,100000000
+0xF2D221 cmp rcx,r12
+0xF2D224 je short 0000000140F2D22B
+0xF2D226 lock add [rcx+8],rdx
+0xF2D22B mov rbx,0FFFFFFFF00000000
+0xF2D235 mov rdi,7FFFFFFF01FFFFFF
+0xF2D23F mov [rsp+60],rax
+0xF2D244 mov esi,[rax+4C]
+0xF2D247 lea r14,[rip+0A725F0A]
+0xF2D24E mov rcx,r14
+0xF2D251 call 00000001442256B0  ;call=0x42256B0
+0xF2D256 mov eax,[rip+0A725F64]
+0xF2D25C lea rax,[rax+rax*2]
+0xF2D260 lea rcx,[rip+0A725F29]
+0xF2D267 lea rcx,[rcx+rax*8]
+0xF2D26B call 00000001433BB6E0  ;call=0x33BB6E0
+site=0xF2CE47 func=0xF2C720 dup=0->0 end=0->0 build=0->0
+--- leaf @0x2687CB0 ---
+0x2687CB0 push r15
+0x2687CB2 push r14
+0x2687CB4 push r13
+0x2687CB6 push r12
+0x2687CB8 push rsi
+0x2687CB9 push rdi
+0x2687CBA push rbp
+0x2687CBB push rbx
+0x2687CBC sub rsp,78
+0x2687CC0 mov [rsp+5E],dl
+0x2687CC4 mov [rsp+5F],cl
+0x2687CC8 mov rax,[rip+7C2B531]
+0x2687CCF xor rax,rsp
+0x2687CD2 mov [rsp+70],rax
+0x2687CD7 mov rax,[rip+85631A2]
+0x2687CDE test rax,rax
+0x2687CE1 je near ptr 0000000142687EC1
+0x2687CE7 mov rdx,[rax+28]
+0x2687CEB mov [rsp+68],rdx
+0x2687CF0 lea rsi,[rip+88EBEE1]
+0x2687CF7 cmp rdx,rsi
+0x2687CFA je short 0000000142687D0B
+0x2687CFC mov rcx,100000000
+0x2687D06 lock add [rdx+8],rcx
+0x2687D0B mov [rsp+60],rax
+0x2687D10 mov ecx,[rax+48]
+0x2687D13 xor eax,eax
+0x2687D15 mov [rsp+50],eax
+0x2687D19 mov [rsp+48],eax
+0x2687D1D mov [rsp+40],eax
+0x2687D21 mov [rsp+38],al
+0x2687D25 mov [rsp+30],al
+0x2687D29 mov [rsp+20],eax
+0x2687D2D mov byte ptr [rsp+28],1
+0x2687D32 lea r14,[rsp+68]
+0x2687D37 mov rdx,r14
+0x2687D3A xor r8d,r8d
+0x2687D3D xor r9d,r9d
+0x2687D40 call 0000000140D75CA0  ;call=0xD75CA0
+0x2687D45 mov r14,[r14]
+site=0x2688D2C func=0x2688A80 dup=0->0 end=0->0 build=0->0
+--- leaf @0x5001598 ---
+0x5001598 push rbx
+0x500159A sub rsp,20
+0x500159E cmp byte ptr [rip+5B86123],0
+0x50015A5 mov bl,cl
+0x50015A7 je short 00000001450015AD
+0x50015A9 test dl,dl
+0x50015AB jne short 00000001450015B9
+0x50015AD call 000000014530A77C  ;call=0x530A77C
+0x50015B2 mov cl,bl
+0x50015B4 call 0000000145307784  ;call=0x5307784
+0x50015B9 mov al,1
+0x50015BB add rsp,20
+0x50015BF pop rbx
+0x50015C0 ret
+0x50015C1 int 3
+site=0x5305D2F func=0x5305C10 dup=0->0 end=0->0 build=0->0
+triadShapedSites=0
+
+===== VERDICT =====
+c2Proven=false
+callEngine=off
+decision=cl+dl TLS Begin leaves found but no Dup/End/Build sandwich yet
+next=Widen sandwich window; allow End via rip-indirect; check virtual Duplicate.

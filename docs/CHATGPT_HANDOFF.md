@@ -3,7 +3,7 @@
 **Last updated:** 2026-11-12  
 **Machine:** PC1 only  
 **Repo:** https://github.com/zzyrrup/BlackFlagCoop  
-**Branch:** `cursor/v085-vt-owner-ctors-8285` (PR into `cursor/v084-ctor-reverse-8285`; do not push main)  
+**Branch:** `cursor/v080-spawn-callers-a9fe` (PR into `cursor/v085-vt-owner-ctors-8285`; do not push main)  
 **Initial commit:** `e12e70150656ac80742f10b496f7e5556e7985b7`
 
 This document is the primary human-readable bridge between Cursor (local execution) and ChatGPT (review / next instructions). Update it after every completed milestone.
@@ -25,9 +25,9 @@ Ultimate vision is **not claimed as achieved**. Dual-Edward co-op remains unprov
 
 ## 2. Current development milestone
 
-**v0.6.25 complete** — Owner VT[0] ctors mapped (`0x13612B0` / `0x5781490`); 0 E8 callers (table-dispatched); spatial/neigh ctors init shared `+0x98` enrollment field.
+**v0.8.0 in progress** — Agent 2 C2: Agent1 vt+0x90 xref at `0x1F75EA7` — sites confirmed; **slot body unresolved** offline; Build-r8 follow-up **0**; `BF3100(…,0)` returns `this+0x90`. C2 **unproven**. `callEngine=off`. See `docs/v0.8.0-vt90-body.md`.
 
-Prior: v0.6.5–v0.6.24 preserved. Offline only. No ASI, spawn, or networking change.
+Prior: v0.6.25 owner VT[0] ctors (`0x13612B0` / `0x5781490`) and v0.6.5–v0.6.24 preserved. Details: `docs/v0.8.0-second-edward-plan.md`.
 
 ---
 
@@ -35,9 +35,11 @@ Prior: v0.6.5–v0.6.24 preserved. Offline only. No ASI, spawn, or networking ch
 
 | Item | Value |
 |------|--------|
-| Working in-game ASI | **v0.5.1** |
+| Working in-game ASI | **v0.5.1** (still installed, 99840 bytes) |
 | ASI SHA256 | `63B38877DDA7CC7CD9AB2619F94D3941C37F54C95A435EFE47084DC4CF2A50BE` |
-| Deploy status | **Do not replace** without explicit user approval |
+| Candidate | `0.8.0-dev` `build/bin/Release/BlackFlagCoop.asi` |
+| Candidate SHA256 | `5EB940695F318955AF0632567D1CCA9F49C4CA46D40771C4CF10092BED463D34` (105984 bytes) |
+| Deploy status | **Do not replace** the installed v0.5.1 without explicit user approval |
 
 ---
 
@@ -107,6 +109,7 @@ High-signal offline findings (see `docs/v0.6.*` and `reports/v0.6.*`):
 - **v0.6.23:** Tight-factory callers do **not** LEA key/`0x20F0` (186 records, 0 hits). Helper deep-decode: `0x2336560` position extract; `0x1D25E20` spatial math — not possession. Still no Edward/create path.
 - **v0.6.24:** Outer `0x59D9660` = InstallerA TypeInfo registration only (0 E8). Neighbor/Spatial = `.edata` methods; owner vtables `0x976B2D0`/`0x9236E00`. Still no Edward/create path.
 - **v0.6.25:** Owner VT[0] ctors `0x13612B0`/`0x5781490` (0 E8); spat/neigh ctors init `+0x98` (enrollment side-block field). Still no Edward/create path.
+- **v0.8.0:** `Spawn*Params` functions are schema visitors, not a character factory. `0x34730` installs final vtable `0x92F9108`; `0x3DE6300` installs final vtable `0x92F9048`. No MSVC RTTI. Not characters. Plugin refuses to call them.
 
 ---
 
@@ -270,6 +273,10 @@ v0.6.4–v0.6.24 reports were left in place.
 | Offline factory-feed/possession v0.6.23 (`FactoryFeed083`) | Pass; 0 key-tied factory callers; helpers = transform/position |
 | Offline ctor-reverse/ownership v0.6.24 (`CtorReverse084`) | Pass; Outer=InstallerA LEA only; vtable owners mapped |
 | Offline VT owner ctors v0.6.25 (`VtOwner085`) | Pass; VT[0] ctors; +0x98 enrollment link |
+| Offline spawn callers v0.8.0 (`SpawnCallers080`) | Pass; 3/3 schema visitors; 0 factory candidates |
+| `ctest -C Release` SpawnContract | Pass (1/1, ALL PASSED) |
+| VS 18 2026 x64 Release | Pass. Candidate `ABD29003…` (102912 bytes). Not deployed |
+| `ctest` PuppetLifecycle | Pass. Engine calls stay off. AC4Coop x86 addresses are not in the plugin |
 | Subject MSVC RTTI name | **Not found** (game types RTTI-stripped) |
 | Game launch / ASI deploy | **Not performed** |
 | Spawn / inject / live memory | **Not performed** |
@@ -281,7 +288,7 @@ v0.6.4–v0.6.24 reports were left in place.
 
 - PC1 only; PC2 untouched.
 - Game installs unmodified by this handoff work.
-- ASI v0.5.1 preserved; no deployment.
+- ASI v0.5.1 preserved and re-read (`63B38877…`, 99840 bytes). Candidate `ABD29003…` was not copied into the game. The AC4Coop puppet sequence is recorded and unbound.
 - Backups preserved locally; excluded from Git.
 - No force-push; no credential commits.
 
@@ -291,10 +298,9 @@ v0.6.4–v0.6.24 reports were left in place.
 
 When reviewing the GitHub repository after a Cursor push:
 
-1. Read this file and `reports/CHATGPT_HANDOFF.json` first.
-2. Diff against the previous handoff `milestoneId` / commit.
-3. Treat only **confirmed** items as facts; keep hypotheses labeled.
-4. Propose the **next single milestone** with: objective, in-scope RVAs/files, out-of-scope (spawn/deploy/PC2), required deliverables paths, and acceptance checks.
-5. Prefer **v0.6.26**: who Allocates then invokes owner VT[0] ctors; prove `0xE95E80` + arming on same instances. Do not expect E8 to Outer/owner VT[0] ctors; do not treat helper position extract as possession; do not treat loose fullPattern as proven; do not treat field-offset `0x20F0` as heap size; avoid `+0x61`-only ranking; do not conflate wrap modes with the enrollment gate; do not rely on MSVC RTTI for game types.
-6. Do not instruct Cursor to deploy ASI, spawn, use live memory, or touch PC2/save data unless the user explicitly overrides safety.
-7. Return instructions Cursor can execute verbatim on PC1 on a dedicated branch + PR (never push main).
+1. Read this file, `reports/CHATGPT_HANDOFF.json`, and `docs/v0.8.0-second-edward-plan.md` first.
+2. The v0.7.0 PC1 launch is an inconclusive overlay observation on its own branch. Do not infer co-op success or failure from it. Do not authorize another launch.
+3. Treat the `*Params` functions as schema visitors. Do not treat `0x34730` / `0x3DE6300` as an Edward factory. The sizes are confirmed; the object identity is not.
+4. Next offline step: the vtable stored after `Allocator` returns in `0x34730` and `0x3DE6300`. Continue only if that vtable is a character or actor.
+5. Do not instruct a deploy, a gameplay launch, live memory, PC2, or LAN unless Cruz explicitly asks.
+6. Return instructions Cursor can execute verbatim on PC1 on a dedicated branch + PR (never push main).

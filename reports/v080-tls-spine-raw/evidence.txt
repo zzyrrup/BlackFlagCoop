@@ -1,0 +1,545 @@
+===== v0.8.0 TLS spine / DupHot return =====
+exeSha256=19920F34BB2FAC814023EE3C27F0CECA1872E80A2AAFB37C092C419FFF77CC0D
+dupHot=0x42B85F0 tlsIdx=0xAB8BBC0 framePush=0x4420000
+--- dupHot @0x42B85F0 ---
+0x42B85F0 push r15
+0x42B85F2 push r14
+0x42B85F4 push r13
+0x42B85F6 push r12
+0x42B85F8 push rsi
+0x42B85F9 push rdi
+0x42B85FA push rbp
+0x42B85FB push rbx
+0x42B85FC sub rsp,0A8
+0x42B8603 mov rax,[rip+5FFABF6]
+0x42B860A xor rax,rsp
+0x42B860D mov [rsp+0A0],rax
+0x42B8615 mov eax,[rip+68D35A5]
+0x42B861B mov rcx,gs:[58]
+0x42B8624 mov rcx,[rcx+rax*8]
+0x42B8628 mov rdi,[rcx+1C78]
+0x42B862F mov eax,[rdi+0BC0]
+0x42B8635 imul rbp,rax,178
+0x42B863C lea rbx,[rdi+rbp]
+0x42B8640 cmp byte ptr [rdi+rbp+161],0
+0x42B8648 mov rdx,rdi
+0x42B864B mov [rsp+88],rdi
+0x42B8653 je near ptr 00000001442B8718
+0x42B8659 lea r13,[rcx+1C78]
+0x42B8660 mov rcx,[rdi+rbp+164]
+0x42B8668 mov r8d,[rdi+rbp+16C]
+0x42B8670 mov edx,r8d
+0x42B8673 shl edx,4
+0x42B8676 add rdx,rcx
+0x42B8679 and r8d,0FFFFFFF
+0x42B8680 call 00000001442BCB30  ;call=0x42BCB30
+0x42B8685 mov byte ptr [rdi+rbp+162],1
+0x42B868D mov eax,[rbx+8]
+0x42B8690 shl eax,4
+0x42B8693 jne near ptr 00000001442B8FBE
+0x42B8699 mov r12d,[rdi+rbp+18]
+0x42B869E shl r12d,4
+0x42B86A2 jne near ptr 00000001442B8EBC
+0x42B86A8 lea r14,[rdi+rbp]
+0x42B86AC add r14,16C
+0x42B86B3 mov r15d,[rdi+rbp+28]
+0x42B86B8 shl r15d,4
+0x42B86BC mov rdx,rdi
+0x42B86BF jne near ptr 00000001442B8D8C
+0x42B86C5 lea rsi,[rdx+rbp]
+0x42B86C9 add rsi,162
+0x42B86D0 mov rax,[r14]
+0x42B86D3 mov ecx,eax
+0x42B86D5 and ecx,3FFFFFFF
+0x42B86DB cmp ecx,201
+0x42B86E1 jae near ptr 00000001442B98E1
+0x42B86E7 and rax,0FFFFFFFFC0000000
+0x42B86ED mov [r14],rax
+0x42B86F0 mov byte ptr [rsi],0
+0x42B86F3 and dword ptr [rbx+8],0C0000000
+0x42B86FA and dword ptr [rsi-14A],0C0000000
+
+===== DupHot RETURN SHAPES =====
+dup00CallSitesSampled=24 (of 1515 total callers)
+site=0x21D77 func=0x21B70 usesRax=False buildNear=False
+site=0x22924 func=0x22830 usesRax=False buildNear=False
+site=0x23D57 func=0x23CC0 usesRax=False buildNear=False
+site=0x24F9B func=0x24F10 usesRax=False buildNear=False
+site=0x2CA1F func=0x2C940 usesRax=False buildNear=False
+site=0x347DE func=0x34730 usesRax=True buildNear=False
+--- dupSite @0x347DE ---
+site=0x6BA85 func=0x6B560 usesRax=True buildNear=False
+--- dupSite @0x6BA85 ---
+0x6BA5D add [rcx+rcx*4-1F],cl
+0x6BA61 mov dl,1
+0x6BA63 mov r8b,1
+0x6BA66 mov r9b,1
+0x6BA69 call 00000001442BB220  ;call=0x42BB220
+0x6BA6E mov rax,[r15]
+0x6BA71 xor r14d,r14d
+0x6BA74 mov rcx,r15
+0x6BA77 xor edx,edx
+0x6BA79 xor r8d,r8d
+0x6BA7C call qword ptr [rax+20]
+0x6BA7F mov r15,rax
+0x6BA82 mov rcx,r12
+0x6BA85 call 00000001442B85F0  ;call=0x42B85F0
+0x6BA8A test r15,r15
+0x6BA8D je near ptr 000000014006B9E7
+0x6BA93 lea r14,[rsi+228]
+0x6BA9A mov eax,[rsi+230]
+0x6BAA0 mov edx,eax
+0x6BAA2 and edx,3FFF
+0x6BAA8 mov ecx,eax
+0x6BAAA shr ecx,10
+0x6BAAD and ecx,3FFF
+0x6BAB3 cmp edx,ecx
+0x6BAB5 jae near ptr 000000014006BF5B
+0x6BABB mov r14,[r14]
+0x6BABE lea r12d,[rax*8]
+0x6BAC6 and r12d,1FFF8
+0x6BACD mov ecx,eax
+0x6BACF and ecx,3FFF
+0x6BAD5 lea ebp,[rcx+1]
+0x6BAD8 cmp ecx,3FFF
+0x6BADE je near ptr 000000014006C109
+0x6BAE4 and ebp,3FFF
+0x6BAEA and eax,0FFFFC000
+0x6BAEF or eax,ebp
+0x6BAF1 mov [rsi+230],eax
+site=0x13D48E func=0x13D2C0 usesRax=True buildNear=False
+--- dupSite @0x13D48E ---
+0x13D466 mov eax,[rax+20]
+0x13D469 lea rcx,[rip+4640C80]
+0x13D470 cmp rax,rcx
+0x13D473 jne near ptr 000000014013D36B
+0x13D479 mov rcx,r13
+0x13D47C xor edx,edx
+0x13D47E xor r8d,r8d
+0x13D481 call 000000014477E0F0  ;call=0x477E0F0
+0x13D486 mov r13,rax
+0x13D489 lea rcx,[rsp+48]
+0x13D48E call 00000001442B85F0  ;call=0x42B85F0
+0x13D493 mov [rsp+68],r13
+0x13D498 mov eax,[rsp+78]
+0x13D49C mov ecx,80000000
+0x13D4A1 and eax,ecx
+0x13D4A3 or eax,88000
+0x13D4A8 mov [rsp+78],eax
+0x13D4AC lea rax,[rsp+7C]
+0x13D4B1 mov [rsp+70],rax
+0x13D4B6 mov r8d,[r15+r12+10]
+0x13D4BB and r8d,r14d
+0x13D4BE cmp r8d,9
+0x13D4C2 jae short 000000014013D4C8
+0x13D4C4 xor eax,eax
+0x13D4C6 jmp short 000000014013D4EB
+0x13D4C8 shl r8d,2
+0x13D4CC mov rcx,rbx
+0x13D4CF mov edx,r8d
+0x13D4D2 call 00000001442EB100  ;call=0x42EB100
+0x13D4D7 test rax,rax
+0x13D4DA jne short 000000014013D4E3
+0x13D4DC mov rax,[rip+0AE32865]
+0x13D4E3 mov r8d,[r15+r12+10]
+0x13D4E8 and r8d,r14d
+0x13D4EB mov rdx,[r15+r12+8]
+0x13D4F0 mov [rsp+28],rax
+0x13D4F5 mov dword ptr [rsp+20],4
+0x13D4FD mov rcx,rbx
+site=0x1D5116 func=0x1D4E60 usesRax=True buildNear=False
+--- dupSite @0x1D5116 ---
+0x1D50EE lea rcx,[rip+45A8FFB]
+0x1D50F5 cmp rax,rcx
+0x1D50F8 jne near ptr 00000001401D54C8
+0x1D50FE mov rcx,rsi
+0x1D5101 xor edx,edx
+0x1D5103 xor r8d,r8d
+0x1D5106 call 000000014477E0F0  ;call=0x477E0F0
+0x1D510B mov rsi,rax
+0x1D510E lea rcx,[rsp+80]
+0x1D5116 call 00000001442B85F0  ;call=0x42B85F0
+0x1D511B mov [rdi+10],rsi
+0x1D511F mov rcx,r14
+0x1D5122 mov rdx,rbx
+0x1D5125 mov al,[rdx+20]
+0x1D5128 mov [rdi+20],al
+0x1D512B mov rax,[rdx+18]
+0x1D512F mov [rdi+18],rax
+0x1D5133 jmp near ptr 00000001401D4FDE
+0x1D5138 inc r8
+0x1D513B mov rdi,rax
+0x1D513E mov r9d,4
+0x1D5144 cmp rdi,18
+0x1D5148 jae near ptr 00000001401D55D8
+0x1D514E add rdi,r9
+0x1D5151 cmp rdi,r8
+0x1D5154 jb short 00000001401D513E
+0x1D5156 cmp rdi,4000
+0x1D515D jae near ptr 00000001401D55EE
+0x1D5163 cmp eax,edi
+0x1D5165 jae near ptr 00000001401D506A
+0x1D516B mov [rsp+68],rdx
+0x1D5170 mov [rsp+58],rcx
+0x1D5175 lea eax,[rdi*8]
+0x1D517C lea edx,[rax+rax*4]
+0x1D517F mov rcx,rsi
+0x1D5182 call 00000001442EB100  ;call=0x42EB100
+site=0x1D524B func=0x1D4E60 usesRax=True buildNear=False
+--- dupSite @0x1D524B ---
+0x1D5223 add ebp,18
+0x1D5226 xor r12d,r12d
+0x1D5229 jmp short 00000001401D5271
+0x1D522B xor r8d,r8d
+0x1D522E jmp near ptr 00000001401D5314
+0x1D5233 mov rcx,r15
+0x1D5236 xor edx,edx
+0x1D5238 xor r8d,r8d
+0x1D523B call 000000014477E0F0  ;call=0x477E0F0
+0x1D5240 mov r15,rax
+0x1D5243 lea rcx,[rsp+80]
+0x1D524B call 00000001442B85F0  ;call=0x42B85F0
+0x1D5250 mov [rbp+r12-8],r15
+0x1D5255 mov al,[r14+r12+8]
+0x1D525A mov [rbp+r12+8],al
+0x1D525F mov rax,[r14+r12]
+0x1D5263 mov [rbp+r12],rax
+0x1D5268 add r12,28
+0x1D526C cmp r13,r12
+0x1D526F je short 00000001401D52D7
+0x1D5271 lea rax,[rip+928A108]
+0x1D5278 mov [rbp+r12-18],rax
+0x1D527D lea rax,[rip+90FA034]
+0x1D5284 mov [rbp+r12-10],rax
+0x1D5289 mov qword ptr [rbp+r12-8],0
+0x1D5292 mov r15,[r14+r12-8]
+0x1D5297 test r15,r15
+0x1D529A je short 00000001401D5255
+0x1D529C lea rcx,[rsp+80]
+0x1D52A4 mov dl,1
+0x1D52A6 mov r8b,1
+0x1D52A9 mov r9b,1
+0x1D52AC call 00000001442BB220  ;call=0x42BB220
+0x1D52B1 mov rax,[r15]
+0x1D52B4 mov rax,[rax+20]
+0x1D52B8 lea rcx,[rip+45A8E31]
+site=0x2135A3 func=0x2133A0 usesRax=False buildNear=False
+site=0x28C6CE func=0x28C610 usesRax=False buildNear=False
+site=0x28C733 func=0x28C610 usesRax=True buildNear=False
+--- dupSite @0x28C733 ---
+0x28C70B lea rcx,[rip+44F19DE]
+0x28C712 cmp rax,rcx
+0x28C715 jne near ptr 000000014028D1A1
+0x28C71B mov rcx,rsi
+0x28C71E xor edx,edx
+0x28C720 xor r8d,r8d
+0x28C723 call 000000014477E0F0  ;call=0x477E0F0
+0x28C728 mov rsi,rax
+0x28C72B lea rcx,[rsp+0E8]
+0x28C733 call 00000001442B85F0  ;call=0x42B85F0
+0x28C738 mov [rsp+60],rsi
+0x28C73D mov rax,[r13+28]
+0x28C741 mov [rsp+68],rax
+0x28C746 lea rsi,[rip+0ACE748B]
+0x28C74D cmp rax,rsi
+0x28C750 jne near ptr 000000014028C9E4
+0x28C756 lea rdi,[rsp+48]
+0x28C75B lea rbp,[rsp+58]
+0x28C760 lea rbx,[rsp+68]
+0x28C765 mov eax,[r13+38]
+0x28C769 mov [rbx+10],eax
+0x28C76C mov rax,[r13+30]
+0x28C770 mov [rbx+8],rax
+0x28C774 lea r14,[rsp+7C]
+0x28C779 mov eax,80000000
+0x28C77E and eax,[r14+8]
+0x28C782 lea rdx,[r13+3C]
+0x28C786 or eax,0C000
+0x28C78B mov [r14+8],eax
+0x28C78F mov qword ptr [r14],0
+0x28C796 mov rcx,r14
+0x28C799 xor r8d,r8d
+0x28C79C call 000000014028D810  ;call=0x28D810
+0x28C7A1 mov al,[r13+4A]
+site=0x2ADC62 func=0x2ADB60 usesRax=False buildNear=False
+site=0x353054 func=0x352E30 usesRax=True buildNear=False
+--- dupSite @0x353054 ---
+0x35302C mov eax,[rax+20]
+0x35302F lea rcx,[rip+442B0BA]
+0x353036 cmp rax,rcx
+0x353039 jne near ptr 000000014035316D
+0x35303F mov rcx,r12
+0x353042 xor edx,edx
+0x353044 xor r8d,r8d
+0x353047 call 000000014477E0F0  ;call=0x477E0F0
+0x35304C mov r12,rax
+0x35304F lea rcx,[rsp+6E]
+0x353054 call 00000001442B85F0  ;call=0x42B85F0
+0x353059 mov [r15-10],r12
+0x35305D lea rcx,[r13-8]
+0x353061 lea rax,[rip+8F7C250]
+0x353068 mov [r15-8],rax
+0x35306C mov qword ptr [r15],0
+0x353073 mov [rsp+58],rcx
+0x353078 mov r12,[rcx+38]
+0x35307C test r12,r12
+0x35307F je short 00000001403530C8
+0x353081 lea rcx,[rsp+6F]
+0x353086 mov dl,1
+0x353088 mov r8b,1
+0x35308B mov r9b,1
+0x35308E call 00000001442BB220  ;call=0x42BB220
+0x353093 mov rax,[r12]
+0x353097 mov rax,[rax+20]
+0x35309B lea rcx,[rip+442B04E]
+0x3530A2 cmp rax,rcx
+0x3530A5 jne near ptr 000000014035317C
+0x3530AB mov rcx,r12
+0x3530AE xor edx,edx
+0x3530B0 xor r8d,r8d
+0x3530B3 call 000000014477E0F0  ;call=0x477E0F0
+0x3530B8 mov r12,rax
+0x3530BB lea rcx,[rsp+6F]
+0x3530C0 call 00000001442B85F0  ;call=0x42B85F0
+site=0x3530C0 func=0x352E30 usesRax=False buildNear=False
+site=0x35331B func=0x353210 usesRax=False buildNear=False
+site=0x388753 func=0x3885E0 usesRax=False buildNear=False
+site=0x526D16 func=0x526B70 usesRax=False buildNear=False
+site=0x70A214 func=0x70A0A0 usesRax=True buildNear=False
+--- dupSite @0x70A214 ---
+0x70A1EC jl short 000000014070A212
+0x70A1EE push rax
+0x70A1EF mov rcx,rdi
+0x70A1F2 xor edx,edx
+0x70A1F4 mov r8b,1
+0x70A1F7 mov r9b,1
+0x70A1FA call 00000001442BB220  ;call=0x42BB220
+0x70A1FF mov rax,[r13]
+0x70A203 mov rcx,r13
+0x70A206 xor edx,edx
+0x70A208 xor r8d,r8d
+0x70A20B call qword ptr [rax+20]
+0x70A20E mov r13,rax
+0x70A211 mov rcx,rdi
+0x70A214 call 00000001442B85F0  ;call=0x42B85F0
+0x70A219 mov [r15+100],r13
+0x70A220 mov r13,[rsp+48]
+0x70A225 test r13,r13
+0x70A228 je near ptr 000000014070A309
+0x70A22E mov rax,[rip+0A85D4D3]
+0x70A235 mov rcx,r13
+0x70A238 shr rcx,1C
+0x70A23C mov rdx,7FFFFFFF8
+0x70A246 and rcx,rdx
+0x70A249 mov rax,[rax+rcx]
+0x70A24D test rax,rax
+0x70A250 je near ptr 000000014070A538
+0x70A256 mov ecx,r13d
+0x70A259 shr ecx,0F
+0x70A25C and ecx,0FFFE
+0x70A262 mov al,[rax+rcx]
+0x70A265 cmp al,0FF
+0x70A267 je short 000000014070A26E
+0x70A269 movzx ebp,al
+0x70A26C jmp short 000000014070A274
+0x70A26E mov ebp,[rip+0A85DCA0]
+0x70A274 cmp bpl,0FF
+0x70A278 jne short 000000014070A2C1
+0x70A27A lock inc dword ptr [rip+0A82EEB7]
+0x70A281 lea rax,[rip+0A82ECB1]
+site=0x788D6D func=0x788CC0 usesRax=False buildNear=False
+site=0x7B21D4 func=0x7B1E70 usesRax=True buildNear=False
+--- dupSite @0x7B21D4 ---
+0x7B21AC je short 00000001407B21D2
+0x7B21AE jo short 00000001407B21FC
+0x7B21B0 mov ecx,esi
+0x7B21B2 xor edx,edx
+0x7B21B4 mov r8b,1
+0x7B21B7 mov r9b,1
+0x7B21BA call 00000001442BB220  ;call=0x42BB220
+0x7B21BF mov rax,[r12]
+0x7B21C3 mov rcx,r12
+0x7B21C6 xor edx,edx
+0x7B21C8 xor r8d,r8d
+0x7B21CB call qword ptr [rax+20]
+0x7B21CE mov r12,rax
+0x7B21D1 mov rcx,r14
+0x7B21D4 call 00000001442B85F0  ;call=0x42B85F0
+0x7B21D9 mov rax,[r12]
+0x7B21DD mov rcx,r12
+0x7B21E0 mov rdx,rsi
+0x7B21E3 call qword ptr [rax+88]
+0x7B21E9 mov rax,[rsi+68]
+0x7B21ED lea rdx,[rax+240]
+0x7B21F4 test rax,rax
+0x7B21F7 lea rax,[rip+0A7C19D2]
+0x7B21FE cmove rdx,rax
+0x7B2202 mov rax,[r12]
+0x7B2206 mov rcx,r12
+0x7B2209 call qword ptr [rax+90]
+0x7B220F mov r14d,[rsi+3C]
+0x7B2213 mov ecx,r14d
+0x7B2216 and ecx,3FFF
+0x7B221C mov eax,r14d
+0x7B221F shr eax,10
+0x7B2222 and eax,3FFF
+0x7B2227 cmp ecx,eax
+0x7B2229 jae near ptr 00000001407B267D
+0x7B222F mov rdx,rsi
+0x7B2232 mov rcx,r15
+0x7B2235 mov rax,[rsp+40]
+0x7B223A mov r13,[rax]
+0x7B223D mov r8d,r14d
+0x7B2240 mov r9d,3FFF
+site=0x7B2EAC func=0x7B2950 usesRax=False buildNear=False
+site=0x7B2EE3 func=0x7B2950 usesRax=True buildNear=False
+--- dupSite @0x7B2EE3 ---
+0x7B2EBB lea edi,[rsp+60]
+0x7B2EBF mov rcx,rdi
+0x7B2EC2 xor edx,edx
+0x7B2EC4 mov r8b,1
+0x7B2EC7 mov r9b,1
+0x7B2ECA call 00000001442BB220  ;call=0x42BB220
+0x7B2ECF mov rax,[r15]
+0x7B2ED2 mov rcx,r15
+0x7B2ED5 xor edx,edx
+0x7B2ED7 xor r8d,r8d
+0x7B2EDA call qword ptr [rax+20]
+0x7B2EDD mov rbp,rax
+0x7B2EE0 mov rcx,rdi
+0x7B2EE3 call 00000001442B85F0  ;call=0x42B85F0
+0x7B2EE8 test rbp,rbp
+0x7B2EEB je near ptr 00000001407B2D11
+0x7B2EF1 mov r8,rbp
+0x7B2EF4 add r8,18
+0x7B2EF8 mov eax,[rbp+20]
+0x7B2EFB test ax,ax
+0x7B2EFE jns short 00000001407B2F78
+0x7B2F00 lea ebx,[rax*8]
+0x7B2F07 and ebx,1FFF8
+0x7B2F0D lea rcx,[rip+0A7C0CC4]
+0x7B2F14 je short 00000001407B2F7F
+0x7B2F16 mov r12,[r8]
+0x7B2F19 add rbx,r12
+0x7B2F1C mov r14,[r12]
+0x7B2F20 cmp r14,rcx
+0x7B2F23 je short 00000001407B2F58
+0x7B2F25 mov rdx,[r14+8]
+0x7B2F29 mov rax,0FFFFFFFF00000000
+0x7B2F33 lea rdi,[rdx+rax]
+0x7B2F37 mov rax,7FFFFFFF01FFFFFF
+0x7B2F41 test rdi,rax
+0x7B2F44 je near ptr 00000001407B30B4
+0x7B2F4A mov rax,rdx
+0x7B2F4D lock cmpxchg [r14+8],rdi
+dup00UsesRax=10 dup00BuildNear=0
+
+===== TLS INDEX 0xAB8BBC0 USERS =====
+ripLoads=200
+smallTlsLeaf=0x1F970 size=83 cl=False dl=True retAl=False at=0x1F9DC
+smallTlsLeaf=0x22D20 size=119 cl=False dl=True retAl=False at=0x22ECC
+smallTlsLeaf=0x22D20 size=119 cl=False dl=True retAl=False at=0x22FD0
+smallTlsLeaves=2
+--- tlsLeaf @0x1F970 ---
+0x1F970 push r15
+0x1F972 push r14
+0x1F974 push r13
+0x1F976 push r12
+0x1F978 push rsi
+0x1F979 push rdi
+0x1F97A push rbp
+0x1F97B push rbx
+0x1F97C sub rsp,78
+0x1F980 mov rax,[rip+0A293879]
+0x1F987 xor rax,rsp
+0x1F98A mov [rsp+70],rax
+0x1F98F mov r13d,[rcx+8]
+0x1F993 and r13,3FFF
+0x1F99A jne short 000000014001F9D4
+0x1F99C test dl,dl
+0x1F99E jne near ptr 000000014001FD1F
+0x1F9A4 mov rcx,[rsp+70]
+0x1F9A9 xor rcx,rsp
+0x1F9AC call 0000000145014570  ;call=0x5014570
+0x1F9B1 nop
+0x1F9B2 add rsp,78
+0x1F9B6 pop rbx
+0x1F9B7 pop rbp
+0x1F9B8 pop rdi
+0x1F9B9 pop rsi
+0x1F9BA pop r12
+0x1F9BC pop r13
+0x1F9BE pop r14
+0x1F9C0 pop r15
+0x1F9C2 ret
+0x1F9C3 test dl,dl
+0x1F9C5 jne near ptr 000000014001FD1F
+0x1F9CB and dword ptr [rcx+8],0FFFFC000
+  callers=2 begin10=0
+--- tlsLeaf @0x22D20 ---
+0x22D20 push r15
+0x22D22 push r14
+0x22D24 push r13
+0x22D26 push r12
+0x22D28 push rsi
+0x22D29 push rdi
+0x22D2A push rbp
+0x22D2B push rbx
+0x22D2C sub rsp,38
+0x22D30 mov rax,[rip+0A2904C9]
+0x22D37 xor rax,rsp
+0x22D3A mov [rsp+30],rax
+0x22D3F mov eax,[rcx+8]
+0x22D42 mov rbp,rax
+0x22D45 and rbp,3FFF
+0x22D4C jne short 0000000140022D97
+0x22D4E test dl,dl
+0x22D50 je short 0000000140022D78
+0x22D52 bt eax,0E
+0x22D56 jae short 0000000140022D64
+0x22D58 mov rsi,[rcx]
+0x22D5B test rsi,rsi
+0x22D5E jne near ptr 0000000140022EEB
+0x22D64 and eax,0C0000000
+0x22D69 or eax,0C000
+0x22D6E mov qword ptr [rcx],0
+0x22D75 mov [rcx+8],eax
+0x22D78 mov rcx,[rsp+30]
+0x22D7D xor rcx,rsp
+  callers=16 begin10=0
+
+===== FRAME POP 0x4420DB0 =====
+--- framePop @0x4420DB0 ---
+0x4420DB0 push r15
+0x4420DB2 push r14
+0x4420DB4 push r13
+0x4420DB6 push r12
+0x4420DB8 push rsi
+0x4420DB9 push rdi
+0x4420DBA push rbp
+0x4420DBB push rbx
+0x4420DBC sub rsp,0B8
+0x4420DC3 mov rax,[rip+5E92436]
+0x4420DCA xor rax,rsp
+0x4420DCD mov [rsp+0B0],rax
+0x4420DD5 mov eax,[rip+676ADE5]
+0x4420DDB mov rcx,gs:[58]
+0x4420DE4 mov rcx,[rcx+rax*8]
+0x4420DE8 mov rsi,[rcx+1C78]
+0x4420DEF mov eax,[rsi+0BC0]
+0x4420DF5 imul r13,rax,178
+0x4420DFC lea r14,[rsi+r13]
+0x4420E00 cmp byte ptr [rsi+r13+161],0
+0x4420E09 mov rdx,rsi
+0x4420E0C mov [rsp+88],rsi
+0x4420E14 mov [rsp+78],r13
+0x4420E19 je near ptr 0000000144420EE3
+0x4420E1F lea r15,[rcx+1C78]
+0x4420E26 mov rcx,[rsi+r13+164]
+0x4420E2E mov r8d,[rsi+r13+16C]
+
+===== VERDICT =====
+c2Proven=false
+callEngine=off
+decision=DupHot return value consumed; Build link not seen under lea-rdx heuristic
+next=Trace rax consumers; check virtual Build; Find Begin on same TLS frame.
