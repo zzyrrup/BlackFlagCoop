@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "milestone": "v0.6.12",
+  "generatedUtc": "2026-11-12T17:36:10Z",
+  "exeSha256": "19920F34BB2FAC814023EE3C27F0CECA1872E80A2AAFB37C092C419FFF77CC0D",
+  "confirmedEnrollmentFeedPath": {
+    "status": "confirmed",
+    "steps": [
+      "Hash-bucket probe on manager (fields +0x58/+0x60/+0x68 observed)",
+      "Bucket payload -> SmallArray { base*[+0], count*[+8] }; byteLen=(count<<3)&0x1FFF8",
+      "Load packed object pointer from array[i]; untag with 0xFFFFFFFFFFFF",
+      "Gate: ([obj+0x61] & 6) == 2",
+      "Coordinator: obj+0x18 -> +0xA8 -> +0x3CD0; call lookup 0x429F9E0; add +0x20",
+      "call enqueue helper 0x2E97B60(coord, obj)",
+      "or [obj+0x61], 4"
+    ],
+    "objectSource": "preexisting_packed_pointer_array",
+    "wrapperCallsAllocator": false,
+    "staticLookupKeyRva": "0xB2898C8",
+    "staticLookupKeyNote": "Sites 0x2E9B3D1 and 0x2E9B481 LEA the same non-string TypeInfo/key; site 0x2E98AA3 passes a register key (r14)",
+    "nearSiteListHelper": "0x537C2C0"
+  },
+  "allocatorOnEnrollmentPath": {
+    "inWrapper": false,
+    "nearSiteCalleeForwardReach": 0,
+    "nearSiteCalleeCount": 1,
+    "verdict": "no_allocator_on_enrollment_call_graph"
+  },
+  "sites": [{ "site": "0x2E98AA3", "objectReg": "RBX", "note": "obj=RBX loadFromPackedPtrArray gate=[+0x61]&6==2:True coord=[+0x18 +0xA8 +0x3CD0 lookup] lookupKey=reg" }, { "site": "0x2E9B3D1", "objectReg": "RBX", "note": "obj=RBX loadFromPackedPtrArray gate=[+0x61]&6==2:True coord=[+0x18 +0xA8 +0x3CD0 lookup] lookupKey=0xB2898C8" }, { "site": "0x2E9B481", "objectReg": "R14", "note": "obj=R14 loadFromPackedPtrArray gate=[+0x61]&6==2:True coord=[+0x18 +0xA8 +0x3CD0 lookup] lookupKey=0xB2898C8" }]
+}

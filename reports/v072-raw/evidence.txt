@@ -1,0 +1,390 @@
+===== v0.6.12 ENQUEUE FEED FORWARD =====
+exeSha256=19920F34BB2FAC814023EE3C27F0CECA1872E80A2AAFB37C092C419FFF77CC0D
+wrapper=0x2E97FC0 helper=0x2E97B60 allocator=0x426EE50
+
+===== HELPER E8 SITES (expect inside wrapper) =====
+  e8 @0x2E98AA3 inWrapper=True
+  e8 @0x2E9B3D1 inWrapper=True
+  e8 @0x2E9B481 inWrapper=True
+
+===== ENROLLMENT SITE OBJECT PROVENANCE =====
+-- site 0x2E98AA3 --
+  0x2E98A03 mov r8,[r11+58]
+  0x2E98A07 mov rcx,[r11+68]
+  0x2E98A0B dec r8
+  0x2E98A0E and r8,rdx
+  0x2E98A11 shl r8,4
+  0x2E98A15 mov r8d,[rcx+r8+0C]
+  0x2E98A1A cmp r8d,0FFFFFFFF
+  0x2E98A1E je near ptr 0000000142E98963
+  0x2E98A24 mov rdx,[r11+60]
+  0x2E98A28 mov r8d,r8d
+  0x2E98A2B shl r8,4
+  0x2E98A2F cmp [rdx+r8],rax
+  0x2E98A33 jne near ptr 0000000142E9BD43
+  0x2E98A39 mov rax,[rdx+r8+8]
+  0x2E98A3E mov esi,[rax+8]
+  0x2E98A41 shl esi,3
+  0x2E98A44 and esi,1FFF8
+  0x2E98A4A je near ptr 0000000142E98963
+  0x2E98A50 mov rdi,[rax]
+  0x2E98A53 xor ebp,ebp
+  0x2E98A55 mov rbx,[rdi+rbp]
+  0x2E98A59 mov rax,0FFFFFFFFFFFF
+  0x2E98A63 and rbx,rax
+  0x2E98A66 mov al,[rbx+61]
+  0x2E98A69 and al,6
+  0x2E98A6B cmp al,2
+  0x2E98A6D jne short 0000000142E98AAC
+  0x2E98A6F mov rax,[rbx+18]
+  0x2E98A73 mov rax,[rax+0A8]
+  0x2E98A7A mov rcx,[rax+3CD0]
+  0x2E98A81 mov rdx,r14
+  0x2E98A84 xor r8d,r8d
+  0x2E98A87 vzeroupper
+  0x2E98A8A call 000000014429F9E0
+  0x2E98A8F mov ecx,0
+  0x2E98A94 test rax,rax
+  0x2E98A97 je short 0000000142E98A9C
+  0x2E98A99 mov rcx,[rax]
+  0x2E98A9C add rcx,20
+  0x2E98AA0 mov rdx,rbx
+  0x2E98AA3 call 0000000142E97B60 <<<< ENQUEUE
+  0x2E98AA8 or byte ptr [rbx+61],4
+  0x2E98AAC add rbp,8
+  0x2E98AB0 cmp rsi,rbp
+  0x2E98AB3 mov r11,[rsp+58]
+  0x2E98AB8 jne short 0000000142E98A55
+  0x2E98ABA jmp near ptr 0000000142E98963
+  0x2E98ABF lea rbx,[rsp+120]
+  0x2E98AC7 mov eax,80000000
+  0x2E98ACC and eax,[rbx-8]
+  0x2E98ACF or eax,48000
+  0x2E98AD4 mov [rbx-8],eax
+  0x2E98AD7 mov [rbx-10],rbx
+  0x2E98ADB vbroadcastss xmm0,dword ptr [rip+61D8DEC]
+  0x2E98AE4 vroundps xmm0,xmm0,2
+  0x2E98AEA vcvttss2si r15d,xmm0
+  0x2E98AEE lea rbp,[r11+0F0]
+  RESULT obj=RBX loadFromPackedPtrArray gate=[+0x61]&6==2:True coord=[+0x18 +0xA8 +0x3CD0 lookup] lookupKey=reg postOr61=True nearbyCallees=2
+    mov-rdx-from-RBX @0x2E98AA0 mov rdx,rbx
+    def RBX<-mem @0x2E98A55 mov rbx,[rdi+rbp]
+-- site 0x2E9B3D1 --
+  0x2E9B331 sbb [r9-1],cl
+  0x2E9B335 enter 2149,0D0
+  0x2E9B339 shl r8,4
+  0x2E9B33D mov r8d,[rcx+r8+0C]
+  0x2E9B342 cmp r8d,0FFFFFFFF
+  0x2E9B346 je near ptr 0000000142E9B2A1
+  0x2E9B34C mov rdx,[r11+10]
+  0x2E9B350 mov r8d,r8d
+  0x2E9B353 shl r8,4
+  0x2E9B357 cmp [rdx+r8],rax
+  0x2E9B35B jne near ptr 0000000142E9BD1D
+  0x2E9B361 mov rax,[rdx+r8+8]
+  0x2E9B366 mov esi,[rax+8]
+  0x2E9B369 shl esi,3
+  0x2E9B36C and esi,1FFF8
+  0x2E9B372 je near ptr 0000000142E9B2A1
+  0x2E9B378 mov r13,[rax]
+  0x2E9B37B xor r14d,r14d
+  0x2E9B37E mov rbx,[r13+r14]
+  0x2E9B383 mov rax,0FFFFFFFFFFFF
+  0x2E9B38D and rbx,rax
+  0x2E9B390 mov al,[rbx+61]
+  0x2E9B393 and al,6
+  0x2E9B395 cmp al,2
+  0x2E9B397 jne short 0000000142E9B3DA
+  0x2E9B399 mov rax,[rbx+18]
+  0x2E9B39D mov rax,[rax+0A8]
+  0x2E9B3A4 mov rcx,[rax+3CD0]
+  0x2E9B3AB lea rdx,[rip+83EE516]
+  0x2E9B3B2 xor r8d,r8d
+  0x2E9B3B5 vzeroupper
+  0x2E9B3B8 call 000000014429F9E0
+  0x2E9B3BD mov ecx,0
+  0x2E9B3C2 test rax,rax
+  0x2E9B3C5 je short 0000000142E9B3CA
+  0x2E9B3C7 mov rcx,[rax]
+  0x2E9B3CA add rcx,20
+  0x2E9B3CE mov rdx,rbx
+  0x2E9B3D1 call 0000000142E97B60 <<<< ENQUEUE
+  0x2E9B3D6 or byte ptr [rbx+61],4
+  0x2E9B3DA add r14,8
+  0x2E9B3DE cmp rsi,r14
+  0x2E9B3E1 mov r11,[rsp+58]
+  0x2E9B3E6 mov r10d,[rsp+90]
+  0x2E9B3EE jne short 0000000142E9B37E
+  0x2E9B3F0 jmp near ptr 0000000142E9B2A1
+  0x2E9B3F5 lea rcx,[rsp+4B8]
+  0x2E9B3FD mov rdx,r14
+  0x2E9B400 vzeroupper
+  0x2E9B403 call 000000014537C2C0
+  0x2E9B408 mov r11,[rsp+58]
+  0x2E9B40D add r13,8
+  0x2E9B411 cmp rsi,r13
+  0x2E9B414 mov ebp,ebx
+  0x2E9B416 mov r10d,[rsp+90]
+  0x2E9B41E je near ptr 0000000142E99545
+  RESULT obj=RBX loadFromPackedPtrArray gate=[+0x61]&6==2:True coord=[+0x18 +0xA8 +0x3CD0 lookup] lookupKey=0xB2898C8 postOr61=True nearbyCallees=2
+    mov-rdx-from-RBX @0x2E9B3CE mov rdx,rbx
+    def RBX<-mem @0x2E9B37E mov rbx,[r13+r14]
+-- site 0x2E9B481 --
+  0x2E9B3E1 mov r11,[rsp+58]
+  0x2E9B3E6 mov r10d,[rsp+90]
+  0x2E9B3EE jne short 0000000142E9B37E
+  0x2E9B3F0 jmp near ptr 0000000142E9B2A1
+  0x2E9B3F5 lea rcx,[rsp+4B8]
+  0x2E9B3FD mov rdx,r14
+  0x2E9B400 vzeroupper
+  0x2E9B403 call 000000014537C2C0
+  0x2E9B408 mov r11,[rsp+58]
+  0x2E9B40D add r13,8
+  0x2E9B411 cmp rsi,r13
+  0x2E9B414 mov ebp,ebx
+  0x2E9B416 mov r10d,[rsp+90]
+  0x2E9B41E je near ptr 0000000142E99545
+  0x2E9B424 mov ebx,ebp
+  0x2E9B426 mov rax,[rsp+78]
+  0x2E9B42B mov rbp,[rax+r13]
+  0x2E9B42F mov r14,rbp
+  0x2E9B432 mov rax,0FFFFFFFFFFFF
+  0x2E9B43C and r14,rax
+  0x2E9B43F mov al,[r14+61]
+  0x2E9B443 and al,6
+  0x2E9B445 cmp al,2
+  0x2E9B447 jne short 0000000142E9B48B
+  0x2E9B449 mov rax,[r14+18]
+  0x2E9B44D mov rax,[rax+0A8]
+  0x2E9B454 mov rcx,[rax+3CD0]
+  0x2E9B45B lea rdx,[rip+83EE466]
+  0x2E9B462 xor r8d,r8d
+  0x2E9B465 vzeroupper
+  0x2E9B468 call 000000014429F9E0
+  0x2E9B46D mov ecx,0
+  0x2E9B472 test rax,rax
+  0x2E9B475 je short 0000000142E9B47A
+  0x2E9B477 mov rcx,[rax]
+  0x2E9B47A add rcx,20
+  0x2E9B47E mov rdx,r14
+  0x2E9B481 call 0000000142E97B60 <<<< ENQUEUE
+  0x2E9B486 or byte ptr [r14+61],4
+  0x2E9B48B cmp rbp,[rsp+60]
+  0x2E9B490 mov r11,[rsp+58]
+  0x2E9B495 jb near ptr 0000000142E9B40D
+  0x2E9B49B jmp near ptr 0000000142E9B3F5
+  0x2E9B4A0 shr rax,6
+  0x2E9B4A4 mov r8d,1
+  0x2E9B4AA xor edx,edx
+  0x2E9B4AC cmp rax,r8
+  0x2E9B4AF je near ptr 0000000142E9975A
+  0x2E9B4B5 mov r9,[rcx+r8*8]
+  0x2E9B4B9 add rdx,0FFFFFFFFFFFFFFC0
+  0x2E9B4BD inc r8
+  0x2E9B4C0 test r9,r9
+  0x2E9B4C3 je short 0000000142E9B4AC
+  0x2E9B4C5 xor r12d,r12d
+  0x2E9B4C8 tzcnt r12,r9
+  0x2E9B4CD lea rax,[r12+1]
+  RESULT obj=R14 loadFromPackedPtrArray gate=[+0x61]&6==2:True coord=[+0x18 +0xA8 +0x3CD0 lookup] lookupKey=0xB2898C8 postOr61=True nearbyCallees=3
+    mov-rdx-from-R14 @0x2E9B47E mov rdx,r14
+    def R14<-RBP @0x2E9B42F mov r14,rbp
+
+===== WRAPPER CALLEE MAP =====
+wrapperIns=4988 bytes~22878
+uniqueCallees=33 nearSiteCallees=3
+  call 0xE6E0 x26
+  call 0x5352080 x16
+  call 0x4265F00 x9
+  call 0x42EB100 x6
+  call 0x429F9E0 x5 *** LOOKUP *** [near-site]
+  call 0xF77590 x5
+  call 0xA076B0 x3
+  call 0x2E97B60 x3 *** HELPER *** [near-site]
+  call 0x42EB170 x2
+  call 0xD530 x2
+  call 0x42256B0 x2
+  call 0x725DC0 x2
+  call 0xCA5340 x2
+  call 0x210B040 x2
+  call 0x210B190 x2
+  call 0x210B2E0 x2
+  call 0x2EA2500 x2
+  call 0x44FC200 x2
+  call 0x53519E0 x2
+  call 0x2108D60 x2
+  call 0xA075A0 x2
+  call 0x725650 x1
+  call 0x2EA1CF0 x1
+  call 0xA61FC0 x1
+  call 0xA62140 x1
+wrapperCallsAllocator=False wrapperCallsLookup=True wrapperCallsHelper=True
+
+===== FORWARD FEED: NEAR-SITE / PROVIDER FUNCS =====
+-- feed 0x537C2C0 kind=near-site-callee size=182 --
+  0x537C2C0 push rsi
+  0x537C2C1 push rdi
+  0x537C2C2 mov rax,rdx
+  0x537C2C5 mov edx,[rcx+8]
+  0x537C2C8 lea r10d,[rdx*8]
+  0x537C2D0 and r10d,1FFF8
+  0x537C2D7 je near ptr 000000014537C373
+  0x537C2DD mov r8,[rcx]
+  0x537C2E0 add r10,r8
+  0x537C2E3 prefetcht0 [r8]
+  0x537C2E7 prefetcht0 [r8+40]
+  0x537C2EC prefetcht0 [r8+80]
+  0x537C2F4 prefetcht0 [r8+0C0]
+  0x537C2FC lea rsi,[r10-20]
+  0x537C300 mov r11,r8
+  0x537C303 cmp r8,rsi
+  0x537C306 jae short 000000014537C356
+  0x537C308 mov r11d,4
+  0x537C30E xor r9d,r9d
+  0x537C311 cmp [r8+r9],rax
+  0x537C315 je near ptr 000000014537C3A0
+  0x537C31B cmp [r8+r9+8],rax
+  0x537C320 je short 000000014537C38B
+  0x537C322 cmp [r8+r9+10],rax
+  nest=False alloc=False lookup=False helper=False sizes=[]
+
+===== OBJECT LOAD DISPS + ALLOCATOR WRITERS =====
+objectLoadDisps=[0x0]
+hotPreSiteDisps:
+  disp=0x8 hits=5
+  disp=0x61 hits=4
+  disp=0x18 hits=4
+  disp=0x58 hits=3
+  disp=0xA8 hits=3
+  disp=0x3CD0 hits=3
+  disp=0x1 hits=2
+  disp=0xC hits=2
+  disp=0x90 hits=2
+  disp=0x70 hits=1
+  disp=0x88 hits=1
+  disp=0x80 hits=1
+  disp=0x50 hits=1
+  disp=0x68 hits=1
+  disp=0x60 hits=1
+  disp=0x10 hits=1
+  disp=0x4B8 hits=1
+  disp=0x78 hits=1
+allocatorE8CallersScanned=400
+  ALLOC-FEED 0x24090 kind=hotdisp-alloc size=1055 nest=False lookup=True wrapCallee=False reach=none sizes=[0x80]
+    0x2417F :: 0x24174:mov edx,80
+    str "AVVWSH"
+  ALLOC-FEED 0x398B0 kind=hotdisp-alloc size=4558 nest=False lookup=False wrapCallee=False reach=none sizes=[0xE0,0x100]
+    0x3A5DE :: 0x3A5D0:mov edx,0E0
+  ALLOC-FEED 0x3F710 kind=hotdisp-alloc size=4293 nest=False lookup=True wrapCallee=False reach=none sizes=[0x30,0x100,0x140]
+    0x3FAA4 :: 0x3FA99:mov edx,30
+  ALLOC-FEED 0x5D460 kind=hotdisp-alloc size=2161 nest=False lookup=True wrapCallee=False reach=none sizes=[0x48,0x100]
+    0x5D7D5 :: 0x5D7CA:mov edx,48
+    str "Invalid pointer not allocated by our allocators or already freed: 0x%p"
+  ALLOC-FEED 0x604B0 kind=hotdisp-alloc size=532 nest=False lookup=True wrapCallee=False reach=none sizes=[0x48,0x3E8]
+    0x605A0 :: 0x60595:mov edx,48
+  ALLOC-FEED 0x67E30 kind=hotdisp-alloc size=2883 nest=False lookup=False wrapCallee=False reach=none sizes=[0x38,0x40,0x50,0x100,0x1C8]
+    0x68038 :: 0x6802D:mov edx,40
+    0x6809F :: 0x68094:mov edx,38
+    0x685D8 :: 0x685CA:mov edx,50
+    str "Invalid pointer not allocated by our allocators or already freed: 0x%p"
+  ALLOC-FEED 0x748F0 kind=hotdisp-alloc size=707 nest=False lookup=False wrapCallee=False reach=none sizes=[0xE0,0x100]
+    0x7497A :: 0x7496F:mov edx,0E0
+    str "Invalid pointer not allocated by our allocators or already freed: 0x%p"
+  ALLOC-FEED 0xE0A40 kind=hotdisp-alloc size=524 nest=False lookup=True wrapCallee=False reach=none sizes=[0x48,0x3E8]
+    0xE0B30 :: 0xE0B25:mov edx,48
+  ALLOC-FEED 0x1694E0 kind=hotdisp-alloc size=1695 nest=False lookup=False wrapCallee=False reach=none sizes=[0x50,0x100]
+    0x16962E :: 0x169623:mov edx,50
+    0x1696F8
+    str "Too many elements for %sArray. Size: %u, Max Size: %u"
+    str "Small"
+  ALLOC-FEED 0x176FC0 kind=hotdisp-alloc size=1462 nest=False lookup=True wrapCallee=False reach=none sizes=[0x50,0x100,0x3E8]
+    0x177162 :: 0x177157:mov edx,50
+    str "Too many elements for %sArray. Size: %u, Max Size: %u"
+  ALLOC-FEED 0x1AA9D0 kind=hotdisp-alloc size=551 nest=False lookup=True wrapCallee=False reach=none sizes=[0x58,0x3E8]
+    0x1AAAC0 :: 0x1AAAB5:mov edx,58
+  ALLOC-FEED 0x1B04C0 kind=hotdisp-alloc size=1005 nest=False lookup=False wrapCallee=False reach=none sizes=[0x50]
+    0x1B0696 :: 0x1B068B:mov edx,50
+    0x1B073E
+  ALLOC-FEED 0x1CB090 kind=nested-alloc size=4607 nest=True lookup=True wrapCallee=False reach=none sizes=[0x20,0x30,0x100,0x250]
+    0x1CB7B0 :: 0x1CB7A5:mov edx,250
+    str "Invalid pointer not allocated by our allocators or already freed: 0x%p"
+  ALLOC-FEED 0x1D31E0 kind=hotdisp-alloc size=7254 nest=False lookup=True wrapCallee=False reach=none sizes=[0x100,0x200,0x4D0,0x4000]
+    0x1D4042 :: 0x1D4037:mov edx,4D0
+    0x1D40A1 :: 0x1D4096:mov edx,200
+  ALLOC-FEED 0x1E8FA0 kind=hotdisp-alloc size=5281 nest=False lookup=True wrapCallee=False reach=none sizes=[0x30,0x100]
+    0x1E93C3 :: 0x1E938F:test eax,3FFF | 0x1E93B8:mov edx,30
+    0x1E95B7 :: 0x1E95AC:mov edx,30
+    0x1E9687 :: 0x1E9652:and ecx,3FFF | 0x1E967C:mov edx,30
+  ALLOC-FEED 0x1EFE80 kind=hotdisp-alloc size=7449 nest=False lookup=True wrapCallee=False reach=none sizes=[0xD0,0x100,0x4000]
+    0x1F0C62
+    0x1F0D65 :: 0x1F0D5A:mov edx,0D0
+    str "Invalid pointer not allocated by our allocators or already freed: 0x%p"
+  ALLOC-FEED 0x1F6900 kind=hotdisp-alloc size=4465 nest=False lookup=True wrapCallee=False reach=none sizes=[0x88,0x100]
+    0x1F719C :: 0x1F7191:mov edx,88
+    str "Invalid pointer not allocated by our allocators or already freed: 0x%p"
+  ALLOC-FEED 0x218660 kind=hotdisp-alloc size=664 nest=False lookup=True wrapCallee=False reach=none sizes=[]
+    0x218710
+  ALLOC-FEED 0x218900 kind=hotdisp-alloc size=546 nest=False lookup=True wrapCallee=False reach=none sizes=[]
+    0x218982
+  ALLOC-FEED 0x21FA70 kind=hotdisp-alloc size=996 nest=False lookup=True wrapCallee=False reach=none sizes=[]
+    0x21FC71
+  ALLOC-FEED 0x2201B0 kind=hotdisp-alloc size=2106 nest=False lookup=True wrapCallee=False reach=none sizes=[0x100]
+    0x2203A5
+    0x2208FB
+    str "Invalid pointer not allocated by our allocators or already freed: 0x%p"
+  ALLOC-FEED 0x222A60 kind=hotdisp-alloc size=2551 nest=False lookup=True wrapCallee=False reach=none sizes=[0x28,0x58,0x70,0x100,0x3E8]
+    0x222AC5 :: 0x222ABA:mov edx,70
+    0x222B90 :: 0x222B85:mov edx,58
+    0x22301E :: 0x223013:mov edx,28
+  ALLOC-FEED 0x228730 kind=hotdisp-alloc size=3512 nest=False lookup=False wrapCallee=False reach=none sizes=[0x20,0x50,0x100]
+    0x228787 :: 0x22877C:mov edx,50
+    0x228913
+    0x228DAF
+  ALLOC-FEED 0x238590 kind=hotdisp-alloc size=584 nest=False lookup=True wrapCallee=False reach=none sizes=[]
+    0x238627
+  ALLOC-FEED 0x256280 kind=hotdisp-alloc size=566 nest=False lookup=True wrapCallee=False reach=none sizes=[]
+    0x256309
+  ALLOC-FEED 0x286410 kind=hotdisp-alloc size=1185 nest=False lookup=True wrapCallee=False reach=none sizes=[0x18A0]
+    0x2865D1 :: 0x2865C6:mov edx,18A0
+    0x28666D
+  ALLOC-FEED 0x295250 kind=hotdisp-alloc size=4774 nest=False lookup=False wrapCallee=False reach=none sizes=[0x40,0xA0,0x100,0x1C8]
+    0x295395 :: 0x295364:and eax,3FFF | 0x29538F:mov r8d,40
+    str "Invalid pointer not allocated by our allocators or already freed: 0x%p"
+  ALLOC-FEED 0x2ADB60 kind=hotdisp-alloc size=1002 nest=False lookup=True wrapCallee=False reach=none sizes=[]
+    0x2ADE25
+  ALLOC-FEED 0x2BE390 kind=hotdisp-alloc size=2624 nest=False lookup=True wrapCallee=False reach=none sizes=[0x100]
+    0x2BE9F1
+    0x2BEA85
+    str "Could not load ({}), package was loading. Loading Request ({})"
+    str "Invalid pointer not allocated by our allocators or already freed: 0x%p"
+  ALLOC-FEED 0x2E0180 kind=hotdisp-alloc size=614 nest=False lookup=True wrapCallee=False reach=none sizes=[]
+    0x2E02B7
+  ALLOC-FEED 0x2EBBA0 kind=hotdisp-alloc size=863 nest=False lookup=True wrapCallee=False reach=none sizes=[0x100]
+    0x2EBCE6
+    str "Too many elements for %sArray. Size: %u, Max Size: %u"
+    str "Small"
+  ALLOC-FEED 0x34F2A0 kind=hotdisp-alloc size=10111 nest=False lookup=False wrapCallee=False reach=none sizes=[0x30,0xA0,0xD0,0x100,0x1B0,0x1C8,0x4000]
+    0x350BFD
+  ALLOC-FEED 0x388FA0 kind=hotdisp-alloc size=731 nest=False lookup=True wrapCallee=False reach=none sizes=[0x100]
+    0x38903B
+    str "Too many elements for %sArray. Size: %u, Max Size: %u"
+    str "Small"
+  ALLOC-FEED 0x39F1D0 kind=hotdisp-alloc size=7711 nest=False lookup=True wrapCallee=False reach=none sizes=[0x70,0x98,0x100]
+    0x39F480 :: 0x39F475:mov edx,98
+    0x39FAF8 :: 0x39FAED:mov edx,70
+    0x39FDA5 :: 0x39FD9A:mov edx,70
+  ALLOC-FEED 0x3A6330 kind=hotdisp-alloc size=9789 nest=False lookup=True wrapCallee=False reach=none sizes=[0x70,0x98,0x100,0x110]
+    0x3A6561 :: 0x3A6556:mov edx,98
+    0x3A6820 :: 0x3A67EA:mov r12d,3FFF | 0x3A6815:mov edx,110
+    0x3A6923 :: 0x3A6918:mov edx,110
+
+===== NEAR-SITE CALLEE → ALLOCATOR REACH =====
+  0x537C2C0 → allocator=False
+nearSiteReachAllocator=0/1
+
+===== SUMMARY =====
+site 0x2E98AA3 objReg=RBX helper=True postOr61=True defs=2 note=obj=RBX loadFromPackedPtrArray gate=[+0x61]&6==2:True coord=[+0x18 +0xA8 +0x3CD0 lookup] lookupKey=reg
+site 0x2E9B3D1 objReg=RBX helper=True postOr61=True defs=2 note=obj=RBX loadFromPackedPtrArray gate=[+0x61]&6==2:True coord=[+0x18 +0xA8 +0x3CD0 lookup] lookupKey=0xB2898C8
+site 0x2E9B481 objReg=R14 helper=True postOr61=True defs=2 note=obj=R14 loadFromPackedPtrArray gate=[+0x61]&6==2:True coord=[+0x18 +0xA8 +0x3CD0 lookup] lookupKey=0xB2898C8
+feedNodes=36 withAllocator=35 withHelperReach=0
+wrapperItselfCallsAllocator=False

@@ -1,14 +1,14 @@
 {
   "schemaVersion": 1,
-  "generatedUtc": "2026-11-12T17:35:00Z",
+  "generatedUtc": "2026-11-12T17:40:00Z",
   "handoffFor": "ChatGPT",
   "executor": "Cursor",
   "machine": "PC1",
   "repository": {
     "url": "https://github.com/zzyrrup/BlackFlagCoop",
     "defaultBranch": "main",
-    "featureBranch": "cursor/v071-alloc-leads-enqueue-8285",
-    "baseBranch": "cursor/v070-backward-lod-classify-8285",
+    "featureBranch": "cursor/v072-enqueue-feed-forward-8285",
+    "baseBranch": "cursor/v071-alloc-leads-enqueue-8285",
     "doNotPushMain": true,
     "initialCommit": "e12e70150656ac80742f10b496f7e5556e7985b7"
   },
@@ -18,10 +18,10 @@
     "functionalityChangedByThisMilestone": false
   },
   "milestone": {
-    "currentId": "v0.6.11",
-    "currentTitle": "Alloc leads deep-decode and enqueue enrollment check",
+    "currentId": "v0.6.12",
+    "currentTitle": "Enqueue feed forward from wrapper enrollment sites",
     "status": "complete",
-    "priorPreserved": ["v0.6.4", "v0.6.5", "v0.6.6", "v0.6.7", "v0.6.8", "v0.6.9", "v0.6.10"]
+    "priorPreserved": ["v0.6.4", "v0.6.5", "v0.6.6", "v0.6.7", "v0.6.8", "v0.6.9", "v0.6.10", "v0.6.11"]
   },
   "asi": {
     "version": "0.5.1",
@@ -37,7 +37,7 @@
   },
   "build": {
     "asiRebuilt": false,
-    "offlineTools": ["tools/offline/AllocLead071"]
+    "offlineTools": ["tools/offline/EnqueueFeed072"]
   },
   "network": {
     "changesAuthorized": false,
@@ -45,56 +45,60 @@
   },
   "engineFindings": {
     "summary": [
-      "0x400B50 allocates 0x50 via 0x426EE50; uses coordinator lookup path; no enqueue",
-      "0x4444C0 allocates 0xE0; inits +0x18/+0x98/+0xA8; no enqueue",
-      "Callers share lookup but do not call enqueue helper/wrapper",
+      "Enrollment sites feed 0x2E97B60 from preexisting packed-pointer SmallArrays via hash-bucket walk",
+      "Gate ([obj+0x61]&6)==2 then nested +0x18→+0xA8→+0x3CD0 + lookup +0x20",
+      "Wrapper does not call allocator 0x426EE50; near-site 0x537C2C0 is list scan only",
+      "Static lookup key 0xB2898C8 shared by two enrollment sites",
       "No Edward/create path"
     ],
     "keyRvas": {
-      "leadA": "0x400B50",
-      "leadB": "0x4444C0",
-      "allocator": "0x426EE50",
-      "lookup": "0x429F9E0",
       "enqueueWrapper": "0x2E97FC0",
-      "enqueueHelper": "0x2E97B60"
+      "enqueueHelper": "0x2E97B60",
+      "enrollmentSites": ["0x2E98AA3", "0x2E9B3D1", "0x2E9B481"],
+      "lookup": "0x429F9E0",
+      "allocator": "0x426EE50",
+      "nearSiteListHelper": "0x537C2C0",
+      "staticLookupKey": "0xB2898C8"
     }
   },
   "confirmed": [
     "ASI v0.5.1 preserved; no deploy",
-    "Alloc sizes 0x50 / 0xE0 on the two leads",
-    "No enqueue enrollment from leads or their callers",
+    "Object source at enrollment = packed pointer array, not in-wrapper alloc",
+    "wrapperCallsAllocator=false; nearSiteReachAllocator=0",
     "No live memory this milestone"
   ],
   "hypotheses": [
-    "Leads allocate helper/descriptor objects on the shared coordinator, not queued subjects",
-    "True subject ctor is reachable forward from wrapper enrollment sites"
+    "Subject ctors populate enrollment SmallArrays before UpdateActorLOD",
+    "0x725400 may be symmetric teardown of related membership"
   ],
   "blockers": [
     "Subject concrete type unknown",
-    "Enqueue enrollment ctor unidentified",
+    "SmallArray inserters / +0x61 gate writers unidentified",
     "No input/possession path",
     "Spawn tests not authorized"
   ],
   "mostRecentCompletedMilestone": {
-    "id": "v0.6.11",
-    "docs": ["docs/v0.6.11-alloc-leads-enqueue.md"],
+    "id": "v0.6.12",
+    "docs": ["docs/v0.6.12-enqueue-feed-forward.md"],
     "reports": [
-      "reports/v0.6.11-alloc-leads-deep.json",
-      "reports/v0.6.11-enqueue-enrollment.json",
-      "reports/v0.6.11-summary.json",
-      "reports/v0.6.11-second-edward-feasibility.json",
-      "reports/v071-raw/evidence.txt"
+      "reports/v0.6.12-enrollment-sites.json",
+      "reports/v0.6.12-enrollment-feed-path.json",
+      "reports/v0.6.12-allocator-feeds.json",
+      "reports/v0.6.12-summary.json",
+      "reports/v0.6.12-second-edward-feasibility.json",
+      "reports/v072-raw/evidence.txt"
     ]
   },
   "nextRecommendedMilestone": {
-    "id": "v0.6.12",
-    "title": "Forward from wrapper enrollment sites to allocators feeding 0x2E97B60",
-    "primary": ["0x2E97FC0 enrollment sites", "allocators of enqueued pointers"],
+    "id": "v0.6.13",
+    "title": "Find inserters into LOD enrollment SmallArrays / +0x61 gate writers; decode 0xB2898C8",
+    "primary": ["enrollment SmallArray inserters", "0xB2898C8 TypeInfo/key", "+0x61 gate writers"],
     "forbidden": ["spawn", "deploy", "live memory", "PC2", "save-data", "force-push main", "+0x61-only ranking"]
   },
   "tests": [
-    { "name": "AllocLead071_build_scan", "result": "pass" },
-    { "name": "lead_enqueue_enrollment", "result": "absent" },
+    { "name": "EnqueueFeed072_build_scan", "result": "pass" },
+    { "name": "wrapper_calls_allocator", "result": "absent" },
+    { "name": "near_site_reach_allocator", "result": "absent" },
     { "name": "game_launch_deploy", "result": "not_run" },
     { "name": "spawn_live_memory", "result": "not_run" }
   ],
@@ -110,9 +114,9 @@
   },
   "chatgptNextReviewInstructions": [
     "Read docs/CHATGPT_HANDOFF.md and this JSON first",
-    "Review v0.6.11 PR; preserve v0.6.4-v0.6.10 history",
+    "Review v0.6.12 PR; preserve v0.6.4-v0.6.11 history",
     "Separate confirmed vs hypotheses",
-    "Propose v0.6.12 forward from wrapper enrollment to allocators",
+    "Propose v0.6.13 inserters into enrollment arrays / decode 0xB2898C8",
     "Do not authorize deploy/spawn/live memory/PC2 unless user overrides",
     "Return PC1 branch+PR instructions"
   ]

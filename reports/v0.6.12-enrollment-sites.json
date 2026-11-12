@@ -1,0 +1,46 @@
+{
+  "schemaVersion": 1,
+  "milestone": "v0.6.12",
+  "generatedUtc": "2026-11-12T17:36:10Z",
+  "exeSha256": "19920F34BB2FAC814023EE3C27F0CECA1872E80A2AAFB37C092C419FFF77CC0D",
+  "wrapper": "0x2E97FC0",
+  "helper": "0x2E97B60",
+  "sites": [
+    {
+      "site": "0x2E98AA3",
+      "objectReg": "RBX",
+      "callsHelper": true,
+      "postOr61": true,
+      "coordPath": "+0x18 +0xA8 +0x3CD0 lookup",
+      "provenanceNote": "obj=RBX loadFromPackedPtrArray gate=[+0x61]&6==2:True coord=[+0x18 +0xA8 +0x3CD0 lookup] lookupKey=reg",
+      "objectDefs": ["mov-rdx-from-RBX @0x2E98AA0 mov rdx,rbx", "def RBX<-mem @0x2E98A55 mov rbx,[rdi+rbp]"],
+      "objectLoadDisps": ["0x0"],
+      "nearbyCallees": ["0x429F9E0", "0x2E97B60"],
+      "window": ["0x2E98A03 mov r8,[r11+58]", "0x2E98A07 mov rcx,[r11+68]", "0x2E98A0B dec r8", "0x2E98A0E and r8,rdx", "0x2E98A11 shl r8,4", "0x2E98A15 mov r8d,[rcx+r8+0C]", "0x2E98A1A cmp r8d,0FFFFFFFF", "0x2E98A1E je near ptr 0000000142E98963", "0x2E98A24 mov rdx,[r11+60]", "0x2E98A28 mov r8d,r8d", "0x2E98A2B shl r8,4", "0x2E98A2F cmp [rdx+r8],rax", "0x2E98A33 jne near ptr 0000000142E9BD43", "0x2E98A39 mov rax,[rdx+r8+8]", "0x2E98A3E mov esi,[rax+8]", "0x2E98A41 shl esi,3", "0x2E98A44 and esi,1FFF8", "0x2E98A4A je near ptr 0000000142E98963", "0x2E98A50 mov rdi,[rax]", "0x2E98A53 xor ebp,ebp", "0x2E98A55 mov rbx,[rdi+rbp]", "0x2E98A59 mov rax,0FFFFFFFFFFFF", "0x2E98A63 and rbx,rax", "0x2E98A66 mov al,[rbx+61]", "0x2E98A69 and al,6", "0x2E98A6B cmp al,2", "0x2E98A6D jne short 0000000142E98AAC", "0x2E98A6F mov rax,[rbx+18]", "0x2E98A73 mov rax,[rax+0A8]", "0x2E98A7A mov rcx,[rax+3CD0]", "0x2E98A81 mov rdx,r14", "0x2E98A84 xor r8d,r8d", "0x2E98A87 vzeroupper", "0x2E98A8A call 000000014429F9E0", "0x2E98A8F mov ecx,0", "0x2E98A94 test rax,rax", "0x2E98A97 je short 0000000142E98A9C", "0x2E98A99 mov rcx,[rax]", "0x2E98A9C add rcx,20", "0x2E98AA0 mov rdx,rbx"]
+    },
+    {
+      "site": "0x2E9B3D1",
+      "objectReg": "RBX",
+      "callsHelper": true,
+      "postOr61": true,
+      "coordPath": "+0x18 +0xA8 +0x3CD0 lookup",
+      "provenanceNote": "obj=RBX loadFromPackedPtrArray gate=[+0x61]&6==2:True coord=[+0x18 +0xA8 +0x3CD0 lookup] lookupKey=0xB2898C8",
+      "objectDefs": ["mov-rdx-from-RBX @0x2E9B3CE mov rdx,rbx", "def RBX<-mem @0x2E9B37E mov rbx,[r13+r14]"],
+      "objectLoadDisps": ["0x0"],
+      "nearbyCallees": ["0x429F9E0", "0x2E97B60"],
+      "window": ["0x2E9B331 sbb [r9-1],cl", "0x2E9B335 enter 2149,0D0", "0x2E9B339 shl r8,4", "0x2E9B33D mov r8d,[rcx+r8+0C]", "0x2E9B342 cmp r8d,0FFFFFFFF", "0x2E9B346 je near ptr 0000000142E9B2A1", "0x2E9B34C mov rdx,[r11+10]", "0x2E9B350 mov r8d,r8d", "0x2E9B353 shl r8,4", "0x2E9B357 cmp [rdx+r8],rax", "0x2E9B35B jne near ptr 0000000142E9BD1D", "0x2E9B361 mov rax,[rdx+r8+8]", "0x2E9B366 mov esi,[rax+8]", "0x2E9B369 shl esi,3", "0x2E9B36C and esi,1FFF8", "0x2E9B372 je near ptr 0000000142E9B2A1", "0x2E9B378 mov r13,[rax]", "0x2E9B37B xor r14d,r14d", "0x2E9B37E mov rbx,[r13+r14]", "0x2E9B383 mov rax,0FFFFFFFFFFFF", "0x2E9B38D and rbx,rax", "0x2E9B390 mov al,[rbx+61]", "0x2E9B393 and al,6", "0x2E9B395 cmp al,2", "0x2E9B397 jne short 0000000142E9B3DA", "0x2E9B399 mov rax,[rbx+18]", "0x2E9B39D mov rax,[rax+0A8]", "0x2E9B3A4 mov rcx,[rax+3CD0]", "0x2E9B3AB lea rdx,[rip+83EE516]", "0x2E9B3B2 xor r8d,r8d", "0x2E9B3B5 vzeroupper", "0x2E9B3B8 call 000000014429F9E0", "0x2E9B3BD mov ecx,0", "0x2E9B3C2 test rax,rax", "0x2E9B3C5 je short 0000000142E9B3CA", "0x2E9B3C7 mov rcx,[rax]", "0x2E9B3CA add rcx,20", "0x2E9B3CE mov rdx,rbx", "0x2E9B3D1 call 0000000142E97B60 <<<< ENQUEUE", "0x2E9B3D6 or byte ptr [rbx+61],4"]
+    },
+    {
+      "site": "0x2E9B481",
+      "objectReg": "R14",
+      "callsHelper": true,
+      "postOr61": true,
+      "coordPath": "+0x18 +0xA8 +0x3CD0 lookup",
+      "provenanceNote": "obj=R14 loadFromPackedPtrArray gate=[+0x61]&6==2:True coord=[+0x18 +0xA8 +0x3CD0 lookup] lookupKey=0xB2898C8",
+      "objectDefs": ["mov-rdx-from-R14 @0x2E9B47E mov rdx,r14", "def R14<-RBP @0x2E9B42F mov r14,rbp"],
+      "objectLoadDisps": [],
+      "nearbyCallees": ["0x537C2C0", "0x429F9E0", "0x2E97B60"],
+      "window": ["0x2E9B3E1 mov r11,[rsp+58]", "0x2E9B3E6 mov r10d,[rsp+90]", "0x2E9B3EE jne short 0000000142E9B37E", "0x2E9B3F0 jmp near ptr 0000000142E9B2A1", "0x2E9B3F5 lea rcx,[rsp+4B8]", "0x2E9B3FD mov rdx,r14", "0x2E9B400 vzeroupper", "0x2E9B403 call 000000014537C2C0", "0x2E9B408 mov r11,[rsp+58]", "0x2E9B40D add r13,8", "0x2E9B411 cmp rsi,r13", "0x2E9B414 mov ebp,ebx", "0x2E9B416 mov r10d,[rsp+90]", "0x2E9B41E je near ptr 0000000142E99545", "0x2E9B424 mov ebx,ebp", "0x2E9B426 mov rax,[rsp+78]", "0x2E9B42B mov rbp,[rax+r13]", "0x2E9B42F mov r14,rbp", "0x2E9B432 mov rax,0FFFFFFFFFFFF", "0x2E9B43C and r14,rax", "0x2E9B43F mov al,[r14+61]", "0x2E9B443 and al,6", "0x2E9B445 cmp al,2", "0x2E9B447 jne short 0000000142E9B48B", "0x2E9B449 mov rax,[r14+18]", "0x2E9B44D mov rax,[rax+0A8]", "0x2E9B454 mov rcx,[rax+3CD0]", "0x2E9B45B lea rdx,[rip+83EE466]", "0x2E9B462 xor r8d,r8d", "0x2E9B465 vzeroupper", "0x2E9B468 call 000000014429F9E0", "0x2E9B46D mov ecx,0", "0x2E9B472 test rax,rax", "0x2E9B475 je short 0000000142E9B47A", "0x2E9B477 mov rcx,[rax]", "0x2E9B47A add rcx,20", "0x2E9B47E mov rdx,r14", "0x2E9B481 call 0000000142E97B60 <<<< ENQUEUE", "0x2E9B486 or byte ptr [r14+61],4", "0x2E9B48B cmp rbp,[rsp+60]"]
+    }
+  ]
+}

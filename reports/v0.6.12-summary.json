@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "milestone": "v0.6.12",
+  "generatedUtc": "2026-11-12T17:36:10Z",
+  "exeSha256": "19920F34BB2FAC814023EE3C27F0CECA1872E80A2AAFB37C092C419FFF77CC0D",
+  "enrollmentSites": 3,
+  "allSitesCallHelper": true,
+  "objectRegs": ["RBX", "R14"],
+  "objectSource": "packed_pointer_array_via_hash_bucket",
+  "wrapperCallsAllocator": false,
+  "nearSiteCalleeCount": 1,
+  "nearSiteReachAllocator": 0,
+  "feedNodes": 36,
+  "feedNodesWithAllocator": 35,
+  "nestedChainAllocFeeds": 1,
+  "feedsReachingHelper": 0,
+  "allocatorFeedsEnqueueDirectly": false,
+  "edwardOrPlayerTypeConfirmed": false
+}
