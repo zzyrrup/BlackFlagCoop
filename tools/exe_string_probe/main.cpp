@@ -113,7 +113,8 @@ int RunProbe(const std::wstring& exePath,
              std::size_t maxHits,
              std::uint64_t maxSeconds,
              std::uint64_t maxBytes) {
-    std::ifstream file(exePath, std::ios::binary);
+    // MinGW libstdc++ accepts const wchar_t* here, not std::wstring.
+    std::ifstream file(exePath.c_str(), std::ios::binary);
     if (!file) {
         std::cerr << "[PROBE] Failed to open file for read\n";
         return 2;
