@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 1,
+  "milestone": "v0.6.21",
+  "generatedUtc": "2026-11-12T19:05:00Z",
+  "exeSha256": "19920F34BB2FAC814023EE3C27F0CECA1872E80A2AAFB37C092C419FFF77CC0D",
+  "typeInfo": {
+    "sizeField": "0xB2898E8",
+    "ctorField": "0xB289918",
+    "registeredSize": "0x20F0",
+    "sizeRefs": 0,
+    "ctorRefs": 2,
+    "imm20F0Sites": 12,
+    "trueAlloc20F0": 0,
+    "allocConsumerFound": false,
+    "lookupConsumerFound": false,
+    "note": "0x20F0 also appears as field offsets inside larger objects; 0x3670EF0 allocates 0x4250"
+  },
+  "edx3": {
+    "helper": "0x546D150",
+    "helperSize": 491,
+    "helperCallersE8": 40,
+    "armTable2B0": "0x4656C80",
+    "armTable2B8": "0x2108620",
+    "sameChainAsEdx2": true
+  },
+  "edwardOrPlayerTypeConfirmed": false
+}

@@ -1,0 +1,15 @@
+{
+  "schemaVersion": 1,
+  "milestone": "v0.6.21",
+  "generatedUtc": "2026-11-12T19:05:00Z",
+  "exeSha256": "19920F34BB2FAC814023EE3C27F0CECA1872E80A2AAFB37C092C419FFF77CC0D",
+  "createSecondEdward": { "class": "unsupported", "reason": "No create factory; TypeInfo size registered but not hard-coded into Allocator" },
+  "typeInfoAllocConsumer": { "class": "unsupported", "reason": "No absolute RIP reader of 0xB2898E8; no Allocator(0x20F0) site; 0x20F0 also used as field offsets" },
+  "helper546Decoded": { "class": "confirmed", "reason": "0x546D150 size=491; 40 E8 callers; returns ptr from +0x98 side-block or nested +0xA0 search" },
+  "edx3ArmCallee": { "class": "confirmed", "reason": "edx=3 [vt+0x2B0] uses same arm-table trampoline 0x4656C80 -> wrap 0x2108620 as edx=2" },
+  "liveMemoryProbe": { "class": "blocked", "reason": "Not authorized" },
+  "next": {
+    "primary": "Identify generic TypeInfo factory Lookup->[ti+0x20]->Alloc->[ti+0x50]; map 0x546D150 consumers beyond neighbor",
+    "avoid": ["live memory", "ASI deploy", "spawn", "PC2", "+0x61-only ranking", "conflating wrap modes with gate", "treating field-offset 0x20F0 as heap size"]
+  }
+}

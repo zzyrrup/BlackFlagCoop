@@ -1,14 +1,14 @@
 {
   "schemaVersion": 1,
-  "generatedUtc": "2026-11-12T18:56:00Z",
+  "generatedUtc": "2026-11-12T19:06:00Z",
   "handoffFor": "ChatGPT",
   "executor": "Cursor",
   "machine": "PC1",
   "repository": {
     "url": "https://github.com/zzyrrup/BlackFlagCoop",
     "defaultBranch": "main",
-    "featureBranch": "cursor/v080-activ-heap-size-8285",
-    "baseBranch": "cursor/v079-mode-enroll-size-8285",
+    "featureBranch": "cursor/v081-typeinfo-edx3-8285",
+    "baseBranch": "cursor/v080-activ-heap-size-8285",
     "doNotPushMain": true,
     "initialCommit": "e12e70150656ac80742f10b496f7e5556e7985b7"
   },
@@ -18,10 +18,10 @@
     "functionalityChangedByThisMilestone": false
   },
   "milestone": {
-    "currentId": "v0.6.20",
-    "currentTitle": "Activation path deep-decode and registered heap size 0x20F0",
+    "currentId": "v0.6.21",
+    "currentTitle": "TypeInfo alloc consumer scan + edx=3 / 0x546D150 decode",
     "status": "complete",
-    "priorPreserved": ["v0.6.4", "v0.6.5", "v0.6.6", "v0.6.7", "v0.6.8", "v0.6.9", "v0.6.10", "v0.6.11", "v0.6.12", "v0.6.13", "v0.6.14", "v0.6.15", "v0.6.16", "v0.6.17", "v0.6.18", "v0.6.19"]
+    "priorPreserved": ["v0.6.4", "v0.6.5", "v0.6.6", "v0.6.7", "v0.6.8", "v0.6.9", "v0.6.10", "v0.6.11", "v0.6.12", "v0.6.13", "v0.6.14", "v0.6.15", "v0.6.16", "v0.6.17", "v0.6.18", "v0.6.19", "v0.6.20"]
   },
   "asi": {
     "version": "0.5.1",
@@ -37,7 +37,7 @@
   },
   "build": {
     "asiRebuilt": false,
-    "offlineTools": ["tools/offline/ActivHeap080"]
+    "offlineTools": ["tools/offline/TypeInfo081"]
   },
   "network": {
     "changesAuthorized": false,
@@ -45,59 +45,57 @@
   },
   "engineFindings": {
     "summary": [
-      "0x2335040 sets +0x26, calls post-2B8 and shared notify 0x8CD620 with AnimatedOnActiveChanged",
-      "0x8CD620 is generic typed-event notify (30 E8 callers)",
-      "0x2335140: edx=3 vcall [vt+0x2B0] after test edx,~2; copies nested transforms",
-      "TypeInfo size 0xB2898E8=0x20F0 with ctor 0x59D9660 at 0xB289918",
+      "No absolute RIP reader of TypeInfo size 0xB2898E8; no Allocator(0x20F0) site",
+      "0x20F0 also used as field offsets (e.g. inside 0x4250 alloc at 0x3670EF0)",
+      "0x546D150 shared helper (491 B, 40 callers) returns transform/source ptr from +0x98 or nested +0xA0",
+      "edx=3 [vt+0x2B0] uses same arm-table trampoline/wrap as edx=2",
       "No Edward/create path"
     ],
     "keyRvas": {
-      "activOwner": "0x2335040",
-      "notify": "0x8CD620",
-      "neighbor": "0x2335140",
-      "neighborHelper": "0x546D150",
-      "typeInfoSize": "0xB2898E8",
-      "typeInfoCtor": "0xB289918",
+      "sizeField": "0xB2898E8",
+      "ctorField": "0xB289918",
       "registeredSize": "0x20F0",
-      "outerCtor": "0x59D9660"
+      "helper546": "0x546D150",
+      "neighbor": "0x2335140",
+      "armTrampoline": "0x4656C80",
+      "armWrap": "0x2108620"
     }
   },
   "confirmed": [
     "ASI v0.5.1 preserved; no deploy",
-    "Activation/notify/neighbor paths decoded",
-    "Registered heap size 0x20F0 for 0x59D9660 composite",
+    "No hard-coded Alloc(0x20F0) / absolute size-field consumer",
+    "0x546D150 decoded; edx=3 shares edx=2 arm chain",
     "No live memory this milestone"
   ],
   "hypotheses": [
-    "Runtime TypeInfo allocator reads 0xB2898E8 when constructing instances",
-    "0x546D150 supplies transform data for edx=3 arming path"
+    "Generic TypeInfo factory uses Lookup then [ti+0x20]/[ti+0x50] rather than absolute RIP to this record"
   ],
   "blockers": [
-    "Concrete Allocator(0x20F0) call site not found",
+    "Generic TypeInfo factory for this record not uniquely identified",
     "No input/possession path",
     "Spawn tests not authorized"
   ],
   "mostRecentCompletedMilestone": {
-    "id": "v0.6.20",
-    "docs": ["docs/v0.6.20-activ-heap-size.md"],
+    "id": "v0.6.21",
+    "docs": ["docs/v0.6.21-typeinfo-edx3.md"],
     "reports": [
-      "reports/v0.6.20-funcs-deep.json",
-      "reports/v0.6.20-summary.json",
-      "reports/v0.6.20-second-edward-feasibility.json",
-      "reports/v080-raw/evidence.txt"
+      "reports/v0.6.21-funcs-deep.json",
+      "reports/v0.6.21-summary.json",
+      "reports/v0.6.21-second-edward-feasibility.json",
+      "reports/v081-raw/evidence.txt"
     ]
   },
   "nextRecommendedMilestone": {
-    "id": "v0.6.21",
-    "title": "TypeInfo alloc consumer of 0xB2898E8/0xB289918; deep-decode 0x546D150 / edx=3 arm callee",
-    "primary": ["0xB2898E8", "0xB289918", "0x546D150", "edx=3 +0x2B0"],
-    "forbidden": ["spawn", "deploy", "live memory", "PC2", "save-data", "force-push main", "+0x61-only ranking"]
+    "id": "v0.6.22",
+    "title": "Generic TypeInfo factory Lookup->[ti+0x20]->Alloc->[ti+0x50]; map 0x546D150 consumers",
+    "primary": ["Lookup factory pattern", "0x546D150 consumers", "possession/control candidates"],
+    "forbidden": ["spawn", "deploy", "live memory", "PC2", "save-data", "force-push main", "+0x61-only ranking", "field-offset 0x20F0 as heap size"]
   },
   "tests": [
-    { "name": "ActivHeap080_build_scan", "result": "pass" },
-    { "name": "activ_notify_neighbor_decode", "result": "pass" },
-    { "name": "typeinfo_size_0x20F0", "result": "pass" },
-    { "name": "allocator_call_site_0x20F0", "result": "not_found" },
+    { "name": "TypeInfo081_build_scan", "result": "pass" },
+    { "name": "alloc_0x20F0_scan", "result": "pass_none" },
+    { "name": "helper546_decode", "result": "pass" },
+    { "name": "edx3_arm_chain", "result": "pass" },
     { "name": "game_launch_deploy", "result": "not_run" },
     { "name": "spawn_live_memory", "result": "not_run" }
   ],
@@ -113,9 +111,9 @@
   },
   "chatgptNextReviewInstructions": [
     "Read docs/CHATGPT_HANDOFF.md and this JSON first",
-    "Review v0.6.20 PR; preserve v0.6.4-v0.6.19 history",
+    "Review v0.6.21 PR; preserve v0.6.4-v0.6.20 history",
     "Separate confirmed vs hypotheses",
-    "Propose v0.6.21 TypeInfo alloc consumer + 0x546D150/edx=3",
+    "Propose v0.6.22 generic TypeInfo factory + 0x546D150 consumers",
     "Do not authorize deploy/spawn/live memory/PC2 unless user overrides",
     "Return PC1 branch+PR instructions"
   ]
