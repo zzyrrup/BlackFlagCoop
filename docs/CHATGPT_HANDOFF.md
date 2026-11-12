@@ -3,7 +3,7 @@
 **Last updated:** 2026-11-12  
 **Machine:** PC1 only  
 **Repo:** https://github.com/zzyrrup/BlackFlagCoop  
-**Branch:** `cursor/v071-alloc-leads-enqueue-8285` (PR into `cursor/v070-backward-lod-classify-8285`; do not push main)  
+**Branch:** `cursor/v072-enqueue-feed-forward-8285` (PR into `cursor/v071-alloc-leads-enqueue-8285`; do not push main)  
 **Initial commit:** `e12e70150656ac80742f10b496f7e5556e7985b7`
 
 This document is the primary human-readable bridge between Cursor (local execution) and ChatGPT (review / next instructions). Update it after every completed milestone.
@@ -25,9 +25,9 @@ Ultimate vision is **not claimed as achieved**. Dual-Edward co-op remains unprov
 
 ## 2. Current development milestone
 
-**v0.6.11 complete** — Deep-decode `0x400B50` / `0x4444C0`: allocator sizes `0x50` / `0xE0`, shared coordinator lookup path, **no** enqueue enrollment.
+**v0.6.12 complete** — Forward from wrapper enrollment sites: helper is fed from **pre-existing packed pointer SmallArrays** (hash-bucket walk + `+0x61` gate); wrapper **does not** call allocator.
 
-Prior: v0.6.5–v0.6.10 preserved. Offline only. No ASI, spawn, or networking change.
+Prior: v0.6.5–v0.6.11 preserved. Offline only. No ASI, spawn, or networking change.
 
 ---
 
@@ -93,6 +93,7 @@ High-signal offline findings (see `docs/v0.6.*` and `reports/v0.6.*`):
 - **v0.6.9:** Deep-decode shows **no** candidate→enqueue/worker edges. **`0x2D4F30`** is **`ClothRagdollObject`**. LOD cmp/thunk have **0** E8 callers; LEA-installed into ~22 funcs (shared bundle primitive). Still no Edward/create path.
 - **v0.6.10:** Backward nested-chain/wrapper BFS (200 nodes; 81 nest seeds). Allocator **`0x426EE50`** on **21** nodes; depth-0 highlights **`0x400B50`** / **`0x4444C0`**. LOD consumers classified; **only** phase registrar installs stub+cmp+thunk at `+0xE18` bundle. Still no Edward/create path.
 - **v0.6.11:** Deep-decode shows **`0x400B50`** alloc **`0x50`**, **`0x4444C0`** alloc **`0xE0`**; both use `[+0x38]→[+0x58]→[+0xA8]→[+0x3CD0]` lookup. **No** direct/caller enrollment into enqueue/wrapper. Still no Edward/create path.
+- **v0.6.12:** Enrollment feeds from **hash-bucket → packed-pointer SmallArray** with gate `([obj+0x61]&6)==2`; wrapper **does not** call allocator; near-site callee `0x537C2C0` is a list scan. Shared static lookup key **`0xB2898C8`**. Still no Edward/create path.
 
 ---
 
@@ -115,6 +116,9 @@ High-signal offline findings (see `docs/v0.6.*` and `reports/v0.6.*`):
 - Fingerprint top candidates `0x519E20` / `0x2D4F30` / `0x1D9CC0` do **not** call deferred-queue helpers.
 - Nested-chain + lookup + allocator depth-0 leads: `0x400B50`, `0x4444C0` — allocate `0x50`/`0xE0`; **not** enqueue enrollers.
 - Only phase registrar `0x5CBDFB0` installs the full UpdateActorLOD stub+cmp+thunk bundle.
+- Wrapper enrollment loads objects from preexisting packed-pointer SmallArrays (hash-bucket); **no** allocator call on that path.
+- Enrollment gate before helper: `([obj+0x61] & 6) == 2`.
+- Static lookup key `0xB2898C8` shared by enrollment sites `0x2E9B3D1` / `0x2E9B481`.
 - Input lead `0x187F0550` is action-name bind, not a movement controller.
 - No verified shared entity/ownership edge between input bind path and deferred handler.
 - No Edward, character, archetype, player, or transform string in either worker or the producer wrapper.
@@ -133,13 +137,14 @@ High-signal offline findings (see `docs/v0.6.*` and `reports/v0.6.*`):
 - The slot contains a callback pointer or an archetype id.
 - `0xE95E80` finishes a character/Edward spawn.
 - `0x2D4F30` / the v0.6.8 top fingerprint trio are the deferred-queue subject constructors.
+- Wrapper `0x2E97FC0` / enrollment sites allocate the objects they enqueue (they consume preexisting packed-pointer arrays).
 
 ---
 
 ## 9. Current blockers
 
 - No confirmed character/Edward factory or archetype reuse path. Queue only enqueues/activates existing objects.
-- Subject concrete type still unknown; enqueue enrollment ctor still unidentified.
+- Subject concrete type still unknown; inserters into LOD enrollment SmallArrays / `+0x61` gate writers unidentified.
 - No verified input→character ownership/control binding.
 - No safe authorized spawn/possession test design yet.
 - GitHub handoff must stay free of ASI/game binaries.
@@ -148,34 +153,35 @@ High-signal offline findings (see `docs/v0.6.*` and `reports/v0.6.*`):
 
 ## 10. Most recent completed milestone
 
-**v0.6.11 — Alloc leads deep-decode & enqueue enrollment**
+**v0.6.12 — Enqueue feed forward (enrollment → allocators)**
 
 Deliverables:
 
-- `docs/v0.6.11-alloc-leads-enqueue.md`
-- `reports/v0.6.11-alloc-leads-deep.json`
-- `reports/v0.6.11-enqueue-enrollment.json`
-- `reports/v0.6.11-summary.json`
-- `reports/v0.6.11-second-edward-feasibility.json`
-- `reports/v071-raw/evidence.txt`
-- `tools/offline/AllocLead071/`
+- `docs/v0.6.12-enqueue-feed-forward.md`
+- `reports/v0.6.12-enrollment-sites.json`
+- `reports/v0.6.12-enrollment-feed-path.json`
+- `reports/v0.6.12-allocator-feeds.json`
+- `reports/v0.6.12-summary.json`
+- `reports/v0.6.12-second-edward-feasibility.json`
+- `reports/v072-raw/evidence.txt`
+- `tools/offline/EnqueueFeed072/`
 
-v0.6.4–v0.6.10 reports were left in place.
+v0.6.4–v0.6.11 reports were left in place.
 
 ---
 
 ## 11. Next recommended milestone
 
-**v0.6.12 (proposed):** Offline **forward** from wrapper `0x2E97FC0` enrollment sites to allocators that feed `0x2E97B60` (find who creates the pointer that gets enqueued). Still no spawn, deploy, live memory, or PC2 unless separately authorized.
+**v0.6.13 (proposed):** Offline find **inserters** into the LOD enrollment SmallArrays / hash buckets (and writers that establish `([obj+0x61]&6)==2`); decode TypeInfo/key `0xB2898C8`. Still no spawn, deploy, live memory, or PC2 unless separately authorized.
 
 ---
 
 ## 12. Files changed in the latest milestone
 
-- `docs/v0.6.11-alloc-leads-enqueue.md`
-- `reports/v0.6.11-*.json`
-- `reports/v071-raw/evidence.txt`
-- `tools/offline/AllocLead071/`
+- `docs/v0.6.12-enqueue-feed-forward.md`
+- `reports/v0.6.12-*.json`
+- `reports/v072-raw/evidence.txt`
+- `tools/offline/EnqueueFeed072/`
 - `docs/CHATGPT_HANDOFF.md`
 - `reports/CHATGPT_HANDOFF.json`
 
@@ -192,6 +198,7 @@ v0.6.4–v0.6.10 reports were left in place.
 | Offline deep-decode v0.6.9 (`CtorDeep069`) | Pass; no candidate→queue edges; ClothRagdoll false positive |
 | Offline backward/LOD v0.6.10 (`BackwardTrace070`) | Pass; allocator leads `0x400B50`/`0x4444C0`; registrar-only full LOD bundle |
 | Offline alloc leads v0.6.11 (`AllocLead071`) | Pass; alloc `0x50`/`0xE0`; **no** enqueue enrollment |
+| Offline enqueue feed v0.6.12 (`EnqueueFeed072`) | Pass; packed-ptr array feed; **no** allocator on enrollment path |
 | Subject MSVC RTTI name | **Not found** (game types RTTI-stripped) |
 | Game launch / ASI deploy | **Not performed** |
 | Spawn / inject / live memory | **Not performed** |
@@ -217,6 +224,6 @@ When reviewing the GitHub repository after a Cursor push:
 2. Diff against the previous handoff `milestoneId` / commit.
 3. Treat only **confirmed** items as facts; keep hypotheses labeled.
 4. Propose the **next single milestone** with: objective, in-scope RVAs/files, out-of-scope (spawn/deploy/PC2), required deliverables paths, and acceptance checks.
-5. Prefer **v0.6.12**: forward from wrapper enrollment sites to allocators feeding `0x2E97B60`. Do not treat LOD enqueue/comparator as character creation; avoid `+0x61`-only ranking; do not rely on MSVC RTTI for game types.
+5. Prefer **v0.6.13**: find inserters into LOD enrollment SmallArrays / `+0x61` gate writers; decode `0xB2898C8`. Do not treat LOD enqueue/comparator as character creation; avoid `+0x61`-only ranking; do not rely on MSVC RTTI for game types.
 6. Do not instruct Cursor to deploy ASI, spawn, use live memory, or touch PC2/save data unless the user explicitly overrides safety.
 7. Return instructions Cursor can execute verbatim on PC1 on a dedicated branch + PR (never push main).

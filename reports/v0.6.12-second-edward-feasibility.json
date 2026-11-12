@@ -1,0 +1,14 @@
+{
+  "schemaVersion": 1,
+  "milestone": "v0.6.12",
+  "generatedUtc": "2026-11-12T17:36:10Z",
+  "exeSha256": "19920F34BB2FAC814023EE3C27F0CECA1872E80A2AAFB37C092C419FFF77CC0D",
+  "createSecondEdward": { "class": "unsupported", "reason": "Enrollment reuses existing object pointers; wrapper does not call the shared allocator" },
+  "enrollmentFeedsFromAllocatorInWrapper": { "class": "unsupported", "reason": "wrapperCallsAllocator=false" },
+  "allocatorOnEnrollmentCalleeGraph": { "class": "plausible", "reason": "feedNodesWithAllocator=35" },
+  "liveMemoryProbe": { "class": "blocked", "reason": "Not authorized" },
+  "next": {
+    "primary": "Deep-decode highest-signal allocator-feed nodes that wrapper iterates / that reach helper",
+    "avoid": ["live memory", "ASI deploy", "spawn", "PC2", "+0x61-only ranking"]
+  }
+}
