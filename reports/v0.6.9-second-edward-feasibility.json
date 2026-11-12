@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "milestone": "v0.6.9",
+  "generatedUtc": "2026-11-12T17:20:00Z",
+  "exeSha256": "19920F34BB2FAC814023EE3C27F0CECA1872E80A2AAFB37C092C419FFF77CC0D",
+  "createSecondEdward": {
+    "class": "unsupported",
+    "reason": "Top fingerprint candidates have no queue edges; 0x2D4F30 is ClothRagdollObject"
+  },
+  "candidateIsQueueSubjectCtor": {
+    "class": "unsupported",
+    "reason": "0x519E20 / 0x2D4F30 / 0x1D9CC0 do not call enqueue helper, wrapper, workers, lookup, or deferred handler"
+  },
+  "clothRagdollFalsePositive": {
+    "class": "confirmed",
+    "reason": "0x2D4F30 references ClothRagdollObject strings repeatedly"
+  },
+  "lodComparatorConsumersMapped": {
+    "class": "confirmed",
+    "reason": "0 E8 callers; LEA-installed into ~22 unique funcs including phase registrar actor phases"
+  },
+  "liveMemoryProbe": {
+    "class": "blocked",
+    "reason": "Not authorized this milestone"
+  },
+  "next": {
+    "primary": "Backward-trace from enqueue wrapper / nested-chain sites to allocators; classify LOD consumer funcs",
+    "avoid": ["live memory", "ASI deploy", "spawn", "PC2", "+0x61-only ranking"]
+  }
+}
