@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "milestone": "v0.6.24",
+  "generatedUtc": "2026-11-12T19:24:18Z",
+  "exeSha256": "19920F34BB2FAC814023EE3C27F0CECA1872E80A2AAFB37C092C419FFF77CC0D",
+  "ctorReverse": {
+    "outerE8": 0,
+    "outerLea": 2,
+    "installerADirectE8": 0,
+    "createFuncsDecoded": 4,
+    "lookupAllocCandOnPath": false,
+    "lookupAllocCandsAnalyzed": ["0x1B6AFF0", "0x26D28E0", "0x2F2C1A0"],
+    "candHits": ["0x1B6AFF0", "0x26D28E0", "0x2F2C1A0"]
+  },
+  "ownership": {
+    "neighborEdataSlot": "0x976B3E0",
+    "spatialEdataSlot": "0x9236E58",
+    "neighborQwordEmbeds": 1,
+    "spatialQwordEmbeds": 1,
+    "ownerInstallerFuncsDecoded": 18,
+    "withV2B0": 0,
+    "withKey": 0,
+    "withFactory": 0,
+    "withOuter": 0
+  },
+  "priorNote": "v0.6.23 closed key-tied tight-factory feed",
+  "edwardOrPlayerTypeConfirmed": false
+}

@@ -1,0 +1,14 @@
+{
+  "schemaVersion": 1,
+  "milestone": "v0.6.24",
+  "generatedUtc": "2026-11-12T19:24:18Z",
+  "exeSha256": "19920F34BB2FAC814023EE3C27F0CECA1872E80A2AAFB37C092C419FFF77CC0D",
+  "createSecondEdward": { "class": "unsupported", "reason": "Outer ctor reverse and transform ownership do not prove Edward create/possession" },
+  "outerCtorReverse": { "class": "confirmed", "reason": "Outer ctor has 0 E8 callers; only InstallerA LEA-registers it into TypeInfo ctor field; create is icall [ti+0x50]. lookupAllocCandOnPath=False" },
+  "transformOwnership": { "class": "partial", "reason": "Neighbor/Spatial are .edata vtable methods (no E8); decoded 18 table-base installers; this=rcx owner type not named" },
+  "liveMemoryProbe": { "class": "blocked", "reason": "Not authorized" },
+  "next": {
+    "primary": "Deep-decode strongest neighbor/spatial vtable installers; follow who constructs objects that receive those vtables",
+    "avoid": ["live memory", "ASI deploy", "spawn", "PC2", "+0x61-only ranking", "field-offset 0x20F0 as heap size", "treat helper position extract as possession", "assume key-tied tight-factory feed", "expect E8 to outer ctor"]
+  }
+}

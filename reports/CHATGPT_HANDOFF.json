@@ -1,14 +1,14 @@
 {
   "schemaVersion": 1,
-  "generatedUtc": "2026-11-12T19:18:00Z",
+  "generatedUtc": "2026-11-12T19:26:00Z",
   "handoffFor": "ChatGPT",
   "executor": "Cursor",
   "machine": "PC1",
   "repository": {
     "url": "https://github.com/zzyrrup/BlackFlagCoop",
     "defaultBranch": "main",
-    "featureBranch": "cursor/v083-factory-feed-8285",
-    "baseBranch": "cursor/v082-typeinfo-factory-8285",
+    "featureBranch": "cursor/v084-ctor-reverse-8285",
+    "baseBranch": "cursor/v083-factory-feed-8285",
     "doNotPushMain": true,
     "initialCommit": "e12e70150656ac80742f10b496f7e5556e7985b7"
   },
@@ -18,10 +18,10 @@
     "functionalityChangedByThisMilestone": false
   },
   "milestone": {
-    "currentId": "v0.6.23",
-    "currentTitle": "Factory key feed scan + possession-like helper deep-decode",
+    "currentId": "v0.6.24",
+    "currentTitle": "Outer ctor reverse + neighbor/spatial vtable ownership",
     "status": "complete",
-    "priorPreserved": ["v0.6.4", "v0.6.5", "v0.6.6", "v0.6.7", "v0.6.8", "v0.6.9", "v0.6.10", "v0.6.11", "v0.6.12", "v0.6.13", "v0.6.14", "v0.6.15", "v0.6.16", "v0.6.17", "v0.6.18", "v0.6.19", "v0.6.20", "v0.6.21", "v0.6.22"]
+    "priorPreserved": ["v0.6.4", "v0.6.5", "v0.6.6", "v0.6.7", "v0.6.8", "v0.6.9", "v0.6.10", "v0.6.11", "v0.6.12", "v0.6.13", "v0.6.14", "v0.6.15", "v0.6.16", "v0.6.17", "v0.6.18", "v0.6.19", "v0.6.20", "v0.6.21", "v0.6.22", "v0.6.23"]
   },
   "asi": {
     "version": "0.5.1",
@@ -37,7 +37,7 @@
   },
   "build": {
     "asiRebuilt": false,
-    "offlineTools": ["tools/offline/FactoryFeed083"]
+    "offlineTools": ["tools/offline/CtorReverse084"]
   },
   "network": {
     "changesAuthorized": false,
@@ -45,61 +45,65 @@
   },
   "engineFindings": {
     "summary": [
-      "No tight-factory caller feeds TypeInfo for 0xB2898C8 / 0x20F0 (186 callers; 0 key LEA; 0 size-imm; 0 intersect)",
-      "Key Lookup+Alloc without tight factory: 0x1B6AFF0, 0x26D28E0, 0x2F2C1A0",
-      "0x2336560 thin position extract from helper; 0x1D25E20 spatial/matrix consumer",
-      "Helper consumers not proven as possession/control",
+      "Outer ctor 0x59D9660 has 0 E8 callers; InstallerA LEA-registers into TypeInfo ctor field only",
+      "InstallerA published at .edata 0xA240B20; no direct E8 callers",
+      "Lookup+Alloc cands 0x1B6AFF0/0x26D28E0/0x2F2C1A0 not on Outer reverse path",
+      "Neighbor/Spatial are .edata vtable methods; owner bases 0x976B2D0 (+0x110) / 0x9236E00 (+0x58)",
+      "Installers 0x13612B0 / 0x5563CF0/0x6CF34A0; spatial inits +0x98",
       "No Edward/create path"
     ],
     "keyRvas": {
-      "lookupKey": "0xB2898C8",
-      "sizeField": "0xB2898E8",
-      "ctorField": "0xB289918",
-      "registeredSize": "0x20F0",
       "outerCtor": "0x59D9660",
-      "tightFactoryPrimary": "0x238590",
-      "tightFactorySecondary": "0x256280",
-      "helper546": "0x546D150",
+      "installerA": "0x5F11A40",
+      "installerAEdata": "0xA240B20",
+      "lookupKey": "0xB2898C8",
       "neighbor": "0x2335140",
-      "positionExtract": "0x2336560",
-      "spatialConsumer": "0x1D25E20"
+      "neighborEdata": "0x976B3E0",
+      "neighborVtBase": "0x976B2D0",
+      "neighborInstaller": "0x13612B0",
+      "spatial": "0x1D25E20",
+      "spatialEdata": "0x9236E58",
+      "spatialVtBase": "0x9236E00",
+      "spatialInstallers": ["0x5563CF0", "0x6CF34A0"]
     }
   },
   "confirmed": [
     "ASI v0.5.1 preserved; no deploy",
-    "No RIP key/size feed from tight-factory callers to this TypeInfo",
-    "Possession-candidate helpers are transform/position consumers",
+    "No direct Outer E8 create site",
+    "Lookup+Alloc cands not on Outer path",
+    "Neighbor/Spatial ownership via vtable installers",
     "No live memory this milestone"
   ],
   "hypotheses": [
-    "Runtime non-RIP TypeInfo may still reach a tight factory",
-    "Ownership behind transform-copy helpers may relate to control"
+    "Objects with vtables 0x976B2D0/0x9236E00 are enrollment/+0x98 subjects",
+    "Runtime TypeInfo feed into tight factories still possible"
   ],
   "blockers": [
-    "Create/use path for 0x20F0 composite not via factory-caller key LEA",
+    "Who constructs neighbor/spatial owner objects still open",
     "No input/possession path",
     "Spawn tests not authorized"
   ],
   "mostRecentCompletedMilestone": {
-    "id": "v0.6.23",
-    "docs": ["docs/v0.6.23-factory-feed.md"],
+    "id": "v0.6.24",
+    "docs": ["docs/v0.6.24-ctor-reverse.md"],
     "reports": [
-      "reports/v0.6.23-funcs-deep.json",
-      "reports/v0.6.23-summary.json",
-      "reports/v0.6.23-second-edward-feasibility.json",
-      "reports/v083-raw/evidence.txt"
+      "reports/v0.6.24-funcs-deep.json",
+      "reports/v0.6.24-summary.json",
+      "reports/v0.6.24-second-edward-feasibility.json",
+      "reports/v084-raw/evidence.txt"
     ]
   },
   "nextRecommendedMilestone": {
-    "id": "v0.6.24",
-    "title": "InstallerA/outer-ctor reverse into create/use; ownership behind transform-copy helpers",
-    "primary": ["0x59D9660 create/use sites", "ownership behind neighbor/0x1D25E20"],
-    "forbidden": ["spawn", "deploy", "live memory", "PC2", "save-data", "force-push main", "+0x61-only ranking", "field-offset 0x20F0 as heap size", "treat helper position extract as possession"]
+    "id": "v0.6.25",
+    "title": "Deep-decode neighbor/spatial vtable installers; constructors of 0x976B2D0/0x9236E00 objects; +0x98 link",
+    "primary": ["0x13612B0", "0x5563CF0/0x6CF34A0", "vtable object constructors", "+0x98 enrollment"],
+    "forbidden": ["spawn", "deploy", "live memory", "PC2", "save-data", "force-push main", "expect E8 to Outer ctor", "treat helper position extract as possession"]
   },
   "tests": [
-    { "name": "FactoryFeed083_build_scan", "result": "pass" },
-    { "name": "factory_key_feed", "result": "pass_none" },
-    { "name": "possession_helper_deep", "result": "pass" },
+    { "name": "CtorReverse084_build_scan", "result": "pass" },
+    { "name": "outer_ctor_reverse", "result": "pass_installerA_lea_only" },
+    { "name": "lookup_alloc_cand_on_path", "result": "pass_false" },
+    { "name": "vtable_ownership_map", "result": "pass" },
     { "name": "game_launch_deploy", "result": "not_run" },
     { "name": "spawn_live_memory", "result": "not_run" }
   ],
@@ -115,9 +119,9 @@
   },
   "chatgptNextReviewInstructions": [
     "Read docs/CHATGPT_HANDOFF.md and this JSON first",
-    "Review v0.6.23 PR; preserve v0.6.4-v0.6.22 history",
+    "Review v0.6.24 PR; preserve v0.6.4-v0.6.23 history",
     "Separate confirmed vs hypotheses",
-    "Propose v0.6.24 InstallerA/outer-ctor reverse + ownership behind transform helpers",
+    "Propose v0.6.25 vtable-installer / owner-object constructor follow",
     "Do not authorize deploy/spawn/live memory/PC2 unless user overrides",
     "Return PC1 branch+PR instructions"
   ]
