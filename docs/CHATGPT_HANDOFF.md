@@ -25,7 +25,7 @@ Ultimate vision is **not claimed as achieved**. Dual-Edward co-op remains unprov
 
 ## 2. Current development milestone
 
-**v0.8.0 in review** — SpawnNPCParams type-attach virtuals resolve to field accessors (`0x80F2450`), not a world create. The reflected params family is closed. Gate `BFC_SECOND_EDWARD` stays default-off and refused.
+**v0.8.0 in review** — SpawnNPCParams family closed. Agent 1 delivered AC4Coop source translation map (`docs/v0.8.0-ac4coop-source-map.md`) from upstream `68355c71` (no LICENSE → reference-only). Gate `BFC_SECOND_EDWARD` stays default-off and refused.
 
 Prior: v0.6.25 complete on `cursor/v085-vt-owner-ctors-8285`. v0.6.5–v0.6.24 preserved. No deploy, no gameplay test, no networking change.
 
@@ -228,10 +228,12 @@ Deliverables:
 - `docs/v0.8.0-manual-pc1-checklist.md`
 - `docs/v0.8.0-submit-path.md`
 - `docs/v0.8.0-vtcall-resolve.md`
+- `docs/v0.8.0-ac4coop-source-map.md`
 - `src/game/second_edward.cpp` / `second_edward.h`
 - `tools/second_edward_test/main.cpp`
 - `tools/offline/SpawnPath080/`, `SubmitPath081/`, `VtCall082/`
 - `reports/v0.8.0-spawn-*.json`, `v0.8.0-submit-*.json`, `v0.8.0-vtcall-resolve.json`
+- `reports/v0.8.0-ac4coop-source-map.json`
 - `reports/v0.8.0-validation.json`
 
 v0.6.25 and earlier reports were left in place. Installed ASI was not replaced.
@@ -240,7 +242,7 @@ v0.6.25 and earlier reports were left in place. Installed ASI was not replaced.
 
 ## 11. Next recommended milestone
 
-**v0.8.1 (proposed):** Leave the SpawnNPCParams reflected family. Find a Resynced-native character create that is not these registrars / copy helpers / type-attach virtuals (mission/script entity construction → world add). Still no speculative call, deploy, live memory, or PC2 unless separately authorized.
+**v0.8.1 (proposed):** Using `docs/v0.8.0-ac4coop-source-map.md` as design reference only, hunt Resynced-native equivalents of cached EntityBuilder + RowSelector + duplication scope + world enroll (or another proven factory). Do not transplant AC4Coop x86 addresses/layouts. Still no speculative call, deploy, live memory, or PC2 unless separately authorized.
 
 ---
 
@@ -315,6 +317,6 @@ When reviewing the GitHub repository after a Cursor push:
 2. Diff against the previous handoff `milestoneId` / commit.
 3. Treat only **confirmed** items as facts; keep hypotheses labeled.
 4. Propose the **next single milestone** with: objective, in-scope RVAs/files, out-of-scope (spawn/deploy/PC2), required deliverables paths, and acceptance checks.
-5. Prefer **v0.8.1**: leave the SpawnNPCParams reflected family (registrars, copy helpers, and `0x33591C0` type-attach virtuals are closed as non-factories). Start a new narrow search for a Resynced-native character create → world add. Do not call an RVA until a world receiver and its arguments are confirmed.
+5. Prefer **v0.8.1**: leave SpawnNPCParams closed. Use the AC4Coop source map as a **role checklist** only (builder/selector/duplication/world enroll/drive). Independently rediscover Resynced x64 primitives; never transplant AC4Coop addresses or copy its sources (no LICENSE). Do not call an RVA until a world receiver and its arguments are confirmed.
 6. Do not instruct Cursor to deploy ASI, spawn, use live memory, or touch PC2/save data unless the user explicitly overrides safety.
 7. Return instructions Cursor can execute verbatim on PC1 on a dedicated branch + PR (never push main).

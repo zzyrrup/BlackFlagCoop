@@ -97,7 +97,8 @@
       "docs/v0.8.0-second-edward-plan.md",
       "docs/v0.8.0-manual-pc1-checklist.md",
       "docs/v0.8.0-submit-path.md",
-      "docs/v0.8.0-vtcall-resolve.md"
+      "docs/v0.8.0-vtcall-resolve.md",
+      "docs/v0.8.0-ac4coop-source-map.md"
     ],
     "reports": [
       "reports/v0.8.0-validation.json",
@@ -107,14 +108,22 @@
       "reports/v0.8.0-spawn-fnptr-slots.json",
       "reports/v0.8.0-submit-path.json",
       "reports/v0.8.0-submit-follow.json",
-      "reports/v0.8.0-vtcall-resolve.json"
+      "reports/v0.8.0-vtcall-resolve.json",
+      "reports/v0.8.0-ac4coop-source-map.json"
     ]
+  },
+  "ac4coopSourceMap": {
+    "doc": "docs/v0.8.0-ac4coop-source-map.md",
+    "report": "reports/v0.8.0-ac4coop-source-map.json",
+    "upstreamSha": "68355c71eafa0baf913587605e9c330db6166057",
+    "license": null,
+    "reusePosture": "reference-only-independent-implementation"
   },
   "nextRecommendedMilestone": {
     "id": "v0.8.1",
-    "title": "Leave SpawnNPCParams family; find Resynced-native character create",
-    "primary": ["mission/script entity create", "world add", "not 0x33591C0 / registrars / copy helpers"],
-    "forbidden": ["speculative spawn call", "deploy", "live memory", "PC2", "treat registrars as factories", "resume deferred-queue as the factory", "re-open SpawnNPCParams type-attach virtuals as the create path"]
+    "title": "Hunt Resynced-native EntityBuilder/RowSelector/duplication/world-enroll roles using AC4Coop map as reference only",
+    "primary": ["cached builder+selector roles", "duplication scope", "world enroll without pad hijack", "not SpawnNPCParams"],
+    "forbidden": ["speculative spawn call", "deploy", "live memory", "PC2", "transplant AC4Coop x86 addresses/layouts", "copy AC4Coop sources", "re-open SpawnNPCParams type-attach virtuals as the create path"]
   },
   "tests": [
     {"name": "SecondEdward", "result": "pass"},
