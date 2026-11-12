@@ -1,14 +1,14 @@
 {
   "schemaVersion": 1,
-  "generatedUtc": "2026-11-12T18:50:00Z",
+  "generatedUtc": "2026-11-12T18:45:00Z",
   "handoffFor": "ChatGPT",
   "executor": "Cursor",
   "machine": "PC1",
   "repository": {
     "url": "https://github.com/zzyrrup/BlackFlagCoop",
     "defaultBranch": "main",
-    "featureBranch": "cursor/v077-vt-slot-ctors-8285",
-    "baseBranch": "cursor/v076-edata-vcall-2b0-8285",
+    "featureBranch": "cursor/v078-armwrap-installers-8285",
+    "baseBranch": "cursor/v077-vt-slot-ctors-8285",
     "doNotPushMain": true,
     "initialCommit": "e12e70150656ac80742f10b496f7e5556e7985b7"
   },
@@ -18,10 +18,10 @@
     "functionalityChangedByThisMilestone": false
   },
   "milestone": {
-    "currentId": "v0.6.17",
-    "currentTitle": "Expected VT +0x2B0/+0x2B8 slots and ctor follow",
+    "currentId": "v0.6.18",
+    "currentTitle": "Deep-decode arm wrap 0x2108620 / 0x479E440; follow installers 0x5F11A40 / 0x59D96A0",
     "status": "complete",
-    "priorPreserved": ["v0.6.4", "v0.6.5", "v0.6.6", "v0.6.7", "v0.6.8", "v0.6.9", "v0.6.10", "v0.6.11", "v0.6.12", "v0.6.13", "v0.6.14", "v0.6.15", "v0.6.16"]
+    "priorPreserved": ["v0.6.4", "v0.6.5", "v0.6.6", "v0.6.7", "v0.6.8", "v0.6.9", "v0.6.10", "v0.6.11", "v0.6.12", "v0.6.13", "v0.6.14", "v0.6.15", "v0.6.16", "v0.6.17"]
   },
   "asi": {
     "version": "0.5.1",
@@ -37,7 +37,7 @@
   },
   "build": {
     "asiRebuilt": false,
-    "offlineTools": ["tools/offline/VtSlotCtor077"]
+    "offlineTools": ["tools/offline/ArmWrap078"]
   },
   "network": {
     "changesAuthorized": false,
@@ -45,64 +45,64 @@
   },
   "engineFindings": {
     "summary": [
-      "Expected +0x2B0=0x4656C80 trampoline to +0x2B8; +0x2B8=0x479E3B0",
-      "Arm table +0x2B8=0x2108620 wraps 0x479E3B0 with +0x98 work",
-      "Arming chain: 0x21085D0 -> 0x4656C80 -> 0x2108620 -> 0x479E3B0",
-      "Validator test edx,~2 selects edx=2 compare path",
-      "Ctor 0x2E97A50 installs 0x948FF50; ctor 0x59D9B90 installs 0x9303E28 at +0x1D0",
+      "Arm wrap 0x2108620 calls canonical 0x479E3B0 then +0x98 side-block modes 0-3 at +0x158",
+      "Arm-table .edata 0x9490208 = 0x948FF50+0x2B8 stores the wrap itself",
+      "Post-2B8 0x479E440 gates on [obj+0x26] vs mode; nearby AnimatedOnActiveChanged",
+      "InstallerA 0x5F11A40 LEA-registers ctorA (does not call); uses LookupKey",
+      "InstallerB 0x59D96A0 calls ctorB then continues large composite init through +0xE38",
       "No Edward/create path"
     ],
     "keyRvas": {
-      "expected2B0": "0x4656C80",
-      "expected2B8": "0x479E3B0",
-      "armTable2B8": "0x2108620",
+      "armWrap": "0x2108620",
+      "canonical2B8": "0x479E3B0",
+      "post2B8": "0x479E440",
       "armTable": "0x948FF50",
-      "bitTable": "0x9303E28",
+      "armTable2B8Slot": "0x9490208",
+      "installerA": "0x5F11A40",
       "ctorA": "0x2E97A50",
-      "ctorAInstaller": "0x5F11A40",
+      "installerB": "0x59D96A0",
       "ctorB": "0x59D9B90",
-      "ctorBCaller": "0x59D96A0",
-      "post2B8": "0x479E440"
+      "lookupKey": "0xB2898C8"
     }
   },
   "confirmed": [
     "ASI v0.5.1 preserved; no deploy",
-    "Expected vt slots and arming concrete chain resolved",
-    "Both ctors decoded",
+    "Arm wrap modes and +0x98 / +0x158 semantics decoded",
+    "Post-2B8 deep-decoded; installers followed",
     "No live memory this milestone"
   ],
   "hypotheses": [
-    "0x2108620 is arm-table specialization of 0x479E3B0",
-    "Ctor A objects are UpdateActorLOD enrollment subjects"
+    "0x479E440 is an AnimatedOnActiveChanged-style activation dispatcher",
+    "Modes 2/3 drive listHelper membership that feeds enrollment eligibility"
   ],
   "blockers": [
-    "Subject concrete type name unknown",
-    "Full 0x2108620/0x479E440 mode semantics open",
+    "Subject concrete type name / single heap size unknown",
+    "Mode 2/3 → enrollment eligibility not fully mapped",
     "No input/possession path",
     "Spawn tests not authorized"
   ],
   "mostRecentCompletedMilestone": {
-    "id": "v0.6.17",
-    "docs": ["docs/v0.6.17-vt-slot-ctors.md"],
+    "id": "v0.6.18",
+    "docs": ["docs/v0.6.18-armwrap-installers.md"],
     "reports": [
-      "reports/v0.6.17-expected-vt-slots.json",
-      "reports/v0.6.17-ctors-deep.json",
-      "reports/v0.6.17-summary.json",
-      "reports/v0.6.17-second-edward-feasibility.json",
-      "reports/v077-raw/evidence.txt"
+      "reports/v0.6.18-funcs-deep.json",
+      "reports/v0.6.18-summary.json",
+      "reports/v0.6.18-second-edward-feasibility.json",
+      "reports/v078-raw/evidence.txt"
     ]
   },
   "nextRecommendedMilestone": {
-    "id": "v0.6.18",
-    "title": "Deep-decode 0x2108620 / 0x479E440; follow 0x5F11A40 / 0x59D96A0",
-    "primary": ["0x2108620", "0x479E440", "0x5F11A40", "0x59D96A0"],
+    "id": "v0.6.19",
+    "title": "Map modes 2/3 to enrollment; size from installerB/ctorB chain; AnimatedOnActiveChanged xref",
+    "primary": ["0x2108620 modes 2/3", "0xB27210", "0x59D9660", "0x479E440 string xref"],
     "forbidden": ["spawn", "deploy", "live memory", "PC2", "save-data", "force-push main", "+0x61-only ranking"]
   },
   "tests": [
-    { "name": "VtSlotCtor077_build_scan", "result": "pass" },
-    { "name": "expected_vt_slots", "result": "pass" },
-    { "name": "arm_table_crosscheck", "result": "pass" },
-    { "name": "ctors_decoded", "result": "pass" },
+    { "name": "ArmWrap078_build_scan", "result": "pass" },
+    { "name": "wrap_calls_canonical", "result": "pass" },
+    { "name": "wrap_touches_98", "result": "pass" },
+    { "name": "installerB_calls_ctorB", "result": "pass" },
+    { "name": "arm_table_2B8_slot", "result": "pass" },
     { "name": "game_launch_deploy", "result": "not_run" },
     { "name": "spawn_live_memory", "result": "not_run" }
   ],
@@ -118,9 +118,9 @@
   },
   "chatgptNextReviewInstructions": [
     "Read docs/CHATGPT_HANDOFF.md and this JSON first",
-    "Review v0.6.17 PR; preserve v0.6.4-v0.6.16 history",
+    "Review v0.6.18 PR; preserve v0.6.4-v0.6.17 history",
     "Separate confirmed vs hypotheses",
-    "Propose v0.6.18 0x2108620/0x479E440 deep-decode",
+    "Propose v0.6.19 mode 2/3 → enrollment + object-size recovery",
     "Do not authorize deploy/spawn/live memory/PC2 unless user overrides",
     "Return PC1 branch+PR instructions"
   ]

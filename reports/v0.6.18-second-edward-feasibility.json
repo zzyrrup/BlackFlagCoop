@@ -1,0 +1,15 @@
+{
+  "schemaVersion": 1,
+  "milestone": "v0.6.18",
+  "generatedUtc": "2026-11-12T18:39:42Z",
+  "exeSha256": "19920F34BB2FAC814023EE3C27F0CECA1872E80A2AAFB37C092C419FFF77CC0D",
+  "createSecondEdward": { "class": "unsupported", "reason": "Arm-wrap/installers still mutate existing objects/side-blocks" },
+  "armWrapDecoded": { "class": "confirmed", "reason": "0x2108620 calls 0x479E3B0 then +0x98 mode/list work" },
+  "post2B8Decoded": { "class": "confirmed", "reason": "0x479E440 deep-decoded" },
+  "installersFollowed": { "class": "confirmed", "reason": "0x5F11A40 / 0x59D96A0 followed" },
+  "liveMemoryProbe": { "class": "blocked", "reason": "Not authorized" },
+  "next": {
+    "primary": "Map mode 2/3 listHelper paths to enrollment eligibility; recover object size from installerB/ctorB chain",
+    "avoid": ["live memory", "ASI deploy", "spawn", "PC2", "+0x61-only ranking"]
+  }
+}
