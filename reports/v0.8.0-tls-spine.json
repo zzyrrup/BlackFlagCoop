@@ -1,0 +1,10 @@
+{
+  "schemaVersion": 1,
+  "dupHot": "0x42B85F0",
+  "tlsIdx": "0xAB8BBC0",
+  "dup00UsesRax": 10,
+  "dup00BuildNear": 0,
+  "smallTlsLeaves": 2,
+  "c2Proven": false,
+  "callEngine": false
+}

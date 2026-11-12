@@ -1,6 +1,6 @@
 ﻿{
     "schemaVersion":  1,
-    "generatedUtc":  "2026-11-12T21:26:33Z",
+    "generatedUtc":  "2026-11-12T21:28:27Z",
     "handoffFor":  "ChatGPT",
     "executor":  "Cursor",
     "machine":  "PC1",
@@ -20,8 +20,8 @@
                 },
     "milestone":  {
                       "currentId":  "v0.8.0",
-                      "currentTitle":  "C2: cl+dl Begin rank empty for triad; TLS spine hypothesis",
-                      "status":  "c2_cldl_no_triad",
+                      "currentTitle":  "C2: falsified Dup-hot 0x42B85F0; seek return-to-Build Dup",
+                      "status":  "c2_duphot_falsified",
                       "priorPreserved":  [
                                              "v0.6.4",
                                              "v0.6.5",
@@ -85,10 +85,10 @@
                 },
     "engineFindings":  {
                            "summary":  [
-                                           "BeginClDl080: 4 cl+dl Begin(1,0) callees, triadShaped=0",
-                                           "Falsified 0x4420000 as Begin (TLS frame push; callers set r8)",
-                                           "Dup-hot 0x42B85F0 shares TLS TEB+1C78 / 0xAB8BBC0 with 0x4420000 — hypothesis only",
-                                           "Next: thin (1,0) wrappers on that TLS spine, or prove 0x42B85F0 returns new selector*",
+                                           "Falsified 0x42B85F0 as Duplicate — TLS frame helper (TEB+1C78), 1515 callers, buildNear=0",
+                                           "Sampled (0,0) sites ignore return (e.g. 0x6BA85 continues with prior r15)",
+                                           "Same spine as falsified Begin cand 0x4420000 / pop 0x4420DB0",
+                                           "Next: Dup callees whose rax feeds Build r8; or virtual [rax+N] Duplicate(0,0)",
                                            "callEngine=off; ASI v0.5.1 preserved"
                                        ],
                            "keyRvas":  {

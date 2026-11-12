@@ -25,7 +25,7 @@ Ultimate vision is **not claimed as achieved**. Dual-Edward co-op remains unprov
 
 ## 2. Current development milestone
 
-**v0.8.0 in progress** — Agent 2 C2: cl+dl Begin rank → 4 leaves, **0** triad. Falsified `0x4420000` as Begin (3-arg TLS frame). Shared TLS spine with Dup-hot `0x42B85F0` is a **hypothesis** only. `callEngine=off`. See `docs/v0.8.0-begin-cldl.md`.
+**v0.8.0 in progress** — Agent 2 C2: falsified Dup-hot `0x42B85F0` as Duplicate (TLS frame helper; no Build-near; return unused). Next: Dup whose return feeds Build `r8`, or virtual `[rax+N]` Duplicate. `callEngine=off`. See `docs/v0.8.0-tls-spine.md`.
 
 Prior: v0.6.25 owner VT[0] ctors (`0x13612B0` / `0x5781490`) and v0.6.5–v0.6.24 preserved. Details: `docs/v0.8.0-second-edward-plan.md`.
 
