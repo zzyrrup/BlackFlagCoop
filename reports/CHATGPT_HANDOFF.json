@@ -1,123 +1,137 @@
 {
   "schemaVersion": 1,
-  "generatedUtc": "2026-11-12T15:50:00Z",
+  "generatedUtc": "2026-11-12T16:26:26Z",
   "handoffFor": "ChatGPT",
   "executor": "Cursor",
   "machine": "PC1",
   "repository": {
     "url": "https://github.com/zzyrrup/BlackFlagCoop",
     "defaultBranch": "main",
-    "latestCommit": "c7e43650e6ec307ac0891f682421fae36da5bb07",
+    "latestCommit": "6cdae9fe64b80077c7228558b71c4d41b4cb42a2",
     "initialCommit": "e12e70150656ac80742f10b496f7e5556e7985b7",
-    "tracking": "origin/main"
+    "branch": "cursor/v065-deferred-queue-worker-007d",
+    "base": "main"
   },
   "project": {
     "name": "BlackFlagCoop",
     "goal": "Research path toward co-op for AC Black Flag Resynced (two Edwards / shared world / LAN-internet); not claimed achieved",
-    "functionalityChangedByThisHandoffSetup": false
+    "functionalityChangedByThisMilestone": false
   },
   "milestone": {
-    "currentId": "v0.6.4",
-    "currentTitle": "Deferred Actor Creation Handler Investigation",
-    "status": "complete",
-    "setupMilestone": "github-chatgpt-handoff-scaffold"
+    "currentId": "v0.6.5",
+    "currentTitle": "Deferred queue worker and 16-byte element layout",
+    "status": "complete"
   },
   "asi": {
     "version": "0.5.1",
     "sha256": "63B38877DDA7CC7CD9AB2619F94D3941C37F54C95A435EFE47084DC4CF2A50BE",
     "deployAuthorized": false,
-    "preserveWorkingAsi": true
+    "preserveWorkingAsi": true,
+    "openedThisMilestone": false
   },
   "game": {
     "title": "Assassin's Creed Black Flag Resynced",
     "version": "1.0.6",
     "executable": "ACBlackFlag.exe",
-    "exeSha256": "19920F34BB2FAC814023EE3C27F0CECA1872E80A2AAFB37C092C419FFF77CC0D"
+    "exeSha256": "19920F34BB2FAC814023EE3C27F0CECA1872E80A2AAFB37C092C419FFF77CC0D",
+    "imageBase": "0x140000000"
   },
   "build": {
     "generator": "Visual Studio 18 2026",
     "architecture": "x64",
     "configure": "cmake -S . -B build -G \"Visual Studio 18 2026\" -A x64",
-    "build": "cmake --build build --config Release"
+    "build": "cmake --build build --config Release",
+    "asiBuiltThisMilestone": false
   },
   "network": {
     "architecture": "BFC TCP session; msgs 1-8; heartbeat; poseVerified sanitize",
-    "lanTestStatus": "net_test / LAN scripts present; plugin net != engine replication",
+    "lanTestStatus": "unchanged",
     "pc2Untouched": true,
     "changesAuthorized": false
   },
   "engineFindings": {
     "summary": [
-      "0x5CBDFB0 is phase registrar, not actor factory",
-      "0x1AC380 is CreateActorsDeferredSingleThreaded handler and deferred queue processor",
-      "0x187F0550 is Pad_LockAndTurnMovement action-bind wrapper via 0x18EADD0",
-      "Action vtable 0x9255320 installed by descriptor constructors",
-      "0x7B00B60 and 0x29C6910 not call-linked to 0x1AC380"
+      "16-byte queue slot is an object pointer at +0 plus a handler-written f32 score at +8",
+      "0x725400 is a shared flag and hashed-list helper on that object",
+      "0xE95E80 is called only from 0x1AC380 and attaches a 0x160 side block at object+0x98",
+      "Neither worker creates a character or reads an archetype",
+      "0x1AC380 ends at 0x1AC61F (671 bytes); 0x1AC620 is the next function"
     ],
     "keyRvas": {
-      "inputWrapper": "0x187F0550",
-      "inputHelper": "0x18EADD0",
-      "actionVtable": "0x9255320",
-      "phaseRegistrar": "0x5CBDFB0",
       "deferredHandler": "0x1AC380",
+      "handlerEndExclusive": "0x1AC61F",
       "perElementA": "0x725400",
       "perElementB": "0xE95E80",
-      "controllersPhase": "0x7B00B60",
-      "updateActorStub": "0x29C6910"
+      "sideBlockAllocator": "0x426EE50",
+      "scoreConstant25": "0x97C5C00"
     }
   },
   "confirmed": [
-    "ASI v0.5.1 hash 63B38877… is the preserved working plugin",
-    "0x1AC380 processes deferred array at +0xAC0/+0xAC8 stride 0x10",
-    "0x5CBDFB0 registers CreateActorsDeferredSingleThreaded -> 0x1AC380",
-    "Input path at 0x187F0550 is not a movement controller",
-    "No verified input-to-character connection as of v0.6.4"
+    "EXE SHA256 19920F34… matched before decode",
+    "Element+0 is the object pointer passed to both workers",
+    "Element+8 is an f32 score written by vsubps/vmulps/vhaddps and compared with 25.0",
+    "0xE95E80 callers are only 0x1AC4DB and 0x1AC523",
+    "0xE95E80 allocates 0x160 bytes and links the block to the existing object",
+    "No Edward/character/archetype/player/transform string in either worker"
   ],
   "hypotheses": [
-    "Deferred elements are actor or job handles",
-    "0xE95E80 performs creation or activation",
-    "Float at element+8 may relate to timing/LOD/transform",
-    "Dual Edward may be plausible via multi-actor phase infrastructure"
+    "The queued object may be an actor",
+    "The 0x160 block may be activation bookkeeping",
+    "A producer outside this function may create the object before enqueue"
+  ],
+  "disproven": [
+    "Workers are invoked with the 16-byte slot address",
+    "Element+8 is an input transform",
+    "The slot contains a callback or archetype id",
+    "0xE95E80 spawns an Edward or character"
   ],
   "blockers": [
-    "No confirmed Edward/character factory",
-    "No verified ownership or dual input context",
-    "Spawn/possession tests not authorized"
+    "Producer of the queued object pointer is not decoded",
+    "Object and side-block types are unnamed",
+    "No verified dual input context",
+    "Spawn tests are not authorized"
   ],
   "mostRecentCompletedMilestone": {
-    "id": "v0.6.4",
-    "docs": ["docs/v0.6.4-deferred-actor-handler.md"],
+    "id": "v0.6.5",
+    "docs": ["docs/v0.6.5-deferred-queue-worker-analysis.md"],
     "reports": [
-      "reports/v0.6.4-handler-disassembly.json",
-      "reports/v0.6.4-creation-callgraph.json",
-      "reports/v0.6.4-character-connections.json",
-      "reports/v0.6.4-input-action-consumers.json",
-      "reports/v0.6.4-second-edward-feasibility.json"
+      "reports/v0.6.5-queue-element-layout.json",
+      "reports/v0.6.5-worker-disassembly.json",
+      "reports/v0.6.5-worker-callgraph.json",
+      "reports/v0.6.5-actor-lifecycle-connections.json",
+      "reports/v0.6.5-second-edward-feasibility.json"
     ]
   },
   "nextRecommendedMilestone": {
-    "id": "v0.6.5",
-    "title": "Per-element deferred callee decode",
-    "primaryRvas": ["0xE95E80", "0x725400"],
-    "objective": "Recover 16-byte element layout and determine whether elements are entities/actors",
-    "forbidden": ["spawn", "deploy", "game modify", "PC2", "force-push"]
+    "id": "v0.6.6",
+    "title": "Producers of the deferred object-pointer queue",
+    "primaryRvas": ["0x1AC380"],
+    "objective": "Find stores of the object pointer into [coordinator+0xAC0] and determine whether that producer creates the object",
+    "forbidden": ["spawn", "deploy", "game modify", "PC2", "force-push", "push to main"]
   },
   "filesChangedThisUpdate": [
-    ".gitignore",
-    ".cursor/rules/blackflagcoop-handoff.mdc",
+    "docs/v0.6.5-deferred-queue-worker-analysis.md",
+    "reports/v0.6.5-queue-element-layout.json",
+    "reports/v0.6.5-worker-disassembly.json",
+    "reports/v0.6.5-worker-callgraph.json",
+    "reports/v0.6.5-actor-lifecycle-connections.json",
+    "reports/v0.6.5-second-edward-feasibility.json",
+    "tools/offline/QueueWorker065/Program.cs",
+    "tools/offline/QueueWorker065/QueueWorker065.csproj",
     "docs/CHATGPT_HANDOFF.md",
-    "reports/CHATGPT_HANDOFF.json"
+    "reports/CHATGPT_HANDOFF.json",
+    ".gitignore"
   ],
   "tests": [
     {
-      "name": "offline_pe_v0.6.4",
+      "name": "offline_pe_v0.6.5",
       "result": "pass",
-      "notes": "DeferredHandler064 produced reports"
+      "notes": "QueueWorker065 matched EXE hash and landed on call sites 0x1AC4D3 and 0x1AC4DB"
     },
     {
       "name": "game_launch_deploy",
       "result": "not_run",
-      "notes": "forbidden for research/handoff setup"
+      "notes": "forbidden"
     }
   ],
   "safety": {
@@ -126,14 +140,15 @@
     "asiPreserved": true,
     "noForcePush": true,
     "noSecretsCommitted": true,
-    "noGameBinariesCommitted": true
+    "noGameBinariesCommitted": true,
+    "analysisMode": "offline_pe_only"
   },
   "chatgptNextReviewInstructions": [
     "Read docs/CHATGPT_HANDOFF.md and this JSON first",
-    "Review latest commit diff on main",
-    "Separate confirmed vs hypotheses",
-    "Propose next single milestone (prefer v0.6.5 offline 0xE95E80/0x725400)",
-    "Do not authorize deploy/spawn unless user explicitly overrides",
+    "Read docs/v0.6.5-deferred-queue-worker-analysis.md",
+    "Separate confirmed vs hypotheses vs disproven",
+    "Propose v0.6.6 as an offline search for producers of [coordinator+0xAC0]",
+    "Do not authorize deploy or spawn unless the user explicitly overrides",
     "Return PC1-executable instructions for Cursor"
   ]
 }

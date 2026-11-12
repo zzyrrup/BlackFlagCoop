@@ -1,0 +1,66 @@
+{
+  "schemaVersion": 1,
+  "generatedUtc": "2026-11-12T16:26:26Z",
+  "milestone": "v0.6.5",
+  "exeSha256": "19920F34BB2FAC814023EE3C27F0CECA1872E80A2AAFB37C092C419FFF77CC0D",
+  "question": "Do 0x725400, 0xE95E80, or the 16-byte slot connect to actor or character creation?",
+  "queueKind": {
+    "classification": "deferred_list_of_existing_object_pointers_plus_a_computed_score",
+    "confidence": "high",
+    "genericCallbackQueue": false,
+    "reasonNotGeneric": "The slot has no code pointer. Both workers are fixed call targets, and 0xE95E80 has no other caller.",
+    "actorCreationRequestQueue": false,
+    "reasonNotCreationRequests": "The handler loads an object pointer that is already stored, writes a score, then updates that object. It does not pass an archetype, asset name, or transform in the slot."
+  },
+  "connections": {
+    "allocation": {
+      "status": "confirmed_side_block_only",
+      "detail": "0xE95E80 allocates 0x160 bytes via 0x426EE50 or virtual [vtable+0x40] and stores the pointer at object+0x98 with a back-pointer at block+0x100.",
+      "characterSizedBody": false
+    },
+    "entityInitialization": {
+      "status": "confirmed_for_the_side_block_headers_only",
+      "detail": "The new block's small-array headers and two function pointers are initialized. The queued object already exists and is not constructed here."
+    },
+    "archetypeResolution": {
+      "status": "absent",
+      "detail": "No archetype string, table, or asset name in either worker."
+    },
+    "componentRegistration": {
+      "status": "unknown",
+      "detail": "0x725400 inserts or removes the object pointer in a hashed 0x18-stride list, and 0xE95E80 walks pointer arrays with virtual calls. No component type name was recovered."
+    },
+    "activation": {
+      "status": "unknown",
+      "detail": "Flag bits at object+0x61 and bytes in the side block are cleared or set. That is consistent with state bookkeeping. It is not identified as actor activation."
+    },
+    "cleanupOrDestruction": {
+      "status": "confirmed_list_removal_unknown_actor_destroy",
+      "detail": "The handler compacts the queue after the prefix it processed. 0x725400 can unlink the object from a 0x18-stride list. Virtual calls at allocator +0x18 and +0x88 release temporary buffers. None of these is shown to destroy a character."
+    },
+    "transformInitialization": {
+      "status": "absent",
+      "detail": "Element+8 is a score produced by vsubps/vmulps/vhaddps. No position or matrix is stored for a new object."
+    },
+    "characterOrEdward": {
+      "status": "absent",
+      "detail": "String scan of both workers found only allocator-failure and SmallArray capacity text. No MSVC RTTI name for a character, Edward, player, or archetype was attached to the decoded LEA targets."
+    },
+    "entityId": {
+      "status": "absent_in_the_slot",
+      "detail": "The words 65535 and 36084 are globals compared against a descriptor at [vtable+0x30]+0x4C/+0x4E. They are not loaded from the 16-byte element."
+    }
+  },
+  "searchedNames": [
+    "edward",
+    "character",
+    "archetype",
+    "entity",
+    "actor",
+    "transform",
+    "player",
+    "component",
+    "spawn"
+  ],
+  "searchResult": "none of those names occur in the strings referenced by 0x725400 or 0xE95E80"
+}

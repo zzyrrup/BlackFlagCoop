@@ -1,0 +1,60 @@
+{
+  "schemaVersion": 1,
+  "generatedUtc": "2026-11-12T16:26:26Z",
+  "milestone": "v0.6.5",
+  "exeSha256": "19920F34BB2FAC814023EE3C27F0CECA1872E80A2AAFB37C092C419FFF77CC0D",
+  "assessments": {
+    "multipleSimultaneousCharacterEntities": {
+      "class": "unknown",
+      "confirmed": "The queue holds multiple object pointers (count mask 0x3FFF, stride 0x10).",
+      "unknown": "Nothing in 0x725400 or 0xE95E80 identifies those objects as characters."
+    },
+    "reuseEdwardCharacterDefinition": {
+      "class": "unsupported",
+      "reason": "No Edward, archetype, or character-definition edge in the handler's element uses or in either worker."
+    },
+    "createSecondCharacterEntity": {
+      "class": "unsupported",
+      "reason": "This path does not create the queued object. 0xE95E80 allocates a 0x160 side block and links it to an object that was already stored at element+0. No character constructor or archetype spawn is present."
+    },
+    "assignSeparateInputControl": {
+      "class": "unsupported",
+      "reason": "Neither worker references input actions, pads, or a second control context."
+    },
+    "maintainSeparateTransforms": {
+      "class": "unsupported",
+      "reason": "Element+8 is a handler-written f32 score compared with the constant 25.0. The 4-wide vectors used to compute it are read from existing objects. No per-character transform is stored."
+    }
+  },
+  "disproven": [
+    "0x725400 and 0xE95E80 are invoked with the 16-byte slot address",
+    "Element+8 is transform data supplied by the producer of the queue",
+    "The queue element contains a function pointer or an archetype id",
+    "0xE95E80 has callers other than 0x1AC4DB and 0x1AC523"
+  ],
+  "confirmed": [
+    "Element+0 is an object pointer and element+8 is a computed f32",
+    "0x725400 is shared and edits object+0x61 plus a hashed 0x18-stride list",
+    "0xE95E80 allocates and attaches a 0x160 side block at object+0x98",
+    "The handler then compacts the processed prefix out of the array"
+  ],
+  "unknown": [
+    "The concrete type of the queued object",
+    "The concrete type of the 0x160 side block",
+    "The meaning of the unreferenced dword at element+0xC",
+    "Whether a different function creates the object before enqueue",
+    "Whether a second Edward can be spawned by some path outside this queue"
+  ],
+  "nextSafestStep": {
+    "primary": "Offline-find stores into the array at coordinator+0xAC0 (the producers of the object pointer).",
+    "reason": "Creation, if it exists, happens before the pointer is queued. These workers only consume it.",
+    "forbidden": ["spawn", "live memory", "ASI replace", "game modify", "PC2"]
+  },
+  "safety": {
+    "analysisMode": "offline_pe_only",
+    "spawnAttempted": false,
+    "gameLaunched": false,
+    "asiPreservedAsV051": true,
+    "asiOpened": false
+  }
+}

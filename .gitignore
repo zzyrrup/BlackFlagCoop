@@ -31,6 +31,8 @@ compile_commands.json
 !tools/**/*.cs
 # Keep scripts; ignore compiled offline analyzers next to sources
 tools/offline/*.exe
+tools/offline/**/bin/
+tools/offline/**/obj/
 tools/asi-loader-staging/
 
 # --- Backups & local deploy artifacts ---
