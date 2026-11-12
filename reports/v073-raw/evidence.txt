@@ -1,0 +1,524 @@
+===== v0.6.13 ENROLL INSERT / GATE / LOOKUP KEY =====
+exeSha256=19920F34BB2FAC814023EE3C27F0CECA1872E80A2AAFB37C092C419FFF77CC0D
+
+===== LOOKUP KEY 0xB2898C8 =====
+sec=.trace hex64=A2 C3 FF FF FF FF 06 C4 C2 3B EB F0 5D 3C 00 00 00 00 09 F0 5D 3C 00 00 00 00 E8 10 AF 5A 01 00 00 00 35 21 43 57 01 00 00 00 C5 DF CB FF 8E 87 B1 3C 00 00 00 00 BC B7 90 60 00 00 00 00 39 7C
+  d[0]=0xFFFFC3A2
+  d[1]=0xC406FFFF
+  d[2]=0xF0EB3BC2
+  d[3]=0x3C5D asRva sec=.impdata hex=FF FF F0 FF 05 D2 54 F3
+  d[4]=0xF0090000
+  d[5]=0x3C5D asRva sec=.impdata hex=FF FF F0 FF 05 D2 54 F3
+  d[6]=0x10E80000 asRva sec=.code hex=01 0F A2 C3 48 81 EA 56
+  d[7]=0x15AAF asRva sec=.impdata hex=0D 84 36 F2 0A 40 0F B6
+  d[8]=0x21350000
+  d[9]=0x15743 asRva sec=.impdata hex=24 28 01 00 00 00 01 00
+  d[10]=0xDFC50000
+  d[11]=0x878EFFCB
+  d[12]=0x3CB1 asRva sec=.impdata hex=E8 FF FF 48 FF C1 49 89
+  d[13]=0xB7BC0000
+  d[14]=0x6090 asRva sec=.impdata hex=48 8B 05 19 49 74 0B 48
+  d[15]=0x7C390000
+  q[0]=0xC406FFFFFFFFC3A2
+  q[1]=0x3C5DF0EB3BC2
+  q[2]=0x3C5DF0090000
+  q[3]=0x15AAF10E80000
+classification=opaque_anvil_typeinfo_key_in_.trace
+
+===== XREFS TO LOOKUP KEY =====
+leaOrMovXrefsRaw=170 verified=170
+  xref @0x251EAF lea rdx,[rip+0B037A12] func≈0x251E50
+  xref @0x251EB0 lea edx,[rip+0B037A12] func≈0x251E50
+  xref @0x388F38 lea rdx,[rip+0AF00989] func≈0x388ED0
+  xref @0x388F39 lea edx,[rip+0AF00989] func≈0x388ED0
+  xref @0x60D8A2 lea rdx,[rip+0AC7C01F] func≈0x60D6C0
+  xref @0x60D8A3 lea edx,[rip+0AC7C01F] func≈0x60D6C0
+  xref @0x725445 lea rdx,[rip+0AB6447C] func≈0x725400 [workerA]
+  xref @0x725446 lea edx,[rip+0AB6447C] func≈0x725400 [workerA]
+  xref @0x7255E0 lea rdx,[rip+0AB642E1] func≈0x725400 [workerA]
+  xref @0x7255E1 lea edx,[rip+0AB642E1] func≈0x725400 [workerA]
+  xref @0xA074CB lea rdx,[rip+0A8823F6] func≈0xA07490
+  xref @0xA074CC lea edx,[rip+0A8823F6] func≈0xA07490
+  xref @0xA61E36 lea rdx,[rip+0A827A8B] func≈0xA61DD0
+  xref @0xA61E37 lea edx,[rip+0A827A8B] func≈0xA61DD0
+  xref @0xE3E223 lea rdx,[rip+0A44B69E] func≈0xE3D8D0
+  xref @0xE3E224 lea edx,[rip+0A44B69E] func≈0xE3D8D0
+  xref @0xF1C28A lea rdx,[rip+0A36D637] func≈0xF1C240
+  xref @0xF1C28B lea edx,[rip+0A36D637] func≈0xF1C240
+  xref @0x143FA0E lea rdx,[rip+9E49EB3] func≈0x143F800
+  xref @0x143FA0F lea edx,[rip+9E49EB3] func≈0x143F800
+  xref @0x17C5A75 lea rdx,[rip+9AC3E4C] func≈0x17C5A50
+  xref @0x17C5A76 lea edx,[rip+9AC3E4C] func≈0x17C5A50
+  xref @0x183E1F5 lea rdx,[rip+9A4B6CC] func≈0x183E1D0
+  xref @0x183E1F6 lea edx,[rip+9A4B6CC] func≈0x183E1D0
+  xref @0x184D18E lea rdx,[rip+9A3C733] func≈0x184CF20
+  xref @0x184D18F lea edx,[rip+9A3C733] func≈0x184CF20
+  xref @0x184D2A0 lea rdx,[rip+9A3C621] func≈0x184CF20
+  xref @0x184D2A1 lea edx,[rip+9A3C621] func≈0x184CF20
+  xref @0x18C7933 lea rdx,[rip+99C1F8E] func≈0x18C7870
+  xref @0x18C7934 lea edx,[rip+99C1F8E] func≈0x18C7870
+  xref @0x1978582 lea rdx,[rip+991133F] func≈0x19783A0
+  xref @0x1978583 lea edx,[rip+991133F] func≈0x19783A0
+  xref @0x1978971 lea rdx,[rip+9910F50] func≈0x19783A0
+  xref @0x1978972 lea edx,[rip+9910F50] func≈0x19783A0
+  xref @0x19C0316 lea rdx,[rip+98C95AB] func≈0x19C02B0
+  xref @0x19C0317 lea edx,[rip+98C95AB] func≈0x19C02B0
+  xref @0x1B6B553 lea rdx,[rip+971E36E] func≈0x1B6AFF0
+  xref @0x1B6B554 lea edx,[rip+971E36E] func≈0x1B6AFF0
+  xref @0x1C10D89 lea rdx,[rip+9678B38] func≈0x1C10D50
+  xref @0x1C10D8A lea edx,[rip+9678B38] func≈0x1C10D50
+  xref @0x1E94BF1 lea rdx,[rip+93F4CD0] func≈0x1E944A0
+  xref @0x1E94BF2 lea edx,[rip+93F4CD0] func≈0x1E944A0
+  xref @0x26B978D lea rdx,[rip+8BD0134] func≈0x26B9710
+  xref @0x26B978E lea edx,[rip+8BD0134] func≈0x26B9710
+  xref @0x26D2AA5 lea rdx,[rip+8BB6E1C] func≈0x26D28E0
+  xref @0x26D2AA6 lea edx,[rip+8BB6E1C] func≈0x26D28E0
+  xref @0x26D41BE lea rdx,[rip+8BB5703] func≈0x26D3E20
+  xref @0x26D41BF lea edx,[rip+8BB5703] func≈0x26D3E20
+  xref @0x26E376B lea rdx,[rip+8BA6156] func≈0x26E2CB0
+  xref @0x26E376C lea edx,[rip+8BA6156] func≈0x26E2CB0
+  xref @0x2788033 lea rdx,[rip+8B0188E] func≈0x2786740
+  xref @0x2788034 lea edx,[rip+8B0188E] func≈0x2786740
+  xref @0x2793EC2 lea rdx,[rip+8AF59FF] func≈0x2793DD0
+  xref @0x2793EC3 lea edx,[rip+8AF59FF] func≈0x2793DD0
+  xref @0x2A70481 lea rdx,[rip+8819440] func≈0x2A70380
+  xref @0x2A70482 lea edx,[rip+8819440] func≈0x2A70380
+  xref @0x2E987EE lea rdx,[rip+83F10D3] func≈0x2E97FC0 [wrapper]
+  xref @0x2E987EF lea edx,[rip+83F10D3] func≈0x2E97FC0 [wrapper]
+  xref @0x2E98923 lea r14,[rip+83F0F9E] func≈0x2E97FC0 [wrapper]
+  xref @0x2E98924 lea esi,[rip+83F0F9E] func≈0x2E97FC0 [wrapper]
+  xref @0x2E997BE lea rdx,[rip+83F0103] func≈0x2E97FC0 [wrapper]
+  xref @0x2E997BF lea edx,[rip+83F0103] func≈0x2E97FC0 [wrapper]
+  xref @0x2E9B3AB lea rdx,[rip+83EE516] func≈0x2E97FC0 [wrapper]
+  xref @0x2E9B3AC lea edx,[rip+83EE516] func≈0x2E97FC0 [wrapper]
+  xref @0x2E9B45B lea rdx,[rip+83EE466] func≈0x2E97FC0 [wrapper]
+  xref @0x2E9B45C lea edx,[rip+83EE466] func≈0x2E97FC0 [wrapper]
+  xref @0x2EA0CBD lea rdx,[rip+83E8C04] func≈0x2EA0B00
+  xref @0x2EA0CBE lea edx,[rip+83E8C04] func≈0x2EA0B00
+  xref @0x2F2D04D lea rdx,[rip+835C874] func≈0x2F2C1A0
+  xref @0x2F2D04E lea edx,[rip+835C874] func≈0x2F2C1A0
+  xref @0x30CE05C lea rdx,[rip+81BB865] func≈0x30CDF90
+  xref @0x30CE05D lea edx,[rip+81BB865] func≈0x30CDF90
+  xref @0x30E0CD2 lea rdx,[rip+81A8BEF] func≈0x30E0C10
+  xref @0x30E0CD3 lea edx,[rip+81A8BEF] func≈0x30E0C10
+  xref @0x30E5229 lea rdx,[rip+81A4698] func≈0x30E5090
+  xref @0x30E522A lea edx,[rip+81A4698] func≈0x30E5090
+  xref @0x30F3374 lea rdx,[rip+819654D] func≈0x30F3280
+  xref @0x30F3375 lea edx,[rip+819654D] func≈0x30F3280
+  xref @0x30F4095 lea rdx,[rip+819582C] func≈0x30F3FD0
+  xref @0x30F4096 lea edx,[rip+819582C] func≈0x30F3FD0
+  xref @0x3251696 lea rdx,[rip+803822B] func≈0x32515F0
+  xref @0x3251697 lea edx,[rip+803822B] func≈0x32515F0
+  xref @0x32F91F3 lea rdx,[rip+7F906CE] func≈0x32F9010
+  xref @0x32F91F4 lea edx,[rip+7F906CE] func≈0x32F9010
+  xref @0x348579D lea rdx,[rip+7E04124] func≈0x3485710
+  xref @0x348579E lea edx,[rip+7E04124] func≈0x3485710
+  xref @0x3491891 lea rdx,[rip+7DF8030] func≈0x3491820
+  xref @0x3491892 lea edx,[rip+7DF8030] func≈0x3491820
+  xref @0x3621E9B lea rdx,[rip+7C67A26] func≈0x3621E60
+  xref @0x3621E9C lea edx,[rip+7C67A26] func≈0x3621E60
+  xref @0x3621F87 lea rdx,[rip+7C6793A] func≈0x3621F40
+  xref @0x3621F88 lea edx,[rip+7C6793A] func≈0x3621F40
+  xref @0x3A86DD6 lea rdx,[rip+7802AEB] func≈0x3A86CD0
+  xref @0x3A86DD7 lea edx,[rip+7802AEB] func≈0x3A86CD0
+  xref @0x3A86F90 lea rdx,[rip+7802931] func≈0x3A86CD0
+  xref @0x3A86F91 lea edx,[rip+7802931] func≈0x3A86CD0
+  xref @0x3A87288 lea rdx,[rip+7802639] func≈0x3A87250
+  xref @0x3A87289 lea edx,[rip+7802639] func≈0x3A87250
+  xref @0x49C07CD lea rdx,[rip+68C90F4] func≈0x49C0350
+  xref @0x49C07CE lea edx,[rip+68C90F4] func≈0x49C0350
+  xref @0x4B5A677 lea rdx,[rip+672F24A] func≈0x4B5A560
+  xref @0x4B5A678 lea edx,[rip+672F24A] func≈0x4B5A560
+  xref @0x4D0482D lea rdx,[rip+6585094] func≈0x4D04450
+  xref @0x4D0482E lea edx,[rip+6585094] func≈0x4D04450
+  xref @0x53F31C2 lea rdx,[rip+5E966FF] func≈0x53F31A0
+  xref @0x53F31C3 lea edx,[rip+5E966FF] func≈0x53F31A0
+  xref @0x54F1526 lea rdx,[rip+5D9839B] func≈0x54F14E0
+  xref @0x54F1527 lea edx,[rip+5D9839B] func≈0x54F14E0
+  xref @0x55391A0 lea rdx,[rip+5D50721] func≈0x55390A0
+  xref @0x55391A1 lea edx,[rip+5D50721] func≈0x55390A0
+  xref @0x5625E1B lea rdx,[rip+5C63AA6] func≈0x5625D80
+  xref @0x5625E1C lea edx,[rip+5C63AA6] func≈0x5625D80
+  xref @0x58EB63D lea rdx,[rip+599E284] func≈0x58EB4D0
+  xref @0x58EB63E lea edx,[rip+599E284] func≈0x58EB4D0
+  xref @0x5EFDF05 lea rdx,[rip+538B9BC] func≈0x5EFDEC0
+  xref @0x5EFDF06 lea edx,[rip+538B9BC] func≈0x5EFDEC0
+  xref @0x5F11F67 lea rax,[rip+537795A] func≈0x5F11A40
+  xref @0x5F11F68 lea eax,[rip+537795A] func≈0x5F11A40
+  xref @0x6276DC0 lea rdx,[rip+5012B01] func≈0x6276B20
+  xref @0x6276DC1 lea edx,[rip+5012B01] func≈0x6276B20
+  xref @0x62B14E7 lea rdx,[rip+4FD83DA] func≈0x62B14A0
+  xref @0x62B14E8 lea edx,[rip+4FD83DA] func≈0x62B14A0
+  xref @0x6A30761 lea rdx,[rip+4859160] func≈0x6A30600
+  xref @0x6A30762 lea edx,[rip+4859160] func≈0x6A30600
+  xref @0x6A309AB lea rdx,[rip+4858F16] func≈0x6A30970
+  xref @0x6A309AC lea edx,[rip+4858F16] func≈0x6A30970
+  xref @0x6A31093 lea rdx,[rip+485882E] func≈0x6A30EB0
+  xref @0x6A31094 lea edx,[rip+485882E] func≈0x6A30EB0
+  xref @0x6A4E7AB lea rdx,[rip+483B116] func≈0x6A4E770
+  xref @0x6A4E7AC lea edx,[rip+483B116] func≈0x6A4E770
+  xref @0x6A5409B lea rdx,[rip+4835826] func≈0x6A53E30
+  xref @0x6A5409C lea edx,[rip+4835826] func≈0x6A53E30
+  xref @0x6AABA66 lea rdx,[rip+47DDE5B] func≈0x6AAB9D0
+  xref @0x6AABA67 lea edx,[rip+47DDE5B] func≈0x6AAB9D0
+  xref @0x6B469CB lea rdx,[rip+4742EF6] func≈0x6B469A0
+  xref @0x6B469CC lea edx,[rip+4742EF6] func≈0x6B469A0
+  xref @0x6BA8895 lea rdx,[rip+46E102C] func≈0x6BA8830
+  xref @0x6BA8896 lea edx,[rip+46E102C] func≈0x6BA8830
+  xref @0x6BA8C1E lea rdx,[rip+46E0CA3] func≈0x6BA8920
+  xref @0x6BA8C1F lea edx,[rip+46E0CA3] func≈0x6BA8920
+  xref @0x6BF8702 lea rdx,[rip+46911BF] func≈0x6BF8660
+  xref @0x6BF8703 lea edx,[rip+46911BF] func≈0x6BF8660
+  xref @0x71410E7 lea rdx,[rip+41487DA] func≈0x71410C0
+  xref @0x71410E8 lea edx,[rip+41487DA] func≈0x71410C0
+  xref @0x7B03F0D lea rcx,[rip+37859B4] func≈0x7B03F00
+  xref @0x7B03F0E lea ecx,[rip+37859B4] func≈0x7B03F00
+  xref @0x7D809FA lea rdx,[rip+3508EC7] func≈0x7D809D0
+  xref @0x7D809FB lea edx,[rip+3508EC7] func≈0x7D809D0
+  xref @0x7DAD702 lea rdx,[rip+34DC1BF] func≈0x7DAD6B0
+  xref @0x7DAD703 lea edx,[rip+34DC1BF] func≈0x7DAD6B0
+  xref @0x7DAD89A lea rdx,[rip+34DC027] func≈0x7DAD860
+  xref @0x7DAD89B lea edx,[rip+34DC027] func≈0x7DAD860
+  xref @0x7DB97B0 lea rdx,[rip+34D0111] func≈0x7DB9780
+  xref @0x7DB97B1 lea edx,[rip+34D0111] func≈0x7DB9780
+  xref @0x7DDC898 lea rdx,[rip+34AD029] func≈0x7DDC860
+  xref @0x7DDC899 lea edx,[rip+34AD029] func≈0x7DDC860
+  xref @0x7DDFD5A lea rdx,[rip+34A9B67] func≈0x7DDFD20
+  xref @0x7DDFD5B lea edx,[rip+34A9B67] func≈0x7DDFD20
+  xref @0x7FB0B38 lea rdx,[rip+32D8D89] func≈0x7FB0B10
+  xref @0x7FB0B39 lea edx,[rip+32D8D89] func≈0x7FB0B10
+  xref @0x80E219B lea rdx,[rip+31A7726] func≈0x80E2170
+  xref @0x80E219C lea edx,[rip+31A7726] func≈0x80E2170
+  xref @0x82D781B lea rdx,[rip+2FB20A6] func≈0x82D77F0
+  xref @0x82D781C lea edx,[rip+2FB20A6] func≈0x82D77F0
+  xref @0xCD6C2E5 lea rdx,[rip-1AE2A24] func≈0xCD6C2A5
+  xref @0xCD6C2E6 lea edx,[rip-1AE2A24] func≈0xCD6C2A6
+  xref @0xDC6AAC1 lea rdx,[rip-29E1200] func≈0xDC6AA81
+  xref @0xDC6AAC2 lea edx,[rip-29E1200] func≈0xDC6AA82
+  xref @0x1110B060 lea rdx,[rip-5E8179F] func≈0x1110B020
+  xref @0x1110B061 lea edx,[rip-5E8179F] func≈0x1110B021
+uniqueFuncsReferencingKey=80
+absQwordRefs=1
+  abs @0x9491000 func≈0x9490FC0
+
+===== +0x61 IMM BYTE WRITERS =====
+rawVerifiedHits=161
+  kind=movImm count=78
+  kind=orOther count=44
+  kind=andOther count=32
+  kind=or4 count=5
+  kind=andFB count=2
+note: enrollment gate bit1 is usually set via register-form RMW, not imm or2
+immOr2=0 immOr4=5 andFD=0
+  or4-wrapper 0x2E98AA8 or byte ptr [rbx+61],4
+  or4-wrapper 0x2E9B3D6 or byte ptr [rbx+61],4
+  or4-wrapper 0x2E9B486 or byte ptr [r14+61],4
+  or4-wrapper 0x2E9B487 or byte ptr [rsi+61],4
+
+===== KEY-USER CLASSIFICATION =====
+  0x251E50 alloc=False lookup=False helper=False nest=False no61
+  0x388ED0 alloc=False lookup=False helper=False nest=False no61
+  0x60D6C0 alloc=False lookup=True helper=False nest=False no61,smallArray
+  0x725400 alloc=False lookup=True helper=False nest=True touch61,mov61,workerA
+  0xA07490 alloc=False lookup=True helper=False nest=True no61
+  0xA61DD0 alloc=False lookup=True helper=False nest=True no61
+  0xE3D8D0 alloc=False lookup=False helper=False nest=False no61
+  0xF1C240 alloc=False lookup=True helper=False nest=False touch61,mov61
+  0x143F800 alloc=False lookup=True helper=False nest=False no61 str="RideRideableEntity_Enter"
+  0x17C5A50 alloc=False lookup=True helper=False nest=False no61
+  0x183E1D0 alloc=False lookup=True helper=False nest=False no61
+  0x184CF20 alloc=False lookup=False helper=False nest=False no61
+  0x18C7870 alloc=False lookup=True helper=False nest=True no61 str="Invalid pointer not allocated by our all"
+  0x19783A0 alloc=False lookup=False helper=False nest=False no61,smallArray
+  0x19C02B0 alloc=False lookup=False helper=False nest=False no61
+  0x1B6AFF0 alloc=True lookup=False helper=False nest=False no61 str="Invalid pointer not allocated by our all"
+  0x1C10D50 alloc=False lookup=True helper=False nest=False no61,smallArray
+  0x1E944A0 alloc=True lookup=False helper=False nest=False no61 str="LinearStreamingController"
+  0x26B9710 alloc=False lookup=True helper=False nest=False no61
+  0x26D28E0 alloc=False lookup=True helper=False nest=True no61 str="Invalid pointer not allocated by our all"
+  0x26D3E20 alloc=False lookup=False helper=False nest=False no61
+  0x26E2CB0 alloc=False lookup=True helper=False nest=True no61 str="RideRideableEntity"
+  0x2786740 alloc=True lookup=False helper=False nest=False no61 str="AVVWSH"
+  0x2793DD0 alloc=False lookup=False helper=False nest=False no61
+  0x2A70380 alloc=False lookup=True helper=False nest=True no61
+  0x2E97FC0 alloc=False lookup=True helper=True nest=True touch61,or61,and61,smallArray,wrapper
+  0x2EA0B00 alloc=False lookup=True helper=False nest=True touch61 str="Too many elements for %sArray. Size: %u,"
+  0x2F2C1A0 alloc=False lookup=False helper=False nest=False no61,smallArray str="Invalid pointer not allocated by our all"
+  0x30CDF90 alloc=False lookup=True helper=False nest=True no61 str="Invalid pointer not allocated by our all"
+  0x30E0C10 alloc=False lookup=True helper=False nest=True no61
+  0x30E5090 alloc=False lookup=False helper=False nest=False no61
+  0x30F3280 alloc=False lookup=False helper=False nest=False no61
+  0x30F3FD0 alloc=False lookup=False helper=False nest=False no61
+  0x32515F0 alloc=False lookup=True helper=False nest=True no61 str="Invalid pointer not allocated by our all"
+  0x32F9010 alloc=False lookup=True helper=False nest=True no61 str="Invalid pointer not allocated by our all"
+  0x3485710 alloc=False lookup=True helper=False nest=True no61 str="Invalid pointer not allocated by our all"
+  0x3491820 alloc=False lookup=True helper=False nest=True no61 str="Invalid pointer not allocated by our all"
+  0x3621E60 alloc=False lookup=True helper=False nest=False no61
+  0x3621F40 alloc=False lookup=True helper=False nest=True no61 str="Invalid pointer not allocated by our all"
+  0x3A86CD0 alloc=False lookup=True helper=False nest=True no61
+  0x3A87250 alloc=False lookup=True helper=False nest=False no61
+  0x49C0350 alloc=False lookup=False helper=False nest=False no61,smallArray
+  0x4B5A560 alloc=False lookup=True helper=False nest=True touch61,smallArray
+  0x4D04450 alloc=False lookup=True helper=False nest=True touch61,smallArray
+  0x53F31A0 alloc=False lookup=True helper=False nest=True touch61,or61
+  0x54F14E0 alloc=False lookup=False helper=False nest=False no61
+  0x55390A0 alloc=False lookup=True helper=False nest=False no61
+  0x5625D80 alloc=False lookup=False helper=False nest=False no61
+  0x58EB4D0 alloc=False lookup=True helper=False nest=False no61
+  0x5EFDEC0 alloc=False lookup=True helper=False nest=False no61
+  0x5F11A40 alloc=False lookup=False helper=False nest=False no61 str="AVVWSH"
+  0x6276B20 alloc=False lookup=False helper=False nest=False no61
+  0x62B14A0 alloc=False lookup=True helper=False nest=False no61
+  0x6A30600 alloc=False lookup=False helper=False nest=False no61
+  0x6A30970 alloc=False lookup=True helper=False nest=False no61
+  0x6A30EB0 alloc=False lookup=False helper=False nest=False no61
+  0x6A4E770 alloc=False lookup=True helper=False nest=False no61
+  0x6A53E30 alloc=False lookup=False helper=False nest=False no61
+  0x6AAB9D0 alloc=False lookup=True helper=False nest=False no61
+  0x6B469A0 alloc=False lookup=True helper=False nest=False no61
+  0x6BA8830 alloc=False lookup=True helper=False nest=True no61 str="RWD_CoopActionHelper"
+  0x6BA8920 alloc=False lookup=True helper=False nest=True no61 str="CoopAction"
+  0x6BF8660 alloc=False lookup=False helper=False nest=False no61
+  0x71410C0 alloc=False lookup=True helper=False nest=False no61
+  0x7B03F00 alloc=False lookup=False helper=False nest=False no61
+  0x7D809D0 alloc=False lookup=True helper=False nest=True no61
+  0x7DAD6B0 alloc=False lookup=True helper=False nest=True no61
+  0x7DAD860 alloc=False lookup=True helper=False nest=True no61
+  0x7DB9780 alloc=False lookup=True helper=False nest=False no61
+  0x7DDC860 alloc=False lookup=False helper=False nest=False no61
+  0x7DDFD20 alloc=False lookup=True helper=False nest=True no61
+  0x7FB0B10 alloc=False lookup=True helper=False nest=True no61
+  0x80E2170 alloc=False lookup=True helper=False nest=False no61
+  0x82D77F0 alloc=False lookup=True helper=False nest=False no61
+  0xCD6C2A5 alloc=False lookup=True helper=False nest=False no61
+  0xCD6C2A6 alloc=False lookup=True helper=False nest=False no61
+  0xDC6AA81 alloc=False lookup=True helper=False nest=False no61
+  0xDC6AA82 alloc=False lookup=True helper=False nest=False no61
+
+===== INSERT / GATE LEADS (key-user ∩ +0x61) =====
+  LEAD 0x725400 touch61+mov61+workerA nest=True alloc=False
+  func 0x725400 size~81 prologue=41 56 56 57 53 48 83 EC 38 48 89 CE
+    0x725400 push r14
+    0x725402 push rsi
+    0x725403 push rdi
+    0x725404 push rbx
+    0x725405 sub rsp,38
+    0x725409 mov rsi,rcx
+    0x72540C mov rax,[rip+9B8DDED]
+    0x725413 xor rax,rsp
+    0x725416 mov [rsp+30],rax
+    0x72541B mov al,[rcx+61]
+    0x72541E test al,4
+    0x725420 je short 000000014072542F
+    0x725422 test dl,dl
+    0x725424 je near ptr 00000001407255CE
+    0x72542A and al,0FB
+    0x72542C mov [rsi+61],al
+    61op 0x72541B mov al,[rcx+61]
+    61op 0x72542C mov [rsi+61],al
+    61op 0x7254A3 mov al,[rsi+61]
+    61op 0x7254AA mov [rsi+61],al
+    61op 0x72562F mov al,[rsi+61]
+    key 0x725445 lea rdx,[rip+0AB6447C]
+    key 0x7255E0 lea rdx,[rip+0AB642E1]
+  LEAD 0xF1C240 touch61+mov61 nest=False alloc=False
+  func 0xF1C240 size~81 prologue=41 56 56 57 53 48 83 EC 28 0F B6 81
+    0xF1C240 push r14
+    0xF1C242 push rsi
+    0xF1C243 push rdi
+    0xF1C244 push rbx
+    0xF1C245 sub rsp,28
+    0xF1C249 movzx eax,byte ptr [rcx+165]
+    0xF1C250 cmp rax,0FF
+    0xF1C256 je near ptr 0000000140F1C362
+    0xF1C25C mov ebx,edx
+    0xF1C25E mov rdx,[rcx+138]
+    0xF1C265 mov rdi,[rdx+rax*8]
+    0xF1C269 test rdi,rdi
+    0xF1C26C je near ptr 0000000140F1C362
+    0xF1C272 mov al,[rdi+61]
+    0xF1C275 and al,0FE
+    0xF1C277 or al,bl
+    61op 0xF1C272 mov al,[rdi+61]
+    61op 0xF1C279 mov [rdi+61],al
+    key 0xF1C28A lea rdx,[rip+0A36D637]
+  LEAD 0x2EA0B00 touch61 nest=True alloc=False
+  func 0x2EA0B00 size~83 prologue=41 57 41 56 41 55 41 54 56 57 55 53
+    0x2EA0B00 push r15
+    0x2EA0B02 push r14
+    0x2EA0B04 push r13
+    0x2EA0B06 push r12
+    0x2EA0B08 push rsi
+    0x2EA0B09 push rdi
+    0x2EA0B0A push rbp
+    0x2EA0B0B push rbx
+    0x2EA0B0C sub rsp,0A8
+    0x2EA0B13 mov rdi,r8
+    0x2EA0B16 mov r14,rdx
+    0x2EA0B19 mov rax,[rip+74126E0]
+    0x2EA0B20 xor rax,rsp
+    0x2EA0B23 mov [rsp+0A0],rax
+    0x2EA0B2B lea r15,[rcx+18]
+    0x2EA0B2F mov eax,[rcx+20]
+    61op 0x2EA0D8A mov r14b,[rbx+61]
+    key 0x2EA0CBD lea rdx,[rip+83E8C04]
+    str "Too many elements for %sArray. Size: %u, Max Size: %u"
+    str "Small"
+  LEAD 0x4B5A560 touch61+smallArray nest=True alloc=False
+  func 0x4B5A560 size~84 prologue=41 57 41 56 56 57 53 48 83 EC 30 48
+    0x4B5A560 push r15
+    0x4B5A562 push r14
+    0x4B5A564 push rsi
+    0x4B5A565 push rdi
+    0x4B5A566 push rbx
+    0x4B5A567 sub rsp,30
+    0x4B5A56B mov rsi,rcx
+    0x4B5A56E mov rax,[rip+5758C8B]
+    0x4B5A575 xor rax,rsp
+    0x4B5A578 mov [rsp+28],rax
+    0x4B5A57D mov al,[rcx+61]
+    0x4B5A580 test al,2
+    0x4B5A582 jne near ptr 0000000144B5A65C
+    0x4B5A588 mov rdx,[rsi+98]
+    0x4B5A58F test byte ptr [rdx+84],2
+    0x4B5A596 je short 0000000144B5A60D
+    61op 0x4B5A57D mov al,[rcx+61]
+    61op 0x4B5A60A mov al,[rsi+61]
+    key 0x4B5A677 lea rdx,[rip+672F24A]
+  LEAD 0x4D04450 touch61+smallArray nest=True alloc=False
+  func 0x4D04450 size~82 prologue=41 57 41 56 41 55 41 54 56 57 55 53
+    0x4D04450 push r15
+    0x4D04452 push r14
+    0x4D04454 push r13
+    0x4D04456 push r12
+    0x4D04458 push rsi
+    0x4D04459 push rdi
+    0x4D0445A push rbp
+    0x4D0445B push rbx
+    0x4D0445C sub rsp,78
+    0x4D04460 mov rsi,rcx
+    0x4D04463 mov rax,[rip+55AED96]
+    0x4D0446A xor rax,rsp
+    0x4D0446D mov [rsp+70],rax
+    0x4D04472 test byte ptr [rcx+61],2
+    0x4D04476 jne near ptr 0000000144D04D77
+    0x4D0447C mov rdx,[rsi+98]
+    61op 0x4D04472 test byte ptr [rcx+61],2
+    key 0x4D0482D lea rdx,[rip+6585094]
+  LEAD 0x53F31A0 touch61+or61 nest=True alloc=False
+  func 0x53F31A0 size~83 prologue=56 57 53 48 83 EC 30 C5 F8 29 74 24
+    0x53F31A0 push rsi
+    0x53F31A1 push rdi
+    0x53F31A2 push rbx
+    0x53F31A3 sub rsp,30
+    0x53F31A7 vmovaps [rsp+20],xmm6
+    0x53F31AD mov rsi,rcx
+    0x53F31B0 mov rax,[rcx+18]
+    0x53F31B4 mov rax,[rax+0A8]
+    0x53F31BB mov rcx,[rax+3CD0]
+    0x53F31C2 lea rdx,[rip+5E966FF]
+    0x53F31C9 xor edi,edi
+    0x53F31CB xor r8d,r8d
+    0x53F31CE call 000000014429F9E0
+    0x53F31D3 test rax,rax
+    0x53F31D6 je short 00000001453F31DB
+    0x53F31D8 mov rdi,[rax]
+    61op 0x53F3276 or byte ptr [rsi+61],0A
+    key 0x53F31C2 lea rdx,[rip+5E966FF]
+
+===== LISTSCAN 0x537C2C0 CALLERS =====
+e8Callers=60
+  e8 @0xCD4230 func≈0xCD3F30
+  e8 @0xDC67A4 func≈0xDC65A0
+  e8 @0x1004DEB func≈0x1004960
+  e8 @0x1005143 func≈0x1004E4F
+  e8 @0x1005C03 func≈0x10059B0
+  e8 @0x1005D25 func≈0x10059B0
+  e8 @0x11545B5 func≈0x1154430
+  e8 @0x1561979 func≈0x1561650
+  e8 @0x158168E func≈0x1581230
+  e8 @0x18C6847 func≈0x18C5DD0
+  e8 @0x1904A8E func≈0x1904A10
+  e8 @0x1A9B06F func≈0x1A9ACC0
+  e8 @0x1A9D8F7 func≈0x1A9D580
+  e8 @0x1C03027 func≈0x1C02DE0
+  e8 @0x20D1EB9 func≈0x20D1CD0
+  e8 @0x28368A9 func≈0x28367C0
+  e8 @0x2904289 func≈0x2904100
+  e8 @0x29BA053 func≈0x29B9DB0
+  e8 @0x2B03B54 func≈0x2B03B20
+  e8 @0x2B53C4B func≈0x2B536B0
+  e8 @0x2CAB60A func≈0x2CAB0B0
+  e8 @0x2CFEB2D func≈0x2CFEA10
+  e8 @0x2D2A63E func≈0x2D2A440
+  e8 @0x2D3B9F0 func≈0x2D3B790
+  e8 @0x2D52270 func≈0x2D52100
+  e8 @0x2D58B55 func≈0x2D585C0
+  e8 @0x2DD9EB0 func≈0x2DD9DE0
+  e8 @0x2E7260C func≈0x2E72560
+  e8 @0x2E732CE func≈0x2E73220
+  e8 @0x2E9B403 func≈0x2E97FC0 [wrapper] [keyUser]
+  e8 @0x2F053B6 func≈0x2F052F0
+  e8 @0x2F068DE func≈0x2F066B0
+  e8 @0x30A476D func≈0x30A4650
+  e8 @0x30A6B5D func≈0x30A6A40
+  e8 @0x30A8F3D func≈0x30A8E20
+  e8 @0x32FB98B func≈0x32FB810
+  e8 @0x33807B2 func≈0x3380760
+  e8 @0x33809D3 func≈0x3380760
+  e8 @0x3380A60 func≈0x3380760
+  e8 @0x352261D func≈0x3522500
+  e8 @0x3525ECD func≈0x3525DB0
+  e8 @0x38224AB func≈0x38223C0
+  e8 @0x38C4270 func≈0x38C3E00
+  e8 @0x38EE8B4 func≈0x38EE5E0
+  e8 @0x393B05D func≈0x393AF40
+  e8 @0x393F540 func≈0x393EBB0
+  e8 @0x39FE33D func≈0x39FE220
+  e8 @0x3A56C26 func≈0x3A56B70
+  e8 @0x3BFD161 func≈0x3BFD000
+  e8 @0x3C20F59 func≈0x3C20ED0
+  e8 @0x3C32503 func≈0x3C31B90
+  e8 @0x3C42F40 func≈0x3C42E40
+  e8 @0x3C64711 func≈0x3C64530
+  e8 @0x454DC32 func≈0x454DBA0
+  e8 @0x455102C func≈0x454DBA0
+  e8 @0x4CA16E1 func≈0x4CA10A0
+  e8 @0x53A4DDE func≈0x53A4B60
+  e8 @0x559F31F func≈0x559F2D0
+  e8 @0x5669671 func≈0x56695F0
+  e8 @0x57106E4 func≈0x5710670
+
+===== WORKER 0x725400 + KEY =====
+workerReferencesLookupKey=True
+  func 0x725400 size~101 prologue=41 56 56 57 53 48 83 EC 38 48 89 CE
+    0x725400 push r14
+    0x725402 push rsi
+    0x725403 push rdi
+    0x725404 push rbx
+    0x725405 sub rsp,38
+    0x725409 mov rsi,rcx
+    0x72540C mov rax,[rip+9B8DDED]
+    0x725413 xor rax,rsp
+    0x725416 mov [rsp+30],rax
+    0x72541B mov al,[rcx+61]
+    0x72541E test al,4
+    0x725420 je short 000000014072542F
+    0x725422 test dl,dl
+    0x725424 je near ptr 00000001407255CE
+    0x72542A and al,0FB
+    0x72542C mov [rsi+61],al
+  w61 0x72541B mov al,[rcx+61]
+  w61 0x72542C mov [rsi+61],al
+  wkey 0x725445 lea rdx,[rip+0AB6447C]
+  w61 0x7254A3 mov al,[rsi+61]
+  w61 0x7254AA mov [rsi+61],al
+  wkey 0x7255E0 lea rdx,[rip+0AB642E1]
+  w61 0x72562F mov al,[rsi+61]
+
+===== BIT1 SET SEQUENCES (or r*,2 → store +0x61) =====
+bit1SetSequences=0
+
+===== SUMMARY =====
+lookupKey=0xB2898C8 xrefs=170 keyUsers=78 class=opaque_anvil_typeinfo_key_in_.trace
+immOr4=5 insertLeads=6 bit1SetSeq=0 listScanCallers=56 workerUsesKey=True

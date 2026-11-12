@@ -1,14 +1,14 @@
 {
   "schemaVersion": 1,
-  "generatedUtc": "2026-11-12T17:40:00Z",
+  "generatedUtc": "2026-11-12T17:50:00Z",
   "handoffFor": "ChatGPT",
   "executor": "Cursor",
   "machine": "PC1",
   "repository": {
     "url": "https://github.com/zzyrrup/BlackFlagCoop",
     "defaultBranch": "main",
-    "featureBranch": "cursor/v072-enqueue-feed-forward-8285",
-    "baseBranch": "cursor/v071-alloc-leads-enqueue-8285",
+    "featureBranch": "cursor/v073-enroll-insert-gate-8285",
+    "baseBranch": "cursor/v072-enqueue-feed-forward-8285",
     "doNotPushMain": true,
     "initialCommit": "e12e70150656ac80742f10b496f7e5556e7985b7"
   },
@@ -18,10 +18,10 @@
     "functionalityChangedByThisMilestone": false
   },
   "milestone": {
-    "currentId": "v0.6.12",
-    "currentTitle": "Enqueue feed forward from wrapper enrollment sites",
+    "currentId": "v0.6.13",
+    "currentTitle": "Enrollment insert / gate writers / lookup key decode",
     "status": "complete",
-    "priorPreserved": ["v0.6.4", "v0.6.5", "v0.6.6", "v0.6.7", "v0.6.8", "v0.6.9", "v0.6.10", "v0.6.11"]
+    "priorPreserved": ["v0.6.4", "v0.6.5", "v0.6.6", "v0.6.7", "v0.6.8", "v0.6.9", "v0.6.10", "v0.6.11", "v0.6.12"]
   },
   "asi": {
     "version": "0.5.1",
@@ -37,7 +37,7 @@
   },
   "build": {
     "asiRebuilt": false,
-    "offlineTools": ["tools/offline/EnqueueFeed072"]
+    "offlineTools": ["tools/offline/EnrollInsert073"]
   },
   "network": {
     "changesAuthorized": false,
@@ -45,60 +45,61 @@
   },
   "engineFindings": {
     "summary": [
-      "Enrollment sites feed 0x2E97B60 from preexisting packed-pointer SmallArrays via hash-bucket walk",
-      "Gate ([obj+0x61]&6)==2 then nested +0x18→+0xA8→+0x3CD0 + lookup +0x20",
-      "Wrapper does not call allocator 0x426EE50; near-site 0x537C2C0 is list scan only",
-      "Static lookup key 0xB2898C8 shared by two enrollment sites",
+      "0xB2898C8 is .trace Anvil TypeInfo/key shared by UpdateActorLOD wrapper and worker 0x725400",
+      "Gate-setter 0x53F31A0: nested+key then or [obj+0x61], 0x0A (bit1+bit3)",
+      "Bit-writer API 0xF1C240: load/and 0xFE/or bl/store on +0x61",
+      "Membership candidates 0x4B5A560 / 0x4D04450 test bit1 and touch +0x98/SmallArray",
       "No Edward/create path"
     ],
     "keyRvas": {
+      "lookupKey": "0xB2898C8",
+      "gateSetter": "0x53F31A0",
+      "bitWriter": "0xF1C240",
+      "membershipA": "0x4B5A560",
+      "membershipB": "0x4D04450",
+      "nearWrapperList": "0x2EA0B00",
+      "workerA": "0x725400",
       "enqueueWrapper": "0x2E97FC0",
-      "enqueueHelper": "0x2E97B60",
-      "enrollmentSites": ["0x2E98AA3", "0x2E9B3D1", "0x2E9B481"],
-      "lookup": "0x429F9E0",
-      "allocator": "0x426EE50",
-      "nearSiteListHelper": "0x537C2C0",
-      "staticLookupKey": "0xB2898C8"
+      "enqueueHelper": "0x2E97B60"
     }
   },
   "confirmed": [
     "ASI v0.5.1 preserved; no deploy",
-    "Object source at enrollment = packed pointer array, not in-wrapper alloc",
-    "wrapperCallsAllocator=false; nearSiteReachAllocator=0",
+    "Lookup key shared by wrapper and worker",
+    "or4 post-enqueue in wrapper; gate-setter 0x53F31A0 named",
     "No live memory this milestone"
   ],
   "hypotheses": [
-    "Subject ctors populate enrollment SmallArrays before UpdateActorLOD",
-    "0x725400 may be symmetric teardown of related membership"
+    "0x53F31A0 / 0xF1C240 establish enrollment eligibility",
+    "0x4B5A560 / 0x4D04450 may insert into related lists when bit1 clear"
   ],
   "blockers": [
-    "Subject concrete type unknown",
-    "SmallArray inserters / +0x61 gate writers unidentified",
+    "Subject concrete type name unknown",
+    "Exact enrollment SmallArray store sites still open",
     "No input/possession path",
     "Spawn tests not authorized"
   ],
   "mostRecentCompletedMilestone": {
-    "id": "v0.6.12",
-    "docs": ["docs/v0.6.12-enqueue-feed-forward.md"],
+    "id": "v0.6.13",
+    "docs": ["docs/v0.6.13-enroll-insert-gate.md"],
     "reports": [
-      "reports/v0.6.12-enrollment-sites.json",
-      "reports/v0.6.12-enrollment-feed-path.json",
-      "reports/v0.6.12-allocator-feeds.json",
-      "reports/v0.6.12-summary.json",
-      "reports/v0.6.12-second-edward-feasibility.json",
-      "reports/v072-raw/evidence.txt"
+      "reports/v0.6.13-lookup-key.json",
+      "reports/v0.6.13-gate-writers.json",
+      "reports/v0.6.13-summary.json",
+      "reports/v0.6.13-second-edward-feasibility.json",
+      "reports/v073-raw/evidence.txt"
     ]
   },
   "nextRecommendedMilestone": {
-    "id": "v0.6.13",
-    "title": "Find inserters into LOD enrollment SmallArrays / +0x61 gate writers; decode 0xB2898C8",
-    "primary": ["enrollment SmallArray inserters", "0xB2898C8 TypeInfo/key", "+0x61 gate writers"],
+    "id": "v0.6.14",
+    "title": "Deep-decode gate/insert leads and TypeInfo fields at 0xB2898C8",
+    "primary": ["0x53F31A0", "0xF1C240", "0x4B5A560", "0x4D04450", "0x2EA0B00", "0xB2898C8 fields"],
     "forbidden": ["spawn", "deploy", "live memory", "PC2", "save-data", "force-push main", "+0x61-only ranking"]
   },
   "tests": [
-    { "name": "EnqueueFeed072_build_scan", "result": "pass" },
-    { "name": "wrapper_calls_allocator", "result": "absent" },
-    { "name": "near_site_reach_allocator", "result": "absent" },
+    { "name": "EnrollInsert073_build_scan", "result": "pass" },
+    { "name": "worker_references_lookup_key", "result": "pass" },
+    { "name": "wrapper_or4_post_enqueue", "result": "pass" },
     { "name": "game_launch_deploy", "result": "not_run" },
     { "name": "spawn_live_memory", "result": "not_run" }
   ],
@@ -114,9 +115,9 @@
   },
   "chatgptNextReviewInstructions": [
     "Read docs/CHATGPT_HANDOFF.md and this JSON first",
-    "Review v0.6.12 PR; preserve v0.6.4-v0.6.11 history",
+    "Review v0.6.13 PR; preserve v0.6.4-v0.6.12 history",
     "Separate confirmed vs hypotheses",
-    "Propose v0.6.13 inserters into enrollment arrays / decode 0xB2898C8",
+    "Propose v0.6.14 deep-decode of gate/insert leads",
     "Do not authorize deploy/spawn/live memory/PC2 unless user overrides",
     "Return PC1 branch+PR instructions"
   ]

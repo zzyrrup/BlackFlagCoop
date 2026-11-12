@@ -1,0 +1,24 @@
+{
+  "schemaVersion": 1,
+  "milestone": "v0.6.13",
+  "generatedUtc": "2026-11-12T17:46:51Z",
+  "exeSha256": "19920F34BB2FAC814023EE3C27F0CECA1872E80A2AAFB37C092C419FFF77CC0D",
+  "immKindCounts": {
+    "movImm": 78,
+    "orOther": 44,
+    "andOther": 32,
+    "or4": 5,
+    "andFB": 2
+  },
+  "or4InWrapper": ["0x2E98AA8", "0x2E9B3D6", "0x2E9B486", "0x2E9B487"],
+  "bit1SetSequences": [],
+  "insertLeads": [
+    { "func": "0x725400", "notes": ["touch61", "mov61", "workerA"], "callsAllocator": false, "callsLookup": true, "nestedChain": true, "strings": [] },
+    { "func": "0xF1C240", "notes": ["touch61", "mov61"], "callsAllocator": false, "callsLookup": true, "nestedChain": false, "strings": [] },
+    { "func": "0x2EA0B00", "notes": ["touch61"], "callsAllocator": false, "callsLookup": true, "nestedChain": true, "strings": ["Too many elements for %sArray. Size: %u, Max Size: %u", "Small"] },
+    { "func": "0x4B5A560", "notes": ["touch61", "smallArray"], "callsAllocator": false, "callsLookup": true, "nestedChain": true, "strings": [] },
+    { "func": "0x4D04450", "notes": ["touch61", "smallArray"], "callsAllocator": false, "callsLookup": true, "nestedChain": true, "strings": [] },
+    { "func": "0x53F31A0", "notes": ["touch61", "or61"], "callsAllocator": false, "callsLookup": true, "nestedChain": true, "strings": [] }
+  ],
+  "keyUsersTouch61": ["0x725400", "0xF1C240", "0x2E97FC0", "0x2EA0B00", "0x4B5A560", "0x4D04450", "0x53F31A0"]
+}

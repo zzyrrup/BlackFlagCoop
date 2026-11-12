@@ -1,0 +1,18 @@
+{
+  "schemaVersion": 1,
+  "milestone": "v0.6.13",
+  "generatedUtc": "2026-11-12T17:46:51Z",
+  "exeSha256": "19920F34BB2FAC814023EE3C27F0CECA1872E80A2AAFB37C092C419FFF77CC0D",
+  "lookupKey": {
+    "rva": "0xB2898C8",
+    "section": ".trace",
+    "hex64": "A2 C3 FF FF FF FF 06 C4 C2 3B EB F0 5D 3C 00 00 00 00 09 F0 5D 3C 00 00 00 00 E8 10 AF 5A 01 00 00 00 35 21 43 57 01 00 00 00 C5 DF CB FF 8E 87 B1 3C 00 00 00 00 BC B7 90 60 00 00 00 00 39 7C",
+    "classification": "opaque_anvil_typeinfo_key_in_.trace",
+    "qwords": ["d[0]=0xFFFFC3A2", "d[1]=0xC406FFFF", "d[2]=0xF0EB3BC2", "d[3]=0x3C5D asRva sec=.impdata hex=FF FF F0 FF 05 D2 54 F3", "d[4]=0xF0090000", "d[5]=0x3C5D asRva sec=.impdata hex=FF FF F0 FF 05 D2 54 F3", "d[6]=0x10E80000 asRva sec=.code hex=01 0F A2 C3 48 81 EA 56", "d[7]=0x15AAF asRva sec=.impdata hex=0D 84 36 F2 0A 40 0F B6", "d[8]=0x21350000", "d[9]=0x15743 asRva sec=.impdata hex=24 28 01 00 00 00 01 00", "d[10]=0xDFC50000", "d[11]=0x878EFFCB", "d[12]=0x3CB1 asRva sec=.impdata hex=E8 FF FF 48 FF C1 49 89", "d[13]=0xB7BC0000", "d[14]=0x6090 asRva sec=.impdata hex=48 8B 05 19 49 74 0B 48", "d[15]=0x7C390000"],
+    "nearbyStrings": [],
+    "notes": ["section=.trace", "first8=A2 C3 FF FF FF FF 06 C4", "usedAsLookupRdxKeyInEnrollmentSites", "shared_by_UpdateActorLOD_wrapper_and_worker_0x725400"]
+  },
+  "leaOrMovXrefs": ["0x251EAF", "0x251EB0", "0x388F38", "0x388F39", "0x60D8A2", "0x60D8A3", "0x725445", "0x725446", "0x7255E0", "0x7255E1", "0xA074CB", "0xA074CC", "0xA61E36", "0xA61E37", "0xE3E223", "0xE3E224", "0xF1C28A", "0xF1C28B", "0x143FA0E", "0x143FA0F", "0x17C5A75", "0x17C5A76", "0x183E1F5", "0x183E1F6", "0x184D18E", "0x184D18F", "0x184D2A0", "0x184D2A1", "0x18C7933", "0x18C7934", "0x1978582", "0x1978583", "0x1978971", "0x1978972", "0x19C0316", "0x19C0317", "0x1B6B553", "0x1B6B554", "0x1C10D89", "0x1C10D8A", "0x1E94BF1", "0x1E94BF2", "0x26B978D", "0x26B978E", "0x26D2AA5", "0x26D2AA6", "0x26D41BE", "0x26D41BF", "0x26E376B", "0x26E376C", "0x2788033", "0x2788034", "0x2793EC2", "0x2793EC3", "0x2A70481", "0x2A70482", "0x2E987EE", "0x2E987EF", "0x2E98923", "0x2E98924"],
+  "absQwordRefs": ["0x9491000"],
+  "referencingFuncs": ["0x251E50", "0x388ED0", "0x60D6C0", "0x725400", "0xA07490", "0xA61DD0", "0xE3D8D0", "0xF1C240", "0x143F800", "0x17C5A50", "0x183E1D0", "0x184CF20", "0x18C7870", "0x19783A0", "0x19C02B0", "0x1B6AFF0", "0x1C10D50", "0x1E944A0", "0x26B9710", "0x26D28E0", "0x26D3E20", "0x26E2CB0", "0x2786740", "0x2793DD0", "0x2A70380", "0x2E97FC0", "0x2EA0B00", "0x2F2C1A0", "0x30CDF90", "0x30E0C10", "0x30E5090", "0x30F3280", "0x30F3FD0", "0x32515F0", "0x32F9010", "0x3485710", "0x3491820", "0x3621E60", "0x3621F40", "0x3A86CD0"]
+}

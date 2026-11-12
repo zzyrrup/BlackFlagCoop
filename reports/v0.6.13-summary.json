@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "milestone": "v0.6.13",
+  "generatedUtc": "2026-11-12T17:46:51Z",
+  "exeSha256": "19920F34BB2FAC814023EE3C27F0CECA1872E80A2AAFB37C092C419FFF77CC0D",
+  "lookupKeyRva": "0xB2898C8",
+  "lookupKeyClass": "opaque_anvil_typeinfo_key_in_.trace",
+  "lookupKeySection": ".trace",
+  "lookupKeyXrefs": 170,
+  "keyUserCount": 78,
+  "keyUsersTouch61": 7,
+  "or4SiteCount": 5,
+  "or4InWrapper": 4,
+  "insertLeadCount": 6,
+  "bit1SetSequenceCount": 0,
+  "listScanCallerCount": 56,
+  "workerReferencesLookupKey": true,
+  "edwardOrPlayerTypeConfirmed": false
+}
