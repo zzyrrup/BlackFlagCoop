@@ -25,7 +25,7 @@ Ultimate vision is **not claimed as achieved**. Dual-Edward co-op remains unprov
 
 ## 2. Current development milestone
 
-**v0.8.0 in progress** — Agent 2 C2: falsified Dup-hot `0x42B85F0` as Duplicate (TLS frame helper; no Build-near; return unused). Next: Dup whose return feeds Build `r8`, or virtual `[rax+N]` Duplicate. `callEngine=off`. See `docs/v0.8.0-tls-spine.md`.
+**v0.8.0 in progress** — Agent 2 C2: VirtDup return→Build auto-hits **falsified** on review (broken r8 last-def). vt `+0x90` still interesting. C2 **unproven**. `callEngine=off`. See `docs/v0.8.0-virtdup.md`.
 
 Prior: v0.6.25 owner VT[0] ctors (`0x13612B0` / `0x5781490`) and v0.6.5–v0.6.24 preserved. Details: `docs/v0.8.0-second-edward-plan.md`.
 

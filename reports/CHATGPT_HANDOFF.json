@@ -1,6 +1,6 @@
 ﻿{
     "schemaVersion":  1,
-    "generatedUtc":  "2026-11-12T21:28:27Z",
+    "generatedUtc":  "2026-11-12T21:30:42Z",
     "handoffFor":  "ChatGPT",
     "executor":  "Cursor",
     "machine":  "PC1",
@@ -20,8 +20,8 @@
                 },
     "milestone":  {
                       "currentId":  "v0.8.0",
-                      "currentTitle":  "C2: falsified Dup-hot 0x42B85F0; seek return-to-Build Dup",
-                      "status":  "c2_duphot_falsified",
+                      "currentTitle":  "C2: VirtDup return-to-Build hits falsified; vt+0x90 open",
+                      "status":  "c2_virtdup_unproven",
                       "priorPreserved":  [
                                              "v0.6.4",
                                              "v0.6.5",
@@ -85,10 +85,10 @@
                 },
     "engineFindings":  {
                            "summary":  [
-                                           "Falsified 0x42B85F0 as Duplicate — TLS frame helper (TEB+1C78), 1515 callers, buildNear=0",
-                                           "Sampled (0,0) sites ignore return (e.g. 0x6BA85 continues with prior r15)",
-                                           "Same spine as falsified Begin cand 0x4420000 / pop 0x4420DB0",
-                                           "Next: Dup callees whose rax feeds Build r8; or virtual [rax+N] Duplicate(0,0)",
+                                           "VirtDup080: virtDup00=3359 virtRetToBuild=1(falsified) directRetToBuild=3(all falsified)",
+                                           "vt+0x90 appears 191x among virt (0,0) calls — still open",
+                                           "Need unbroken mov REG,rax ... mov r8,REG before Build",
+                                           "Prior: falsified 0x42B85F0 Dup-hot and 0x4420000 Begin cand",
                                            "callEngine=off; ASI v0.5.1 preserved"
                                        ],
                            "keyRvas":  {
