@@ -1,14 +1,14 @@
 {
   "schemaVersion": 1,
-  "generatedUtc": "2026-11-12T16:46:11Z",
+  "generatedUtc": "2026-11-12T19:45:00Z",
   "handoffFor": "ChatGPT",
   "executor": "Cursor",
   "machine": "PC1",
   "repository": {
     "url": "https://github.com/zzyrrup/BlackFlagCoop",
     "defaultBranch": "main",
-    "featureBranch": "cursor/v070-session-panel-ba61",
-    "baseBranch": "cursor/v065-queue-worker-decode-8285",
+    "featureBranch": "cursor/v070-pc1-smoke-5709",
+    "baseBranch": "cursor/v070-session-panel-ba61",
     "doNotPushMain": true,
     "initialCommit": "e12e70150656ac80742f10b496f7e5556e7985b7"
   },
@@ -16,12 +16,12 @@
     "name": "BlackFlagCoop",
     "goal": "Research path toward co-op for AC Black Flag Resynced (two Edwards / shared world / LAN-internet); not claimed achieved",
     "functionalityChangedByThisMilestone": true,
-    "functionalityNote": "Candidate plugin logs an idle session roster and can draw it when BFC_SESSION_PANEL=1. Installed v0.5.1 was not replaced. No socket, spawn, or protocol change."
+    "functionalityNote": "Candidate plugin logs an idle session roster and can draw it when BFC_SESSION_PANEL=1. One PC1 launch is an inconclusive overlay observation: 0.7.0-dev loaded, overlay started, world not confirmed, no Continue click, process exited. No co-op success or failure is inferred. v0.5.1 is restored. No repeat test is authorized. No socket, spawn, or protocol change."
   },
   "milestone": {
     "currentId": "v0.7.0",
     "currentTitle": "Gated co-op session roster panel",
-    "status": "automated_complete_gameplay_not_run",
+    "status": "inconclusive_launch_overlay_observation",
     "priorPreserved": ["v0.6.4", "v0.6.5", "v0.6.6"]
   },
   "asi": {
@@ -37,7 +37,8 @@
       "path": "build/bin/Release/BlackFlagCoop.asi",
       "bytes": 112640,
       "sha256": "EF7EB82D3F6CAAB00BFBED350BACCCFD0A2D88E56F8D023BFD62821C3C7262A0",
-      "deployed": false
+      "deployed": false,
+      "smokeInstalledThenRestored": true
     }
   },
   "game": {
@@ -45,7 +46,8 @@
     "version": "1.0.6",
     "executable": "ACBlackFlag.exe",
     "exeSha256": "19920F34BB2FAC814023EE3C27F0CECA1872E80A2AAFB37C092C419FFF77CC0D",
-    "launchedThisMilestone": false
+    "launchedThisMilestone": true,
+    "playableWorldConfirmed": false
   },
   "build": {
     "asiRebuilt": true,
@@ -94,7 +96,7 @@
     "0x160 side block is activation/controller-related"
   ],
   "blockers": [
-    "In-game panel appearance is unverified",
+    "One PC1 smoke: ASI 0.7.0-dev loaded, world not confirmed, v0.5.1 restored",
     "Subject type/RTTI unknown",
     "0x2E97FC0 registration unknown",
     "No input/possession path",
@@ -104,46 +106,50 @@
     "id": "v0.7.0",
     "docs": [
       "docs/v0.7.0-implementation-plan.md",
-      "docs/v0.7.0-manual-pc1-checklist.md"
+      "docs/v0.7.0-manual-pc1-checklist.md",
+      "docs/v0.7.0-pc1-smoke.md"
     ],
     "reports": [
       "reports/v0.7.0-validation.json",
+      "reports/v0.7.0-pc1-smoke.json",
       "reports/v0.7.0-build-log.txt",
       "reports/v0.7.0-session-panel-test.txt"
     ]
   },
   "nextRecommendedMilestone": {
-    "id": "v0.7.0-manual-then-localhost-session",
-    "title": "User checks the idle panel, then a later change feeds it from a localhost Session",
+    "id": "v0.8.0",
+    "title": "Second Edward proof-of-life in its own checkout. This smoke branch stays a record only.",
     "primary": [
-      "docs/v0.7.0-manual-pc1-checklist.md",
-      "SessionPanelInput from an existing Session on localhost"
+      "Do not relaunch",
+      "Do not infer co-op success or failure from the inconclusive overlay observation",
+      "Continue second-Edward work without editing this smoke worktree"
     ],
-    "forbidden": ["spawn", "deploy", "live memory", "PC2", "save-data", "force-push main", "game launch before the user asks"]
+    "forbidden": ["spawn", "deploy", "live memory", "PC2", "LAN", "second gameplay launch", "force-push main", "more v0.7.0 panel work on this branch"]
   },
   "tests": [
     { "name": "SessionPanel_ctest_Release", "result": "pass" },
     { "name": "BlackFlagCoopSessionPanelTest", "result": "pass" },
     { "name": "installed_asi_hash_recheck", "result": "pass" },
-    { "name": "game_launch_deploy", "result": "not_run" },
+    { "name": "pc1_one_launch_smoke", "result": "inconclusive_launch_overlay_observation" },
     { "name": "spawn_live_memory", "result": "not_run" }
   ],
   "safety": {
     "pc1Only": true,
     "pc2Untouched": true,
-    "gameInstallsUnmodified": true,
-    "asiPreserved": true,
-    "noSaveDataInterference": true,
+    "gameExecutableUnmodified": true,
+    "asiRestoredToV051": true,
+    "campaignSaveBytesUnchanged": true,
     "noForcePushMain": true,
     "noLiveMemory": true,
     "priorMilestonesPreserved": true
   },
   "chatgptNextReviewInstructions": [
-    "Read docs/CHATGPT_HANDOFF.md, this JSON, and reports/v0.7.0-validation.json first",
+    "Read docs/v0.7.0-pc1-smoke.md and reports/v0.7.0-pc1-smoke.json first",
     "The session panel is a placeholder roster, not a second Edward",
-    "Automated build and SessionPanel tests passed; in-game appearance is unverified",
-    "Next user action is the manual checklist; next code step is a localhost session feeding the same model",
-    "Do not authorize deploy/spawn/live memory/PC2 unless the user overrides",
+    "Verdict is an inconclusive launch/overlay observation: plugin loaded, overlay started, world not confirmed, no Continue click, process exited",
+    "Do not infer co-op success or failure. No repeat test is authorized. v0.5.1 is restored",
+    "Do not authorize another gameplay launch, PC2, or LAN unless the user asks",
+    "Do not block the separate v0.8.0 second-Edward checkout",
     "Return PC1 branch+PR instructions and never push main"
   ]
 }
