@@ -1,0 +1,21 @@
+{
+  "schemaVersion": 1,
+  "milestone": "v0.6.31",
+  "generatedUtc": "2026-11-12T21:12:37Z",
+  "exeSha256": "19920F34BB2FAC814023EE3C27F0CECA1872E80A2AAFB37C092C419FFF77CC0D",
+  "vt20": {
+    "dispatch": "vtable_only",
+    "neigh": { "slot": "0x976B2F0", "body": "0x3D52400", "via": "TiHelper" },
+    "spat": { "slot": "0x9236E20", "body": "0x6CF34E0", "via": "TiHelper", "inline98": true }
+  },
+  "neighborBridge": {
+    "rva": "0x2335140",
+    "vtSlot": "0x976B3E0",
+    "steps": [
+      "or [this+0x23],1",
+      "if edx in {2,3}: vcall [vt+0x2B0] edx=3",
+      "nested=[this+0x18]; ptr=[nested+0x98] (pointer-family)",
+      "copy transforms nested->this; mov byte [this+0x98],1 (byte-family)"
+    ]
+  }
+}

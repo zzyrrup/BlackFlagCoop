@@ -1,0 +1,29 @@
+{
+  "schemaVersion": 1,
+  "milestone": "v0.6.31",
+  "generatedUtc": "2026-11-12T21:12:37Z",
+  "exeSha256": "19920F34BB2FAC814023EE3C27F0CECA1872E80A2AAFB37C092C419FFF77CC0D",
+  "vt20Callers": {
+    "neighVt20": "0x3D52400",
+    "spatVt20": "0x6CF34E0",
+    "e8Neigh": 0,
+    "e8Spat": 0,
+    "vcallOnly": true,
+    "genericCallRax20": 4659,
+    "genericCallRax20Funcs": 3166,
+    "traced": true
+  },
+  "plus98Consumers": {
+    "byteFamily": ["NeighRel zero-init", "Neighbor this+0x98 flag"],
+    "pointerFamily": ["SideBlock", "Arming", "ArmWrap", "Helper546", "nested via Neighbor [this+0x18]"],
+    "inlineSpatial": ["SpatVt0", "SpatA", "SpatB", "SpatVt20"],
+    "neighborBridge": {
+      "rva": "0x2335140",
+      "byteOnThis": true,
+      "pointerOnNested18": true
+    },
+    "opcodeCensus": { "cmpByte98": 62, "movByte98": 33, "cmpQword98eq0": 3 },
+    "mapped": true
+  },
+  "edwardOrPlayerTypeConfirmed": false
+}

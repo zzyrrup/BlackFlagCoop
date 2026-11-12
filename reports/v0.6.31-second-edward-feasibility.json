@@ -1,0 +1,14 @@
+{
+  "schemaVersion": 1,
+  "milestone": "v0.6.31",
+  "generatedUtc": "2026-11-12T21:12:37Z",
+  "exeSha256": "19920F34BB2FAC814023EE3C27F0CECA1872E80A2AAFB37C092C419FFF77CC0D",
+  "createSecondEdward": { "class": "unsupported", "reason": "VT[+0x20]/+0x98 paths are NS construct/layout, not Edward create" },
+  "vt20Callers": { "class": "confirmed", "reason": "Neigh/Spat VT[+0x20] have 0 E8/LEA/FF15 xrefs; sole qword embeds are VT table slots; dispatch is vcall-only (4659+ generic call[rax+20] sites untyped offline)" },
+  "plus98Consumers": { "class": "confirmed", "reason": "Byte family: NeighRel zero + Neighbor this+0x98 flag. Pointer family: SideBlock/Arming/Helper546 + nested[this+0x18]+0x98 in Neighbor. Spatial inline add distinct. Neighbor bridges both layouts." },
+  "liveMemoryProbe": { "class": "blocked", "reason": "Not authorized" },
+  "next": {
+    "primary": "Trace who vcalls Neigh/Spat objects (typed sites via VT compare or enrollment nest [+0x18]); map Neighbor bridge owners upstream of edx=3/[vt+0x2B0]",
+    "avoid": ["live memory", "ASI deploy", "spawn", "PC2", "expect E8 to VT[+0x20]", "conflate byte +0x98 with SideBlock pointer"]
+  }
+}
