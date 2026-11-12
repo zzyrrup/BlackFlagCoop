@@ -41,6 +41,8 @@ backups/
 
 # --- Logs, dumps, caches ---
 *.log
+__pycache__/
+*.pyc
 *.dmp
 *.mdmp
 *.etl
