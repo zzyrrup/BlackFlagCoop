@@ -3,7 +3,7 @@
 **Last updated:** 2026-11-12  
 **Machine:** PC1 only  
 **Repo:** https://github.com/zzyrrup/BlackFlagCoop  
-**Branch:** `cursor/v070-session-panel-ba61` (PR into `cursor/v065-queue-worker-decode-8285`; do not push main)  
+**Branch:** `cursor/v070-pc1-smoke-5709` (PR into `cursor/v070-session-panel-ba61`; do not push main)  
 **Initial commit:** `e12e70150656ac80742f10b496f7e5556e7985b7`
 
 This document is the primary human-readable bridge between Cursor (local execution) and ChatGPT (review / next instructions). Update it after every completed milestone.
@@ -25,9 +25,9 @@ Ultimate vision is **not claimed as achieved**. Dual-Edward co-op remains unprov
 
 ## 2. Current development milestone
 
-**v0.7.0 automated slice complete** — gated co-op session roster panel (`0.7.0-dev`).
+**v0.7.0 one-time PC1 smoke recorded** — gated co-op session roster panel (`0.7.0-dev`).
 
-The panel logs an idle two-slot roster from `InitializeASI` and draws a click-through sidebar only when `BFC_SESSION_PANEL=1`. It does not open a socket, spawn an actor, or claim an in-world Edward. v0.6.5 and v0.6.6 research is preserved. The installed ASI was not replaced. Gameplay was not run.
+The panel logs an idle two-slot roster from `InitializeASI` and draws a click-through sidebar only when `BFC_SESSION_PANEL=1`. It does not open a socket, spawn an actor, or claim an in-world Edward. The candidate `EF7EB82D…` was installed for one launch and then removed. The installed file is v0.5.1 again. The ASI loaded. The playable world was not confirmed on screen. Details: `docs/v0.7.0-pc1-smoke.md`.
 
 ---
 
@@ -39,7 +39,7 @@ The panel logs an idle two-slot roster from `InitializeASI` and draws a click-th
 | Installed ASI SHA256 | `63B38877DDA7CC7CD9AB2619F94D3941C37F54C95A435EFE47084DC4CF2A50BE` (re-read 2026-11-12, 99840 bytes) |
 | Candidate ASI | `0.7.0-dev` at `build/bin/Release/BlackFlagCoop.asi` |
 | Candidate SHA256 | `EF7EB82D3F6CAAB00BFBED350BACCCFD0A2D88E56F8D023BFD62821C3C7262A0` (112640 bytes) |
-| Deploy status | **Do not replace** v0.5.1 without explicit user approval |
+| Deploy status | v0.5.1 restored after the one authorized smoke. Do not replace it again without a new approval |
 
 ---
 
@@ -168,7 +168,7 @@ v0.6.4 and v0.6.5 reports were left in place.
 
 ## 11. Next recommended milestone
 
-**User manual check (not started):** Cruz runs `docs/v0.7.0-manual-pc1-checklist.md` when ready. Do not launch the game or deploy ahead of that.
+**One PC1 smoke (done, not passed):** `docs/v0.7.0-pc1-smoke.md`. The candidate loaded and was removed. The world was not confirmed. Do not launch again unless Cruz asks.
 
 **Next code step after a passing look:** feed `SessionPanelInput` from a localhost `Session` so the roster can show Connected / Disconnected. Still no actor spawn.
 
@@ -190,6 +190,8 @@ Offline v0.6.7 (dispatch of `0x2E97FC0` and subject RTTI) stays a separate resea
 - `reports/v0.7.0-validation.json`
 - `reports/v0.7.0-build-log.txt`
 - `reports/v0.7.0-session-panel-test.txt`
+- `docs/v0.7.0-pc1-smoke.md`
+- `reports/v0.7.0-pc1-smoke.json`
 - `docs/CHATGPT_HANDOFF.md`
 - `reports/CHATGPT_HANDOFF.json`
 
@@ -202,8 +204,8 @@ Offline v0.6.7 (dispatch of `0x2E97FC0` and subject RTTI) stays a separate resea
 | `ctest -C Release` SessionPanel | Pass (1/1) |
 | `BlackFlagCoopSessionPanelTest` | Pass (`ALL PASSED`) |
 | VS 18 2026 x64 Release build | Pass, 0 warnings |
-| Installed ASI hash re-read | Still v0.5.1 `63B38877…` |
-| Game launch / ASI deploy | **Not performed** |
+| Installed ASI hash re-read | Restored v0.5.1 `63B38877…` (99840 bytes) |
+| One PC1 launch of candidate `EF7EB82D…` | ASI loaded (`0.7.0-dev`). World not confirmed. Not repeated |
 | Spawn / inject / live memory | **Not performed** |
 | Network protocol changes | **None** |
 
@@ -212,9 +214,8 @@ Offline v0.6.7 (dispatch of `0x2E97FC0` and subject RTTI) stays a separate resea
 ## 14. Safety / deployment status
 
 - PC1 only; PC2 untouched.
-- Game installs unmodified by this handoff work.
-- ASI v0.5.1 preserved; no deployment.
-- Backups preserved locally; excluded from Git.
+- `ACBlackFlag.exe` hash unchanged. The candidate ASI was installed for one launch and restored to v0.5.1.
+- Campaign `AutoSave01` bytes unchanged. The pre-test backup is in `backups/v070-smoke-20261112-123002\`.
 - No force-push; no credential commits.
 
 ---
@@ -223,10 +224,10 @@ Offline v0.6.7 (dispatch of `0x2E97FC0` and subject RTTI) stays a separate resea
 
 When reviewing the GitHub repository after a Cursor push:
 
-1. Read this file, `reports/CHATGPT_HANDOFF.json`, and `reports/v0.7.0-validation.json` first.
+1. Read this file, `reports/CHATGPT_HANDOFF.json`, `reports/v0.7.0-validation.json`, and `docs/v0.7.0-pc1-smoke.md` first.
 2. Treat the session panel as a UI placeholder. Do not describe it as a second Edward.
-3. Automated build and `SessionPanel` tests passed. In-game appearance is **unverified**.
-4. Next user action is the manual checklist. Next code step, after that look, is a localhost session feeding the same panel model.
+3. The candidate ASI loaded on one PC1 launch. The playable world was not confirmed. Do not treat that launch as co-op.
+4. Do not instruct another gameplay launch, PC2 test, or LAN test unless Cruz explicitly asks.
 5. v0.6.7 RTTI/dispatch research remains optional and separate. Do not treat the deferred queue as character creation.
-6. Do not instruct Cursor to deploy the candidate, spawn, use live memory, or touch PC2/save data unless the user explicitly overrides safety.
+6. Do not instruct Cursor to leave the candidate installed, spawn, or use live memory.
 7. Return instructions Cursor can execute verbatim on PC1 on a dedicated branch + PR (never push main).

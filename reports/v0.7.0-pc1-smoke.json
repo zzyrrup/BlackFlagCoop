@@ -1,0 +1,99 @@
+{
+  "schemaVersion": 1,
+  "generatedUtc": "2026-11-12T19:40:00Z",
+  "milestone": "v0.7.0",
+  "machine": "PC1",
+  "branchUnderTest": "cursor/v070-session-panel-ba61",
+  "commitUnderTest": "611f186476e9e51a2a3d63cb81ede00d44b1f184",
+  "pr": "https://github.com/zzyrrup/BlackFlagCoop/pull/6",
+  "ci": {
+    "combinedState": "pending",
+    "statusCount": 0,
+    "checkRunCount": 0,
+    "blockedLaunch": false
+  },
+  "candidate": {
+    "version": "0.7.0-dev",
+    "path": "build/bin/Release/BlackFlagCoop.asi",
+    "bytes": 112640,
+    "sha256": "EF7EB82D3F6CAAB00BFBED350BACCCFD0A2D88E56F8D023BFD62821C3C7262A0",
+    "matchedValidationReport": true,
+    "rebuiltDuringThisTest": false,
+    "generator": "Visual Studio 18 2026",
+    "architecture": "x64",
+    "config": "Release"
+  },
+  "installedAsi": {
+    "path": "C:\\Games\\AC Black Flag Resynced\\BlackFlagCoop.asi",
+    "before": {
+      "version": "0.5.1",
+      "bytes": 99840,
+      "sha256": "63B38877DDA7CC7CD9AB2619F94D3941C37F54C95A435EFE47084DC4CF2A50BE"
+    },
+    "duringTest": {
+      "version": "0.7.0-dev",
+      "bytes": 112640,
+      "sha256": "EF7EB82D3F6CAAB00BFBED350BACCCFD0A2D88E56F8D023BFD62821C3C7262A0"
+    },
+    "restored": {
+      "version": "0.5.1",
+      "bytes": 99840,
+      "sha256": "63B38877DDA7CC7CD9AB2619F94D3941C37F54C95A435EFE47084DC4CF2A50BE"
+    }
+  },
+  "executable": {
+    "path": "C:\\Games\\AC Black Flag Resynced\\ACBlackFlag.exe",
+    "sha256": "19920F34BB2FAC814023EE3C27F0CECA1872E80A2AAFB37C092C419FFF77CC0D",
+    "unchanged": true
+  },
+  "saves": {
+    "location": "C:\\Users\\Frees\\AppData\\Roaming\\Goldberg UplayEmu Saves\\66088",
+    "backupDir": "backups/v070-smoke-20261112-123002",
+    "backupVerifiedBeforeDeploy": true,
+    "autoSave01": {
+      "bytes": 99757,
+      "sha256": "07AC4A233A7AB8708D3920320A596DC214A277740456D3B511EBA492C145D294",
+      "unchanged": true,
+      "playthrough": "0x6A7A9732",
+      "saveCount": 1
+    },
+    "options": {
+      "bytes": 9899,
+      "sha256": "9354F2D4CFA987B6972C6913CB5A3326A8F42D535B58A1F00F34E1313D0D8C7C",
+      "unchanged": true,
+      "lastSave": "2026.11.12-00.29.25"
+    },
+    "iniContentUnchanged": true,
+    "journalAndManifestRewrittenByGame": true,
+    "dx12PipelineCacheRewritten": true,
+    "pipelineCacheIsNotCampaignSave": true
+  },
+  "launch": {
+    "localTime": "2026-11-12T12:30:39-07:00",
+    "pid": 10832,
+    "env": "BFC_SESSION_PANEL=1",
+    "continueClickedByAgent": false,
+    "saveContentLoadedAt": "2026-11-12T12:31:05-07:00",
+    "asiLoaded": true,
+    "asiLogVersion": "0.7.0-dev",
+    "overlayLogLine": "Session panel overlay started (BFC_SESSION_PANEL opt-in)",
+    "inWorldEdwardClaimInLog": false,
+    "gameWindowSeen": true,
+    "gameWindow": {
+      "class": "ScimitarEngineWindowClass",
+      "title": "Assassin's Creed Black Flag Resynced",
+      "rect": "0,0-1280,720"
+    },
+    "overlayWindowSeen": true,
+    "framebufferCaptured": false,
+    "playableWorldConfirmed": false,
+    "processExitedBeforeWorldConfirmation": true,
+    "newCrashDump": false,
+    "applicationErrorEvent": false,
+    "retried": false,
+    "pc2": false,
+    "lan": false
+  },
+  "coopClaim": false,
+  "narrative": "docs/v0.7.0-pc1-smoke.md"
+}
