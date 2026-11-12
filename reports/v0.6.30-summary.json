@@ -1,0 +1,40 @@
+{
+  "schemaVersion": 1,
+  "milestone": "v0.6.30",
+  "generatedUtc": "2026-11-12T21:03:08Z",
+  "exeSha256": "19920F34BB2FAC814023EE3C27F0CECA1872E80A2AAFB37C092C419FFF77CC0D",
+  "tiHelper": {
+    "rva": "0x43DCB00",
+    "role": "typeinfo_construct_helper",
+    "callsLookup": false,
+    "callsAllocator": false,
+    "loadsSizePlus20": true,
+    "icallCtorPlus50": true,
+    "freelistPath": true,
+    "vtableAllocPath": true,
+    "poolGlobalSlot": "0xAF6FD48",
+    "decoded": true
+  },
+  "lookupIntoTightFactories": {
+    "lookupFuncsLeaNsTi": 0,
+    "tightFactoriesLeaNsTi": 0,
+    "tightFactoriesCallTiHelper": 0,
+    "leaNsTiToLookup": 0,
+    "leaNsTiToTight": 0,
+    "leaNsTiToTiHelper": 3,
+    "feedConfirmed": false,
+    "channelsDistinct": true
+  },
+  "sizeB0Enrollment": {
+    "neighSize": "0xB0",
+    "allocatorImmB0": 0,
+    "neighRelZeroByteAt98": true,
+    "neighRelCallsSideBlock": false,
+    "spatVt20Inline98": true,
+    "tiHelperCallersTouch98": 82,
+    "tiHelperCallersSideBlock": 0,
+    "relatedAsSideBlockEnroll": false,
+    "relatedAsObjectFieldAt98": true
+  },
+  "edwardOrPlayerTypeConfirmed": false
+}

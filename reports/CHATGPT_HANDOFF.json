@@ -1,14 +1,14 @@
 {
   "schemaVersion": 1,
-  "generatedUtc": "2026-11-12T20:56:00Z",
+  "generatedUtc": "2026-11-12T21:05:00Z",
   "handoffFor": "ChatGPT",
   "executor": "Cursor",
   "machine": "PC1",
   "repository": {
     "url": "https://github.com/zzyrrup/BlackFlagCoop",
     "defaultBranch": "main",
-    "featureBranch": "cursor/v089-neigh-ti-feed-8285",
-    "baseBranch": "cursor/v088-ns-construct-8285",
+    "featureBranch": "cursor/v090-tihelper-lookup-8285",
+    "baseBranch": "cursor/v089-neigh-ti-feed-8285",
     "doNotPushMain": true,
     "initialCommit": "e12e70150656ac80742f10b496f7e5556e7985b7"
   },
@@ -18,10 +18,10 @@
     "functionalityChangedByThisMilestone": false
   },
   "milestone": {
-    "currentId": "v0.6.29",
-    "currentTitle": "Neighbor TypeInfo registrar + SpatA/SpatB feeds",
+    "currentId": "v0.6.30",
+    "currentTitle": "TiHelper deep-decode + Lookup / 0xB0 map",
     "status": "complete",
-    "priorPreserved": ["v0.6.4", "v0.6.5", "v0.6.6", "v0.6.7", "v0.6.8", "v0.6.9", "v0.6.10", "v0.6.11", "v0.6.12", "v0.6.13", "v0.6.14", "v0.6.15", "v0.6.16", "v0.6.17", "v0.6.18", "v0.6.19", "v0.6.20", "v0.6.21", "v0.6.22", "v0.6.23", "v0.6.24", "v0.6.25", "v0.6.26", "v0.6.27", "v0.6.28"]
+    "priorPreserved": ["v0.6.4", "v0.6.5", "v0.6.6", "v0.6.7", "v0.6.8", "v0.6.9", "v0.6.10", "v0.6.11", "v0.6.12", "v0.6.13", "v0.6.14", "v0.6.15", "v0.6.16", "v0.6.17", "v0.6.18", "v0.6.19", "v0.6.20", "v0.6.21", "v0.6.22", "v0.6.23", "v0.6.24", "v0.6.25", "v0.6.26", "v0.6.27", "v0.6.28", "v0.6.29"]
   },
   "asi": {
     "version": "0.5.1",
@@ -37,7 +37,7 @@
   },
   "build": {
     "asiRebuilt": false,
-    "offlineTools": ["tools/offline/NeighTiFeed089"]
+    "offlineTools": ["tools/offline/TiHelper090"]
   },
   "network": {
     "changesAuthorized": false,
@@ -45,69 +45,66 @@
   },
   "engineFindings": {
     "summary": [
-      "Neighbor TypeInfo is PE-static at 0xAAD2290 (VT[+0x30]): +0x50=NeighRel, +0x20=0xB0, +0x18 keyHash 0x2996CA50CB0F23F4; no runtime SpatRegistrar-style fill",
-      "SpatTi 0xACE83F8 / SpatBTi 0xACE8478 hold SpatA/SpatB at +0x50 (SpatRegistrar runtime fill)",
-      "Spat VT[+0x20]=0x6CF34E0 and Neigh VT[+0x20]=0x3D52400 construct via TiHelper 0x43DCB00",
-      "Tight factories remain generic (no static RIP to SpatTi)",
+      "TiHelper 0x43DCB00 is TypeInfo construct helper: [ti+0x20] size, pool 0xAF6FD48 freelist or vtbl-alloc, icall [ti+0x50]; not Lookup/Allocator",
+      "Neigh keyHash / SpatTi do not feed tight factories via Lookup (0 overlaps); channels distinct from NS VT[+0x20]->TiHelper",
+      "Neigh size 0xB0 via TypeInfo; NeighRel zeros +0x98 byte (object field), not SideBlock pointer enroll",
+      "Spat VT[+0x20] uses inline add reg,98 after TiHelper",
       "No Edward/create path"
     ],
     "keyRvas": {
+      "tiHelper": "0x43DCB00",
+      "tiHelperPoolGlobal": "0xAF6FD48",
+      "lookup": "0x429F9E0",
+      "allocator": "0x426EE50",
       "neighMeta": "0xAAD2290",
       "neighRel": "0x3D522C0",
-      "neighKeyHash": "0x2996CA50CB0F23F4",
-      "neighSize": "0xB0",
       "neighVt20": "0x3D52400",
       "spatTi": "0xACE83F8",
-      "spatAField": "0xACE8448",
-      "spatBTi": "0xACE8478",
-      "spatBField": "0xACE84C8",
       "spatVt20": "0x6CF34E0",
-      "tiHelper": "0x43DCB00",
-      "spatRegistrar": "0x5E5AF20"
+      "sideBlock": "0xE95E80"
     }
   },
   "confirmed": [
     "ASI v0.5.1 preserved; no deploy",
-    "Neighbor TypeInfo PE-static SpatRegistrar equivalent",
-    "SpatA/SpatB TypeInfo +0x50 fields + VT[+0x20] construct feeds",
-    "Parallel Neigh/Spat VT[+0x20] -> TiHelper",
+    "TiHelper = TypeInfo construct helper (not Lookup)",
+    "Neigh/SpatTi Lookup into tight factories absent offline",
+    "Neigh 0xB0 +0x98 byte field init distinct from SideBlock enroll",
     "No live memory this milestone"
   ],
   "hypotheses": [
-    "TiHelper 0x43DCB00 bridges Lookup of Neigh keyHash / SpatTi into tight factories",
-    "Size 0xB0 Neighbor objects relate to enrollment/+0x98 pointer family"
+    "Higher-level VT[+0x20] callers are create/clone entry points",
+    "Pointer-family +0x98 enrollment objects may still be live Neighbor VT instances"
   ],
   "blockers": [
-    "TiHelper deep-decode incomplete",
-    "Neigh keyHash / SpatTi Lookup into tight factories open",
+    "VT[+0x20] caller graph / live 0xB0 vs pointer-family identity open",
     "No input/possession path",
     "Spawn tests not authorized"
   ],
   "mostRecentCompletedMilestone": {
-    "id": "v0.6.29",
+    "id": "v0.6.30",
     "docs": [
-      "docs/v0.6.29-neigh-ti-feed.md",
-      "docs/v0.6.29-funcs-deep.md",
-      "docs/v0.6.29-second-edward-feasibility.md"
+      "docs/v0.6.30-tihelper-lookup.md",
+      "docs/v0.6.30-funcs-deep.md",
+      "docs/v0.6.30-second-edward-feasibility.md"
     ],
     "reports": [
-      "reports/v0.6.29-funcs-deep.json",
-      "reports/v0.6.29-summary.json",
-      "reports/v0.6.29-second-edward-feasibility.json",
-      "reports/v089-raw/evidence.txt"
+      "reports/v0.6.30-funcs-deep.json",
+      "reports/v0.6.30-summary.json",
+      "reports/v0.6.30-second-edward-feasibility.json",
+      "reports/v090-raw/evidence.txt"
     ]
   },
   "nextRecommendedMilestone": {
-    "id": "v0.6.30",
-    "title": "TiHelper deep-decode; Neigh keyHash / SpatTi Lookup feeds; size 0xB0 enrollment link",
-    "primary": ["Deep-decode TiHelper 0x43DCB00", "Map Lookup of Neigh keyHash / SpatTi into tight factories", "Relate size 0xB0 to enrollment/+0x98"],
-    "forbidden": ["spawn", "deploy", "live memory", "PC2", "save-data", "force-push main", "expect runtime Neigh SpatRegistrar", "treat Outer/InstallerA as NS factory", "expect E8 to VT[0]"]
+    "id": "v0.6.31",
+    "title": "Trace Neigh/Spat VT[+0x20] callers; map 0xB0 +0x98 byte vs pointer-family enrollment",
+    "primary": ["Callers of Neigh/Spat VT[+0x20]", "Consumers of Neigh 0xB0 +0x98 byte vs SideBlock pointer family"],
+    "forbidden": ["spawn", "deploy", "live memory", "PC2", "save-data", "force-push main", "treat TiHelper as Lookup", "expect Neigh/SpatTi into tight factories", "conflate NeighRel +0x98 byte with SideBlock"]
   },
   "tests": [
-    { "name": "NeighTiFeed089_build_scan", "result": "pass" },
-    { "name": "neigh_pe_static_typeinfo", "result": "pass" },
-    { "name": "spat_ab_typeinfo_feeds", "result": "pass" },
-    { "name": "parallel_vt20_tihelper", "result": "pass" },
+    { "name": "TiHelper090_build_scan", "result": "pass" },
+    { "name": "tihelper_construct_decode", "result": "pass" },
+    { "name": "lookup_ns_ti_into_tight_absent", "result": "pass" },
+    { "name": "size_b0_plus98_classification", "result": "pass" },
     { "name": "game_launch_deploy", "result": "not_run" },
     { "name": "spawn_live_memory", "result": "not_run" }
   ],
@@ -123,9 +120,9 @@
   },
   "chatgptNextReviewInstructions": [
     "Read docs/CHATGPT_HANDOFF.md and this JSON first",
-    "Review v0.6.29 PR; preserve v0.6.4-v0.6.28 history",
+    "Review v0.6.30 PR; preserve v0.6.4-v0.6.29 history",
     "Separate confirmed vs hypotheses",
-    "Propose v0.6.30 TiHelper deep-decode + keyHash/SpatTi Lookup feeds",
+    "Propose v0.6.31 VT[+0x20] caller trace + 0xB0/+0x98 consumer map",
     "Do not authorize deploy/spawn/live memory/PC2 unless user overrides",
     "Return PC1 branch+PR instructions"
   ]
