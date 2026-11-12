@@ -1,0 +1,309 @@
+===== v0.8.0 vt+0x90 Dup → unbroken r8 → Build =====
+exeSha256=19920F34BB2FAC814023EE3C27F0CECA1872E80A2AAFB37C092C419FFF77CC0D
+vt90Dup00=191
+unbrokenRetToBuild=0
+
+===== SAMPLE vt+0x90 (0,0) SITES =====
+site=0x14EF55 func=0x14EEA0
+--- sample @0x14EF55 ---
+0x14EF35 or [rax-3F],cl
+0x14EF38 sti
+site=0x169ED5 func=0x169E50
+--- sample @0x169ED5 ---
+site=0x30F1D6 func=0x30F0D0
+--- sample @0x30F1D6 ---
+0x30F1B6 mov ebp,[rax+10]
+0x30F1B9 mov rax,[rbx+70]
+0x30F1BD xor r15d,r15d
+0x30F1C0 test byte ptr [rax+0B],80
+0x30F1C4 je short 000000014030F1F0
+0x30F1C6 mov rcx,[rax]
+0x30F1C9 test rcx,rcx
+0x30F1CC je short 000000014030F1F0
+0x30F1CE mov rax,[rcx]
+0x30F1D1 xor edx,edx
+0x30F1D3 xor r8d,r8d
+0x30F1D6 call qword ptr [rax+90]
+0x30F1DC mov r15,[rax+88]
+0x30F1E3 test r15,r15
+0x30F1E6 je near ptr 000000014030F2F2
+0x30F1EC and r15,0FFFFFFFFFFFFFFFE
+0x30F1F0 mov rax,[rbx+68]
+0x30F1F4 xor edx,edx
+0x30F1F6 test byte ptr [rax+0B],80
+0x30F1FA je short 000000014030F226
+0x30F1FC mov rcx,[rax]
+0x30F1FF test rcx,rcx
+0x30F202 je short 000000014030F226
+0x30F204 mov rax,[rcx]
+0x30F207 xor edx,edx
+0x30F209 xor r8d,r8d
+0x30F20C call qword ptr [rax+90]
+0x30F212 mov rdx,[rax+88]
+0x30F219 test rdx,rdx
+0x30F21C je near ptr 000000014030F36B
+0x30F222 and rdx,0FFFFFFFFFFFFFFFE
+0x30F226 mov [rsp+60],r12
+0x30F22B mov [rsp+68],r13
+0x30F230 mov [rsp+70],rbp
+0x30F235 test r15,r15
+site=0x30F20C func=0x30F0D0
+--- sample @0x30F20C ---
+0x30F1EC and r15,0FFFFFFFFFFFFFFFE
+0x30F1F0 mov rax,[rbx+68]
+0x30F1F4 xor edx,edx
+0x30F1F6 test byte ptr [rax+0B],80
+0x30F1FA je short 000000014030F226
+0x30F1FC mov rcx,[rax]
+0x30F1FF test rcx,rcx
+0x30F202 je short 000000014030F226
+0x30F204 mov rax,[rcx]
+0x30F207 xor edx,edx
+0x30F209 xor r8d,r8d
+0x30F20C call qword ptr [rax+90]
+0x30F212 mov rdx,[rax+88]
+0x30F219 test rdx,rdx
+0x30F21C je near ptr 000000014030F36B
+0x30F222 and rdx,0FFFFFFFFFFFFFFFE
+0x30F226 mov [rsp+60],r12
+0x30F22B mov [rsp+68],r13
+0x30F230 mov [rsp+70],rbp
+0x30F235 test r15,r15
+0x30F238 jne short 000000014030F241
+0x30F23A mov r15,[rip+0B43B6E7]
+0x30F241 mov [rsp+78],r15
+0x30F246 test rdx,rdx
+0x30F249 jne short 000000014030F252
+0x30F24B mov rdx,[rip+0B43B686]
+0x30F252 lea rax,[rsp+60]
+0x30F257 mov [rax+20],rdx
+0x30F25B mov rcx,[rip+0B92A1F6]
+0x30F262 mov [rsp+28],rax
+0x30F267 mov byte ptr [rsp+30],10
+site=0x35F469 func=0x35E8C0
+--- sample @0x35F469 ---
+0x35F449 add [rax],al
+0x35F44B test byte ptr [rax+0B],80
+0x35F44F je near ptr 000000014035F4E8
+0x35F455 mov rcx,[rax]
+0x35F458 test rcx,rcx
+0x35F45B je near ptr 000000014035F4E8
+0x35F461 mov rax,[rcx]
+0x35F464 xor edx,edx
+0x35F466 xor r8d,r8d
+0x35F469 call qword ptr [rax+90]
+0x35F46F mov rcx,[rax+88]
+0x35F476 test rcx,rcx
+0x35F479 je near ptr 000000014035FB9C
+0x35F47F and rcx,0FFFFFFFFFFFFFFFE
+0x35F483 je short 000000014035F4E8
+0x35F485 mov rax,[rcx+60]
+0x35F489 mov rdx,[rsi+20]
+0x35F48D mov [rdx+10],rax
+0x35F491 lea rax,[rcx+40]
+0x35F495 mov rdx,[rsi+40]
+0x35F499 mov [rdx+20],rax
+0x35F49D mov qword ptr [rdx+28],0
+0x35F4A5 mov rdx,[rsi+40]
+0x35F4A9 lea rax,[rdx+20]
+0x35F4AD test byte ptr [rcx+80],46
+0x35F4B4 jne near ptr 000000014035F64A
+0x35F4BA mov rdx,[rsi+8]
+0x35F4BE sub rax,[rdx+98]
+0x35F4C5 mov ecx,eax
+0x35F4C7 shr ecx,4
+site=0x369A9B func=0x369990
+--- sample @0x369A9B ---
+0x369A7B mov [rax],al
+0x369A7D add [rax],al
+0x369A7F test rcx,rcx
+0x369A82 je near ptr 000000014036A1BA
+0x369A88 and rcx,0FFFFFFFFFFFFFFFE
+0x369A8C mov [rbx],rcx
+0x369A8F mov rax,[r12]
+0x369A93 mov rcx,r12
+0x369A96 xor edx,edx
+0x369A98 xor r8d,r8d
+0x369A9B call qword ptr [rax+90]
+0x369AA1 mov rcx,[rax+88]
+0x369AA8 test rcx,rcx
+0x369AAB je near ptr 000000014036A13C
+0x369AB1 and rcx,0FFFFFFFFFFFFFFFE
+0x369AB5 mov [rsi+2F0],rcx
+0x369ABC test r15,r15
+0x369ABF je near ptr 000000014036A264
+0x369AC5 mov rax,[r15]
+0x369AC8 mov rcx,r15
+0x369ACB xor edx,edx
+0x369ACD xor r8d,r8d
+0x369AD0 vzeroupper
+0x369AD3 call qword ptr [rax+90]
+0x369AD9 mov rcx,[rax+88]
+0x369AE0 test rcx,rcx
+0x369AE3 je near ptr 0000000140369FE6
+0x369AE9 and rcx,0FFFFFFFFFFFFFFFE
+0x369AED mov [rsi+300],rcx
+0x369AF4 test r14,r14
+0x369AF7 je near ptr 000000014036A270
+site=0x369AD3 func=0x369990
+--- sample @0x369AD3 ---
+0x369AB3 loope 0000000140369AB3
+0x369AB5 mov [rsi+2F0],rcx
+0x369ABC test r15,r15
+0x369ABF je near ptr 000000014036A264
+0x369AC5 mov rax,[r15]
+0x369AC8 mov rcx,r15
+0x369ACB xor edx,edx
+0x369ACD xor r8d,r8d
+0x369AD0 vzeroupper
+0x369AD3 call qword ptr [rax+90]
+0x369AD9 mov rcx,[rax+88]
+0x369AE0 test rcx,rcx
+0x369AE3 je near ptr 0000000140369FE6
+0x369AE9 and rcx,0FFFFFFFFFFFFFFFE
+0x369AED mov [rsi+300],rcx
+0x369AF4 test r14,r14
+0x369AF7 je near ptr 000000014036A270
+0x369AFD mov rax,[r14]
+0x369B00 mov rcx,r14
+0x369B03 xor edx,edx
+0x369B05 xor r8d,r8d
+0x369B08 vzeroupper
+0x369B0B call qword ptr [rax+90]
+0x369B11 mov rcx,[rax+88]
+0x369B18 test rcx,rcx
+0x369B1B je near ptr 000000014036A058
+0x369B21 and rcx,0FFFFFFFFFFFFFFFE
+0x369B25 mov [rsi+2F8],rcx
+0x369B2C mov rax,[rbp+40]
+0x369B30 test byte ptr [rax+0B],80
+site=0x369B0B func=0x369990
+--- sample @0x369B0B ---
+0x369AEB loope 0000000140369AEB
+0x369AED mov [rsi+300],rcx
+0x369AF4 test r14,r14
+0x369AF7 je near ptr 000000014036A270
+0x369AFD mov rax,[r14]
+0x369B00 mov rcx,r14
+0x369B03 xor edx,edx
+0x369B05 xor r8d,r8d
+0x369B08 vzeroupper
+0x369B0B call qword ptr [rax+90]
+0x369B11 mov rcx,[rax+88]
+0x369B18 test rcx,rcx
+0x369B1B je near ptr 000000014036A058
+0x369B21 and rcx,0FFFFFFFFFFFFFFFE
+0x369B25 mov [rsi+2F8],rcx
+0x369B2C mov rax,[rbp+40]
+0x369B30 test byte ptr [rax+0B],80
+0x369B34 je near ptr 000000014036A249
+0x369B3A mov rcx,[rax]
+0x369B3D test rcx,rcx
+0x369B40 je near ptr 000000014036A249
+0x369B46 mov rax,[rcx]
+0x369B49 xor edx,edx
+0x369B4B xor r8d,r8d
+0x369B4E vzeroupper
+0x369B51 call qword ptr [rax+90]
+0x369B57 mov rcx,[rax+88]
+0x369B5E test rcx,rcx
+0x369B61 je near ptr 000000014036A0CA
+0x369B67 and rcx,0FFFFFFFFFFFFFFFE
+site=0x369B51 func=0x369990
+--- sample @0x369B51 ---
+0x369B31 or eax,[rax+70F840F]
+0x369B38 add [rax],al
+0x369B3A mov rcx,[rax]
+0x369B3D test rcx,rcx
+0x369B40 je near ptr 000000014036A249
+0x369B46 mov rax,[rcx]
+0x369B49 xor edx,edx
+0x369B4B xor r8d,r8d
+0x369B4E vzeroupper
+0x369B51 call qword ptr [rax+90]
+0x369B57 mov rcx,[rax+88]
+0x369B5E test rcx,rcx
+0x369B61 je near ptr 000000014036A0CA
+0x369B67 and rcx,0FFFFFFFFFFFFFFFE
+0x369B6B mov [rsi+308],rcx
+0x369B72 mov rax,[rbp+30]
+0x369B76 movsxd r14,dword ptr [rax+8]
+0x369B7A sar r14,1F
+0x369B7E and r14,[rax]
+0x369B81 je short 0000000140369B98
+0x369B83 mov rax,[rbp+38]
+0x369B87 movsxd rcx,dword ptr [rax+8]
+0x369B8B sar rcx,1F
+0x369B8F and rcx,[rax]
+0x369B92 jne near ptr 000000014036A27C
+0x369B98 lea rax,[rdi+40]
+0x369B9C lea rcx,[rdi+10]
+0x369BA0 cmp byte ptr [rsi+2DA],0
+0x369BA7 cmove rax,rcx
+0x369BAB cmp byte ptr [rsi+2DB],0
+site=0x36A287 func=0x369990
+--- sample @0x36A287 ---
+0x36A267 mov ebp,0E90B3E06
+0x36A26C jge short 000000014036A266
+site=0x36A2A7 func=0x369990
+--- sample @0x36A2A7 ---
+0x36A287 call qword ptr [rax+90]
+0x36A28D mov rcx,rax
+0x36A290 call 00000001445FF280  ;call=0x45FF280
+0x36A295 mov [rsi+258],rax
+0x36A29C mov rax,[r14]
+0x36A29F mov rcx,r14
+0x36A2A2 xor edx,edx
+0x36A2A4 xor r8d,r8d
+0x36A2A7 call qword ptr [rax+90]
+0x36A2AD mov rcx,rax
+0x36A2B0 call 00000001445FF280  ;call=0x45FF280
+0x36A2B5 mov [rsi+250],rax
+0x36A2BC jmp near ptr 0000000140369B98
+0x36A2C1 int 3
+site=0x379120 func=0x378F70
+--- sample @0x379120 ---
+0x379100 sar ecx,1F
+0x379103 and rcx,[rax]
+0x379106 jne short 000000014037910F
+0x379108 mov rcx,[rip+0B36D6A9]
+0x37910F test rcx,rcx
+0x379112 je near ptr 00000001403791D9
+0x379118 mov rax,[rcx]
+0x37911B xor edx,edx
+0x37911D xor r8d,r8d
+0x379120 call qword ptr [rax+90]
+0x379126 mov rcx,[rax+88]
+0x37912D test rcx,rcx
+0x379130 je short 0000000140379167
+0x379132 and rcx,0FFFFFFFFFFFFFFFE
+0x379136 mov [rsi+60],rcx
+0x37913A mov rax,[rdi+8]
+0x37913E mov [rsi+68],rax
+0x379142 mov rcx,[rsp+28]
+0x379147 xor rcx,rsp
+0x37914A call 0000000145014570  ;call=0x5014570
+0x37914F vmovaps xmm6,[rsp+30]
+0x379155 vmovaps xmm7,[rsp+40]
+0x37915B add rsp,50
+0x37915F pop rbx
+0x379160 pop rdi
+0x379161 pop rsi
+0x379162 pop r14
+0x379164 pop r15
+0x379166 ret
+0x379167 mov rbx,rax
+0x37916A add rbx,88
+0x379171 lea r14,[rip+0B3AF068]
+0x379178 mov rcx,r14
+0x37917B mov rdx,rax
+0x37917E mov r15,rax
+
+===== UNBROKEN RET→BUILD HITS =====
+withBegin10=0 withBeginEnd=0
+
+===== VERDICT =====
+c2Proven=false
+callEngine=off
+decision=vt+0x90 (0,0) sites exist but no unbroken rax→r8→Build chain
+next=Allow ret in rcx passed differently; or Build uses [rsp] out without r8=dup.

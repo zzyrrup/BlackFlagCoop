@@ -25,7 +25,7 @@ Ultimate vision is **not claimed as achieved**. Dual-Edward co-op remains unprov
 
 ## 2. Current development milestone
 
-**v0.8.0 in progress** — Agent 2 C2: VirtDup return→Build auto-hits **falsified** on review (broken r8 last-def). vt `+0x90` still interesting. C2 **unproven**. `callEngine=off`. See `docs/v0.8.0-virtdup.md`.
+**v0.8.0 in progress** — Agent 2 C2: `call [reg+0x90](0,0)` ×191 returns object\* (`[ret+0x88]`); **0** unbroken →Build. Identity **unproven**. `callEngine=off`. See `docs/v0.8.0-vt90-dup.md`.
 
 Prior: v0.6.25 owner VT[0] ctors (`0x13612B0` / `0x5781490`) and v0.6.5–v0.6.24 preserved. Details: `docs/v0.8.0-second-edward-plan.md`.
 

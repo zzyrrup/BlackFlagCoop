@@ -1,6 +1,6 @@
 ﻿{
     "schemaVersion":  1,
-    "generatedUtc":  "2026-11-12T21:30:42Z",
+    "generatedUtc":  "2026-11-12T21:32:45Z",
     "handoffFor":  "ChatGPT",
     "executor":  "Cursor",
     "machine":  "PC1",
@@ -20,8 +20,8 @@
                 },
     "milestone":  {
                       "currentId":  "v0.8.0",
-                      "currentTitle":  "C2: VirtDup return-to-Build hits falsified; vt+0x90 open",
-                      "status":  "c2_virtdup_unproven",
+                      "currentTitle":  "C2: vt+0x90 (0,0) returns object*; no Build link yet",
+                      "status":  "c2_vt90_object_unproven",
                       "priorPreserved":  [
                                              "v0.6.4",
                                              "v0.6.5",
@@ -85,10 +85,10 @@
                 },
     "engineFindings":  {
                            "summary":  [
-                                           "VirtDup080: virtDup00=3359 virtRetToBuild=1(falsified) directRetToBuild=3(all falsified)",
-                                           "vt+0x90 appears 191x among virt (0,0) calls — still open",
-                                           "Need unbroken mov REG,rax ... mov r8,REG before Build",
-                                           "Prior: falsified 0x42B85F0 Dup-hot and 0x4420000 Begin cand",
+                                           "Vt90Dup080: 191x call [reg+0x90] with (0,0); unbrokenRetToBuild=0",
+                                           "Confirmed consumer: mov REG,[rax+88]; and REG,~1 after virtual call",
+                                           "Not proven as RowSelector::Duplicate or Build feeder",
+                                           "Next: trace [ret+0x88] into Build r8; widen Begin/End around vt90 sites",
                                            "callEngine=off; ASI v0.5.1 preserved"
                                        ],
                            "keyRvas":  {
