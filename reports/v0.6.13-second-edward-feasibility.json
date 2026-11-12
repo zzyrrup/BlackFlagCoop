@@ -1,0 +1,15 @@
+{
+  "schemaVersion": 1,
+  "milestone": "v0.6.13",
+  "generatedUtc": "2026-11-12T17:46:51Z",
+  "exeSha256": "19920F34BB2FAC814023EE3C27F0CECA1872E80A2AAFB37C092C419FFF77CC0D",
+  "createSecondEdward": { "class": "unsupported", "reason": "Insert/gate leads share TypeInfo key but do not prove Edward factory" },
+  "lookupKeyIdentifiesSubjectType": { "class": "plausible", "reason": "opaque_anvil_typeinfo_key_in_.trace; used by wrapper+workerA" },
+  "insertLeads": { "class": "plausible", "reason": "count=6" },
+  "bit1SetSequences": { "class": "unsupported", "reason": "count=0" },
+  "liveMemoryProbe": { "class": "blocked", "reason": "Not authorized" },
+  "next": {
+    "primary": "Deep-decode insert leads 0x53F31A0 / 0xF1C240 / 0x2EA0B00 / 0x4D04450 and TypeInfo fields at 0xB2898C8",
+    "avoid": ["live memory", "ASI deploy", "spawn", "PC2", "+0x61-only ranking without list evidence"]
+  }
+}
