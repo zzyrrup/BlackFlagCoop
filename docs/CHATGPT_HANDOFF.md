@@ -25,7 +25,7 @@ Ultimate vision is **not claimed as achieved**. Dual-Edward co-op remains unprov
 
 ## 2. Current development milestone
 
-**v0.8.0 in review** — SpawnNPCParams family closed. Agent 1 delivered AC4Coop source translation map (`docs/v0.8.0-ac4coop-source-map.md`) from upstream `68355c71` (no LICENSE → reference-only). Gate `BFC_SECOND_EDWARD` stays default-off and refused.
+**v0.8.0 in review** — SpawnNPCParams family closed. Agent 1 delivered AC4Coop source map + clean-room contracts (`docs/v0.8.0-ac4coop-source-map.md`, `docs/v0.8.0-ac4coop-contracts.md`) from upstream `68355c71` (no LICENSE → reference-only). Gate `BFC_SECOND_EDWARD` stays default-off and refused.
 
 Prior: v0.6.25 complete on `cursor/v085-vt-owner-ctors-8285`. v0.6.5–v0.6.24 preserved. No deploy, no gameplay test, no networking change.
 
@@ -242,7 +242,7 @@ v0.6.25 and earlier reports were left in place. Installed ASI was not replaced.
 
 ## 11. Next recommended milestone
 
-**v0.8.1 (proposed):** Using `docs/v0.8.0-ac4coop-source-map.md` as design reference only, hunt Resynced-native equivalents of cached EntityBuilder + RowSelector + duplication scope + world enroll (or another proven factory). Do not transplant AC4Coop x86 addresses/layouts. Still no speculative call, deploy, live memory, or PC2 unless separately authorized.
+**v0.8.1 (proposed):** Agent 2 executes P1 of `docs/v0.8.0-ac4coop-contracts.md` (C1→C5 primitives) using the clean-room checklist; Agent 1 stays docs/contracts. Do not transplant AC4Coop x86 addresses/layouts. Still no speculative call, deploy, live memory, or PC2 unless separately authorized.
 
 ---
 

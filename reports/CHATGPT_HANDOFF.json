@@ -119,11 +119,17 @@
     "license": null,
     "reusePosture": "reference-only-independent-implementation"
   },
+  "ac4coopContracts": {
+    "doc": "docs/v0.8.0-ac4coop-contracts.md",
+    "report": "reports/v0.8.0-ac4coop-contracts.json",
+    "contracts": ["C0","C1","C2","C3","C4","C5","C6","C7","C8","C9","C10"],
+    "handoffTo": "Agent2-PR29"
+  },
   "nextRecommendedMilestone": {
     "id": "v0.8.1",
-    "title": "Hunt Resynced-native EntityBuilder/RowSelector/duplication/world-enroll roles using AC4Coop map as reference only",
-    "primary": ["cached builder+selector roles", "duplication scope", "world enroll without pad hijack", "not SpawnNPCParams"],
-    "forbidden": ["speculative spawn call", "deploy", "live memory", "PC2", "transplant AC4Coop x86 addresses/layouts", "copy AC4Coop sources", "re-open SpawnNPCParams type-attach virtuals as the create path"]
+    "title": "Agent 2: prove Resynced C1–C5 primitives per clean-room contracts (callEngine=off)",
+    "primary": ["C1 builder/selector cache roles", "C2 duplication scope", "C3 build", "C4 world enroll", "C5 pad isolation"],
+    "forbidden": ["speculative spawn call", "deploy", "live memory", "PC2", "transplant AC4Coop x86 addresses/layouts", "copy AC4Coop sources", "re-open SpawnNPCParams type-attach virtuals as the create path", "treat schema visitors as factories"]
   },
   "tests": [
     {"name": "SecondEdward", "result": "pass"},
