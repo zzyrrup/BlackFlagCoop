@@ -1,0 +1,180 @@
+{
+  "schemaVersion": 1,
+  "workstream": "3/7",
+  "title": "Action and animation replication map",
+  "date": "2026-11-12",
+  "branch": "cursor/action-animation-replication-44fb",
+  "worktree": "/workspace",
+  "baseBranch": "main",
+  "target": {
+    "game": "Assassin's Creed Black Flag Resynced",
+    "version": "1.0.6",
+    "exeSha256": "19920F34BB2FAC814023EE3C27F0CECA1872E80A2AAFB37C092C419FFF77CC0D"
+  },
+  "upstream": {
+    "repo": "https://github.com/Kamzik123/AC4Coop",
+    "commit": "68355c71eafa0baf913587605e9c330db6166057",
+    "license": "none",
+    "posture": "clean-room behavioral reference via PR #28 contracts; no source, address, offset, or calling-convention copy"
+  },
+  "safety": {
+    "callEngine": false,
+    "gameLaunched": false,
+    "asiDeployed": false,
+    "savesTouched": false,
+    "pc2Touched": false,
+    "nativeSpawnOrActionCalls": "refused"
+  },
+  "ownership": {
+    "exclusive": [
+      "docs/v0.8.0-action-animation-map.md",
+      "reports/v0.8.0-action-animation.json",
+      "src/replication/action_state.h",
+      "src/replication/action_state.cpp",
+      "tools/action_state_test/CMakeLists.txt",
+      "tools/action_state_test/main.cpp"
+    ],
+    "readOnly": [
+      "PR #28 docs/v0.8.0-ac4coop-contracts.md C0 C6 C8 C9",
+      "PR #28 docs/v0.8.0-ac4coop-source-map.md sections 3.7-3.8",
+      "PR #29 docs/v0.8.0-builder-path.md and reports/v0.8.0-ac4-names.txt",
+      "docs/v0.6.4-deferred-actor-handler.md",
+      "reports/v0.6.4-input-action-consumers.json",
+      "docs/v0.6.19-mode-enroll-size.md",
+      "docs/v0.6.20-activ-heap-size.md"
+    ],
+    "notEdited": [
+      "docs/CHATGPT_HANDOFF.md",
+      "src/network/protocol.h",
+      "PR #28",
+      "PR #29"
+    ]
+  },
+  "serialization": {
+    "type": "bfc::action::ActionSnapshot",
+    "version": 1,
+    "endian": "little",
+    "packedBytes": 216,
+    "layout": "u32 version, u32 alias, u16 targetChannel, u16 targetLayer, f32 ratio, f32 timeScale, u16 blendCount, u8 hardCut, u8 flags, f32 blendInLength, u32 sequence, f32 blend[46]",
+    "referenceBlendCapacity": 46,
+    "capacityMeaning": "AC4Coop transport width. Not a recovered Resynced array size.",
+    "wiredIntoSessionProtocol": false,
+    "ratioAndBlendDomain": "ratio finite on the wire; seek only in open interval (0,1); blend factors raw finite floats; count clamped to 46; no [0,1] factor rejection",
+    "sourceLock": {
+      "comment": "https://github.com/zzyrrup/BlackFlagCoop/pull/28#issuecomment-6835360174",
+      "upstream": "68355c71eafa0baf913587605e9c330db6166057",
+      "seek": "phase1.cpp L731-732, open interval (0,1), source-confirmed",
+      "ratioNormalizedClosedInterval": "netstate.h L77, author-documented only",
+      "blendFactors": "raw GetBlendFactor/SetBlendFactor, no in-tree normalization",
+      "blendCount": "clamped to peer count, puppet count, and BLEND_MAX 46",
+      "blendChannelLayer": "literals 0 and mod-local ACTLAYER_PRIMARY = 0",
+      "targetChannelLayer": "wire fields, separate from blend channel/layer"
+    }
+  },
+  "matrix": [
+    {
+      "id": "A1",
+      "claim": "Original capture/apply order is player Human tick, single writer, action-set once, edge-triggered target, then per-frame primary blend persist and time scale.",
+      "tag": "source-confirmed",
+      "evidence": "PR #28 contracts C0/C6/C8; source map 3.7-3.8 citing phase1.cpp L422-474, L550-581, L695-841, L885-896, L1013, L1293-1326 at AC4Coop 68355c71.",
+      "minimumProofRemaining": "Resynced callsites for each step before any native call."
+    },
+    {
+      "id": "A2",
+      "claim": "Original wire blend width is 46.",
+      "tag": "source-confirmed",
+      "evidence": "netstate.h BLEND_MAX cited by the source map. Resynced width is unknown.",
+      "minimumProofRemaining": "A loop bound or type field for the primary blender on the local player, with both a writer and a reader."
+    },
+    {
+      "id": "A3",
+      "claim": "Syncing only four blend slots leaves the original puppet walking.",
+      "tag": "author-documented",
+      "evidence": "In-source comment plus README paraphrase in the source map, tied to SimpleAnimBlender<46>. Not a Resynced fact.",
+      "minimumProofRemaining": "Do not claim this for Resynced. Needs A2 and a later in-game readback."
+    },
+    {
+      "id": "A4",
+      "claim": "A redundant target-action set when the alias is already current is a crash risk on the original.",
+      "tag": "source-confirmed",
+      "evidence": "phase1.cpp L713-715 comment, cited by contract C8. Planner suppresses the edge. No engine call.",
+      "minimumProofRemaining": "Native setter still unproven."
+    },
+    {
+      "id": "A5",
+      "claim": "Vtable 0x9255320 is an input action descriptor, not a character action component.",
+      "tag": "binary-confirmed",
+      "evidence": "reports/v0.6.4-input-action-consumers.json. Seven lea install sites. Character-movement association false. Input-to-character connection false.",
+      "minimumProofRemaining": "None for this negative claim. A future action component must be a different object reached from the local Human."
+    },
+    {
+      "id": "A6",
+      "claim": "0x2335040 publishes AnimatedOnActiveChanged through shared notify 0x8CD620 and is not a per-frame blend writer.",
+      "tag": "binary-confirmed",
+      "evidence": "v0.6.19 string 0xA179A9F, lea at 0x2335122, call 0x8CD620, E8 to 0x479E440 at 0x23350F1. v0.6.20: 0 E8 callers of 0x2335040, 30 E8 callers of 0x8CD620, dispatch [handler+0xA0], not Edward-specific.",
+      "minimumProofRemaining": "RTTI or a constructor that installs this function's vtable on a Human, before the event is used for anything. It is not a blend payload."
+    },
+    {
+      "id": "A7",
+      "claim": "Byte [obj+0x26]=1 means animation-active.",
+      "tag": "hypothesis",
+      "evidence": "v0.6.20 confirms the store when +0x22 and +0x25 are set. The meaning is inferred from the neighboring AnimatedOnActiveChanged string.",
+      "minimumProofRemaining": "A reader of +0x26 that also consumes animation state, on an object tied to the local player."
+    },
+    {
+      "id": "A8",
+      "claim": "Resynced exports the original names SetTargetAction and CharacterActionSet.",
+      "tag": "name-absent",
+      "evidence": "PR #29 reports/v0.8.0-ac4-names.txt reports hit=0 for both, same exe hash. String absence is not mechanism absence.",
+      "minimumProofRemaining": "Find setters by data flow from the local Human, not by another string sweep."
+    },
+    {
+      "id": "A9",
+      "claim": "Local-player action state can be replicated on Resynced today.",
+      "tag": "refused",
+      "evidence": "No proven puppet factory (PR #29) and no proven blend component.",
+      "minimumProofRemaining": "A rendered second Human, A2, and a player-once Human tick (contract C0)."
+    }
+  ],
+  "planner": {
+    "entry": "bfc::action::PlanApply",
+    "engineCalls": 0,
+    "primaryBlendChannel": 0,
+    "primaryBlendLayer": 0,
+    "behaviorSwitchCooldownFrames": 4,
+    "notes": [
+      "Blend channel 0 and layer 0 are literals, not a recovered field offset.",
+      "Seek runs only when the ratio is inside (0, 1). 0 and 1 remain valid wire values.",
+      "The host sets behaviorEnabled from ground vs air. The planner does not detect ground.",
+      "HybridGround with behavior enabled refuses as behavior-owns-gait.",
+      "Refused plans do not mutate FakeActionComponent."
+    ]
+  },
+  "tests": {
+    "visualStudio18": "not installed on this agent",
+    "cmake": "3.28.3",
+    "compiler": "Clang 18.1.3",
+    "configure": "cmake -S tools/action_state_test -B /tmp/action-state-build",
+    "ctest": "ActionState passed",
+    "checkCount": 36,
+    "failed": 0,
+    "inGame": "not run"
+  },
+  "plan": [
+    {"priority": "P0", "status": "done-offline", "item": "Snapshot, validator, codec, single-writer planner, fake component."},
+    {"priority": "P1", "status": "blocked", "item": "Identify the Resynced per-frame player Human update. Do not assume 0x2335040."},
+    {"priority": "P2", "status": "blocked", "item": "Recover the primary blend array width and its reader/writer from that Human."},
+    {"priority": "P3", "status": "blocked", "item": "Separate one-shot action-set init from the edge-triggered target setter. Keep both default-off."},
+    {"priority": "P4", "status": "blocked", "item": "Capture and apply only after a second Human is confirmed rendered."}
+  ],
+  "handoffQuestions": {
+    "agent1": {
+      "status": "answered",
+      "comment": "https://github.com/zzyrrup/BlackFlagCoop/pull/28#issuecomment-6835360174"
+    },
+    "agent2": [
+      "What function is the per-frame player Human update?",
+      "Does any component reached from that object write a repeated blend-factor array?"
+    ]
+  }
+}
