@@ -1,0 +1,212 @@
+===== v0.8.0 DUAL-BSS FILL vs CLEAR =====
+exeSha256=19920F34BB2FAC814023EE3C27F0CECA1872E80A2AAFB37C092C419FFF77CC0D
+
+===== GLOBAL TIGHT FILL PAIRS (dist<=16, both non-clear) =====
+tightNonClearFillPairs=60
+lo=0xAD70C30 hi=0xAD70C38 siteA=0x2FF782 siteB=0x2FF77B dist=7 func=0x2FF590 srcA=rbx srcB=rbx run=2 sec=.trace
+lo=0xA998888 hi=0xA998890 siteA=0x5201B1 siteB=0x5201B8 dist=7 func=0x520180 srcA=rax srcB=rcx run=2 sec=.trace
+lo=0xAE2E1D8 hi=0xAE2E1E0 siteA=0xA84067 siteB=0xA8406E dist=7 func=0xA84030 srcA=rsi srcB=rsi run=2 sec=.trace
+lo=0xAE2E1D8 hi=0xAE2E1E0 siteA=0x70FA583 siteB=0x70FA58A dist=7 func=0x70FA560 srcA=rsi srcB=rsi run=2 sec=.trace
+lo=0xAF0AF68 hi=0xAF0AF70 siteA=0xF57654 siteB=0xF5765B dist=7 func=0xF57390 srcA=rbx srcB=rbx run=2 sec=.trace
+lo=0xAF0AF68 hi=0xAF0AF70 siteA=0x10C4B25 siteB=0x10C4B2C dist=7 func=0x10C4A40 srcA=rbx srcB=rbx run=2 sec=.trace
+lo=0xAF0AF68 hi=0xAF0AF70 siteA=0x1D580A1 siteB=0x1D580A8 dist=7 func=0x1D579B0 srcA=r14 srcB=r14 run=2 sec=.trace
+lo=0xAF0AF68 hi=0xAF0AF70 siteA=0x2674E35 siteB=0x2674E3C dist=7 func=0x2674C40 srcA=r14 srcB=r14 run=2 sec=.trace
+lo=0xB0B7220 hi=0xB0B7228 siteA=0x2D8A67B siteB=0x2D8A682 dist=7 func=0x2D89890 srcA=rax srcB=rax run=2 sec=.trace
+lo=0xB0B7220 hi=0xB0B7228 siteA=0x2DA4BB7 siteB=0x2DA4BB0 dist=7 func=0x2DA4930 srcA=rax srcB=rax run=2 sec=.trace
+lo=0xB0B7260 hi=0xB0B7268 siteA=0x2D8A6B9 siteB=0x2D8A6C0 dist=7 func=0x2D89890 srcA=rax srcB=rax run=2 sec=.trace
+lo=0xB0B7260 hi=0xB0B7268 siteA=0x2DA4C02 siteB=0x2DA4BFB dist=7 func=0x2DA4930 srcA=rax srcB=rax run=2 sec=.trace
+lo=0xAF3FBC8 hi=0xAF3FBD0 siteA=0xFA8386 siteB=0xFA838D dist=7 func=0xFA8300 srcA=rax srcB=r12 run=2 sec=.trace
+lo=0xAD3FE18 hi=0xAD3FE20 siteA=0x11DB2B5 siteB=0x11DB2AE dist=7 func=0x11DB220 srcA=rax srcB=rax run=2 sec=.trace
+lo=0xB267098 hi=0xB2670A0 siteA=0x14F10EA siteB=0x14F10F1 dist=7 func=0x14F1000 srcA=rax srcB=r14 run=2 sec=.trace
+lo=0xADE3F58 hi=0xADE3F60 siteA=0x151E1B5 siteB=0x151E1AE dist=7 func=0x151E120 srcA=rax srcB=rax run=2 sec=.trace
+lo=0xBFB7F18 hi=0xBFB7F20 siteA=0x1660B0A siteB=0x1660B11 dist=7 func=0x1660A20 srcA=rax srcB=r14 run=2 sec=.trace
+lo=0xAF2CF90 hi=0xAF2CF98 siteA=0x5D06038 siteB=0x5D0603F dist=7 func=0x5D05800 srcA=rsi srcB=rdi run=2 sec=.trace
+lo=0xC0B5F60 hi=0xC0B5F68 siteA=0x18B6186 siteB=0x18B618D dist=7 func=0x18B6140 srcA=rax srcB=rax run=2 sec=.trace
+lo=0xC0B5F60 hi=0xC0B5F68 siteA=0x4F0007F siteB=0x4F00086 dist=7 func=0x4EFED00 srcA=rdx srcB=rdx run=2 sec=.trace
+lo=0xC0B65A8 hi=0xC0B65B0 siteA=0x18B61C2 siteB=0x18B61C9 dist=7 func=0x18B6140 srcA=rax srcB=rax run=2 sec=.trace
+lo=0xC0B65A8 hi=0xC0B65B0 siteA=0x4F000BB siteB=0x4F000C2 dist=7 func=0x4EFED00 srcA=rdx srcB=rdx run=2 sec=.trace
+lo=0xB564DC0 hi=0xB564DC8 siteA=0x18B6296 siteB=0x18B629D dist=7 func=0x18B6140 srcA=rax srcB=rax run=2 sec=.trace
+lo=0xB564DC0 hi=0xB564DC8 siteA=0x33603DF siteB=0x33603E6 dist=7 func=0x3360340 srcA=rax srcB=rax run=2 sec=.trace
+lo=0xB565408 hi=0xB565410 siteA=0x18B62D2 siteB=0x18B62D9 dist=7 func=0x18B6140 srcA=rax srcB=rax run=2 sec=.trace
+lo=0xB565408 hi=0xB565410 siteA=0x336041B siteB=0x3360422 dist=7 func=0x3360340 srcA=rax srcB=rax run=2 sec=.trace
+lo=0xB2F4D00 hi=0xB2F4D08 siteA=0x1C71BDD siteB=0x1C71BE4 dist=7 func=0x1C6FD50 srcA=rax srcB=r14 run=2 sec=.trace
+lo=0xB2F4DF8 hi=0xB2F4E00 siteA=0x1C71C62 siteB=0x1C71C69 dist=7 func=0x1C6FD50 srcA=rax srcB=r14 run=2 sec=.trace
+lo=0xB2F4EF0 hi=0xB2F4EF8 siteA=0x1C71CE7 siteB=0x1C71CEE dist=7 func=0x1C6FD50 srcA=rax srcB=r14 run=2 sec=.trace
+lo=0xB67B920 hi=0xB67B928 siteA=0x1CB7D13 siteB=0x1CB7D1A dist=7 func=0x1CB7BB0 srcA=r9 srcB=rdi run=2 sec=.trace
+lo=0xB67B950 hi=0xB67B958 siteA=0x1CB7D2E siteB=0x1CB7D35 dist=7 func=0x1CB7BB0 srcA=r9 srcB=r10 run=2 sec=.trace
+lo=0xB67B980 hi=0xB67B988 siteA=0x1CB7D49 siteB=0x1CB7D50 dist=7 func=0x1CB7BB0 srcA=rdi srcB=r9 run=2 sec=.trace
+lo=0xB67B9B0 hi=0xB67B9B8 siteA=0x1CB7D65 siteB=0x1CB7D6C dist=7 func=0x1CB7BB0 srcA=rdi srcB=r10 run=2 sec=.trace
+lo=0xB67B9E0 hi=0xB67B9E8 siteA=0x1CB7D80 siteB=0x1CB7D87 dist=7 func=0x1CB7BB0 srcA=r10 srcB=rdi run=2 sec=.trace
+lo=0xB67BA10 hi=0xB67BA18 siteA=0x1CB7D9B siteB=0x1CB7DA2 dist=7 func=0x1CB7BB0 srcA=r10 srcB=r9 run=2 sec=.trace
+lo=0xC0411A0 hi=0xC0411A8 siteA=0x1F30692 siteB=0x1F30699 dist=7 func=0x1F2FEF0 srcA=rsi srcB=r14 run=2 sec=.trace
+lo=0xC041398 hi=0xC0413A0 siteA=0x1F3081A siteB=0x1F30821 dist=7 func=0x1F2FEF0 srcA=rcx srcB=r14 run=2 sec=.trace
+lo=0xC041750 hi=0xC041758 siteA=0x1F30B21 siteB=0x1F30B28 dist=7 func=0x1F2FEF0 srcA=rcx srcB=r15 run=2 sec=.trace
+lo=0xB427E90 hi=0xB427E98 siteA=0x1F39691 siteB=0x1F39698 dist=7 func=0x1F39330 srcA=r12 srcB=r14 run=2 sec=.trace
+lo=0xB428DC0 hi=0xB428DC8 siteA=0x1F3A1DA siteB=0x1F3A1E1 dist=7 func=0x1F39330 srcA=r9 srcB=r14 run=2 sec=.trace
+
+===== PER-SEED FILL/CLEAR BREAKDOWN =====
+
+lo=0xAC028E0 hi=0xAC028E8 loStores=1 hiStores=1
+  LO fill=0 clear=1
+    CLEAR site=0x67FD57B func=0x67FD520 src=rax
+  HI fill=1 clear=0
+    FILL  site=0x67FD582 func=0x67FD520 src=rax
+  COFILL=none
+
+lo=0xAC027C8 hi=0xAC027D0 loStores=1 hiStores=1
+  LO fill=0 clear=1
+    CLEAR site=0x67FD252 func=0x67FD220 src=rax
+  HI fill=1 clear=0
+    FILL  site=0x67FD259 func=0x67FD220 src=rax
+  COFILL=none
+
+lo=0xABF8178 hi=0xABF8180 loStores=1 hiStores=1
+  LO fill=1 clear=0
+    FILL  site=0x75B0090 func=0x75B0030 src=rsi
+  HI fill=1 clear=0
+    FILL  site=0x75B007B func=0x75B0030 src=rsi
+  COFILL siteA=0x75B0090 siteB=0x75B007B dist=21 func=0x75B0030 srcA=rsi srcB=rsi
+  --- cofill @0x75B007B ---
+  0x75B005B add [rax],al
+  0x75B005D mov rcx,rdi
+  0x75B0060 call rbx
+  0x75B0062 mov rcx,[rip+364810F]  ;data=0xABF8178
+  0x75B0069 mov rdx,[rip+3648110]  ;data=0xABF8180
+  0x75B0070 mov rax,[rcx]
+  0x75B0073 mov r8,rsi
+  0x75B0076 call qword ptr [rax+10]
+  0x75B0079 xor esi,esi
+  0x75B007B mov [rip+36480FE],rsi  ;data=0xABF8180
+  0x75B0082 mov rcx,[rip+36480EF]  ;data=0xABF8178
+  0x75B0089 mov rax,[rcx]
+  0x75B008C xor edx,edx
+  0x75B008E call qword ptr [rax]
+  0x75B0090 mov [rip+36480E1],rsi  ;data=0xABF8178
+  0x75B0097 add rsp,20
+  0x75B009B pop rbx
+  0x75B009C pop rdi
+  0x75B009D pop rsi
+  0x75B009E ret
+  0x75B009F lea rax,[rip+2C13B60]  ;str=pipeline\git\mandatory\gearcore\gear_cor
+  0x75B00A6 mov [rip+3A91F9B],rax  ;data=0xB042048
+  0x75B00AD ud2
+  0x75B00AF int 3
+  strings=pipeline\git\mandatory\gearcore\gear_core/services
+
+lo=0xB0B6F28 hi=0xB0B6F30 loStores=1 hiStores=1
+  LO fill=1 clear=0
+    FILL  site=0x5D9AC77 func=0x5D9AC20 src=rax
+  HI fill=1 clear=0
+    FILL  site=0x5D9AC85 func=0x5D9AC20 src=rax
+  COFILL siteA=0x5D9AC77 siteB=0x5D9AC85 dist=14 func=0x5D9AC20 srcA=rax srcB=rax
+  --- cofill @0x5D9AC77 ---
+  0x5D9AC57 mov edx,[58]
+  0x5D9AC5E mov rdi,[rdx+rcx*8]
+  0x5D9AC62 mov rbx,[rdi+1C60]
+  0x5D9AC69 mov [rdi+1C60],rax
+  0x5D9AC70 lea rax,[rip+415339]  ;data=0x61AFFB0
+  0x5D9AC77 mov [rip+531C2AA],rax  ;data=0xB0B6F28
+  0x5D9AC7E lea rax,[rip-312BF55]  ;data=0x2C6ED30
+  0x5D9AC85 mov [rip+531C2A4],rax  ;data=0xB0B6F30
+  0x5D9AC8C call 0000000141DCC990
+  0x5D9AC91 mov [rdi+1C60],rbx
+  0x5D9AC98 mov rax,rsi
+  0x5D9AC9B add rsp,20
+  0x5D9AC9F pop rbx
+  0x5D9ACA0 pop rdi
+  0x5D9ACA1 pop rsi
+  0x5D9ACA2 ret
+  0x5D9ACA3 int 3
+  strings=
+
+lo=0xAC56D70 hi=0xAC56D78 loStores=1 hiStores=1
+  LO fill=1 clear=0
+    FILL  site=0x1468270 func=0x1468230 src=rax
+  HI fill=1 clear=0
+    FILL  site=0x1468262 func=0x1468230 src=rdx
+  COFILL siteA=0x1468270 siteB=0x1468262 dist=14 func=0x1468230 srcA=rax srcB=rdx
+  --- cofill @0x1468262 ---
+  0x1468242 mov esi,0
+  0x1468247 add [rax],al
+  0x1468249 add [rax+26058B48],al
+  0x146824F jmp short 00000001414682CF
+  0x1468251 or [rax+21],ecx
+  strings=
+
+lo=0xA95F210 hi=0xA95F218 loStores=1 hiStores=1
+  LO fill=1 clear=0
+    FILL  site=0x58DAD23 func=0x58DAD00 src=rax
+  HI fill=1 clear=0
+    FILL  site=0x58DAD07 func=0x58DAD00 src=rax
+  COFILL siteA=0x58DAD23 siteB=0x58DAD07 dist=28 func=0x58DAD00 srcA=rax srcB=rax
+  --- cofill @0x58DAD07 ---
+  0x58DACE7 mov byte ptr [rsi],1
+  0x58DACEA mov rcx,[rsp+28]
+  0x58DACEF xor rcx,rsp
+  0x58DACF2 call 0000000145014570
+  0x58DACF7 nop
+  0x58DACF8 add rsp,30
+  0x58DACFC pop rsi
+  0x58DACFD ret
+  0x58DACFE int 3
+  strings=
+
+lo=0xAB86280 hi=0xAB86288 loStores=2 hiStores=1
+  LO fill=1 clear=1
+    FILL  site=0x4F84B06 func=0x4F84AE0 src=rax
+    CLEAR site=0x4F84B3F func=0x4F84AE0 src=rax
+  HI fill=1 clear=0
+    FILL  site=0x4F84B25 func=0x4F84AE0 src=rax
+  COFILL siteA=0x4F84B06 siteB=0x4F84B25 dist=31 func=0x4F84AE0 srcA=rax srcB=rax
+  --- cofill @0x4F84B06 ---
+  0x4F84AE6 mov ecx,40000
+  0x4F84AEB call 0000000144F744C0
+  0x4F84AF0 test eax,eax
+  0x4F84AF2 jne short 0000000144F84B01
+  0x4F84AF4 xor eax,eax
+  0x4F84AF6 mov [rip+5C01794],eax  ;data=0xAB86290
+  0x4F84AFC add rsp,28
+  0x4F84B00 ret
+  0x4F84B01 call 000000014501C270
+  0x4F84B06 mov [rip+5C01773],rax  ;data=0xAB86280
+  0x4F84B0D test rax,rax
+  0x4F84B10 je short 0000000144F84AF4
+  0x4F84B12 lea rdx,[rip-59]  ;data=0x4F84AC0
+  0x4F84B19 lea rcx,[rip-0A0]  ;data=0x4F84A80
+  0x4F84B20 call 0000000145021BB0
+  0x4F84B25 mov [rip+5C0175C],rax  ;data=0xAB86288
+  0x4F84B2C test rax,rax
+  0x4F84B2F jne short 0000000144F84B51
+  0x4F84B31 mov rcx,[rip+5C01748]  ;data=0xAB86280
+  0x4F84B38 call 000000014501C340
+  0x4F84B3D xor eax,eax
+  0x4F84B3F mov [rip+5C0173A],rax  ;data=0xAB86280
+  strings=
+
+lo=0xB74A928 hi=0xB74A930 loStores=1 hiStores=1
+  LO fill=1 clear=0
+    FILL  site=0x37D766B func=0x37D7120 src=r14
+  HI fill=1 clear=0
+    FILL  site=0x37D84E3 func=0x37D7120 src=rbx
+  COFILL=none
+
+lo=0xB74A920 hi=0xB74A928 loStores=1 hiStores=1
+  LO fill=1 clear=0
+    FILL  site=0x37D7AAE func=0x37D7120 src=r14
+  HI fill=1 clear=0
+    FILL  site=0x37D766B func=0x37D7120 src=r14
+  COFILL=none
+
+lo=0xAC0E8C0 hi=0xAC0E8C8 loStores=1 hiStores=1
+  LO fill=1 clear=0
+    FILL  site=0x57E5414 func=0x57E4D00 src=rax
+  HI fill=1 clear=0
+    FILL  site=0x57E50CB func=0x57E4D00 src=rdi
+  COFILL=none
+
+===== VERDICT =====
+c1Proven=false
+callEngine=off
+note=Prior 'publish' at 0x67FD520 is dual CLEAR (xor eax,eax) — teardown not fill
+next=If tightNonClearFillPairs empty for player-shaped slots, hunt singleton object
+     with member stores [obj+0]/[obj+8] then one static publish of obj*

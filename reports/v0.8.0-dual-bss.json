@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "milestone": "v0.8.0",
+  "contract": "C1",
+  "mode": "offline-pe-readonly",
+  "exeSha256": "19920F34BB2FAC814023EE3C27F0CECA1872E80A2AAFB37C092C419FFF77CC0D",
+  "agent1Fingerprint": "AC4 PlayerProgression adjacent 0x04DEEF90/0x04DEEF94",
+  "agent1ProcessRole": "confirmed-not-on-C1-path",
+  "c1Proven": false,
+  "callEngine": false,
+  "qwordStores": 430882,
+  "qwordLoads": 397172,
+  "adjacentPairCount": 176401,
+  "bssTightPairCount": 0,
+  "falsified": [
+    {"id": "0x7CA9B70", "reason": "shared EntitySelector Process; Agent1 confirms not C1"},
+    {"id": "0x1C6FD50", "reason": "PlayerProgression name-range registrar"},
+    {"id": "0xAC028E0/0xAC028E8@0x67FD520", "reason": "dual CLEAR teardown not fill"},
+    {"id": "0xA998888/0xA998890@0x520180", "reason": "rorx nested +0x50/+0x58 field pack"},
+    {"id": "0xAE2E1D8/0xAE2E1E0@0xA84030", "reason": "same rsi list head/tail init"}
+  ],
+  "blocker": "No proven selector*+HandleContainer* fill after dual-adjacent static hunt",
+  "next": "Singleton member-pair [obj+0]/[obj+8] then one static publish of obj*; Agent1 confirm bare-globals vs singleton members",
+  "tools": [
+    "tools/offline/DualBss080",
+    "tools/offline/DualBssHop080",
+    "tools/offline/DualBssFill080"
+  ],
+  "raw": "reports/v080-dual-bss-raw/"
+}

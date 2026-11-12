@@ -11,18 +11,25 @@
   "builderSelectorRetentionResolved": false,
   "objectIdReloadProven": false,
   "callEngine": false,
-  "decision": "c1-acquire-fsm-shipped-primitives-unproven",
-  "blocker": "C1: no proven builder+selector cache and no proven ObjectID CreateReference/reload-by-id",
+  "decision": "dual-adjacent-bss-hunt-top-candidates-falsified",
+  "blocker": "C1: no proven selector*+HandleContainer* fill after dual-adjacent static hunt; next singleton member-pair",
+  "agent1": {
+    "processOnC1": false,
+    "fingerprint": "adjacent GetCachedSelector/GetCachedBuilderHandle (AC4 0x04DEEF90/0x04DEEF94)"
+  },
   "binaryConfirmed": [
     {"rva": "0x919F9D0", "role": "PlayerEntitySelector method table"},
-    {"rva": "0x7CA9B70", "role": "Process candidate"},
+    {"rva": "0x7CA9B70", "role": "Process SHARED — falsified as C1 owner"},
     {"rva": "0x16FAA0", "role": "allocator-pointer resolve (not CreateReference)"},
     {"rva": "0x50AB0", "role": "handleDeref shape sample"},
-    {"rva": "0x7C8DE60", "role": "B33D978 typeinfo dtor trampoline only"},
-    {"note": "CreateReference/HandleManager/AddLoadTask strings absent"}
+    {"rva": "0xAC028E0", "role": "dual CLEAR teardown with 0xAC028E8 @0x67FD520"},
+    {"rva": "0xA998888", "role": "rorx field pack dual FILL @0x520180 — not HC*"},
+    {"note": "CreateReference/HandleManager/AddLoadTask strings absent"},
+    {"note": ".bss tight adjacent QWORD co-publishes = 0"}
   ],
   "implementation": {
     "c1AcquireEvaluator": true,
-    "puppetLifecycleContractIds": true
+    "puppetLifecycleContractIds": true,
+    "dualBssOfflineTools": true
   }
 }

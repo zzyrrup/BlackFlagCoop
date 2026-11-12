@@ -25,7 +25,7 @@ Ultimate vision is **not claimed as achieved**. Dual-Edward co-op remains unprov
 
 ## 2. Current development milestone
 
-**v0.8.0 in progress** — Agent 2 local-player retention: `PlayerEntitySelector` method table `0x919F9D0` and Process candidate `0x7CA9B70` (+ handle resolve `0x16FAA0`) are binary-confirmed. Entity retention owner and builder/selector cache still **unproven**. Gates stay `callEngine=off`. No launch. No deploy.
+**v0.8.0 in progress** — Agent 2 C1: EntitySelector Process falsified; Agent 1 dual-adjacent BSS fingerprint hunted. Top RIP-rel pairs falsified (teardown/rorx/registrar). Builder/selector cache still **unproven**. Gates stay `callEngine=off`. No launch. No deploy. See `docs/v0.8.0-dual-bss-c1.md`.
 
 Prior: v0.6.25 owner VT[0] ctors (`0x13612B0` / `0x5781490`) and v0.6.5–v0.6.24 preserved. Details: `docs/v0.8.0-second-edward-plan.md`.
 
@@ -38,7 +38,7 @@ Prior: v0.6.25 owner VT[0] ctors (`0x13612B0` / `0x5781490`) and v0.6.5–v0.6.2
 | Working in-game ASI | **v0.5.1** (still installed, 99840 bytes) |
 | ASI SHA256 | `63B38877DDA7CC7CD9AB2619F94D3941C37F54C95A435EFE47084DC4CF2A50BE` |
 | Candidate | `0.8.0-dev` `build/bin/Release/BlackFlagCoop.asi` |
-| Candidate SHA256 | `ABD29003034AC4BD6C88DC728D8C4A5C6DAD7D2C53A76CD92B41C72B387976DB` (102912 bytes) |
+| Candidate SHA256 | `74BAD8604EAA589A2AB2B368FA224EB26344B137593C9510869BEFD69B1D0341` (105984 bytes) |
 | Deploy status | **Do not replace** the installed v0.5.1 without explicit user approval |
 
 ---

@@ -95,17 +95,36 @@ public:
          "source-derived"},
         {0x0u,
          "PlayerEntitySelector::Process returns or retains World player Entity*",
-         "hypothesis"},
+         "hypothesis-falsified"},
         {0x0u,
          "Resynced dword@+8 validity bit is the hard-ref field of a HandleContainer equivalent",
          "hypothesis"},
+        {0x0u,
+         "Agent1: TrySpawnPuppet C1 never uses EntitySelector::Process — only "
+         "GetCachedSelector/GetCachedBuilderHandle (+reload). Process falsify stands.",
+         "source-derived"},
+        {0x0u,
+         "Agent1 next edge: dual adjacent static/BSS pointer publish "
+         "(AC4 0x04DEEF90 RowSelector* / 0x04DEEF94 HandleContainer*)",
+         "source-derived"},
+        {0xAC028E0u,
+         "tight dual slot @.trace with 0xAC028E8 — publisher 0x67FD520 is dual CLEAR "
+         "(xor0), not cache FILL; PhoenixCore teardown shape",
+         "binary-confirmed"},
+        {0xA998888u,
+         "tight dual FILL rax/rcx @0x520180 — rorx decode of nested +0x50/+0x58; "
+         "NOT selector*+HandleContainer* publish",
+         "binary-confirmed"},
+        {0x0u,
+         ".bss has zero RIP-rel tight (dist<=16) adjacent QWORD co-publishes",
+         "binary-confirmed"},
     };
 
     static constexpr const char* kBlocker =
-        "C1 blocked: no proven builder+selector cache and no proven ObjectID "
-        "CreateReference/reload-by-id. handleDeref shape and PlayerEntitySelector "
-        "Process exist, but construction resources for a second Edward are unproven. "
-        "No engine function is called.";
+        "C1 blocked: dual-adjacent static publish hunted; top RIP-rel candidates "
+        "falsified as teardown/rorx-pack/registrar. No proven selector*+"
+        "HandleContainer* fill. Next: singleton member-pair [obj+0]/[obj+8] "
+        "then one static publish of obj*. callEngine=off.";
 
     static const char* StageName(PlayerRetentionStage stage);
     static const char* AcquireStateName(C1AcquireState state);

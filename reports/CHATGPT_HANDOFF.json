@@ -1,149 +1,193 @@
-{
-  "schemaVersion": 1,
-  "generatedUtc": "2026-11-12T20:25:00Z",
-  "handoffFor": "ChatGPT",
-  "executor": "Cursor",
-  "machine": "PC1",
-  "repository": {
-    "url": "https://github.com/zzyrrup/BlackFlagCoop",
-    "defaultBranch": "main",
-    "featureBranch": "cursor/v080-spawn-callers-a9fe",
-    "baseBranch": "cursor/v085-vt-owner-ctors-8285",
-    "doNotPushMain": true,
-    "initialCommit": "e12e70150656ac80742f10b496f7e5556e7985b7"
-  },
-  "project": {
-    "name": "BlackFlagCoop",
-    "goal": "Research path toward co-op for AC Black Flag Resynced (two Edwards / shared world / LAN-internet); not claimed achieved",
-    "functionalityChangedByThisMilestone": true,
-    "functionalityNote": "Candidate 0.8.0-dev logs spawn/builder-path refusal. It does not call a game factory. Installed ASI remains v0.5.1. Native Edward factory is not confirmed."
-  },
-  "milestone": {
-    "currentId": "v0.8.0",
-    "currentTitle": "Second Edward: SpawnPlayerParams + PlayerProgression classified; cached builder unresolved",
-    "status": "factory_not_confirmed_gate_off",
-    "priorPreserved": ["v0.6.4", "v0.6.5", "v0.6.6", "v0.6.7", "v0.6.8", "v0.6.9", "v0.6.10", "v0.6.11", "v0.6.12", "v0.6.13", "v0.6.14", "v0.6.15", "v0.6.16", "v0.6.17", "v0.6.18", "v0.6.19", "v0.6.20", "v0.6.21", "v0.6.22", "v0.6.23", "v0.6.24", "v0.6.25"]
-  },
-  "asi": {
-    "version": "0.5.1",
-    "sha256": "63B38877DDA7CC7CD9AB2619F94D3941C37F54C95A435EFE47084DC4CF2A50BE",
-    "deployAuthorized": true,
-    "candidate": {
-      "version": "0.8.0-dev",
-      "bytes": 104448,
-      "sha256": "858F5593FA3FD29C4E04FA65A94D026EED1A8DF0B6A005D620E54ACE6ABDEC1D",
-      "invokeNativeSpawn": false,
-      "callEngine": false,
-      "deployed": false
-    },
-    "preserveWorkingAsi": true
-  },
-  "game": {
-    "title": "Assassin's Creed Black Flag Resynced",
-    "version": "1.0.6",
-    "executable": "ACBlackFlag.exe",
-    "exeSha256": "19920F34BB2FAC814023EE3C27F0CECA1872E80A2AAFB37C092C419FFF77CC0D"
-  },
-  "build": {
-    "asiRebuilt": true,
-    "generator": "Visual Studio 18 2026",
-    "architecture": "x64",
-    "config": "Release",
-    "result": "pass",
-    "offlineTools": ["tools/offline/BuilderPath080", "tools/offline/Ac4Names080", "tools/offline/SpawnCallers080"]
-  },
-  "network": {
-    "changesAuthorized": false,
-    "pc2Untouched": true
-  },
-  "engineFindings": {
-    "summary": [
-      "SpawnPlayerParams 0x80F2A20 is a schema visitor via 0x4572C60 then SpawnCharacterParams 0x80F2330",
-      "PlayerProgression string 0xA14482A LEAs call name-range registrar 0x1C75AB0 (edx=0x141,r8d=0x14B)",
-      "PlayerProgression is not proven as LoadEntityBuilderAndSelectorsForPlayer / cached builder globals",
-      "SpawnPlayerBoatParams 0x821ABC0 is also a schema visitor",
-      "Cached EntityBuilder + RowSelector + BuildEntityWithSelector + World::AddEntity still unidentified",
-      "Plugin SpawnContract/PuppetLifecycle/BuilderPath remain callEngine=off"
-    ],
-    "keyRvas": {
-      "spawnPlayerParams": "0x80F2A20",
-      "spawnCharacterParams": "0x80F2330",
-      "spawnNpcParams": "0x80F23E0",
-      "spawnEntityBuilderParams": "0x8E02960",
-      "schemaRegister": "0x4572C60",
-      "playerProgressionString": "0xA14482A",
-      "playerProgressionRegistrar": "0x1C75AB0",
-      "loadingAdvisorUpdate": "0xA15C4FF"
-    }
-  },
-  "confirmed": [
-    "Installed ASI v0.5.1 preserved; candidate not deployed",
-    "SpawnPlayerParams / Spawn*Params family are schema visitors",
-    "PlayerProgression LEAs feed 0x1C75AB0 name-range registration",
-    "Gates refuse engine calls"
-  ],
-  "hypotheses": [
-    "Local-player HandleContainer / resource-id reload path still exists under stripped names",
-    "Human/main-thread update remains the safe frame hook once player entity acquisition is proven"
-  ],
-  "blockers": [
-    "Cached EntityBuilder handle + RowSelector globals not identified",
-    "BuildEntityWithSelector / World::AddEntity equivalents not identified",
-    "No verified native Edward factory"
-  ],
-  "mostRecentCompletedMilestone": {
-    "id": "v0.8.0",
-    "docs": [
-      "docs/v0.8.0-builder-path.md",
-      "docs/v0.8.0-ac4coop-lifecycle.md",
-      "docs/v0.8.0-second-edward-plan.md",
-      "docs/v0.8.0-alloc-vtables.md"
-    ],
-    "reports": [
-      "reports/v0.8.0-validation.json",
-      "reports/v0.8.0-builder-path.json",
-      "reports/v080-builder-raw/evidence.txt",
-      "reports/v0.8.0-ac4-names.txt"
-    ]
-  },
-  "nextRecommendedMilestone": {
-    "id": "v0.8.1",
-    "title": "Trace live local-player entity acquisition / handle retention toward builder cache",
-    "primary": [
-      "structural GetPlayer / world-player edges from known phase or loading paths",
-      "HandleContainer-like retain/reload by object id",
-      "keep callEngine=off until a proven build+add sequence exists"
-    ],
-    "forbidden": [
-      "call schema visitors or 0x1C75AB0 as a factory",
-      "treat PlayerProgression name-range as the AC4Coop cache",
-      "deploy without backup + hash record",
-      "PC2 without availability check"
-    ]
-  },
-  "tests": [
-    { "name": "SpawnContract_ctest_Release", "result": "pass" },
-    { "name": "PuppetLifecycle_ctest_Release", "result": "pass" },
-    { "name": "BuilderPath_ctest_Release", "result": "pass" },
-    { "name": "BuilderPath080", "result": "pass" },
-    { "name": "Ac4Names080", "result": "pass" },
-    { "name": "game_launch_deploy", "result": "not_run" }
-  ],
-  "safety": {
-    "pc1Only": true,
-    "pc2Untouched": true,
-    "gameInstallsUnmodified": true,
-    "asiPreserved": true,
-    "noSaveDataInterference": true,
-    "noForcePushMain": true,
-    "noLiveMemory": true,
-    "priorMilestonesPreserved": true
-  },
-  "chatgptNextReviewInstructions": [
-    "Read docs/v0.8.0-builder-path.md and reports/v0.8.0-validation.json first",
-    "SpawnPlayerParams and PlayerProgression are classified negatives for the factory/cache",
-    "Next offline/live step is local-player entity acquisition and handle retention, not more schema visitors",
-    "Deploy/gameplay is user-authorized on PC1 but still requires a verified call target before useful live tests",
-    "Return PC1 branch+PR instructions"
-  ]
+﻿{
+    "schemaVersion":  1,
+    "generatedUtc":  "2026-11-12T21:02:13Z",
+    "handoffFor":  "ChatGPT",
+    "executor":  "Cursor",
+    "machine":  "PC1",
+    "repository":  {
+                       "url":  "https://github.com/zzyrrup/BlackFlagCoop",
+                       "defaultBranch":  "main",
+                       "featureBranch":  "cursor/v080-spawn-callers-a9fe",
+                       "baseBranch":  "cursor/v085-vt-owner-ctors-8285",
+                       "doNotPushMain":  true,
+                       "initialCommit":  "e12e70150656ac80742f10b496f7e5556e7985b7"
+                   },
+    "project":  {
+                    "name":  "BlackFlagCoop",
+                    "goal":  "Research path toward co-op for AC Black Flag Resynced (two Edwards / shared world / LAN-internet); not claimed achieved",
+                    "functionalityChangedByThisMilestone":  true,
+                    "functionalityNote":  "Candidate 0.8.0-dev logs spawn/builder-path refusal. It does not call a game factory. Installed ASI remains v0.5.1. Native Edward factory is not confirmed."
+                },
+    "milestone":  {
+                      "currentId":  "v0.8.0",
+                      "currentTitle":  "C1 dual-adjacent BSS hunt; top candidates falsified; cache unproven",
+                      "status":  "c1_dual_bss_falsified_cache_unproven",
+                      "priorPreserved":  [
+                                             "v0.6.4",
+                                             "v0.6.5",
+                                             "v0.6.6",
+                                             "v0.6.7",
+                                             "v0.6.8",
+                                             "v0.6.9",
+                                             "v0.6.10",
+                                             "v0.6.11",
+                                             "v0.6.12",
+                                             "v0.6.13",
+                                             "v0.6.14",
+                                             "v0.6.15",
+                                             "v0.6.16",
+                                             "v0.6.17",
+                                             "v0.6.18",
+                                             "v0.6.19",
+                                             "v0.6.20",
+                                             "v0.6.21",
+                                             "v0.6.22",
+                                             "v0.6.23",
+                                             "v0.6.24",
+                                             "v0.6.25"
+                                         ]
+                  },
+    "asi":  {
+                "version":  "0.5.1",
+                "sha256":  "63B38877DDA7CC7CD9AB2619F94D3941C37F54C95A435EFE47084DC4CF2A50BE",
+                "deployAuthorized":  true,
+                "candidate":  {
+                                  "version":  "0.8.0-dev",
+                                  "bytes":  105984,
+                                  "sha256":  "74BAD8604EAA589A2AB2B368FA224EB26344B137593C9510869BEFD69B1D0341",
+                                  "invokeNativeSpawn":  false,
+                                  "callEngine":  false,
+                                  "deployed":  false
+                              },
+                "preserveWorkingAsi":  true
+            },
+    "game":  {
+                 "title":  "Assassin\u0027s Creed Black Flag Resynced",
+                 "version":  "1.0.6",
+                 "executable":  "ACBlackFlag.exe",
+                 "exeSha256":  "19920F34BB2FAC814023EE3C27F0CECA1872E80A2AAFB37C092C419FFF77CC0D"
+             },
+    "build":  {
+                  "asiRebuilt":  true,
+                  "generator":  "Visual Studio 18 2026",
+                  "architecture":  "x64",
+                  "config":  "Release",
+                  "result":  "pass",
+                  "offlineTools":  [
+                                       "tools/offline/BuilderPath080",
+                                       "tools/offline/Ac4Names080",
+                                       "tools/offline/SpawnCallers080"
+                                   ]
+              },
+    "network":  {
+                    "changesAuthorized":  false,
+                    "pc2Untouched":  true
+                },
+    "engineFindings":  {
+                           "summary":  [
+                                           "EntitySelector Process 0x7CA9B70 falsified as C1 (Agent1 confirms GetCached* only)",
+                                           "Dual-adjacent static hunt: 176401 .trace pairs; 0 .bss tight pairs",
+                                           "Falsified 0xAC028E0@0x67FD520 dual CLEAR; 0xA998888@0x520180 rorx pack; 0x1C6FD50 registrar",
+                                           "No proven selector*+HandleContainer* fill; next singleton member-pair [obj+0]/[obj+8]",
+                                           "callEngine=off; installed ASI v0.5.1 preserved"
+                                       ],
+                           "keyRvas":  {
+                                           "spawnPlayerParams":  "0x80F2A20",
+                                           "spawnCharacterParams":  "0x80F2330",
+                                           "spawnNpcParams":  "0x80F23E0",
+                                           "spawnEntityBuilderParams":  "0x8E02960",
+                                           "schemaRegister":  "0x4572C60",
+                                           "playerProgressionString":  "0xA14482A",
+                                           "playerProgressionRegistrar":  "0x1C75AB0",
+                                           "loadingAdvisorUpdate":  "0xA15C4FF"
+                                       }
+                       },
+    "confirmed":  [
+                      "Installed ASI v0.5.1 preserved; candidate not deployed",
+                      "SpawnPlayerParams / Spawn*Params family are schema visitors",
+                      "PlayerProgression LEAs feed 0x1C75AB0 name-range registration",
+                      "Gates refuse engine calls"
+                  ],
+    "hypotheses":  [
+                       "Local-player HandleContainer / resource-id reload path still exists under stripped names",
+                       "Human/main-thread update remains the safe frame hook once player entity acquisition is proven"
+                   ],
+    "blockers":  [
+                     "Cached EntityBuilder handle + RowSelector globals not identified",
+                     "BuildEntityWithSelector / World::AddEntity equivalents not identified",
+                     "No verified native Edward factory"
+                 ],
+    "mostRecentCompletedMilestone":  {
+                                         "id":  "v0.8.0",
+                                         "docs":  [
+                                                      "docs/v0.8.0-builder-path.md",
+                                                      "docs/v0.8.0-ac4coop-lifecycle.md",
+                                                      "docs/v0.8.0-second-edward-plan.md",
+                                                      "docs/v0.8.0-alloc-vtables.md"
+                                                  ],
+                                         "reports":  [
+                                                         "reports/v0.8.0-validation.json",
+                                                         "reports/v0.8.0-builder-path.json",
+                                                         "reports/v080-builder-raw/evidence.txt",
+                                                         "reports/v0.8.0-ac4-names.txt"
+                                                     ]
+                                     },
+    "nextRecommendedMilestone":  {
+                                     "id":  "v0.8.1",
+                                     "title":  "Trace live local-player entity acquisition / handle retention toward builder cache",
+                                     "primary":  [
+                                                     "structural GetPlayer / world-player edges from known phase or loading paths",
+                                                     "HandleContainer-like retain/reload by object id",
+                                                     "keep callEngine=off until a proven build+add sequence exists"
+                                                 ],
+                                     "forbidden":  [
+                                                       "call schema visitors or 0x1C75AB0 as a factory",
+                                                       "treat PlayerProgression name-range as the AC4Coop cache",
+                                                       "deploy without backup + hash record",
+                                                       "PC2 without availability check"
+                                                   ]
+                                 },
+    "tests":  [
+                  {
+                      "name":  "SpawnContract_ctest_Release",
+                      "result":  "pass"
+                  },
+                  {
+                      "name":  "PuppetLifecycle_ctest_Release",
+                      "result":  "pass"
+                  },
+                  {
+                      "name":  "BuilderPath_ctest_Release",
+                      "result":  "pass"
+                  },
+                  {
+                      "name":  "BuilderPath080",
+                      "result":  "pass"
+                  },
+                  {
+                      "name":  "Ac4Names080",
+                      "result":  "pass"
+                  },
+                  {
+                      "name":  "game_launch_deploy",
+                      "result":  "not_run"
+                  }
+              ],
+    "safety":  {
+                   "pc1Only":  true,
+                   "pc2Untouched":  true,
+                   "gameInstallsUnmodified":  true,
+                   "asiPreserved":  true,
+                   "noSaveDataInterference":  true,
+                   "noForcePushMain":  true,
+                   "noLiveMemory":  true,
+                   "priorMilestonesPreserved":  true
+               },
+    "chatgptNextReviewInstructions":  [
+                                          "Read docs/v0.8.0-builder-path.md and reports/v0.8.0-validation.json first",
+                                          "SpawnPlayerParams and PlayerProgression are classified negatives for the factory/cache",
+                                          "Next offline/live step is local-player entity acquisition and handle retention, not more schema visitors",
+                                          "Deploy/gameplay is user-authorized on PC1 but still requires a verified call target before useful live tests",
+                                          "Return PC1 branch+PR instructions"
+                                      ]
 }
