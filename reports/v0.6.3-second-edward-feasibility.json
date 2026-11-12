@@ -1,0 +1,61 @@
+{
+  "schemaVersion": 1,
+  "generatedUtc": "2026-11-12T15:30:00Z",
+  "milestone": "v0.6.3",
+  "reassessmentAfterLeadTrace": true,
+  "assessments": {
+    "secondSimultaneousCharacterActor": {
+      "class": "plausible",
+      "evidence": "Phase table includes CreateActorsDeferred*, GatherActorComponents*, UpdateActor* — engine has multi-actor update infrastructure",
+      "gap": "No confirmed Edward/character factory, archetype, or multi-instance spawn path yet (handler 0x1AC380 untraced)"
+    },
+    "twoSeparatelyUpdatedCharacterTransforms": {
+      "class": "plausible",
+      "evidence": "UpdateActorSingleThreaded / UpdateActorMultiThreaded / UpdateActorControllersSingleThreaded handlers exist as distinct registered phases",
+      "gap": "Transform object layout and per-actor update binding not recovered from these leads"
+    },
+    "twoInputContexts": {
+      "class": "unsupported_by_evidence",
+      "evidence": "Recovered input path is a flat action-name bind/lookup (Pad_*/Key_* strings → 0x48 descriptor). No second context, device slot, or local-player index observed in wrapper/helper",
+      "gap": "Context/player-index may exist elsewhere; not in 0x187F0550 / 0x18EADD0"
+    },
+    "independentControlOfBothActors": {
+      "class": "unknown",
+      "evidence": "No PlayerController/LocalPlayer/Possess/ownership layer found (carried from v0.6.2). Action bind does not show possession",
+      "gap": "Ownership vs actor existence still unlinked"
+    }
+  },
+  "inputLeadResolvedToMovementController": false,
+  "deferredLeadResolvedToCharacterFactory": false,
+  "deferredLeadResolvedToPhaseRegistrar": true,
+  "playerOwnershipSeparateFromActorExistence": {
+    "class": "plausible_hypothesis",
+    "confirmed": false,
+    "note": "Action binding attaches descriptors to a caller object without creating actors; actor phases are registered separately — suggests separation, not proof of dual-Edward ownership model"
+  },
+  "nextBestInvestigation": {
+    "primary": {
+      "rva": "0x1AC380",
+      "why": "Registered CreateActorsDeferredSingleThreaded handler — first real deferred-creation implementation candidate"
+    },
+    "secondary": [
+      {
+        "rva": "0x29C6910",
+        "why": "UpdateActorSingleThreaded — may reveal per-actor transform/component walk"
+      },
+      {
+        "rva": "0x7B00B60",
+        "why": "UpdateActorControllersSingleThreaded — likely controller→actor edge for ownership/control"
+      },
+      {
+        "topic": "action→handler dispatch table writers",
+        "why": "Follow consumers of the 0x48 action descriptor / vtable 0x9255320 to reach actual movement application"
+      }
+    ]
+  },
+  "safety": {
+    "spawnAttempted": false,
+    "gameLaunched": false,
+    "asiPreservedAsV051": true
+  }
+}

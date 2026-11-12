@@ -1,0 +1,57 @@
+[
+    {
+        "needle":  "DestroyActor",
+        "fileOffset":  "0xA118368",
+        "context":  "ctors.old_perVertexVectors.hkpConvexVerticesShapeFourVectors.numVectors.UpdateMaterialCustomVectors.DestroyActors.SwarmLinkEvaluators.operators.generators.silhouetteGenerators.obstacleGenerators.SwarmGatherAnimators.navigators.updateNavigators.volumeNavigators.authorizedValidators.ctlEnumTemperatureSensors.errors.TooMa"
+    },
+    {
+        "needle":  "CreateActorsDeferred",
+        "fileOffset":  "0xA179AF0",
+        "context":  "ded.AfterUpdateSingleThreaded.GroupManagerUpdateSingleThreaded.DataStateMachineUpdateSingleThreaded.CreateActorsDeferredSingleThreaded.UpdateAISingleThreaded.UpdatePreAISingleThreaded.numToisTillAllowedPenetrationToiForced.JobHandlePrimaryStoreSync::getMappingForced.JobHandlePrimaryStoreSync::processMappingForced.Assas"
+    },
+    {
+        "needle":  "NPC",
+        "fileOffset":  "0xA0FE7F5",
+        "context":  "Country.clientIpCountry.hclVirtualCollisionPointsData::BarycentricDictionaryEntry.hkaiMinArrayEntry.NPCRulesetEntry.hkRefCountedPropertiesEntry.CommandAllocatorManager::CmdListAllocatorEntry.ActivityCounterEntry.hkbSceneModifierListSceneModifierEntry.bitsPerEntry.JobRequestCalendarEntry.CharacterRelationEntry.FactionCo"
+    },
+    {
+        "needle":  "Multiplayer",
+        "fileOffset":  "0xA118EA2",
+        "context":  "Parameters.setStaticParameters.RequestHUBStaticParameters.SetupPBRParameters.Game Global Parameters.Multiplayer Transport Client Settings not found in the UBI Service Parameters.Key Service feature switch not found in the UBI Service Parameters.ProgressToTargetInMeters.characters.maximumAvoidanceCharacters.enabledChara"
+    },
+    {
+        "needle":  "Matchmaking",
+        "fileOffset":  "0xA10D388",
+        "context":  "Client.ReputationClient.PopulationClient.PlayerNotificationClient.RemoteGamingClient.profilesPreciseMatchmakingClient.sys_io_filesys_remoteClient.FriendClient.GamesPlayedClient.PersonaClient.linearGradient.radialGradient.liftCoefficient.dragCoefficient.tangent.startTangent.haveStartTangent.localTangent.localBiTangent.e"
+    },
+    {
+        "needle":  "Jackdaw",
+        "fileOffset":  "0xA104B4F",
+        "context":  "paddingNew.InventoryLoadoutCreateNew.GrassForceTextureNew.dw.bw.yaw.StashWithdraw.ClearIndirectDraw.Jackdaw.chassisUnitInertiaYaw.CloudModifierCacheRaw.hkcdStaticTreeDynamicStoragehkcdStaticTreeCodecRaw.hkcdStaticTree::CodecRaw.hkcdDynamicTree::CodecRaw.\\w.0w.text/csv.wdmaud.drv.msacm32.drv.qv.nov.fov.env.wheelRadiusIn"
+    },
+    {
+        "needle":  "Boarding",
+        "fileOffset":  "0xA1545A8",
+        "context":  "ing.Marketing.AimingTargeting.FightLogicOperationLightningStrikeTargeting.Deactivating.Activating.CLBoardingRealization::Orientating.penetrating.generating.Player has been disconnected while updating rating.highestRating.profilesUgcUpdateRating.JobUpdateRating.Intermediate certificate format is missing.CA certificate f"
+    },
+    {
+        "needle":  "compositions",
+        "fileOffset":  "0xA0FBBAF",
+        "context":  "geId}.{spaceId}.${buildId}.{:d}.{}-{:#05d}.{%d}.{%d,%d}.{desc}.{:c}.{\"name\":\"SmokeBombDazedSignal\",\"compositions\":[{\"name\":\"custom.SmokeBombDazed\"}]}, {\"name\":\"SmokeBombIgnitionSignal\",\"compositions\":[{\"name\":\"custom.SmokeBombIgnition\"}]}, {\"name\":\"QuestCancelSignal\",\"compositions\":[{\"name\":\"custom.questupdate\"}]}, {\"n"
+    },
+    {
+        "needle":  "Schema",
+        "fileOffset":  "0xA1285C7",
+        "context":  "ticleDatas.cacheDatas.faceDatas.simClothCollidableDerivedDatas.kansas.extras.cameras.personas.sizeOfSchemas.HairStrandsShadowsAtlas.GIMainCascadesAtlas.GITiledCascadesAtlas.HairStrandsLightingAtlas.Splash Lighting Atlas.Tomb of the Daughter of Atlas.nicholas.Fort of Arkas.Sanctuary of Athena Polias.p.ssml_alias.Wall of"
+    },
+    {
+        "needle":  "StringId",
+        "fileOffset":  "0xA127AB9",
+        "context":  "ddOnIds.JobRequestProfilesFromPlatformIds.itemIds.materialIds.numMaterialIds.rootBranchIds.localizedStringIds.attributeIds.stateIds.typeIds.gameIds.profileIds.targetProfileIds.JobRequestProfileFromProfileIds.JobRequestProfileProfileIds.hclVdbParticleIds.availableIds.challengeIds.privilegeIds.TtCopyBroadPhaseNodeIds.tra"
+    },
+    {
+        "needle":  "Pad_LockAndTurnMovement",
+        "fileOffset":  "0xA10CE38",
+        "context":  "received duplicate fragment.Pad_StartAutomovement.TelekinisisSetHierachyFatherMovement.stepMovement.Pad_LockAndTurnMovement.player.achievement.Passement.ProgressionFirstIncrement.OptionsSubtabsIncrement.OptionsTabsIncrement.KenwayFleet_MenuNavigationIncrement.Photomode_ItemIncrement.OptionsSubtabsDecrement.OptionsTabsD"
+    }
+]

@@ -1,0 +1,202 @@
+[
+    {
+        "name":  ".impdata",
+        "virtualSize":  151212032,
+        "virtualAddress":  4096,
+        "rawSize":  151212032,
+        "rawPointer":  1536,
+        "imageBase":  5368709120
+    },
+    {
+        "name":  ".edata",
+        "virtualSize":  19382272,
+        "virtualAddress":  151216128,
+        "rawSize":  19382272,
+        "rawPointer":  151213568,
+        "imageBase":  5368709120
+    },
+    {
+        "name":  ".trace",
+        "virtualSize":  31756288,
+        "virtualAddress":  170598400,
+        "rawSize":  9257984,
+        "rawPointer":  170595840,
+        "imageBase":  5368709120
+    },
+    {
+        "name":  ".xtls",
+        "virtualSize":  4075520,
+        "virtualAddress":  202354688,
+        "rawSize":  4075520,
+        "rawPointer":  179853824,
+        "imageBase":  5368709120
+    },
+    {
+        "name":  ".xdata",
+        "virtualSize":  20480,
+        "virtualAddress":  206430208,
+        "rawSize":  20480,
+        "rawPointer":  183929344,
+        "imageBase":  5368709120
+    },
+    {
+        "name":  ".tls$",
+        "virtualSize":  4096,
+        "virtualAddress":  206450688,
+        "rawSize":  4096,
+        "rawPointer":  183949824,
+        "imageBase":  5368709120
+    },
+    {
+        "name":  ".idata",
+        "virtualSize":  4096,
+        "virtualAddress":  206454784,
+        "rawSize":  4096,
+        "rawPointer":  183953920,
+        "imageBase":  5368709120
+    },
+    {
+        "name":  ".didata",
+        "virtualSize":  16384,
+        "virtualAddress":  206458880,
+        "rawSize":  512,
+        "rawPointer":  183958016,
+        "imageBase":  5368709120
+    },
+    {
+        "name":  ".data2",
+        "virtualSize":  4096,
+        "virtualAddress":  206475264,
+        "rawSize":  4096,
+        "rawPointer":  183958528,
+        "imageBase":  5368709120
+    },
+    {
+        "name":  ".debug",
+        "virtualSize":  12288,
+        "virtualAddress":  206479360,
+        "rawSize":  12288,
+        "rawPointer":  183962624,
+        "imageBase":  5368709120
+    },
+    {
+        "name":  ".vmp1",
+        "virtualSize":  323584,
+        "virtualAddress":  206491648,
+        "rawSize":  323584,
+        "rawPointer":  183974912,
+        "imageBase":  5368709120
+    },
+    {
+        "name":  ".rodata",
+        "virtualSize":  2453504,
+        "virtualAddress":  206815232,
+        "rawSize":  2453504,
+        "rawPointer":  184298496,
+        "imageBase":  5368709120
+    },
+    {
+        "name":  ".code",
+        "virtualSize":  263106932,
+        "virtualAddress":  209268736,
+        "rawSize":  263107072,
+        "rawPointer":  186752000,
+        "imageBase":  5368709120
+    },
+    {
+        "name":  ".link",
+        "virtualSize":  312087,
+        "virtualAddress":  472379392,
+        "rawSize":  312320,
+        "rawPointer":  449859072,
+        "imageBase":  5368709120
+    },
+    {
+        "name":  ".sxdata",
+        "virtualSize":  168,
+        "virtualAddress":  472694784,
+        "rawSize":  512,
+        "rawPointer":  450171392,
+        "imageBase":  5368709120
+    },
+    {
+        "name":  ".data1",
+        "virtualSize":  16760,
+        "virtualAddress":  472698880,
+        "rawSize":  16896,
+        "rawPointer":  450171904,
+        "imageBase":  5368709120
+    },
+    {
+        "name":  ".bss",
+        "virtualSize":  4074876,
+        "virtualAddress":  472719360,
+        "rawSize":  4075008,
+        "rawPointer":  450188800,
+        "imageBase":  5368709120
+    },
+    {
+        "name":  ".vmp0",
+        "virtualSize":  3443664,
+        "virtualAddress":  476794880,
+        "rawSize":  3443712,
+        "rawPointer":  454263808,
+        "imageBase":  5368709120
+    },
+    {
+        "name":  ".nidata",
+        "virtualSize":  4096,
+        "virtualAddress":  480239616,
+        "rawSize":  2048,
+        "rawPointer":  457707520,
+        "imageBase":  5368709120
+    },
+    {
+        "name":  ".vmp2",
+        "virtualSize":  6361583,
+        "virtualAddress":  480243712,
+        "rawSize":  6361600,
+        "rawPointer":  457709568,
+        "imageBase":  5368709120
+    },
+    {
+        "name":  ".vmp3",
+        "virtualSize":  5528,
+        "virtualAddress":  486608896,
+        "rawSize":  5632,
+        "rawPointer":  464071168,
+        "imageBase":  5368709120
+    },
+    {
+        "name":  ".vmp4",
+        "virtualSize":  10987280,
+        "virtualAddress":  486617088,
+        "rawSize":  10987520,
+        "rawPointer":  464076800,
+        "imageBase":  5368709120
+    },
+    {
+        "name":  ".rsrc",
+        "virtualSize":  320467,
+        "virtualAddress":  497606656,
+        "rawSize":  320512,
+        "rawPointer":  475064320,
+        "imageBase":  5368709120
+    },
+    {
+        "name":  ".reloc",
+        "virtualSize":  3444732,
+        "virtualAddress":  497930240,
+        "rawSize":  3444736,
+        "rawPointer":  475384832,
+        "imageBase":  5368709120
+    },
+    {
+        "name":  ".v38",
+        "virtualSize":  4096,
+        "virtualAddress":  501374976,
+        "rawSize":  512,
+        "rawPointer":  478829568,
+        "imageBase":  5368709120
+    }
+]

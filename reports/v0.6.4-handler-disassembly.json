@@ -1,0 +1,77 @@
+{
+  "schemaVersion": 1,
+  "generatedUtc": "2026-11-12T15:42:00Z",
+  "milestone": "v0.6.4",
+  "function": {
+    "entryRva": "0x1AC380",
+    "endRva": "0x1ACA4A",
+    "sizeBytes": 1738,
+    "section": ".impdata",
+    "boundaryMethod": "int3_after_ret",
+    "prologue": "41 57 41 56 41 55 41 54 56 57 53 48 83 EC 70 C5 78 29 44 24 60 C5 F8 29 7C 24 50 C5 F8 29 74 24 40 48 89 CE",
+    "registeredAs": "CreateActorsDeferredSingleThreaded",
+    "registrationConfirmedAt": "0x5CBE0DE lea -> 0x1AC380"
+  },
+  "callingConventionObserved": {
+    "arg0": "rcx saved to rsi — coordinator/owner object",
+    "earlyNestedLoad": "mov rcx,[rcx+0x190]; test rcx,rcx; jz exit",
+    "return": "standard epilogue; rax not specially documented"
+  },
+  "structureModelConfirmed": {
+    "arrayBaseField": "[rsi+0xAC0]",
+    "arrayCountField": "[rsi+0xAC8] masked with 0x3FFF",
+    "elementStride": 16,
+    "elementFloatWorkOffset": "+8 (AVX/SSE ops write float result)",
+    "capacityAssertStrings": [
+      "Too many elements for %sArray. Size: %u, Max Size: %u",
+      "Small"
+    ]
+  },
+  "controlFlow": {
+    "branchesApprox": { "jcc": 56, "jmp": 15 },
+    "loopHintsBackward": 22,
+    "loopsConfirmed": [
+      "SIMD/float pass over 0x10-stride array elements",
+      "Second pass: for each element call 0x725400(elem, dl=1) then 0xE95E80(elem)",
+      "Additional compaction/shift style call 0x53519E0-family / mem helpers when resizing"
+    ]
+  },
+  "directE8Callers": [],
+  "qwordPointersToEntry": [],
+  "invocationNote": "No E8/qword xrefs recovered; invoked as registered phase function pointer from coordinator built at 0x5CBDFB0",
+  "hexDumpPrefix": "41 57 41 56 41 55 41 54 56 57 53 48 83 EC 70 C5 78 29 44 24 60 C5 F8 29 7C 24 50 C5 F8 29 74 24 40 48 89 CE 48 8B 05 55 6E 10 0A 48 31 E0 48 89 44 24 38 48 8B 89 90 01 00 00 48 85 C9 0F 84 DB 01 00 00 44 8B B6 C8 0A 00 00 44 89 F7 81 E7 FF 3F 00 00",
+  "mappedCallees": [
+    {"site": "0x1AC46C", "dest": "0xD530", "role": "tiny helper / indirect-style stub (lea global + call)"},
+    {"site": "0x1AC4B5", "dest": "0x2EA3770", "role": "uses SSO string helper 0x53519E0; structural/string work"},
+    {"site": "0x1AC4D3", "dest": "0x725400", "role": "per-element processor; called with (elem*, 1)"},
+    {"site": "0x1AC4DB", "dest": "0xE95E80", "role": "large per-element follow-up (stack frame 0x398); no character strings in scanned window"},
+    {"site": "0x1AC578", "dest": "0x53519E0", "role": "SSO/string helper (known from schema work)"},
+    {"site": "0x1AC5A6", "dest": "0x5014570", "role": "security-cookie / canary style check"},
+    {"site": "0x1AC603", "dest": "0xE6E0", "role": "jmp-thunk assert path for array overflow"},
+    {"site": "0x1AC649", "dest": "0x42256B0", "role": "imports/indirect call wrapper"},
+    {"site": "0x1AC6DA", "dest": "0x44FCD00", "role": "allocator validator (string: Invalid pointer not allocated by our allocators or already freed)"},
+    {"site": "0x1AC785", "dest": "0x5014570", "role": "security check"},
+    {"site": "0x1AC7CE", "dest": "0x4941530", "role": "null-check + TEB/PEB style lookup"},
+    {"site": "0x1AC982", "dest": "0x4265F00", "role": "larger helper; no actor/Edward strings recovered"}
+  ],
+  "bogusE8Note": "Some E8 bytes inside AVX encodings decode to unmapped destinations; ignored",
+  "leaSample": [
+    {"site": "0x1AC5F2", "target": "0xA105CF4", "preview": "Too many elements for %sArray. Size: %u, Max Size: %u"},
+    {"site": "0x1AC5F9", "target": "0xA14BC27", "preview": "Small"}
+  ],
+  "conclusions": {
+    "confirmedRole": "Deferred work-queue / small-array processor on coordinator fields +0xAC0/+0xAC8 with per-element activate/follow-up calls",
+    "confirmedEntityFactory": false,
+    "confirmedCharacterOrEdwardFactory": false,
+    "inferredFromPhaseNameAlone": false,
+    "creationOrInitOps": "Per-element calls exist (0x725400, 0xE95E80) but their payloads are not proven to allocate actors/entities from this analysis",
+    "confidence": "high_for_queue_processor; low_for_actor_identity_of_elements"
+  },
+  "safety": {
+    "analysisMode": "offline_pe_only",
+    "exeSha256": "19920F34BB2FAC814023EE3C27F0CECA1872E80A2AAFB37C092C419FFF77CC0D",
+    "asiSha256": "63B38877DDA7CC7CD9AB2619F94D3941C37F54C95A435EFE47084DC4CF2A50BE",
+    "asiPreservedAsV051": true,
+    "spawnAttempted": false
+  }
+}

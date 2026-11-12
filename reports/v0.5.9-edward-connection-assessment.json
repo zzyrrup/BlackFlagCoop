@@ -1,0 +1,25 @@
+﻿{
+  "schemaVersion": 1,
+  "generatedUtc": "2026-11-12T15:04:47.6012333Z",
+  "edwardStringSite": {"fileOffset":"0xA1708A7","rva":"0xA1712A7","context":"ReachDistanceBackward.reward.KenwayFleet_ClaimReward.edward.Edward.Wild Leopard.Keyboard.profilesLeaderboard.spacesLeaderboard.LogUsLeaderboard.profilesMeLeaderboard.InquiryBoardGoToBoard.Saccharine O"},
+  "distanceBytes": {"toPlayerPositionEvent":448599,"toPlayerPositionComposition":421646},
+  "nameScans": [
+    {"needle":"Edward","hitsInEdata":1,"firstFileOffset":"0xA1708A7","firstContext":"nceBackward.reward.KenwayFleet_ClaimReward.edward.Edward.Wild Leopard.Keyboard.profilesLeaderboard.spacesLeaderboard.LogUsLeaderboard.profilesMeLeaderboard.InquiryBoardGo","linkedToPlayerPositionSchema":false},
+    {"needle":"edward","hitsInEdata":1,"firstFileOffset":"0xA1708A0","firstContext":"chDistanceBackward.reward.KenwayFleet_ClaimReward.edward.Edward.Wild Leopard.Keyboard.profilesLeaderboard.spacesLeaderboard.LogUsLeaderboard.profilesMeLeaderboard.Inquiry","linkedToPlayerPositionSchema":false},
+    {"needle":"Kenway","hitsInEdata":36,"firstFileOffset":"0xA0FB2C3","firstContext":"}): {}.[{}] ERROR(0x{:x}): {}.* ERROR(0x{:x}): {}.Kenway Fleet Manager : {}.BirthLocationMatrix at position : {}.ConnectivityModule::TrySetState() - Could not set {}, cur","linkedToPlayerPositionSchema":false},
+    {"needle":"PlayerCharacter","hitsInEdata":0,"linkedToPlayerPositionSchema":false},
+    {"needle":"LocalPlayer","hitsInEdata":0,"linkedToPlayerPositionSchema":false}
+  ],
+  "playerPositionSchemaContains": {
+    "EdwardField": false,
+    "CharacterField": false
+  },
+  "conclusions": {
+    "verifiedConnectionToEdwardActor": false,
+    "verifiedConnectionToActivePlayerCharacter": false,
+    "verifiedWorldCoordinates": false,
+    "verifiedTransformOrMovementUpdates": false,
+    "edwardLiteralClassification": "content/UI/leaderboard name-table token near richard/standard; not an actor-definition link to player.position",
+    "assessment": "No defensible Edward connection from telemetry schema pipeline offline"
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "schemaVersion": 1,
+  "generatedUtc": "2026-11-12T15:30:00Z",
+  "milestone": "v0.6.3",
+  "systems": {
+    "input": {
+      "entryRva": "0x187F0550",
+      "resolvedRole": "Pad_LockAndTurnMovement action-bind wrapper",
+      "helperRva": "0x18EADD0"
+    },
+    "deferredRegistrar": {
+      "entryRva": "0x5CBDFB0",
+      "resolvedRole": "frame-phase table registrar",
+      "createActorsDeferredHandlerRva": "0x1AC380"
+    }
+  },
+  "directCallBetweenSystems": {
+    "inputCallsDeferred": false,
+    "deferredCallsInput": false,
+    "inputCallsCreateActorsHandler": false,
+    "deferredRegistrarCallsInputHelper": false
+  },
+  "sharedCalleesE8": [],
+  "sharedCalleeCount": 0,
+  "sharedEntityIdEvidence": false,
+  "sharedActorHandleEvidence": false,
+  "sharedComponentRegistryEvidence": false,
+  "sharedCharacterReferenceEvidence": false,
+  "sharedTransformObjectEvidence": false,
+  "sharedOwnershipStructureEvidence": false,
+  "verifiedCreatedEntityToInputReceiverLink": false,
+  "metrics": {
+    "inputActionLeas": 1,
+    "inputSchemaLeas": 0,
+    "deferredPhaseLeas": 4,
+    "deferredSchemaLeas": 0
+  },
+  "assessment": "Confirmed: the two v0.6.2 leads are unrelated subsystems at recovered edges. Input path is a generic Pad_/Key_ action-name bind helper family. Deferred path at 0x5CBDFB0 is a phase registrar that only names CreateActorsDeferredSingleThreaded and points at handler 0x1AC380. No shared entity/component/ownership structures recovered between them.",
+  "hypothesisNotConfirmed": [
+    "That 0x187F0550 applies player movement each frame",
+    "That 0x5CBDFB0 constructs character actors",
+    "That input descriptors and deferred-created entities share an ID space"
+  ]
+}

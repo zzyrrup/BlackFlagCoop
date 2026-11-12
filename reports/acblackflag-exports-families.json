@@ -1,0 +1,1887 @@
+[
+    {
+        "family":  "cpp_mangled",
+        "rva":  "0692D9E0",
+        "name":  "?duplicateFactoryHandle@harbour@@YA?AV?$unique_ptr@XUTypeErasedDeleter@internal@harbour@@@std@@PEAX@Z"
+    },
+    {
+        "family":  "wwise_audio",
+        "rva":  "147A3730",
+        "name":  "AkMotionInitializeScePadFunctions"
+    },
+    {
+        "family":  "d3d12_agility",
+        "rva":  "0A371CA8",
+        "name":  "D3D12SDKPath"
+    },
+    {
+        "family":  "d3d12_agility",
+        "rva":  "0992E9C0",
+        "name":  "D3D12SDKVersion"
+    },
+    {
+        "family":  "product_metadata",
+        "rva":  "0C793FE4",
+        "name":  "ExportProductMetadata"
+    },
+    {
+        "family":  "harbour_platform",
+        "rva":  "0692D990",
+        "name":  "Harbour_AsyncResult_Destroy"
+    },
+    {
+        "family":  "harbour_platform",
+        "rva":  "0692D790",
+        "name":  "Harbour_AsyncResult_RegisterObserver"
+    },
+    {
+        "family":  "harbour_platform",
+        "rva":  "0692D780",
+        "name":  "Harbour_AsyncResult_SetupReverseCallbacks"
+    },
+    {
+        "family":  "harbour_platform",
+        "rva":  "0692D950",
+        "name":  "Harbour_AsyncResult_UnregisterObserver"
+    },
+    {
+        "family":  "harbour_platform",
+        "rva":  "0692D9D0",
+        "name":  "Harbour_Factory_SetupReverseCallbacks"
+    },
+    {
+        "family":  "harbour_keel_networking",
+        "rva":  "072EF530",
+        "name":  "Harbour_Keel_Config_Connection_Convert"
+    },
+    {
+        "family":  "harbour_keel_networking",
+        "rva":  "072F3050",
+        "name":  "Harbour_Keel_Config_QUICConnection_Convert"
+    },
+    {
+        "family":  "harbour_keel_networking",
+        "rva":  "072F3220",
+        "name":  "Harbour_Keel_Config_QUICStream_Convert"
+    },
+    {
+        "family":  "harbour_keel_networking",
+        "rva":  "072F3410",
+        "name":  "Harbour_Keel_Config_QUICTerminal_Convert"
+    },
+    {
+        "family":  "harbour_keel_networking",
+        "rva":  "072F1EF0",
+        "name":  "Harbour_Keel_Config_Security_BasicProvisioner_Convert"
+    },
+    {
+        "family":  "harbour_keel_networking",
+        "rva":  "072F2BE0",
+        "name":  "Harbour_Keel_Config_Security_KeyServiceProvisioner_Convert"
+    },
+    {
+        "family":  "harbour_keel_networking",
+        "rva":  "072EFF00",
+        "name":  "Harbour_Keel_Config_Stream_Convert"
+    },
+    {
+        "family":  "harbour_keel_networking",
+        "rva":  "072F35E0",
+        "name":  "Harbour_Keel_Config_TCPConnection_Convert"
+    },
+    {
+        "family":  "harbour_keel_networking",
+        "rva":  "072F37B0",
+        "name":  "Harbour_Keel_Config_TCPStream_Convert"
+    },
+    {
+        "family":  "harbour_keel_networking",
+        "rva":  "072F39A0",
+        "name":  "Harbour_Keel_Config_TCPTerminal_Convert"
+    },
+    {
+        "family":  "harbour_keel_networking",
+        "rva":  "072F1180",
+        "name":  "Harbour_Keel_Config_Terminal_Convert"
+    },
+    {
+        "family":  "harbour_keel_networking",
+        "rva":  "072EA060",
+        "name":  "Harbour_Keel_Connection_Close"
+    },
+    {
+        "family":  "harbour_keel_networking",
+        "rva":  "072EA150",
+        "name":  "Harbour_Keel_Connection_CreateStream"
+    },
+    {
+        "family":  "harbour_keel_networking",
+        "rva":  "072EB7D0",
+        "name":  "Harbour_Keel_Connection_ForEach"
+    },
+    {
+        "family":  "harbour_keel_networking",
+        "rva":  "072E9CC0",
+        "name":  "Harbour_Keel_Connection_GetConfig"
+    },
+    {
+        "family":  "harbour_keel_networking",
+        "rva":  "072E9D30",
+        "name":  "Harbour_Keel_Connection_GetEmulator"
+    },
+    {
+        "family":  "harbour_keel_networking",
+        "rva":  "072E9C80",
+        "name":  "Harbour_Keel_Connection_GetHandle"
+    },
+    {
+        "family":  "harbour_keel_networking",
+        "rva":  "072E9F50",
+        "name":  "Harbour_Keel_Connection_GetId"
+    },
+    {
+        "family":  "harbour_keel_networking",
+        "rva":  "072E9D50",
+        "name":  "Harbour_Keel_Connection_GetLocalEndpoint"
+    },
+    {
+        "family":  "harbour_keel_networking",
+        "rva":  "072E9D10",
+        "name":  "Harbour_Keel_Connection_GetMetadata"
+    },
+    {
+        "family":  "harbour_keel_networking",
+        "rva":  "072E9E50",
+        "name":  "Harbour_Keel_Connection_GetRemoteEndpoint"
+    },
+    {
+        "family":  "harbour_keel_networking",
+        "rva":  "072E9F90",
+        "name":  "Harbour_Keel_Connection_GetState"
+    },
+    {
+        "family":  "harbour_keel_networking",
+        "rva":  "072EB740",
+        "name":  "Harbour_Keel_Connection_GetStream"
+    },
+    {
+        "family":  "harbour_keel_networking",
+        "rva":  "072E9C90",
+        "name":  "Harbour_Keel_Connection_GetTerminal"
+    },
+    {
+        "family":  "harbour_keel_networking",
+        "rva":  "072E9FB0",
+        "name":  "Harbour_Keel_Connection_IsInitiator"
+    },
+    {
+        "family":  "harbour_keel_networking",
+        "rva":  "072E9FF0",
+        "name":  "Harbour_Keel_Connection_Open"
+    },
+    {
+        "family":  "harbour_keel_networking",
+        "rva":  "072E9FD0",
+        "name":  "Harbour_Keel_Connection_Pair"
+    },
+    {
+        "family":  "harbour_keel_networking",
+        "rva":  "072E9C70",
+        "name":  "Harbour_Keel_Connection_Release"
+    },
+    {
+        "family":  "harbour_keel_networking",
+        "rva":  "072EA0D0",
+        "name":  "Harbour_Keel_Connection_Send"
+    },
+    {
+        "family":  "harbour_keel_networking",
+        "rva":  "072E9C20",
+        "name":  "Harbour_Keel_Connection_SetupReverseCallbacks"
+    },
+    {
+        "family":  "harbour_keel_networking",
+        "rva":  "072F3F80",
+        "name":  "Harbour_Keel_Emulator_Bandwidth_Control_AsConstant"
+    },
+    {
+        "family":  "harbour_keel_networking",
+        "rva":  "072F3F00",
+        "name":  "Harbour_Keel_Emulator_Bandwidth_Control_AsPassthrough"
+    },
+    {
+        "family":  "harbour_keel_networking",
+        "rva":  "072F3D60",
+        "name":  "Harbour_Keel_Emulator_Bandwidth_Control_Disable"
+    },
+    {
+        "family":  "harbour_keel_networking",
+        "rva":  "072F3E00",
+        "name":  "Harbour_Keel_Emulator_Bandwidth_Control_Enable"
+    },
+    {
+        "family":  "harbour_keel_networking",
+        "rva":  "072F3C10",
+        "name":  "Harbour_Keel_Emulator_Bandwidth_Control_GetSettings"
+    },
+    {
+        "family":  "harbour_keel_networking",
+        "rva":  "072F3BA0",
+        "name":  "Harbour_Keel_Emulator_Bandwidth_Control_GetState"
+    },
+    {
+        "family":  "harbour_keel_networking",
+        "rva":  "072F3BC0",
+        "name":  "Harbour_Keel_Emulator_Bandwidth_Control_GetType"
+    },
+    {
+        "family":  "harbour_keel_networking",
+        "rva":  "072F3EA0",
+        "name":  "Harbour_Keel_Emulator_Bandwidth_Control_Reset"
+    },
+    {
+        "family":  "harbour_keel_networking",
+        "rva":  "072F4020",
+        "name":  "Harbour_Keel_Emulator_BidirectionalControls_GetRxControls"
+    },
+    {
+        "family":  "harbour_keel_networking",
+        "rva":  "072F4030",
+        "name":  "Harbour_Keel_Emulator_BidirectionalControls_GetTxControls"
+    },
+    {
+        "family":  "harbour_keel_networking",
+        "rva":  "072F4320",
+        "name":  "Harbour_Keel_Emulator_Controls_Disable"
+    },
+    {
+        "family":  "harbour_keel_networking",
+        "rva":  "072F4380",
+        "name":  "Harbour_Keel_Emulator_Controls_Enable"
+    },
+    {
+        "family":  "harbour_keel_networking",
+        "rva":  "072F4290",
+        "name":  "Harbour_Keel_Emulator_Controls_GetBandwidth"
+    },
+    {
+        "family":  "harbour_keel_networking",
+        "rva":  "072F42A0",
+        "name":  "Harbour_Keel_Emulator_Controls_GetJitter"
+    },
+    {
+        "family":  "harbour_keel_networking",
+        "rva":  "072F42C0",
+        "name":  "Harbour_Keel_Emulator_Controls_GetLatency"
+    },
+    {
+        "family":  "harbour_keel_networking",
+        "rva":  "072F42E0",
+        "name":  "Harbour_Keel_Emulator_Controls_GetPacketLoss"
+    },
+    {
+        "family":  "harbour_keel_networking",
+        "rva":  "072F4300",
+        "name":  "Harbour_Keel_Emulator_Controls_GetReordering"
+    },
+    {
+        "family":  "harbour_keel_networking",
+        "rva":  "072F4050",
+        "name":  "Harbour_Keel_Emulator_Controls_GetSettings"
+    },
+    {
+        "family":  "harbour_keel_networking",
+        "rva":  "072F43E0",
+        "name":  "Harbour_Keel_Emulator_Controls_Reset"
+    },
+    {
+        "family":  "harbour_keel_networking",
+        "rva":  "072F3F00",
+        "name":  "Harbour_Keel_Emulator_Jitter_Control_AsPassthrough"
+    },
+    {
+        "family":  "harbour_keel_networking",
+        "rva":  "072F44E0",
+        "name":  "Harbour_Keel_Emulator_Jitter_Control_AsRandom"
+    },
+    {
+        "family":  "harbour_keel_networking",
+        "rva":  "072F3D60",
+        "name":  "Harbour_Keel_Emulator_Jitter_Control_Disable"
+    },
+    {
+        "family":  "harbour_keel_networking",
+        "rva":  "072F3E00",
+        "name":  "Harbour_Keel_Emulator_Jitter_Control_Enable"
+    },
+    {
+        "family":  "harbour_keel_networking",
+        "rva":  "072F3C10",
+        "name":  "Harbour_Keel_Emulator_Jitter_Control_GetSettings"
+    },
+    {
+        "family":  "harbour_keel_networking",
+        "rva":  "072F3BA0",
+        "name":  "Harbour_Keel_Emulator_Jitter_Control_GetState"
+    },
+    {
+        "family":  "harbour_keel_networking",
+        "rva":  "072F3BC0",
+        "name":  "Harbour_Keel_Emulator_Jitter_Control_GetType"
+    },
+    {
+        "family":  "harbour_keel_networking",
+        "rva":  "072F3EA0",
+        "name":  "Harbour_Keel_Emulator_Jitter_Control_Reset"
+    },
+    {
+        "family":  "harbour_keel_networking",
+        "rva":  "072F4560",
+        "name":  "Harbour_Keel_Emulator_Latency_Control_AsConstant"
+    },
+    {
+        "family":  "harbour_keel_networking",
+        "rva":  "072F3F00",
+        "name":  "Harbour_Keel_Emulator_Latency_Control_AsPassthrough"
+    },
+    {
+        "family":  "harbour_keel_networking",
+        "rva":  "072F4600",
+        "name":  "Harbour_Keel_Emulator_Latency_Control_AsUniformDistribution"
+    },
+    {
+        "family":  "harbour_keel_networking",
+        "rva":  "072F3D60",
+        "name":  "Harbour_Keel_Emulator_Latency_Control_Disable"
+    },
+    {
+        "family":  "harbour_keel_networking",
+        "rva":  "072F3E00",
+        "name":  "Harbour_Keel_Emulator_Latency_Control_Enable"
+    },
+    {
+        "family":  "harbour_keel_networking",
+        "rva":  "072F3C10",
+        "name":  "Harbour_Keel_Emulator_Latency_Control_GetSettings"
+    },
+    {
+        "family":  "harbour_keel_networking",
+        "rva":  "072F3BA0",
+        "name":  "Harbour_Keel_Emulator_Latency_Control_GetState"
+    },
+    {
+        "family":  "harbour_keel_networking",
+        "rva":  "072F3BC0",
+        "name":  "Harbour_Keel_Emulator_Latency_Control_GetType"
+    },
+    {
+        "family":  "harbour_keel_networking",
+        "rva":  "072F3EA0",
+        "name":  "Harbour_Keel_Emulator_Latency_Control_Reset"
+    },
+    {
+        "family":  "harbour_keel_networking",
+        "rva":  "072F3F00",
+        "name":  "Harbour_Keel_Emulator_PacketLoss_Control_AsPassthrough"
+    },
+    {
+        "family":  "harbour_keel_networking",
+        "rva":  "072F4670",
+        "name":  "Harbour_Keel_Emulator_PacketLoss_Control_AsRandom"
+    },
+    {
+        "family":  "harbour_keel_networking",
+        "rva":  "072F4710",
+        "name":  "Harbour_Keel_Emulator_PacketLoss_Control_AsTwoState"
+    },
+    {
+        "family":  "harbour_keel_networking",
+        "rva":  "072F3D60",
+        "name":  "Harbour_Keel_Emulator_PacketLoss_Control_Disable"
+    },
+    {
+        "family":  "harbour_keel_networking",
+        "rva":  "072F3E00",
+        "name":  "Harbour_Keel_Emulator_PacketLoss_Control_Enable"
+    },
+    {
+        "family":  "harbour_keel_networking",
+        "rva":  "072F3C10",
+        "name":  "Harbour_Keel_Emulator_PacketLoss_Control_GetSettings"
+    },
+    {
+        "family":  "harbour_keel_networking",
+        "rva":  "072F3BA0",
+        "name":  "Harbour_Keel_Emulator_PacketLoss_Control_GetState"
+    },
+    {
+        "family":  "harbour_keel_networking",
+        "rva":  "072F3BC0",
+        "name":  "Harbour_Keel_Emulator_PacketLoss_Control_GetType"
+    },
+    {
+        "family":  "harbour_keel_networking",
+        "rva":  "072F3EA0",
+        "name":  "Harbour_Keel_Emulator_PacketLoss_Control_Reset"
+    },
+    {
+        "family":  "harbour_keel_networking",
+        "rva":  "072F3F00",
+        "name":  "Harbour_Keel_Emulator_Reordering_Control_AsPassthrough"
+    },
+    {
+        "family":  "harbour_keel_networking",
+        "rva":  "072F4820",
+        "name":  "Harbour_Keel_Emulator_Reordering_Control_AsRandom"
+    },
+    {
+        "family":  "harbour_keel_networking",
+        "rva":  "072F3D60",
+        "name":  "Harbour_Keel_Emulator_Reordering_Control_Disable"
+    },
+    {
+        "family":  "harbour_keel_networking",
+        "rva":  "072F3E00",
+        "name":  "Harbour_Keel_Emulator_Reordering_Control_Enable"
+    },
+    {
+        "family":  "harbour_keel_networking",
+        "rva":  "072F3C10",
+        "name":  "Harbour_Keel_Emulator_Reordering_Control_GetSettings"
+    },
+    {
+        "family":  "harbour_keel_networking",
+        "rva":  "072F3BA0",
+        "name":  "Harbour_Keel_Emulator_Reordering_Control_GetState"
+    },
+    {
+        "family":  "harbour_keel_networking",
+        "rva":  "072F3BC0",
+        "name":  "Harbour_Keel_Emulator_Reordering_Control_GetType"
+    },
+    {
+        "family":  "harbour_keel_networking",
+        "rva":  "072F3EA0",
+        "name":  "Harbour_Keel_Emulator_Reordering_Control_Reset"
+    },
+    {
+        "family":  "harbour_keel_networking",
+        "rva":  "072EBEA0",
+        "name":  "Harbour_Keel_Keel_Construct"
+    },
+    {
+        "family":  "harbour_keel_networking",
+        "rva":  "072EC710",
+        "name":  "Harbour_Keel_Keel_CreateConnection"
+    },
+    {
+        "family":  "harbour_keel_networking",
+        "rva":  "072EBF50",
+        "name":  "Harbour_Keel_Keel_CreateTerminal"
+    },
+    {
+        "family":  "harbour_keel_networking",
+        "rva":  "072EBF30",
+        "name":  "Harbour_Keel_Keel_Destroy"
+    },
+    {
+        "family":  "harbour_keel_networking",
+        "rva":  "072ECFE0",
+        "name":  "Harbour_Keel_Keel_ForEach"
+    },
+    {
+        "family":  "harbour_keel_networking",
+        "rva":  "072EBF40",
+        "name":  "Harbour_Keel_Keel_GetMetadata"
+    },
+    {
+        "family":  "harbour_keel_networking",
+        "rva":  "072ECF10",
+        "name":  "Harbour_Keel_Keel_GetTerminal"
+    },
+    {
+        "family":  "harbour_keel_networking",
+        "rva":  "072EBE90",
+        "name":  "Harbour_Keel_Keel_SetupReverseCallbacks"
+    },
+    {
+        "family":  "harbour_keel_networking",
+        "rva":  "072ED060",
+        "name":  "Harbour_Keel_Keel_Update"
+    },
+    {
+        "family":  "harbour_keel_networking",
+        "rva":  "072ED090",
+        "name":  "Harbour_Keel_Keel_UpdateUntilStopped"
+    },
+    {
+        "family":  "harbour_keel_networking",
+        "rva":  "072ED140",
+        "name":  "Harbour_Keel_Metadata_Attach"
+    },
+    {
+        "family":  "harbour_keel_networking",
+        "rva":  "072ED1F0",
+        "name":  "Harbour_Keel_Metadata_Find"
+    },
+    {
+        "family":  "harbour_keel_networking",
+        "rva":  "072ED350",
+        "name":  "Harbour_Keel_Metadata_ForEach"
+    },
+    {
+        "family":  "harbour_keel_networking",
+        "rva":  "072ED130",
+        "name":  "Harbour_Keel_Metadata_SetupReverseCallbacks"
+    },
+    {
+        "family":  "harbour_keel_networking",
+        "rva":  "072F48B0",
+        "name":  "Harbour_Keel_Policies_Compression_SetupReverseCallbacks"
+    },
+    {
+        "family":  "harbour_keel_networking",
+        "rva":  "072F53D0",
+        "name":  "Harbour_Keel_Policies_ConnectionIncoming_SetupReverseCallbacks"
+    },
+    {
+        "family":  "harbour_keel_networking",
+        "rva":  "072F5C90",
+        "name":  "Harbour_Keel_Policies_Multiplexer_SetupReverseCallbacks"
+    },
+    {
+        "family":  "harbour_keel_networking",
+        "rva":  "072F63D0",
+        "name":  "Harbour_Keel_Policies_SecurityVerifier_SetupReverseCallbacks"
+    },
+    {
+        "family":  "harbour_keel_networking",
+        "rva":  "072F6660",
+        "name":  "Harbour_Keel_Policies_StreamIncoming_SetupReverseCallbacks"
+    },
+    {
+        "family":  "harbour_keel_networking",
+        "rva":  "072ED620",
+        "name":  "Harbour_Keel_Stream_Close"
+    },
+    {
+        "family":  "harbour_keel_networking",
+        "rva":  "072E9CC0",
+        "name":  "Harbour_Keel_Stream_GetConfig"
+    },
+    {
+        "family":  "harbour_keel_networking",
+        "rva":  "072ED410",
+        "name":  "Harbour_Keel_Stream_GetConnection"
+    },
+    {
+        "family":  "harbour_keel_networking",
+        "rva":  "072ED4E0",
+        "name":  "Harbour_Keel_Stream_GetDirection"
+    },
+    {
+        "family":  "harbour_keel_networking",
+        "rva":  "072ED520",
+        "name":  "Harbour_Keel_Stream_GetFlow"
+    },
+    {
+        "family":  "harbour_keel_networking",
+        "rva":  "072E9C80",
+        "name":  "Harbour_Keel_Stream_GetHandle"
+    },
+    {
+        "family":  "harbour_keel_networking",
+        "rva":  "072ED460",
+        "name":  "Harbour_Keel_Stream_GetId"
+    },
+    {
+        "family":  "harbour_keel_networking",
+        "rva":  "072ED440",
+        "name":  "Harbour_Keel_Stream_GetMetadata"
+    },
+    {
+        "family":  "harbour_keel_networking",
+        "rva":  "072ED4A0",
+        "name":  "Harbour_Keel_Stream_GetPriority"
+    },
+    {
+        "family":  "harbour_keel_networking",
+        "rva":  "072ED570",
+        "name":  "Harbour_Keel_Stream_GetState"
+    },
+    {
+        "family":  "harbour_keel_networking",
+        "rva":  "072ED500",
+        "name":  "Harbour_Keel_Stream_GetType"
+    },
+    {
+        "family":  "harbour_keel_networking",
+        "rva":  "072ED480",
+        "name":  "Harbour_Keel_Stream_IsInitiator"
+    },
+    {
+        "family":  "harbour_keel_networking",
+        "rva":  "072ED4C0",
+        "name":  "Harbour_Keel_Stream_IsReliable"
+    },
+    {
+        "family":  "harbour_keel_networking",
+        "rva":  "072ED5B0",
+        "name":  "Harbour_Keel_Stream_Open"
+    },
+    {
+        "family":  "harbour_keel_networking",
+        "rva":  "072ED590",
+        "name":  "Harbour_Keel_Stream_Pair"
+    },
+    {
+        "family":  "harbour_keel_networking",
+        "rva":  "072E9C70",
+        "name":  "Harbour_Keel_Stream_Release"
+    },
+    {
+        "family":  "harbour_keel_networking",
+        "rva":  "072ED710",
+        "name":  "Harbour_Keel_Stream_Reset"
+    },
+    {
+        "family":  "harbour_keel_networking",
+        "rva":  "072ED690",
+        "name":  "Harbour_Keel_Stream_Send"
+    },
+    {
+        "family":  "harbour_keel_networking",
+        "rva":  "072ED3D0",
+        "name":  "Harbour_Keel_Stream_SetupReverseCallbacks"
+    },
+    {
+        "family":  "harbour_keel_networking",
+        "rva":  "072EDA10",
+        "name":  "Harbour_Keel_Terminal_Close"
+    },
+    {
+        "family":  "harbour_keel_networking",
+        "rva":  "072EDA80",
+        "name":  "Harbour_Keel_Terminal_CreateConnection"
+    },
+    {
+        "family":  "harbour_keel_networking",
+        "rva":  "072EE330",
+        "name":  "Harbour_Keel_Terminal_ForEach"
+    },
+    {
+        "family":  "harbour_keel_networking",
+        "rva":  "072ED800",
+        "name":  "Harbour_Keel_Terminal_GetConfig"
+    },
+    {
+        "family":  "harbour_keel_networking",
+        "rva":  "072EE290",
+        "name":  "Harbour_Keel_Terminal_GetConnection"
+    },
+    {
+        "family":  "harbour_keel_networking",
+        "rva":  "072ED870",
+        "name":  "Harbour_Keel_Terminal_GetId"
+    },
+    {
+        "family":  "harbour_keel_networking",
+        "rva":  "072ED7D0",
+        "name":  "Harbour_Keel_Terminal_GetKeel"
+    },
+    {
+        "family":  "harbour_keel_networking",
+        "rva":  "072ED850",
+        "name":  "Harbour_Keel_Terminal_GetMetadata"
+    },
+    {
+        "family":  "harbour_keel_networking",
+        "rva":  "072ED8C0",
+        "name":  "Harbour_Keel_Terminal_GetState"
+    },
+    {
+        "family":  "harbour_keel_networking",
+        "rva":  "072ED8E0",
+        "name":  "Harbour_Keel_Terminal_GetURL"
+    },
+    {
+        "family":  "harbour_keel_networking",
+        "rva":  "072ED9A0",
+        "name":  "Harbour_Keel_Terminal_Open"
+    },
+    {
+        "family":  "harbour_keel_networking",
+        "rva":  "072ED780",
+        "name":  "Harbour_Keel_Terminal_SetupReverseCallbacks"
+    },
+    {
+        "family":  "harbour_keel_networking",
+        "rva":  "0546F210",
+        "name":  "Harbour_Keel__GetCurrentBuildType"
+    },
+    {
+        "family":  "harbour_keel_networking",
+        "rva":  "072EE3B0",
+        "name":  "Harbour_Keel__GetProductVersion"
+    },
+    {
+        "family":  "harbour_keel_networking",
+        "rva":  "072EBD90",
+        "name":  "Harbour_Keel__InitializeSdk"
+    },
+    {
+        "family":  "harbour_keel_networking",
+        "rva":  "072EBE50",
+        "name":  "Harbour_Keel__UninitializeSdk"
+    },
+    {
+        "family":  "harbour_platform",
+        "rva":  "0692FEF0",
+        "name":  "Harbour_Logging_Pack_ForEach"
+    },
+    {
+        "family":  "harbour_platform",
+        "rva":  "0692FFD0",
+        "name":  "Harbour_Logging_Pack_ForEach_RichValue"
+    },
+    {
+        "family":  "harbour_platform",
+        "rva":  "0692FBE0",
+        "name":  "Harbour_Logging_Pack_GetData"
+    },
+    {
+        "family":  "harbour_platform",
+        "rva":  "0692FB80",
+        "name":  "Harbour_Logging_Pack_GetMetadata"
+    },
+    {
+        "family":  "harbour_platform",
+        "rva":  "0692FC00",
+        "name":  "Harbour_Logging_Pack_IsEmpty"
+    },
+    {
+        "family":  "harbour_platform",
+        "rva":  "0692FC20",
+        "name":  "Harbour_Logging_Pack_IsTruncated"
+    },
+    {
+        "family":  "harbour_platform",
+        "rva":  "0692FA20",
+        "name":  "Harbour_Logging_Pack_SetupReverseCallbacks"
+    },
+    {
+        "family":  "harbour_platform",
+        "rva":  "0692FAD0",
+        "name":  "Harbour_Logging_Pack_SetupRichReverseCallbacks"
+    },
+    {
+        "family":  "harbour_platform",
+        "rva":  "0692FD90",
+        "name":  "Harbour_Logging_Pack_ToJsonString"
+    },
+    {
+        "family":  "harbour_platform",
+        "rva":  "0692FC30",
+        "name":  "Harbour_Logging_Pack_ToPrintableString"
+    },
+    {
+        "family":  "harbour_platform",
+        "rva":  "0692EFA0",
+        "name":  "Harbour_Logging_Splitter_Close"
+    },
+    {
+        "family":  "harbour_platform",
+        "rva":  "0692EE40",
+        "name":  "Harbour_Logging_Splitter_Disable"
+    },
+    {
+        "family":  "harbour_platform",
+        "rva":  "0692ED00",
+        "name":  "Harbour_Logging_Splitter_Enable"
+    },
+    {
+        "family":  "harbour_platform",
+        "rva":  "0692EAA0",
+        "name":  "Harbour_Logging_Splitter_Open"
+    },
+    {
+        "family":  "harbour_platform",
+        "rva":  "0692EF80",
+        "name":  "Harbour_Logging_Splitter_Reset"
+    },
+    {
+        "family":  "harbour_platform",
+        "rva":  "06930150",
+        "name":  "Harbour_Policy_Allocation_Define"
+    },
+    {
+        "family":  "harbour_platform",
+        "rva":  "06930220",
+        "name":  "Harbour_Policy_Allocation_Reset"
+    },
+    {
+        "family":  "harbour_platform",
+        "rva":  "06930130",
+        "name":  "Harbour_Policy_Allocation_SetupReverseCallbacks"
+    },
+    {
+        "family":  "harbour_platform",
+        "rva":  "06930140",
+        "name":  "Harbour_Policy_Allocation_SetupReverseCallbacks2"
+    },
+    {
+        "family":  "harbour_platform",
+        "rva":  "06930740",
+        "name":  "Harbour_Policy_Assertion_Define"
+    },
+    {
+        "family":  "harbour_platform",
+        "rva":  "06930780",
+        "name":  "Harbour_Policy_Assertion_Reset"
+    },
+    {
+        "family":  "harbour_platform",
+        "rva":  "06930730",
+        "name":  "Harbour_Policy_Assertion_SetupReverseCallbacks"
+    },
+    {
+        "family":  "harbour_platform",
+        "rva":  "06930980",
+        "name":  "Harbour_Policy_ConcurrencyAlert_Define"
+    },
+    {
+        "family":  "harbour_platform",
+        "rva":  "069309C0",
+        "name":  "Harbour_Policy_ConcurrencyAlert_Reset"
+    },
+    {
+        "family":  "harbour_platform",
+        "rva":  "06930970",
+        "name":  "Harbour_Policy_ConcurrencyAlert_SetupReverseCallbacks"
+    },
+    {
+        "family":  "harbour_platform",
+        "rva":  "06930B60",
+        "name":  "Harbour_Policy_Logging_Define"
+    },
+    {
+        "family":  "harbour_platform",
+        "rva":  "06930CC0",
+        "name":  "Harbour_Policy_Logging_Reset"
+    },
+    {
+        "family":  "harbour_platform",
+        "rva":  "06930B50",
+        "name":  "Harbour_Policy_Logging_SetupReverseCallbacks"
+    },
+    {
+        "family":  "harbour_platform",
+        "rva":  "06931110",
+        "name":  "Harbour_Policy_Perf_Profiling_Define"
+    },
+    {
+        "family":  "harbour_platform",
+        "rva":  "06931270",
+        "name":  "Harbour_Policy_Perf_Profiling_Reset"
+    },
+    {
+        "family":  "harbour_platform",
+        "rva":  "069310B0",
+        "name":  "Harbour_Policy_Perf_Profiling_SetupReverseCallbacks"
+    },
+    {
+        "family":  "harbour_platform",
+        "rva":  "0692DA40",
+        "name":  "Harbour_ProductVersion_Construct"
+    },
+    {
+        "family":  "harbour_platform",
+        "rva":  "0692DB30",
+        "name":  "Harbour_ProductVersion_Destroy"
+    },
+    {
+        "family":  "harbour_platform",
+        "rva":  "0692DB90",
+        "name":  "Harbour_ProductVersion_EqualityOperator"
+    },
+    {
+        "family":  "harbour_platform",
+        "rva":  "0692DCC0",
+        "name":  "Harbour_ProductVersion_GreaterThanOperator"
+    },
+    {
+        "family":  "harbour_platform",
+        "rva":  "0692DD10",
+        "name":  "Harbour_ProductVersion_GreaterThanOrEqualOperator"
+    },
+    {
+        "family":  "harbour_platform",
+        "rva":  "0692DC10",
+        "name":  "Harbour_ProductVersion_InequalityOperator"
+    },
+    {
+        "family":  "harbour_platform",
+        "rva":  "0692DB60",
+        "name":  "Harbour_ProductVersion_IsAlpha"
+    },
+    {
+        "family":  "harbour_platform",
+        "rva":  "0692DB70",
+        "name":  "Harbour_ProductVersion_IsBeta"
+    },
+    {
+        "family":  "harbour_platform",
+        "rva":  "0692DB50",
+        "name":  "Harbour_ProductVersion_IsDevelopment"
+    },
+    {
+        "family":  "harbour_platform",
+        "rva":  "0692DB80",
+        "name":  "Harbour_ProductVersion_IsReleaseCandidate"
+    },
+    {
+        "family":  "harbour_platform",
+        "rva":  "0692DC30",
+        "name":  "Harbour_ProductVersion_LessThanOperator"
+    },
+    {
+        "family":  "harbour_platform",
+        "rva":  "0692DC70",
+        "name":  "Harbour_ProductVersion_LessThanOrEqualOperator"
+    },
+    {
+        "family":  "harbour_platform",
+        "rva":  "053741F0",
+        "name":  "Harbour_Profiling_GearPerfPolicy_Disable"
+    },
+    {
+        "family":  "harbour_platform",
+        "rva":  "053741F0",
+        "name":  "Harbour_Profiling_GearPerfPolicy_Dump"
+    },
+    {
+        "family":  "harbour_platform",
+        "rva":  "053741F0",
+        "name":  "Harbour_Profiling_GearPerfPolicy_DumpToFile"
+    },
+    {
+        "family":  "harbour_platform",
+        "rva":  "053741F0",
+        "name":  "Harbour_Profiling_GearPerfPolicy_Enable"
+    },
+    {
+        "family":  "harbour_platform",
+        "rva":  "06931530",
+        "name":  "Harbour_Profiling_GearPerfPolicy_GetOutputPath"
+    },
+    {
+        "family":  "harbour_platform",
+        "rva":  "053741F0",
+        "name":  "Harbour_Profiling_GearPerfPolicy_Initialize"
+    },
+    {
+        "family":  "harbour_platform",
+        "rva":  "0535F280",
+        "name":  "Harbour_Profiling_GearPerfPolicy_IsEnabled"
+    },
+    {
+        "family":  "harbour_platform",
+        "rva":  "0535F280",
+        "name":  "Harbour_Profiling_GearPerfPolicy_IsInitialized"
+    },
+    {
+        "family":  "harbour_platform",
+        "rva":  "053741F0",
+        "name":  "Harbour_Profiling_GearPerfPolicy_SetBuildInfo"
+    },
+    {
+        "family":  "harbour_platform",
+        "rva":  "053741F0",
+        "name":  "Harbour_Profiling_GearPerfPolicy_SetOutputPath"
+    },
+    {
+        "family":  "harbour_platform",
+        "rva":  "053741F0",
+        "name":  "Harbour_Profiling_GearPerfPolicy_Uninitialize"
+    },
+    {
+        "family":  "harbour_platform",
+        "rva":  "0692E280",
+        "name":  "Harbour_StopCallback_Construct"
+    },
+    {
+        "family":  "harbour_platform",
+        "rva":  "0692E380",
+        "name":  "Harbour_StopCallback_Destroy"
+    },
+    {
+        "family":  "harbour_platform",
+        "rva":  "0692E270",
+        "name":  "Harbour_StopCallback_SetupReverseCallbacks"
+    },
+    {
+        "family":  "harbour_platform",
+        "rva":  "0692DF20",
+        "name":  "Harbour_StopSource_Construct"
+    },
+    {
+        "family":  "harbour_platform",
+        "rva":  "0692E030",
+        "name":  "Harbour_StopSource_Destroy"
+    },
+    {
+        "family":  "harbour_platform",
+        "rva":  "0692E040",
+        "name":  "Harbour_StopSource_GetToken"
+    },
+    {
+        "family":  "harbour_platform",
+        "rva":  "0692E1F0",
+        "name":  "Harbour_StopSource_IsStopPossible"
+    },
+    {
+        "family":  "harbour_platform",
+        "rva":  "0692E200",
+        "name":  "Harbour_StopSource_IsStopRequested"
+    },
+    {
+        "family":  "harbour_platform",
+        "rva":  "0692E220",
+        "name":  "Harbour_StopSource_RequestStop"
+    },
+    {
+        "family":  "harbour_platform",
+        "rva":  "0692E150",
+        "name":  "Harbour_StopToken_Construct"
+    },
+    {
+        "family":  "harbour_platform",
+        "rva":  "0692E240",
+        "name":  "Harbour_StopToken_Destroy"
+    },
+    {
+        "family":  "harbour_platform",
+        "rva":  "0692E250",
+        "name":  "Harbour_StopToken_IsStopPossible"
+    },
+    {
+        "family":  "harbour_platform",
+        "rva":  "0692E200",
+        "name":  "Harbour_StopToken_IsStopRequested"
+    },
+    {
+        "family":  "harbour_platform",
+        "rva":  "0535F280",
+        "name":  "Harbour_StringId_GetIdentifierLeftRotation"
+    },
+    {
+        "family":  "harbour_platform",
+        "rva":  "0535F280",
+        "name":  "Harbour_StringId_GetIdentifierRightRotation"
+    },
+    {
+        "family":  "harbour_platform",
+        "rva":  "0535F280",
+        "name":  "Harbour_StringId_GetIdentifierXorValue"
+    },
+    {
+        "family":  "harbour_platform",
+        "rva":  "069296F0",
+        "name":  "Harbour_StringId_Registry_ClearUnsafe"
+    },
+    {
+        "family":  "harbour_platform",
+        "rva":  "0692E550",
+        "name":  "Harbour_StringId_Registry_DumpTo"
+    },
+    {
+        "family":  "harbour_platform",
+        "rva":  "0692E820",
+        "name":  "Harbour_StringId_Registry_Find"
+    },
+    {
+        "family":  "harbour_platform",
+        "rva":  "0000D500",
+        "name":  "Harbour_StringId_Registry_Insert"
+    },
+    {
+        "family":  "harbour_platform",
+        "rva":  "0692E3C0",
+        "name":  "Harbour_StringId_Registry_LoadFrom"
+    },
+    {
+        "family":  "harbour_platform",
+        "rva":  "0692E940",
+        "name":  "Harbour_Tags__ForEach"
+    },
+    {
+        "family":  "harbour_platform",
+        "rva":  "0692E8E0",
+        "name":  "Harbour_Tags__GetName"
+    },
+    {
+        "family":  "harbour_platform",
+        "rva":  "0692E8D0",
+        "name":  "Harbour_Tags__SetupReverseCallbacks"
+    },
+    {
+        "family":  "harbour_platform",
+        "rva":  "0692E9C0",
+        "name":  "Harbour_UUID_FromString"
+    },
+    {
+        "family":  "harbour_platform",
+        "rva":  "0546F210",
+        "name":  "Harbour__GetCurrentBuildType"
+    },
+    {
+        "family":  "harbour_platform",
+        "rva":  "0535F280",
+        "name":  "Harbour__GetCurrentPlatform"
+    },
+    {
+        "family":  "harbour_platform",
+        "rva":  "0692DD50",
+        "name":  "Harbour__GetLastResult"
+    },
+    {
+        "family":  "harbour_platform",
+        "rva":  "0535F280",
+        "name":  "Harbour__GetNativeEndian"
+    },
+    {
+        "family":  "harbour_platform",
+        "rva":  "0692EA50",
+        "name":  "Harbour__GetProductVersion"
+    },
+    {
+        "family":  "harbour_platform",
+        "rva":  "0692DDB0",
+        "name":  "Harbour__InitializeSdk"
+    },
+    {
+        "family":  "harbour_platform",
+        "rva":  "0692DEB0",
+        "name":  "Harbour__UninitializeSdk"
+    },
+    {
+        "family":  "other",
+        "rva":  "0692DA10",
+        "name":  "__Harbour_FormatHint_TestHintName"
+    },
+    {
+        "family":  "other",
+        "rva":  "0692EFF0",
+        "name":  "__Harbour_Logging_Splitter_TestLog"
+    },
+    {
+        "family":  "other",
+        "rva":  "06930250",
+        "name":  "__Harbour_Policy_Allocation_TestAllocate"
+    },
+    {
+        "family":  "other",
+        "rva":  "069305B0",
+        "name":  "__Harbour_Policy_Allocation_TestDeallocate"
+    },
+    {
+        "family":  "other",
+        "rva":  "06930790",
+        "name":  "__Harbour_Policy_Assertion_TestAssert"
+    },
+    {
+        "family":  "other",
+        "rva":  "069309D0",
+        "name":  "__Harbour_Policy_ConcurrencyAlert_TestAlert"
+    },
+    {
+        "family":  "other",
+        "rva":  "06930E10",
+        "name":  "__Harbour_Policy_Logging_TestLog"
+    },
+    {
+        "family":  "other",
+        "rva":  "06930CF0",
+        "name":  "__Harbour_Policy_Logging_TestLoggable"
+    },
+    {
+        "family":  "other",
+        "rva":  "06931520",
+        "name":  "__Harbour_Policy_Perf_Profiling_TestNameThread"
+    },
+    {
+        "family":  "other",
+        "rva":  "069314C0",
+        "name":  "__Harbour_Policy_Perf_Profiling_TestRecordCounterF64"
+    },
+    {
+        "family":  "other",
+        "rva":  "06931460",
+        "name":  "__Harbour_Policy_Perf_Profiling_TestRecordCounterU64"
+    },
+    {
+        "family":  "other",
+        "rva":  "069313B0",
+        "name":  "__Harbour_Policy_Perf_Profiling_TestRecordEvent"
+    },
+    {
+        "family":  "other",
+        "rva":  "069312F0",
+        "name":  "__Harbour_Policy_Perf_Profiling_TestRecordTask"
+    },
+    {
+        "family":  "other",
+        "rva":  "06931350",
+        "name":  "__Harbour_Policy_Perf_Profiling_TestRecordWait"
+    },
+    {
+        "family":  "other",
+        "rva":  "06931400",
+        "name":  "__Harbour_Policy_Perf_Profiling_TestRecordWarningCount"
+    },
+    {
+        "family":  "intel_control_library",
+        "rva":  "08FBDEE0",
+        "name":  "ctlAUXAccess"
+    },
+    {
+        "family":  "intel_control_library",
+        "rva":  "08FBED80",
+        "name":  "ctlAllowPCIeLinkSpeedUpdate"
+    },
+    {
+        "family":  "intel_control_library",
+        "rva":  "08FBDAD0",
+        "name":  "ctlCheckDriverVersion"
+    },
+    {
+        "family":  "intel_control_library",
+        "rva":  "08FBD920",
+        "name":  "ctlClose"
+    },
+    {
+        "family":  "intel_control_library",
+        "rva":  "08FBE890",
+        "name":  "ctlEccGetProperties"
+    },
+    {
+        "family":  "intel_control_library",
+        "rva":  "08FBE8E0",
+        "name":  "ctlEccGetState"
+    },
+    {
+        "family":  "intel_control_library",
+        "rva":  "08FBE930",
+        "name":  "ctlEccSetState"
+    },
+    {
+        "family":  "intel_control_library",
+        "rva":  "08FBE520",
+        "name":  "ctlEdidManagement"
+    },
+    {
+        "family":  "intel_control_library",
+        "rva":  "08FBEA20",
+        "name":  "ctlEngineGetActivity"
+    },
+    {
+        "family":  "intel_control_library",
+        "rva":  "08FBE9D0",
+        "name":  "ctlEngineGetProperties"
+    },
+    {
+        "family":  "intel_control_library",
+        "rva":  "08FBE980",
+        "name":  "ctlEnumEngineGroups"
+    },
+    {
+        "family":  "intel_control_library",
+        "rva":  "08FBEA70",
+        "name":  "ctlEnumFans"
+    },
+    {
+        "family":  "intel_control_library",
+        "rva":  "08FBEDD0",
+        "name":  "ctlEnumFrequencyDomains"
+    },
+    {
+        "family":  "intel_control_library",
+        "rva":  "08FBF000",
+        "name":  "ctlEnumLeds"
+    },
+    {
+        "family":  "intel_control_library",
+        "rva":  "08FBF1E0",
+        "name":  "ctlEnumMemoryModules"
+    },
+    {
+        "family":  "intel_control_library",
+        "rva":  "08FBFDF0",
+        "name":  "ctlEnumPowerDomains"
+    },
+    {
+        "family":  "intel_control_library",
+        "rva":  "08FBFF80",
+        "name":  "ctlEnumTemperatureSensors"
+    },
+    {
+        "family":  "intel_control_library",
+        "rva":  "08FBDB20",
+        "name":  "ctlEnumerateDevices"
+    },
+    {
+        "family":  "intel_control_library",
+        "rva":  "08FBDB70",
+        "name":  "ctlEnumerateDisplayOutputs"
+    },
+    {
+        "family":  "intel_control_library",
+        "rva":  "08FBECE0",
+        "name":  "ctlEnumerateFirmwareComponents"
+    },
+    {
+        "family":  "intel_control_library",
+        "rva":  "08FBDBC0",
+        "name":  "ctlEnumerateI2CPinPairs"
+    },
+    {
+        "family":  "intel_control_library",
+        "rva":  "08FBEB10",
+        "name":  "ctlFanGetConfig"
+    },
+    {
+        "family":  "intel_control_library",
+        "rva":  "08FBEAC0",
+        "name":  "ctlFanGetProperties"
+    },
+    {
+        "family":  "intel_control_library",
+        "rva":  "08FBEC40",
+        "name":  "ctlFanGetState"
+    },
+    {
+        "family":  "intel_control_library",
+        "rva":  "08FBEB60",
+        "name":  "ctlFanSetDefaultMode"
+    },
+    {
+        "family":  "intel_control_library",
+        "rva":  "08FBEBA0",
+        "name":  "ctlFanSetFixedSpeedMode"
+    },
+    {
+        "family":  "intel_control_library",
+        "rva":  "08FBEBF0",
+        "name":  "ctlFanSetSpeedTableMode"
+    },
+    {
+        "family":  "intel_control_library",
+        "rva":  "08FBEE70",
+        "name":  "ctlFrequencyGetAvailableClocks"
+    },
+    {
+        "family":  "intel_control_library",
+        "rva":  "08FBEE20",
+        "name":  "ctlFrequencyGetProperties"
+    },
+    {
+        "family":  "intel_control_library",
+        "rva":  "08FBEEC0",
+        "name":  "ctlFrequencyGetRange"
+    },
+    {
+        "family":  "intel_control_library",
+        "rva":  "08FBEF60",
+        "name":  "ctlFrequencyGetState"
+    },
+    {
+        "family":  "intel_control_library",
+        "rva":  "08FBEFB0",
+        "name":  "ctlFrequencyGetThrottleTime"
+    },
+    {
+        "family":  "intel_control_library",
+        "rva":  "08FBEF10",
+        "name":  "ctlFrequencySetRange"
+    },
+    {
+        "family":  "intel_control_library",
+        "rva":  "08FBDCB0",
+        "name":  "ctlGetAdaperDisplayEncoderProperties"
+    },
+    {
+        "family":  "intel_control_library",
+        "rva":  "08FBE070",
+        "name":  "ctlGetBrightnessSetting"
+    },
+    {
+        "family":  "intel_control_library",
+        "rva":  "08FBE2A0",
+        "name":  "ctlGetCurrentScaling"
+    },
+    {
+        "family":  "intel_control_library",
+        "rva":  "08FBDDA0",
+        "name":  "ctlGetCurrentSharpness"
+    },
+    {
+        "family":  "intel_control_library",
+        "rva":  "08FBDC10",
+        "name":  "ctlGetDeviceProperties"
+    },
+    {
+        "family":  "intel_control_library",
+        "rva":  "08FBDC60",
+        "name":  "ctlGetDisplayProperties"
+    },
+    {
+        "family":  "intel_control_library",
+        "rva":  "08FBED30",
+        "name":  "ctlGetFirmwareComponentProperties"
+    },
+    {
+        "family":  "intel_control_library",
+        "rva":  "08FBEC90",
+        "name":  "ctlGetFirmwareProperties"
+    },
+    {
+        "family":  "intel_control_library",
+        "rva":  "08FBE430",
+        "name":  "ctlGetIntelArcSyncInfoForMonitor"
+    },
+    {
+        "family":  "intel_control_library",
+        "rva":  "08FBE480",
+        "name":  "ctlGetIntelArcSyncProfile"
+    },
+    {
+        "family":  "intel_control_library",
+        "rva":  "08FBE340",
+        "name":  "ctlGetLACEConfig"
+    },
+    {
+        "family":  "intel_control_library",
+        "rva":  "08FBE750",
+        "name":  "ctlGetLinkedDisplayAdapters"
+    },
+    {
+        "family":  "intel_control_library",
+        "rva":  "08FBDF30",
+        "name":  "ctlGetPowerOptimizationCaps"
+    },
+    {
+        "family":  "intel_control_library",
+        "rva":  "08FBDF80",
+        "name":  "ctlGetPowerOptimizationSetting"
+    },
+    {
+        "family":  "intel_control_library",
+        "rva":  "08FBDA80",
+        "name":  "ctlGetSet3DFeature"
+    },
+    {
+        "family":  "intel_control_library",
+        "rva":  "08FBE5C0",
+        "name":  "ctlGetSetCombinedDisplay"
+    },
+    {
+        "family":  "intel_control_library",
+        "rva":  "08FBE570",
+        "name":  "ctlGetSetCustomMode"
+    },
+    {
+        "family":  "intel_control_library",
+        "rva":  "08FBE610",
+        "name":  "ctlGetSetDisplayGenlock"
+    },
+    {
+        "family":  "intel_control_library",
+        "rva":  "08FBE840",
+        "name":  "ctlGetSetDisplaySettings"
+    },
+    {
+        "family":  "intel_control_library",
+        "rva":  "08FBE7A0",
+        "name":  "ctlGetSetDynamicContrastEnhancement"
+    },
+    {
+        "family":  "intel_control_library",
+        "rva":  "08FBE200",
+        "name":  "ctlGetSetRetroScaling"
+    },
+    {
+        "family":  "intel_control_library",
+        "rva":  "08FBF190",
+        "name":  "ctlGetSetVideoProcessingFeature"
+    },
+    {
+        "family":  "intel_control_library",
+        "rva":  "08FBE7F0",
+        "name":  "ctlGetSetWireFormat"
+    },
+    {
+        "family":  "intel_control_library",
+        "rva":  "08FBDD50",
+        "name":  "ctlGetSharpnessCaps"
+    },
+    {
+        "family":  "intel_control_library",
+        "rva":  "08FBDA30",
+        "name":  "ctlGetSupported3DCapabilities"
+    },
+    {
+        "family":  "intel_control_library",
+        "rva":  "08FBE1B0",
+        "name":  "ctlGetSupportedRetroScalingCapability"
+    },
+    {
+        "family":  "intel_control_library",
+        "rva":  "08FBE250",
+        "name":  "ctlGetSupportedScalingCapability"
+    },
+    {
+        "family":  "intel_control_library",
+        "rva":  "08FBF140",
+        "name":  "ctlGetSupportedVideoProcessingCapabilities"
+    },
+    {
+        "family":  "intel_control_library",
+        "rva":  "08FBE670",
+        "name":  "ctlGetVblankTimestamp"
+    },
+    {
+        "family":  "intel_control_library",
+        "rva":  "08FBDD00",
+        "name":  "ctlGetZeDevice"
+    },
+    {
+        "family":  "intel_control_library",
+        "rva":  "08FBDE40",
+        "name":  "ctlI2CAccess"
+    },
+    {
+        "family":  "intel_control_library",
+        "rva":  "08FBDE90",
+        "name":  "ctlI2CAccessOnPinPair"
+    },
+    {
+        "family":  "intel_control_library",
+        "rva":  "08FBD6A0",
+        "name":  "ctlInit"
+    },
+    {
+        "family":  "intel_control_library",
+        "rva":  "08FBF050",
+        "name":  "ctlLedGetProperties"
+    },
+    {
+        "family":  "intel_control_library",
+        "rva":  "08FBF0A0",
+        "name":  "ctlLedGetState"
+    },
+    {
+        "family":  "intel_control_library",
+        "rva":  "08FBF0F0",
+        "name":  "ctlLedSetState"
+    },
+    {
+        "family":  "intel_control_library",
+        "rva":  "08FBE6C0",
+        "name":  "ctlLinkDisplayAdapters"
+    },
+    {
+        "family":  "intel_control_library",
+        "rva":  "08FBF2D0",
+        "name":  "ctlMemoryGetBandwidth"
+    },
+    {
+        "family":  "intel_control_library",
+        "rva":  "08FBF230",
+        "name":  "ctlMemoryGetProperties"
+    },
+    {
+        "family":  "intel_control_library",
+        "rva":  "08FBF280",
+        "name":  "ctlMemoryGetState"
+    },
+    {
+        "family":  "intel_control_library",
+        "rva":  "08FBF320",
+        "name":  "ctlOverclockGetProperties"
+    },
+    {
+        "family":  "intel_control_library",
+        "rva":  "08FBF3B0",
+        "name":  "ctlOverclockGpuFrequencyOffsetGet"
+    },
+    {
+        "family":  "intel_control_library",
+        "rva":  "08FBF930",
+        "name":  "ctlOverclockGpuFrequencyOffsetGetV2"
+    },
+    {
+        "family":  "intel_control_library",
+        "rva":  "08FBF400",
+        "name":  "ctlOverclockGpuFrequencyOffsetSet"
+    },
+    {
+        "family":  "intel_control_library",
+        "rva":  "08FBF980",
+        "name":  "ctlOverclockGpuFrequencyOffsetSetV2"
+    },
+    {
+        "family":  "intel_control_library",
+        "rva":  "08FBF510",
+        "name":  "ctlOverclockGpuLockGet"
+    },
+    {
+        "family":  "intel_control_library",
+        "rva":  "08FBF560",
+        "name":  "ctlOverclockGpuLockSet"
+    },
+    {
+        "family":  "intel_control_library",
+        "rva":  "08FBF9E0",
+        "name":  "ctlOverclockGpuMaxVoltageOffsetGetV2"
+    },
+    {
+        "family":  "intel_control_library",
+        "rva":  "08FBFA30",
+        "name":  "ctlOverclockGpuMaxVoltageOffsetSetV2"
+    },
+    {
+        "family":  "intel_control_library",
+        "rva":  "08FBF460",
+        "name":  "ctlOverclockGpuVoltageOffsetGet"
+    },
+    {
+        "family":  "intel_control_library",
+        "rva":  "08FBF4B0",
+        "name":  "ctlOverclockGpuVoltageOffsetSet"
+    },
+    {
+        "family":  "intel_control_library",
+        "rva":  "08FBF740",
+        "name":  "ctlOverclockPowerLimitGet"
+    },
+    {
+        "family":  "intel_control_library",
+        "rva":  "08FBFB40",
+        "name":  "ctlOverclockPowerLimitGetV2"
+    },
+    {
+        "family":  "intel_control_library",
+        "rva":  "08FBF790",
+        "name":  "ctlOverclockPowerLimitSet"
+    },
+    {
+        "family":  "intel_control_library",
+        "rva":  "08FBFB90",
+        "name":  "ctlOverclockPowerLimitSetV2"
+    },
+    {
+        "family":  "intel_control_library",
+        "rva":  "08FBFCA0",
+        "name":  "ctlOverclockReadVFCurve"
+    },
+    {
+        "family":  "intel_control_library",
+        "rva":  "08FBF8F0",
+        "name":  "ctlOverclockResetToDefault"
+    },
+    {
+        "family":  "intel_control_library",
+        "rva":  "08FBF7F0",
+        "name":  "ctlOverclockTemperatureLimitGet"
+    },
+    {
+        "family":  "intel_control_library",
+        "rva":  "08FBFBF0",
+        "name":  "ctlOverclockTemperatureLimitGetV2"
+    },
+    {
+        "family":  "intel_control_library",
+        "rva":  "08FBF840",
+        "name":  "ctlOverclockTemperatureLimitSet"
+    },
+    {
+        "family":  "intel_control_library",
+        "rva":  "08FBFC40",
+        "name":  "ctlOverclockTemperatureLimitSetV2"
+    },
+    {
+        "family":  "intel_control_library",
+        "rva":  "08FBF5E0",
+        "name":  "ctlOverclockVramFrequencyOffsetGet"
+    },
+    {
+        "family":  "intel_control_library",
+        "rva":  "08FBF630",
+        "name":  "ctlOverclockVramFrequencyOffsetSet"
+    },
+    {
+        "family":  "intel_control_library",
+        "rva":  "08FBFA90",
+        "name":  "ctlOverclockVramMemSpeedLimitGetV2"
+    },
+    {
+        "family":  "intel_control_library",
+        "rva":  "08FBFAE0",
+        "name":  "ctlOverclockVramMemSpeedLimitSetV2"
+    },
+    {
+        "family":  "intel_control_library",
+        "rva":  "08FBF690",
+        "name":  "ctlOverclockVramVoltageOffsetGet"
+    },
+    {
+        "family":  "intel_control_library",
+        "rva":  "08FBF6E0",
+        "name":  "ctlOverclockVramVoltageOffsetSet"
+    },
+    {
+        "family":  "intel_control_library",
+        "rva":  "08FBF370",
+        "name":  "ctlOverclockWaiverSet"
+    },
+    {
+        "family":  "intel_control_library",
+        "rva":  "08FBFD00",
+        "name":  "ctlOverclockWriteCustomVFCurve"
+    },
+    {
+        "family":  "intel_control_library",
+        "rva":  "08FBE160",
+        "name":  "ctlPanelDescriptorAccess"
+    },
+    {
+        "family":  "intel_control_library",
+        "rva":  "08FBFD50",
+        "name":  "ctlPciGetProperties"
+    },
+    {
+        "family":  "intel_control_library",
+        "rva":  "08FBFDA0",
+        "name":  "ctlPciGetState"
+    },
+    {
+        "family":  "intel_control_library",
+        "rva":  "08FBE0C0",
+        "name":  "ctlPixelTransformationGetConfig"
+    },
+    {
+        "family":  "intel_control_library",
+        "rva":  "08FBE110",
+        "name":  "ctlPixelTransformationSetConfig"
+    },
+    {
+        "family":  "intel_control_library",
+        "rva":  "08FBFE90",
+        "name":  "ctlPowerGetEnergyCounter"
+    },
+    {
+        "family":  "intel_control_library",
+        "rva":  "08FBFEE0",
+        "name":  "ctlPowerGetLimits"
+    },
+    {
+        "family":  "intel_control_library",
+        "rva":  "08FBFE40",
+        "name":  "ctlPowerGetProperties"
+    },
+    {
+        "family":  "intel_control_library",
+        "rva":  "08FBFF30",
+        "name":  "ctlPowerSetLimits"
+    },
+    {
+        "family":  "intel_control_library",
+        "rva":  "08FBF8A0",
+        "name":  "ctlPowerTelemetryGet"
+    },
+    {
+        "family":  "intel_control_library",
+        "rva":  "08FBD9E0",
+        "name":  "ctlReservedCall"
+    },
+    {
+        "family":  "intel_control_library",
+        "rva":  "08FBE020",
+        "name":  "ctlSetBrightnessSetting"
+    },
+    {
+        "family":  "intel_control_library",
+        "rva":  "08FBE2F0",
+        "name":  "ctlSetCurrentScaling"
+    },
+    {
+        "family":  "intel_control_library",
+        "rva":  "08FBDDF0",
+        "name":  "ctlSetCurrentSharpness"
+    },
+    {
+        "family":  "intel_control_library",
+        "rva":  "08FBE4D0",
+        "name":  "ctlSetIntelArcSyncProfile"
+    },
+    {
+        "family":  "intel_control_library",
+        "rva":  "08FBE390",
+        "name":  "ctlSetLACEConfig"
+    },
+    {
+        "family":  "intel_control_library",
+        "rva":  "08FBDFD0",
+        "name":  "ctlSetPowerOptimizationSetting"
+    },
+    {
+        "family":  "intel_control_library",
+        "rva":  "08FBD8C0",
+        "name":  "ctlSetRuntimePath"
+    },
+    {
+        "family":  "intel_control_library",
+        "rva":  "08FBE3E0",
+        "name":  "ctlSoftwarePSR"
+    },
+    {
+        "family":  "intel_control_library",
+        "rva":  "08FBFFD0",
+        "name":  "ctlTemperatureGetProperties"
+    },
+    {
+        "family":  "intel_control_library",
+        "rva":  "08FC0020",
+        "name":  "ctlTemperatureGetState"
+    },
+    {
+        "family":  "intel_control_library",
+        "rva":  "08FBE710",
+        "name":  "ctlUnlinkDisplayAdapters"
+    },
+    {
+        "family":  "intel_control_library",
+        "rva":  "08FBD990",
+        "name":  "ctlWaitForPropertyChange"
+    },
+    {
+        "family":  "other",
+        "rva":  "0B285F50",
+        "name":  "flite_lang_list"
+    },
+    {
+        "family":  "other",
+        "rva":  "0B285F48",
+        "name":  "flite_lang_list_length"
+    },
+    {
+        "family":  "other",
+        "rva":  "0B285F40",
+        "name":  "flite_voice_list"
+    },
+    {
+        "family":  "other",
+        "rva":  "0AC0EAC0",
+        "name":  "g_pAKPluginList"
+    }
+]

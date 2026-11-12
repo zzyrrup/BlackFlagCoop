@@ -1,0 +1,58 @@
+{
+    "schemaVersion":  1,
+    "generatedUtc":  "2026-11-12T09:02:03.3118522Z",
+    "findings":  [
+                     {
+                         "id":  "json_schema_blob",
+                         "status":  "confirmed",
+                         "detail":  "Telemetry events and attribute dictionary live in .edata JSON-like blobs",
+                         "producer":  false
+                     },
+                     {
+                         "id":  "playerpos_field_names",
+                         "status":  "confirmed_json_embedded_only",
+                         "detail":  "PlayerPosX/Y/Z appear as quoted JSON field names; no standalone C-string copies found in first 30 hits each",
+                         "absoluteXrefsFound":  false
+                     },
+                     {
+                         "id":  "player_position_null_terminated_table_token",
+                         "status":  "confirmed_string_table_token",
+                         "fileOffset":  "0xA13E3DE",
+                         "detail":  "Null-terminated player.position exists in packed string table; absolute VA/RVA pointer xrefs not found in PE image",
+                         "absoluteXrefsFound":  false
+                     },
+                     {
+                         "id":  "harbour_stringid_registry",
+                         "status":  "confirmed_exports",
+                         "exports":  [
+                                         "Find",
+                                         "Insert",
+                                         "LoadFrom",
+                                         "DumpTo",
+                                         "ClearUnsafe",
+                                         "GetIdentifierXorValue",
+                                         "GetIdentifierLeftRotation",
+                                         "GetIdentifierRightRotation"
+                                     ],
+                         "provenTelemetryBinder":  false,
+                         "detail":  "Harbour StringId registry API exists; offline binding to PlayerPos* not proven"
+                     },
+                     {
+                         "id":  "event_construction_routine",
+                         "status":  "not_found",
+                         "detail":  "No verified payload builder or attribute assignment routine identified offline"
+                     },
+                     {
+                         "id":  "dispatch_queue",
+                         "status":  "not_found",
+                         "detail":  "No verified telemetry queue/dispatch function identified offline"
+                     }
+                 ],
+    "populationSource":  {
+                             "playerCharacterState":  "unknown",
+                             "actorTransform":  "unknown",
+                             "navigationSystem":  "unknown",
+                             "cachedTelemetryContext":  "unknown",
+                             "evidence":  "Cannot determine without producer identification"
+                         }
+}

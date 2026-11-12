@@ -1,0 +1,821 @@
+{
+    "schemaVersion":  1,
+    "generatedUtc":  "2026-11-12T08:22:35.5032586Z",
+    "executableSha256":  "19920F34BB2FAC814023EE3C27F0CECA1872E80A2AAFB37C092C419FFF77CC0D",
+    "scanRegion":  {
+                       "section":  ".edata",
+                       "rawPointer":  "0x9035600",
+                       "size":  "0x127C000"
+                   },
+    "compositionObjectCount":  27,
+    "typedFieldCount":  26,
+    "uniquePlayerDotPaths":  [
+                                 "player.achievement",
+                                 "player.chatService",
+                                 "player.contentDownload",
+                                 "player.createSession",
+                                 "player.news.action",
+                                 "player.news.impression",
+                                 "player.position",
+                                 "player.primaryStore.pc",
+                                 "player.primaryStore.ps5",
+                                 "player.primaryStore.xboxSeries",
+                                 "player.progression.inventory",
+                                 "player.progression.upgrade",
+                                 "player.start",
+                                 "player.stats.playtime"
+                             ],
+    "playerPositionOccurrenceCount":  3,
+    "playerPositionOffsets":  [
+                                  "0xA13E3DE",
+                                  "0xA1D77E7",
+                                  "0xA1DE107"
+                              ],
+    "compositionObjects":  [
+                               {
+                                   "kind":  "composition_object",
+                                   "name":  "ProgressionUpgradeSignal",
+                                   "compositionsJson":  "[{\"name\":\"player.progression.upgrade\"}]",
+                                   "fullMatch":  "{\"name\":\"ProgressionUpgradeSignal\",\"compositions\":[{\"name\":\"player.progression.upgrade\"}]}",
+                                   "fileOffset":  "0xA0FBC88",
+                                   "fileOffsetDec":  168803464,
+                                   "rva":  "0xA0FC688",
+                                   "va":  "0x14A0FC688",
+                                   "section":  ".edata"
+                               },
+                               {
+                                   "kind":  "composition_object",
+                                   "name":  "PCStoreSynchronized",
+                                   "compositionsJson":  "[{\"name\":\"player.primaryStore.pc\"}]",
+                                   "fullMatch":  "{\"name\":\"PCStoreSynchronized\",\"compositions\":[{\"name\":\"player.primaryStore.pc\"}]}",
+                                   "fileOffset":  "0xA0FBCE4",
+                                   "fileOffsetDec":  168803556,
+                                   "rva":  "0xA0FC6E4",
+                                   "va":  "0x14A0FC6E4",
+                                   "section":  ".edata"
+                               },
+                               {
+                                   "kind":  "composition_object",
+                                   "name":  "NewsItemImpression",
+                                   "compositionsJson":  "[{\"name\":\"player.news.impression\"}]",
+                                   "fullMatch":  "{\"name\":\"NewsItemImpression\",\"compositions\":[{\"name\":\"player.news.impression\"}]}",
+                                   "fileOffset":  "0xA0FBDE4",
+                                   "fileOffsetDec":  168803812,
+                                   "rva":  "0xA0FC7E4",
+                                   "va":  "0x14A0FC7E4",
+                                   "section":  ".edata"
+                               },
+                               {
+                                   "kind":  "composition_object",
+                                   "name":  "NewsItemInteraction",
+                                   "compositionsJson":  "[{\"name\":\"player.news.action\"}]",
+                                   "fullMatch":  "{\"name\":\"NewsItemInteraction\",\"compositions\":[{\"name\":\"player.news.action\"}]}",
+                                   "fileOffset":  "0xA0FBE36",
+                                   "fileOffsetDec":  168803894,
+                                   "rva":  "0xA0FC836",
+                                   "va":  "0x14A0FC836",
+                                   "section":  ".edata"
+                               },
+                               {
+                                   "kind":  "composition_object",
+                                   "name":  "XSeriesStoreSynchronized",
+                                   "compositionsJson":  "[{\"name\":\"player.primaryStore.xboxSeries\"}]",
+                                   "fullMatch":  "{\"name\":\"XSeriesStoreSynchronized\",\"compositions\":[{\"name\":\"player.primaryStore.xboxSeries\"}]}",
+                                   "fileOffset":  "0xA0FBE85",
+                                   "fileOffsetDec":  168803973,
+                                   "rva":  "0xA0FC885",
+                                   "va":  "0x14A0FC885",
+                                   "section":  ".edata"
+                               },
+                               {
+                                   "kind":  "composition_object",
+                                   "name":  "PS5StoreSynchronized",
+                                   "compositionsJson":  "[{\"name\":\"player.primaryStore.ps5\"}]",
+                                   "fullMatch":  "{\"name\":\"PS5StoreSynchronized\",\"compositions\":[{\"name\":\"player.primaryStore.ps5\"}]}",
+                                   "fileOffset":  "0xA0FBEE5",
+                                   "fileOffsetDec":  168804069,
+                                   "rva":  "0xA0FC8E5",
+                                   "va":  "0x14A0FC8E5",
+                                   "section":  ".edata"
+                               },
+                               {
+                                   "kind":  "composition_object",
+                                   "name":  "ProgressionPlayerInventorySignal",
+                                   "compositionsJson":  "[{\"name\":\"player.progression.inventory\"}]",
+                                   "fullMatch":  "{\"name\":\"ProgressionPlayerInventorySignal\",\"compositions\":[{\"name\":\"player.progression.inventory\"}]}",
+                                   "fileOffset":  "0xA1D70CA",
+                                   "fileOffsetDec":  169701578,
+                                   "rva":  "0xA1D7ACA",
+                                   "va":  "0x14A1D7ACA",
+                                   "section":  ".edata"
+                               },
+                               {
+                                   "kind":  "composition_object",
+                                   "name":  "SaveGameStartSignal",
+                                   "compositionsJson":  "[{\"name\":\"context.start.SaveGame\"}]",
+                                   "fullMatch":  "{\"name\":\"SaveGameStartSignal\",\"compositions\":[{\"name\":\"context.start.SaveGame\"}]}",
+                                   "fileOffset":  "0xA1D73EA",
+                                   "fileOffsetDec":  169702378,
+                                   "rva":  "0xA1D7DEA",
+                                   "va":  "0x14A1D7DEA",
+                                   "section":  ".edata"
+                               },
+                               {
+                                   "kind":  "composition_object",
+                                   "name":  "SaveGameStopSignal",
+                                   "compositionsJson":  "[{\"name\":\"context.stop.SaveGame\"}]",
+                                   "fullMatch":  "{\"name\":\"SaveGameStopSignal\",\"compositions\":[{\"name\":\"context.stop.SaveGame\"}]}",
+                                   "fileOffset":  "0xA1D743D",
+                                   "fileOffsetDec":  169702461,
+                                   "rva":  "0xA1D7E3D",
+                                   "va":  "0x14A1D7E3D",
+                                   "section":  ".edata"
+                               },
+                               {
+                                   "kind":  "composition_object",
+                                   "name":  "InventoryGearSignal",
+                                   "compositionsJson":  "[{\"name\":\"custom.player.inventory.gear\"}]",
+                                   "fullMatch":  "{\"name\":\"InventoryGearSignal\",\"compositions\":[{\"name\":\"custom.player.inventory.gear\"}]}",
+                                   "fileOffset":  "0xA1D748E",
+                                   "fileOffsetDec":  169702542,
+                                   "rva":  "0xA1D7E8E",
+                                   "va":  "0x14A1D7E8E",
+                                   "section":  ".edata"
+                               },
+                               {
+                                   "kind":  "composition_object",
+                                   "name":  "ResourceSignal",
+                                   "compositionsJson":  "[{\"name\":\"custom.player.inventory.resources\"}]",
+                                   "fullMatch":  "{\"name\":\"ResourceSignal\",\"compositions\":[{\"name\":\"custom.player.inventory.resources\"}]}",
+                                   "fileOffset":  "0xA1D74E7",
+                                   "fileOffsetDec":  169702631,
+                                   "rva":  "0xA1D7EE7",
+                                   "va":  "0x14A1D7EE7",
+                                   "section":  ".edata"
+                               },
+                               {
+                                   "kind":  "composition_object",
+                                   "name":  "InventoryConsumableSignal",
+                                   "compositionsJson":  "[{\"name\":\"custom.player.inventory.consumable\"}]",
+                                   "fullMatch":  "{\"name\":\"InventoryConsumableSignal\",\"compositions\":[{\"name\":\"custom.player.inventory.consumable\"}]}",
+                                   "fileOffset":  "0xA1D7540",
+                                   "fileOffsetDec":  169702720,
+                                   "rva":  "0xA1D7F40",
+                                   "va":  "0x14A1D7F40",
+                                   "section":  ".edata"
+                               },
+                               {
+                                   "kind":  "composition_object",
+                                   "name":  "InventoryCollectibleSignal",
+                                   "compositionsJson":  "[{\"name\":\"custom.player.inventory.collectible\"}]",
+                                   "fullMatch":  "{\"name\":\"InventoryCollectibleSignal\",\"compositions\":[{\"name\":\"custom.player.inventory.collectible\"}]}",
+                                   "fileOffset":  "0xA1D75A5",
+                                   "fileOffsetDec":  169702821,
+                                   "rva":  "0xA1D7FA5",
+                                   "va":  "0x14A1D7FA5",
+                                   "section":  ".edata"
+                               },
+                               {
+                                   "kind":  "composition_object",
+                                   "name":  "ShipWreckPlayerDefenseSignal",
+                                   "compositionsJson":  "[{\"name\":\"custom.ShipWreckPlayerDefense\"}]",
+                                   "fullMatch":  "{\"name\":\"ShipWreckPlayerDefenseSignal\",\"compositions\":[{\"name\":\"custom.ShipWreckPlayerDefense\"}]}",
+                                   "fileOffset":  "0xA1D7715",
+                                   "fileOffsetDec":  169703189,
+                                   "rva":  "0xA1D8115",
+                                   "va":  "0x14A1D8115",
+                                   "section":  ".edata"
+                               },
+                               {
+                                   "kind":  "composition_object",
+                                   "name":  "PlayerPosition",
+                                   "compositionsJson":  "[{\"name\":\"player.position\"}]",
+                                   "fullMatch":  "{\"name\":\"PlayerPosition\",\"compositions\":[{\"name\":\"player.position\"}]}",
+                                   "fileOffset":  "0xA1D77B5",
+                                   "fileOffsetDec":  169703349,
+                                   "rva":  "0xA1D81B5",
+                                   "va":  "0x14A1D81B5",
+                                   "section":  ".edata"
+                               },
+                               {
+                                   "kind":  "composition_object",
+                                   "name":  "PlayerToolModeUseSignal",
+                                   "compositionsJson":  "[{\"name\":\"custom.playerToolModeUse\"}]",
+                                   "fullMatch":  "{\"name\":\"PlayerToolModeUseSignal\",\"compositions\":[{\"name\":\"custom.playerToolModeUse\"}]}",
+                                   "fileOffset":  "0xA1D8CFC",
+                                   "fileOffsetDec":  169708796,
+                                   "rva":  "0xA1D96FC",
+                                   "va":  "0x14A1D96FC",
+                                   "section":  ".edata"
+                               },
+                               {
+                                   "kind":  "composition_object",
+                                   "name":  "PlacePinSignal",
+                                   "compositionsJson":  "[{\"name\":\"custom.player.action.placePin\"}]",
+                                   "fullMatch":  "{\"name\":\"PlacePinSignal\",\"compositions\":[{\"name\":\"custom.player.action.placePin\"}]}",
+                                   "fileOffset":  "0xA1D8EFA",
+                                   "fileOffsetDec":  169709306,
+                                   "rva":  "0xA1D98FA",
+                                   "va":  "0x14A1D98FA",
+                                   "section":  ".edata"
+                               },
+                               {
+                                   "kind":  "composition_object",
+                                   "name":  "PlayerNavStartSignal",
+                                   "compositionsJson":  "[{\"name\":\"context.start.PlayerNav\"}]",
+                                   "fullMatch":  "{\"name\":\"PlayerNavStartSignal\",\"compositions\":[{\"name\":\"context.start.PlayerNav\"}]}",
+                                   "fileOffset":  "0xA1D8FAC",
+                                   "fileOffsetDec":  169709484,
+                                   "rva":  "0xA1D99AC",
+                                   "va":  "0x14A1D99AC",
+                                   "section":  ".edata"
+                               },
+                               {
+                                   "kind":  "composition_object",
+                                   "name":  "PlayerNavStopSignal",
+                                   "compositionsJson":  "[{\"name\":\"context.stop.PlayerNav\"}]",
+                                   "fullMatch":  "{\"name\":\"PlayerNavStopSignal\",\"compositions\":[{\"name\":\"context.stop.PlayerNav\"}]}",
+                                   "fileOffset":  "0xA1D9001",
+                                   "fileOffsetDec":  169709569,
+                                   "rva":  "0xA1D9A01",
+                                   "va":  "0x14A1D9A01",
+                                   "section":  ".edata"
+                               },
+                               {
+                                   "kind":  "composition_object",
+                                   "name":  "PlayerKillSignal",
+                                   "compositionsJson":  "[{\"name\":\"custom.PlayerKill\"}]",
+                                   "fullMatch":  "{\"name\":\"PlayerKillSignal\",\"compositions\":[{\"name\":\"custom.PlayerKill\"}]}",
+                                   "fileOffset":  "0xA1DB5D9",
+                                   "fileOffsetDec":  169719257,
+                                   "rva":  "0xA1DBFD9",
+                                   "va":  "0x14A1DBFD9",
+                                   "section":  ".edata"
+                               },
+                               {
+                                   "kind":  "composition_object",
+                                   "name":  "PlayerDespawnSignal",
+                                   "compositionsJson":  "[{\"name\":\"custom.PlayerDespawn\"}]",
+                                   "fullMatch":  "{\"name\":\"PlayerDespawnSignal\",\"compositions\":[{\"name\":\"custom.PlayerDespawn\"}]}",
+                                   "fileOffset":  "0xA1DB624",
+                                   "fileOffsetDec":  169719332,
+                                   "rva":  "0xA1DC024",
+                                   "va":  "0x14A1DC024",
+                                   "section":  ".edata"
+                               },
+                               {
+                                   "kind":  "composition_object",
+                                   "name":  "PlayerAttackSignal",
+                                   "compositionsJson":  "[{\"name\":\"custom.PlayerAttack\"}]",
+                                   "fullMatch":  "{\"name\":\"PlayerAttackSignal\",\"compositions\":[{\"name\":\"custom.PlayerAttack\"}]}",
+                                   "fileOffset":  "0xA1DB770",
+                                   "fileOffsetDec":  169719664,
+                                   "rva":  "0xA1DC170",
+                                   "va":  "0x14A1DC170",
+                                   "section":  ".edata"
+                               },
+                               {
+                                   "kind":  "composition_object",
+                                   "name":  "PlayerDefenseSignal",
+                                   "compositionsJson":  "[{\"name\":\"custom.PlayerDefense\"}]",
+                                   "fullMatch":  "{\"name\":\"PlayerDefenseSignal\",\"compositions\":[{\"name\":\"custom.PlayerDefense\"}]}",
+                                   "fileOffset":  "0xA1DB7BF",
+                                   "fileOffsetDec":  169719743,
+                                   "rva":  "0xA1DC1BF",
+                                   "va":  "0x14A1DC1BF",
+                                   "section":  ".edata"
+                               },
+                               {
+                                   "kind":  "composition_object",
+                                   "name":  "PlayerCardStartSignal",
+                                   "compositionsJson":  "[{\"name\":\"context.start.OBDPlayerCardWeapon\"},{\"name\":\"context.start.OBDPlayerCardEquipment\"}]",
+                                   "fullMatch":  "{\"name\":\"PlayerCardStartSignal\",\"compositions\":[{\"name\":\"context.start.OBDPlayerCardWeapon\"},{\"name\":\"context.start.OBDPlayerCardEquipment\"}]}",
+                                   "fileOffset":  "0xA1DB810",
+                                   "fileOffsetDec":  169719824,
+                                   "rva":  "0xA1DC210",
+                                   "va":  "0x14A1DC210",
+                                   "section":  ".edata"
+                               },
+                               {
+                                   "kind":  "composition_object",
+                                   "name":  "PlayerCardStopSignal",
+                                   "compositionsJson":  "[{\"name\":\"context.stop.OBDPlayerCardWeapon\"},{\"name\":\"context.stop.OBDPlayerCardEquipment\"}]",
+                                   "fullMatch":  "{\"name\":\"PlayerCardStopSignal\",\"compositions\":[{\"name\":\"context.stop.OBDPlayerCardWeapon\"},{\"name\":\"context.stop.OBDPlayerCardEquipment\"}]}",
+                                   "fileOffset":  "0xA1DB8A0",
+                                   "fileOffsetDec":  169719968,
+                                   "rva":  "0xA1DC2A0",
+                                   "va":  "0x14A1DC2A0",
+                                   "section":  ".edata"
+                               },
+                               {
+                                   "kind":  "composition_object",
+                                   "name":  "PlayerFeedbackSignal",
+                                   "compositionsJson":  "[{\"name\":\"custom.player.OBDFeedback\"}]",
+                                   "fullMatch":  "{\"name\":\"PlayerFeedbackSignal\",\"compositions\":[{\"name\":\"custom.player.OBDFeedback\"}]}",
+                                   "fileOffset":  "0xA1DB92D",
+                                   "fileOffsetDec":  169720109,
+                                   "rva":  "0xA1DC32D",
+                                   "va":  "0x14A1DC32D",
+                                   "section":  ".edata"
+                               },
+                               {
+                                   "kind":  "composition_object",
+                                   "name":  "PlayerActionSignal",
+                                   "compositionsJson":  "[{\"name\":\"custom.player.action\"}]",
+                                   "fullMatch":  "{\"name\":\"PlayerActionSignal\",\"compositions\":[{\"name\":\"custom.player.action\"}]}",
+                                   "fileOffset":  "0xA1DB984",
+                                   "fileOffsetDec":  169720196,
+                                   "rva":  "0xA1DC384",
+                                   "va":  "0x14A1DC384",
+                                   "section":  ".edata"
+                               }
+                           ],
+    "typedFieldsSample":  [
+                              {
+                                  "kind":  "typed_schema_field",
+                                  "name":  "Character",
+                                  "type":  "string",
+                                  "fullMatch":  "{\"name\":\"Character\",\"type\":\"string\",\"isOptional\":true}",
+                                  "fileOffset":  "0xA1D1903",
+                                  "fileOffsetDec":  169679107,
+                                  "rva":  "0xA1D2303",
+                                  "va":  "0x14A1D2303",
+                                  "section":  ".edata"
+                              },
+                              {
+                                  "kind":  "typed_schema_field",
+                                  "name":  "BodyDropGlobalPositionX",
+                                  "type":  "float",
+                                  "fullMatch":  "{\"name\":\"BodyDropGlobalPositionX\",\"type\":\"float\",\"isOptional\":true}",
+                                  "fileOffset":  "0xA1D38DB",
+                                  "fileOffsetDec":  169687259,
+                                  "rva":  "0xA1D42DB",
+                                  "va":  "0x14A1D42DB",
+                                  "section":  ".edata"
+                              },
+                              {
+                                  "kind":  "typed_schema_field",
+                                  "name":  "BodyDropGlobalPositionY",
+                                  "type":  "float",
+                                  "fullMatch":  "{\"name\":\"BodyDropGlobalPositionY\",\"type\":\"float\",\"isOptional\":true}",
+                                  "fileOffset":  "0xA1D3920",
+                                  "fileOffsetDec":  169687328,
+                                  "rva":  "0xA1D4320",
+                                  "va":  "0x14A1D4320",
+                                  "section":  ".edata"
+                              },
+                              {
+                                  "kind":  "typed_schema_field",
+                                  "name":  "BodyDropGlobalPositionZ",
+                                  "type":  "float",
+                                  "fullMatch":  "{\"name\":\"BodyDropGlobalPositionZ\",\"type\":\"float\",\"isOptional\":true}",
+                                  "fileOffset":  "0xA1D3965",
+                                  "fileOffsetDec":  169687397,
+                                  "rva":  "0xA1D4365",
+                                  "va":  "0x14A1D4365",
+                                  "section":  ".edata"
+                              },
+                              {
+                                  "kind":  "typed_schema_field",
+                                  "name":  "EnemyAtkDamagingEntityId",
+                                  "type":  "string",
+                                  "fullMatch":  "{\"name\":\"EnemyAtkDamagingEntityId\",\"type\":\"string\",\"isOptional\":true}",
+                                  "fileOffset":  "0xA1D4D82",
+                                  "fileOffsetDec":  169692546,
+                                  "rva":  "0xA1D5782",
+                                  "va":  "0x14A1D5782",
+                                  "section":  ".edata"
+                              },
+                              {
+                                  "kind":  "typed_schema_field",
+                                  "name":  "PlayerTgtDamage",
+                                  "type":  "int",
+                                  "fullMatch":  "{\"name\":\"PlayerTgtDamage\",\"type\":\"int\",\"isOptional\":true}",
+                                  "fileOffset":  "0xA1D5479",
+                                  "fileOffsetDec":  169694329,
+                                  "rva":  "0xA1D5E79",
+                                  "va":  "0x14A1D5E79",
+                                  "section":  ".edata"
+                              },
+                              {
+                                  "kind":  "typed_schema_field",
+                                  "name":  "PositionSource",
+                                  "type":  "string",
+                                  "fullMatch":  "{\"name\":\"PositionSource\",\"type\":\"string\",\"isOptional\":true}",
+                                  "fileOffset":  "0xA1D566E",
+                                  "fileOffsetDec":  169694830,
+                                  "rva":  "0xA1D606E",
+                                  "va":  "0x14A1D606E",
+                                  "section":  ".edata"
+                              },
+                              {
+                                  "kind":  "typed_schema_field",
+                                  "name":  "PlayerAction",
+                                  "type":  "string",
+                                  "fullMatch":  "{\"name\":\"PlayerAction\",\"type\":\"string\",\"isOptional\":true}",
+                                  "fileOffset":  "0xA1D621A",
+                                  "fileOffsetDec":  169697818,
+                                  "rva":  "0xA1D6C1A",
+                                  "va":  "0x14A1D6C1A",
+                                  "section":  ".edata"
+                              },
+                              {
+                                  "kind":  "typed_schema_field",
+                                  "name":  "PlayerAtkDamagingEntityId",
+                                  "type":  "string",
+                                  "fullMatch":  "{\"name\":\"PlayerAtkDamagingEntityId\",\"type\":\"string\",\"isOptional\":true}",
+                                  "fileOffset":  "0xA1D6255",
+                                  "fileOffsetDec":  169697877,
+                                  "rva":  "0xA1D6C55",
+                                  "va":  "0x14A1D6C55",
+                                  "section":  ".edata"
+                              },
+                              {
+                                  "kind":  "typed_schema_field",
+                                  "name":  "PlayerAtkDamagingItemId",
+                                  "type":  "string",
+                                  "fullMatch":  "{\"name\":\"PlayerAtkDamagingItemId\",\"type\":\"string\",\"isOptional\":true}",
+                                  "fileOffset":  "0xA1D629D",
+                                  "fileOffsetDec":  169697949,
+                                  "rva":  "0xA1D6C9D",
+                                  "va":  "0x14A1D6C9D",
+                                  "section":  ".edata"
+                              },
+                              {
+                                  "kind":  "typed_schema_field",
+                                  "name":  "PlayerAtkOffhand",
+                                  "type":  "boolean",
+                                  "fullMatch":  "{\"name\":\"PlayerAtkOffhand\",\"type\":\"boolean\",\"isOptional\":true}",
+                                  "fileOffset":  "0xA1D62E3",
+                                  "fileOffsetDec":  169698019,
+                                  "rva":  "0xA1D6CE3",
+                                  "va":  "0x14A1D6CE3",
+                                  "section":  ".edata"
+                              },
+                              {
+                                  "kind":  "typed_schema_field",
+                                  "name":  "PlayerAtkRes",
+                                  "type":  "string",
+                                  "fullMatch":  "{\"name\":\"PlayerAtkRes\",\"type\":\"string\",\"isOptional\":true}",
+                                  "fileOffset":  "0xA1D6323",
+                                  "fileOffsetDec":  169698083,
+                                  "rva":  "0xA1D6D23",
+                                  "va":  "0x14A1D6D23",
+                                  "section":  ".edata"
+                              },
+                              {
+                                  "kind":  "typed_schema_field",
+                                  "name":  "PlayerAtkSourceId",
+                                  "type":  "string",
+                                  "fullMatch":  "{\"name\":\"PlayerAtkSourceId\",\"type\":\"string\",\"isOptional\":true}",
+                                  "fileOffset":  "0xA1D635E",
+                                  "fileOffsetDec":  169698142,
+                                  "rva":  "0xA1D6D5E",
+                                  "va":  "0x14A1D6D5E",
+                                  "section":  ".edata"
+                              },
+                              {
+                                  "kind":  "typed_schema_field",
+                                  "name":  "PlayerAtkWeapon",
+                                  "type":  "string",
+                                  "fullMatch":  "{\"name\":\"PlayerAtkWeapon\",\"type\":\"string\",\"isOptional\":true}",
+                                  "fileOffset":  "0xA1D639E",
+                                  "fileOffsetDec":  169698206,
+                                  "rva":  "0xA1D6D9E",
+                                  "va":  "0x14A1D6D9E",
+                                  "section":  ".edata"
+                              },
+                              {
+                                  "kind":  "typed_schema_field",
+                                  "name":  "PlayerDefRes",
+                                  "type":  "string",
+                                  "fullMatch":  "{\"name\":\"PlayerDefRes\",\"type\":\"string\",\"isOptional\":true}",
+                                  "fileOffset":  "0xA1D63DC",
+                                  "fileOffsetDec":  169698268,
+                                  "rva":  "0xA1D6DDC",
+                                  "va":  "0x14A1D6DDC",
+                                  "section":  ".edata"
+                              },
+                              {
+                                  "kind":  "typed_schema_field",
+                                  "name":  "PlayerDefShield",
+                                  "type":  "string",
+                                  "fullMatch":  "{\"name\":\"PlayerDefShield\",\"type\":\"string\",\"isOptional\":true}",
+                                  "fileOffset":  "0xA1D6417",
+                                  "fileOffsetDec":  169698327,
+                                  "rva":  "0xA1D6E17",
+                                  "va":  "0x14A1D6E17",
+                                  "section":  ".edata"
+                              },
+                              {
+                                  "kind":  "typed_schema_field",
+                                  "name":  "PlayerHealth",
+                                  "type":  "int",
+                                  "fullMatch":  "{\"name\":\"PlayerHealth\",\"type\":\"int\",\"isOptional\":true}",
+                                  "fileOffset":  "0xA1D6455",
+                                  "fileOffsetDec":  169698389,
+                                  "rva":  "0xA1D6E55",
+                                  "va":  "0x14A1D6E55",
+                                  "section":  ".edata"
+                              },
+                              {
+                                  "kind":  "typed_schema_field",
+                                  "name":  "PlayerIsAtkWeaponIgnited",
+                                  "type":  "boolean",
+                                  "fullMatch":  "{\"name\":\"PlayerIsAtkWeaponIgnited\",\"type\":\"boolean\",\"isOptional\":true}",
+                                  "fileOffset":  "0xA1D648D",
+                                  "fileOffsetDec":  169698445,
+                                  "rva":  "0xA1D6E8D",
+                                  "va":  "0x14A1D6E8D",
+                                  "section":  ".edata"
+                              },
+                              {
+                                  "kind":  "typed_schema_field",
+                                  "name":  "PlayerIsCritical",
+                                  "type":  "boolean",
+                                  "fullMatch":  "{\"name\":\"PlayerIsCritical\",\"type\":\"boolean\",\"isOptional\":true}",
+                                  "fileOffset":  "0xA1D64D5",
+                                  "fileOffsetDec":  169698517,
+                                  "rva":  "0xA1D6ED5",
+                                  "va":  "0x14A1D6ED5",
+                                  "section":  ".edata"
+                              },
+                              {
+                                  "kind":  "typed_schema_field",
+                                  "name":  "PlayerIsHeadShot",
+                                  "type":  "boolean",
+                                  "fullMatch":  "{\"name\":\"PlayerIsHeadShot\",\"type\":\"boolean\",\"isOptional\":true}",
+                                  "fileOffset":  "0xA1D6515",
+                                  "fileOffsetDec":  169698581,
+                                  "rva":  "0xA1D6F15",
+                                  "va":  "0x14A1D6F15",
+                                  "section":  ".edata"
+                              },
+                              {
+                                  "kind":  "typed_schema_field",
+                                  "name":  "PlayerIsKill",
+                                  "type":  "boolean",
+                                  "fullMatch":  "{\"name\":\"PlayerIsKill\",\"type\":\"boolean\",\"isOptional\":true}",
+                                  "fileOffset":  "0xA1D6555",
+                                  "fileOffsetDec":  169698645,
+                                  "rva":  "0xA1D6F55",
+                                  "va":  "0x14A1D6F55",
+                                  "section":  ".edata"
+                              },
+                              {
+                                  "kind":  "typed_schema_field",
+                                  "name":  "PlayerLevel",
+                                  "type":  "int",
+                                  "fullMatch":  "{\"name\":\"PlayerLevel\",\"type\":\"int\",\"isOptional\":true}",
+                                  "fileOffset":  "0xA1D6591",
+                                  "fileOffsetDec":  169698705,
+                                  "rva":  "0xA1D6F91",
+                                  "va":  "0x14A1D6F91",
+                                  "section":  ".edata"
+                              },
+                              {
+                                  "kind":  "typed_schema_field",
+                                  "name":  "PlayerNavState",
+                                  "type":  "string",
+                                  "fullMatch":  "{\"name\":\"PlayerNavState\",\"type\":\"string\",\"isOptional\":true}",
+                                  "fileOffset":  "0xA1D65C8",
+                                  "fileOffsetDec":  169698760,
+                                  "rva":  "0xA1D6FC8",
+                                  "va":  "0x14A1D6FC8",
+                                  "section":  ".edata"
+                              },
+                              {
+                                  "kind":  "typed_schema_field",
+                                  "name":  "PlayerPosX",
+                                  "type":  "float",
+                                  "fullMatch":  "{\"name\":\"PlayerPosX\",\"type\":\"float\",\"isOptional\":true}",
+                                  "fileOffset":  "0xA1D6605",
+                                  "fileOffsetDec":  169698821,
+                                  "rva":  "0xA1D7005",
+                                  "va":  "0x14A1D7005",
+                                  "section":  ".edata"
+                              },
+                              {
+                                  "kind":  "typed_schema_field",
+                                  "name":  "PlayerPosY",
+                                  "type":  "float",
+                                  "fullMatch":  "{\"name\":\"PlayerPosY\",\"type\":\"float\",\"isOptional\":true}",
+                                  "fileOffset":  "0xA1D663D",
+                                  "fileOffsetDec":  169698877,
+                                  "rva":  "0xA1D703D",
+                                  "va":  "0x14A1D703D",
+                                  "section":  ".edata"
+                              },
+                              {
+                                  "kind":  "typed_schema_field",
+                                  "name":  "PlayerPosZ",
+                                  "type":  "float",
+                                  "fullMatch":  "{\"name\":\"PlayerPosZ\",\"type\":\"float\",\"isOptional\":true}",
+                                  "fileOffset":  "0xA1D6675",
+                                  "fileOffsetDec":  169698933,
+                                  "rva":  "0xA1D7075",
+                                  "va":  "0x14A1D7075",
+                                  "section":  ".edata"
+                              }
+                          ],
+    "playerPathOccurrences":  [
+                                  {
+                                      "path":  "player.achievement",
+                                      "occurrence":  0,
+                                      "fileOffset":  "0xA1DFE62",
+                                      "rva":  "0xA1E0862",
+                                      "va":  "0x14A1E0862",
+                                      "section":  ".edata",
+                                      "context":  "ANDARD\",\"typeAttributes\":[{\"name\":\"crossplay\"}],\"customAttributes\":[]}, {\"name\":\"player.achievement\",\"type\":\"STANDARD\",\"typeAttributes\":[{\"name\":\"achievementId\"}],\"customAttributes\":[]}, {\"name\":\"play"
+                                  },
+                                  {
+                                      "path":  "player.chatService",
+                                      "occurrence":  0,
+                                      "fileOffset":  "0xA1DFED5",
+                                      "rva":  "0xA1E08D5",
+                                      "va":  "0x14A1E08D5",
+                                      "section":  ".edata",
+                                      "context":  "RD\",\"typeAttributes\":[{\"name\":\"achievementId\"}],\"customAttributes\":[]}, {\"name\":\"player.chatService\",\"type\":\"STANDARD\",\"typeAttributes\":[{\"name\":\"channels\"},{\"name\":\"provider\"},{\"name\":\"listening\"},{\""
+                                  },
+                                  {
+                                      "path":  "player.contentDownload",
+                                      "occurrence":  0,
+                                      "fileOffset":  "0xA1DFFB0",
+                                      "rva":  "0xA1E09B0",
+                                      "va":  "0x14A1E09B0",
+                                      "section":  ".edata",
+                                      "context":  "name\":\"texting\"},{\"name\":\"stt\"},{\"name\":\"tts\"}],\"customAttributes\":[]}, {\"name\":\"player.contentDownload\",\"type\":\"STANDARD\",\"typeAttributes\":[{\"name\":\"status\"},{\"name\":\"downloadType\"},{\"name\":\"size\"},{\"nam"
+                                  },
+                                  {
+                                      "path":  "player.createSession",
+                                      "occurrence":  0,
+                                      "fileOffset":  "0xA1E0A8E",
+                                      "rva":  "0xA1E148E",
+                                      "va":  "0x14A1E148E",
+                                      "section":  ".edata",
+                                      "context":  "on\"},{\"name\":\"gameSku\"}],\"customAttributes\":[{\"name\":\"IsSubscriber\"}]}, {\"name\":\"player.createSession\",\"type\":\"STANDARD\",\"typeAttributes\":[{\"name\":\"abtesting\"},{\"name\":\"multiplayerAllowed\"},{\"name\":\"con"
+                                  },
+                                  {
+                                      "path":  "player.news.action",
+                                      "occurrence":  0,
+                                      "fileOffset":  "0xA0FBE6C",
+                                      "rva":  "0xA0FC86C",
+                                      "va":  "0x14A0FC86C",
+                                      "section":  ".edata",
+                                      "context":  "ayer.news.impression\"}]}, {\"name\":\"NewsItemInteraction\",\"compositions\":[{\"name\":\"player.news.action\"}]}, {\"name\":\"XSeriesStoreSynchronized\",\"compositions\":[{\"name\":\"player.primaryStore.xboxSeries\"}]},"
+                                  },
+                                  {
+                                      "path":  "player.news.action",
+                                      "occurrence":  1,
+                                      "fileOffset":  "0xA1DE301",
+                                      "rva":  "0xA1DED01",
+                                      "va":  "0x14A1DED01",
+                                      "section":  ".edata",
+                                      "context":  "\":\"titleOsVersion\"},{\"name\":\"systemOsVersion\"}],\"customAttributes\":[]}, {\"name\":\"player.news.action\",\"type\":\"STANDARD\",\"typeAttributes\":[{\"name\":\"newsId\"},{\"name\":\"placement\"},{\"name\":\"actionName\"}],\""
+                                  },
+                                  {
+                                      "path":  "player.news.impression",
+                                      "occurrence":  0,
+                                      "fileOffset":  "0xA0FBE19",
+                                      "rva":  "0xA0FC819",
+                                      "va":  "0x14A0FC819",
+                                      "section":  ".edata",
+                                      "context":  "dwareSpecs.xboxSeries\"}]}, {\"name\":\"NewsItemImpression\",\"compositions\":[{\"name\":\"player.news.impression\"}]}, {\"name\":\"NewsItemInteraction\",\"compositions\":[{\"name\":\"player.news.action\"}]}, {\"name\":\"XSeries"
+                                  },
+                                  {
+                                      "path":  "player.news.impression",
+                                      "occurrence":  1,
+                                      "fileOffset":  "0xA1DE398",
+                                      "rva":  "0xA1DED98",
+                                      "va":  "0x14A1DED98",
+                                      "section":  ".edata",
+                                      "context":  "d\"},{\"name\":\"placement\"},{\"name\":\"actionName\"}],\"customAttributes\":[]}, {\"name\":\"player.news.impression\",\"type\":\"STANDARD\",\"typeAttributes\":[{\"name\":\"newsId\"},{\"name\":\"placement\"},{\"name\":\"duration\"}],\"cu"
+                                  },
+                                  {
+                                      "path":  "player.position",
+                                      "occurrence":  0,
+                                      "fileOffset":  "0xA1D77E6",
+                                      "rva":  "0xA1D81E6",
+                                      "va":  "0x14A1D81E6",
+                                      "section":  ".edata",
+                                      "context":  "artSignal\",\"compositions\":[]}, {\"name\":\"PlayerPosition\",\"compositions\":[{\"name\":\"player.position\"}]}, {\"name\":\"BoatNavigationStartSignal\",\"compositions\":[{\"name\":\"context.start.BoatNavigation\"}]}, "
+                                  },
+                                  {
+                                      "path":  "player.position",
+                                      "occurrence":  1,
+                                      "fileOffset":  "0xA1DE106",
+                                      "rva":  "0xA1DEB06",
+                                      "va":  "0x14A1DEB06",
+                                      "section":  ".edata",
+                                      "context":  "{\"name\":\"TimeOfDay\"},{\"name\":\"PinAction\"},{\"name\":\"MenuSequenceId\"}]}, .{\"name\":\"player.position\",\"type\":\"STANDARD\",\"typeAttributes\":[],\"customAttributes\":[{\"name\":\"PlayerPosX\"},{\"name\":\"PlayerPosY"
+                                  },
+                                  {
+                                      "path":  "player.primaryStore.pc",
+                                      "occurrence":  0,
+                                      "fileOffset":  "0xA0FBD1A",
+                                      "rva":  "0xA0FC71A",
+                                      "va":  "0x14A0FC71A",
+                                      "section":  ".edata",
+                                      "context":  ".progression.upgrade\"}]}, {\"name\":\"PCStoreSynchronized\",\"compositions\":[{\"name\":\"player.primaryStore.pc\"}]}, {\"name\":\"PS5EventSessionStarted\",\"compositions\":[{\"name\":\"hardwareSpecs.ps5\"}]}, {\"name\":\"XSeri"
+                                  },
+                                  {
+                                      "path":  "player.primaryStore.pc",
+                                      "occurrence":  1,
+                                      "fileOffset":  "0xA1E2355",
+                                      "rva":  "0xA1E2D55",
+                                      "va":  "0x14A1E2D55",
+                                      "section":  ".edata",
+                                      "context":  ":\"PlayerPosY\"},{\"name\":\"PlayerPosZ\"},{\"name\":\"Ttp\"},{\"name\":\"World\"}]}, {\"name\":\"player.primaryStore.pc\",\"type\":\"STANDARD\",\"typeAttributes\":[{\"name\":\"addOns\"}],\"customAttributes\":[]}, {\"name\":\"player.prim"
+                                  },
+                                  {
+                                      "path":  "player.primaryStore.ps5",
+                                      "occurrence":  0,
+                                      "fileOffset":  "0xA0FBF1C",
+                                      "rva":  "0xA0FC91C",
+                                      "va":  "0x14A0FC91C",
+                                      "section":  ".edata",
+                                      "context":  "aryStore.xboxSeries\"}]}, {\"name\":\"PS5StoreSynchronized\",\"compositions\":[{\"name\":\"player.primaryStore.ps5\"}]}, {\"name\":\"MacOsEventSessionStarted\",\"compositions\":[{\"name\":\"hardwareSpecs.macOs\"}]}, {\"name\":\"L"
+                                  },
+                                  {
+                                      "path":  "player.primaryStore.ps5",
+                                      "occurrence":  1,
+                                      "fileOffset":  "0xA1E23C5",
+                                      "rva":  "0xA1E2DC5",
+                                      "va":  "0x14A1E2DC5",
+                                      "section":  ".edata",
+                                      "context":  "\"STANDARD\",\"typeAttributes\":[{\"name\":\"addOns\"}],\"customAttributes\":[]}, {\"name\":\"player.primaryStore.ps5\",\"type\":\"STANDARD\",\"typeAttributes\":[{\"name\":\"ps5entitlements\"}],\"customAttributes\":[]}, {\"name\":\"pl"
+                                  },
+                                  {
+                                      "path":  "player.primaryStore.xboxSeries",
+                                      "occurrence":  0,
+                                      "fileOffset":  "0xA0FBEC0",
+                                      "rva":  "0xA0FC8C0",
+                                      "va":  "0x14A0FC8C0",
+                                      "section":  ".edata",
+                                      "context":  "yer.news.action\"}]}, {\"name\":\"XSeriesStoreSynchronized\",\"compositions\":[{\"name\":\"player.primaryStore.xboxSeries\"}]}, {\"name\":\"PS5StoreSynchronized\",\"compositions\":[{\"name\":\"player.primaryStore.ps5\"}]}, {\"name\":\"M"
+                                  },
+                                  {
+                                      "path":  "player.primaryStore.xboxSeries",
+                                      "occurrence":  1,
+                                      "fileOffset":  "0xA1E243F",
+                                      "rva":  "0xA1E2E3F",
+                                      "va":  "0x14A1E2E3F",
+                                      "section":  ".edata",
+                                      "context":  "\",\"typeAttributes\":[{\"name\":\"ps5entitlements\"}],\"customAttributes\":[]}, {\"name\":\"player.primaryStore.xboxSeries\",\"type\":\"STANDARD\",\"typeAttributes\":[{\"name\":\"seriesGameContent\"}],\"customAttributes\":[]}, {\"name\":\""
+                                  },
+                                  {
+                                      "path":  "player.progression.inventory",
+                                      "occurrence":  0,
+                                      "fileOffset":  "0xA1D710D",
+                                      "rva":  "0xA1D7B0D",
+                                      "va":  "0x14A1D7B0D",
+                                      "section":  ".edata",
+                                      "context":  "ipWreck\"}]}, {\"name\":\"ProgressionPlayerInventorySignal\",\"compositions\":[{\"name\":\"player.progression.inventory\"}]}, {\"name\":\"FortNavalCombatStart\",\"compositions\":[{\"name\":\"context.start.FortNavalCombat\"}]}, {\"na"
+                                  },
+                                  {
+                                      "path":  "player.progression.inventory",
+                                      "occurrence":  1,
+                                      "fileOffset":  "0xA1E2F63",
+                                      "rva":  "0xA1E3963",
+                                      "va":  "0x14A1E3963",
+                                      "section":  ".edata",
+                                      "context":  "\"World\"},{\"name\":\"ShipWreckEndReason\"},{\"name\":\"ShipWreckCompleted\"}]}, {\"name\":\"player.progression.inventory\",\"type\":\"PROGRESSION\",\"typeAttributes\":[{\"name\":\"progressionType\"},{\"name\":\"progressionValue\"}],\"cus"
+                                  },
+                                  {
+                                      "path":  "player.progression.upgrade",
+                                      "occurrence":  0,
+                                      "fileOffset":  "0xA0FBCC3",
+                                      "rva":  "0xA0FC6C3",
+                                      "va":  "0x14A0FC6C3",
+                                      "section":  ".edata",
+                                      "context":  "tom.questupdate\"}]}, {\"name\":\"ProgressionUpgradeSignal\",\"compositions\":[{\"name\":\"player.progression.upgrade\"}]}, {\"name\":\"PCStoreSynchronized\",\"compositions\":[{\"name\":\"player.primaryStore.pc\"}]}, {\"name\":\"PS5"
+                                  },
+                                  {
+                                      "path":  "player.progression.upgrade",
+                                      "occurrence":  1,
+                                      "fileOffset":  "0xA1E3419",
+                                      "rva":  "0xA1E3E19",
+                                      "va":  "0x14A1E3E19",
+                                      "section":  ".edata",
+                                      "context":  "peAttributes\":[],\"customAttributes\":[{\"name\":\"SmokeBombVictimCount\"}]}, {\"name\":\"player.progression.upgrade\",\"type\":\"PROGRESSION\",\"typeAttributes\":[{\"name\":\"progressionType\"},{\"name\":\"progressionValue\"}],\"cus"
+                                  },
+                                  {
+                                      "path":  "player.start",
+                                      "occurrence":  0,
+                                      "fileOffset":  "0xA1E0B53",
+                                      "rva":  "0xA1E1553",
+                                      "va":  "0x14A1E1553",
+                                      "section":  ".edata",
+                                      "context":  ":\"concurrentProfileId\"},{\"name\":\"usSessionId\"}],\"customAttributes\":[]}, {\"name\":\"player.start\",\"type\":\"STANDARD\",\"typeAttributes\":[{\"name\":\"abtesting\"},{\"name\":\"multiplayerAllowed\"},{\"name\":\"con"
+                                  },
+                                  {
+                                      "path":  "player.stats.playtime",
+                                      "occurrence":  0,
+                                      "fileOffset":  "0xA1E0C11",
+                                      "rva":  "0xA1E1611",
+                                      "va":  "0x14A1E1611",
+                                      "section":  ".edata",
+                                      "context":  "\"concurrentProfileId\"},{\"name\":\"platformType\"}],\"customAttributes\":[]}, {\"name\":\"player.stats.playtime\",\"type\":\"STANDARD\",\"typeAttributes\":[{\"name\":\"playtimeAbsolute\"},{\"name\":\"playtimeRelative\"},{\"name\""
+                                  }
+                              ]
+}

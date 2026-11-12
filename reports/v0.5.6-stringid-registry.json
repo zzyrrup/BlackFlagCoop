@@ -1,0 +1,59 @@
+{
+    "schemaVersion":  1,
+    "generatedUtc":  "2026-11-12T09:02:03.4429443Z",
+    "verifiedNameToNumericIdMapFound":  false,
+    "verifiedHashAlgorithmForTelemetryNames":  false,
+    "candidateHashScan":  {
+                              "algorithmsTried":  [
+                                                      "FNV-1a 32",
+                                                      "CRC32"
+                                                  ],
+                              "result":  "No meaningful verified binding table found; sparse CRC hits for generic names like World are not accepted as proof",
+                              "note":  "Single-name hash presence is insufficient"
+                          },
+    "harbourStringIdExports":  [
+                                   {
+                                       "name":  "Harbour_StringId_Registry_Find",
+                                       "rva":  "0x0692E820"
+                                   },
+                                   {
+                                       "name":  "Harbour_StringId_Registry_Insert",
+                                       "rva":  "0x0000D500"
+                                   },
+                                   {
+                                       "name":  "Harbour_StringId_Registry_LoadFrom",
+                                       "rva":  "0x0692E3C0"
+                                   },
+                                   {
+                                       "name":  "Harbour_StringId_Registry_DumpTo",
+                                       "rva":  "0x0692E550"
+                                   },
+                                   {
+                                       "name":  "Harbour_StringId_Registry_ClearUnsafe",
+                                       "rva":  "0x069296F0"
+                                   },
+                                   {
+                                       "name":  "Harbour_StringId_GetIdentifierXorValue",
+                                       "rva":  "0x0535F280"
+                                   },
+                                   {
+                                       "name":  "Harbour_StringId_GetIdentifierLeftRotation",
+                                       "rva":  "0x0535F280"
+                                   },
+                                   {
+                                       "name":  "Harbour_StringId_GetIdentifierRightRotation",
+                                       "rva":  "0x0535F280"
+                                   }
+                               ],
+    "playerPosAttributeRepresentation":  {
+                                             "form":  "JSON schema field names inside .edata blob",
+                                             "standaloneCStringCopiesFound":  false,
+                                             "absoluteVaRvaPointerXrefsFound":  false,
+                                             "implication":  "Runtime likely parses schema blob or uses non-pointer StringId indirection; classic string xrefs are absent"
+                                         },
+    "assessments":  {
+                        "stringIdExportExists":  true,
+                        "stringIdExportProvenAsTelemetryAttributeBinder":  false,
+                        "nextOfflineFocus":  "Static analysis of Harbour_StringId_GetIdentifier* and Registry_Find/DumpTo"
+                    }
+}

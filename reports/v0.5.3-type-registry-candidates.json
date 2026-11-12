@@ -1,0 +1,75 @@
+﻿{
+    "schemaVersion":  1,
+    "generatedUtc":  "2026-11-12T08:18:25.8408141Z",
+    "confirmedBinaryRegistryTablesFound":  false,
+    "confirmedNameToTypeIdMapFound":  false,
+    "candidates":  [
+                       {
+                           "needle":  "compositions",
+                           "role":  "schema_keyword",
+                           "confidence":  "high",
+                           "evidenceClass":  "confirmed",
+                           "fileOffset":  "0xA1D77BE",
+                           "section":  ".edata",
+                           "rva":  "0xA1D81BE",
+                           "surroundingData":  "PlayerPosition compositions array",
+                           "interpretation":  "Keyword in telemetry/composition JSON; not a decoded registry table."
+                       },
+                       {
+                           "needle":  "PlayerPosition",
+                           "role":  "composition_signal_name",
+                           "confidence":  "high",
+                           "evidenceClass":  "confirmed",
+                           "fileOffset":  "0xA1D77BE",
+                           "section":  ".edata",
+                           "rva":  "0xA1D81BE",
+                           "surroundingData":  "{\"name\":\"PlayerPosition\",\"compositions\":[{\"name\":\"player.position\"}]}",
+                           "interpretation":  "Named composition signal."
+                       },
+                       {
+                           "needle":  "type+isOptional schema fields",
+                           "role":  "analytics_field_schema",
+                           "confidence":  "high",
+                           "evidenceClass":  "confirmed",
+                           "fileOffset":  "0xA1D4D9B",
+                           "section":  ".edata",
+                           "rva":  "0xA1D579B",
+                           "surroundingData":  "EnemyAtkDamagingEntityId/PlayerAtkDamagingEntityId type:string",
+                           "interpretation":  "Typed event schema exists for analytics/combat; EntityId values are strings."
+                       },
+                       {
+                           "needle":  "Harbour_StringId_* exports",
+                           "role":  "platform_stringid_api",
+                           "confidence":  "high",
+                           "evidenceClass":  "confirmed_from_v0.5.2_exports",
+                           "fileOffset":  "n/a_export_table",
+                           "section":  "export",
+                           "rva":  "see acblackflag-exports-report.json",
+                           "surroundingData":  "Harbour_StringId_GetIdentifier*",
+                           "interpretation":  "Platform StringId helpers exported; not proven to map player.position to a component type."
+                       },
+                       {
+                           "needle":  "CreateActorsDeferredSingleThreaded",
+                           "role":  "update_phase_label",
+                           "confidence":  "medium",
+                           "evidenceClass":  "confirmed_string_speculative_registry_link",
+                           "fileOffset":  "0xA179AF0",
+                           "section":  ".edata",
+                           "rva":  "0xA17A4F0",
+                           "surroundingData":  "...CreateActorsDeferredSingleThreaded.UpdateAISingleThreaded...",
+                           "interpretation":  "May index an internal update stage enum/name table; function pointer table not recovered."
+                       },
+                       {
+                           "needle":  "TypeRegistry/RegisterComponent/ActorType",
+                           "role":  "search_negative_result",
+                           "confidence":  "medium",
+                           "evidenceClass":  "speculative_absence",
+                           "fileOffset":  "n/a",
+                           "section":  "n/a",
+                           "rva":  "n/a",
+                           "surroundingData":  "No verified binary type-registry struct decoded in this milestone",
+                           "interpretation":  "String beacons may exist elsewhere; no confirmed name-to-type-id map was established."
+                       }
+                   ],
+    "summary":  "No verified in-binary type registry connecting PlayerPosition/Edward to component type IDs was found."
+}

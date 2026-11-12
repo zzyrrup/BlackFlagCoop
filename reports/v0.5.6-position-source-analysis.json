@@ -1,0 +1,67 @@
+{
+  "schemaVersion":1,
+  "generatedUtc":"2026-11-12T09:00:11.9453162Z",
+  "fields":[
+    {
+      "field":"PositionSource",
+      "typedDictionaryOffset":"0xA1D566E",
+      "typedDictionaryContext":"me\":\"PoiTotalObjectiveAvailable\",\"type\":\"int\",\"isOptional\":true}, {\"name\":\"PoiType\",\"type\":\"string\",\"isOptional\":true}, {\"name\":\"PositionSource\",\"type\":\"string\",\"isOptional\":true}, {\"name\":\"PreviousPlaythroughId\",\"type\":\"string\",\"isOptional\":true}, {\"name\":\"ProceduralQuestType\",\"type\":\"string\",\"isOptional\":true}, {\"name\":\"processorCount\",",
+      "nameOccurrencesInEdataAtLeast":4,
+      "enumerationValuesRecovered":false,
+      "unitsRecovered":false,
+      "coordinateSpaceRecovered":false,
+      "confidence":"high_for_type_only",
+      "evidenceClass":"confirmed_typed_dictionary_entry"
+    },
+    {
+      "field":"World",
+      "typedDictionaryOffset":"0xA1D1E3C",
+      "typedDictionaryContext":"\"WildlifeAnvilId\",\"type\":\"string\",\"isOptional\":true}, {\"name\":\"WildlifeInteraction\",\"type\":\"string\",\"isOptional\":true}, {\"name\":\"World\",\"type\":\"string\",\"isOptional\":true}, {\"name\":\"WorldEncounterDetail\",\"type\":\"string\",\"isOptional\":true}, {\"name\":\"WorldEncounterGeneratorType\",\"type\":\"string\",\"isOptional\":true}, {\"name\":\"WorldEncounterID\",",
+      "nameOccurrencesInEdataAtLeast":5,
+      "enumerationValuesRecovered":false,
+      "unitsRecovered":false,
+      "coordinateSpaceRecovered":false,
+      "confidence":"high_for_type_only",
+      "evidenceClass":"confirmed_typed_dictionary_entry"
+    },
+    {
+      "field":"Movement",
+      "typedDictionaryOffset":"0xA1CE5EB",
+      "typedDictionaryContext":"{\"name\":\"MortarStorage\",\"type\":\"int\",\"isOptional\":true}, {\"name\":\"MortarStrengthLevel\",\"type\":\"int\",\"isOptional\":true}, {\"name\":\"Movement\",\"type\":\"string\",\"isOptional\":true}, {\"name\":\"multiplayerAllowed\",\"type\":\"boolean\",\"isOptional\":true}, {\"name\":\"NavalConflictEndReason\",\"type\":\"string\",\"isOptional\":true}, {\"name\":\"NavalConflictPlayerWa",
+      "nameOccurrencesInEdataAtLeast":5,
+      "enumerationValuesRecovered":false,
+      "unitsRecovered":false,
+      "coordinateSpaceRecovered":false,
+      "confidence":"high_for_type_only",
+      "evidenceClass":"confirmed_typed_dictionary_entry"
+    },
+    {
+      "field":"FightState",
+      "typedDictionaryOffset":"0xA1CF104",
+      "typedDictionaryContext":"lse}, {\"name\":\"Feedback\",\"type\":\"int\",\"isOptional\":true}, {\"name\":\"FightLogicState\",\"type\":\"string\",\"isOptional\":true}, {\"name\":\"FightState\",\"type\":\"string\",\"isOptional\":true}, {\"name\":\"FishSchoolUses\",\"type\":\"int\",\"isOptional\":true}, {\"name\":\"FortDefensesDestroyedCount\",\"type\":\"int\",\"isOptional\":true}, {\"name\":\"FortID\",\"type\":\"string\",\"i",
+      "nameOccurrencesInEdataAtLeast":3,
+      "enumerationValuesRecovered":false,
+      "unitsRecovered":false,
+      "coordinateSpaceRecovered":false,
+      "confidence":"high_for_type_only",
+      "evidenceClass":"confirmed_typed_dictionary_entry"
+    },
+    {
+      "field":"Character",
+      "typedDictionaryOffset":"0xA1D1903",
+      "typedDictionaryContext":"al\":true}, {\"name\":\"CargoStorage\",\"type\":\"int\",\"isOptional\":true}, {\"name\":\"channels\",\"type\":\"int\",\"isOptional\":false}, {\"name\":\"Character\",\"type\":\"string\",\"isOptional\":true}, {\"name\":\"ChestsAvailable\",\"type\":\"int\",\"isOptional\":true}, {\"name\":\"ChestsCollected\",\"type\":\"int\",\"isOptional\":true}, {\"name\":\"CinematicId\",\"type\":\"string\",\"isOptio",
+      "nameOccurrencesInEdataAtLeast":5,
+      "enumerationValuesRecovered":false,
+      "unitsRecovered":false,
+      "coordinateSpaceRecovered":false,
+      "confidence":"high_for_type_only",
+      "evidenceClass":"confirmed_typed_dictionary_entry"
+    }
+  ],
+  "assessments":{
+    "positionSourceEnumFound":false,
+    "worldEnumFound":false,
+    "playerPosUnitsFound":false,
+    "worldSpaceProven":false
+  }
+}

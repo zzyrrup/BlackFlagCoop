@@ -1,0 +1,61 @@
+{
+  "schemaVersion":1,
+  "generatedUtc":"2026-11-12T09:07:23.6038184Z",
+  "exports":[
+    {
+      "name":"Harbour_StringId_Registry_Find",
+      "rva":"0x692E820",
+      "fileOffset":"0x692DE20",
+      "firstBytes":"41 56 56 57 53 48 83 EC 48 48 8B 05 D0 49 98 03 48 31 E0 48 89 44 24 40 31 F6 48 85 D2 74 0D 4D",
+      "classification":"likely_real_x64_prologue",
+      "telemetryBindingProven":false
+    },
+    {
+      "name":"Harbour_StringId_Registry_DumpTo",
+      "rva":"0x692E550",
+      "fileOffset":"0x692DB50",
+      "firstBytes":"41 57 41 56 41 55 41 54 56 57 55 53 48 83 EC 78 48 8B 05 99 4C 98 03 48 31 E0 48 89 44 24 70 31",
+      "classification":"likely_real_x64_prologue",
+      "telemetryBindingProven":false
+    },
+    {
+      "name":"Harbour_StringId_Registry_LoadFrom",
+      "rva":"0x692E3C0",
+      "fileOffset":"0x692D9C0",
+      "firstBytes":"41 57 41 56 41 55 41 54 56 57 55 53 48 81 EC A8 00 00 00 48 8B 05 26 4E 98 03 48 31 E0 48 89 84",
+      "classification":"likely_real_x64_prologue",
+      "telemetryBindingProven":false
+    },
+    {
+      "name":"Harbour_StringId_Registry_Insert",
+      "rva":"0xD500",
+      "fileOffset":"0xCB00",
+      "firstBytes":"31 C0 C3 CC CC CC CC CC CC CC CC CC CC CC CC CC 48 83 EC 28 48 8D 0D C5 97 7A 09 E8 70 D4 20 04",
+      "classification":"stub_xor_eax_ret",
+      "telemetryBindingProven":false
+    },
+    {
+      "name":"Harbour_StringId_Registry_ClearUnsafe",
+      "rva":"0x69296F0",
+      "fileOffset":"0x6928CF0",
+      "firstBytes":"48 83 EC 28 E8 57 FF FF FF 90 48 83 C4 28 E9 4D FD FF FF CC CC CC CC CC CC CC CC CC CC CC CC CC",
+      "classification":"likely_real_x64_prologue",
+      "telemetryBindingProven":false
+    },
+    {
+      "name":"Harbour_StringId_GetIdentifierXorValue",
+      "rva":"0x535F280",
+      "fileOffset":"0x535E880",
+      "firstBytes":"31 C0 C3 CC CC CC CC CC CC CC CC CC CC CC CC CC 48 8B 41 28 48 63 48 08 48 C1 F9 1F 48 23 08 48",
+      "classification":"stub_xor_eax_ret",
+      "telemetryBindingProven":false
+    }
+  ],
+  "assessments":{
+    "getIdentifierExportsAreStubs":true,
+    "registryFindLooksReal":true,
+    "schemaParserIdentified":false,
+    "playerPositionProducerIdentified":false,
+    "recommended": "Continue static analysis of Registry_Find/DumpTo/LoadFrom; search for callers via import/export usage patterns offline"
+  }
+}

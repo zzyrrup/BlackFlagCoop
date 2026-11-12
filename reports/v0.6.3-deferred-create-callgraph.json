@@ -1,0 +1,101 @@
+{
+  "schemaVersion": 1,
+  "generatedUtc": "2026-11-12T15:30:00Z",
+  "milestone": "v0.6.3",
+  "function": {
+    "entryRva": "0x5CBDFB0",
+    "entryFileOffset": "0x5CBD5B0",
+    "endRva": "0x5CBE847",
+    "sizeBytes": 2199,
+    "section": ".impdata",
+    "prologue": "41 57 41 56 41 55 41 54 56 57 55 53 48 81 EC B8 00 00 00 4D 89 C5 48 89 54 24 78 48 89 CB 48 8B",
+    "boundaryMethod": "int3_run"
+  },
+  "createActorsDeferredLeaSite": {
+    "rva": "0x5CBE0C7",
+    "targetRva": "0xA17A4F0",
+    "string": "CreateActorsDeferredSingleThreaded",
+    "globalLeaSitesToThisString": ["0x5CBE0C7"]
+  },
+  "directCallersE8": [],
+  "qwordPointersToEntry": [],
+  "role": "Frame-phase / job-table registrar — wires phase name strings to handler function pointers and stores them into a coordinator object",
+  "storeHelpers": {
+    "setQwordAtPlus180": {
+      "rva": "0x4DE3390",
+      "bytes": "48 89 91 80 01 00 00 C3",
+      "meaning": "mov [rcx+0x180], rdx; ret — stores phase name or related pointer"
+    },
+    "setDwordAtPlus188": {
+      "rva": "0x4DE33A0",
+      "bytes": "89 91 88 01 00 00 C3",
+      "meaning": "mov [rcx+0x188], edx; ret"
+    },
+    "nopStub": {
+      "rva": "0x4259C90",
+      "bytes": "C3",
+      "meaning": "empty ret — placeholder callback"
+    },
+    "getPlus8": {
+      "rva": "0xB61FC0",
+      "bytes": "48 8B 41 08 C3",
+      "meaning": "mov rax,[rcx+8]; ret"
+    }
+  },
+  "phaseRegistrationsSample": [
+    {"name": "ActorComponent::Begin", "storeCallSite": "0x5CBDFFB"},
+    {"name": "ActorComponent::End", "storeCallSite": "0x5CBE013"},
+    {"name": "UpdateActorLOD", "storeCallSite": "0x5CBE029"},
+    {
+      "name": "CreateActorsDeferredSingleThreaded",
+      "nameLeaSite": "0x5CBE0C7",
+      "handlerLeaSite": "0x5CBE0DE",
+      "handlerRva": "0x1AC380",
+      "handlerPrologue": "41 57 41 56 41 55 41 54 56 57 53 48 83 EC 70 C5",
+      "note": "This is the registered phase implementation — not 0x5CBDFB0 itself"
+    },
+    {
+      "name": "GatherActorComponentsForSingleThreadedUpdate",
+      "handlerRva": "0x1A97E0"
+    },
+    {
+      "name": "UpdateActorControllersSingleThreaded",
+      "handlerRva": "0x7B00B60"
+    },
+    {
+      "name": "UpdateActorSingleThreaded",
+      "handlerRva": "0x29C6910"
+    },
+    {"name": "GatherActorComponentsForMultiThreadedUpdate"},
+    {"name": "UpdateActorMultiThreaded"},
+    {"name": "UpdateActorMultiThreadedInteractionGroups"},
+    {"name": "ActorAfterAnimMultiThreaded"},
+    {"name": "ActorStateManagerUpdate"}
+  ],
+  "metrics": {
+    "leaCount": 38,
+    "callCount": 54,
+    "framePhaseLabelLeas": 4,
+    "repeatedStoreHelperCalls": true
+  },
+  "conclusions": {
+    "isConfirmedActorFactory": false,
+    "referencesCreateActorsDeferredString": true,
+    "confirmedRole": "Registers many actor/AI/update phase labels + handler RVAs into a table/object (fields at +0x180/+0x188 and nearby struct slots)",
+    "objectsCreatedOrQueued": "none confirmed inside 0x5CBDFB0 — it configures phase entries; creation work would live in registered handlers such as 0x1AC380",
+    "characterCreationUsesThisPathway": "unverified at registrar; plausible that handler 0x1AC380 participates in deferred actor creation — not proven as character/Edward factory",
+    "archetypeComponentTransformInitInThisFunction": false,
+    "entityIdQueueEvidenceInThisFunction": false
+  },
+  "nextLead": {
+    "rva": "0x1AC380",
+    "label": "CreateActorsDeferredSingleThreaded registered handler",
+    "reason": "Actual deferred-create phase body referenced by the registrar at 0x5CBDFB0"
+  },
+  "safety": {
+    "analysisMode": "offline_pe_only",
+    "exeSha256": "19920F34BB2FAC814023EE3C27F0CECA1872E80A2AAFB37C092C419FFF77CC0D",
+    "asiSha256": "63B38877DDA7CC7CD9AB2619F94D3941C37F54C95A435EFE47084DC4CF2A50BE",
+    "asiPreservedAsV051": true
+  }
+}

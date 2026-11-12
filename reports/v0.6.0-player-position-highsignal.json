@@ -1,0 +1,27 @@
+{
+    "schemaVersion":  1,
+    "generatedUtc":  "2026-11-12T15:12:36.0490217Z",
+    "title":  "High-signal exact LEA to player.position event object",
+    "finding":  {
+                    "siteRva":  "0x57AF8D9",
+                    "siteFileOffset":  "0x57AEED9",
+                    "instruction":  "lea rdx, [rip+disp] ; mov r8d, 0x4DB ; call 0x53519E0",
+                    "targetRva":  "0xA1DEAFE",
+                    "targetFileOffset":  "0xA1DE0FE",
+                    "targetContentStart":  "{\"name\":\"player.position\",\"type\":\"STANDARD\",...}",
+                    "lengthImmediate":  "0x4DB",
+                    "lengthMeaning":  "Not equal to single-object size (0x14C). Bytes [target, target+0x4DB) contain 5 STANDARD + 1 CUSTOM event schemas starting at player.position.",
+                    "calleeRva":  "0x53519E0",
+                    "calleePrologue":  "48 8B C1 4C 8D 15 ... 49 83 F8 0F (cmp r8, 0xF) — consistent with SSO/string construction from pointer+length",
+                    "secondSiteRva":  "0x57B032B",
+                    "secondCalleeRva":  "0x1A64E70",
+                    "enclosingCandidateEntryRva":  "0x57AF060",
+                    "enclosingCallerE8":  "0x57A9ED7",
+                    "confidence":  "high_for_data_reference_to_player_position_schema_chunk",
+                    "confirmedSchemaParser":  false,
+                    "confirmedEventProducer":  false,
+                    "confirmedFloatPopulation":  false,
+                    "note":  "Establishes code consumption of the embedded schema text around player.position; does not yet prove attribute float writers or Edward binding."
+                },
+    "falsePositiveWarning":  "Many of 406 core-range RIP hits target edge string pools (HK_RETURN_* near 0xA1CE2xx, format strings near 0xA1E35xx). Exact LEA to 0xA1DEAFE is the primary high-signal hit."
+}

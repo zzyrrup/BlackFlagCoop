@@ -1,0 +1,61 @@
+﻿Extended offline string probe
+File: C:\Games\AC Black Flag Resynced\ACBlackFlag.exe
+Size: 478845792
+Needles: 22
+Progress: 33554432 / 478845792 (7%), hits=0
+Progress: 67108864 / 478845792 (14%), hits=0
+Progress: 100663296 / 478845792 (21%), hits=0
+Progress: 134217728 / 478845792 (28%), hits=0
+Progress: 167772160 / 478845792 (35%), hits=3
+Progress: 201326592 / 478845792 (42%), hits=39
+Progress: 234881024 / 478845792 (49%), hits=39
+Progress: 268435456 / 478845792 (56%), hits=39
+Progress: 301989888 / 478845792 (63%), hits=39
+Progress: 335544320 / 478845792 (70%), hits=39
+Progress: 369098752 / 478845792 (77%), hits=39
+Progress: 402653184 / 478845792 (84%), hits=39
+Progress: 436207616 / 478845792 (91%), hits=39
+Progress: 469762048 / 478845792 (98%), hits=39
+Progress: 478845792 / 478845792 (100%), hits=39
+Hits: 39
+ElapsedMs: 4056
+Anvil @ 0x996D5C5 | /../../pipeline/packages/ui/Anvil.Gui/Aegir.Gui/src/aegir.gui/guiaegirlayer.cpp:3
+Anvil @ 0x996D656 | /../../pipeline/packages/ui/Anvil.Gui/Aegir.Gui/src/aegir.gui/guiaegirlayer.cpp:3
+Anvil @ 0x996D6E7 | /../../pipeline/packages/ui/Anvil.Gui/Aegir.Gui/src/aegir.gui/guiaegirlayer.cpp:3
+Edward @ 0xA1708A7 | wayFleet_ClaimReward.edward.Edward.Wild Leopard.Keyboard.profilesLeaderboard.space
+PlayerPosition @ 0xA1D77BE | compositions\":[]}, {\"name\":\"PlayerPosition\",\"compositions\":[{\"name\":\"player.position\"}]}, 
+WorldPosition @ 0xA15AF30 | te.AllyAssignationState.AllyWorldPositionAssignationState.AllySlottableAssignationState.A
+WorldPosition @ 0xA18A3FB | VelocitiesZ.WaterUndisplacedWorldPositionBufferZ.ClearZ.transformPositionZ.minZ.MinZ.%d-%
+WorldPosition @ 0xA18A7F1 | bsCoCBlurXY.WaterUndisplacedWorldPositionBufferXY.ClearXY.RemoveXY.ConnectionManager::CON
+CharacterPosition @ 0xA13E5DD | polateSensorPosition.initialCharacterPosition.edgeCornerPosition.goalPosition.localPosition.G
+SetPosition @ 0xA13E4F1 | rldCommands::VolumeNavigatorSetPosition.hkaiWorldCommands::NavigatorSetPosition.capture
+SetPosition @ 0xA13E519 | hkaiWorldCommands::NavigatorSetPosition.capturedObjectPosition.contactPosition.GetTerra
+LocalTransform @ 0xA147767 | ationsConstraintAtom.hknpSetLocalTransformsConstraintAtom.hkpSetLocalTransformsConstraintA
+LocalTransform @ 0xA14778B | nsformsConstraintAtom.hkpSetLocalTransformsConstraintAtom.hknpLinMotorConstraintAtom.hkpLi
+EntityId @ 0xA1D4D9B | }, {\"name\":\"EnemyAtkDamagingEntityId\",\"type\":\"string\",\"isOptional\":true}, {\"name\":\"E
+EntityId @ 0xA1D626F | , {\"name\":\"PlayerAtkDamagingEntityId\",\"type\":\"string\",\"isOptional\":true}, {\"name\":\"P
+EntityId @ 0xA1DA5C7 | },{\"name\":\"PlayerAtkDamagingEntityId\"},{\"name\":\"PlayerAtkSourceId\"},{\"name\":\"Current
+EntityId @ 0xA1DA8BB | \"},{\"name\":\"EnemyAtkDamagingEntityId\"},{\"name\":\"EnemyAtkIsCritical\"},{\"name\":\"TimeOf
+Spawner @ 0xA12F103 | owner.WildLife Biome Entity Spawner.Generic Floating GPI Spawner.Naval Weapon Persi
+Spawner @ 0xA12F120 | pawner.Generic Floating GPI Spawner.Naval Weapon Persistent Projectile GPI Spawner.
+Spawner @ 0xA12F14F | n Persistent Projectile GPI Spawner.isOwner.IsFullGameOwner.nextCorner.LedgeTypeCha
+Spawner @ 0xA180725 | veData.MetaAIProjectSpecificSpawnerSaveData.MetaAISpawnerSaveData.DialogueInstanceR
+Spawner @ 0xA18073B | ecificSpawnerSaveData.MetaAISpawnerSaveData.DialogueInstanceRunnerSaveData.GameActi
+Spawner @ 0xA181C0E | ata.PlayerDeedWorldSaveData.SpawnerComponentEntityLootedSaveData.RestrictedSaveData
+Spawner @ 0xA181C46 | SaveData.RestrictedSaveData.SpawnerComponentEntityDisabledSaveData.PlayerDeedSaveDa
+CreateActor @ 0xA179AF0 | MachineUpdateSingleThreaded.CreateActorsDeferredSingleThreaded.UpdateAISingleThreaded.U
+Anvil @ 0xA01F84F | /../../pipeline/packages/ui/Anvil.Gui/gui/src/gui/extern/r6/engine/loading/urlobj
+Anvil @ 0xA1341FA | .\\..\\..\\NugetSymlinks\\Wwise-Anvil\\2022.1.19-obd-04\\samples\\Plugins\\AkAudioInput\\S
+Anvil @ 0xA13448D | .\\..\\..\\NugetSymlinks\\Wwise-Anvil\\2022.1.19-obd-04\\source\\SoundEngine\\Plugins\\Eff
+Anvil @ 0xA134526 | .\\..\\..\\NugetSymlinks\\Wwise-Anvil\\2022.1.19-obd-04\\source\\SoundEngine\\Plugins\\Com
+Anvil @ 0xA1348ED | .\\..\\..\\NugetSymlinks\\Wwise-Anvil\\2022.1.19-obd-04\\samples\\Plugins\\AkAudioInput\\S
+Anvil @ 0xA134996 | .\\..\\..\\NugetSymlinks\\Wwise-Anvil\\2022.1.19-obd-04\\samples\\Plugins\\AkToneGenerato
+Anvil @ 0xA134A3A | .\\..\\..\\NugetSymlinks\\Wwise-Anvil\\2022.1.19-obd-04\\samples\\Plugins\\AkSineTone\\Sou
+Anvil @ 0xA134ADE | .\\..\\..\\NugetSymlinks\\Wwise-Anvil\\2022.1.19-obd-04\\source\\SoundEngine\\Plugins\\Eff
+Anvil @ 0xA134B80 | .\\..\\..\\NugetSymlinks\\Wwise-Anvil\\2022.1.19-obd-04\\samples\\Plugins\\AkDelay\\Source
+Anvil @ 0xA134C1E | .\\..\\..\\NugetSymlinks\\Wwise-Anvil\\2022.1.19-obd-04\\source\\SoundEngine\\Plugins\\Eff
+GameObject @ 0xA1018BC | Array.hkbBoneWeightArray.AnyGameObjectArray.AsyncCompletionThreadDirectStorageStatusAr
+GameObject @ 0xA1808EC | ta.CrewSpawnHandlerSaveData.GameObjectDeathHandlerSaveData.UIMarkerSaveData.TugOfWarAc
+initialCharacterPosition @ 0xA13E5D6 | n.extrapolateSensorPosition.initialCharacterPosition.edgeCornerPosition.goalPosition.localPosition.G
+AllyWorldPosition @ 0xA15AF2C | nState.AllyAssignationState.AllyWorldPositionAssignationState.AllySlottableAssignationState.A
+COMPLETE

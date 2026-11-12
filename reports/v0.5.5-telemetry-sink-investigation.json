@@ -1,0 +1,93 @@
+{
+    "schemaVersion":  1,
+    "generatedUtc":  "2026-11-12T08:51:02.9259854Z",
+    "privacyNote":  "No telemetry payload contents were uploaded.",
+    "gameDirectoryCandidates":  [
+                                    {
+                                        "path":  "C:\\Games\\AC Black Flag Resynced\\DataPC_OBD_Epilogue.forge",
+                                        "length":  182386688
+                                    },
+                                    {
+                                        "path":  "C:\\Games\\AC Black Flag Resynced\\DataPC_OBD_Epilogue_floor.forge",
+                                        "length":  360448
+                                    },
+                                    {
+                                        "path":  "C:\\Games\\AC Black Flag Resynced\\DataPC_OBD_Epilogue_gi.forge",
+                                        "length":  7176192
+                                    },
+                                    {
+                                        "path":  "C:\\Games\\AC Black Flag Resynced\\DataPC_OBD_Epilogue_gi_patch_01.forge",
+                                        "length":  32768
+                                    },
+                                    {
+                                        "path":  "C:\\Games\\AC Black Flag Resynced\\DataPC_OBD_Epilogue_nav.forge",
+                                        "length":  15892480
+                                    },
+                                    {
+                                        "path":  "C:\\Games\\AC Black Flag Resynced\\DataPC_OBD_Epilogue_nav_patch_01.forge",
+                                        "length":  65536
+                                    },
+                                    {
+                                        "path":  "C:\\Games\\AC Black Flag Resynced\\DataPC_OBD_Epilogue_patch_01.forge",
+                                        "length":  2850816
+                                    },
+                                    {
+                                        "path":  "C:\\Games\\AC Black Flag Resynced\\DataPC_OBD_Epilogue_sound.forge",
+                                        "length":  32768
+                                    },
+                                    {
+                                        "path":  "C:\\Games\\AC Black Flag Resynced\\DataPC_OBD_Epilogue_sound_patch_01.forge",
+                                        "length":  32768
+                                    },
+                                    {
+                                        "path":  "C:\\Games\\AC Black Flag Resynced\\upc_r2.ini",
+                                        "length":  712
+                                    },
+                                    {
+                                        "path":  "C:\\Games\\AC Black Flag Resynced\\upc_r2_loader64.dll",
+                                        "length":  1294336
+                                    },
+                                    {
+                                        "path":  "C:\\Games\\AC Black Flag Resynced\\VERSION.log",
+                                        "length":  4732
+                                    }
+                                ],
+    "localAppDataRelatedDirs":  [
+                                    {
+                                        "path":  "C:\\Users\\Frees\\AppData\\Local\\Ubisoft",
+                                        "sampleFiles":  [
+
+                                                        ]
+                                    },
+                                    {
+                                        "path":  "C:\\Users\\Frees\\AppData\\Local\\BlackFlagCoop",
+                                        "sampleFiles":  [
+                                                            "BlackFlagCoop.log"
+                                                        ]
+                                    }
+                                ],
+    "stringBeacons":  [
+                          {
+                              "needle":  "CrashReport",
+                              "fileOffset":  "0xA1297A9",
+                              "rva":  "0xA12A1A9",
+                              "context":  "gFileFat::ReadHeader : Seek error on %s.Add illumination from %s.UplayCrashReporter.exe -ucr_report_filename %s -ucr_hash %s.WaitLoadingToComplete %s.GraphicManager::GfxTexture %s.HeaderFile::Read : Error while"
+                          },
+                          {
+                              "needle":  "CrashReport",
+                              "fileOffset":  "0xA12E73B",
+                              "rva":  "0xA12F13B",
+                              "context":  ".daughter.FightLogicOperationHealFighter.after.quantityAfter.m_disableCrashReportingAfter.PreUpdateAfter.UIFXUpdateAfter.createdAfter.Retry-After.Can\u0027t use dynamic properties in interpreter.peter.Sunken Temple "
+                          }
+                      ],
+    "assessment":  {
+                       "legitimateLocalTelemetryFileFormatDocumented":  false,
+                       "localDiagnosticSinkConfirmed":  false,
+                       "saveStateStoresPlayerPosConfirmed":  false,
+                       "supportedSdkReaderApiConfirmed":  false,
+                       "notes":  [
+                                     "No dedicated local telemetry output format for player.position confirmed in this offline pass.",
+                                     "Later sink inspection requires explicit consent and must not exfiltrate account data."
+                                 ]
+                   }
+}

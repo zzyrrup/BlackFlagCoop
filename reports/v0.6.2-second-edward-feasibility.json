@@ -1,0 +1,14 @@
+{
+  "schemaVersion":1,
+  "generatedUtc":"2026-11-12T15:20:22.8898990Z",
+  "helper1A64E70Brief":{"entryRva":"0x1A64E70","sizeBytes":374,"e8Calls":13,"movR64MemRoughCount":11,"callees":["0x4A9E77DD","0x4A8F2002","0x4A67D805","0x4A67881E","0x4868810","0x53519E0","0x53519E0","0x4868810","0x53519E0","0x53519E0","0x43F8CB0","0x67BC870","0x693EAB0"],"assessment":"Small helper with several calls and stores; likely forwards/transforms an object (possibly string). Not a schema JSON parser. Do not displace actor research.","storesOrForwardsSchemaStrings":"plausible_unverified"},
+  "assessments":{
+    "twoSimultaneousCharacterActors":{"class":"plausible_but_unverified","reason":"Deferred multi-actor create vocabulary exists; no proof of two playable characters"},
+    "twoIndependentTransforms":{"class":"plausible_but_unverified","reason":"Engine is a 3D character game with many entities; dual player transforms unproven"},
+    "separateInputOwnership":{"class":"unknown","reason":"No PlayerController/Possess/SplitScreen evidence; input tables look single-local"},
+    "separateCameraControlContexts":{"class":"unknown","reason":"No split-player camera architecture found in string/export scan"},
+    "twoEdwardArchetypeInstances":{"class":"unknown","reason":"Edward is a content name-table token, not a proven archetype factory handle"}
+  },
+  "biggestBlocker":"No identified player-actor factory, ownership/possession model, or input→actor binding that could host a second Edward.",
+  "safestNextExperiment":"Offline: deepen RIP/call analysis of Pad_* action dispatch and CreateActorsDeferred phase handlers that are character-scoped (exclude Havok swarm DestroyActors). Still no spawn."
+}

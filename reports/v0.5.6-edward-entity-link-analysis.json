@@ -1,0 +1,20 @@
+{
+    "schemaVersion":  1,
+    "generatedUtc":  "2026-11-12T09:02:03.4244310Z",
+    "CharacterAttribute":  {
+                               "type":  "string",
+                               "dictionaryOffset":  "0xA1D1903",
+                               "edwardValuesObservedOffline":  false
+                           },
+    "EdwardLiteral":  {
+                          "linkedToTelemetryPlayerPosSchema":  false,
+                          "location":  "content/UI string tables (v0.5.3)"
+                      },
+    "distinguishesMultiplePlayerCharacters":  "unknown_not_supported_by_current_evidence",
+    "dualEdwardSupport":  "not_confirmed",
+    "notes":  [
+                  "Telemetry schema has Character string attribute but no offline value set.",
+                  "No producer found that associates Character with Edward entity id.",
+                  "Cannot claim host vs second Edward discrimination yet."
+              ]
+}

@@ -1,0 +1,46 @@
+{
+    "schemaVersion":  1,
+    "generatedUtc":  "2026-11-12T08:25:13.3791869Z",
+    "doNotImplementNow":  [
+                              "ASI memory reader using guessed PlayerPos offsets",
+                              "Hooks into unknown telemetry emitters",
+                              "Assuming PlayerPosX/Y/Z are world floats without type proof"
+                          ],
+    "documentedFutureReadOnlyInvestigations":  [
+                                                   {
+                                                       "id":  "telemetry-payload-observation",
+                                                       "summary":  "If a legitimate local telemetry/debug sink is identified for Resynced 1.0.6, capture player.position event payloads during movement and verify whether PlayerPosX/Y/Z change with Edward and in which units/space.",
+                                                       "prerequisites":  [
+                                                                             "Legal/technical access to the sink",
+                                                                             "No game-file modification",
+                                                                             "Read-only capture"
+                                                                         ],
+                                                       "successCriteria":  [
+                                                                               "Reproducible payloads",
+                                                                               "Correlation with known movement",
+                                                                               "Documented attribute types/units"
+                                                                           ]
+                                                   },
+                                                   {
+                                                       "id":  "attribute-type-dictionary-hunt",
+                                                       "summary":  "Offline search for a dictionary defining PlayerPosX/Y/Z primitive types and PositionSource/Movement enums.",
+                                                       "prerequisites":  [
+                                                                             "Continue offline PE string/schema carving"
+                                                                         ],
+                                                       "successCriteria":  [
+                                                                               "Type declarations found or conclusively absent in scanned regions"
+                                                                           ]
+                                                   },
+                                                   {
+                                                       "id":  "savegame-presence-check",
+                                                       "summary":  "Inspect whether save blobs or save schemas reference PlayerPos or player.position (offline file formats only).",
+                                                       "prerequisites":  [
+                                                                             "User-provided save samples optional later"
+                                                                         ],
+                                                       "successCriteria":  [
+                                                                               "Confirmed present or absent in save schema"
+                                                                           ]
+                                                   }
+                                               ],
+    "currentBestLead":  "Telemetry STANDARD event player.position with PlayerPosX/Y/Z attributes (file offset 0xA1DE0FE)"
+}

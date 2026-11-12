@@ -1,0 +1,998 @@
+Microsoft (R) COFF/PE Dumper Version 14.52.37029.0
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file C:\Games\AC Black Flag Resynced\ACBlackFlag.exe
+
+File Type: EXECUTABLE IMAGE
+
+  Section contains the following imports:
+
+    ADVAPI32.dll
+             15D011000 Import Address Table
+             15D047BD4 Import Name Table
+                     0 time date stamp
+                     0 Index of first forwarder reference
+
+                           0 AdjustTokenPrivileges
+                           0 CryptAcquireContextA
+                           0 CryptCreateHash
+                           0 CryptDecrypt
+                           0 CryptDestroyHash
+                           0 CryptDestroyKey
+                           0 CryptEncrypt
+                           0 CryptGenKey
+                           0 CryptGetHashParam
+                           0 CryptHashData
+                           0 CryptReleaseContext
+                           0 DeregisterEventSource
+                           0 GetUserNameA
+                           0 LookupPrivilegeValueA
+                           0 OpenProcessToken
+                           0 RegCloseKey
+                           0 RegEnumKeyExA
+                           0 RegEnumValueA
+                           0 RegGetValueA
+                           0 RegGetValueW
+                           0 RegOpenKeyExA
+                           0 RegQueryValueExA
+                           0 RegisterEventSourceW
+                           0 ReportEventW
+
+    amd_ags_x64.dll
+             15D0110C8 Import Address Table
+             15D047C9C Import Name Table
+                     0 time date stamp
+                     0 Index of first forwarder reference
+
+                           0 agsDeInitialize
+                           0 agsDriverExtensionsDX12_CreateDevice
+                           0 agsDriverExtensionsDX12_DestroyDevice
+                           0 agsGetGPUInfo
+                           0 agsInitialize
+                           0 agsSetDisplayMode
+
+    amd_fidelityfx_loader_dx12.dll
+             15D011100 Import Address Table
+             15D047CD4 Import Name Table
+                     0 time date stamp
+                     0 Index of first forwarder reference
+
+                           0 ffxConfigure
+                           0 ffxCreateContext
+                           0 ffxDestroyContext
+                           0 ffxDispatch
+                           0 ffxQuery
+
+    bcrypt.dll
+             15D011130 Import Address Table
+             15D047D04 Import Name Table
+                     0 time date stamp
+                     0 Index of first forwarder reference
+
+                           0 BCryptCloseAlgorithmProvider
+                           0 BCryptGenRandom
+                           0 BCryptOpenAlgorithmProvider
+
+    COMCTL32.dll
+             15D011150 Import Address Table
+             15D047D24 Import Name Table
+                     0 time date stamp
+                     0 Index of first forwarder reference
+
+                             Ordinal   413
+                           0 InitCommonControlsEx
+                             Ordinal   412
+                             Ordinal   410
+
+    d3d12.dll
+             15D011178 Import Address Table
+             15D047D4C Import Name Table
+                     0 time date stamp
+                     0 Index of first forwarder reference
+
+                             Ordinal   101
+                             Ordinal   102
+                           0 D3D12SerializeRootSignature
+
+    d3d9.dll
+             15D011198 Import Address Table
+             15D047D6C Import Name Table
+                     0 time date stamp
+                     0 Index of first forwarder reference
+
+                           0 Direct3DCreate9
+
+    DSTORAGE.dll
+             15D0111A8 Import Address Table
+             15D047D7C Import Name Table
+                     0 time date stamp
+                     0 Index of first forwarder reference
+
+                           0 DStorageGetFactory
+
+    dxgi.dll
+             15D0111B8 Import Address Table
+             15D047D8C Import Name Table
+                     0 time date stamp
+                     0 Index of first forwarder reference
+
+                           0 CreateDXGIFactory1
+                           0 CreateDXGIFactory2
+
+    GameInput.dll
+             15D0111D0 Import Address Table
+             15D047DA4 Import Name Table
+                     0 time date stamp
+                     0 Index of first forwarder reference
+
+                             Ordinal     1
+
+    GDI32.dll
+             15D0111E0 Import Address Table
+             15D047DB4 Import Name Table
+                     0 time date stamp
+                     0 Index of first forwarder reference
+
+                           0 CreateCompatibleDC
+                           0 CreateSolidBrush
+                           0 DeleteDC
+                           0 DeleteObject
+                           0 GetObjectA
+                           0 SelectObject
+
+    GFSDK_Aftermath_Lib.x64.dll
+             15D011218 Import Address Table
+             15D047DEC Import Name Table
+                     0 time date stamp
+                     0 Index of first forwarder reference
+
+                           0 GFSDK_Aftermath_DX12_CreateContextHandle
+                           0 GFSDK_Aftermath_DX12_Initialize
+                           0 GFSDK_Aftermath_DisableGpuCrashDumps
+                           0 GFSDK_Aftermath_EnableGpuCrashDumps
+                           0 GFSDK_Aftermath_GetCrashDumpStatus
+                           0 GFSDK_Aftermath_GetShaderDebugInfoIdentifier
+                           0 GFSDK_Aftermath_GetShaderHash
+                           0 GFSDK_Aftermath_GpuCrashDump_CreateDecoder
+                           0 GFSDK_Aftermath_GpuCrashDump_DestroyDecoder
+                           0 GFSDK_Aftermath_GpuCrashDump_GetActiveShadersInfo
+                           0 GFSDK_Aftermath_GpuCrashDump_GetActiveShadersInfoCount
+                           0 GFSDK_Aftermath_GpuCrashDump_GetEventMarkersInfo
+                           0 GFSDK_Aftermath_GpuCrashDump_GetEventMarkersInfoCount
+                           0 GFSDK_Aftermath_GpuCrashDump_GetPageFaultInfo
+                           0 GFSDK_Aftermath_ReleaseContextHandle
+                           0 GFSDK_Aftermath_SetEventMarker
+
+    IPHLPAPI.DLL
+             15D0112A0 Import Address Table
+             15D047E74 Import Name Table
+                     0 time date stamp
+                     0 Index of first forwarder reference
+
+                           0 GetAdaptersAddresses
+                           0 GetBestInterface
+                           0 GetIfEntry
+                           0 GetIfTable
+                           0 if_nametoindex
+
+    libxell.dll
+             15D0112D0 Import Address Table
+             15D047EA4 Import Name Table
+                     0 time date stamp
+                     0 Index of first forwarder reference
+
+                           0 xellAddMarkerData
+                           0 xellD3D12CreateContext
+                           0 xellDestroyContext
+                           0 xellSetSleepMode
+                           0 xellSleep
+
+    libxess.dll
+             15D011300 Import Address Table
+             15D047ED4 Import Name Table
+                     0 time date stamp
+                     0 Index of first forwarder reference
+
+                           0 xessD3D12CreateContext
+                           0 xessD3D12Execute
+                           0 xessD3D12Init
+                           0 xessDestroyContext
+                           0 xessGetOptimalInputResolution
+
+    libxess_fg.dll
+             15D011330 Import Address Table
+             15D047F04 Import Name Table
+                     0 time date stamp
+                     0 Index of first forwarder reference
+
+                           0 xefgSwapChainD3D12BuildPipelines
+                           0 xefgSwapChainD3D12CreateContext
+                           0 xefgSwapChainD3D12GetSwapChainPtr
+                           0 xefgSwapChainD3D12InitFromSwapChainDesc
+                           0 xefgSwapChainD3D12TagFrameResource
+                           0 xefgSwapChainDestroy
+                           0 xefgSwapChainGetProperties
+                           0 xefgSwapChainSetEnabled
+                           0 xefgSwapChainSetLatencyReduction
+                           0 xefgSwapChainSetNumInterpolatedFrames
+                           0 xefgSwapChainSetPresentId
+                           0 xefgSwapChainTagFrameConstants
+
+    api-ms-win-core-path-l1-1-0.dll
+             15D011398 Import Address Table
+             15D047F6C Import Name Table
+                     0 time date stamp
+                     0 Index of first forwarder reference
+
+                           0 PathCchAddBackslashEx
+                           0 PathCchAddExtension
+                           0 PathCchAppendEx
+                           0 PathCchCombineEx
+                           0 PathCchRemoveFileSpec
+
+    pdh.dll
+             15D0113C8 Import Address Table
+             15D047F9C Import Name Table
+                     0 time date stamp
+                     0 Index of first forwarder reference
+
+                           0 PdhAddEnglishCounterW
+                           0 PdhCollectQueryData
+                           0 PdhGetFormattedCounterValue
+                           0 PdhOpenQueryA
+                           0 PdhRemoveCounter
+
+    SHLWAPI.dll
+             15D0113F8 Import Address Table
+             15D047FCC Import Name Table
+                     0 time date stamp
+                     0 Index of first forwarder reference
+
+                           0 PathFindFileNameA
+
+    upc_r2_loader64.dll
+             15D011408 Import Address Table
+             15D047FDC Import Name Table
+                     0 time date stamp
+                     0 Index of first forwarder reference
+
+                           0 UPC_AchievementListFree
+                           0 UPC_AchievementListGet
+                           0 UPC_AchievementUnlock
+                           0 UPC_ApplicationIdGet
+                           0 UPC_CPUScoreGet
+                           0 UPC_Cancel
+                           0 UPC_ContextCreate
+                           0 UPC_ContextFree
+                           0 UPC_EmailGet_Extended
+                           0 UPC_ErrorToString
+                           0 UPC_EventNextPoll
+                           0 UPC_GPUScoreGet
+                           0 UPC_IdGet_Extended
+                           0 UPC_Init
+                           0 UPC_InstallChunkListFree
+                           0 UPC_InstallChunkListGet
+                           0 UPC_InstallChunksOrderUpdate
+                           0 UPC_InstallChunksPresenceCheck
+                           0 UPC_LaunchApp
+                           0 UPC_NameGet_Extended
+                           0 UPC_OverlayMicroAppShow
+                           0 UPC_OverlayNotificationShow
+                           0 UPC_OverlayShow
+                           0 UPC_ProductListFree
+                           0 UPC_ProductListGet
+                           0 UPC_RichPresenceSet
+                           0 UPC_StorageFileClose
+                           0 UPC_StorageFileDelete
+                           0 UPC_StorageFileListGet
+                           0 UPC_StorageFileOpen
+                           0 UPC_StorageFileRead
+                           0 UPC_StorageFileWrite
+                           0 UPC_StorePartnerGet
+                           0 UPC_StoreProductDetailsShow
+                           0 UPC_StoreProductListFree
+                           0 UPC_StoreProductListGet
+                           0 UPC_TicketGet
+                           0 UPC_Uninit
+                           0 UPC_Update
+
+    USER32.dll
+             15D011548 Import Address Table
+             15D04811C Import Name Table
+                     0 time date stamp
+                     0 Index of first forwarder reference
+
+                           0 ActivateKeyboardLayout
+                           0 AdjustWindowRect
+                           0 AttachThreadInput
+                           0 CallNextHookEx
+                           0 CallWindowProcW
+                           0 ClientToScreen
+                           0 ClipCursor
+                           0 CreateCursor
+                           0 CreateWindowExW
+                           0 DefWindowProcW
+                           0 DestroyCursor
+                           0 DestroyWindow
+                           0 DispatchMessageW
+                           0 DisplayConfigGetDeviceInfo
+                           0 EnumChildWindows
+                           0 EnumDisplayDevicesA
+                           0 EnumDisplayMonitors
+                           0 GetAsyncKeyState
+                           0 GetClientRect
+                           0 GetCursorPos
+                           0 GetDC
+                           0 GetDesktopWindow
+                           0 GetDisplayConfigBufferSizes
+                           0 GetDpiForWindow
+                           0 GetForegroundWindow
+                           0 GetKeyNameTextW
+                           0 GetKeyState
+                           0 GetKeyboardLayout
+                           0 GetKeyboardState
+                           0 GetMessageW
+                           0 GetMonitorInfoA
+                           0 GetProcessWindowStation
+                           0 GetRawInputData
+                           0 GetRawInputDeviceInfoW
+                           0 GetRawInputDeviceList
+                           0 GetSystemMetrics
+                           0 GetSystemMetricsForDpi
+                           0 GetUserObjectInformationW
+                           0 GetWindowLongA
+                           0 GetWindowLongPtrW
+                           0 GetWindowPlacement
+                           0 GetWindowRect
+                           0 GetWindowTextA
+                           0 GetWindowThreadProcessId
+                           0 IsWindow
+                           0 IsWindowVisible
+                           0 LoadCursorA
+                           0 LoadIconA
+                           0 LoadImageA
+                           0 LoadImageW
+                           0 LoadStringA
+                           0 MapVirtualKeyW
+                           0 MessageBoxA
+                           0 MessageBoxW
+                           0 MonitorFromPoint
+                           0 MoveWindow
+                           0 PeekMessageA
+                           0 PostMessageA
+                           0 PostQuitMessage
+                           0 PostThreadMessageA
+                           0 PostThreadMessageW
+                           0 QueryDisplayConfig
+                           0 RegisterClassExW
+                           0 RegisterClassW
+                           0 RegisterDeviceNotificationA
+                           0 RegisterDeviceNotificationW
+                           0 RegisterRawInputDevices
+                           0 ReleaseDC
+                           0 ScreenToClient
+                           0 SendMessageW
+                           0 SetCursor
+                           0 SetCursorPos
+                           0 SetDlgItemTextA
+                           0 SetForegroundWindow
+                           0 SetRect
+                           0 SetWindowLongA
+                           0 SetWindowLongPtrW
+                           0 SetWindowPos
+                           0 SetWindowTextA
+                           0 SetWindowsHookExA
+                           0 ShowCursor
+                           0 ShowWindow
+                           0 SystemParametersInfoA
+                           0 ToUnicode
+                           0 ToUnicodeEx
+                           0 TrackMouseEvent
+                           0 TranslateMessage
+                           0 UnhookWindowsHookEx
+                           0 UnregisterClassA
+                           0 UnregisterDeviceNotification
+                           0 UpdateLayeredWindow
+                           0 keybd_event
+
+    VERSION.dll
+             15D011830 Import Address Table
+             15D048404 Import Name Table
+                     0 time date stamp
+                     0 Index of first forwarder reference
+
+                           0 GetFileVersionInfoA
+                           0 GetFileVersionInfoSizeA
+                           0 VerQueryValueA
+
+    WINMM.dll
+             15D011850 Import Address Table
+             15D048424 Import Name Table
+                     0 time date stamp
+                     0 Index of first forwarder reference
+
+                           0 timeBeginPeriod
+                           0 timeEndPeriod
+                           0 timeGetDevCaps
+
+    WS2_32.dll
+             15D011870 Import Address Table
+             15D048444 Import Name Table
+                     0 time date stamp
+                     0 Index of first forwarder reference
+
+                             Ordinal   116
+                           0 WSACloseEvent
+                           0 WSACreateEvent
+                             Ordinal   111
+                           0 WSAIoctl
+                           0 WSAPoll
+                           0 WSARecvFrom
+                           0 WSASendTo
+                             Ordinal   112
+                             Ordinal   115
+                             Ordinal   151
+                             Ordinal     1
+                             Ordinal     2
+                             Ordinal     3
+                             Ordinal     4
+                           0 freeaddrinfo
+                           0 getaddrinfo
+                             Ordinal    51
+                             Ordinal    52
+                             Ordinal    57
+                           0 getnameinfo
+                             Ordinal     5
+                             Ordinal    55
+                             Ordinal    56
+                             Ordinal     6
+                             Ordinal     7
+                             Ordinal     8
+                             Ordinal     9
+                             Ordinal    11
+                             Ordinal    12
+                           0 inet_ntop
+                           0 inet_pton
+                             Ordinal    10
+                             Ordinal    13
+                             Ordinal    15
+                             Ordinal    16
+                             Ordinal    18
+                             Ordinal    19
+                             Ordinal    21
+                             Ordinal    22
+                             Ordinal    23
+
+    WTSAPI32.dll
+             15D0119C0 Import Address Table
+             15D048594 Import Name Table
+                     0 time date stamp
+                     0 Index of first forwarder reference
+
+                           0 WTSRegisterSessionNotification
+                           0 WTSUnRegisterSessionNotification
+
+    XINPUT9_1_0.dll
+             15D0119D8 Import Address Table
+             15D0485AC Import Name Table
+                     0 time date stamp
+                     0 Index of first forwarder reference
+
+                           0 XInputGetState
+                           0 XInputSetState
+
+    KERNEL32.dll
+             15D0119F0 Import Address Table
+             15D0485C4 Import Name Table
+                     0 time date stamp
+                     0 Index of first forwarder reference
+
+                           0 AcquireSRWLockExclusive
+                           0 AcquireSRWLockShared
+                           0 AddVectoredExceptionHandler
+                           0 CancelIo
+                           0 CancelIoEx
+                           0 CancelThreadpoolIo
+                           0 CloseHandle
+                           0 CloseThreadpoolIo
+                           0 CompareFileTime
+                           0 CompareStringEx
+                           0 CompareStringW
+                           0 ConvertFiberToThread
+                           0 ConvertThreadToFiberEx
+                           0 CopyFileW
+                           0 CreateDirectoryW
+                           0 CreateEventA
+                           0 CreateEventW
+                           0 CreateFiberEx
+                           0 CreateFile2
+                           0 CreateFileA
+                           0 CreateFileMappingA
+                           0 CreateFileW
+                           0 CreateMutexA
+                           0 CreateProcessA
+                           0 CreateSemaphoreA
+                           0 CreateSemaphoreW
+                           0 CreateThread
+                           0 CreateThreadpoolIo
+                           0 CreateWaitableTimerA
+                           0 DecodePointer
+                           0 DeleteCriticalSection
+                           0 DeleteFiber
+                           0 DeleteFileA
+                           0 DeleteFileW
+                           0 DeviceIoControl
+                           0 EncodePointer
+                           0 EnterCriticalSection
+                           0 EnumSystemLocalesW
+                           0 ExitProcess
+                           0 ExitThread
+                           0 FileTimeToSystemTime
+                           0 FindClose
+                           0 FindFirstFileExW
+                           0 FindFirstFileW
+                           0 FindNextFileW
+                           0 FlsAlloc
+                           0 FlsFree
+                           0 FlsGetValue
+                           0 FlsSetValue
+                           0 FlushFileBuffers
+                           0 FormatMessageA
+                           0 FormatMessageW
+                           0 FreeEnvironmentStringsW
+                           0 FreeLibrary
+                           0 FreeLibraryAndExitThread
+                           0 GetACP
+                           0 GetCPInfo
+                           0 GetCommandLineA
+                           0 GetCommandLineW
+                           0 GetConsoleMode
+                           0 GetConsoleOutputCP
+                           0 GetCurrentDirectoryA
+                           0 GetCurrentDirectoryW
+                           0 GetCurrentProcess
+                           0 GetCurrentProcessId
+                           0 GetCurrentThread
+                           0 GetCurrentThreadId
+                           0 GetCurrentThreadStackLimits
+                           0 GetDateFormatEx
+                           0 GetDateFormatW
+                           0 GetDllDirectoryW
+                           0 GetDriveTypeW
+                           0 GetEnvironmentStringsW
+                           0 GetEnvironmentVariableA
+                           0 GetEnvironmentVariableW
+                           0 GetExitCodeThread
+                           0 GetFileAttributesExW
+                           0 GetFileAttributesW
+                           0 GetFileInformationByHandle
+                           0 GetFileSize
+                           0 GetFileSizeEx
+                           0 GetFileTime
+                           0 GetFileType
+                           0 GetFullPathNameW
+                           0 GetLargePageMinimum
+                           0 GetLastError
+                           0 GetLocalTime
+                           0 GetLocaleInfoA
+                           0 GetLocaleInfoEx
+                           0 GetLocaleInfoW
+                           0 GetLogicalDriveStringsA
+                           0 GetLogicalProcessorInformation
+                           0 GetLogicalProcessorInformationEx
+                           0 GetModuleFileNameA
+                           0 GetModuleFileNameW
+                           0 GetModuleHandleA
+                           0 GetModuleHandleExA
+                           0 GetModuleHandleExW
+                           0 GetModuleHandleW
+                           0 GetNativeSystemInfo
+                           0 GetOEMCP
+                           0 GetOverlappedResult
+                           0 GetOverlappedResultEx
+                           0 GetPrivateProfileIntW
+                           0 GetPrivateProfileStringW
+                           0 GetProcAddress
+                           0 GetProcessAffinityMask
+                           0 GetProcessHeap
+                           0 GetProcessId
+                           0 GetStartupInfoW
+                           0 GetStdHandle
+                           0 GetStringTypeW
+                           0 GetSystemCpuSetInformation
+                           0 GetSystemDefaultLocaleName
+                           0 GetSystemDirectoryA
+                           0 GetSystemDirectoryW
+                           0 GetSystemFirmwareTable
+                           0 GetSystemInfo
+                           0 GetSystemPowerStatus
+                           0 GetSystemTime
+                           0 GetSystemTimeAsFileTime
+                           0 GetTempFileNameW
+                           0 GetTempPathA
+                           0 GetTempPathW
+                           0 GetThreadContext
+                           0 GetThreadId
+                           0 GetTickCount
+                           0 GetTimeFormatEx
+                           0 GetTimeFormatW
+                           0 GetTimeZoneInformation
+                           0 GetUserDefaultLCID
+                           0 GetUserPreferredUILanguages
+                           0 GetVolumeNameForVolumeMountPointA
+                           0 GetVolumePathNameA
+                           0 GlobalMemoryStatusEx
+                           0 HeapAlloc
+                           0 HeapFree
+                           0 HeapQueryInformation
+                           0 HeapReAlloc
+                           0 HeapSize
+                           0 InitOnceBeginInitialize
+                           0 InitOnceComplete
+                           0 InitializeConditionVariable
+                           0 InitializeCriticalSection
+                           0 InitializeCriticalSectionAndSpinCount
+                           0 InitializeCriticalSectionEx
+                           0 InitializeSListHead
+                           0 InitializeSRWLock
+                           0 InterlockedPushEntrySList
+                           0 IsDebuggerPresent
+                           0 IsProcessorFeaturePresent
+                           0 IsValidCodePage
+                           0 IsValidLocale
+                           0 K32EnumProcessModules
+                           0 K32GetModuleFileNameExA
+                           0 K32GetModuleFileNameExW
+                           0 K32GetModuleInformation
+                           0 K32GetProcessMemoryInfo
+                           0 LCIDToLocaleName
+                           0 LCMapStringEx
+                           0 LCMapStringW
+                           0 LeaveCriticalSection
+                           0 LoadLibraryA
+                           0 LoadLibraryExA
+                           0 LoadLibraryExW
+                           0 LoadLibraryW
+                           0 LocalAlloc
+                           0 LocalFree
+                           0 LocaleNameToLCID
+                           0 MapViewOfFile
+                           0 MoveFileExA
+                           0 MoveFileExW
+                           0 MultiByteToWideChar
+                           0 OpenMutexA
+                           0 OutputDebugStringA
+                           0 OutputDebugStringW
+                           0 PeekNamedPipe
+                           0 QueryPerformanceCounter
+                           0 QueryPerformanceFrequency
+                           0 QueueUserAPC
+                           0 RaiseException
+                           0 ReadConsoleA
+                           0 ReadConsoleW
+                           0 ReadDirectoryChangesW
+                           0 ReadFile
+                           0 ReleaseSRWLockExclusive
+                           0 ReleaseSRWLockShared
+                           0 ReleaseSemaphore
+                           0 RemoveDirectoryW
+                           0 RemoveVectoredExceptionHandler
+                           0 ResetEvent
+                           0 ResumeThread
+                           0 RtlCaptureContext
+                           0 RtlLookupFunctionEntry
+                           0 RtlPcToFileHeader
+                           0 RtlUnwind
+                           0 RtlUnwindEx
+                           0 RtlVirtualUnwind
+                           0 SetConsoleCtrlHandler
+                           0 SetConsoleMode
+                           0 SetCriticalSectionSpinCount
+                           0 SetCurrentDirectoryW
+                           0 SetDllDirectoryW
+                           0 SetEndOfFile
+                           0 SetEnvironmentVariableW
+                           0 SetErrorMode
+                           0 SetEvent
+                           0 SetFileAttributesW
+                           0 SetFilePointer
+                           0 SetFilePointerEx
+                           0 SetFileTime
+                           0 SetLastError
+                           0 SetPriorityClass
+                           0 SetStdHandle
+                           0 SetThreadAffinityMask
+                           0 SetThreadIdealProcessor
+                           0 SetThreadInformation
+                           0 SetThreadPriority
+                           0 SetThreadPriorityBoost
+                           0 SetUnhandledExceptionFilter
+                           0 SetWaitableTimer
+                           0 Sleep
+                           0 SleepConditionVariableCS
+                           0 SleepConditionVariableSRW
+                           0 SleepEx
+                           0 StartThreadpoolIo
+                           0 SwitchToFiber
+                           0 SwitchToThread
+                           0 SystemTimeToFileTime
+                           0 SystemTimeToTzSpecificLocalTime
+                           0 TerminateProcess
+                           0 TerminateThread
+                           0 TlsAlloc
+                           0 TlsFree
+                           0 TlsGetValue
+                           0 TlsSetValue
+                           0 TryAcquireSRWLockExclusive
+                           0 TryAcquireSRWLockShared
+                           0 TryEnterCriticalSection
+                           0 UnhandledExceptionFilter
+                           0 UnmapViewOfFile
+                           0 VerSetConditionMask
+                           0 VerifyVersionInfoA
+                           0 VerifyVersionInfoW
+                           0 VirtualAlloc
+                           0 VirtualFree
+                           0 VirtualProtect
+                           0 VirtualQuery
+                           0 WaitForMultipleObjects
+                           0 WaitForMultipleObjectsEx
+                           0 WaitForSingleObject
+                           0 WaitForSingleObjectEx
+                           0 WakeAllConditionVariable
+                           0 WakeConditionVariable
+                           0 WideCharToMultiByte
+                           0 WriteConsoleW
+                           0 WriteFile
+                           0 WritePrivateProfileStringW
+
+    SHELL32.dll
+             15D012208 Import Address Table
+             15D048DDC Import Name Table
+                     0 time date stamp
+                     0 Index of first forwarder reference
+
+                           0 SHCreateDirectoryExW
+                           0 SHGetFolderPathA
+                           0 SHGetKnownFolderPath
+                           0 ShellExecuteA
+
+    ole32.dll
+             15D012230 Import Address Table
+             15D048E04 Import Name Table
+                     0 time date stamp
+                     0 Index of first forwarder reference
+
+                           0 CLSIDFromString
+                           0 CoCreateFreeThreadedMarshaler
+                           0 CoCreateGuid
+                           0 CoCreateInstance
+                           0 CoInitialize
+                           0 CoInitializeEx
+                           0 CoInitializeSecurity
+                           0 CoSetProxyBlanket
+                           0 CoTaskMemAlloc
+                           0 CoTaskMemFree
+                           0 CoUninitialize
+                           0 CreateStreamOnHGlobal
+                           0 PropVariantClear
+                           0 StringFromGUID2
+
+    OLEAUT32.dll
+             15D0122A8 Import Address Table
+             15D048E7C Import Name Table
+                     0 time date stamp
+                     0 Index of first forwarder reference
+
+                             Ordinal   200
+                             Ordinal    25
+                             Ordinal   201
+                             Ordinal     2
+                             Ordinal     6
+                             Ordinal     7
+                             Ordinal     9
+                             Ordinal     8
+
+    SETUPAPI.dll
+             15D0122F0 Import Address Table
+             15D048EC4 Import Name Table
+                     0 time date stamp
+                     0 Index of first forwarder reference
+
+                           0 SetupDiBuildDriverInfoList
+                           0 SetupDiDestroyDeviceInfoList
+                           0 SetupDiEnumDeviceInfo
+                           0 SetupDiEnumDeviceInterfaces
+                           0 SetupDiEnumDriverInfoA
+                           0 SetupDiGetClassDevsA
+                           0 SetupDiGetClassDevsExA
+                           0 SetupDiGetClassDevsW
+                           0 SetupDiGetDeviceInstallParamsA
+                           0 SetupDiGetDeviceInstanceIdA
+                           0 SetupDiGetDeviceInterfaceDetailW
+                           0 SetupDiGetDeviceRegistryPropertyW
+                           0 SetupDiOpenDevRegKey
+                           0 SetupDiSetDeviceInstallParamsA
+
+    gdiplus.dll
+             15D012368 Import Address Table
+             15D048F3C Import Name Table
+                     0 time date stamp
+                     0 Index of first forwarder reference
+
+                           0 GdipAlloc
+                           0 GdipCloneImage
+                           0 GdipCreateBitmapFromFile
+                           0 GdipCreateHBITMAPFromBitmap
+                           0 GdipDisposeImage
+                           0 GdipFree
+                           0 GdiplusShutdown
+                           0 GdiplusStartup
+
+    HID.DLL
+             15D0123B0 Import Address Table
+             15D048F84 Import Name Table
+                     0 time date stamp
+                     0 Index of first forwarder reference
+
+                           0 HidD_FreePreparsedData
+                           0 HidD_GetAttributes
+                           0 HidD_GetFeature
+                           0 HidD_GetHidGuid
+                           0 HidD_GetManufacturerString
+                           0 HidD_GetPreparsedData
+                           0 HidD_GetProductString
+                           0 HidD_GetSerialNumberString
+                           0 HidD_SetFeature
+                           0 HidP_GetCaps
+                           0 HidP_GetValueCaps
+
+    CRYPT32.dll
+             15D012410 Import Address Table
+             15D048FE4 Import Name Table
+                     0 time date stamp
+                     0 Index of first forwarder reference
+
+                           0 CertCloseStore
+                           0 CertEnumCertificatesInStore
+                           0 CertFreeCertificateContext
+                           0 CertGetEnhancedKeyUsage
+                           0 CertGetIntendedKeyUsage
+                           0 CertGetNameStringA
+                           0 CertOpenSystemStoreA
+                           0 CryptVerifyMessageSignature
+
+    imagehlp.dll
+             15D012458 Import Address Table
+             15D04902C Import Name Table
+                     0 time date stamp
+                     0 Index of first forwarder reference
+
+                           0 ImageEnumerateCertificates
+                           0 ImageGetCertificateData
+                           0 ImageGetCertificateHeader
+
+    WINTRUST.dll
+             15D012478 Import Address Table
+             15D04904C Import Name Table
+                     0 time date stamp
+                     0 Index of first forwarder reference
+
+                           0 WinVerifyTrust
+
+    ADVAPI32.dll
+             15D012488 Import Address Table
+             15D04905C Import Name Table
+                     0 time date stamp
+                     0 Index of first forwarder reference
+
+                           0 CryptGetProvParam
+                           0 GetUserNameW
+
+    KERNEL32.dll
+             15D0124A0 Import Address Table
+             15D049074 Import Name Table
+                     0 time date stamp
+                     0 Index of first forwarder reference
+
+                           0 FlushViewOfFile
+                           0 FreeEnvironmentStringsA
+                           0 GetComputerNameW
+                           0 GetEnvironmentStrings
+                           0 GetFileAttributesA
+                           0 GetUserDefaultUILanguage
+                           0 GetVolumeInformationW
+                           0 GetWindowsDirectoryW
+                           0 WriteConsoleA
+
+    ntdll.dll
+             15D0124F0 Import Address Table
+             15D0490C4 Import Name Table
+                     0 time date stamp
+                     0 Index of first forwarder reference
+
+                           0 NtClose
+                           0 NtCreateSection
+                           0 NtMapViewOfSection
+                           0 NtQuerySystemInformation
+                           0 NtUnmapViewOfSection
+
+    OLEAUT32.dll
+             15D012520 Import Address Table
+             15D0490F4 Import Name Table
+                     0 time date stamp
+                     0 Index of first forwarder reference
+
+                             Ordinal     6
+                             Ordinal     8
+                             Ordinal     9
+
+    SHELL32.dll
+             15D012540 Import Address Table
+             15D049114 Import Name Table
+                     0 time date stamp
+                     0 Index of first forwarder reference
+
+                           0 CommandLineToArgvW
+                           0 SHGetFolderPathW
+
+    Steam64.dll
+             15D012558 Import Address Table
+             15D04912C Import Name Table
+                     0 time date stamp
+                     0 Index of first forwarder reference
+
+                           0 Test
+
+  Section contains the following delay load imports:
+
+    SDL2.dll
+              00000001 Characteristics
+      000000014AB861B0 Address of HMODULE
+      000000014AB861B8 Import Address Table
+      000000015D06D648 Import Name Table
+      0000000000000000 Bound Import Name Table
+      0000000000000000 Unload Import Name Table
+                     0 time date stamp
+
+                                    0000000149035616     0 SDL_GameControllerClose
+                                    0000000149035622     0 SDL_GameControllerGetJoystick
+                                    000000014903562E     0 SDL_GameControllerGetProduct
+                                    000000014903563A     0 SDL_GameControllerGetType
+                                    0000000149035646     0 SDL_GameControllerGetVendor
+                                    0000000149035652     0 SDL_GameControllerName
+                                    000000014903565E     0 SDL_GameControllerOpen
+                                    000000014903566A     0 SDL_GameControllerRumble
+                                    0000000149035676     0 SDL_GameControllerRumbleTriggers
+                                    0000000149035682     0 SDL_JoystickGetDeviceInstanceID
+                                    000000014903568E     0 SDL_JoystickInstanceID
+                                    000000014903569A     0 SDL_PeepEvents
+
+  Summary
+
+      3E3000 .bss
+     FAEC000 .code
+        5000 .data1
+        1000 .data2
+        3000 .debug
+        4000 .didata
+     127C000 .edata
+        1000 .idata
+     9035000 .impdata
+       4D000 .link
+        1000 .nidata
+      349000 .reloc
+      257000 .rodata
+       4F000 .rsrc
+        1000 .sxdata
+        1000 .tls$
+     1E49000 .trace
+        1000 .v38
+      349000 .vmp0
+       4F000 .vmp1
+      612000 .vmp2
+        2000 .vmp3
+      A7B000 .vmp4
+        5000 .xdata
+      3E3000 .xtls

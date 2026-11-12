@@ -1,0 +1,617 @@
+{
+  "schemaVersion":1,
+  "generatedUtc":"2026-11-12T15:10:27.6408309Z",
+  "coreCatalogRipHitCount":406,
+  "candidateCount":40,
+  "labelingPolicy":"Do not label as schema loader from JSON strings alone; require data refs into catalog + supportive control flow",
+  "candidates":[
+    {
+      "entryRva":"0x57AF060",
+      "entryFileOffset":"0x57AE660",
+      "section":".impdata",
+      "prologueBytes":"56 57 53 48 83 EC 30 48 89 CE C5 F8 57 C0 C5 F8",
+      "ripHitsIntoCoreCatalog":11,
+      "confidence":"medium_multiple_rip_into_jsonish",
+      "notes":"Grouped by backward prologue heuristic from RIP-relative sites into core catalog",
+      "isConfirmedSchemaLoader":false,
+      "relevantInstructions":[
+        {"siteRva":"0x57AF0A2","siteFileOffset":"0x57AE6A2","section":".impdata","mnemonic":"lea_rip_rel","bytes":"48 8D 15 23 48 A2 04","targetRva":"0xA1D38CC","targetFileOffset":"0xA1D2ECC","regionTag":"core_event_attribute_catalog","confidence":"high_lea_address_into_range"},
+        {"siteRva":"0x57AF0C7","siteFileOffset":"0x57AE6C7","section":".impdata","mnemonic":"lea_rip_rel","bytes":"4C 8D 0D 24 4E A2 04","targetRva":"0xA1D3EF2","targetFileOffset":"0xA1D34F2","regionTag":"core_event_attribute_catalog","confidence":"high_lea_address_into_range"},
+        {"siteRva":"0x57AF0FF","siteFileOffset":"0x57AE6FF","section":".impdata","mnemonic":"lea_rip_rel","bytes":"4C 8D 0D 9E 2D A2 04","targetRva":"0xA1D1EA4","targetFileOffset":"0xA1D14A4","regionTag":"core_event_attribute_catalog","confidence":"high_lea_address_into_range"},
+        {"siteRva":"0x57AF137","siteFileOffset":"0x57AE737","section":".impdata","mnemonic":"lea_rip_rel","bytes":"4C 8D 0D 0F 67 A2 04","targetRva":"0xA1D584D","targetFileOffset":"0xA1D4E4D","regionTag":"core_event_attribute_catalog","confidence":"high_lea_address_into_range"},
+        {"siteRva":"0x57AF16F","siteFileOffset":"0x57AE76F","section":".impdata","mnemonic":"lea_rip_rel","bytes":"4C 8D 0D 68 60 A2 04","targetRva":"0xA1D51DE","targetFileOffset":"0xA1D47DE","regionTag":"core_event_attribute_catalog","confidence":"high_lea_address_into_range"},
+        {"siteRva":"0x57AF1B9","siteFileOffset":"0x57AE7B9","section":".impdata","mnemonic":"lea_rip_rel","bytes":"48 8D 15 90 1A A2 04","targetRva":"0xA1D0C50","targetFileOffset":"0xA1D0250","regionTag":"core_event_attribute_catalog","confidence":"high_lea_address_into_range"},
+        {"siteRva":"0x57AF1F7","siteFileOffset":"0x57AE7F7","section":".impdata","mnemonic":"lea_rip_rel","bytes":"4C 8D 0D E9 07 A2 04","targetRva":"0xA1CF9E7","targetFileOffset":"0xA1CEFE7","regionTag":"core_event_attribute_catalog","confidence":"high_lea_address_into_range"},
+        {"siteRva":"0x57AF241","siteFileOffset":"0x57AE841","section":".impdata","mnemonic":"lea_rip_rel","bytes":"48 8D 15 A9 0D A2 04","targetRva":"0xA1CFFF1","targetFileOffset":"0xA1CF5F1","regionTag":"core_event_attribute_catalog","confidence":"high_lea_address_into_range"}
+      ],
+      "evidenceConnectingToCatalog":"One or more LEA/MOV [rip+disp] effective addresses fall inside core catalog RVA range"
+    },
+    {
+      "entryRva":"0x78824E0",
+      "entryFileOffset":"0x7881AE0",
+      "section":".impdata",
+      "prologueBytes":"41 57 41 56 41 54 56 57 53 48 81 EC B8 00 00 00",
+      "ripHitsIntoCoreCatalog":7,
+      "confidence":"medium_multiple_rip_into_jsonish",
+      "notes":"Grouped by backward prologue heuristic from RIP-relative sites into core catalog",
+      "isConfirmedSchemaLoader":false,
+      "relevantInstructions":[
+        {"siteRva":"0x7882565","siteFileOffset":"0x7881B65","section":".impdata","mnemonic":"lea_rip_rel","bytes":"48 8D 15 3D C7 94 02","targetRva":"0xA1CECA9","targetFileOffset":"0xA1CE2A9","regionTag":"core_event_attribute_catalog","confidence":"high_lea_address_into_range"},
+        {"siteRva":"0x788259C","siteFileOffset":"0x7881B9C","section":".impdata","mnemonic":"lea_rip_rel","bytes":"48 8D 15 06 C7 94 02","targetRva":"0xA1CECA9","targetFileOffset":"0xA1CE2A9","regionTag":"core_event_attribute_catalog","confidence":"high_lea_address_into_range"},
+        {"siteRva":"0x78825FF","siteFileOffset":"0x7881BFF","section":".impdata","mnemonic":"lea_rip_rel","bytes":"4C 8D 35 A3 C6 94 02","targetRva":"0xA1CECA9","targetFileOffset":"0xA1CE2A9","regionTag":"core_event_attribute_catalog","confidence":"high_lea_address_into_range"},
+        {"siteRva":"0x7882687","siteFileOffset":"0x7881C87","section":".impdata","mnemonic":"lea_rip_rel","bytes":"4C 8D 35 1B C6 94 02","targetRva":"0xA1CECA9","targetFileOffset":"0xA1CE2A9","regionTag":"core_event_attribute_catalog","confidence":"high_lea_address_into_range"},
+        {"siteRva":"0x78826BB","siteFileOffset":"0x7881CBB","section":".impdata","mnemonic":"lea_rip_rel","bytes":"48 8D 15 BD C6 94 02","targetRva":"0xA1CED7F","targetFileOffset":"0xA1CE37F","regionTag":"core_event_attribute_catalog","confidence":"high_lea_address_into_range"},
+        {"siteRva":"0x7882785","siteFileOffset":"0x7881D85","section":".impdata","mnemonic":"lea_rip_rel","bytes":"48 8D 15 1D C5 94 02","targetRva":"0xA1CECA9","targetFileOffset":"0xA1CE2A9","regionTag":"core_event_attribute_catalog","confidence":"high_lea_address_into_range"},
+        {"siteRva":"0x78827DE","siteFileOffset":"0x7881DDE","section":".impdata","mnemonic":"lea_rip_rel","bytes":"48 8D 15 C4 C4 94 02","targetRva":"0xA1CECA9","targetFileOffset":"0xA1CE2A9","regionTag":"core_event_attribute_catalog","confidence":"high_lea_address_into_range"}
+      ],
+      "evidenceConnectingToCatalog":"One or more LEA/MOV [rip+disp] effective addresses fall inside core catalog RVA range"
+    },
+    {
+      "entryRva":"0x7880000",
+      "entryFileOffset":"0x787F600",
+      "section":".impdata",
+      "prologueBytes":"41 56 56 57 53 48 81 EC A8 00 00 00 C5 F8 29 B4",
+      "ripHitsIntoCoreCatalog":6,
+      "confidence":"medium_multiple_rip_into_jsonish",
+      "notes":"Grouped by backward prologue heuristic from RIP-relative sites into core catalog",
+      "isConfirmedSchemaLoader":false,
+      "relevantInstructions":[
+        {"siteRva":"0x7880081","siteFileOffset":"0x787F681","section":".impdata","mnemonic":"lea_rip_rel","bytes":"48 8D 15 21 EC 94 02","targetRva":"0xA1CECA9","targetFileOffset":"0xA1CE2A9","regionTag":"core_event_attribute_catalog","confidence":"high_lea_address_into_range"},
+        {"siteRva":"0x78800DE","siteFileOffset":"0x787F6DE","section":".impdata","mnemonic":"lea_rip_rel","bytes":"48 8D 15 C4 EB 94 02","targetRva":"0xA1CECA9","targetFileOffset":"0xA1CE2A9","regionTag":"core_event_attribute_catalog","confidence":"high_lea_address_into_range"},
+        {"siteRva":"0x7880137","siteFileOffset":"0x787F737","section":".impdata","mnemonic":"lea_rip_rel","bytes":"4C 8D 35 6B EB 94 02","targetRva":"0xA1CECA9","targetFileOffset":"0xA1CE2A9","regionTag":"core_event_attribute_catalog","confidence":"high_lea_address_into_range"},
+        {"siteRva":"0x78801C4","siteFileOffset":"0x787F7C4","section":".impdata","mnemonic":"lea_rip_rel","bytes":"4C 8D 35 DE EA 94 02","targetRva":"0xA1CECA9","targetFileOffset":"0xA1CE2A9","regionTag":"core_event_attribute_catalog","confidence":"high_lea_address_into_range"},
+        {"siteRva":"0x788024C","siteFileOffset":"0x787F84C","section":".impdata","mnemonic":"lea_rip_rel","bytes":"48 8D 15 56 EA 94 02","targetRva":"0xA1CECA9","targetFileOffset":"0xA1CE2A9","regionTag":"core_event_attribute_catalog","confidence":"high_lea_address_into_range"},
+        {"siteRva":"0x78802A9","siteFileOffset":"0x787F8A9","section":".impdata","mnemonic":"lea_rip_rel","bytes":"48 8D 15 F9 E9 94 02","targetRva":"0xA1CECA9","targetFileOffset":"0xA1CE2A9","regionTag":"core_event_attribute_catalog","confidence":"high_lea_address_into_range"}
+      ],
+      "evidenceConnectingToCatalog":"One or more LEA/MOV [rip+disp] effective addresses fall inside core catalog RVA range"
+    },
+    {
+      "entryRva":"0x53CBA00",
+      "entryFileOffset":"0x53CB000",
+      "section":".impdata",
+      "prologueBytes":"41 57 41 56 41 55 41 54 56 57 55 53 48 83 EC 68",
+      "ripHitsIntoCoreCatalog":4,
+      "confidence":"medium_multiple_rip_into_jsonish",
+      "notes":"Grouped by backward prologue heuristic from RIP-relative sites into core catalog",
+      "isConfirmedSchemaLoader":false,
+      "relevantInstructions":[
+        {"siteRva":"0x53CBA3B","siteFileOffset":"0x53CB03B","section":".impdata","mnemonic":"lea_rip_rel","bytes":"48 8D 15 3D 33 E0 04","targetRva":"0xA1CED7F","targetFileOffset":"0xA1CE37F","regionTag":"core_event_attribute_catalog","confidence":"high_lea_address_into_range"},
+        {"siteRva":"0x53CBAFB","siteFileOffset":"0x53CB0FB","section":".impdata","mnemonic":"lea_rip_rel","bytes":"48 8D 15 7D 32 E0 04","targetRva":"0xA1CED7F","targetFileOffset":"0xA1CE37F","regionTag":"core_event_attribute_catalog","confidence":"high_lea_address_into_range"},
+        {"siteRva":"0x53CBB5D","siteFileOffset":"0x53CB15D","section":".impdata","mnemonic":"lea_rip_rel","bytes":"48 8D 15 8E 84 E1 04","targetRva":"0xA1E3FF2","targetFileOffset":"0xA1E35F2","regionTag":"core_event_attribute_catalog","confidence":"high_lea_address_into_range"},
+        {"siteRva":"0x53CBCF9","siteFileOffset":"0x53CB2F9","section":".impdata","mnemonic":"lea_rip_rel","bytes":"4C 8D 3D 7F 30 E0 04","targetRva":"0xA1CED7F","targetFileOffset":"0xA1CE37F","regionTag":"core_event_attribute_catalog","confidence":"high_lea_address_into_range"}
+      ],
+      "evidenceConnectingToCatalog":"One or more LEA/MOV [rip+disp] effective addresses fall inside core catalog RVA range"
+    },
+    {
+      "entryRva":"0x8FD5110",
+      "entryFileOffset":"0x8FD4710",
+      "section":".impdata",
+      "prologueBytes":"56 57 53 48 81 EC A0 00 00 00 48 8B 05 DF E0 2D",
+      "ripHitsIntoCoreCatalog":3,
+      "confidence":"medium_multiple_rip_into_jsonish",
+      "notes":"Grouped by backward prologue heuristic from RIP-relative sites into core catalog",
+      "isConfirmedSchemaLoader":false,
+      "relevantInstructions":[
+        {"siteRva":"0x8FD523C","siteFileOffset":"0x8FD483C","section":".impdata","mnemonic":"lea_rip_rel","bytes":"48 8D 15 92 9A 1F 01","targetRva":"0xA1CECD5","targetFileOffset":"0xA1CE2D5","regionTag":"core_event_attribute_catalog","confidence":"high_lea_address_into_range"},
+        {"siteRva":"0x8FD532F","siteFileOffset":"0x8FD492F","section":".impdata","mnemonic":"lea_rip_rel","bytes":"48 8D 15 9F 99 1F 01","targetRva":"0xA1CECD5","targetFileOffset":"0xA1CE2D5","regionTag":"core_event_attribute_catalog","confidence":"high_lea_address_into_range"},
+        {"siteRva":"0x8FD53CB","siteFileOffset":"0x8FD49CB","section":".impdata","mnemonic":"lea_rip_rel","bytes":"48 8D 15 03 99 1F 01","targetRva":"0xA1CECD5","targetFileOffset":"0xA1CE2D5","regionTag":"core_event_attribute_catalog","confidence":"high_lea_address_into_range"}
+      ],
+      "evidenceConnectingToCatalog":"One or more LEA/MOV [rip+disp] effective addresses fall inside core catalog RVA range"
+    },
+    {
+      "entryRva":"0x18A0450",
+      "entryFileOffset":"0x189FA50",
+      "section":".impdata",
+      "prologueBytes":"41 57 41 56 41 55 41 54 56 57 55 53 48 83 EC 48",
+      "ripHitsIntoCoreCatalog":2,
+      "confidence":"low_single_rip_into_jsonish",
+      "notes":"Grouped by backward prologue heuristic from RIP-relative sites into core catalog",
+      "isConfirmedSchemaLoader":false,
+      "relevantInstructions":[
+        {"siteRva":"0x18A049B","siteFileOffset":"0x189FA9B","section":".impdata","mnemonic":"lea_rip_rel","bytes":"4C 8D 05 FE 3A 94 08","targetRva":"0xA1E3FA0","targetFileOffset":"0xA1E35A0","regionTag":"core_event_attribute_catalog","confidence":"high_lea_address_into_range"},
+        {"siteRva":"0x18A06B8","siteFileOffset":"0x189FCB8","section":".impdata","mnemonic":"lea_rip_rel","bytes":"4C 8D 05 E1 38 94 08","targetRva":"0xA1E3FA0","targetFileOffset":"0xA1E35A0","regionTag":"core_event_attribute_catalog","confidence":"high_lea_address_into_range"}
+      ],
+      "evidenceConnectingToCatalog":"One or more LEA/MOV [rip+disp] effective addresses fall inside core catalog RVA range"
+    },
+    {
+      "entryRva":"0x18ADE2A",
+      "entryFileOffset":"0x18AD42A",
+      "section":".impdata",
+      "prologueBytes":"48 8B 94 24 50 10 00 00 48 85 D2 74 BD 48 8D 8C",
+      "ripHitsIntoCoreCatalog":2,
+      "confidence":"low_single_rip_into_jsonish",
+      "notes":"Grouped by backward prologue heuristic from RIP-relative sites into core catalog",
+      "isConfirmedSchemaLoader":false,
+      "relevantInstructions":[
+        {"siteRva":"0x18AE03E","siteFileOffset":"0x18AD63E","section":".impdata","mnemonic":"lea_rip_rel","bytes":"48 8D 05 5B 5F 93 08","targetRva":"0xA1E3FA0","targetFileOffset":"0xA1E35A0","regionTag":"core_event_attribute_catalog","confidence":"high_lea_address_into_range"},
+        {"siteRva":"0x18AE0CF","siteFileOffset":"0x18AD6CF","section":".impdata","mnemonic":"lea_rip_rel","bytes":"48 8D 05 CA 5E 93 08","targetRva":"0xA1E3FA0","targetFileOffset":"0xA1E35A0","regionTag":"core_event_attribute_catalog","confidence":"high_lea_address_into_range"}
+      ],
+      "evidenceConnectingToCatalog":"One or more LEA/MOV [rip+disp] effective addresses fall inside core catalog RVA range"
+    },
+    {
+      "entryRva":"0x199E1F0",
+      "entryFileOffset":"0x199D7F0",
+      "section":".impdata",
+      "prologueBytes":"41 57 41 56 56 57 53 48 83 EC 20 4C 89 C6 48 89",
+      "ripHitsIntoCoreCatalog":2,
+      "confidence":"low_single_rip_into_jsonish",
+      "notes":"Grouped by backward prologue heuristic from RIP-relative sites into core catalog",
+      "isConfirmedSchemaLoader":false,
+      "relevantInstructions":[
+        {"siteRva":"0x199E335","siteFileOffset":"0x199D935","section":".impdata","mnemonic":"lea_rip_rel","bytes":"4C 8D 05 64 5C 84 08","targetRva":"0xA1E3FA0","targetFileOffset":"0xA1E35A0","regionTag":"core_event_attribute_catalog","confidence":"high_lea_address_into_range"},
+        {"siteRva":"0x199E494","siteFileOffset":"0x199DA94","section":".impdata","mnemonic":"lea_rip_rel","bytes":"4C 8D 05 05 5B 84 08","targetRva":"0xA1E3FA0","targetFileOffset":"0xA1E35A0","regionTag":"core_event_attribute_catalog","confidence":"high_lea_address_into_range"}
+      ],
+      "evidenceConnectingToCatalog":"One or more LEA/MOV [rip+disp] effective addresses fall inside core catalog RVA range"
+    },
+    {
+      "entryRva":"0x20DFB06",
+      "entryFileOffset":"0x20DF106",
+      "section":".impdata",
+      "prologueBytes":"48 89 D6 49 89 CE 48 8B 05 ED 36 1D 08 48 31 E8",
+      "ripHitsIntoCoreCatalog":2,
+      "confidence":"low_rip_into_range_nonjson_or_sparse",
+      "notes":"Grouped by backward prologue heuristic from RIP-relative sites into core catalog",
+      "isConfirmedSchemaLoader":false,
+      "relevantInstructions":[
+        {"siteRva":"0x20DFD07","siteFileOffset":"0x20DF307","section":".impdata","mnemonic":"lea_rip_rel","bytes":"48 8D 05 E4 42 10 08","targetRva":"0xA1E3FF2","targetFileOffset":"0xA1E35F2","regionTag":"core_event_attribute_catalog","confidence":"high_lea_address_into_range"},
+        {"siteRva":"0x20DFD51","siteFileOffset":"0x20DF351","section":".impdata","mnemonic":"lea_rip_rel","bytes":"48 8D 0D 9A 42 10 08","targetRva":"0xA1E3FF2","targetFileOffset":"0xA1E35F2","regionTag":"core_event_attribute_catalog","confidence":"high_lea_address_into_range"}
+      ],
+      "evidenceConnectingToCatalog":"One or more LEA/MOV [rip+disp] effective addresses fall inside core catalog RVA range"
+    },
+    {
+      "entryRva":"0x2A62B70",
+      "entryFileOffset":"0x2A62170",
+      "section":".impdata",
+      "prologueBytes":"56 57 48 83 EC 38 C5 F9 7F 74 24 20 48 8B 05 C5",
+      "ripHitsIntoCoreCatalog":2,
+      "confidence":"low_single_rip_into_jsonish",
+      "notes":"Grouped by backward prologue heuristic from RIP-relative sites into core catalog",
+      "isConfirmedSchemaLoader":false,
+      "relevantInstructions":[
+        {"siteRva":"0x2A62BCF","siteFileOffset":"0x2A621CF","section":".impdata","mnemonic":"lea_rip_rel","bytes":"48 8D 05 A6 C1 76 07","targetRva":"0xA1CED7C","targetFileOffset":"0xA1CE37C","regionTag":"core_event_attribute_catalog","confidence":"high_lea_address_into_range"},
+        {"siteRva":"0x2A62C15","siteFileOffset":"0x2A62215","section":".impdata","mnemonic":"lea_rip_rel","bytes":"48 8D 15 60 C1 76 07","targetRva":"0xA1CED7C","targetFileOffset":"0xA1CE37C","regionTag":"core_event_attribute_catalog","confidence":"high_lea_address_into_range"}
+      ],
+      "evidenceConnectingToCatalog":"One or more LEA/MOV [rip+disp] effective addresses fall inside core catalog RVA range"
+    },
+    {
+      "entryRva":"0x41F9AC4",
+      "entryFileOffset":"0x41F90C4",
+      "section":".impdata",
+      "prologueBytes":"48 8B 01 FF 50 10 EB 8E 8A 05 6E 68 EF 07 3A 05",
+      "ripHitsIntoCoreCatalog":2,
+      "confidence":"low_rip_into_range_nonjson_or_sparse",
+      "notes":"Grouped by backward prologue heuristic from RIP-relative sites into core catalog",
+      "isConfirmedSchemaLoader":false,
+      "relevantInstructions":[
+        {"siteRva":"0x41F9BF1","siteFileOffset":"0x41F91F1","section":".impdata","mnemonic":"lea_rip_rel","bytes":"48 8D 0D E0 A3 FE 05","targetRva":"0xA1E3FD8","targetFileOffset":"0xA1E35D8","regionTag":"core_event_attribute_catalog","confidence":"high_lea_address_into_range"},
+        {"siteRva":"0x41F9D83","siteFileOffset":"0x41F9383","section":".impdata","mnemonic":"lea_rip_rel","bytes":"48 8D 0D 4E A2 FE 05","targetRva":"0xA1E3FD8","targetFileOffset":"0xA1E35D8","regionTag":"core_event_attribute_catalog","confidence":"high_lea_address_into_range"}
+      ],
+      "evidenceConnectingToCatalog":"One or more LEA/MOV [rip+disp] effective addresses fall inside core catalog RVA range"
+    },
+    {
+      "entryRva":"0x5360C1B",
+      "entryFileOffset":"0x536021B",
+      "section":".impdata",
+      "prologueBytes":"48 89 D7 48 89 CE 4C 8B B4 24 C8 00 00 00 48 8B",
+      "ripHitsIntoCoreCatalog":2,
+      "confidence":"low_rip_into_range_nonjson_or_sparse",
+      "notes":"Grouped by backward prologue heuristic from RIP-relative sites into core catalog",
+      "isConfirmedSchemaLoader":false,
+      "relevantInstructions":[
+        {"siteRva":"0x5360C57","siteFileOffset":"0x5360257","section":".impdata","mnemonic":"lea_rip_rel","bytes":"48 8D 05 4F 33 E8 04","targetRva":"0xA1E3FAD","targetFileOffset":"0xA1E35AD","regionTag":"core_event_attribute_catalog","confidence":"high_lea_address_into_range"},
+        {"siteRva":"0x5360C5E","siteFileOffset":"0x536025E","section":".impdata","mnemonic":"lea_rip_rel","bytes":"48 8D 15 58 33 E8 04","targetRva":"0xA1E3FBD","targetFileOffset":"0xA1E35BD","regionTag":"core_event_attribute_catalog","confidence":"high_lea_address_into_range"}
+      ],
+      "evidenceConnectingToCatalog":"One or more LEA/MOV [rip+disp] effective addresses fall inside core catalog RVA range"
+    },
+    {
+      "entryRva":"0x5908830",
+      "entryFileOffset":"0x5907E30",
+      "section":".impdata",
+      "prologueBytes":"41 57 41 56 41 55 41 54 56 57 55 53 48 81 EC 58",
+      "ripHitsIntoCoreCatalog":2,
+      "confidence":"low_single_rip_into_jsonish",
+      "notes":"Grouped by backward prologue heuristic from RIP-relative sites into core catalog",
+      "isConfirmedSchemaLoader":false,
+      "relevantInstructions":[
+        {"siteRva":"0x590888A","siteFileOffset":"0x5907E8A","section":".impdata","mnemonic":"lea_rip_rel","bytes":"4C 8D 35 F4 64 8C 04","targetRva":"0xA1CED85","targetFileOffset":"0xA1CE385","regionTag":"core_event_attribute_catalog","confidence":"high_lea_address_into_range"},
+        {"siteRva":"0x590889F","siteFileOffset":"0x5907E9F","section":".impdata","mnemonic":"lea_rip_rel","bytes":"4C 8D 2D FA B6 8D 04","targetRva":"0xA1E3FA0","targetFileOffset":"0xA1E35A0","regionTag":"core_event_attribute_catalog","confidence":"high_lea_address_into_range"}
+      ],
+      "evidenceConnectingToCatalog":"One or more LEA/MOV [rip+disp] effective addresses fall inside core catalog RVA range"
+    },
+    {
+      "entryRva":"0x6DD2C67",
+      "entryFileOffset":"0x6DD2267",
+      "section":".impdata",
+      "prologueBytes":"48 89 C6 48 8B 05 37 DE 31 05 48 85 C0 74 0C 48",
+      "ripHitsIntoCoreCatalog":2,
+      "confidence":"low_rip_into_range_nonjson_or_sparse",
+      "notes":"Grouped by backward prologue heuristic from RIP-relative sites into core catalog",
+      "isConfirmedSchemaLoader":false,
+      "relevantInstructions":[
+        {"siteRva":"0x6DD2E0F","siteFileOffset":"0x6DD240F","section":".impdata","mnemonic":"lea_rip_rel","bytes":"48 8D 15 CE 11 41 03","targetRva":"0xA1E3FE4","targetFileOffset":"0xA1E35E4","regionTag":"core_event_attribute_catalog","confidence":"high_lea_address_into_range"},
+        {"siteRva":"0x6DD2E87","siteFileOffset":"0x6DD2487","section":".impdata","mnemonic":"lea_rip_rel","bytes":"48 8D 15 56 11 41 03","targetRva":"0xA1E3FE4","targetFileOffset":"0xA1E35E4","regionTag":"core_event_attribute_catalog","confidence":"high_lea_address_into_range"}
+      ],
+      "evidenceConnectingToCatalog":"One or more LEA/MOV [rip+disp] effective addresses fall inside core catalog RVA range"
+    },
+    {
+      "entryRva":"0x70EFD90",
+      "entryFileOffset":"0x70EF390",
+      "section":".impdata",
+      "prologueBytes":"56 57 53 48 83 EC 20 80 79 08 00 75 0C 84 D2 74",
+      "ripHitsIntoCoreCatalog":2,
+      "confidence":"low_rip_into_range_nonjson_or_sparse",
+      "notes":"Grouped by backward prologue heuristic from RIP-relative sites into core catalog",
+      "isConfirmedSchemaLoader":false,
+      "relevantInstructions":[
+        {"siteRva":"0x70EFDD6","siteFileOffset":"0x70EF3D6","section":".impdata","mnemonic":"lea_rip_rel","bytes":"48 8D 35 12 42 0F 03","targetRva":"0xA1E3FEF","targetFileOffset":"0xA1E35EF","regionTag":"core_event_attribute_catalog","confidence":"high_lea_address_into_range"},
+        {"siteRva":"0x70EFE17","siteFileOffset":"0x70EF417","section":".impdata","mnemonic":"lea_rip_rel","bytes":"48 8D 3D D1 41 0F 03","targetRva":"0xA1E3FEF","targetFileOffset":"0xA1E35EF","regionTag":"core_event_attribute_catalog","confidence":"high_lea_address_into_range"}
+      ],
+      "evidenceConnectingToCatalog":"One or more LEA/MOV [rip+disp] effective addresses fall inside core catalog RVA range"
+    },
+    {
+      "entryRva":"0x7483BD0",
+      "entryFileOffset":"0x74831D0",
+      "section":".impdata",
+      "prologueBytes":"41 57 41 56 41 55 41 54 56 57 55 53 B8 58 10 00",
+      "ripHitsIntoCoreCatalog":2,
+      "confidence":"low_rip_into_range_nonjson_or_sparse",
+      "notes":"Grouped by backward prologue heuristic from RIP-relative sites into core catalog",
+      "isConfirmedSchemaLoader":false,
+      "relevantInstructions":[
+        {"siteRva":"0x7483D90","siteFileOffset":"0x7483390","section":".impdata","mnemonic":"lea_rip_rel","bytes":"4C 8D 35 5B 02 D6 02","targetRva":"0xA1E3FF2","targetFileOffset":"0xA1E35F2","regionTag":"core_event_attribute_catalog","confidence":"high_lea_address_into_range"},
+        {"siteRva":"0x7483ECE","siteFileOffset":"0x74834CE","section":".impdata","mnemonic":"lea_rip_rel","bytes":"4C 8D 35 1D 01 D6 02","targetRva":"0xA1E3FF2","targetFileOffset":"0xA1E35F2","regionTag":"core_event_attribute_catalog","confidence":"high_lea_address_into_range"}
+      ],
+      "evidenceConnectingToCatalog":"One or more LEA/MOV [rip+disp] effective addresses fall inside core catalog RVA range"
+    },
+    {
+      "entryRva":"0x752FCA0",
+      "entryFileOffset":"0x752F2A0",
+      "section":".impdata",
+      "prologueBytes":"56 57 53 48 83 EC 70 48 89 CE 48 8B 05 4F 35 D8",
+      "ripHitsIntoCoreCatalog":2,
+      "confidence":"low_single_rip_into_jsonish",
+      "notes":"Grouped by backward prologue heuristic from RIP-relative sites into core catalog",
+      "isConfirmedSchemaLoader":false,
+      "relevantInstructions":[
+        {"siteRva":"0x752FD23","siteFileOffset":"0x752F323","section":".impdata","mnemonic":"lea_rip_rel","bytes":"48 8D 15 79 42 CB 02","targetRva":"0xA1E3FA3","targetFileOffset":"0xA1E35A3","regionTag":"core_event_attribute_catalog","confidence":"high_lea_address_into_range"},
+        {"siteRva":"0x752FDBD","siteFileOffset":"0x752F3BD","section":".impdata","mnemonic":"lea_rip_rel","bytes":"48 8D 15 DF 41 CB 02","targetRva":"0xA1E3FA3","targetFileOffset":"0xA1E35A3","regionTag":"core_event_attribute_catalog","confidence":"high_lea_address_into_range"}
+      ],
+      "evidenceConnectingToCatalog":"One or more LEA/MOV [rip+disp] effective addresses fall inside core catalog RVA range"
+    },
+    {
+      "entryRva":"0x7596F00",
+      "entryFileOffset":"0x7596500",
+      "section":".impdata",
+      "prologueBytes":"41 57 41 56 41 55 41 54 56 57 55 53 48 81 EC A8",
+      "ripHitsIntoCoreCatalog":2,
+      "confidence":"low_single_rip_into_jsonish",
+      "notes":"Grouped by backward prologue heuristic from RIP-relative sites into core catalog",
+      "isConfirmedSchemaLoader":false,
+      "relevantInstructions":[
+        {"siteRva":"0x7596FD4","siteFileOffset":"0x75965D4","section":".impdata","mnemonic":"lea_rip_rel","bytes":"48 8D 1D C5 CF C4 02","targetRva":"0xA1E3FA0","targetFileOffset":"0xA1E35A0","regionTag":"core_event_attribute_catalog","confidence":"high_lea_address_into_range"},
+        {"siteRva":"0x7597065","siteFileOffset":"0x7596665","section":".impdata","mnemonic":"lea_rip_rel","bytes":"48 8D 15 B3 79 C3 02","targetRva":"0xA1CEA1F","targetFileOffset":"0xA1CE01F","regionTag":"core_event_attribute_catalog","confidence":"high_lea_address_into_range"}
+      ],
+      "evidenceConnectingToCatalog":"One or more LEA/MOV [rip+disp] effective addresses fall inside core catalog RVA range"
+    },
+    {
+      "entryRva":"0x78E93F0",
+      "entryFileOffset":"0x78E89F0",
+      "section":".impdata",
+      "prologueBytes":"41 56 56 57 53 48 83 EC 38 48 89 D7 48 89 CE 48",
+      "ripHitsIntoCoreCatalog":2,
+      "confidence":"low_single_rip_into_jsonish",
+      "notes":"Grouped by backward prologue heuristic from RIP-relative sites into core catalog",
+      "isConfirmedSchemaLoader":false,
+      "relevantInstructions":[
+        {"siteRva":"0x78E9462","siteFileOffset":"0x78E8A62","section":".impdata","mnemonic":"lea_rip_rel","bytes":"48 8D 15 40 58 8E 02","targetRva":"0xA1CECA9","targetFileOffset":"0xA1CE2A9","regionTag":"core_event_attribute_catalog","confidence":"high_lea_address_into_range"},
+        {"siteRva":"0x78E94C8","siteFileOffset":"0x78E8AC8","section":".impdata","mnemonic":"lea_rip_rel","bytes":"4C 8D 35 DA 57 8E 02","targetRva":"0xA1CECA9","targetFileOffset":"0xA1CE2A9","regionTag":"core_event_attribute_catalog","confidence":"high_lea_address_into_range"}
+      ],
+      "evidenceConnectingToCatalog":"One or more LEA/MOV [rip+disp] effective addresses fall inside core catalog RVA range"
+    },
+    {
+      "entryRva":"0x8684CB0",
+      "entryFileOffset":"0x86842B0",
+      "section":".impdata",
+      "prologueBytes":"41 57 41 56 41 55 41 54 56 57 55 53 48 81 EC F8",
+      "ripHitsIntoCoreCatalog":2,
+      "confidence":"low_single_rip_into_jsonish",
+      "notes":"Grouped by backward prologue heuristic from RIP-relative sites into core catalog",
+      "isConfirmedSchemaLoader":false,
+      "relevantInstructions":[
+        {"siteRva":"0x8684D85","siteFileOffset":"0x8684385","section":".impdata","mnemonic":"lea_rip_rel","bytes":"48 8D 15 49 9F B4 01","targetRva":"0xA1CECD5","targetFileOffset":"0xA1CE2D5","regionTag":"core_event_attribute_catalog","confidence":"high_lea_address_into_range"},
+        {"siteRva":"0x8684E72","siteFileOffset":"0x8684472","section":".impdata","mnemonic":"lea_rip_rel","bytes":"48 8D 15 5C 9E B4 01","targetRva":"0xA1CECD5","targetFileOffset":"0xA1CE2D5","regionTag":"core_event_attribute_catalog","confidence":"high_lea_address_into_range"}
+      ],
+      "evidenceConnectingToCatalog":"One or more LEA/MOV [rip+disp] effective addresses fall inside core catalog RVA range"
+    },
+    {
+      "entryRva":"0x868F0F0",
+      "entryFileOffset":"0x868E6F0",
+      "section":".impdata",
+      "prologueBytes":"41 57 41 56 41 55 41 54 56 57 55 53 48 81 EC A8",
+      "ripHitsIntoCoreCatalog":2,
+      "confidence":"low_single_rip_into_jsonish",
+      "notes":"Grouped by backward prologue heuristic from RIP-relative sites into core catalog",
+      "isConfirmedSchemaLoader":false,
+      "relevantInstructions":[
+        {"siteRva":"0x868F1CE","siteFileOffset":"0x868E7CE","section":".impdata","mnemonic":"lea_rip_rel","bytes":"48 8D 15 00 FB B3 01","targetRva":"0xA1CECD5","targetFileOffset":"0xA1CE2D5","regionTag":"core_event_attribute_catalog","confidence":"high_lea_address_into_range"},
+        {"siteRva":"0x868F2BB","siteFileOffset":"0x868E8BB","section":".impdata","mnemonic":"lea_rip_rel","bytes":"48 8D 15 13 FA B3 01","targetRva":"0xA1CECD5","targetFileOffset":"0xA1CE2D5","regionTag":"core_event_attribute_catalog","confidence":"high_lea_address_into_range"}
+      ],
+      "evidenceConnectingToCatalog":"One or more LEA/MOV [rip+disp] effective addresses fall inside core catalog RVA range"
+    },
+    {
+      "entryRva":"0x8FD5EE0",
+      "entryFileOffset":"0x8FD54E0",
+      "section":".impdata",
+      "prologueBytes":"41 56 56 57 53 48 81 EC A8 00 00 00 4D 89 C1 48",
+      "ripHitsIntoCoreCatalog":2,
+      "confidence":"low_single_rip_into_jsonish",
+      "notes":"Grouped by backward prologue heuristic from RIP-relative sites into core catalog",
+      "isConfirmedSchemaLoader":false,
+      "relevantInstructions":[
+        {"siteRva":"0x8FD5F85","siteFileOffset":"0x8FD5585","section":".impdata","mnemonic":"lea_rip_rel","bytes":"48 8D 15 49 8D 1F 01","targetRva":"0xA1CECD5","targetFileOffset":"0xA1CE2D5","regionTag":"core_event_attribute_catalog","confidence":"high_lea_address_into_range"},
+        {"siteRva":"0x8FD610B","siteFileOffset":"0x8FD570B","section":".impdata","mnemonic":"lea_rip_rel","bytes":"48 8D 15 E7 8B 1F 01","targetRva":"0xA1CECF9","targetFileOffset":"0xA1CE2F9","regionTag":"core_event_attribute_catalog","confidence":"high_lea_address_into_range"}
+      ],
+      "evidenceConnectingToCatalog":"One or more LEA/MOV [rip+disp] effective addresses fall inside core catalog RVA range"
+    },
+    {
+      "entryRva":"0x8FF0E91",
+      "entryFileOffset":"0x8FF0491",
+      "section":".impdata",
+      "prologueBytes":"48 89 F0 48 89 83 08 01 00 00 48 89 B3 10 01 00",
+      "ripHitsIntoCoreCatalog":2,
+      "confidence":"low_single_rip_into_jsonish",
+      "notes":"Grouped by backward prologue heuristic from RIP-relative sites into core catalog",
+      "isConfirmedSchemaLoader":false,
+      "relevantInstructions":[
+        {"siteRva":"0x8FF0F46","siteFileOffset":"0x8FF0546","section":".impdata","mnemonic":"lea_rip_rel","bytes":"48 8D 15 AC DD 1D 01","targetRva":"0xA1CECF9","targetFileOffset":"0xA1CE2F9","regionTag":"core_event_attribute_catalog","confidence":"high_lea_address_into_range"},
+        {"siteRva":"0x8FF0FE7","siteFileOffset":"0x8FF05E7","section":".impdata","mnemonic":"lea_rip_rel","bytes":"48 8D 15 E7 DC 1D 01","targetRva":"0xA1CECD5","targetFileOffset":"0xA1CE2D5","regionTag":"core_event_attribute_catalog","confidence":"high_lea_address_into_range"}
+      ],
+      "evidenceConnectingToCatalog":"One or more LEA/MOV [rip+disp] effective addresses fall inside core catalog RVA range"
+    },
+    {
+      "entryRva":"0x9012320",
+      "entryFileOffset":"0x9011920",
+      "section":".impdata",
+      "prologueBytes":"41 56 56 57 55 53 48 81 EC 00 02 00 00 4C 89 CB",
+      "ripHitsIntoCoreCatalog":2,
+      "confidence":"low_single_rip_into_jsonish",
+      "notes":"Grouped by backward prologue heuristic from RIP-relative sites into core catalog",
+      "isConfirmedSchemaLoader":false,
+      "relevantInstructions":[
+        {"siteRva":"0x9012488","siteFileOffset":"0x9011A88","section":".impdata","mnemonic":"lea_rip_rel","bytes":"48 8D 15 6A C8 1B 01","targetRva":"0xA1CECF9","targetFileOffset":"0xA1CE2F9","regionTag":"core_event_attribute_catalog","confidence":"high_lea_address_into_range"},
+        {"siteRva":"0x9012592","siteFileOffset":"0x9011B92","section":".impdata","mnemonic":"lea_rip_rel","bytes":"48 8D 15 60 C7 1B 01","targetRva":"0xA1CECF9","targetFileOffset":"0xA1CE2F9","regionTag":"core_event_attribute_catalog","confidence":"high_lea_address_into_range"}
+      ],
+      "evidenceConnectingToCatalog":"One or more LEA/MOV [rip+disp] effective addresses fall inside core catalog RVA range"
+    },
+    {
+      "entryRva":"0x4A5B70",
+      "entryFileOffset":"0x4A5170",
+      "section":".impdata",
+      "prologueBytes":"41 57 41 56 56 57 55 53 48 81 EC 98 00 00 00 48",
+      "ripHitsIntoCoreCatalog":1,
+      "confidence":"low_rip_into_range_nonjson_or_sparse",
+      "notes":"Grouped by backward prologue heuristic from RIP-relative sites into core catalog",
+      "isConfirmedSchemaLoader":false,
+      "relevantInstructions":[
+        {"siteRva":"0x4A5C54","siteFileOffset":"0x4A5254","section":".impdata","mnemonic":"lea_rip_rel","bytes":"48 8D 05 97 E3 D3 09","targetRva":"0xA1E3FF2","targetFileOffset":"0xA1E35F2","regionTag":"core_event_attribute_catalog","confidence":"high_lea_address_into_range"}
+      ],
+      "evidenceConnectingToCatalog":"One or more LEA/MOV [rip+disp] effective addresses fall inside core catalog RVA range"
+    },
+    {
+      "entryRva":"0x7C7550",
+      "entryFileOffset":"0x7C6B50",
+      "section":".impdata",
+      "prologueBytes":"41 57 41 56 56 57 53 48 83 EC 40 4C 89 C7 48 89",
+      "ripHitsIntoCoreCatalog":1,
+      "confidence":"low_single_rip_into_jsonish",
+      "notes":"Grouped by backward prologue heuristic from RIP-relative sites into core catalog",
+      "isConfirmedSchemaLoader":false,
+      "relevantInstructions":[
+        {"siteRva":"0x7C75A5","siteFileOffset":"0x7C6BA5","section":".impdata","mnemonic":"lea_rip_rel","bytes":"4C 8D 05 FD 76 A0 09","targetRva":"0xA1CECA9","targetFileOffset":"0xA1CE2A9","regionTag":"core_event_attribute_catalog","confidence":"high_lea_address_into_range"}
+      ],
+      "evidenceConnectingToCatalog":"One or more LEA/MOV [rip+disp] effective addresses fall inside core catalog RVA range"
+    },
+    {
+      "entryRva":"0x8E6BF0",
+      "entryFileOffset":"0x8E61F0",
+      "section":".impdata",
+      "prologueBytes":"41 57 41 56 41 54 56 57 55 53 48 83 EC 50 4C 89",
+      "ripHitsIntoCoreCatalog":1,
+      "confidence":"low_single_rip_into_jsonish",
+      "notes":"Grouped by backward prologue heuristic from RIP-relative sites into core catalog",
+      "isConfirmedSchemaLoader":false,
+      "relevantInstructions":[
+        {"siteRva":"0x8E6C31","siteFileOffset":"0x8E6231","section":".impdata","mnemonic":"lea_rip_rel","bytes":"4C 8D 3D 68 D3 8F 09","targetRva":"0xA1E3FA0","targetFileOffset":"0xA1E35A0","regionTag":"core_event_attribute_catalog","confidence":"high_lea_address_into_range"}
+      ],
+      "evidenceConnectingToCatalog":"One or more LEA/MOV [rip+disp] effective addresses fall inside core catalog RVA range"
+    },
+    {
+      "entryRva":"0x8EE7E0",
+      "entryFileOffset":"0x8EDDE0",
+      "section":".impdata",
+      "prologueBytes":"41 57 41 56 41 55 41 54 56 57 55 53 48 83 EC 58",
+      "ripHitsIntoCoreCatalog":1,
+      "confidence":"low_single_rip_into_jsonish",
+      "notes":"Grouped by backward prologue heuristic from RIP-relative sites into core catalog",
+      "isConfirmedSchemaLoader":false,
+      "relevantInstructions":[
+        {"siteRva":"0x8EE843","siteFileOffset":"0x8EDE43","section":".impdata","mnemonic":"lea_rip_rel","bytes":"4C 8D 25 56 57 8F 09","targetRva":"0xA1E3FA0","targetFileOffset":"0xA1E35A0","regionTag":"core_event_attribute_catalog","confidence":"high_lea_address_into_range"}
+      ],
+      "evidenceConnectingToCatalog":"One or more LEA/MOV [rip+disp] effective addresses fall inside core catalog RVA range"
+    },
+    {
+      "entryRva":"0x8F5380",
+      "entryFileOffset":"0x8F4980",
+      "section":".impdata",
+      "prologueBytes":"41 57 41 56 41 55 41 54 56 57 55 53 48 81 EC D8",
+      "ripHitsIntoCoreCatalog":1,
+      "confidence":"low_rip_into_range_nonjson_or_sparse",
+      "notes":"Grouped by backward prologue heuristic from RIP-relative sites into core catalog",
+      "isConfirmedSchemaLoader":false,
+      "relevantInstructions":[
+        {"siteRva":"0x8F5483","siteFileOffset":"0x8F4A83","section":".impdata","mnemonic":"lea_rip_rel","bytes":"48 8D 05 68 EB 8E 09","targetRva":"0xA1E3FF2","targetFileOffset":"0xA1E35F2","regionTag":"core_event_attribute_catalog","confidence":"high_lea_address_into_range"}
+      ],
+      "evidenceConnectingToCatalog":"One or more LEA/MOV [rip+disp] effective addresses fall inside core catalog RVA range"
+    },
+    {
+      "entryRva":"0x8FAB70",
+      "entryFileOffset":"0x8FA170",
+      "section":".impdata",
+      "prologueBytes":"41 57 41 56 41 55 41 54 56 57 55 53 48 81 EC 98",
+      "ripHitsIntoCoreCatalog":1,
+      "confidence":"low_single_rip_into_jsonish",
+      "notes":"Grouped by backward prologue heuristic from RIP-relative sites into core catalog",
+      "isConfirmedSchemaLoader":false,
+      "relevantInstructions":[
+        {"siteRva":"0x8FABE8","siteFileOffset":"0x8FA1E8","section":".impdata","mnemonic":"lea_rip_rel","bytes":"4C 8D 35 B1 93 8E 09","targetRva":"0xA1E3FA0","targetFileOffset":"0xA1E35A0","regionTag":"core_event_attribute_catalog","confidence":"high_lea_address_into_range"}
+      ],
+      "evidenceConnectingToCatalog":"One or more LEA/MOV [rip+disp] effective addresses fall inside core catalog RVA range"
+    },
+    {
+      "entryRva":"0xA3A3B0",
+      "entryFileOffset":"0xA399B0",
+      "section":".impdata",
+      "prologueBytes":"41 57 41 56 41 55 41 54 56 57 55 53 48 83 EC 58",
+      "ripHitsIntoCoreCatalog":1,
+      "confidence":"low_single_rip_into_jsonish",
+      "notes":"Grouped by backward prologue heuristic from RIP-relative sites into core catalog",
+      "isConfirmedSchemaLoader":false,
+      "relevantInstructions":[
+        {"siteRva":"0xA3A4B5","siteFileOffset":"0xA39AB5","section":".impdata","mnemonic":"lea_rip_rel","bytes":"48 8D 3D E4 9A 7A 09","targetRva":"0xA1E3FA0","targetFileOffset":"0xA1E35A0","regionTag":"core_event_attribute_catalog","confidence":"high_lea_address_into_range"}
+      ],
+      "evidenceConnectingToCatalog":"One or more LEA/MOV [rip+disp] effective addresses fall inside core catalog RVA range"
+    },
+    {
+      "entryRva":"0xC41BA9",
+      "entryFileOffset":"0xC411A9",
+      "section":".impdata",
+      "prologueBytes":"4C 8D 05 F0 23 5A 09 E8 5B 05 00 00 48 8B 6C 24",
+      "ripHitsIntoCoreCatalog":1,
+      "confidence":"low_single_rip_into_jsonish",
+      "notes":"Grouped by backward prologue heuristic from RIP-relative sites into core catalog",
+      "isConfirmedSchemaLoader":false,
+      "relevantInstructions":[
+        {"siteRva":"0xC41BA9","siteFileOffset":"0xC411A9","section":".impdata","mnemonic":"lea_rip_rel","bytes":"4C 8D 05 F0 23 5A 09","targetRva":"0xA1E3FA0","targetFileOffset":"0xA1E35A0","regionTag":"core_event_attribute_catalog","confidence":"high_lea_address_into_range"}
+      ],
+      "evidenceConnectingToCatalog":"One or more LEA/MOV [rip+disp] effective addresses fall inside core catalog RVA range"
+    },
+    {
+      "entryRva":"0xC41D4D",
+      "entryFileOffset":"0xC4134D",
+      "section":".impdata",
+      "prologueBytes":"4C 8D 05 4C 22 5A 09 E8 B7 03 00 00 48 8B 6C 24",
+      "ripHitsIntoCoreCatalog":1,
+      "confidence":"low_single_rip_into_jsonish",
+      "notes":"Grouped by backward prologue heuristic from RIP-relative sites into core catalog",
+      "isConfirmedSchemaLoader":false,
+      "relevantInstructions":[
+        {"siteRva":"0xC41D4D","siteFileOffset":"0xC4134D","section":".impdata","mnemonic":"lea_rip_rel","bytes":"4C 8D 05 4C 22 5A 09","targetRva":"0xA1E3FA0","targetFileOffset":"0xA1E35A0","regionTag":"core_event_attribute_catalog","confidence":"high_lea_address_into_range"}
+      ],
+      "evidenceConnectingToCatalog":"One or more LEA/MOV [rip+disp] effective addresses fall inside core catalog RVA range"
+    },
+    {
+      "entryRva":"0xC69010",
+      "entryFileOffset":"0xC68610",
+      "section":".impdata",
+      "prologueBytes":"41 57 41 56 41 55 41 54 56 57 55 53 48 83 EC 48",
+      "ripHitsIntoCoreCatalog":1,
+      "confidence":"low_single_rip_into_jsonish",
+      "notes":"Grouped by backward prologue heuristic from RIP-relative sites into core catalog",
+      "isConfirmedSchemaLoader":false,
+      "relevantInstructions":[
+        {"siteRva":"0xC69178","siteFileOffset":"0xC68778","section":".impdata","mnemonic":"lea_rip_rel","bytes":"4C 8D 05 21 AE 57 09","targetRva":"0xA1E3FA0","targetFileOffset":"0xA1E35A0","regionTag":"core_event_attribute_catalog","confidence":"high_lea_address_into_range"}
+      ],
+      "evidenceConnectingToCatalog":"One or more LEA/MOV [rip+disp] effective addresses fall inside core catalog RVA range"
+    },
+    {
+      "entryRva":"0xC69333",
+      "entryFileOffset":"0xC68933",
+      "section":".impdata",
+      "prologueBytes":"4C 8D 05 66 AC 57 09 E8 D1 8D FD FF 4C 8B 6C 24",
+      "ripHitsIntoCoreCatalog":1,
+      "confidence":"low_single_rip_into_jsonish",
+      "notes":"Grouped by backward prologue heuristic from RIP-relative sites into core catalog",
+      "isConfirmedSchemaLoader":false,
+      "relevantInstructions":[
+        {"siteRva":"0xC69333","siteFileOffset":"0xC68933","section":".impdata","mnemonic":"lea_rip_rel","bytes":"4C 8D 05 66 AC 57 09","targetRva":"0xA1E3FA0","targetFileOffset":"0xA1E35A0","regionTag":"core_event_attribute_catalog","confidence":"high_lea_address_into_range"}
+      ],
+      "evidenceConnectingToCatalog":"One or more LEA/MOV [rip+disp] effective addresses fall inside core catalog RVA range"
+    },
+    {
+      "entryRva":"0xD33C70",
+      "entryFileOffset":"0xD33270",
+      "section":".impdata",
+      "prologueBytes":"48 89 DA E8 38 50 6C 03 4C 89 74 24 60 EB 2E 4D",
+      "ripHitsIntoCoreCatalog":1,
+      "confidence":"low_rip_into_range_nonjson_or_sparse",
+      "notes":"Grouped by backward prologue heuristic from RIP-relative sites into core catalog",
+      "isConfirmedSchemaLoader":false,
+      "relevantInstructions":[
+        {"siteRva":"0xD33CF6","siteFileOffset":"0xD332F6","section":".impdata","mnemonic":"lea_rip_rel","bytes":"4C 8D 0D F5 02 4B 09","targetRva":"0xA1E3FF2","targetFileOffset":"0xA1E35F2","regionTag":"core_event_attribute_catalog","confidence":"high_lea_address_into_range"}
+      ],
+      "evidenceConnectingToCatalog":"One or more LEA/MOV [rip+disp] effective addresses fall inside core catalog RVA range"
+    },
+    {
+      "entryRva":"0x105DAA7",
+      "entryFileOffset":"0x105D0A7",
+      "section":".impdata",
+      "prologueBytes":"48 8D 15 27 12 17 09 48 89 D9 4D 89 F0 45 31 C9",
+      "ripHitsIntoCoreCatalog":1,
+      "confidence":"low_single_rip_into_jsonish",
+      "notes":"Grouped by backward prologue heuristic from RIP-relative sites into core catalog",
+      "isConfirmedSchemaLoader":false,
+      "relevantInstructions":[
+        {"siteRva":"0x105DAA7","siteFileOffset":"0x105D0A7","section":".impdata","mnemonic":"lea_rip_rel","bytes":"48 8D 15 27 12 17 09","targetRva":"0xA1CECD5","targetFileOffset":"0xA1CE2D5","regionTag":"core_event_attribute_catalog","confidence":"high_lea_address_into_range"}
+      ],
+      "evidenceConnectingToCatalog":"One or more LEA/MOV [rip+disp] effective addresses fall inside core catalog RVA range"
+    },
+    {
+      "entryRva":"0x105DBA3",
+      "entryFileOffset":"0x105D1A3",
+      "section":".impdata",
+      "prologueBytes":"48 8D 15 2B 11 17 09 48 89 D9 4D 89 F0 45 31 C9",
+      "ripHitsIntoCoreCatalog":1,
+      "confidence":"low_single_rip_into_jsonish",
+      "notes":"Grouped by backward prologue heuristic from RIP-relative sites into core catalog",
+      "isConfirmedSchemaLoader":false,
+      "relevantInstructions":[
+        {"siteRva":"0x105DBA3","siteFileOffset":"0x105D1A3","section":".impdata","mnemonic":"lea_rip_rel","bytes":"48 8D 15 2B 11 17 09","targetRva":"0xA1CECD5","targetFileOffset":"0xA1CE2D5","regionTag":"core_event_attribute_catalog","confidence":"high_lea_address_into_range"}
+      ],
+      "evidenceConnectingToCatalog":"One or more LEA/MOV [rip+disp] effective addresses fall inside core catalog RVA range"
+    },
+    {
+      "entryRva":"0x105E455",
+      "entryFileOffset":"0x105DA55",
+      "section":".impdata",
+      "prologueBytes":"48 8D 15 79 08 17 09 48 89 F9 49 89 D8 45 31 C9",
+      "ripHitsIntoCoreCatalog":1,
+      "confidence":"low_single_rip_into_jsonish",
+      "notes":"Grouped by backward prologue heuristic from RIP-relative sites into core catalog",
+      "isConfirmedSchemaLoader":false,
+      "relevantInstructions":[
+        {"siteRva":"0x105E455","siteFileOffset":"0x105DA55","section":".impdata","mnemonic":"lea_rip_rel","bytes":"48 8D 15 79 08 17 09","targetRva":"0xA1CECD5","targetFileOffset":"0xA1CE2D5","regionTag":"core_event_attribute_catalog","confidence":"high_lea_address_into_range"}
+      ],
+      "evidenceConnectingToCatalog":"One or more LEA/MOV [rip+disp] effective addresses fall inside core catalog RVA range"
+    },
+    {
+      "entryRva":"0x159C6F0",
+      "entryFileOffset":"0x159BCF0",
+      "section":".impdata",
+      "prologueBytes":"56 57 48 83 EC 28 48 89 D6 48 89 CF E8 2F 00 00",
+      "ripHitsIntoCoreCatalog":1,
+      "confidence":"low_rip_into_range_nonjson_or_sparse",
+      "notes":"Grouped by backward prologue heuristic from RIP-relative sites into core catalog",
+      "isConfirmedSchemaLoader":false,
+      "relevantInstructions":[
+        {"siteRva":"0x159C705","siteFileOffset":"0x159BD05","section":".impdata","mnemonic":"lea_rip_rel","bytes":"48 8D 15 E6 78 C4 08","targetRva":"0xA1E3FF2","targetFileOffset":"0xA1E35F2","regionTag":"core_event_attribute_catalog","confidence":"high_lea_address_into_range"}
+      ],
+      "evidenceConnectingToCatalog":"One or more LEA/MOV [rip+disp] effective addresses fall inside core catalog RVA range"
+    }
+  ],
+  "conclusions":{
+    "schemaParserIdentified":false,
+    "schemaConsumerIdentified":true,
+    "schemaConsumerIdentifiedNote":"Code references INTO the catalog address range exist (RIP-relative). Specific parser/loader function NOT confirmed.",
+    "categoriesConsumedIfAny":"unknown — range overlap with STANDARD/CUSTOM/compositions cluster only"
+  }
+}

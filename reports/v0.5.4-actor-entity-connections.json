@@ -1,0 +1,49 @@
+{
+    "schemaVersion":  1,
+    "generatedUtc":  "2026-11-12T08:25:13.3172335Z",
+    "findings":  [
+                     {
+                         "topic":  "Edward string vs telemetry",
+                         "status":  "not_linked",
+                         "evidence":  "Edward remains in packed content/UI table (v0.5.3); no Edward field in player.position attribute list",
+                         "confidence":  "high",
+                         "evidenceClass":  "confirmed_negative"
+                     },
+                     {
+                         "topic":  "Character attribute on events",
+                         "status":  "present_as_telemetry_attribute_name",
+                         "evidence":  "Many CUSTOM events include customAttributes name Character alongside PlayerPosX/Y/Z",
+                         "confidence":  "high",
+                         "evidenceClass":  "confirmed_schema",
+                         "note":  "Does not prove Character equals Edward actor type ID"
+                     },
+                     {
+                         "topic":  "PlayerDespawn and PlayerKill signals",
+                         "status":  "telemetry_lifecycle_events",
+                         "evidence":  "custom.PlayerDespawn and custom.PlayerKill carry PlayerPosXYZ and Character",
+                         "confidence":  "high",
+                         "evidenceClass":  "confirmed_schema"
+                     },
+                     {
+                         "topic":  "Spawner and CreateActorsDeferred",
+                         "status":  "no_schema_link_to_player_position",
+                         "evidence":  "No composition/telemetry object recovered that binds CreateActorsDeferred or Spawner names to player.position",
+                         "confidence":  "medium",
+                         "evidenceClass":  "confirmed_absence_in_scanned_catalog"
+                     },
+                     {
+                         "topic":  "EntityId",
+                         "status":  "analytics_string_fields",
+                         "evidence":  "PlayerAtkDamagingEntityId type string in combat schemas; also among PlayerAttack attributes",
+                         "confidence":  "high",
+                         "evidenceClass":  "confirmed"
+                     },
+                     {
+                         "topic":  "Multiple independent Edwards",
+                         "status":  "not_confirmed",
+                         "evidence":  "No schema describing multiple local player-controlled Edward entities",
+                         "confidence":  "high",
+                         "evidenceClass":  "confirmed_negative"
+                     }
+                 ]
+}

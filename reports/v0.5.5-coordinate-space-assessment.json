@@ -1,0 +1,124 @@
+{
+    "schemaVersion":  1,
+    "generatedUtc":  "2026-11-12T08:51:02.9448121Z",
+    "playerPosPrimitives":  {
+                                "X":  "float",
+                                "Y":  "float",
+                                "Z":  "float",
+                                "evidence":  "typed field dictionary near 0xA1D6605"
+                            },
+    "relatedEvidence":  [
+                            {
+                                "claim":  "PlayerPos fields are floats",
+                                "status":  "verified",
+                                "evidenceClass":  "confirmed",
+                                "detail":  "Typed dictionary entries name PlayerPosX/Y/Z type float"
+                            },
+                            {
+                                "claim":  "PositionSource is a string field",
+                                "status":  "verified_type_only",
+                                "evidenceClass":  "confirmed",
+                                "detail":  "Typed dictionary entry type string"
+                            },
+                            {
+                                "claim":  "World is a string field",
+                                "status":  "verified_type_only",
+                                "evidenceClass":  "confirmed",
+                                "detail":  "Typed dictionary entry type string"
+                            },
+                            {
+                                "claim":  "BodyDropGlobalPosition fields are floats with global naming",
+                                "status":  "strong_lead",
+                                "evidenceClass":  "confirmed_name_and_float_type",
+                                "detail":  "Does not prove identical space to PlayerPos"
+                            },
+                            {
+                                "claim":  "WorldEncounterSpawn coordinates are floats",
+                                "status":  "strong_lead",
+                                "evidenceClass":  "confirmed_name_and_float_type",
+                                "detail":  "Separate from PlayerPos fields"
+                            },
+                            {
+                                "claim":  "PlayerPos fields are world-space meters",
+                                "status":  "not_verified",
+                                "evidenceClass":  "unknown",
+                                "detail":  "No units or coordinate-space metadata in dictionary"
+                            },
+                            {
+                                "claim":  "PlayerPos fields are camera or UI coordinates",
+                                "status":  "not_proven",
+                                "evidenceClass":  "speculative",
+                                "detail":  "Schema context with Movement FightState DistanceTraveled World makes pure UI less likely but unproven"
+                            }
+                        ],
+    "stringSamples":  [
+                          {
+                              "needle":  "PositionSource",
+                              "fileOffset":  "0x9995B62",
+                              "rva":  "0x9996562",
+                              "context":  "SolverData.IKAxisSource.............IKAxisSourceData................IKPositionSource................IKPositionSourceData............IKRotationSource................IKRotationSourceData.IKScalarSource..........."
+                          },
+                          {
+                              "needle":  "PositionSource",
+                              "fileOffset":  "0x9995B82",
+                              "rva":  "0x9996582",
+                              "context":  "....IKAxisSourceData................IKPositionSource................IKPositionSourceData............IKRotationSource................IKRotationSourceData.IKScalarSource.............IKScalarSourceData............"
+                          },
+                          {
+                              "needle":  "BodyDropGlobalPosition",
+                              "fileOffset":  "0xA1D38E4",
+                              "rva":  "0xA1D42E4",
+                              "context":  ":\"BoatPartiallyBeachedTime\",\"type\":\"int\",\"isOptional\":true}, {\"name\":\"BodyDropGlobalPositionX\",\"type\":\"float\",\"isOptional\":true}, {\"name\":\"BodyDropGlobalPositionY\",\"type\":\"float\",\"isOptional\":true}, {\"name\":\"Bo"
+                          },
+                          {
+                              "needle":  "BodyDropGlobalPosition",
+                              "fileOffset":  "0xA1D3929",
+                              "rva":  "0xA1D4329",
+                              "context":  "\"BodyDropGlobalPositionX\",\"type\":\"float\",\"isOptional\":true}, {\"name\":\"BodyDropGlobalPositionY\",\"type\":\"float\",\"isOptional\":true}, {\"name\":\"BodyDropGlobalPositionZ\",\"type\":\"float\",\"isOptional\":true}, {\"name\":\"Bo"
+                          },
+                          {
+                              "needle":  "GlobalPosition",
+                              "fileOffset":  "0xA13E63A",
+                              "rva":  "0xA13F03A",
+                              "context":  "ornerPosition.goalPosition.localPosition.GlobalToLocalPosition.LocalToGlobalPosition.Splash_GlobalPosition.hkaiPathfindingUtil::NavMeshSearchPosition.deactivationRefPosition.fracturePosition.UnderlinePosition.o"
+                          },
+                          {
+                              "needle":  "GlobalPosition",
+                              "fileOffset":  "0xA13E650",
+                              "rva":  "0xA13F050",
+                              "context":  "tion.localPosition.GlobalToLocalPosition.LocalToGlobalPosition.Splash_GlobalPosition.hkaiPathfindingUtil::NavMeshSearchPosition.deactivationRefPosition.fracturePosition.UnderlinePosition.oldHandlePosition.hclVd"
+                          },
+                          {
+                              "needle":  "WorldEncounterSpawnXCoordinate",
+                              "fileOffset":  "0xA1D1F86",
+                              "rva":  "0xA1D2986",
+                              "context":  "me\":\"WorldEncounterKind\",\"type\":\"string\",\"isOptional\":true}, {\"name\":\"WorldEncounterSpawnXCoordinate\",\"type\":\"float\",\"isOptional\":true}, {\"name\":\"WorldEncounterSpawnYCoordinate\",\"type\":\"float\",\"isOptional\":true"
+                          },
+                          {
+                              "needle":  "WorldEncounterSpawnXCoordinate",
+                              "fileOffset":  "0xA1DAF38",
+                              "rva":  "0xA1DB938",
+                              "context":  "\":[{\"name\":\"WorldEncounterID\"},{\"name\":\"WorldEncounterKind\"},{\"name\":\"WorldEncounterSpawnXCoordinate\"},{\"name\":\"WorldEncounterSpawnYCoordinate\"},{\"name\":\"WorldEncounterSpawnZCoordinate\"},{\"name\":\"Ttp\"},{\"name\":"
+                          },
+                          {
+                              "needle":  "PlayerPosX",
+                              "fileOffset":  "0xA1D660E",
+                              "rva":  "0xA1D700E",
+                              "context":  "{\"name\":\"PlayerNavState\",\"type\":\"string\",\"isOptional\":true}, {\"name\":\"PlayerPosX\",\"type\":\"float\",\"isOptional\":true}, {\"name\":\"PlayerPosY\",\"type\":\"float\",\"isOptional\":true}, {\"name\":\"PlayerPosZ\",\"type\":\"float\",\""
+                          },
+                          {
+                              "needle":  "PlayerPosX",
+                              "fileOffset":  "0xA1D687A",
+                              "rva":  "0xA1D727A",
+                              "context":  "},{\"name\":\"PlayerPosZ\"},{\"name\":\"Ttp\"},{\"name\":\"PlayerPosY\"},{\"name\":\"PlayerPosX\"},{\"name\":\"World\"}]}, {\"name\":\"custom.player.inventory.collectible\",\"type\":\"CUSTOM\",\"typeAttributes\":[],\"customAttributes\":[{\"nam"
+                          }
+                      ],
+    "assessment":  {
+                       "worldSpaceProven":  false,
+                       "localSpaceProven":  false,
+                       "cameraSpaceProven":  false,
+                       "normalizedTelemetryValuesProven":  false,
+                       "unitsProven":  false,
+                       "safestLabel":  "float telemetry position components with unknown units and unverified coordinate space"
+                   }
+}

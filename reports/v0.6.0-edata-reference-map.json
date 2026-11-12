@@ -1,0 +1,213 @@
+{
+  "schemaVersion":1,
+  "generatedUtc":"2026-11-12T15:10:27.6387733Z",
+  "imageBase":"0x140000000",
+  "edataSection":{"name":".edata","rva":"0x9036000","virtualSize":"0x127C000","fileOffset":"0x9035600","rawSize":"0x127C000"},
+  "regions":{
+    "coreEventAttributeCatalog":{"fileStart":"0xA1CE000","fileEnd":"0xA1E4000","rvaStart":"0xA1CEA00","rvaEnd":"0xA1E4A00","organization":"JSON-like STANDARD/CUSTOM event defs + typed attribute dictionary + composition maps; approx gap after 0xA1E3634","evidence":"marker bounds from v0.5.9/v0.6.0 probes"},
+    "compositionCatalogWider":{"fileStart":"0xA0FBB00","fileEnd":"0xA1E4000","rvaStart":"0xA0FC500","rvaEnd":"0xA1E4A00"}
+  },
+  "ripRelativeReferenceCounts":{
+    "intoCoreCatalog":406,
+    "intoCompositionWider":123026,
+    "intoWholeEdata":392307
+  },
+  "coreCatalogRipSamples":[
+    {"siteRva":"0x4A5C54","siteFileOffset":"0x4A5254","section":".impdata","mnemonic":"lea_rip_rel","bytes":"48 8D 05 97 E3 D3 09","targetRva":"0xA1E3FF2","targetFileOffset":"0xA1E35F2","regionTag":"core_event_attribute_catalog","confidence":"high_lea_address_into_range"},
+    {"siteRva":"0x7C75A5","siteFileOffset":"0x7C6BA5","section":".impdata","mnemonic":"lea_rip_rel","bytes":"4C 8D 05 FD 76 A0 09","targetRva":"0xA1CECA9","targetFileOffset":"0xA1CE2A9","regionTag":"core_event_attribute_catalog","confidence":"high_lea_address_into_range"},
+    {"siteRva":"0x8E6C31","siteFileOffset":"0x8E6231","section":".impdata","mnemonic":"lea_rip_rel","bytes":"4C 8D 3D 68 D3 8F 09","targetRva":"0xA1E3FA0","targetFileOffset":"0xA1E35A0","regionTag":"core_event_attribute_catalog","confidence":"high_lea_address_into_range"},
+    {"siteRva":"0x8EE843","siteFileOffset":"0x8EDE43","section":".impdata","mnemonic":"lea_rip_rel","bytes":"4C 8D 25 56 57 8F 09","targetRva":"0xA1E3FA0","targetFileOffset":"0xA1E35A0","regionTag":"core_event_attribute_catalog","confidence":"high_lea_address_into_range"},
+    {"siteRva":"0x8F5483","siteFileOffset":"0x8F4A83","section":".impdata","mnemonic":"lea_rip_rel","bytes":"48 8D 05 68 EB 8E 09","targetRva":"0xA1E3FF2","targetFileOffset":"0xA1E35F2","regionTag":"core_event_attribute_catalog","confidence":"high_lea_address_into_range"},
+    {"siteRva":"0x8FABE8","siteFileOffset":"0x8FA1E8","section":".impdata","mnemonic":"lea_rip_rel","bytes":"4C 8D 35 B1 93 8E 09","targetRva":"0xA1E3FA0","targetFileOffset":"0xA1E35A0","regionTag":"core_event_attribute_catalog","confidence":"high_lea_address_into_range"},
+    {"siteRva":"0xA3A4B5","siteFileOffset":"0xA39AB5","section":".impdata","mnemonic":"lea_rip_rel","bytes":"48 8D 3D E4 9A 7A 09","targetRva":"0xA1E3FA0","targetFileOffset":"0xA1E35A0","regionTag":"core_event_attribute_catalog","confidence":"high_lea_address_into_range"},
+    {"siteRva":"0xC41BA9","siteFileOffset":"0xC411A9","section":".impdata","mnemonic":"lea_rip_rel","bytes":"4C 8D 05 F0 23 5A 09","targetRva":"0xA1E3FA0","targetFileOffset":"0xA1E35A0","regionTag":"core_event_attribute_catalog","confidence":"high_lea_address_into_range"},
+    {"siteRva":"0xC41D4D","siteFileOffset":"0xC4134D","section":".impdata","mnemonic":"lea_rip_rel","bytes":"4C 8D 05 4C 22 5A 09","targetRva":"0xA1E3FA0","targetFileOffset":"0xA1E35A0","regionTag":"core_event_attribute_catalog","confidence":"high_lea_address_into_range"},
+    {"siteRva":"0xC69178","siteFileOffset":"0xC68778","section":".impdata","mnemonic":"lea_rip_rel","bytes":"4C 8D 05 21 AE 57 09","targetRva":"0xA1E3FA0","targetFileOffset":"0xA1E35A0","regionTag":"core_event_attribute_catalog","confidence":"high_lea_address_into_range"},
+    {"siteRva":"0xC69333","siteFileOffset":"0xC68933","section":".impdata","mnemonic":"lea_rip_rel","bytes":"4C 8D 05 66 AC 57 09","targetRva":"0xA1E3FA0","targetFileOffset":"0xA1E35A0","regionTag":"core_event_attribute_catalog","confidence":"high_lea_address_into_range"},
+    {"siteRva":"0xD33CF6","siteFileOffset":"0xD332F6","section":".impdata","mnemonic":"lea_rip_rel","bytes":"4C 8D 0D F5 02 4B 09","targetRva":"0xA1E3FF2","targetFileOffset":"0xA1E35F2","regionTag":"core_event_attribute_catalog","confidence":"high_lea_address_into_range"},
+    {"siteRva":"0x105DAA7","siteFileOffset":"0x105D0A7","section":".impdata","mnemonic":"lea_rip_rel","bytes":"48 8D 15 27 12 17 09","targetRva":"0xA1CECD5","targetFileOffset":"0xA1CE2D5","regionTag":"core_event_attribute_catalog","confidence":"high_lea_address_into_range"},
+    {"siteRva":"0x105DBA3","siteFileOffset":"0x105D1A3","section":".impdata","mnemonic":"lea_rip_rel","bytes":"48 8D 15 2B 11 17 09","targetRva":"0xA1CECD5","targetFileOffset":"0xA1CE2D5","regionTag":"core_event_attribute_catalog","confidence":"high_lea_address_into_range"},
+    {"siteRva":"0x105E455","siteFileOffset":"0x105DA55","section":".impdata","mnemonic":"lea_rip_rel","bytes":"48 8D 15 79 08 17 09","targetRva":"0xA1CECD5","targetFileOffset":"0xA1CE2D5","regionTag":"core_event_attribute_catalog","confidence":"high_lea_address_into_range"},
+    {"siteRva":"0x159C705","siteFileOffset":"0x159BD05","section":".impdata","mnemonic":"lea_rip_rel","bytes":"48 8D 15 E6 78 C4 08","targetRva":"0xA1E3FF2","targetFileOffset":"0xA1E35F2","regionTag":"core_event_attribute_catalog","confidence":"high_lea_address_into_range"},
+    {"siteRva":"0x16FE9B4","siteFileOffset":"0x16FDFB4","section":".impdata","mnemonic":"lea_rip_rel","bytes":"4C 8D 05 E5 55 AE 08","targetRva":"0xA1E3FA0","targetFileOffset":"0xA1E35A0","regionTag":"core_event_attribute_catalog","confidence":"high_lea_address_into_range"},
+    {"siteRva":"0x18A049B","siteFileOffset":"0x189FA9B","section":".impdata","mnemonic":"lea_rip_rel","bytes":"4C 8D 05 FE 3A 94 08","targetRva":"0xA1E3FA0","targetFileOffset":"0xA1E35A0","regionTag":"core_event_attribute_catalog","confidence":"high_lea_address_into_range"},
+    {"siteRva":"0x18A06B8","siteFileOffset":"0x189FCB8","section":".impdata","mnemonic":"lea_rip_rel","bytes":"4C 8D 05 E1 38 94 08","targetRva":"0xA1E3FA0","targetFileOffset":"0xA1E35A0","regionTag":"core_event_attribute_catalog","confidence":"high_lea_address_into_range"},
+    {"siteRva":"0x18AE03E","siteFileOffset":"0x18AD63E","section":".impdata","mnemonic":"lea_rip_rel","bytes":"48 8D 05 5B 5F 93 08","targetRva":"0xA1E3FA0","targetFileOffset":"0xA1E35A0","regionTag":"core_event_attribute_catalog","confidence":"high_lea_address_into_range"},
+    {"siteRva":"0x18AE0CF","siteFileOffset":"0x18AD6CF","section":".impdata","mnemonic":"lea_rip_rel","bytes":"48 8D 05 CA 5E 93 08","targetRva":"0xA1E3FA0","targetFileOffset":"0xA1E35A0","regionTag":"core_event_attribute_catalog","confidence":"high_lea_address_into_range"},
+    {"siteRva":"0x19108DE","siteFileOffset":"0x190FEDE","section":".impdata","mnemonic":"lea_rip_rel","bytes":"48 8D 15 BB 36 8D 08","targetRva":"0xA1E3FA0","targetFileOffset":"0xA1E35A0","regionTag":"core_event_attribute_catalog","confidence":"high_lea_address_into_range"},
+    {"siteRva":"0x1910C94","siteFileOffset":"0x1910294","section":".impdata","mnemonic":"lea_rip_rel","bytes":"48 8D 0D F3 E0 8B 08","targetRva":"0xA1CED8E","targetFileOffset":"0xA1CE38E","regionTag":"core_event_attribute_catalog","confidence":"high_lea_address_into_range"},
+    {"siteRva":"0x1996E68","siteFileOffset":"0x1996468","section":".impdata","mnemonic":"lea_rip_rel","bytes":"48 8D 1D 80 D1 84 08","targetRva":"0xA1E3FEF","targetFileOffset":"0xA1E35EF","regionTag":"core_event_attribute_catalog","confidence":"high_lea_address_into_range"},
+    {"siteRva":"0x19974B1","siteFileOffset":"0x1996AB1","section":".impdata","mnemonic":"lea_rip_rel","bytes":"4C 8D 35 37 CB 84 08","targetRva":"0xA1E3FEF","targetFileOffset":"0xA1E35EF","regionTag":"core_event_attribute_catalog","confidence":"high_lea_address_into_range"},
+    {"siteRva":"0x19974F8","siteFileOffset":"0x1996AF8","section":".impdata","mnemonic":"lea_rip_rel","bytes":"4C 8D 35 F0 CA 84 08","targetRva":"0xA1E3FEF","targetFileOffset":"0xA1E35EF","regionTag":"core_event_attribute_catalog","confidence":"high_lea_address_into_range"},
+    {"siteRva":"0x199E335","siteFileOffset":"0x199D935","section":".impdata","mnemonic":"lea_rip_rel","bytes":"4C 8D 05 64 5C 84 08","targetRva":"0xA1E3FA0","targetFileOffset":"0xA1E35A0","regionTag":"core_event_attribute_catalog","confidence":"high_lea_address_into_range"},
+    {"siteRva":"0x199E494","siteFileOffset":"0x199DA94","section":".impdata","mnemonic":"lea_rip_rel","bytes":"4C 8D 05 05 5B 84 08","targetRva":"0xA1E3FA0","targetFileOffset":"0xA1E35A0","regionTag":"core_event_attribute_catalog","confidence":"high_lea_address_into_range"},
+    {"siteRva":"0x19C3831","siteFileOffset":"0x19C2E31","section":".impdata","mnemonic":"lea_rip_rel","bytes":"48 8D 15 39 B3 80 08","targetRva":"0xA1CEB71","targetFileOffset":"0xA1CE171","regionTag":"core_event_attribute_catalog","confidence":"high_lea_address_into_range"},
+    {"siteRva":"0x1B4606E","siteFileOffset":"0x1B4566E","section":".impdata","mnemonic":"lea_rip_rel","bytes":"48 8D 15 16 8C 68 08","targetRva":"0xA1CEC8B","targetFileOffset":"0xA1CE28B","regionTag":"core_event_attribute_catalog","confidence":"high_lea_address_into_range"},
+    {"siteRva":"0x1B46239","siteFileOffset":"0x1B45839","section":".impdata","mnemonic":"lea_rip_rel","bytes":"48 8D 15 B2 DD 69 08","targetRva":"0xA1E3FF2","targetFileOffset":"0xA1E35F2","regionTag":"core_event_attribute_catalog","confidence":"high_lea_address_into_range"},
+    {"siteRva":"0x20DFD07","siteFileOffset":"0x20DF307","section":".impdata","mnemonic":"lea_rip_rel","bytes":"48 8D 05 E4 42 10 08","targetRva":"0xA1E3FF2","targetFileOffset":"0xA1E35F2","regionTag":"core_event_attribute_catalog","confidence":"high_lea_address_into_range"},
+    {"siteRva":"0x20DFD51","siteFileOffset":"0x20DF351","section":".impdata","mnemonic":"lea_rip_rel","bytes":"48 8D 0D 9A 42 10 08","targetRva":"0xA1E3FF2","targetFileOffset":"0xA1E35F2","regionTag":"core_event_attribute_catalog","confidence":"high_lea_address_into_range"},
+    {"siteRva":"0x20DFDC0","siteFileOffset":"0x20DF3C0","section":".impdata","mnemonic":"lea_rip_rel","bytes":"48 8D 15 2B 42 10 08","targetRva":"0xA1E3FF2","targetFileOffset":"0xA1E35F2","regionTag":"core_event_attribute_catalog","confidence":"high_lea_address_into_range"},
+    {"siteRva":"0x2A62BCF","siteFileOffset":"0x2A621CF","section":".impdata","mnemonic":"lea_rip_rel","bytes":"48 8D 05 A6 C1 76 07","targetRva":"0xA1CED7C","targetFileOffset":"0xA1CE37C","regionTag":"core_event_attribute_catalog","confidence":"high_lea_address_into_range"},
+    {"siteRva":"0x2A62C15","siteFileOffset":"0x2A62215","section":".impdata","mnemonic":"lea_rip_rel","bytes":"48 8D 15 60 C1 76 07","targetRva":"0xA1CED7C","targetFileOffset":"0xA1CE37C","regionTag":"core_event_attribute_catalog","confidence":"high_lea_address_into_range"},
+    {"siteRva":"0x2A70A25","siteFileOffset":"0x2A70025","section":".impdata","mnemonic":"lea_rip_rel","bytes":"48 8D 15 59 E3 75 07","targetRva":"0xA1CED85","targetFileOffset":"0xA1CE385","regionTag":"core_event_attribute_catalog","confidence":"high_lea_address_into_range"},
+    {"siteRva":"0x2CB254B","siteFileOffset":"0x2CB1B4B","section":".impdata","mnemonic":"lea_rip_rel","bytes":"48 8D 05 A0 1A 53 07","targetRva":"0xA1E3FF2","targetFileOffset":"0xA1E35F2","regionTag":"core_event_attribute_catalog","confidence":"high_lea_address_into_range"},
+    {"siteRva":"0x2CB3619","siteFileOffset":"0x2CB2C19","section":".impdata","mnemonic":"lea_rip_rel","bytes":"48 8D 05 D2 09 53 07","targetRva":"0xA1E3FF2","targetFileOffset":"0xA1E35F2","regionTag":"core_event_attribute_catalog","confidence":"high_lea_address_into_range"},
+    {"siteRva":"0x2D9C0A4","siteFileOffset":"0x2D9B6A4","section":".impdata","mnemonic":"lea_rip_rel","bytes":"48 8D 05 47 7F 44 07","targetRva":"0xA1E3FF2","targetFileOffset":"0xA1E35F2","regionTag":"core_event_attribute_catalog","confidence":"high_lea_address_into_range"}
+  ],
+  "representativeEntryReferences":[
+    {
+      "name":"PlayerPosition_composition",
+      "fileOffset":"0xA1D77B5",
+      "rva":"0xA1D81B5",
+      "va":"0x14A1D81B5",
+      "section":".edata",
+      "ripRelativeHitsNear":0,
+      "absoluteVaImm64Hits":0,
+      "samples":[
+
+      ]
+    },
+    {
+      "name":"player_position_event",
+      "fileOffset":"0xA1DE0FE",
+      "rva":"0xA1DEAFE",
+      "va":"0x14A1DEAFE",
+      "section":".edata",
+      "ripRelativeHitsNear":3,
+      "absoluteVaImm64Hits":0,
+      "samples":[
+        {"siteRva":"0x57AF8D9","siteFileOffset":"0x57AEED9","section":".impdata","mnemonic":"lea_rip_rel","bytes":"48 8D 15 1E F2 A2 04","targetRva":"0xA1DEAFE","targetFileOffset":"0xA1DE0FE","regionTag":"whole_edata","confidence":"high_lea_address_into_range"},
+        {"siteRva":"0x57B032B","siteFileOffset":"0x57AF92B","section":".impdata","mnemonic":"lea_rip_rel","bytes":"4C 8D 0D CC E7 A2 04","targetRva":"0xA1DEAFE","targetFileOffset":"0xA1DE0FE","regionTag":"whole_edata","confidence":"high_lea_address_into_range"},
+        {"siteRva":"0x1209EC3A","siteFileOffset":"0x10B2583A","section":".code","mnemonic":"lea_rip_rel","bytes":"48 8D 0D 9E FF 13 F8","targetRva":"0xA1DEBDF","targetFileOffset":"0xA1DE1DF","regionTag":"whole_edata","confidence":"high_lea_address_into_range"}
+      ]
+    },
+    {
+      "name":"PlayerPosX_dict",
+      "fileOffset":"0xA1D6605",
+      "rva":"0xA1D7005",
+      "va":"0x14A1D7005",
+      "section":".edata",
+      "ripRelativeHitsNear":3,
+      "absoluteVaImm64Hits":0,
+      "samples":[
+        {"siteRva":"0x57AF6C1","siteFileOffset":"0x57AECC1","section":".impdata","mnemonic":"lea_rip_rel","bytes":"48 8D 15 25 7A A2 04","targetRva":"0xA1D70ED","targetFileOffset":"0xA1D66ED","regionTag":"whole_edata","confidence":"high_lea_address_into_range"},
+        {"siteRva":"0x57B025F","siteFileOffset":"0x57AF85F","section":".impdata","mnemonic":"lea_rip_rel","bytes":"4C 8D 0D 87 6E A2 04","targetRva":"0xA1D70ED","targetFileOffset":"0xA1D66ED","regionTag":"whole_edata","confidence":"high_lea_address_into_range"},
+        {"siteRva":"0x1B04D98D","siteFileOffset":"0x19AD458D","section":".code","mnemonic":"lea_rip_rel","bytes":"4C 8D 25 46 97 18 EF","targetRva":"0xA1D70DA","targetFileOffset":"0xA1D66DA","regionTag":"whole_edata","confidence":"high_lea_address_into_range"}
+      ]
+    },
+    {
+      "name":"first_STANDARD",
+      "fileOffset":"0xA1D6DD6",
+      "rva":"0xA1D77D6",
+      "va":"0x14A1D77D6",
+      "section":".edata",
+      "ripRelativeHitsNear":0,
+      "absoluteVaImm64Hits":0,
+      "samples":[
+
+      ]
+    },
+    {
+      "name":"first_CUSTOM_near_cluster",
+      "fileOffset":"0xA1D672A",
+      "rva":"0xA1D712A",
+      "va":"0x14A1D712A",
+      "section":".edata",
+      "ripRelativeHitsNear":2,
+      "absoluteVaImm64Hits":0,
+      "samples":[
+        {"siteRva":"0x57AF6C1","siteFileOffset":"0x57AECC1","section":".impdata","mnemonic":"lea_rip_rel","bytes":"48 8D 15 25 7A A2 04","targetRva":"0xA1D70ED","targetFileOffset":"0xA1D66ED","regionTag":"whole_edata","confidence":"high_lea_address_into_range"},
+        {"siteRva":"0x57B025F","siteFileOffset":"0x57AF85F","section":".impdata","mnemonic":"lea_rip_rel","bytes":"4C 8D 0D 87 6E A2 04","targetRva":"0xA1D70ED","targetFileOffset":"0xA1D66ED","regionTag":"whole_edata","confidence":"high_lea_address_into_range"}
+      ]
+    },
+    {
+      "name":"player_position_cstr",
+      "fileOffset":"0xA13E3DE",
+      "rva":"0xA13EDDE",
+      "va":"0x14A13EDDE",
+      "section":".edata",
+      "ripRelativeHitsNear":29,
+      "absoluteVaImm64Hits":0,
+      "samples":[
+        {"siteRva":"0x2E4B8C0","siteFileOffset":"0x2E4AEC0","section":".impdata","mnemonic":"lea_rip_rel","bytes":"48 8D 15 17 35 2F 07","targetRva":"0xA13EDDE","targetFileOffset":"0xA13E3DE","regionTag":"whole_edata","confidence":"high_lea_address_into_range"},
+        {"siteRva":"0x378706E","siteFileOffset":"0x378666E","section":".impdata","mnemonic":"lea_rip_rel","bytes":"48 8D 3D 4C 7D 9B 06","targetRva":"0xA13EDC1","targetFileOffset":"0xA13E3C1","regionTag":"whole_edata","confidence":"high_lea_address_into_range"},
+        {"siteRva":"0x57ABAB1","siteFileOffset":"0x57AB0B1","section":".impdata","mnemonic":"lea_rip_rel","bytes":"48 8D 15 26 33 99 04","targetRva":"0xA13EDDE","targetFileOffset":"0xA13E3DE","regionTag":"whole_edata","confidence":"high_lea_address_into_range"},
+        {"siteRva":"0x59C5735","siteFileOffset":"0x59C4D35","section":".impdata","mnemonic":"lea_rip_rel","bytes":"48 8D 35 65 97 77 04","targetRva":"0xA13EEA1","targetFileOffset":"0xA13E4A1","regionTag":"whole_edata","confidence":"high_lea_address_into_range"},
+        {"siteRva":"0x65190DA","siteFileOffset":"0x65186DA","section":".impdata","mnemonic":"lea_rip_rel","bytes":"4C 8D 3D A4 5D C2 03","targetRva":"0xA13EE85","targetFileOffset":"0xA13E485","regionTag":"whole_edata","confidence":"high_lea_address_into_range"},
+        {"siteRva":"0x65193AA","siteFileOffset":"0x65189AA","section":".impdata","mnemonic":"lea_rip_rel","bytes":"4C 8D 3D B7 5A C2 03","targetRva":"0xA13EE68","targetFileOffset":"0xA13E468","regionTag":"whole_edata","confidence":"high_lea_address_into_range"},
+        {"siteRva":"0x651A813","siteFileOffset":"0x6519E13","section":".impdata","mnemonic":"lea_rip_rel","bytes":"48 8D 05 B5 45 C2 03","targetRva":"0xA13EDCF","targetFileOffset":"0xA13E3CF","regionTag":"whole_edata","confidence":"high_lea_address_into_range"},
+        {"siteRva":"0x6940ED4","siteFileOffset":"0x69404D4","section":".impdata","mnemonic":"lea_rip_rel","bytes":"48 8D 0D 13 DF 7F 03","targetRva":"0xA13EDEE","targetFileOffset":"0xA13E3EE","regionTag":"whole_edata","confidence":"high_lea_address_into_range"},
+        {"siteRva":"0x6944FD4","siteFileOffset":"0x69445D4","section":".impdata","mnemonic":"lea_rip_rel","bytes":"48 8D 0D 30 9E 7F 03","targetRva":"0xA13EE0B","targetFileOffset":"0xA13E40B","regionTag":"whole_edata","confidence":"high_lea_address_into_range"},
+        {"siteRva":"0x69A6B11","siteFileOffset":"0x69A6111","section":".impdata","mnemonic":"lea_rip_rel","bytes":"48 8D 1D 02 83 79 03","targetRva":"0xA13EE1A","targetFileOffset":"0xA13E41A","regionTag":"whole_edata","confidence":"high_lea_address_into_range"}
+      ]
+    },
+    {
+      "name":"LiveTelemetry",
+      "fileOffset":"0xA0FEFAF",
+      "rva":"0xA0FF9AF",
+      "va":"0x14A0FF9AF",
+      "section":".edata",
+      "ripRelativeHitsNear":14,
+      "absoluteVaImm64Hits":0,
+      "samples":[
+        {"siteRva":"0x181E529","siteFileOffset":"0x181DB29","section":".impdata","mnemonic":"lea_rip_rel","bytes":"4C 8D 0D 44 14 8E 08","targetRva":"0xA0FF974","targetFileOffset":"0xA0FEF74","regionTag":"whole_edata","confidence":"high_lea_address_into_range"},
+        {"siteRva":"0x5B147EC","siteFileOffset":"0x5B13DEC","section":".impdata","mnemonic":"lea_rip_rel","bytes":"4C 8D 05 27 B2 5E 04","targetRva":"0xA0FFA1A","targetFileOffset":"0xA0FF01A","regionTag":"whole_edata","confidence":"high_lea_address_into_range"},
+        {"siteRva":"0x5B1EFBB","siteFileOffset":"0x5B1E5BB","section":".impdata","mnemonic":"lea_rip_rel","bytes":"4C 8D 05 AD 0A 5E 04","targetRva":"0xA0FFA6F","targetFileOffset":"0xA0FF06F","regionTag":"whole_edata","confidence":"high_lea_address_into_range"},
+        {"siteRva":"0x5B1F7C1","siteFileOffset":"0x5B1EDC1","section":".impdata","mnemonic":"lea_rip_rel","bytes":"4C 8D 05 92 02 5E 04","targetRva":"0xA0FFA5A","targetFileOffset":"0xA0FF05A","regionTag":"whole_edata","confidence":"high_lea_address_into_range"},
+        {"siteRva":"0x5B290D7","siteFileOffset":"0x5B286D7","section":".impdata","mnemonic":"lea_rip_rel","bytes":"4C 8D 05 49 69 5D 04","targetRva":"0xA0FFA27","targetFileOffset":"0xA0FF027","regionTag":"whole_edata","confidence":"high_lea_address_into_range"},
+        {"siteRva":"0x5B29CF2","siteFileOffset":"0x5B292F2","section":".impdata","mnemonic":"lea_rip_rel","bytes":"4C 8D 05 F7 5C 5D 04","targetRva":"0xA0FF9F0","targetFileOffset":"0xA0FEFF0","regionTag":"whole_edata","confidence":"high_lea_address_into_range"},
+        {"siteRva":"0x5B2AED9","siteFileOffset":"0x5B2A4D9","section":".impdata","mnemonic":"lea_rip_rel","bytes":"4C 8D 05 1D 4B 5D 04","targetRva":"0xA0FF9FD","targetFileOffset":"0xA0FEFFD","regionTag":"whole_edata","confidence":"high_lea_address_into_range"},
+        {"siteRva":"0x5B303CB","siteFileOffset":"0x5B2F9CB","section":".impdata","mnemonic":"lea_rip_rel","bytes":"4C 8D 05 72 F6 5C 04","targetRva":"0xA0FFA44","targetFileOffset":"0xA0FF044","regionTag":"whole_edata","confidence":"high_lea_address_into_range"},
+        {"siteRva":"0x5B33AC9","siteFileOffset":"0x5B330C9","section":".impdata","mnemonic":"lea_rip_rel","bytes":"4C 8D 05 3A BF 5C 04","targetRva":"0xA0FFA0A","targetFileOffset":"0xA0FF00A","regionTag":"whole_edata","confidence":"high_lea_address_into_range"},
+        {"siteRva":"0x5C4207A","siteFileOffset":"0x5C4167A","section":".impdata","mnemonic":"lea_rip_rel","bytes":"4C 8D 3D 2D DA 4B 04","targetRva":"0xA0FFAAE","targetFileOffset":"0xA0FF0AE","regionTag":"whole_edata","confidence":"high_lea_address_into_range"}
+      ]
+    },
+    {
+      "name":"us-sdkClientTelemetry",
+      "fileOffset":"0xA0FEF5E",
+      "rva":"0xA0FF95E",
+      "va":"0x14A0FF95E",
+      "section":".edata",
+      "ripRelativeHitsNear":19,
+      "absoluteVaImm64Hits":0,
+      "samples":[
+        {"siteRva":"0x181E529","siteFileOffset":"0x181DB29","section":".impdata","mnemonic":"lea_rip_rel","bytes":"4C 8D 0D 44 14 8E 08","targetRva":"0xA0FF974","targetFileOffset":"0xA0FEF74","regionTag":"whole_edata","confidence":"high_lea_address_into_range"},
+        {"siteRva":"0x29F5896","siteFileOffset":"0x29F4E96","section":".impdata","mnemonic":"lea_rip_rel","bytes":"48 8D 15 81 A0 70 07","targetRva":"0xA0FF91E","targetFileOffset":"0xA0FEF1E","regionTag":"whole_edata","confidence":"high_lea_address_into_range"},
+        {"siteRva":"0x29FFF65","siteFileOffset":"0x29FF565","section":".impdata","mnemonic":"lea_rip_rel","bytes":"48 8D 15 B2 F9 6F 07","targetRva":"0xA0FF91E","targetFileOffset":"0xA0FEF1E","regionTag":"whole_edata","confidence":"high_lea_address_into_range"},
+        {"siteRva":"0x29FFF87","siteFileOffset":"0x29FF587","section":".impdata","mnemonic":"lea_rip_rel","bytes":"48 8D 15 90 F9 6F 07","targetRva":"0xA0FF91E","targetFileOffset":"0xA0FEF1E","regionTag":"whole_edata","confidence":"high_lea_address_into_range"},
+        {"siteRva":"0x29FFFA9","siteFileOffset":"0x29FF5A9","section":".impdata","mnemonic":"lea_rip_rel","bytes":"48 8D 15 6E F9 6F 07","targetRva":"0xA0FF91E","targetFileOffset":"0xA0FEF1E","regionTag":"whole_edata","confidence":"high_lea_address_into_range"},
+        {"siteRva":"0x2A00123","siteFileOffset":"0x29FF723","section":".impdata","mnemonic":"lea_rip_rel","bytes":"48 8D 15 F4 F7 6F 07","targetRva":"0xA0FF91E","targetFileOffset":"0xA0FEF1E","regionTag":"whole_edata","confidence":"high_lea_address_into_range"},
+        {"siteRva":"0x2A0019C","siteFileOffset":"0x29FF79C","section":".impdata","mnemonic":"lea_rip_rel","bytes":"48 8D 15 7B F7 6F 07","targetRva":"0xA0FF91E","targetFileOffset":"0xA0FEF1E","regionTag":"whole_edata","confidence":"high_lea_address_into_range"},
+        {"siteRva":"0x2A00215","siteFileOffset":"0x29FF815","section":".impdata","mnemonic":"lea_rip_rel","bytes":"48 8D 15 02 F7 6F 07","targetRva":"0xA0FF91E","targetFileOffset":"0xA0FEF1E","regionTag":"whole_edata","confidence":"high_lea_address_into_range"},
+        {"siteRva":"0x5650ACC","siteFileOffset":"0x56500CC","section":".impdata","mnemonic":"lea_rip_rel","bytes":"48 8D 15 81 EE AA 04","targetRva":"0xA0FF954","targetFileOffset":"0xA0FEF54","regionTag":"whole_edata","confidence":"high_lea_address_into_range"},
+        {"siteRva":"0x5B147EC","siteFileOffset":"0x5B13DEC","section":".impdata","mnemonic":"lea_rip_rel","bytes":"4C 8D 05 27 B2 5E 04","targetRva":"0xA0FFA1A","targetFileOffset":"0xA0FF01A","regionTag":"whole_edata","confidence":"high_lea_address_into_range"}
+      ]
+    },
+    {
+      "name":"JobPrimaryStoreSyncAndSendEvent",
+      "fileOffset":"0xA0FF406",
+      "rva":"0xA0FFE06",
+      "va":"0x14A0FFE06",
+      "section":".edata",
+      "ripRelativeHitsNear":17,
+      "absoluteVaImm64Hits":0,
+      "samples":[
+        {"siteRva":"0x2E55687","siteFileOffset":"0x2E54C87","section":".impdata","mnemonic":"lea_rip_rel","bytes":"48 8D 05 B2 A7 2A 07","targetRva":"0xA0FFE40","targetFileOffset":"0xA0FF440","regionTag":"whole_edata","confidence":"high_lea_address_into_range"},
+        {"siteRva":"0x54422B1","siteFileOffset":"0x54418B1","section":".impdata","mnemonic":"lea_rip_rel","bytes":"4C 8D 05 18 DB CB 04","targetRva":"0xA0FFDD0","targetFileOffset":"0xA0FF3D0","regionTag":"whole_edata","confidence":"high_lea_address_into_range"},
+        {"siteRva":"0x5444044","siteFileOffset":"0x5443644","section":".impdata","mnemonic":"lea_rip_rel","bytes":"4C 8D 05 85 BD CB 04","targetRva":"0xA0FFDD0","targetFileOffset":"0xA0FF3D0","regionTag":"whole_edata","confidence":"high_lea_address_into_range"},
+        {"siteRva":"0x56A5A32","siteFileOffset":"0x56A5032","section":".impdata","mnemonic":"lea_rip_rel","bytes":"4C 8D 05 B4 A3 A5 04","targetRva":"0xA0FFDED","targetFileOffset":"0xA0FF3ED","regionTag":"whole_edata","confidence":"high_lea_address_into_range"},
+        {"siteRva":"0x577185A","siteFileOffset":"0x5770E5A","section":".impdata","mnemonic":"lea_rip_rel","bytes":"4C 8D 05 1A E6 98 04","targetRva":"0xA0FFE7B","targetFileOffset":"0xA0FF47B","regionTag":"whole_edata","confidence":"high_lea_address_into_range"},
+        {"siteRva":"0x59AD592","siteFileOffset":"0x59ACB92","section":".impdata","mnemonic":"lea_rip_rel","bytes":"48 8D 05 6D 28 75 04","targetRva":"0xA0FFE06","targetFileOffset":"0xA0FF406","regionTag":"whole_edata","confidence":"high_lea_address_into_range"},
+        {"siteRva":"0x717EF13","siteFileOffset":"0x717E513","section":".impdata","mnemonic":"lea_rip_rel","bytes":"48 8D 0D 91 0F F8 02","targetRva":"0xA0FFEAB","targetFileOffset":"0xA0FF4AB","regionTag":"whole_edata","confidence":"high_lea_address_into_range"},
+        {"siteRva":"0x7348762","siteFileOffset":"0x7347D62","section":".impdata","mnemonic":"lea_rip_rel","bytes":"48 8D 15 8E 77 DB 02","targetRva":"0xA0FFEF7","targetFileOffset":"0xA0FF4F7","regionTag":"whole_edata","confidence":"high_lea_address_into_range"},
+        {"siteRva":"0x746387E","siteFileOffset":"0x7462E7E","section":".impdata","mnemonic":"lea_rip_rel","bytes":"4C 8D 25 10 C6 C9 02","targetRva":"0xA0FFE95","targetFileOffset":"0xA0FF495","regionTag":"whole_edata","confidence":"high_lea_address_into_range"},
+        {"siteRva":"0x7463A86","siteFileOffset":"0x7463086","section":".impdata","mnemonic":"lea_rip_rel","bytes":"4C 8D 25 08 C4 C9 02","targetRva":"0xA0FFE95","targetFileOffset":"0xA0FF495","regionTag":"whole_edata","confidence":"high_lea_address_into_range"}
+      ]
+    }
+  ],
+  "methodologyNotes":[
+    "Scanned executable sections for REX.W LEA/MOV r64,[rip+disp32] whose effective address lands in catalog RVA ranges",
+    "Absolute VA immediates to known entry sites also counted",
+    "Coincidental disp32 landings possible; confidence elevated when target bytes look JSON-like"
+  ]
+}

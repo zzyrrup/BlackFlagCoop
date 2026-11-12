@@ -1,0 +1,245 @@
+{
+    "schemaVersion":  1,
+    "generatedUtc":  "2026-11-12T08:26:24.7088734Z",
+    "executable":  "C:\\Games\\AC Black Flag Resynced\\ACBlackFlag.exe",
+    "executableSha256":  "19920F34BB2FAC814023EE3C27F0CECA1872E80A2AAFB37C092C419FFF77CC0D",
+    "compositionCount":  27,
+    "uniquePlayerDotPaths":  [
+                                 "player.achievement",
+                                 "player.chatService",
+                                 "player.contentDownload",
+                                 "player.createSession",
+                                 "player.news.action",
+                                 "player.news.impression",
+                                 "player.position",
+                                 "player.primaryStore.pc",
+                                 "player.primaryStore.ps5",
+                                 "player.primaryStore.xboxSeries",
+                                 "player.progression.inventory",
+                                 "player.progression.upgrade",
+                                 "player.start",
+                                 "player.stats.playtime"
+                             ],
+    "compositionObjects":  [
+                               {
+                                   "name":  "ProgressionUpgradeSignal",
+                                   "compositionsJson":  "[{\"name\":\"player.progression.upgrade\"}]",
+                                   "fileOffset":  "0xA0FBC88",
+                                   "rva":  "0xA0FC688",
+                                   "section":  ".edata",
+                                   "fullMatch":  "{\"name\":\"ProgressionUpgradeSignal\",\"compositions\":[{\"name\":\"player.progression.upgrade\"}]}"
+                               },
+                               {
+                                   "name":  "PCStoreSynchronized",
+                                   "compositionsJson":  "[{\"name\":\"player.primaryStore.pc\"}]",
+                                   "fileOffset":  "0xA0FBCE4",
+                                   "rva":  "0xA0FC6E4",
+                                   "section":  ".edata",
+                                   "fullMatch":  "{\"name\":\"PCStoreSynchronized\",\"compositions\":[{\"name\":\"player.primaryStore.pc\"}]}"
+                               },
+                               {
+                                   "name":  "NewsItemImpression",
+                                   "compositionsJson":  "[{\"name\":\"player.news.impression\"}]",
+                                   "fileOffset":  "0xA0FBDE4",
+                                   "rva":  "0xA0FC7E4",
+                                   "section":  ".edata",
+                                   "fullMatch":  "{\"name\":\"NewsItemImpression\",\"compositions\":[{\"name\":\"player.news.impression\"}]}"
+                               },
+                               {
+                                   "name":  "NewsItemInteraction",
+                                   "compositionsJson":  "[{\"name\":\"player.news.action\"}]",
+                                   "fileOffset":  "0xA0FBE36",
+                                   "rva":  "0xA0FC836",
+                                   "section":  ".edata",
+                                   "fullMatch":  "{\"name\":\"NewsItemInteraction\",\"compositions\":[{\"name\":\"player.news.action\"}]}"
+                               },
+                               {
+                                   "name":  "XSeriesStoreSynchronized",
+                                   "compositionsJson":  "[{\"name\":\"player.primaryStore.xboxSeries\"}]",
+                                   "fileOffset":  "0xA0FBE85",
+                                   "rva":  "0xA0FC885",
+                                   "section":  ".edata",
+                                   "fullMatch":  "{\"name\":\"XSeriesStoreSynchronized\",\"compositions\":[{\"name\":\"player.primaryStore.xboxSeries\"}]}"
+                               },
+                               {
+                                   "name":  "PS5StoreSynchronized",
+                                   "compositionsJson":  "[{\"name\":\"player.primaryStore.ps5\"}]",
+                                   "fileOffset":  "0xA0FBEE5",
+                                   "rva":  "0xA0FC8E5",
+                                   "section":  ".edata",
+                                   "fullMatch":  "{\"name\":\"PS5StoreSynchronized\",\"compositions\":[{\"name\":\"player.primaryStore.ps5\"}]}"
+                               },
+                               {
+                                   "name":  "ProgressionPlayerInventorySignal",
+                                   "compositionsJson":  "[{\"name\":\"player.progression.inventory\"}]",
+                                   "fileOffset":  "0xA1D70CA",
+                                   "rva":  "0xA1D7ACA",
+                                   "section":  ".edata",
+                                   "fullMatch":  "{\"name\":\"ProgressionPlayerInventorySignal\",\"compositions\":[{\"name\":\"player.progression.inventory\"}]}"
+                               },
+                               {
+                                   "name":  "SaveGameStartSignal",
+                                   "compositionsJson":  "[{\"name\":\"context.start.SaveGame\"}]",
+                                   "fileOffset":  "0xA1D73EA",
+                                   "rva":  "0xA1D7DEA",
+                                   "section":  ".edata",
+                                   "fullMatch":  "{\"name\":\"SaveGameStartSignal\",\"compositions\":[{\"name\":\"context.start.SaveGame\"}]}"
+                               },
+                               {
+                                   "name":  "SaveGameStopSignal",
+                                   "compositionsJson":  "[{\"name\":\"context.stop.SaveGame\"}]",
+                                   "fileOffset":  "0xA1D743D",
+                                   "rva":  "0xA1D7E3D",
+                                   "section":  ".edata",
+                                   "fullMatch":  "{\"name\":\"SaveGameStopSignal\",\"compositions\":[{\"name\":\"context.stop.SaveGame\"}]}"
+                               },
+                               {
+                                   "name":  "InventoryGearSignal",
+                                   "compositionsJson":  "[{\"name\":\"custom.player.inventory.gear\"}]",
+                                   "fileOffset":  "0xA1D748E",
+                                   "rva":  "0xA1D7E8E",
+                                   "section":  ".edata",
+                                   "fullMatch":  "{\"name\":\"InventoryGearSignal\",\"compositions\":[{\"name\":\"custom.player.inventory.gear\"}]}"
+                               },
+                               {
+                                   "name":  "ResourceSignal",
+                                   "compositionsJson":  "[{\"name\":\"custom.player.inventory.resources\"}]",
+                                   "fileOffset":  "0xA1D74E7",
+                                   "rva":  "0xA1D7EE7",
+                                   "section":  ".edata",
+                                   "fullMatch":  "{\"name\":\"ResourceSignal\",\"compositions\":[{\"name\":\"custom.player.inventory.resources\"}]}"
+                               },
+                               {
+                                   "name":  "InventoryConsumableSignal",
+                                   "compositionsJson":  "[{\"name\":\"custom.player.inventory.consumable\"}]",
+                                   "fileOffset":  "0xA1D7540",
+                                   "rva":  "0xA1D7F40",
+                                   "section":  ".edata",
+                                   "fullMatch":  "{\"name\":\"InventoryConsumableSignal\",\"compositions\":[{\"name\":\"custom.player.inventory.consumable\"}]}"
+                               },
+                               {
+                                   "name":  "InventoryCollectibleSignal",
+                                   "compositionsJson":  "[{\"name\":\"custom.player.inventory.collectible\"}]",
+                                   "fileOffset":  "0xA1D75A5",
+                                   "rva":  "0xA1D7FA5",
+                                   "section":  ".edata",
+                                   "fullMatch":  "{\"name\":\"InventoryCollectibleSignal\",\"compositions\":[{\"name\":\"custom.player.inventory.collectible\"}]}"
+                               },
+                               {
+                                   "name":  "ShipWreckPlayerDefenseSignal",
+                                   "compositionsJson":  "[{\"name\":\"custom.ShipWreckPlayerDefense\"}]",
+                                   "fileOffset":  "0xA1D7715",
+                                   "rva":  "0xA1D8115",
+                                   "section":  ".edata",
+                                   "fullMatch":  "{\"name\":\"ShipWreckPlayerDefenseSignal\",\"compositions\":[{\"name\":\"custom.ShipWreckPlayerDefense\"}]}"
+                               },
+                               {
+                                   "name":  "PlayerPosition",
+                                   "compositionsJson":  "[{\"name\":\"player.position\"}]",
+                                   "fileOffset":  "0xA1D77B5",
+                                   "rva":  "0xA1D81B5",
+                                   "section":  ".edata",
+                                   "fullMatch":  "{\"name\":\"PlayerPosition\",\"compositions\":[{\"name\":\"player.position\"}]}"
+                               },
+                               {
+                                   "name":  "PlayerToolModeUseSignal",
+                                   "compositionsJson":  "[{\"name\":\"custom.playerToolModeUse\"}]",
+                                   "fileOffset":  "0xA1D8CFC",
+                                   "rva":  "0xA1D96FC",
+                                   "section":  ".edata",
+                                   "fullMatch":  "{\"name\":\"PlayerToolModeUseSignal\",\"compositions\":[{\"name\":\"custom.playerToolModeUse\"}]}"
+                               },
+                               {
+                                   "name":  "PlacePinSignal",
+                                   "compositionsJson":  "[{\"name\":\"custom.player.action.placePin\"}]",
+                                   "fileOffset":  "0xA1D8EFA",
+                                   "rva":  "0xA1D98FA",
+                                   "section":  ".edata",
+                                   "fullMatch":  "{\"name\":\"PlacePinSignal\",\"compositions\":[{\"name\":\"custom.player.action.placePin\"}]}"
+                               },
+                               {
+                                   "name":  "PlayerNavStartSignal",
+                                   "compositionsJson":  "[{\"name\":\"context.start.PlayerNav\"}]",
+                                   "fileOffset":  "0xA1D8FAC",
+                                   "rva":  "0xA1D99AC",
+                                   "section":  ".edata",
+                                   "fullMatch":  "{\"name\":\"PlayerNavStartSignal\",\"compositions\":[{\"name\":\"context.start.PlayerNav\"}]}"
+                               },
+                               {
+                                   "name":  "PlayerNavStopSignal",
+                                   "compositionsJson":  "[{\"name\":\"context.stop.PlayerNav\"}]",
+                                   "fileOffset":  "0xA1D9001",
+                                   "rva":  "0xA1D9A01",
+                                   "section":  ".edata",
+                                   "fullMatch":  "{\"name\":\"PlayerNavStopSignal\",\"compositions\":[{\"name\":\"context.stop.PlayerNav\"}]}"
+                               },
+                               {
+                                   "name":  "PlayerKillSignal",
+                                   "compositionsJson":  "[{\"name\":\"custom.PlayerKill\"}]",
+                                   "fileOffset":  "0xA1DB5D9",
+                                   "rva":  "0xA1DBFD9",
+                                   "section":  ".edata",
+                                   "fullMatch":  "{\"name\":\"PlayerKillSignal\",\"compositions\":[{\"name\":\"custom.PlayerKill\"}]}"
+                               },
+                               {
+                                   "name":  "PlayerDespawnSignal",
+                                   "compositionsJson":  "[{\"name\":\"custom.PlayerDespawn\"}]",
+                                   "fileOffset":  "0xA1DB624",
+                                   "rva":  "0xA1DC024",
+                                   "section":  ".edata",
+                                   "fullMatch":  "{\"name\":\"PlayerDespawnSignal\",\"compositions\":[{\"name\":\"custom.PlayerDespawn\"}]}"
+                               },
+                               {
+                                   "name":  "PlayerAttackSignal",
+                                   "compositionsJson":  "[{\"name\":\"custom.PlayerAttack\"}]",
+                                   "fileOffset":  "0xA1DB770",
+                                   "rva":  "0xA1DC170",
+                                   "section":  ".edata",
+                                   "fullMatch":  "{\"name\":\"PlayerAttackSignal\",\"compositions\":[{\"name\":\"custom.PlayerAttack\"}]}"
+                               },
+                               {
+                                   "name":  "PlayerDefenseSignal",
+                                   "compositionsJson":  "[{\"name\":\"custom.PlayerDefense\"}]",
+                                   "fileOffset":  "0xA1DB7BF",
+                                   "rva":  "0xA1DC1BF",
+                                   "section":  ".edata",
+                                   "fullMatch":  "{\"name\":\"PlayerDefenseSignal\",\"compositions\":[{\"name\":\"custom.PlayerDefense\"}]}"
+                               },
+                               {
+                                   "name":  "PlayerCardStartSignal",
+                                   "compositionsJson":  "[{\"name\":\"context.start.OBDPlayerCardWeapon\"},{\"name\":\"context.start.OBDPlayerCardEquipment\"}]",
+                                   "fileOffset":  "0xA1DB810",
+                                   "rva":  "0xA1DC210",
+                                   "section":  ".edata",
+                                   "fullMatch":  "{\"name\":\"PlayerCardStartSignal\",\"compositions\":[{\"name\":\"context.start.OBDPlayerCardWeapon\"},{\"name\":\"context.start.OBDPlayerCardEquipment\"}]}"
+                               },
+                               {
+                                   "name":  "PlayerCardStopSignal",
+                                   "compositionsJson":  "[{\"name\":\"context.stop.OBDPlayerCardWeapon\"},{\"name\":\"context.stop.OBDPlayerCardEquipment\"}]",
+                                   "fileOffset":  "0xA1DB8A0",
+                                   "rva":  "0xA1DC2A0",
+                                   "section":  ".edata",
+                                   "fullMatch":  "{\"name\":\"PlayerCardStopSignal\",\"compositions\":[{\"name\":\"context.stop.OBDPlayerCardWeapon\"},{\"name\":\"context.stop.OBDPlayerCardEquipment\"}]}"
+                               },
+                               {
+                                   "name":  "PlayerFeedbackSignal",
+                                   "compositionsJson":  "[{\"name\":\"custom.player.OBDFeedback\"}]",
+                                   "fileOffset":  "0xA1DB92D",
+                                   "rva":  "0xA1DC32D",
+                                   "section":  ".edata",
+                                   "fullMatch":  "{\"name\":\"PlayerFeedbackSignal\",\"compositions\":[{\"name\":\"custom.player.OBDFeedback\"}]}"
+                               },
+                               {
+                                   "name":  "PlayerActionSignal",
+                                   "compositionsJson":  "[{\"name\":\"custom.player.action\"}]",
+                                   "fileOffset":  "0xA1DB984",
+                                   "rva":  "0xA1DC384",
+                                   "section":  ".edata",
+                                   "fullMatch":  "{\"name\":\"PlayerActionSignal\",\"compositions\":[{\"name\":\"custom.player.action\"}]}"
+                               }
+                           ],
+    "notes":  [
+                  "Offline heuristic catalog only.",
+                  "Presence of player.position schema does not prove a live coordinate API."
+              ]
+}

@@ -1,0 +1,35 @@
+{
+  "schemaVersion": 1,
+  "generatedUtc": "2026-11-12T15:42:00Z",
+  "milestone": "v0.6.4",
+  "actionVtableRva": "0x9255320",
+  "absoluteQwordPointerSites": [],
+  "leaRipInstallSites": [
+    {"site": "0x18EAE51", "approxFunction": "0x18EADD0", "pattern": "lea rax,[vtable]; mov [rdi],rax — input action descriptor ctor (v0.6.3 helper)"},
+    {"site": "0x390F3D3", "approxFunction": "0x390F360", "pattern": "lea rax,[vtable]; mov [rdi],rax + copy fields"},
+    {"site": "0x3A1049D", "approxFunction": "0x3A10446", "pattern": "lea rax,[vtable]; mov [r14],rax"},
+    {"site": "0x3A1E693", "approxFunction": "0x3A1E693", "pattern": "lea rax,[vtable]; mov [rcx],rax; ret — tiny installer"},
+    {"site": "0x87BDBCB", "approxFunction": "0x87BDB60", "pattern": "lea rax,[vtable]; mov [rdi],rax + copy fields"},
+    {"site": "0x87BE016", "approxFunction": "0x87BDFA0", "pattern": "lea rax,[vtable]; mov [rdi],rax + copy fields"},
+    {"site": "0x87BE126", "approxFunction": "0x87BE0B0", "pattern": "lea rax,[vtable]; mov [rdi],rax + copy fields"}
+  ],
+  "vtableSlotsSample": [
+    {"index": 0, "rva": "0x895D9C0", "note": "real method; calls into 0x3A19720"},
+    {"index": 1, "rva": "0x53741F0", "note": "ret stub"},
+    {"index": 2, "rva": "0x20ACC40", "note": "references string ManagedObject; stores into [rdx+0x38]"},
+    {"index": 3, "rva": "0x9A3F60", "note": "buffer/range style helper"},
+    {"index": 4, "rva": "0x895A9B0", "note": "references ASCII Stick (input-axis naming plausible; not character movement proof)"},
+    {"index": 5, "rva": "0x53741F0", "note": "ret stub"},
+    {"index": 6, "rva": "0xBEFD128", "note": "data-like / special entry"},
+    {"index": 7, "rva": "0x46DC120", "note": "xor eax,eax; ret"}
+  ],
+  "consumers": {
+    "storedInInputRegistry": "plausible — multiple ctors install same vtable onto heap objects",
+    "connectedToActionCallbacks": "plausible — vtable has real methods (slot0/2/3/4)",
+    "dispatchedToGameplaySystems": "unknown — method bodies not traced to gameplay/actor APIs",
+    "associatedWithCharacterMovement": false
+  },
+  "verifiedInputToCharacterConnection": false,
+  "method": "lea_rip_to_vtable_plus_slot_prologue_and_string_scan",
+  "note": "Did not resume broad Pad_/Key_ string searching; only followed vtable 0x9255320 references."
+}

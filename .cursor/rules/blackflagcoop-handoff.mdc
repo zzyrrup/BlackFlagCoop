@@ -1,0 +1,53 @@
+---
+description: BlackFlagCoop ChatGPT/GitHub handoff workflow and safety for Cursor agents
+alwaysApply: true
+---
+
+# BlackFlagCoop — Cursor handoff & safety
+
+## Before starting any milestone
+
+1. Read `README.md` and the latest `docs/CHATGPT_HANDOFF.md`.
+2. Read `reports/CHATGPT_HANDOFF.json` for machine-readable status.
+3. Inspect Git status and the latest commit (`git status`, `git log -5 --oneline`).
+4. Read relevant files under `docs/` and `reports/` for the topic before repeating investigations.
+5. Confirm you are on **PC1** only: `C:\Users\Frees\OneDrive\Documents\BlackFlagCoop`.
+
+## Project constants
+
+- Game target: **Assassin's Creed Black Flag Resynced 1.0.6** (`ACBlackFlag.exe`).
+- Preferred generator: **Visual Studio 18 2026**, **-A x64**.
+- Working in-game ASI: **v0.5.1** — do not deploy or replace without explicit user approval.
+- Repository: `https://github.com/zzyrrup/BlackFlagCoop`.
+
+## Research vs runtime
+
+- Keep **offline executable research** (PE/string/callgraph tools under `tools/offline/`) separate from **live runtime** work.
+- Offline analysis: no game launch, no inject/hooks, no live memory R/W, no exe/asset/save mods.
+- Never claim unverified game functionality. Label **confirmed** vs **hypothesis** explicitly.
+
+## Safety (hard rules)
+
+- Work on **PC1 only**. Do not modify PC2.
+- Do not modify either game installation.
+- Do not deploy or replace the working ASI v0.5.1 unless the user explicitly approves.
+- Do not change the game executable or Ubisoft assets.
+- Preserve existing research and `backups/` (local; not committed).
+- Never commit credentials, tokens, private keys, game binaries, ASI binaries, or proprietary game assets.
+- Never force-push. Never overwrite remote history.
+- Never automatically push unreviewed or untested changes.
+- Never spawn characters or attempt co-op actor injection unless the user explicitly authorizes that milestone.
+
+## Completion requirements
+
+Before declaring a milestone complete:
+
+1. Run relevant tests/builds and record results.
+2. Record exact changed files, test results, hashes (EXE/ASI when touched), and limitations.
+3. Update `docs/CHATGPT_HANDOFF.md` and `reports/CHATGPT_HANDOFF.json`.
+4. Commit only when the user asks; push only when the user asks and safety review passes.
+5. Do not deploy without explicit user approval.
+
+## Handoff to ChatGPT
+
+After a pushed milestone, ChatGPT reviews GitHub diffs + handoff docs and returns next instructions. Cursor executes locally, evidences in docs/reports, then commits/pushes when requested.

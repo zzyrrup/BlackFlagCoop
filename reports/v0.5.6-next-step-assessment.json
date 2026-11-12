@@ -1,0 +1,43 @@
+{
+    "schemaVersion":  1,
+    "generatedUtc":  "2026-11-12T09:02:03.4324359Z",
+    "recommendedOption":  "A",
+    "options":  [
+                    {
+                        "id":  "A",
+                        "title":  "More offline producer and registry analysis",
+                        "recommended":  true,
+                        "why":  "PlayerPos fields lack absolute xrefs and appear schema-blob embedded; Harbour StringId registry exports (Find/DumpTo/GetIdentifierXorValue) are the strongest unfinished offline lead. Static analysis of those exports may reveal hash/id derivation without runtime."
+                    },
+                    {
+                        "id":  "B",
+                        "title":  "Read-only observation via existing supported telemetry interface",
+                        "recommended":  false,
+                        "why":  "No documented local telemetry sink or supported reader API confirmed. Harbour_StringId_Registry_DumpTo is an export, not a proven safe supported pose interface."
+                    },
+                    {
+                        "id":  "C",
+                        "title":  "Controlled runtime experiment without guessed addresses",
+                        "recommended":  false,
+                        "whyPremature":  "Producer and sink unknown; any runtime experiment would lack a defined legitimate observation channel."
+                    },
+                    {
+                        "id":  "D",
+                        "title":  "Different approach",
+                        "recommended":  false,
+                        "why":  "Telemetry remains the best position-shaped lead; switching away now is unsupported. Continue offline binding analysis first."
+                    }
+                ],
+    "missingEvidenceBeforeRuntime":  [
+                                         "Verified StringId/hash derivation for telemetry attribute names",
+                                         "Identified producer that writes PlayerPos floats",
+                                         "Documented legitimate local sink or safe DumpTo observation method",
+                                         "Proof of coordinate space and units",
+                                         "Binding from Character attribute values to Edward entity"
+                                     ],
+    "doNotDoYet":  [
+                       "ASI memory reader with guessed offsets",
+                       "Hooks into unknown telemetry emitters",
+                       "Calling Harbour exports from injected code without a reviewed safety plan"
+                   ]
+}

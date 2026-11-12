@@ -1,0 +1,40 @@
+{
+  "schemaVersion": 1,
+  "generatedUtc": "2026-11-12T15:42:00Z",
+  "milestone": "v0.6.4",
+  "assessments": {
+    "multipleSimultaneousCharacterEntities": {
+      "class": "plausible",
+      "reason": "Handler processes a counted array of deferred elements (up to 0x3FFF); multi-actor phase names remain registered. Element identity still unproven as characters."
+    },
+    "reuseEdwardCharacterDefinition": {
+      "class": "unsupported",
+      "reason": "No Edward archetype/asset/definition edge in 0x1AC380 or traced callees"
+    },
+    "createSecondCharacterEntity": {
+      "class": "unknown",
+      "reason": "Queue processing and per-element calls confirmed; actor/character allocation not confirmed"
+    },
+    "assignSeparateInputControl": {
+      "class": "unsupported",
+      "reason": "Action vtable consumers are descriptor constructors/methods; no dual-context or per-player binding recovered"
+    },
+    "maintainSeparateTransforms": {
+      "class": "plausible",
+      "reason": "Independent UpdateActor* phases exist; transform layout still unrecovered. Float@+8 in deferred elements is not proven as transform data"
+    }
+  },
+  "strongestEvidenceForMultipleCharacterActors": "Infrastructure only: deferred element queue with multi-entry capacity + separately registered actor update/controller phases. No confirmed character instances.",
+  "nextSafestStep": {
+    "primary": "Offline-decode per-element callees 0x725400 and especially 0xE95E80 (large body) for entity/component/archetype edges",
+    "secondary": "Identify 16-byte element layout at [obj+0xAC0] via field uses inside those callees",
+    "forbidden": "No spawn, no live memory, no ASI replace"
+  },
+  "handlerLinkedToControllers": false,
+  "handlerLinkedToUpdateActor": false,
+  "safety": {
+    "spawnAttempted": false,
+    "gameLaunched": false,
+    "asiPreservedAsV051": true
+  }
+}

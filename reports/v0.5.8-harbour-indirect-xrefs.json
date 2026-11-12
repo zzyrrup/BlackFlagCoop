@@ -1,0 +1,10 @@
+{
+  "imageBase":"0x140000000",
+  "targets":[
+    {"name":"Find","rva":"0x692E820","e8":0,"e9":0,"absoluteVaPointerHits":0,"samples":[]},
+    {"name":"DumpTo","rva":"0x692E550","e8":0,"e9":0,"absoluteVaPointerHits":0,"samples":[]},
+    {"name":"LoadFrom","rva":"0x692E3C0","e8":0,"e9":0,"absoluteVaPointerHits":0,"samples":[]},
+    {"name":"ClearUnsafe","rva":"0x69296F0","e8":0,"e9":1,"absoluteVaPointerHits":0,"samples":[{"kind":"e9","callSiteRva":"0x7B63581","section":".impdata"}]}
+  ],
+  "clearUnsafePrologue":{"fileOffset":"0x6928CF0","bytes":"48 83 EC 28 E8 57 FF FF FF 90 48 83 C4 28 E9 4D FD FF FF CC CC CC CC CC CC CC CC CC CC CC CC CC","firstCallDestRva":"0x6929650","firstCallRel32":-169}
+}

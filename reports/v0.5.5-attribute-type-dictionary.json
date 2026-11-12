@@ -1,0 +1,313 @@
+{
+    "schemaVersion":  1,
+    "generatedUtc":  "2026-11-12T08:49:25.6628992Z",
+    "method":  "Parsed typed field dictionary entries in .edata of form {\"name\",\"type\",\"isOptional\"}",
+    "dictionaryWindowFileOffset":  "0xA1D6411",
+    "dictionaryWindowRva":  "0xA1D6E11",
+    "targetAttributes":  [
+                             {
+                                 "name":  "PlayerPosX",
+                                 "primitiveType":  "float",
+                                 "isOptional":  true,
+                                 "fileOffset":  "0xA1D6605",
+                                 "rva":  "0xA1D7005",
+                                 "va":  "0x14A1D7005",
+                                 "section":  ".edata",
+                                 "occurrenceCountAtLeast":  1,
+                                 "confidence":  "high",
+                                 "evidenceClass":  "confirmed_typed_field_dictionary_entry",
+                                 "fullMatch":  "{\"name\":\"PlayerPosX\",\"type\":\"float\",\"isOptional\":true}"
+                             },
+                             {
+                                 "name":  "PlayerPosY",
+                                 "primitiveType":  "float",
+                                 "isOptional":  true,
+                                 "fileOffset":  "0xA1D663D",
+                                 "rva":  "0xA1D703D",
+                                 "va":  "0x14A1D703D",
+                                 "section":  ".edata",
+                                 "occurrenceCountAtLeast":  1,
+                                 "confidence":  "high",
+                                 "evidenceClass":  "confirmed_typed_field_dictionary_entry",
+                                 "fullMatch":  "{\"name\":\"PlayerPosY\",\"type\":\"float\",\"isOptional\":true}"
+                             },
+                             {
+                                 "name":  "PlayerPosZ",
+                                 "primitiveType":  "float",
+                                 "isOptional":  true,
+                                 "fileOffset":  "0xA1D6675",
+                                 "rva":  "0xA1D7075",
+                                 "va":  "0x14A1D7075",
+                                 "section":  ".edata",
+                                 "occurrenceCountAtLeast":  1,
+                                 "confidence":  "high",
+                                 "evidenceClass":  "confirmed_typed_field_dictionary_entry",
+                                 "fullMatch":  "{\"name\":\"PlayerPosZ\",\"type\":\"float\",\"isOptional\":true}"
+                             },
+                             {
+                                 "name":  "TimeOfDay",
+                                 "primitiveType":  "float",
+                                 "isOptional":  true,
+                                 "fileOffset":  "0xA1D5D19",
+                                 "rva":  "0xA1D6719",
+                                 "va":  "0x14A1D6719",
+                                 "section":  ".edata",
+                                 "occurrenceCountAtLeast":  1,
+                                 "confidence":  "high",
+                                 "evidenceClass":  "confirmed_typed_field_dictionary_entry",
+                                 "fullMatch":  "{\"name\":\"TimeOfDay\",\"type\":\"float\",\"isOptional\":true}"
+                             },
+                             {
+                                 "name":  "FightState",
+                                 "primitiveType":  "string",
+                                 "isOptional":  true,
+                                 "fileOffset":  "0xA1CF104",
+                                 "rva":  "0xA1CFB04",
+                                 "va":  "0x14A1CFB04",
+                                 "section":  ".edata",
+                                 "occurrenceCountAtLeast":  1,
+                                 "confidence":  "high",
+                                 "evidenceClass":  "confirmed_typed_field_dictionary_entry",
+                                 "fullMatch":  "{\"name\":\"FightState\",\"type\":\"string\",\"isOptional\":true}"
+                             },
+                             {
+                                 "name":  "Movement",
+                                 "primitiveType":  "string",
+                                 "isOptional":  true,
+                                 "fileOffset":  "0xA1CE5EB",
+                                 "rva":  "0xA1CEFEB",
+                                 "va":  "0x14A1CEFEB",
+                                 "section":  ".edata",
+                                 "occurrenceCountAtLeast":  1,
+                                 "confidence":  "high",
+                                 "evidenceClass":  "confirmed_typed_field_dictionary_entry",
+                                 "fullMatch":  "{\"name\":\"Movement\",\"type\":\"string\",\"isOptional\":true}"
+                             },
+                             {
+                                 "name":  "PositionSource",
+                                 "primitiveType":  "string",
+                                 "isOptional":  true,
+                                 "fileOffset":  "0xA1D566E",
+                                 "rva":  "0xA1D606E",
+                                 "va":  "0x14A1D606E",
+                                 "section":  ".edata",
+                                 "occurrenceCountAtLeast":  1,
+                                 "confidence":  "high",
+                                 "evidenceClass":  "confirmed_typed_field_dictionary_entry",
+                                 "fullMatch":  "{\"name\":\"PositionSource\",\"type\":\"string\",\"isOptional\":true}"
+                             },
+                             {
+                                 "name":  "DistanceTraveled",
+                                 "primitiveType":  "int",
+                                 "isOptional":  true,
+                                 "fileOffset":  "0xA1D4AE3",
+                                 "rva":  "0xA1D54E3",
+                                 "va":  "0x14A1D54E3",
+                                 "section":  ".edata",
+                                 "occurrenceCountAtLeast":  1,
+                                 "confidence":  "high",
+                                 "evidenceClass":  "confirmed_typed_field_dictionary_entry",
+                                 "fullMatch":  "{\"name\":\"DistanceTraveled\",\"type\":\"int\",\"isOptional\":true}"
+                             },
+                             {
+                                 "name":  "Ttp",
+                                 "primitiveType":  "int",
+                                 "isOptional":  true,
+                                 "fileOffset":  "0xA1CFD41",
+                                 "rva":  "0xA1D0741",
+                                 "va":  "0x14A1D0741",
+                                 "section":  ".edata",
+                                 "occurrenceCountAtLeast":  1,
+                                 "confidence":  "high",
+                                 "evidenceClass":  "confirmed_typed_field_dictionary_entry",
+                                 "fullMatch":  "{\"name\":\"Ttp\",\"type\":\"int\",\"isOptional\":true}"
+                             },
+                             {
+                                 "name":  "World",
+                                 "primitiveType":  "string",
+                                 "isOptional":  true,
+                                 "fileOffset":  "0xA1D1E3C",
+                                 "rva":  "0xA1D283C",
+                                 "va":  "0x14A1D283C",
+                                 "section":  ".edata",
+                                 "occurrenceCountAtLeast":  1,
+                                 "confidence":  "high",
+                                 "evidenceClass":  "confirmed_typed_field_dictionary_entry",
+                                 "fullMatch":  "{\"name\":\"World\",\"type\":\"string\",\"isOptional\":true}"
+                             },
+                             {
+                                 "name":  "CurrentPlaythroughId",
+                                 "primitiveType":  "string",
+                                 "isOptional":  true,
+                                 "fileOffset":  "0xA1D5377",
+                                 "rva":  "0xA1D5D77",
+                                 "va":  "0x14A1D5D77",
+                                 "section":  ".edata",
+                                 "occurrenceCountAtLeast":  1,
+                                 "confidence":  "high",
+                                 "evidenceClass":  "confirmed_typed_field_dictionary_entry",
+                                 "fullMatch":  "{\"name\":\"CurrentPlaythroughId\",\"type\":\"string\",\"isOptional\":true}"
+                             },
+                             {
+                                 "name":  "Character",
+                                 "primitiveType":  "string",
+                                 "isOptional":  true,
+                                 "fileOffset":  "0xA1D1903",
+                                 "rva":  "0xA1D2303",
+                                 "va":  "0x14A1D2303",
+                                 "section":  ".edata",
+                                 "occurrenceCountAtLeast":  1,
+                                 "confidence":  "high",
+                                 "evidenceClass":  "confirmed_typed_field_dictionary_entry",
+                                 "fullMatch":  "{\"name\":\"Character\",\"type\":\"string\",\"isOptional\":true}"
+                             },
+                             {
+                                 "name":  "PlayerLevel",
+                                 "primitiveType":  "int",
+                                 "isOptional":  true,
+                                 "fileOffset":  "0xA1D6591",
+                                 "rva":  "0xA1D6F91",
+                                 "va":  "0x14A1D6F91",
+                                 "section":  ".edata",
+                                 "occurrenceCountAtLeast":  1,
+                                 "confidence":  "high",
+                                 "evidenceClass":  "confirmed_typed_field_dictionary_entry",
+                                 "fullMatch":  "{\"name\":\"PlayerLevel\",\"type\":\"int\",\"isOptional\":true}"
+                             },
+                             {
+                                 "name":  "PinPosX",
+                                 "primitiveType":  "float",
+                                 "isOptional":  true,
+                                 "fileOffset":  "0xA1D27B2",
+                                 "rva":  "0xA1D31B2",
+                                 "va":  "0x14A1D31B2",
+                                 "section":  ".edata",
+                                 "occurrenceCountAtLeast":  1,
+                                 "confidence":  "high",
+                                 "evidenceClass":  "confirmed_typed_field_dictionary_entry",
+                                 "fullMatch":  "{\"name\":\"PinPosX\",\"type\":\"float\",\"isOptional\":true}"
+                             },
+                             {
+                                 "name":  "PinPosY",
+                                 "primitiveType":  "float",
+                                 "isOptional":  true,
+                                 "fileOffset":  "0xA1D27E7",
+                                 "rva":  "0xA1D31E7",
+                                 "va":  "0x14A1D31E7",
+                                 "section":  ".edata",
+                                 "occurrenceCountAtLeast":  1,
+                                 "confidence":  "high",
+                                 "evidenceClass":  "confirmed_typed_field_dictionary_entry",
+                                 "fullMatch":  "{\"name\":\"PinPosY\",\"type\":\"float\",\"isOptional\":true}"
+                             },
+                             {
+                                 "name":  "PinPosZ",
+                                 "primitiveType":  "float",
+                                 "isOptional":  true,
+                                 "fileOffset":  "0xA1D60BF",
+                                 "rva":  "0xA1D6ABF",
+                                 "va":  "0x14A1D6ABF",
+                                 "section":  ".edata",
+                                 "occurrenceCountAtLeast":  1,
+                                 "confidence":  "high",
+                                 "evidenceClass":  "confirmed_typed_field_dictionary_entry",
+                                 "fullMatch":  "{\"name\":\"PinPosZ\",\"type\":\"float\",\"isOptional\":true}"
+                             },
+                             {
+                                 "name":  "BodyDropGlobalPositionX",
+                                 "primitiveType":  "float",
+                                 "isOptional":  true,
+                                 "fileOffset":  "0xA1D38DB",
+                                 "rva":  "0xA1D42DB",
+                                 "va":  "0x14A1D42DB",
+                                 "section":  ".edata",
+                                 "occurrenceCountAtLeast":  1,
+                                 "confidence":  "high",
+                                 "evidenceClass":  "confirmed_typed_field_dictionary_entry",
+                                 "fullMatch":  "{\"name\":\"BodyDropGlobalPositionX\",\"type\":\"float\",\"isOptional\":true}"
+                             },
+                             {
+                                 "name":  "WorldEncounterSpawnXCoordinate",
+                                 "primitiveType":  "float",
+                                 "isOptional":  true,
+                                 "fileOffset":  "0xA1D1F7D",
+                                 "rva":  "0xA1D297D",
+                                 "va":  "0x14A1D297D",
+                                 "section":  ".edata",
+                                 "occurrenceCountAtLeast":  1,
+                                 "confidence":  "high",
+                                 "evidenceClass":  "confirmed_typed_field_dictionary_entry",
+                                 "fullMatch":  "{\"name\":\"WorldEncounterSpawnXCoordinate\",\"type\":\"float\",\"isOptional\":true}"
+                             },
+                             {
+                                 "name":  "WorldEncounterSpawnYCoordinate",
+                                 "primitiveType":  "float",
+                                 "isOptional":  true,
+                                 "fileOffset":  "0xA1D1FC9",
+                                 "rva":  "0xA1D29C9",
+                                 "va":  "0x14A1D29C9",
+                                 "section":  ".edata",
+                                 "occurrenceCountAtLeast":  1,
+                                 "confidence":  "high",
+                                 "evidenceClass":  "confirmed_typed_field_dictionary_entry",
+                                 "fullMatch":  "{\"name\":\"WorldEncounterSpawnYCoordinate\",\"type\":\"float\",\"isOptional\":true}"
+                             },
+                             {
+                                 "name":  "WorldEncounterSpawnZCoordinate",
+                                 "primitiveType":  "float",
+                                 "isOptional":  true,
+                                 "fileOffset":  "0xA1D2015",
+                                 "rva":  "0xA1D2A15",
+                                 "va":  "0x14A1D2A15",
+                                 "section":  ".edata",
+                                 "occurrenceCountAtLeast":  1,
+                                 "confidence":  "high",
+                                 "evidenceClass":  "confirmed_typed_field_dictionary_entry",
+                                 "fullMatch":  "{\"name\":\"WorldEncounterSpawnZCoordinate\",\"type\":\"float\",\"isOptional\":true}"
+                             }
+                         ],
+    "relatedPositionLikeAttributes":  [
+                                          {
+                                              "name":  "BodyDropGlobalPositionY",
+                                              "primitiveType":  "float",
+                                              "fileOffset":  "0xA1D3920",
+                                              "rva":  "0xA1D4320"
+                                          },
+                                          {
+                                              "name":  "BodyDropGlobalPositionZ",
+                                              "primitiveType":  "float",
+                                              "fileOffset":  "0xA1D3965",
+                                              "rva":  "0xA1D4365"
+                                          },
+                                          {
+                                              "name":  "WorldPosX",
+                                              "primitiveType":  "float",
+                                              "fileOffset":  "0xA1D2061",
+                                              "rva":  "0xA1D2A61"
+                                          },
+                                          {
+                                              "name":  "WorldPosY",
+                                              "primitiveType":  "float",
+                                              "fileOffset":  "0xA1D2098",
+                                              "rva":  "0xA1D2A98"
+                                          },
+                                          {
+                                              "name":  "WorldPosZ",
+                                              "primitiveType":  "float",
+                                              "fileOffset":  "0xA1D20CF",
+                                              "rva":  "0xA1D2ACF"
+                                          }
+                                      ],
+    "assessments":  {
+                        "playerPosXyzPrimitiveTypesVerified":  true,
+                        "playerPosXyzTypes":  {
+                                                  "Y":  "float",
+                                                  "Z":  "float",
+                                                  "X":  "float"
+                                              },
+                        "unitsVerified":  false,
+                        "coordinateSpaceVerified":  false,
+                        "notes":  "Primitive types confirmed via typed field dictionary. Units and world/local space not declared in these entries."
+                    },
+    "dictionaryContextSample":  "rue}, {\"name\":\"PlayerDefShield\",\"type\":\"string\",\"isOptional\":true}, {\"name\":\"PlayerHealth\",\"type\":\"int\",\"isOptional\":true}, {\"name\":\"PlayerIsAtkWeaponIgnited\",\"type\":\"boolean\",\"isOptional\":true}, {\"name\":\"PlayerIsCritical\",\"type\":\"boolean\",\"isOptional\":true}, {\"name\":\"PlayerIsHeadShot\",\"type\":\"boolean\",\"isOptional\":true}, {\"name\":\"PlayerIsKill\",\"type\":\"boolean\",\"isOptional\":true}, {\"name\":\"PlayerLevel\",\"type\":\"int\",\"isOptional\":true}, {\"name\":\"PlayerNavState\",\"type\":\"string\",\"isOptional\":true}, {\"name\":\"PlayerPosX\",\"type\":\"float\",\"isOptional\":true}, {\"name\":\"PlayerPosY\",\"type\":\"float\",\"isOptional\":true}, {\"name\":\"PlayerPosZ\",\"type\":\"float\",\"isOptional\":true}, {\"name\":\"playerSessionId\",\"type\":\"string\",\"isOptional\":false}, .\"compositions\":[{\"name\":\"custom.player.inventory.consumable\",\"type\":\"CUSTOM\",\"typeAttributes\":[],\"customAttributes\":[{\"name\":\"InventoryConsumableAmount\"},{\"name\":\"InventoryConsumableBalance\"},{\"name\":\"InventoryConsumableId\"},{\"name\":\"InventoryConsumableMove\"},{\"name\":\"InventoryConsumableSource\"},{\"name\":\"CurrentPlaythroughId\"},{\"name\":\"PlayerPosZ\"},{\"name\":\"Ttp\"},{\"name\":\"PlayerPosY\"},{\"name\":\"PlayerPosX\"},{\"name\":\"World\"}]}, {\"name\":\"custom.player.inventory.collectible\",\"type\":\"CUSTOM\",\"typeAttributes\":[],\"customAttributes\":[{\"name\":\"InventoryCollectibleId\"},{\"name\":\"InventoryCollectibleMove\"},{\"name\":\"InventoryCollectibleSource\"},{\"name\":\"PlayerPosY\"},{\"name\":\"PlayerPosZ\"},{\"name\":\"PlayerPosX\"},{\"name\":\"Ttp\"},{\"name\":\"World\"},{\"name\":\"CurrentPlaythroughId\"}]}, {\"name\":\"custom.ShipLoadout\",\"type\":\"CUSTOM\",\"typeAttributes\":[],\"customAttributes\":[{\"name\":\"BroadsideCannonNbLevel\"},{\"name\":\"ShotStrengthLevel\"},{\"name\":\"SpecialShotStrengthLevel\"},{\"name\":\"FrontCannonNbLevel\"},{\"name\":\"FrontShotStrengthLevel\"},{\"name\":\"SwivelGunStrengthLevel\"},{\"name\":\"Barr"
+}

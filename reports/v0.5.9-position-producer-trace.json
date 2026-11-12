@@ -1,0 +1,26 @@
+﻿{
+  "schemaVersion": 1,
+  "generatedUtc": "2026-11-12T15:04:47.5542323Z",
+  "attributeSites": {
+    "PlayerPosX": {"fileOffset":"0xA1D6605","rva":"0xA1D7005","type":"float","absVaXrefs":0},
+    "PlayerPosY": {"fileOffset":"0xA1D663D","rva":"0xA1D703D","type":"float","absVaXrefs":0},
+    "PlayerPosZ": {"fileOffset":"0xA1D6675","rva":"0xA1D7075","type":"float","absVaXrefs":0}
+  },
+  "relatedPositionNamingBeacons": [
+    {"needle":"initialCharacterPosition","hits":1,"firstFileOffset":"0xA13E5D6","firstContext":"ursorPosition.extrapolateSensorPosition.initialCharacterPosition.edgeCornerPosition.goalPosition.localPosition.GlobalToLocalPosition.LocalTo","linkedToPlayerPosProducer":false,"evidenceClass":"naming_beacon_only"},
+    {"needle":"AgentPosition","hits":1,"firstFileOffset":"0xA13E44D","firstContext":"wPosition.startPosition.currentPosition.AgentPosition.exitPosition.TemporalReservoirHitPosition.SpatialReservoirHitPosition.RTGIHitPosition.","linkedToPlayerPosProducer":false,"evidenceClass":"naming_beacon_only"},
+    {"needle":"rawPosition","hits":1,"firstFileOffset":"0xA13E423","firstContext":"g_view position.invalid string position.rawPosition.startPosition.currentPosition.AgentPosition.exitPosition.TemporalReservoirHitPosition.Sp","linkedToPlayerPosProducer":false,"evidenceClass":"naming_beacon_only"},
+    {"needle":"BodyDropGlobalPositionX","hits":2,"firstFileOffset":"0xA1D38E4","firstContext":"ype\":\"int\",\"isOptional\":true}, {\"name\":\"BodyDropGlobalPositionX\",\"type\":\"float\",\"isOptional\":true}, {\"name\":\"BodyDropGlobalPositionY\",\"type\"","linkedToPlayerPosProducer":false,"evidenceClass":"naming_beacon_only"},
+    {"needle":"PinPosX","hits":2,"firstFileOffset":"0xA1D27BB","firstContext":"\":\"string\",\"isOptional\":true}, {\"name\":\"PinPosX\",\"type\":\"float\",\"isOptional\":true}, {\"name\":\"PinPosY\",\"type\":\"float\",\"isOptional\":true}, .{\"","linkedToPlayerPosProducer":false,"evidenceClass":"naming_beacon_only"},
+    {"needle":"WorldEncounterSpawn","hits":6,"firstFileOffset":"0xA1D1F86","firstContext":"\":\"string\",\"isOptional\":true}, {\"name\":\"WorldEncounterSpawnXCoordinate\",\"type\":\"float\",\"isOptional\":true}, {\"name\":\"WorldEncounterSpawnYCoor","linkedToPlayerPosProducer":false,"evidenceClass":"naming_beacon_only"},
+    {"needle":"IKPositionSource","hits":2,"firstFileOffset":"0x9995B60","firstContext":"........IKAxisSourceData................IKPositionSource................IKPositionSourceData............IKRotationSource................IKRo","linkedToPlayerPosProducer":false,"evidenceClass":"naming_beacon_only"},
+    {"needle":"PositionSource","hits":4,"firstFileOffset":"0x9995B62","firstContext":"......IKAxisSourceData................IKPositionSource................IKPositionSourceData............IKRotationSource................IKRota","linkedToPlayerPosProducer":false,"evidenceClass":"naming_beacon_only"}
+  ],
+  "conclusions": {
+    "xyzOriginateFrom": "unknown — schema declares float attributes; no producer routine identified",
+    "gameplayTransformLink": false,
+    "navigationSystemLink": false,
+    "absolutePointerXrefsToDictEntries": false,
+    "safeReadPathExists": false
+  }
+}

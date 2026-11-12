@@ -1,0 +1,1400 @@
+{
+    "schemaVersion":  1,
+    "generatedUtc":  "2026-11-12T08:24:24.7697530Z",
+    "playerPositionSignalDeclaration":  {
+                                            "object":  "{\"name\":\"PlayerPosition\",\"compositions\":[{\"name\":\"player.position\"}]}",
+                                            "rva":  "0xA1D81B5",
+                                            "confidence":  "high",
+                                            "fileOffset":  "0xA1D77B5",
+                                            "evidenceClass":  "confirmed"
+                                        },
+    "playerPositionTypedTelemetrySchema":  {
+                                               "confidence":  "high",
+                                               "interpretation":  "Telemetry/analytics event schema for player.position with explicit X/Y/Z attribute names plus movement/fight metadata. Attribute primitive types (float vs string) not declared in this object.",
+                                               "fileOffset":  "0xA1DE107",
+                                               "rva":  "0xA1DEB07",
+                                               "object":  "{\"name\":\"player.position\",\"type\":\"STANDARD\",\"typeAttributes\":[],\"customAttributes\":[{\"name\":\"PlayerPosX\"},{\"name\":\"PlayerPosY\"},{\"name\":\"PlayerPosZ\"},{\"name\":\"TimeOfDay\"},{\"name\":\"FightState\"},{\"name\":\"Movement\"},{\"name\":\"PositionSource\"},{\"name\":\"DistanceTraveled\"},{\"name\":\"Ttp\"},{\"name\":\"World\"},{\"name\":\"CurrentPlaythroughId\"}]}",
+                                               "evidenceClass":  "confirmed"
+                                           },
+    "playerPositionPackedStringTableHit":  {
+                                               "confidence":  "high",
+                                               "rva":  "0xA13EDDE",
+                                               "note":  "Separate packed string-table occurrence near UIComposition / position name inventory; not the typed schema.",
+                                               "fileOffset":  "0xA13E3DE",
+                                               "evidenceClass":  "confirmed_string_unrelated_format"
+                                           },
+    "eventsCarryingPlayerPosXYZ":  [
+                                       {
+                                           "name":  "custom.player.inventory.consumable",
+                                           "eventType":  "CUSTOM",
+                                           "fileOffset":  "0xA1D66FD",
+                                           "rva":  "0xA1D70FD",
+                                           "va":  "0x14A1D70FD",
+                                           "section":  ".edata",
+                                           "attributes":  [
+                                                              "InventoryConsumableAmount",
+                                                              "InventoryConsumableBalance",
+                                                              "InventoryConsumableId",
+                                                              "InventoryConsumableMove",
+                                                              "InventoryConsumableSource",
+                                                              "CurrentPlaythroughId",
+                                                              "PlayerPosZ",
+                                                              "Ttp",
+                                                              "PlayerPosY",
+                                                              "PlayerPosX",
+                                                              "World"
+                                                          ],
+                                           "hasXYZ":  true,
+                                           "fullMatch":  "{\"name\":\"custom.player.inventory.consumable\",\"type\":\"CUSTOM\",\"typeAttributes\":[],\"customAttributes\":[{\"name\":\"InventoryConsumableAmount\"},{\"name\":\"InventoryConsumableBalance\"},{\"name\":\"InventoryConsumableId\"},{\"name\":\"InventoryConsumableMove\"},{\"name\":\"InventoryConsumableSource\"},{\"name\":\"CurrentPlaythroughId\"},{\"name\":\"PlayerPosZ\"},{\"name\":\"Ttp\"},{\"name\":\"PlayerPosY\"},{\"name\":\"PlayerPosX\"},{\"name\":\"World\"}]}",
+                                           "confidence":  "high",
+                                           "evidenceClass":  "confirmed_telemetry_event_schema"
+                                       },
+                                       {
+                                           "name":  "custom.player.inventory.collectible",
+                                           "eventType":  "CUSTOM",
+                                           "fileOffset":  "0xA1D689B",
+                                           "rva":  "0xA1D729B",
+                                           "va":  "0x14A1D729B",
+                                           "section":  ".edata",
+                                           "attributes":  [
+                                                              "InventoryCollectibleId",
+                                                              "InventoryCollectibleMove",
+                                                              "InventoryCollectibleSource",
+                                                              "PlayerPosY",
+                                                              "PlayerPosZ",
+                                                              "PlayerPosX",
+                                                              "Ttp",
+                                                              "World",
+                                                              "CurrentPlaythroughId"
+                                                          ],
+                                           "hasXYZ":  true,
+                                           "fullMatch":  "{\"name\":\"custom.player.inventory.collectible\",\"type\":\"CUSTOM\",\"typeAttributes\":[],\"customAttributes\":[{\"name\":\"InventoryCollectibleId\"},{\"name\":\"InventoryCollectibleMove\"},{\"name\":\"InventoryCollectibleSource\"},{\"name\":\"PlayerPosY\"},{\"name\":\"PlayerPosZ\"},{\"name\":\"PlayerPosX\"},{\"name\":\"Ttp\"},{\"name\":\"World\"},{\"name\":\"CurrentPlaythroughId\"}]}",
+                                           "confidence":  "high",
+                                           "evidenceClass":  "confirmed_telemetry_event_schema"
+                                       },
+                                       {
+                                           "name":  "custom.player.action",
+                                           "eventType":  "CUSTOM",
+                                           "fileOffset":  "0xA1D6E28",
+                                           "rva":  "0xA1D7828",
+                                           "va":  "0x14A1D7828",
+                                           "section":  ".edata",
+                                           "attributes":  [
+                                                              "ActionTarget",
+                                                              "Character",
+                                                              "TimeOfDay",
+                                                              "Ttp",
+                                                              "PlayerPosX",
+                                                              "PlayerPosY",
+                                                              "PlayerPosZ",
+                                                              "World",
+                                                              "CurrentPlaythroughId",
+                                                              "PlayerLevel",
+                                                              "PlayerAction",
+                                                              "BodyDropGlobalPositionX",
+                                                              "BodyDropGlobalPositionY",
+                                                              "BodyDropGlobalPositionZ",
+                                                              "BodyDropThrowDirectionX",
+                                                              "BodyDropThrowDirectionY",
+                                                              "BodyDropThrowDirectionZ",
+                                                              "BodyDropLocationCategory"
+                                                          ],
+                                           "hasXYZ":  true,
+                                           "fullMatch":  "{\"name\":\"custom.player.action\",\"type\":\"CUSTOM\",\"typeAttributes\":[],\"customAttributes\":[{\"name\":\"ActionTarget\"},{\"name\":\"Character\"},{\"name\":\"TimeOfDay\"},{\"name\":\"Ttp\"},{\"name\":\"PlayerPosX\"},{\"name\":\"PlayerPosY\"},{\"name\":\"PlayerPosZ\"},{\"name\":\"World\"},{\"name\":\"CurrentPlaythroughId\"},{\"name\":\"PlayerLevel\"},{\"name\":\"PlayerAction\"},{\"name\":\"BodyDropGlobalPositionX\"},{\"name\":\"BodyDropGlobalPositionY\"},{\"name\":\"BodyDropGlobalPositionZ\"},{\"name\":\"BodyDropThrowDirectionX\"},{\"name\":\"BodyDropThrowDirectionY\"},{\"name\":\"BodyDropThrowDirectionZ\"},{\"name\":\"BodyDropLocationCategory\"}]}",
+                                           "confidence":  "high",
+                                           "evidenceClass":  "confirmed_telemetry_event_schema"
+                                       },
+                                       {
+                                           "name":  "custom.store.entry",
+                                           "eventType":  "CUSTOM",
+                                           "fileOffset":  "0xA1D7AE5",
+                                           "rva":  "0xA1D84E5",
+                                           "va":  "0x14A1D84E5",
+                                           "section":  ".edata",
+                                           "attributes":  [
+                                                              "WebStoreEntrySource",
+                                                              "World",
+                                                              "PlayerPosX",
+                                                              "PlayerPosY",
+                                                              "PlayerPosZ",
+                                                              "Character",
+                                                              "Ttp",
+                                                              "PlayerLevel",
+                                                              "MenuSequenceId"
+                                                          ],
+                                           "hasXYZ":  true,
+                                           "fullMatch":  "{\"name\":\"custom.store.entry\",\"type\":\"CUSTOM\",\"typeAttributes\":[],\"customAttributes\":[{\"name\":\"WebStoreEntrySource\"},{\"name\":\"World\"},{\"name\":\"PlayerPosX\"},{\"name\":\"PlayerPosY\"},{\"name\":\"PlayerPosZ\"},{\"name\":\"Character\"},{\"name\":\"Ttp\"},{\"name\":\"PlayerLevel\"},{\"name\":\"MenuSequenceId\"}]}",
+                                           "confidence":  "high",
+                                           "evidenceClass":  "confirmed_telemetry_event_schema"
+                                       },
+                                       {
+                                           "name":  "custom.engine.menu.interaction",
+                                           "eventType":  "CUSTOM",
+                                           "fileOffset":  "0xA1D7D7D",
+                                           "rva":  "0xA1D877D",
+                                           "va":  "0x14A1D877D",
+                                           "section":  ".edata",
+                                           "attributes":  [
+                                                              "MenuSequenceId",
+                                                              "MenuInteraction",
+                                                              "MenuItem",
+                                                              "Ttp",
+                                                              "NavigationStateName",
+                                                              "World",
+                                                              "PlayerPosX",
+                                                              "PlayerPosY",
+                                                              "PlayerPosZ",
+                                                              "Character",
+                                                              "CurrentPlaythroughId",
+                                                              "PlayerLevel"
+                                                          ],
+                                           "hasXYZ":  true,
+                                           "fullMatch":  "{\"name\":\"custom.engine.menu.interaction\",\"type\":\"CUSTOM\",\"typeAttributes\":[],\"customAttributes\":[{\"name\":\"MenuSequenceId\"},{\"name\":\"MenuInteraction\"},{\"name\":\"MenuItem\"},{\"name\":\"Ttp\"},{\"name\":\"NavigationStateName\"},{\"name\":\"World\"},{\"name\":\"PlayerPosX\"},{\"name\":\"PlayerPosY\"},{\"name\":\"PlayerPosZ\"},{\"name\":\"Character\"},{\"name\":\"CurrentPlaythroughId\"},{\"name\":\"PlayerLevel\"}]}",
+                                           "confidence":  "high",
+                                           "evidenceClass":  "confirmed_telemetry_event_schema"
+                                       },
+                                       {
+                                           "name":  "custom.DialogueLineSkip",
+                                           "eventType":  "CUSTOM",
+                                           "fileOffset":  "0xA1D8116",
+                                           "rva":  "0xA1D8B16",
+                                           "va":  "0x14A1D8B16",
+                                           "section":  ".edata",
+                                           "attributes":  [
+                                                              "DialogueBlockId",
+                                                              "DialogueId",
+                                                              "DialogueLineId",
+                                                              "SpeakerId",
+                                                              "Ttp",
+                                                              "World",
+                                                              "PlayerPosX",
+                                                              "PlayerPosY",
+                                                              "PlayerPosZ",
+                                                              "CurrentPlaythroughId",
+                                                              "Character",
+                                                              "PlayerLevel"
+                                                          ],
+                                           "hasXYZ":  true,
+                                           "fullMatch":  "{\"name\":\"custom.DialogueLineSkip\",\"type\":\"CUSTOM\",\"typeAttributes\":[],\"customAttributes\":[{\"name\":\"DialogueBlockId\"},{\"name\":\"DialogueId\"},{\"name\":\"DialogueLineId\"},{\"name\":\"SpeakerId\"},{\"name\":\"Ttp\"},{\"name\":\"World\"},{\"name\":\"PlayerPosX\"},{\"name\":\"PlayerPosY\"},{\"name\":\"PlayerPosZ\"},{\"name\":\"CurrentPlaythroughId\"},{\"name\":\"Character\"},{\"name\":\"PlayerLevel\"}]}",
+                                           "confidence":  "high",
+                                           "evidenceClass":  "confirmed_telemetry_event_schema"
+                                       },
+                                       {
+                                           "name":  "custom.interval.time.recap",
+                                           "eventType":  "CUSTOM",
+                                           "fileOffset":  "0xA1D8281",
+                                           "rva":  "0xA1D8C81",
+                                           "va":  "0x14A1D8C81",
+                                           "section":  ".edata",
+                                           "attributes":  [
+                                                              "RecapRooftopsPlaytime",
+                                                              "RecapSprintPlaytime",
+                                                              "RecapWhistles",
+                                                              "RecapAssassinations",
+                                                              "RecapCrouchPlaytime",
+                                                              "RecapDistanceTravelled",
+                                                              "RecapPlayerDesynchronizations",
+                                                              "RecapPlaytime",
+                                                              "World",
+                                                              "CurrentPlaythroughId",
+                                                              "PlayerPosY",
+                                                              "PlayerPosX",
+                                                              "PlayerPosZ",
+                                                              "TotalProgress",
+                                                              "MainQuestsCompleted",
+                                                              "TotalProgressFloat",
+                                                              "Ttp",
+                                                              "WorldRHPCompletion",
+                                                              "WorldRHPSynchronized",
+                                                              "RecapCriticalHealthPlaytime",
+                                                              "RecapWalkPlaytime",
+                                                              "RecapJogPlaytime"
+                                                          ],
+                                           "hasXYZ":  true,
+                                           "fullMatch":  "{\"name\":\"custom.interval.time.recap\",\"type\":\"CUSTOM\",\"typeAttributes\":[],\"customAttributes\":[{\"name\":\"RecapRooftopsPlaytime\"},{\"name\":\"RecapSprintPlaytime\"},{\"name\":\"RecapWhistles\"},{\"name\":\"RecapAssassinations\"},{\"name\":\"RecapCrouchPlaytime\"},{\"name\":\"RecapDistanceTravelled\"},{\"name\":\"RecapPlayerDesynchronizations\"},{\"name\":\"RecapPlaytime\"},{\"name\":\"World\"},{\"name\":\"CurrentPlaythroughId\"},{\"name\":\"PlayerPosY\"},{\"name\":\"PlayerPosX\"},{\"name\":\"PlayerPosZ\"},{\"name\":\"TotalProgress\"},{\"name\":\"MainQuestsCompleted\"},{\"name\":\"TotalProgressFloat\"},{\"name\":\"Ttp\"},{\"name\":\"WorldRHPCompletion\"},{\"name\":\"WorldRHPSynchronized\"},{\"name\":\"RecapCriticalHealthPlaytime\"},{\"name\":\"RecapWalkPlaytime\"},{\"name\":\"RecapJogPlaytime\"}]}",
+                                           "confidence":  "high",
+                                           "evidenceClass":  "confirmed_telemetry_event_schema"
+                                       },
+                                       {
+                                           "name":  "custom.ShipWreckPlayerDefense",
+                                           "eventType":  "CUSTOM",
+                                           "fileOffset":  "0xA1D8552",
+                                           "rva":  "0xA1D8F52",
+                                           "va":  "0x14A1D8F52",
+                                           "section":  ".edata",
+                                           "attributes":  [
+                                                              "ShipWreckID",
+                                                              "EnemyRankInfo",
+                                                              "PlayerIsKill",
+                                                              "PlayerDefRes",
+                                                              "CurrentPlaythroughId",
+                                                              "PlayerPosX",
+                                                              "PlayerPosY",
+                                                              "PlayerPosZ",
+                                                              "TimeOfDay",
+                                                              "Ttp",
+                                                              "World"
+                                                          ],
+                                           "hasXYZ":  true,
+                                           "fullMatch":  "{\"name\":\"custom.ShipWreckPlayerDefense\",\"type\":\"CUSTOM\",\"typeAttributes\":[],\"customAttributes\":[{\"name\":\"ShipWreckID\"},{\"name\":\"EnemyRankInfo\"},{\"name\":\"PlayerIsKill\"},{\"name\":\"PlayerDefRes\"},{\"name\":\"CurrentPlaythroughId\"},{\"name\":\"PlayerPosX\"},{\"name\":\"PlayerPosY\"},{\"name\":\"PlayerPosZ\"},{\"name\":\"TimeOfDay\"},{\"name\":\"Ttp\"},{\"name\":\"World\"}]}",
+                                           "confidence":  "high",
+                                           "evidenceClass":  "confirmed_telemetry_event_schema"
+                                       },
+                                       {
+                                           "name":  "custom.engine.menu.open",
+                                           "eventType":  "CUSTOM",
+                                           "fileOffset":  "0xA1D86AC",
+                                           "rva":  "0xA1D90AC",
+                                           "va":  "0x14A1D90AC",
+                                           "section":  ".edata",
+                                           "attributes":  [
+                                                              "MenuSequenceId",
+                                                              "Character",
+                                                              "PlayerPosZ",
+                                                              "Ttp",
+                                                              "World",
+                                                              "PlayerPosX",
+                                                              "PlayerPosY",
+                                                              "CurrentPlaythroughId"
+                                                          ],
+                                           "hasXYZ":  true,
+                                           "fullMatch":  "{\"name\":\"custom.engine.menu.open\",\"type\":\"CUSTOM\",\"typeAttributes\":[],\"customAttributes\":[{\"name\":\"MenuSequenceId\"},{\"name\":\"Character\"},{\"name\":\"PlayerPosZ\"},{\"name\":\"Ttp\"},{\"name\":\"World\"},{\"name\":\"PlayerPosX\"},{\"name\":\"PlayerPosY\"},{\"name\":\"CurrentPlaythroughId\"}]}",
+                                           "confidence":  "high",
+                                           "evidenceClass":  "confirmed_telemetry_event_schema"
+                                       },
+                                       {
+                                           "name":  "custom.engine.menu.close",
+                                           "eventType":  "CUSTOM",
+                                           "fileOffset":  "0xA1D87BA",
+                                           "rva":  "0xA1D91BA",
+                                           "va":  "0x14A1D91BA",
+                                           "section":  ".edata",
+                                           "attributes":  [
+                                                              "MenuSequenceId",
+                                                              "Character",
+                                                              "CurrentPlaythroughId",
+                                                              "World",
+                                                              "PlayerPosX",
+                                                              "PlayerPosY",
+                                                              "PlayerPosZ",
+                                                              "PlayerLevel"
+                                                          ],
+                                           "hasXYZ":  true,
+                                           "fullMatch":  "{\"name\":\"custom.engine.menu.close\",\"type\":\"CUSTOM\",\"typeAttributes\":[],\"customAttributes\":[{\"name\":\"MenuSequenceId\"},{\"name\":\"Character\"},{\"name\":\"CurrentPlaythroughId\"},{\"name\":\"World\"},{\"name\":\"PlayerPosX\"},{\"name\":\"PlayerPosY\"},{\"name\":\"PlayerPosZ\"},{\"name\":\"PlayerLevel\"}]}",
+                                           "confidence":  "high",
+                                           "evidenceClass":  "confirmed_telemetry_event_schema"
+                                       },
+                                       {
+                                           "name":  "custom.wildlife.interaction",
+                                           "eventType":  "CUSTOM",
+                                           "fileOffset":  "0xA1D91B4",
+                                           "rva":  "0xA1D9BB4",
+                                           "va":  "0x14A1D9BB4",
+                                           "section":  ".edata",
+                                           "attributes":  [
+                                                              "World",
+                                                              "PlayerPosZ",
+                                                              "PlayerPosX",
+                                                              "PlayerPosY",
+                                                              "Ttp",
+                                                              "WildlifeAnvilId",
+                                                              "WildlifeInteraction",
+                                                              "Character",
+                                                              "CurrentPlaythroughId",
+                                                              "PlayerLevel",
+                                                              "TimeOfDay"
+                                                          ],
+                                           "hasXYZ":  true,
+                                           "fullMatch":  "{\"name\":\"custom.wildlife.interaction\",\"type\":\"CUSTOM\",\"typeAttributes\":[],\"customAttributes\":[{\"name\":\"World\"},{\"name\":\"PlayerPosZ\"},{\"name\":\"PlayerPosX\"},{\"name\":\"PlayerPosY\"},{\"name\":\"Ttp\"},{\"name\":\"WildlifeAnvilId\"},{\"name\":\"WildlifeInteraction\"},{\"name\":\"Character\"},{\"name\":\"CurrentPlaythroughId\"},{\"name\":\"PlayerLevel\"},{\"name\":\"TimeOfDay\"}]}",
+                                           "confidence":  "high",
+                                           "evidenceClass":  "confirmed_telemetry_event_schema"
+                                       },
+                                       {
+                                           "name":  "custom.procedural.questupdate",
+                                           "eventType":  "CUSTOM",
+                                           "fileOffset":  "0xA1D9312",
+                                           "rva":  "0xA1D9D12",
+                                           "va":  "0x14A1D9D12",
+                                           "section":  ".edata",
+                                           "attributes":  [
+                                                              "Character",
+                                                              "CurrentPlaythroughId",
+                                                              "PlayerHealth",
+                                                              "PlayerLevel",
+                                                              "PlayerPosX",
+                                                              "PlayerPosY",
+                                                              "PlayerPosZ",
+                                                              "QuestAction",
+                                                              "QuestKey",
+                                                              "QuestOutcome",
+                                                              "QuestStepKey",
+                                                              "TimeOfDay",
+                                                              "Ttp",
+                                                              "World",
+                                                              "QuestId",
+                                                              "QuestStep",
+                                                              "ProceduralQuestType"
+                                                          ],
+                                           "hasXYZ":  true,
+                                           "fullMatch":  "{\"name\":\"custom.procedural.questupdate\",\"type\":\"CUSTOM\",\"typeAttributes\":[],\"customAttributes\":[{\"name\":\"Character\"},{\"name\":\"CurrentPlaythroughId\"},{\"name\":\"PlayerHealth\"},{\"name\":\"PlayerLevel\"},{\"name\":\"PlayerPosX\"},{\"name\":\"PlayerPosY\"},{\"name\":\"PlayerPosZ\"},{\"name\":\"QuestAction\"},{\"name\":\"QuestKey\"},{\"name\":\"QuestOutcome\"},{\"name\":\"QuestStepKey\"},{\"name\":\"TimeOfDay\"},{\"name\":\"Ttp\"},{\"name\":\"World\"},{\"name\":\"QuestId\"},{\"name\":\"QuestStep\"},{\"name\":\"ProceduralQuestType\"}]}",
+                                           "confidence":  "high",
+                                           "evidenceClass":  "confirmed_telemetry_event_schema"
+                                       },
+                                       {
+                                           "name":  "custom.KenwayFleet.ShipCaptured",
+                                           "eventType":  "CUSTOM",
+                                           "fileOffset":  "0xA1D976A",
+                                           "rva":  "0xA1DA16A",
+                                           "va":  "0x14A1DA16A",
+                                           "section":  ".edata",
+                                           "attributes":  [
+                                                              "ShipType",
+                                                              "CurrentPlaythroughId",
+                                                              "PlayerPosX",
+                                                              "PlayerPosY",
+                                                              "PlayerPosZ",
+                                                              "Ttp",
+                                                              "TimeOfDay",
+                                                              "World"
+                                                          ],
+                                           "hasXYZ":  true,
+                                           "fullMatch":  "{\"name\":\"custom.KenwayFleet.ShipCaptured\",\"type\":\"CUSTOM\",\"typeAttributes\":[],\"customAttributes\":[{\"name\":\"ShipType\"},{\"name\":\"CurrentPlaythroughId\"},{\"name\":\"PlayerPosX\"},{\"name\":\"PlayerPosY\"},{\"name\":\"PlayerPosZ\"},{\"name\":\"Ttp\"},{\"name\":\"TimeOfDay\"},{\"name\":\"World\"}]}",
+                                           "confidence":  "high",
+                                           "evidenceClass":  "confirmed_telemetry_event_schema"
+                                       },
+                                       {
+                                           "name":  "custom.KenwayFleet.TaskStarted",
+                                           "eventType":  "CUSTOM",
+                                           "fileOffset":  "0xA1D987A",
+                                           "rva":  "0xA1DA27A",
+                                           "va":  "0x14A1DA27A",
+                                           "section":  ".edata",
+                                           "attributes":  [
+                                                              "TaskDuration",
+                                                              "CurrentPlaythroughId",
+                                                              "PlayerPosX",
+                                                              "PlayerPosY",
+                                                              "PlayerPosZ",
+                                                              "Ttp",
+                                                              "TimeOfDay",
+                                                              "World",
+                                                              "TaskType",
+                                                              "Sector",
+                                                              "ShipType",
+                                                              "ShipRank"
+                                                          ],
+                                           "hasXYZ":  true,
+                                           "fullMatch":  "{\"name\":\"custom.KenwayFleet.TaskStarted\",\"type\":\"CUSTOM\",\"typeAttributes\":[],\"customAttributes\":[{\"name\":\"TaskDuration\"},{\"name\":\"CurrentPlaythroughId\"},{\"name\":\"PlayerPosX\"},{\"name\":\"PlayerPosY\"},{\"name\":\"PlayerPosZ\"},{\"name\":\"Ttp\"},{\"name\":\"TimeOfDay\"},{\"name\":\"World\"},{\"name\":\"TaskType\"},{\"name\":\"Sector\"},{\"name\":\"ShipType\"},{\"name\":\"ShipRank\"}]}",
+                                           "confidence":  "high",
+                                           "evidenceClass":  "confirmed_telemetry_event_schema"
+                                       },
+                                       {
+                                           "name":  "custom.PlayerAttack",
+                                           "eventType":  "CUSTOM",
+                                           "fileOffset":  "0xA1DA294",
+                                           "rva":  "0xA1DAC94",
+                                           "va":  "0x14A1DAC94",
+                                           "section":  ".edata",
+                                           "attributes":  [
+                                                              "EnemyIsCritical",
+                                                              "EnemyIsHeadshot",
+                                                              "EnemyIsKill",
+                                                              "EnemyTgtArchetype",
+                                                              "EnemyTgtUsedBlock",
+                                                              "EnemyTgtDamage",
+                                                              "EnemyTgtFaction",
+                                                              "EnemyTgtLock",
+                                                              "EnemyLevel",
+                                                              "EnemyRankInfo",
+                                                              "EnemyIsBoss",
+                                                              "PlayerAtkRes",
+                                                              "PlayerAtkWeapon",
+                                                              "PlayerAtkOffhand",
+                                                              "PlayerIsAtkWeaponIgnited",
+                                                              "EnemyCriticalStrikeInflicted",
+                                                              "EnemyIsStunned",
+                                                              "EnemyPowerLevel",
+                                                              "Ttp",
+                                                              "PlayerPosX",
+                                                              "PlayerPosY",
+                                                              "PlayerPosZ",
+                                                              "World",
+                                                              "TimeOfDay",
+                                                              "Character",
+                                                              "DamageTag",
+                                                              "WeaponTag",
+                                                              "PlayerAtkDamagingItemId",
+                                                              "PlayerAtkDamagingEntityId",
+                                                              "PlayerAtkSourceId",
+                                                              "CurrentPlaythroughId",
+                                                              "PlayerLevel",
+                                                              "PlayerHealth"
+                                                          ],
+                                           "hasXYZ":  true,
+                                           "fullMatch":  "{\"name\":\"custom.PlayerAttack\",\"type\":\"CUSTOM\",\"typeAttributes\":[],\"customAttributes\":[{\"name\":\"EnemyIsCritical\"},{\"name\":\"EnemyIsHeadshot\"},{\"name\":\"EnemyIsKill\"},{\"name\":\"EnemyTgtArchetype\"},{\"name\":\"EnemyTgtUsedBlock\"},{\"name\":\"EnemyTgtDamage\"},{\"name\":\"EnemyTgtFaction\"},{\"name\":\"EnemyTgtLock\"},{\"name\":\"EnemyLevel\"},{\"name\":\"EnemyRankInfo\"},{\"name\":\"EnemyIsBoss\"},{\"name\":\"PlayerAtkRes\"},{\"name\":\"PlayerAtkWeapon\"},{\"name\":\"PlayerAtkOffhand\"},{\"name\":\"PlayerIsAtkWeaponIgnited\"},{\"name\":\"EnemyCriticalStrikeInflicted\"},{\"name\":\"EnemyIsStunned\"},{\"name\":\"EnemyPowerLevel\"},{\"name\":\"Ttp\"},{\"name\":\"PlayerPosX\"},{\"name\":\"PlayerPosY\"},{\"name\":\"PlayerPosZ\"},{\"name\":\"World\"},{\"name\":\"TimeOfDay\"},{\"name\":\"Character\"},{\"name\":\"DamageTag\"},{\"name\":\"WeaponTag\"},{\"name\":\"PlayerAtkDamagingItemId\"},{\"name\":\"PlayerAtkDamagingEntityId\"},{\"name\":\"PlayerAtkSourceId\"},{\"name\":\"CurrentPlaythroughId\"},{\"name\":\"PlayerLevel\"},{\"name\":\"PlayerHealth\"}]}",
+                                           "confidence":  "high",
+                                           "evidenceClass":  "confirmed_telemetry_event_schema"
+                                       },
+                                       {
+                                           "name":  "custom.PlayerDefense",
+                                           "eventType":  "CUSTOM",
+                                           "fileOffset":  "0xA1DA641",
+                                           "rva":  "0xA1DB041",
+                                           "va":  "0x14A1DB041",
+                                           "section":  ".edata",
+                                           "attributes":  [
+                                                              "Ttp",
+                                                              "PlayerPosX",
+                                                              "PlayerPosY",
+                                                              "PlayerPosZ",
+                                                              "World",
+                                                              "DistanceNPC",
+                                                              "EnemyAtkArchetype",
+                                                              "EnemyAtkFaction",
+                                                              "EnemyAtkVehicle",
+                                                              "EnemyIsAtkWeaponIgnited",
+                                                              "EnemyLevel",
+                                                              "EnemyRankInfo",
+                                                              "EnemyIsBoss",
+                                                              "PlayerDefRes",
+                                                              "PlayerDefShield",
+                                                              "PlayerIsCritical",
+                                                              "PlayerIsHeadShot",
+                                                              "PlayerIsKill",
+                                                              "PlayerTgtDamage",
+                                                              "Character",
+                                                              "EnemyAtkDamagingItemId",
+                                                              "EnemyAtkDamagingEntityId",
+                                                              "EnemyAtkIsCritical",
+                                                              "TimeOfDay",
+                                                              "WeaponTag",
+                                                              "EnemyAtkSource",
+                                                              "DamageTag",
+                                                              "CurrentPlaythroughId",
+                                                              "PlayerLevel",
+                                                              "PlayerHealth"
+                                                          ],
+                                           "hasXYZ":  true,
+                                           "fullMatch":  "{\"name\":\"custom.PlayerDefense\",\"type\":\"CUSTOM\",\"typeAttributes\":[],\"customAttributes\":[{\"name\":\"Ttp\"},{\"name\":\"PlayerPosX\"},{\"name\":\"PlayerPosY\"},{\"name\":\"PlayerPosZ\"},{\"name\":\"World\"},{\"name\":\"DistanceNPC\"},{\"name\":\"EnemyAtkArchetype\"},{\"name\":\"EnemyAtkFaction\"},{\"name\":\"EnemyAtkVehicle\"},{\"name\":\"EnemyIsAtkWeaponIgnited\"},{\"name\":\"EnemyLevel\"},{\"name\":\"EnemyRankInfo\"},{\"name\":\"EnemyIsBoss\"},{\"name\":\"PlayerDefRes\"},{\"name\":\"PlayerDefShield\"},{\"name\":\"PlayerIsCritical\"},{\"name\":\"PlayerIsHeadShot\"},{\"name\":\"PlayerIsKill\"},{\"name\":\"PlayerTgtDamage\"},{\"name\":\"Character\"},{\"name\":\"EnemyAtkDamagingItemId\"},{\"name\":\"EnemyAtkDamagingEntityId\"},{\"name\":\"EnemyAtkIsCritical\"},{\"name\":\"TimeOfDay\"},{\"name\":\"WeaponTag\"},{\"name\":\"EnemyAtkSource\"},{\"name\":\"DamageTag\"},{\"name\":\"CurrentPlaythroughId\"},{\"name\":\"PlayerLevel\"},{\"name\":\"PlayerHealth\"}]}",
+                                           "confidence":  "high",
+                                           "evidenceClass":  "confirmed_telemetry_event_schema"
+                                       },
+                                       {
+                                           "name":  "custom.engine.menu.navigation",
+                                           "eventType":  "CUSTOM",
+                                           "fileOffset":  "0xA1DA990",
+                                           "rva":  "0xA1DB390",
+                                           "va":  "0x14A1DB390",
+                                           "section":  ".edata",
+                                           "attributes":  [
+                                                              "NavigationStateId",
+                                                              "MenuSequenceId",
+                                                              "World",
+                                                              "Character",
+                                                              "CurrentPlaythroughId",
+                                                              "PlayerPosX",
+                                                              "PlayerPosY",
+                                                              "PlayerPosZ"
+                                                          ],
+                                           "hasXYZ":  true,
+                                           "fullMatch":  "{\"name\":\"custom.engine.menu.navigation\",\"type\":\"CUSTOM\",\"typeAttributes\":[],\"customAttributes\":[{\"name\":\"NavigationStateId\"},{\"name\":\"MenuSequenceId\"},{\"name\":\"World\"},{\"name\":\"Character\"},{\"name\":\"CurrentPlaythroughId\"},{\"name\":\"PlayerPosX\"},{\"name\":\"PlayerPosY\"},{\"name\":\"PlayerPosZ\"}]}",
+                                           "confidence":  "high",
+                                           "evidenceClass":  "confirmed_telemetry_event_schema"
+                                       },
+                                       {
+                                           "name":  "custom.world.encounter.completion",
+                                           "eventType":  "CUSTOM",
+                                           "fileOffset":  "0xA1DACD4",
+                                           "rva":  "0xA1DB6D4",
+                                           "va":  "0x14A1DB6D4",
+                                           "section":  ".edata",
+                                           "attributes":  [
+                                                              "CompletionConditionID",
+                                                              "WorldEncounterDetail",
+                                                              "WorldEncounterID",
+                                                              "WorldEncounterKind",
+                                                              "Ttp",
+                                                              "Character",
+                                                              "CurrentPlaythroughId",
+                                                              "World",
+                                                              "PlayerLevel",
+                                                              "TimeOfDay",
+                                                              "PlayerHealth",
+                                                              "PlayerPosX",
+                                                              "PlayerPosY",
+                                                              "PlayerPosZ"
+                                                          ],
+                                           "hasXYZ":  true,
+                                           "fullMatch":  "{\"name\":\"custom.world.encounter.completion\",\"type\":\"CUSTOM\",\"typeAttributes\":[],\"customAttributes\":[{\"name\":\"CompletionConditionID\"},{\"name\":\"WorldEncounterDetail\"},{\"name\":\"WorldEncounterID\"},{\"name\":\"WorldEncounterKind\"},{\"name\":\"Ttp\"},{\"name\":\"Character\"},{\"name\":\"CurrentPlaythroughId\"},{\"name\":\"World\"},{\"name\":\"PlayerLevel\"},{\"name\":\"TimeOfDay\"},{\"name\":\"PlayerHealth\"},{\"name\":\"PlayerPosX\"},{\"name\":\"PlayerPosY\"},{\"name\":\"PlayerPosZ\"}]}",
+                                           "confidence":  "high",
+                                           "evidenceClass":  "confirmed_telemetry_event_schema"
+                                       },
+                                       {
+                                           "name":  "custom.world.encounter.generation",
+                                           "eventType":  "CUSTOM",
+                                           "fileOffset":  "0xA1DAE91",
+                                           "rva":  "0xA1DB891",
+                                           "va":  "0x14A1DB891",
+                                           "section":  ".edata",
+                                           "attributes":  [
+                                                              "WorldEncounterID",
+                                                              "WorldEncounterKind",
+                                                              "WorldEncounterSpawnXCoordinate",
+                                                              "WorldEncounterSpawnYCoordinate",
+                                                              "WorldEncounterSpawnZCoordinate",
+                                                              "Ttp",
+                                                              "World",
+                                                              "PlayerLevel",
+                                                              "TimeOfDay",
+                                                              "PlayerPosX",
+                                                              "PlayerPosY",
+                                                              "PlayerPosZ",
+                                                              "WorldEncounterDetail",
+                                                              "CurrentPlaythroughId",
+                                                              "WorldEncounterGeneratorType"
+                                                          ],
+                                           "hasXYZ":  true,
+                                           "fullMatch":  "{\"name\":\"custom.world.encounter.generation\",\"type\":\"CUSTOM\",\"typeAttributes\":[],\"customAttributes\":[{\"name\":\"WorldEncounterID\"},{\"name\":\"WorldEncounterKind\"},{\"name\":\"WorldEncounterSpawnXCoordinate\"},{\"name\":\"WorldEncounterSpawnYCoordinate\"},{\"name\":\"WorldEncounterSpawnZCoordinate\"},{\"name\":\"Ttp\"},{\"name\":\"World\"},{\"name\":\"PlayerLevel\"},{\"name\":\"TimeOfDay\"},{\"name\":\"PlayerPosX\"},{\"name\":\"PlayerPosY\"},{\"name\":\"PlayerPosZ\"},{\"name\":\"WorldEncounterDetail\"},{\"name\":\"CurrentPlaythroughId\"},{\"name\":\"WorldEncounterGeneratorType\"}]}",
+                                           "confidence":  "high",
+                                           "evidenceClass":  "confirmed_telemetry_event_schema"
+                                       },
+                                       {
+                                           "name":  "custom.questupdate",
+                                           "eventType":  "CUSTOM",
+                                           "fileOffset":  "0xA1DC77E",
+                                           "rva":  "0xA1DD17E",
+                                           "va":  "0x14A1DD17E",
+                                           "section":  ".edata",
+                                           "attributes":  [
+                                                              "Character",
+                                                              "CurrentPlaythroughId",
+                                                              "PlayerHealth",
+                                                              "PlayerLevel",
+                                                              "PlayerPosX",
+                                                              "PlayerPosY",
+                                                              "PlayerPosZ",
+                                                              "QuestAction",
+                                                              "QuestId",
+                                                              "QuestKey",
+                                                              "QuestOutcome",
+                                                              "QuestStep",
+                                                              "QuestStepKey",
+                                                              "TimeOfDay",
+                                                              "Ttp",
+                                                              "World"
+                                                          ],
+                                           "hasXYZ":  true,
+                                           "fullMatch":  "{\"name\":\"custom.questupdate\",\"type\":\"CUSTOM\",\"typeAttributes\":[],\"customAttributes\":[{\"name\":\"Character\"},{\"name\":\"CurrentPlaythroughId\"},{\"name\":\"PlayerHealth\"},{\"name\":\"PlayerLevel\"},{\"name\":\"PlayerPosX\"},{\"name\":\"PlayerPosY\"},{\"name\":\"PlayerPosZ\"},{\"name\":\"QuestAction\"},{\"name\":\"QuestId\"},{\"name\":\"QuestKey\"},{\"name\":\"QuestOutcome\"},{\"name\":\"QuestStep\"},{\"name\":\"QuestStepKey\"},{\"name\":\"TimeOfDay\"},{\"name\":\"Ttp\"},{\"name\":\"World\"}]}",
+                                           "confidence":  "high",
+                                           "evidenceClass":  "confirmed_telemetry_event_schema"
+                                       },
+                                       {
+                                           "name":  "custom.KenwayFleet.TaskCompleted",
+                                           "eventType":  "CUSTOM",
+                                           "fileOffset":  "0xA1DC935",
+                                           "rva":  "0xA1DD335",
+                                           "va":  "0x14A1DD335",
+                                           "section":  ".edata",
+                                           "attributes":  [
+                                                              "TaskType",
+                                                              "ShipCurrentHealth",
+                                                              "ShipMaxHealth",
+                                                              "ShipType",
+                                                              "ShipRank",
+                                                              "CurrentPlaythroughId",
+                                                              "PlayerPosX",
+                                                              "PlayerPosY",
+                                                              "PlayerPosZ",
+                                                              "Ttp",
+                                                              "TimeOfDay",
+                                                              "World",
+                                                              "Sector"
+                                                          ],
+                                           "hasXYZ":  true,
+                                           "fullMatch":  "{\"name\":\"custom.KenwayFleet.TaskCompleted\",\"type\":\"CUSTOM\",\"typeAttributes\":[],\"customAttributes\":[{\"name\":\"TaskType\"},{\"name\":\"ShipCurrentHealth\"},{\"name\":\"ShipMaxHealth\"},{\"name\":\"ShipType\"},{\"name\":\"ShipRank\"},{\"name\":\"CurrentPlaythroughId\"},{\"name\":\"PlayerPosX\"},{\"name\":\"PlayerPosY\"},{\"name\":\"PlayerPosZ\"},{\"name\":\"Ttp\"},{\"name\":\"TimeOfDay\"},{\"name\":\"World\"},{\"name\":\"Sector\"}]}",
+                                           "confidence":  "high",
+                                           "evidenceClass":  "confirmed_telemetry_event_schema"
+                                       },
+                                       {
+                                           "name":  "custom.ProtectionMoneyClaim",
+                                           "eventType":  "CUSTOM",
+                                           "fileOffset":  "0xA1DCAB6",
+                                           "rva":  "0xA1DD4B6",
+                                           "va":  "0x14A1DD4B6",
+                                           "section":  ".edata",
+                                           "attributes":  [
+                                                              "TotalClaimCount",
+                                                              "TotalClaimAmount",
+                                                              "LastClaimAmount",
+                                                              "CurrentPlaythroughId",
+                                                              "PlayerPosX",
+                                                              "PlayerPosY",
+                                                              "PlayerPosZ",
+                                                              "Ttp",
+                                                              "World",
+                                                              "TimeOfDay"
+                                                          ],
+                                           "hasXYZ":  true,
+                                           "fullMatch":  "{\"name\":\"custom.ProtectionMoneyClaim\",\"type\":\"CUSTOM\",\"typeAttributes\":[],\"customAttributes\":[{\"name\":\"TotalClaimCount\"},{\"name\":\"TotalClaimAmount\"},{\"name\":\"LastClaimAmount\"},{\"name\":\"CurrentPlaythroughId\"},{\"name\":\"PlayerPosX\"},{\"name\":\"PlayerPosY\"},{\"name\":\"PlayerPosZ\"},{\"name\":\"Ttp\"},{\"name\":\"World\"},{\"name\":\"TimeOfDay\"}]}",
+                                           "confidence":  "high",
+                                           "evidenceClass":  "confirmed_telemetry_event_schema"
+                                       },
+                                       {
+                                           "name":  "custom.online.activity",
+                                           "eventType":  "CUSTOM",
+                                           "fileOffset":  "0xA1DDB09",
+                                           "rva":  "0xA1DE509",
+                                           "va":  "0x14A1DE509",
+                                           "section":  ".edata",
+                                           "attributes":  [
+                                                              "OnlineActivityType",
+                                                              "OnlineActivityID",
+                                                              "OnlineActivityCategory",
+                                                              "OnlineActivityAction",
+                                                              "PlayerPosX",
+                                                              "PlayerPosY",
+                                                              "PlayerPosZ",
+                                                              "PlayerHealth",
+                                                              "World",
+                                                              "CurrentPlaythroughId",
+                                                              "Ttp",
+                                                              "TimeOfDay",
+                                                              "OnlineActivityDBID"
+                                                          ],
+                                           "hasXYZ":  true,
+                                           "fullMatch":  "{\"name\":\"custom.online.activity\",\"type\":\"CUSTOM\",\"typeAttributes\":[],\"customAttributes\":[{\"name\":\"OnlineActivityType\"},{\"name\":\"OnlineActivityID\"},{\"name\":\"OnlineActivityCategory\"},{\"name\":\"OnlineActivityAction\"},{\"name\":\"PlayerPosX\"},{\"name\":\"PlayerPosY\"},{\"name\":\"PlayerPosZ\"},{\"name\":\"PlayerHealth\"},{\"name\":\"World\"},{\"name\":\"CurrentPlaythroughId\"},{\"name\":\"Ttp\"},{\"name\":\"TimeOfDay\"},{\"name\":\"OnlineActivityDBID\"}]}",
+                                           "confidence":  "high",
+                                           "evidenceClass":  "confirmed_telemetry_event_schema"
+                                       },
+                                       {
+                                           "name":  "custom.EagleVision",
+                                           "eventType":  "CUSTOM",
+                                           "fileOffset":  "0xA1DDD3D",
+                                           "rva":  "0xA1DE73D",
+                                           "va":  "0x14A1DE73D",
+                                           "section":  ".edata",
+                                           "attributes":  [
+                                                              "EagleVisionManualDisable",
+                                                              "PlayerPosX",
+                                                              "PlayerPosY",
+                                                              "PlayerPosZ"
+                                                          ],
+                                           "hasXYZ":  true,
+                                           "fullMatch":  "{\"name\":\"custom.EagleVision\",\"type\":\"CUSTOM\",\"typeAttributes\":[],\"customAttributes\":[{\"name\":\"EagleVisionManualDisable\"},{\"name\":\"PlayerPosX\"},{\"name\":\"PlayerPosY\"},{\"name\":\"PlayerPosZ\"}]}",
+                                           "confidence":  "high",
+                                           "evidenceClass":  "confirmed_telemetry_event_schema"
+                                       },
+                                       {
+                                           "name":  "custom.player.action.placePin",
+                                           "eventType":  "CUSTOM",
+                                           "fileOffset":  "0xA1DDF49",
+                                           "rva":  "0xA1DE949",
+                                           "va":  "0x14A1DE949",
+                                           "section":  ".edata",
+                                           "attributes":  [
+                                                              "PlayerPosX",
+                                                              "PlayerPosY",
+                                                              "PlayerPosZ",
+                                                              "World",
+                                                              "PinPosY",
+                                                              "PinId",
+                                                              "PinPosX",
+                                                              "PinPosZ",
+                                                              "PinSource",
+                                                              "Ttp",
+                                                              "Character",
+                                                              "PlayerLevel",
+                                                              "CurrentPlaythroughId",
+                                                              "TimeOfDay",
+                                                              "PinAction",
+                                                              "MenuSequenceId"
+                                                          ],
+                                           "hasXYZ":  true,
+                                           "fullMatch":  "{\"name\":\"custom.player.action.placePin\",\"type\":\"CUSTOM\",\"typeAttributes\":[],\"customAttributes\":[{\"name\":\"PlayerPosX\"},{\"name\":\"PlayerPosY\"},{\"name\":\"PlayerPosZ\"},{\"name\":\"World\"},{\"name\":\"PinPosY\"},{\"name\":\"PinId\"},{\"name\":\"PinPosX\"},{\"name\":\"PinPosZ\"},{\"name\":\"PinSource\"},{\"name\":\"Ttp\"},{\"name\":\"Character\"},{\"name\":\"PlayerLevel\"},{\"name\":\"CurrentPlaythroughId\"},{\"name\":\"TimeOfDay\"},{\"name\":\"PinAction\"},{\"name\":\"MenuSequenceId\"}]}",
+                                           "confidence":  "high",
+                                           "evidenceClass":  "confirmed_telemetry_event_schema"
+                                       },
+                                       {
+                                           "name":  "player.position",
+                                           "eventType":  "STANDARD",
+                                           "fileOffset":  "0xA1DE0FE",
+                                           "rva":  "0xA1DEAFE",
+                                           "va":  "0x14A1DEAFE",
+                                           "section":  ".edata",
+                                           "attributes":  [
+                                                              "PlayerPosX",
+                                                              "PlayerPosY",
+                                                              "PlayerPosZ",
+                                                              "TimeOfDay",
+                                                              "FightState",
+                                                              "Movement",
+                                                              "PositionSource",
+                                                              "DistanceTraveled",
+                                                              "Ttp",
+                                                              "World",
+                                                              "CurrentPlaythroughId"
+                                                          ],
+                                           "hasXYZ":  true,
+                                           "fullMatch":  "{\"name\":\"player.position\",\"type\":\"STANDARD\",\"typeAttributes\":[],\"customAttributes\":[{\"name\":\"PlayerPosX\"},{\"name\":\"PlayerPosY\"},{\"name\":\"PlayerPosZ\"},{\"name\":\"TimeOfDay\"},{\"name\":\"FightState\"},{\"name\":\"Movement\"},{\"name\":\"PositionSource\"},{\"name\":\"DistanceTraveled\"},{\"name\":\"Ttp\"},{\"name\":\"World\"},{\"name\":\"CurrentPlaythroughId\"}]}",
+                                           "confidence":  "high",
+                                           "evidenceClass":  "confirmed_telemetry_event_schema"
+                                       },
+                                       {
+                                           "name":  "custom.ShipDespawn",
+                                           "eventType":  "CUSTOM",
+                                           "fileOffset":  "0xA1DE5DA",
+                                           "rva":  "0xA1DEFDA",
+                                           "va":  "0x14A1DEFDA",
+                                           "section":  ".edata",
+                                           "attributes":  [
+                                                              "DespawnReason",
+                                                              "EnemyShipID",
+                                                              "EnemyShipFaction",
+                                                              "EnemyShipClass",
+                                                              "EnemyShipRank",
+                                                              "EnemyIsBoss",
+                                                              "CurrentPlaythroughId",
+                                                              "PlayerPosX",
+                                                              "PlayerPosY",
+                                                              "PlayerPosZ",
+                                                              "TimeOfDay",
+                                                              "Ttp",
+                                                              "World"
+                                                          ],
+                                           "hasXYZ":  true,
+                                           "fullMatch":  "{\"name\":\"custom.ShipDespawn\",\"type\":\"CUSTOM\",\"typeAttributes\":[],\"customAttributes\":[{\"name\":\"DespawnReason\"},{\"name\":\"EnemyShipID\"},{\"name\":\"EnemyShipFaction\"},{\"name\":\"EnemyShipClass\"},{\"name\":\"EnemyShipRank\"},{\"name\":\"EnemyIsBoss\"},{\"name\":\"CurrentPlaythroughId\"},{\"name\":\"PlayerPosX\"},{\"name\":\"PlayerPosY\"},{\"name\":\"PlayerPosZ\"},{\"name\":\"TimeOfDay\"},{\"name\":\"Ttp\"},{\"name\":\"World\"}]}",
+                                           "confidence":  "high",
+                                           "evidenceClass":  "confirmed_telemetry_event_schema"
+                                       },
+                                       {
+                                           "name":  "custom.ShipKill",
+                                           "eventType":  "CUSTOM",
+                                           "fileOffset":  "0xA1DE75F",
+                                           "rva":  "0xA1DF15F",
+                                           "va":  "0x14A1DF15F",
+                                           "section":  ".edata",
+                                           "attributes":  [
+                                                              "ShipWeaponName",
+                                                              "ShipSlot",
+                                                              "EnemyShipID",
+                                                              "EnemyShipFaction",
+                                                              "EnemyShipClass",
+                                                              "EnemyShipRank",
+                                                              "EnemyIsBoss",
+                                                              "CurrentPlaythroughId",
+                                                              "PlayerPosX",
+                                                              "PlayerPosY",
+                                                              "PlayerPosZ",
+                                                              "TimeOfDay",
+                                                              "Ttp",
+                                                              "World"
+                                                          ],
+                                           "hasXYZ":  true,
+                                           "fullMatch":  "{\"name\":\"custom.ShipKill\",\"type\":\"CUSTOM\",\"typeAttributes\":[],\"customAttributes\":[{\"name\":\"ShipWeaponName\"},{\"name\":\"ShipSlot\"},{\"name\":\"EnemyShipID\"},{\"name\":\"EnemyShipFaction\"},{\"name\":\"EnemyShipClass\"},{\"name\":\"EnemyShipRank\"},{\"name\":\"EnemyIsBoss\"},{\"name\":\"CurrentPlaythroughId\"},{\"name\":\"PlayerPosX\"},{\"name\":\"PlayerPosY\"},{\"name\":\"PlayerPosZ\"},{\"name\":\"TimeOfDay\"},{\"name\":\"Ttp\"},{\"name\":\"World\"}]}",
+                                           "confidence":  "high",
+                                           "evidenceClass":  "confirmed_telemetry_event_schema"
+                                       },
+                                       {
+                                           "name":  "custom.player.inventory.gear",
+                                           "eventType":  "CUSTOM",
+                                           "fileOffset":  "0xA1DEB5A",
+                                           "rva":  "0xA1DF55A",
+                                           "va":  "0x14A1DF55A",
+                                           "section":  ".edata",
+                                           "attributes":  [
+                                                              "InventoryGearId",
+                                                              "InventoryGearLevel",
+                                                              "InventoryGearMove",
+                                                              "InventoryGearRarity",
+                                                              "InventoryGearResource",
+                                                              "InventoryGearSource",
+                                                              "PlayerPosZ",
+                                                              "PlayerPosY",
+                                                              "Ttp",
+                                                              "PlayerPosX",
+                                                              "CurrentPlaythroughId",
+                                                              "World",
+                                                              "InventoryGearTypeTag"
+                                                          ],
+                                           "hasXYZ":  true,
+                                           "fullMatch":  "{\"name\":\"custom.player.inventory.gear\",\"type\":\"CUSTOM\",\"typeAttributes\":[],\"customAttributes\":[{\"name\":\"InventoryGearId\"},{\"name\":\"InventoryGearLevel\"},{\"name\":\"InventoryGearMove\"},{\"name\":\"InventoryGearRarity\"},{\"name\":\"InventoryGearResource\"},{\"name\":\"InventoryGearSource\"},{\"name\":\"PlayerPosZ\"},{\"name\":\"PlayerPosY\"},{\"name\":\"Ttp\"},{\"name\":\"PlayerPosX\"},{\"name\":\"CurrentPlaythroughId\"},{\"name\":\"World\"},{\"name\":\"InventoryGearTypeTag\"}]}",
+                                           "confidence":  "high",
+                                           "evidenceClass":  "confirmed_telemetry_event_schema"
+                                       },
+                                       {
+                                           "name":  "custom.player.inventory.resources",
+                                           "eventType":  "CUSTOM",
+                                           "fileOffset":  "0xA1DED13",
+                                           "rva":  "0xA1DF713",
+                                           "va":  "0x14A1DF713",
+                                           "section":  ".edata",
+                                           "attributes":  [
+                                                              "ResourceType",
+                                                              "ResourceAmount",
+                                                              "ResourceMove",
+                                                              "ResourceBalance",
+                                                              "ResourceRarity",
+                                                              "ResourceSource",
+                                                              "CurrentPlaythroughId",
+                                                              "PlayerPosZ",
+                                                              "World",
+                                                              "Ttp",
+                                                              "PlayerPosX",
+                                                              "PlayerPosY",
+                                                              "ResourceSourceID"
+                                                          ],
+                                           "hasXYZ":  true,
+                                           "fullMatch":  "{\"name\":\"custom.player.inventory.resources\",\"type\":\"CUSTOM\",\"typeAttributes\":[],\"customAttributes\":[{\"name\":\"ResourceType\"},{\"name\":\"ResourceAmount\"},{\"name\":\"ResourceMove\"},{\"name\":\"ResourceBalance\"},{\"name\":\"ResourceRarity\"},{\"name\":\"ResourceSource\"},{\"name\":\"CurrentPlaythroughId\"},{\"name\":\"PlayerPosZ\"},{\"name\":\"World\"},{\"name\":\"Ttp\"},{\"name\":\"PlayerPosX\"},{\"name\":\"PlayerPosY\"},{\"name\":\"ResourceSourceID\"}]}",
+                                           "confidence":  "high",
+                                           "evidenceClass":  "confirmed_telemetry_event_schema"
+                                       },
+                                       {
+                                           "name":  "custom.player.OBDFeedback",
+                                           "eventType":  "CUSTOM",
+                                           "fileOffset":  "0xA1DFAE0",
+                                           "rva":  "0xA1E04E0",
+                                           "va":  "0x14A1E04E0",
+                                           "section":  ".edata",
+                                           "attributes":  [
+                                                              "CurrentPlaythroughId",
+                                                              "Feedback",
+                                                              "PlayerHealth",
+                                                              "PlayerPosX",
+                                                              "PlayerPosY",
+                                                              "PlayerPosZ",
+                                                              "TimeOfDay",
+                                                              "Ttp",
+                                                              "World"
+                                                          ],
+                                           "hasXYZ":  true,
+                                           "fullMatch":  "{\"name\":\"custom.player.OBDFeedback\",\"type\":\"CUSTOM\",\"typeAttributes\":[],\"customAttributes\":[{\"name\":\"CurrentPlaythroughId\"},{\"name\":\"Feedback\"},{\"name\":\"PlayerHealth\"},{\"name\":\"PlayerPosX\"},{\"name\":\"PlayerPosY\"},{\"name\":\"PlayerPosZ\"},{\"name\":\"TimeOfDay\"},{\"name\":\"Ttp\"},{\"name\":\"World\"}]}",
+                                           "confidence":  "high",
+                                           "evidenceClass":  "confirmed_telemetry_event_schema"
+                                       },
+                                       {
+                                           "name":  "custom.poi.objective.update",
+                                           "eventType":  "CUSTOM",
+                                           "fileOffset":  "0xA1E0E75",
+                                           "rva":  "0xA1E1875",
+                                           "va":  "0x14A1E1875",
+                                           "section":  ".edata",
+                                           "attributes":  [
+                                                              "PoiId",
+                                                              "PoiPercentageObjectiveCompleted",
+                                                              "PoiTotalObjectiveAvailable",
+                                                              "PoiType",
+                                                              "Ttp",
+                                                              "Character",
+                                                              "CurrentPlaythroughId",
+                                                              "World",
+                                                              "PlayerLevel",
+                                                              "TimeOfDay",
+                                                              "PlayerHealth",
+                                                              "PlayerPosY",
+                                                              "PlayerPosX",
+                                                              "PlayerPosZ"
+                                                          ],
+                                           "hasXYZ":  true,
+                                           "fullMatch":  "{\"name\":\"custom.poi.objective.update\",\"type\":\"CUSTOM\",\"typeAttributes\":[],\"customAttributes\":[{\"name\":\"PoiId\"},{\"name\":\"PoiPercentageObjectiveCompleted\"},{\"name\":\"PoiTotalObjectiveAvailable\"},{\"name\":\"PoiType\"},{\"name\":\"Ttp\"},{\"name\":\"Character\"},{\"name\":\"CurrentPlaythroughId\"},{\"name\":\"World\"},{\"name\":\"PlayerLevel\"},{\"name\":\"TimeOfDay\"},{\"name\":\"PlayerHealth\"},{\"name\":\"PlayerPosY\"},{\"name\":\"PlayerPosX\"},{\"name\":\"PlayerPosZ\"}]}",
+                                           "confidence":  "high",
+                                           "evidenceClass":  "confirmed_telemetry_event_schema"
+                                       },
+                                       {
+                                           "name":  "custom.CinematicDone",
+                                           "eventType":  "CUSTOM",
+                                           "fileOffset":  "0xA1E1759",
+                                           "rva":  "0xA1E2159",
+                                           "va":  "0x14A1E2159",
+                                           "section":  ".edata",
+                                           "attributes":  [
+                                                              "CinematicId",
+                                                              "CurrentPlaythroughId",
+                                                              "PlayerPosX",
+                                                              "PlayerPosY",
+                                                              "PlayerPosZ",
+                                                              "TimeOfDay",
+                                                              "Ttp",
+                                                              "World"
+                                                          ],
+                                           "hasXYZ":  true,
+                                           "fullMatch":  "{\"name\":\"custom.CinematicDone\",\"type\":\"CUSTOM\",\"typeAttributes\":[],\"customAttributes\":[{\"name\":\"CinematicId\"},{\"name\":\"CurrentPlaythroughId\"},{\"name\":\"PlayerPosX\"},{\"name\":\"PlayerPosY\"},{\"name\":\"PlayerPosZ\"},{\"name\":\"TimeOfDay\"},{\"name\":\"Ttp\"},{\"name\":\"World\"}]}",
+                                           "confidence":  "high",
+                                           "evidenceClass":  "confirmed_telemetry_event_schema"
+                                       },
+                                       {
+                                           "name":  "custom.PlayerKill",
+                                           "eventType":  "CUSTOM",
+                                           "fileOffset":  "0xA1E1BD1",
+                                           "rva":  "0xA1E25D1",
+                                           "va":  "0x14A1E25D1",
+                                           "section":  ".edata",
+                                           "attributes":  [
+                                                              "AssassinationType",
+                                                              "Character",
+                                                              "CurrentConflictState",
+                                                              "CurrentPlaythroughId",
+                                                              "DamageTag",
+                                                              "EnemyAlertState",
+                                                              "EnemyArchetype",
+                                                              "EnemyFaction",
+                                                              "EnemyIsBoss",
+                                                              "EnemyLevel",
+                                                              "EnemyRankInfo",
+                                                              "KillWeapon",
+                                                              "KillWeaponCategorization",
+                                                              "PlayerAtkOffhand",
+                                                              "PlayerHealth",
+                                                              "PlayerLevel",
+                                                              "PlayerPosX",
+                                                              "PlayerPosY",
+                                                              "PlayerPosZ",
+                                                              "TimeOfDay",
+                                                              "Ttp",
+                                                              "WeaponTag",
+                                                              "World"
+                                                          ],
+                                           "hasXYZ":  true,
+                                           "fullMatch":  "{\"name\":\"custom.PlayerKill\",\"type\":\"CUSTOM\",\"typeAttributes\":[],\"customAttributes\":[{\"name\":\"AssassinationType\"},{\"name\":\"Character\"},{\"name\":\"CurrentConflictState\"},{\"name\":\"CurrentPlaythroughId\"},{\"name\":\"DamageTag\"},{\"name\":\"EnemyAlertState\"},{\"name\":\"EnemyArchetype\"},{\"name\":\"EnemyFaction\"},{\"name\":\"EnemyIsBoss\"},{\"name\":\"EnemyLevel\"},{\"name\":\"EnemyRankInfo\"},{\"name\":\"KillWeapon\"},{\"name\":\"KillWeaponCategorization\"},{\"name\":\"PlayerAtkOffhand\"},{\"name\":\"PlayerHealth\"},{\"name\":\"PlayerLevel\"},{\"name\":\"PlayerPosX\"},{\"name\":\"PlayerPosY\"},{\"name\":\"PlayerPosZ\"},{\"name\":\"TimeOfDay\"},{\"name\":\"Ttp\"},{\"name\":\"WeaponTag\"},{\"name\":\"World\"}]}",
+                                           "confidence":  "high",
+                                           "evidenceClass":  "confirmed_telemetry_event_schema"
+                                       },
+                                       {
+                                           "name":  "custom.PlayerDespawn",
+                                           "eventType":  "CUSTOM",
+                                           "fileOffset":  "0xA1E1E53",
+                                           "rva":  "0xA1E2853",
+                                           "va":  "0x14A1E2853",
+                                           "section":  ".edata",
+                                           "attributes":  [
+                                                              "Character",
+                                                              "CurrentPlaythroughId",
+                                                              "DespawnReason",
+                                                              "EnemyArchetype",
+                                                              "EnemyFaction",
+                                                              "EnemyLevel",
+                                                              "EnemyRankInfo",
+                                                              "PlayerLevel",
+                                                              "PlayerPosX",
+                                                              "PlayerPosY",
+                                                              "PlayerPosZ",
+                                                              "TimeOfDay",
+                                                              "Ttp",
+                                                              "World"
+                                                          ],
+                                           "hasXYZ":  true,
+                                           "fullMatch":  "{\"name\":\"custom.PlayerDespawn\",\"type\":\"CUSTOM\",\"typeAttributes\":[],\"customAttributes\":[{\"name\":\"Character\"},{\"name\":\"CurrentPlaythroughId\"},{\"name\":\"DespawnReason\"},{\"name\":\"EnemyArchetype\"},{\"name\":\"EnemyFaction\"},{\"name\":\"EnemyLevel\"},{\"name\":\"EnemyRankInfo\"},{\"name\":\"PlayerLevel\"},{\"name\":\"PlayerPosX\"},{\"name\":\"PlayerPosY\"},{\"name\":\"PlayerPosZ\"},{\"name\":\"TimeOfDay\"},{\"name\":\"Ttp\"},{\"name\":\"World\"}]}",
+                                           "confidence":  "high",
+                                           "evidenceClass":  "confirmed_telemetry_event_schema"
+                                       },
+                                       {
+                                           "name":  "custom.playerToolModeUse",
+                                           "eventType":  "CUSTOM",
+                                           "fileOffset":  "0xA1E222A",
+                                           "rva":  "0xA1E2C2A",
+                                           "va":  "0x14A1E2C2A",
+                                           "section":  ".edata",
+                                           "attributes":  [
+                                                              "ToolId",
+                                                              "ToolItemName",
+                                                              "UsedInFreeAim",
+                                                              "CurrentPlaythroughId",
+                                                              "PlayerPosX",
+                                                              "PlayerPosY",
+                                                              "PlayerPosZ",
+                                                              "Ttp",
+                                                              "World"
+                                                          ],
+                                           "hasXYZ":  true,
+                                           "fullMatch":  "{\"name\":\"custom.playerToolModeUse\",\"type\":\"CUSTOM\",\"typeAttributes\":[],\"customAttributes\":[{\"name\":\"ToolId\"},{\"name\":\"ToolItemName\"},{\"name\":\"UsedInFreeAim\"},{\"name\":\"CurrentPlaythroughId\"},{\"name\":\"PlayerPosX\"},{\"name\":\"PlayerPosY\"},{\"name\":\"PlayerPosZ\"},{\"name\":\"Ttp\"},{\"name\":\"World\"}]}",
+                                           "confidence":  "high",
+                                           "evidenceClass":  "confirmed_telemetry_event_schema"
+                                       },
+                                       {
+                                           "name":  "custom.shipCamera",
+                                           "eventType":  "CUSTOM",
+                                           "fileOffset":  "0xA1E2677",
+                                           "rva":  "0xA1E3077",
+                                           "va":  "0x14A1E3077",
+                                           "section":  ".edata",
+                                           "attributes":  [
+                                                              "CaptainCameraTime",
+                                                              "CaptainCameraUses",
+                                                              "BroadsideCameraTime",
+                                                              "BroadsideCameraUses",
+                                                              "RearCameraTime",
+                                                              "RearCameraUses",
+                                                              "FrontCameraTime",
+                                                              "FrontCameraUses",
+                                                              "AuxiliaryCameraTime",
+                                                              "AuxiliaryCameraUses",
+                                                              "SpyglassCameraTime",
+                                                              "SpyglassCameraUses",
+                                                              "TravelSailsCameraTime",
+                                                              "TravelSailsCameraUses",
+                                                              "BraceCameraTime",
+                                                              "BraceCameraUses",
+                                                              "SwivelCameraTime",
+                                                              "SwivelCameraUses",
+                                                              "TimeSinceLastDump",
+                                                              "PlayerPosX",
+                                                              "PlayerPosY",
+                                                              "PlayerPosZ",
+                                                              "CurrentPlaythroughId",
+                                                              "TimeOfDay",
+                                                              "Ttp",
+                                                              "World"
+                                                          ],
+                                           "hasXYZ":  true,
+                                           "fullMatch":  "{\"name\":\"custom.shipCamera\",\"type\":\"CUSTOM\",\"typeAttributes\":[],\"customAttributes\":[{\"name\":\"CaptainCameraTime\"},{\"name\":\"CaptainCameraUses\"},{\"name\":\"BroadsideCameraTime\"},{\"name\":\"BroadsideCameraUses\"},{\"name\":\"RearCameraTime\"},{\"name\":\"RearCameraUses\"},{\"name\":\"FrontCameraTime\"},{\"name\":\"FrontCameraUses\"},{\"name\":\"AuxiliaryCameraTime\"},{\"name\":\"AuxiliaryCameraUses\"},{\"name\":\"SpyglassCameraTime\"},{\"name\":\"SpyglassCameraUses\"},{\"name\":\"TravelSailsCameraTime\"},{\"name\":\"TravelSailsCameraUses\"},{\"name\":\"BraceCameraTime\"},{\"name\":\"BraceCameraUses\"},{\"name\":\"SwivelCameraTime\"},{\"name\":\"SwivelCameraUses\"},{\"name\":\"TimeSinceLastDump\"},{\"name\":\"PlayerPosX\"},{\"name\":\"PlayerPosY\"},{\"name\":\"PlayerPosZ\"},{\"name\":\"CurrentPlaythroughId\"},{\"name\":\"TimeOfDay\"},{\"name\":\"Ttp\"},{\"name\":\"World\"}]}",
+                                           "confidence":  "high",
+                                           "evidenceClass":  "confirmed_telemetry_event_schema"
+                                       },
+                                       {
+                                           "name":  "custom.shipWeaponAccuracy",
+                                           "eventType":  "CUSTOM",
+                                           "fileOffset":  "0xA1E298E",
+                                           "rva":  "0xA1E338E",
+                                           "va":  "0x14A1E338E",
+                                           "section":  ".edata",
+                                           "attributes":  [
+                                                              "ShipWeaponName",
+                                                              "ShipSlot",
+                                                              "CannonNbLevel",
+                                                              "ShotStrengthLevel",
+                                                              "SpecialShotStrengthLevel",
+                                                              "ShotsFired",
+                                                              "ShotsHit",
+                                                              "Weakpointhits",
+                                                              "IsEndOfConflict",
+                                                              "CurrentPlaythroughId",
+                                                              "PlayerPosX",
+                                                              "PlayerPosY",
+                                                              "PlayerPosZ",
+                                                              "TimeOfDay",
+                                                              "Ttp",
+                                                              "World"
+                                                          ],
+                                           "hasXYZ":  true,
+                                           "fullMatch":  "{\"name\":\"custom.shipWeaponAccuracy\",\"type\":\"CUSTOM\",\"typeAttributes\":[],\"customAttributes\":[{\"name\":\"ShipWeaponName\"},{\"name\":\"ShipSlot\"},{\"name\":\"CannonNbLevel\"},{\"name\":\"ShotStrengthLevel\"},{\"name\":\"SpecialShotStrengthLevel\"},{\"name\":\"ShotsFired\"},{\"name\":\"ShotsHit\"},{\"name\":\"Weakpointhits\"},{\"name\":\"IsEndOfConflict\"},{\"name\":\"CurrentPlaythroughId\"},{\"name\":\"PlayerPosX\"},{\"name\":\"PlayerPosY\"},{\"name\":\"PlayerPosZ\"},{\"name\":\"TimeOfDay\"},{\"name\":\"Ttp\"},{\"name\":\"World\"}]}",
+                                           "confidence":  "high",
+                                           "evidenceClass":  "confirmed_telemetry_event_schema"
+                                       }
+                                   ],
+    "attributeContextSamples":  [
+                                    {
+                                        "attribute":  "PlayerPosX",
+                                        "fileOffset":  "0xA1D6606",
+                                        "rva":  "0xA1D7006",
+                                        "context":  "name\":\"PlayerNavState\",\"type\":\"string\",\"isOptional\":true}, {\"name\":\"PlayerPosX\",\"type\":\"float\",\"isOptional\":true}, {\"name\":\"PlayerPosY\",\"type\":\"float\",\"isOptional\":true}, {\"name\":\"PlayerPosZ\",\"type\":\"float\",\"isOptional\":true}, {\"name\":\"play"
+                                    },
+                                    {
+                                        "attribute":  "PlayerPosX",
+                                        "fileOffset":  "0xA1D6872",
+                                        "rva":  "0xA1D7272",
+                                        "context":  "{\"name\":\"PlayerPosZ\"},{\"name\":\"Ttp\"},{\"name\":\"PlayerPosY\"},{\"name\":\"PlayerPosX\"},{\"name\":\"World\"}]}, {\"name\":\"custom.player.inventory.collectible\",\"type\":\"CUSTOM\",\"typeAttributes\":[],\"customAttributes\":[{\"name\":\"InventoryCollectibleId\"},{\"n"
+                                    },
+                                    {
+                                        "attribute":  "PlayerPosX",
+                                        "fileOffset":  "0xA1D699A",
+                                        "rva":  "0xA1D739A",
+                                        "context":  "ctibleSource\"},{\"name\":\"PlayerPosY\"},{\"name\":\"PlayerPosZ\"},{\"name\":\"PlayerPosX\"},{\"name\":\"Ttp\"},{\"name\":\"World\"},{\"name\":\"CurrentPlaythroughId\"}]}, {\"name\":\"custom.ShipLoadout\",\"type\":\"CUSTOM\",\"typeAttributes\":[],\"customAttributes\":[{\"name\""
+                                    },
+                                    {
+                                        "attribute":  "PlayerPosX",
+                                        "fileOffset":  "0xA1D6ED1",
+                                        "rva":  "0xA1D78D1",
+                                        "context":  "},{\"name\":\"Character\"},{\"name\":\"TimeOfDay\"},{\"name\":\"Ttp\"},{\"name\":\"PlayerPosX\"},{\"name\":\"PlayerPosY\"},{\"name\":\"PlayerPosZ\"},{\"name\":\"World\"},{\"name\":\"CurrentPlaythroughId\"},{\"name\":\"PlayerLevel\"},{\"name\":\"PlayerAction\"},{\"name\":\"BodyDropGl"
+                                    },
+                                    {
+                                        "attribute":  "PlayerPosX",
+                                        "fileOffset":  "0xA1D7B6B",
+                                        "rva":  "0xA1D856B",
+                                        "context":  "tributes\":[{\"name\":\"WebStoreEntrySource\"},{\"name\":\"World\"},{\"name\":\"PlayerPosX\"},{\"name\":\"PlayerPosY\"},{\"name\":\"PlayerPosZ\"},{\"name\":\"Character\"},{\"name\":\"Ttp\"},{\"name\":\"PlayerLevel\"},{\"name\":\"MenuSequenceId\"}]}, {\"name\":\"custom.store.inter"
+                                    },
+                                    {
+                                        "attribute":  "PlayerPosX",
+                                        "fileOffset":  "0xA1D7E67",
+                                        "rva":  "0xA1D8867",
+                                        "context":  "me\":\"Ttp\"},{\"name\":\"NavigationStateName\"},{\"name\":\"World\"},{\"name\":\"PlayerPosX\"},{\"name\":\"PlayerPosY\"},{\"name\":\"PlayerPosZ\"},{\"name\":\"Character\"},{\"name\":\"CurrentPlaythroughId\"},{\"name\":\"PlayerLevel\"}]}, .{\"name\":\"context.stop.conflict\",\"ty"
+                                    },
+                                    {
+                                        "attribute":  "PlayerPosX",
+                                        "fileOffset":  "0xA1D8074",
+                                        "rva":  "0xA1D8A74",
+                                        "context":  "{\"name\":\"Character\"},{\"name\":\"TimeOfDay\"},{\"name\":\"World\"},{\"name\":\"PlayerPosX\"},{\"name\":\"PlayerPosY\"},{\"name\":\"PlayerPosZ\"},{\"name\":\"Ttp\"},{\"name\":\"PlayerLevel\"},{\"name\":\"PlayerHealth\"},{\"name\":\"CurrentPlaythroughId\"}]}, {\"name\":\"custom.Di"
+                                    },
+                                    {
+                                        "attribute":  "PlayerPosX",
+                                        "fileOffset":  "0xA1D81F1",
+                                        "rva":  "0xA1D8BF1",
+                                        "context":  "eId\"},{\"name\":\"SpeakerId\"},{\"name\":\"Ttp\"},{\"name\":\"World\"},{\"name\":\"PlayerPosX\"},{\"name\":\"PlayerPosY\"},{\"name\":\"PlayerPosZ\"},{\"name\":\"CurrentPlaythroughId\"},{\"name\":\"Character\"},{\"name\":\"PlayerLevel\"}]}, {\"name\":\"custom.interval.time.recap\""
+                                    },
+                                    {
+                                        "attribute":  "PlayerPosY",
+                                        "fileOffset":  "0xA1D663E",
+                                        "rva":  "0xA1D703E",
+                                        "context":  "}, {\"name\":\"PlayerPosX\",\"type\":\"float\",\"isOptional\":true}, {\"name\":\"PlayerPosY\",\"type\":\"float\",\"isOptional\":true}, {\"name\":\"PlayerPosZ\",\"type\":\"float\",\"isOptional\":true}, {\"name\":\"playerSessionId\",\"type\":\"string\",\"isOptional\":false}, .\"comp"
+                                    },
+                                    {
+                                        "attribute":  "PlayerPosY",
+                                        "fileOffset":  "0xA1D685C",
+                                        "rva":  "0xA1D725C",
+                                        "context":  "urrentPlaythroughId\"},{\"name\":\"PlayerPosZ\"},{\"name\":\"Ttp\"},{\"name\":\"PlayerPosY\"},{\"name\":\"PlayerPosX\"},{\"name\":\"World\"}]}, {\"name\":\"custom.player.inventory.collectible\",\"type\":\"CUSTOM\",\"typeAttributes\":[],\"customAttributes\":[{\"name\":\"Invent"
+                                    },
+                                    {
+                                        "attribute":  "PlayerPosY",
+                                        "fileOffset":  "0xA1D696E",
+                                        "rva":  "0xA1D736E",
+                                        "context":  "oryCollectibleMove\"},{\"name\":\"InventoryCollectibleSource\"},{\"name\":\"PlayerPosY\"},{\"name\":\"PlayerPosZ\"},{\"name\":\"PlayerPosX\"},{\"name\":\"Ttp\"},{\"name\":\"World\"},{\"name\":\"CurrentPlaythroughId\"}]}, {\"name\":\"custom.ShipLoadout\",\"type\":\"CUSTOM\",\"ty"
+                                    },
+                                    {
+                                        "attribute":  "PlayerPosY",
+                                        "fileOffset":  "0xA1D6EE7",
+                                        "rva":  "0xA1D78E7",
+                                        "context":  ",{\"name\":\"TimeOfDay\"},{\"name\":\"Ttp\"},{\"name\":\"PlayerPosX\"},{\"name\":\"PlayerPosY\"},{\"name\":\"PlayerPosZ\"},{\"name\":\"World\"},{\"name\":\"CurrentPlaythroughId\"},{\"name\":\"PlayerLevel\"},{\"name\":\"PlayerAction\"},{\"name\":\"BodyDropGlobalPositionX\"},{\"name"
+                                    },
+                                    {
+                                        "attribute":  "PlayerPosY",
+                                        "fileOffset":  "0xA1D7B81",
+                                        "rva":  "0xA1D8581",
+                                        "context":  "bStoreEntrySource\"},{\"name\":\"World\"},{\"name\":\"PlayerPosX\"},{\"name\":\"PlayerPosY\"},{\"name\":\"PlayerPosZ\"},{\"name\":\"Character\"},{\"name\":\"Ttp\"},{\"name\":\"PlayerLevel\"},{\"name\":\"MenuSequenceId\"}]}, {\"name\":\"custom.store.interaction\",\"type\":\"CUSTOM"
+                                    },
+                                    {
+                                        "attribute":  "PlayerPosY",
+                                        "fileOffset":  "0xA1D7E7D",
+                                        "rva":  "0xA1D887D",
+                                        "context":  "vigationStateName\"},{\"name\":\"World\"},{\"name\":\"PlayerPosX\"},{\"name\":\"PlayerPosY\"},{\"name\":\"PlayerPosZ\"},{\"name\":\"Character\"},{\"name\":\"CurrentPlaythroughId\"},{\"name\":\"PlayerLevel\"}]}, .{\"name\":\"context.stop.conflict\",\"type\":\"CONTEXT_STOP\",\"ty"
+                                    },
+                                    {
+                                        "attribute":  "PlayerPosY",
+                                        "fileOffset":  "0xA1D808A",
+                                        "rva":  "0xA1D8A8A",
+                                        "context":  "\"name\":\"TimeOfDay\"},{\"name\":\"World\"},{\"name\":\"PlayerPosX\"},{\"name\":\"PlayerPosY\"},{\"name\":\"PlayerPosZ\"},{\"name\":\"Ttp\"},{\"name\":\"PlayerLevel\"},{\"name\":\"PlayerHealth\"},{\"name\":\"CurrentPlaythroughId\"}]}, {\"name\":\"custom.DialogueLineSkip\",\"type\""
+                                    },
+                                    {
+                                        "attribute":  "PlayerPosY",
+                                        "fileOffset":  "0xA1D8207",
+                                        "rva":  "0xA1D8C07",
+                                        "context":  "Id\"},{\"name\":\"Ttp\"},{\"name\":\"World\"},{\"name\":\"PlayerPosX\"},{\"name\":\"PlayerPosY\"},{\"name\":\"PlayerPosZ\"},{\"name\":\"CurrentPlaythroughId\"},{\"name\":\"Character\"},{\"name\":\"PlayerLevel\"}]}, {\"name\":\"custom.interval.time.recap\",\"type\":\"CUSTOM\",\"type"
+                                    },
+                                    {
+                                        "attribute":  "PlayerPosZ",
+                                        "fileOffset":  "0xA1D6676",
+                                        "rva":  "0xA1D7076",
+                                        "context":  "}, {\"name\":\"PlayerPosY\",\"type\":\"float\",\"isOptional\":true}, {\"name\":\"PlayerPosZ\",\"type\":\"float\",\"isOptional\":true}, {\"name\":\"playerSessionId\",\"type\":\"string\",\"isOptional\":false}, .\"compositions\":[{\"name\":\"custom.player.inventory.consumable\","
+                                    },
+                                    {
+                                        "attribute":  "PlayerPosZ",
+                                        "fileOffset":  "0xA1D6837",
+                                        "rva":  "0xA1D7237",
+                                        "context":  "nventoryConsumableSource\"},{\"name\":\"CurrentPlaythroughId\"},{\"name\":\"PlayerPosZ\"},{\"name\":\"Ttp\"},{\"name\":\"PlayerPosY\"},{\"name\":\"PlayerPosX\"},{\"name\":\"World\"}]}, {\"name\":\"custom.player.inventory.collectible\",\"type\":\"CUSTOM\",\"typeAttributes\":["
+                                    },
+                                    {
+                                        "attribute":  "PlayerPosZ",
+                                        "fileOffset":  "0xA1D6984",
+                                        "rva":  "0xA1D7384",
+                                        "context":  "\"name\":\"InventoryCollectibleSource\"},{\"name\":\"PlayerPosY\"},{\"name\":\"PlayerPosZ\"},{\"name\":\"PlayerPosX\"},{\"name\":\"Ttp\"},{\"name\":\"World\"},{\"name\":\"CurrentPlaythroughId\"}]}, {\"name\":\"custom.ShipLoadout\",\"type\":\"CUSTOM\",\"typeAttributes\":[],\"cust"
+                                    },
+                                    {
+                                        "attribute":  "PlayerPosZ",
+                                        "fileOffset":  "0xA1D6EFD",
+                                        "rva":  "0xA1D78FD",
+                                        "context":  "{\"name\":\"Ttp\"},{\"name\":\"PlayerPosX\"},{\"name\":\"PlayerPosY\"},{\"name\":\"PlayerPosZ\"},{\"name\":\"World\"},{\"name\":\"CurrentPlaythroughId\"},{\"name\":\"PlayerLevel\"},{\"name\":\"PlayerAction\"},{\"name\":\"BodyDropGlobalPositionX\"},{\"name\":\"BodyDropGlobalPosit"
+                                    },
+                                    {
+                                        "attribute":  "PlayerPosZ",
+                                        "fileOffset":  "0xA1D7B97",
+                                        "rva":  "0xA1D8597",
+                                        "context":  "name\":\"World\"},{\"name\":\"PlayerPosX\"},{\"name\":\"PlayerPosY\"},{\"name\":\"PlayerPosZ\"},{\"name\":\"Character\"},{\"name\":\"Ttp\"},{\"name\":\"PlayerLevel\"},{\"name\":\"MenuSequenceId\"}]}, {\"name\":\"custom.store.interaction\",\"type\":\"CUSTOM\",\"typeAttributes\":[],"
+                                    },
+                                    {
+                                        "attribute":  "PlayerPosZ",
+                                        "fileOffset":  "0xA1D7E93",
+                                        "rva":  "0xA1D8893",
+                                        "context":  "name\":\"World\"},{\"name\":\"PlayerPosX\"},{\"name\":\"PlayerPosY\"},{\"name\":\"PlayerPosZ\"},{\"name\":\"Character\"},{\"name\":\"CurrentPlaythroughId\"},{\"name\":\"PlayerLevel\"}]}, .{\"name\":\"context.stop.conflict\",\"type\":\"CONTEXT_STOP\",\"typeAttributes\":[{\"name\""
+                                    },
+                                    {
+                                        "attribute":  "PlayerPosZ",
+                                        "fileOffset":  "0xA1D80A0",
+                                        "rva":  "0xA1D8AA0",
+                                        "context":  "name\":\"World\"},{\"name\":\"PlayerPosX\"},{\"name\":\"PlayerPosY\"},{\"name\":\"PlayerPosZ\"},{\"name\":\"Ttp\"},{\"name\":\"PlayerLevel\"},{\"name\":\"PlayerHealth\"},{\"name\":\"CurrentPlaythroughId\"}]}, {\"name\":\"custom.DialogueLineSkip\",\"type\":\"CUSTOM\",\"typeAttribu"
+                                    },
+                                    {
+                                        "attribute":  "PlayerPosZ",
+                                        "fileOffset":  "0xA1D821D",
+                                        "rva":  "0xA1D8C1D",
+                                        "context":  "name\":\"World\"},{\"name\":\"PlayerPosX\"},{\"name\":\"PlayerPosY\"},{\"name\":\"PlayerPosZ\"},{\"name\":\"CurrentPlaythroughId\"},{\"name\":\"Character\"},{\"name\":\"PlayerLevel\"}]}, {\"name\":\"custom.interval.time.recap\",\"type\":\"CUSTOM\",\"typeAttributes\":[],\"custom"
+                                    },
+                                    {
+                                        "attribute":  "PositionSource",
+                                        "fileOffset":  "0xA1D566F",
+                                        "rva":  "0xA1D606F",
+                                        "context":  "ue}, {\"name\":\"PoiType\",\"type\":\"string\",\"isOptional\":true}, {\"name\":\"PositionSource\",\"type\":\"string\",\"isOptional\":true}, {\"name\":\"PreviousPlaythroughId\",\"type\":\"string\",\"isOptional\":true}, {\"name\":\"ProceduralQuestType\",\"type\":\"string\",\"isOpt"
+                                    },
+                                    {
+                                        "attribute":  "PositionSource",
+                                        "fileOffset":  "0xA1DE1D4",
+                                        "rva":  "0xA1DEBD4",
+                                        "context":  "me\":\"TimeOfDay\"},{\"name\":\"FightState\"},{\"name\":\"Movement\"},{\"name\":\"PositionSource\"},{\"name\":\"DistanceTraveled\"},{\"name\":\"Ttp\"},{\"name\":\"World\"},{\"name\":\"CurrentPlaythroughId\"}]}, {\"name\":\"hardwareSpecs.xboxSeries\",\"type\":\"STANDARD\",\"typeAt"
+                                    },
+                                    {
+                                        "attribute":  "FightState",
+                                        "fileOffset":  "0xA1CF105",
+                                        "rva":  "0xA1CFB05",
+                                        "context":  "ame\":\"FightLogicState\",\"type\":\"string\",\"isOptional\":true}, {\"name\":\"FightState\",\"type\":\"string\",\"isOptional\":true}, {\"name\":\"FishSchoolUses\",\"type\":\"int\",\"isOptional\":true}, {\"name\":\"FortDefensesDestroyedCount\",\"type\":\"int\",\"isOptional\":tru"
+                                    },
+                                    {
+                                        "attribute":  "FightState",
+                                        "fileOffset":  "0xA1DE1AA",
+                                        "rva":  "0xA1DEBAA",
+                                        "context":  "\":\"PlayerPosY\"},{\"name\":\"PlayerPosZ\"},{\"name\":\"TimeOfDay\"},{\"name\":\"FightState\"},{\"name\":\"Movement\"},{\"name\":\"PositionSource\"},{\"name\":\"DistanceTraveled\"},{\"name\":\"Ttp\"},{\"name\":\"World\"},{\"name\":\"CurrentPlaythroughId\"}]}, {\"name\":\"hardwareS"
+                                    },
+                                    {
+                                        "attribute":  "Movement",
+                                        "fileOffset":  "0xA1CE5EC",
+                                        "rva":  "0xA1CEFEC",
+                                        "context":  "me\":\"MortarStrengthLevel\",\"type\":\"int\",\"isOptional\":true}, {\"name\":\"Movement\",\"type\":\"string\",\"isOptional\":true}, {\"name\":\"multiplayerAllowed\",\"type\":\"boolean\",\"isOptional\":true}, {\"name\":\"NavalConflictEndReason\",\"type\":\"string\",\"isOptional"
+                                    },
+                                    {
+                                        "attribute":  "Movement",
+                                        "fileOffset":  "0xA1DE1C0",
+                                        "rva":  "0xA1DEBC0",
+                                        "context":  "\":\"PlayerPosZ\"},{\"name\":\"TimeOfDay\"},{\"name\":\"FightState\"},{\"name\":\"Movement\"},{\"name\":\"PositionSource\"},{\"name\":\"DistanceTraveled\"},{\"name\":\"Ttp\"},{\"name\":\"World\"},{\"name\":\"CurrentPlaythroughId\"}]}, {\"name\":\"hardwareSpecs.xboxSeries\",\"type"
+                                    },
+                                    {
+                                        "attribute":  "DistanceTraveled",
+                                        "fileOffset":  "0xA1D4AE4",
+                                        "rva":  "0xA1D54E4",
+                                        "context":  ", {\"name\":\"DistanceNPC\",\"type\":\"float\",\"isOptional\":true}, {\"name\":\"DistanceTraveled\",\"type\":\"int\",\"isOptional\":true}, {\"name\":\"District\",\"type\":\"string\",\"isOptional\":true}, {\"name\":\"DodgeVaultResult\",\"type\":\"string\",\"isOptional\":true}, {\"n"
+                                    },
+                                    {
+                                        "attribute":  "DistanceTraveled",
+                                        "fileOffset":  "0xA1DE1EE",
+                                        "rva":  "0xA1DEBEE",
+                                        "context":  "FightState\"},{\"name\":\"Movement\"},{\"name\":\"PositionSource\"},{\"name\":\"DistanceTraveled\"},{\"name\":\"Ttp\"},{\"name\":\"World\"},{\"name\":\"CurrentPlaythroughId\"}]}, {\"name\":\"hardwareSpecs.xboxSeries\",\"type\":\"STANDARD\",\"typeAttributes\":[{\"name\":\"hardwa"
+                                    },
+                                    {
+                                        "attribute":  "DistanceTraveled",
+                                        "fileOffset":  "0xA1E11A4",
+                                        "rva":  "0xA1E1BA4",
+                                        "context":  "e\":\"PlayerPosZ\"},{\"name\":\"Character\"},{\"name\":\"VehicleId\"},{\"name\":\"DistanceTraveled\"},{\"name\":\"NavStartReason\"},{\"name\":\"TimeOfDay\"},{\"name\":\"CurrentPlaythroughId\"},{\"name\":\"PlayerLevel\"},{\"name\":\"PlayerHealth\"}],\"contextNameAttribute\":\"Pl"
+                                    },
+                                    {
+                                        "attribute":  "DistanceTraveled",
+                                        "fileOffset":  "0xA1E1424",
+                                        "rva":  "0xA1E1E24",
+                                        "context":  "e\":\"PlayerPosZ\"},{\"name\":\"Character\"},{\"name\":\"VehicleId\"},{\"name\":\"DistanceTraveled\"},{\"name\":\"NavStopReason\"},{\"name\":\"TimeOfDay\"},{\"name\":\"CurrentPlaythroughId\"},{\"name\":\"PlayerLevel\"},{\"name\":\"PlayerHealth\"}]}, {\"name\":\"custom.HardwareS"
+                                    }
+                                ],
+    "vectorLikeStringSearch":  [
+                                   {
+                                       "needle":  "Vector3",
+                                       "hitCountAtLeast":  3,
+                                       "samples":  [
+                                                       {
+                                                           "needle":  "Vector3",
+                                                           "fileOffset":  "0x9999DAB",
+                                                           "rva":  "0x999A7AB",
+                                                           "context":  "biVector2............................ubiVector3............................ubiVector4............................ubiQuat"
+                                                       },
+                                                       {
+                                                           "needle":  "Vector3",
+                                                           "fileOffset":  "0x999A115",
+                                                           "rva":  "0x999AB15",
+                                                           "context":  "biVector2p...........................ubiVector3p...........................ubiVector4p...........................ubiMatr"
+                                                       },
+                                                       {
+                                                           "needle":  "Vector3",
+                                                           "fileOffset":  "0xA1AC65C",
+                                                           "rva":  "0xA1AD05C",
+                                                           "context":  "oat3.CBFloat3.StSolveJacobians3.hkPackedVector3.user3.HUB_titlescreen3.TitleScreen3.Pad_ToolWidgetTool3.col3.numObjectsO"
+                                                       }
+                                                   ]
+                                   },
+                                   {
+                                       "needle":  "Vector3f",
+                                       "hitCountAtLeast":  0,
+                                       "samples":  [
+
+                                                   ]
+                                   },
+                                   {
+                                       "needle":  "Quat",
+                                       "hitCountAtLeast":  10,
+                                       "samples":  [
+                                                       {
+                                                           "needle":  "Quat",
+                                                           "fileOffset":  "0x9999DF7",
+                                                           "rva":  "0x999A7F7",
+                                                           "context":  "biVector4............................ubiQuaternion.........................ubiMatrix33...........................ubiMatr"
+                                                       },
+                                                       {
+                                                           "needle":  "Quat",
+                                                           "fileOffset":  "0xA1121C2",
+                                                           "rva":  "0xA112BC2",
+                                                           "context":  "cle_HitReact.FightOnGround_HitReact.Mul_Quat.stat.sat.asfloat.MaxFloat.PowFloat.SqrtFloat.ConvertFloat.CosFloat.AbsFloat"
+                                                       },
+                                                       {
+                                                           "needle":  "Quat",
+                                                           "fileOffset":  "0xA112255",
+                                                           "rva":  "0xA112C55",
+                                                           "context":  "sserFloat.ExpFloat.RcpFloat.UIntToFloat.QuaternionToFloat.Vector4ToFloat.OptionFloat.AconFloat.AsinFloat.ContextualOptio"
+                                                       }
+                                                   ]
+                                   },
+                                   {
+                                       "needle":  "Quaternion",
+                                       "hitCountAtLeast":  10,
+                                       "samples":  [
+                                                       {
+                                                           "needle":  "Quaternion",
+                                                           "fileOffset":  "0x9999DF7",
+                                                           "rva":  "0x999A7F7",
+                                                           "context":  "biVector4............................ubiQuaternion.........................ubiMatrix33...........................ubiMatr"
+                                                       },
+                                                       {
+                                                           "needle":  "Quaternion",
+                                                           "fileOffset":  "0xA112255",
+                                                           "rva":  "0xA112C55",
+                                                           "context":  "sserFloat.ExpFloat.RcpFloat.UIntToFloat.QuaternionToFloat.Vector4ToFloat.OptionFloat.AconFloat.AsinFloat.ContextualOptio"
+                                                       },
+                                                       {
+                                                           "needle":  "Quaternion",
+                                                           "fileOffset":  "0xA12F5FD",
+                                                           "rva":  "0xA12FFFD",
+                                                           "context":  "aTimer.Khmer.message_framer.USScheduler.QuaternionToEuler.controller.hkdFlexibleJointController.LogOnlineNewsController."
+                                                       }
+                                                   ]
+                                   },
+                                   {
+                                       "needle":  "float3",
+                                       "hitCountAtLeast":  0,
+                                       "samples":  [
+
+                                                   ]
+                                   },
+                                   {
+                                       "needle":  "WorldTransform",
+                                       "hitCountAtLeast":  0,
+                                       "samples":  [
+
+                                                   ]
+                                   },
+                                   {
+                                       "needle":  "TransformComponent",
+                                       "hitCountAtLeast":  0,
+                                       "samples":  [
+
+                                                   ]
+                                   }
+                               ],
+    "assessments":  {
+                        "isWorldCoordinateLayoutProven":  false,
+                        "isTelemetryEventSchemaProven":  true,
+                        "attributePrimitiveTypesProven":  false,
+                        "saveGameStoresPlayerPositionProven":  false,
+                        "accessiblePublicApiProven":  false,
+                        "runtimePublisherSubscriberProven":  false,
+                        "xyzAttributeNamesProven":  true
+                    }
+}

@@ -1,0 +1,29 @@
+{
+  "schemaVersion":1,
+  "generatedUtc":"2026-11-12T15:20:22.2883753Z",
+  "needleHits":[
+    {"needle":"Pad_LockAndTurnMovement","totalHits":1,"fileOffset":"0xA10CE38","rva":"0xA10D838","section":".edata","evidenceClass":"input_action_table","context":"omovement.TelekinisisSetHierachyFatherMovement.stepMovement.Pad_LockAndTurnMovement.player.achievement.Passement.ProgressionFirstIncrement.OptionsSubtabsIncrement.OptionsTabsIncrement.KenwayFleet_Menu"},
+    {"needle":"Pad_StartAutomovement","totalHits":1,"fileOffset":"0xA10CDF0","rva":"0xA10D7F0","section":".edata","evidenceClass":"input_action_table","context":"lanarOutput::Segment.Fragmenter received duplicate fragment.Pad_StartAutomovement.TelekinisisSetHierachyFatherMovement.stepMovement.Pad_LockAndTurnMovement.player.achievement.Passement.ProgressionFirs"},
+    {"needle":"Pad_PlayerInput_HiddenHandAssassinationAbility","totalHits":1,"fileOffset":"0xA0FDD0B","rva":"0xA0FE70B","section":".edata","evidenceClass":"input_action_table","context":"BuffsAbility.Key_PlayerInput_HiddenHandAssassinationAbility.Pad_PlayerInput_HiddenHandAssassinationAbility.Pad_PlayerInput_TempestAttackAbility.FightLogicOperationLimitBreakAbility.FightLogicOperation"},
+    {"needle":"Key_PlayerInput_HiddenHandAssassinationAbility","totalHits":1,"fileOffset":"0xA0FDCDC","rva":"0xA0FE6DC","section":".edata","evidenceClass":"input_action_table","context":"erStatelessAbility.FightLogicOperationRemoveAllBuffsAbility.Key_PlayerInput_HiddenHandAssassinationAbility.Pad_PlayerInput_HiddenHandAssassinationAbility.Pad_PlayerInput_TempestAttackAbility.FightLogi"},
+    {"needle":"ConnectedInputDeviceList","totalHits":2,"fileOffset":"0xA1D4F1C","rva":"0xA1D591C","section":".edata","evidenceClass":"telemetry_or_composition_schema","context":"lictEndReason\",\"type\":\"string\",\"isOptional\":true}, {\"name\":\"ConnectedInputDeviceList\",\"type\":\"string\",\"isOptional\":true}, {\"name\":\"contextDuration\",\"type\":\"long\",\"isOptional\":false}, {\"name\":\"contextD"},
+    {"needle":"ConnectedInputDeviceList","totalHits":2,"fileOffset":"0xA1E1522","rva":"0xA1E1F22","section":".edata","evidenceClass":"telemetry_or_composition_schema","context":"\":\"CUSTOM\",\"typeAttributes\":[],\"customAttributes\":[{\"name\":\"ConnectedInputDeviceList\"},{\"name\":\"CPUAmount\"},{\"name\":\"CPUMake\"},{\"name\":\"CPUModel\"},{\"name\":\"CPUSpeed\"},{\"name\":\"GPUMake\"},{\"name\":\"GPUMo"},
+    {"needle":"PlayerNavStartSignal","totalHits":1,"fileOffset":"0xA1D8FB5","rva":"0xA1D99B5","section":".edata","evidenceClass":"telemetry_or_composition_schema","context":"itions\":[{\"name\":\"custom.poi.objective.update\"}]}, {\"name\":\"PlayerNavStartSignal\",\"compositions\":[{\"name\":\"context.start.PlayerNav\"}]}, {\"name\":\"PlayerNavStopSignal\",\"compositions\":[{\"name\":\"context.s"},
+    {"needle":"PlayerNavStopSignal","totalHits":1,"fileOffset":"0xA1D900A","rva":"0xA1D9A0A","section":".edata","evidenceClass":"telemetry_or_composition_schema","context":"mpositions\":[{\"name\":\"context.start.PlayerNav\"}]}, {\"name\":\"PlayerNavStopSignal\",\"compositions\":[{\"name\":\"context.stop.PlayerNav\"}]}, {\"name\":\"HardwareSpecsPCSignal\",\"compositions\":[{\"name\":\"custom.Ha"},
+    {"needle":"PlayerDespawnSignal","totalHits":1,"fileOffset":"0xA1DB62D","rva":"0xA1DC02D","section":".edata","evidenceClass":"telemetry_or_composition_schema","context":"l\",\"compositions\":[{\"name\":\"custom.PlayerKill\"}]}, {\"name\":\"PlayerDespawnSignal\",\"compositions\":[{\"name\":\"custom.PlayerDespawn\"}]}, {\"name\":\"ConflictStartSignal\",\"compositions\":[{\"name\":\"context.start"},
+    {"needle":"PlayerKillSignal","totalHits":1,"fileOffset":"0xA1DB5E2","rva":"0xA1DBFE2","section":".edata","evidenceClass":"telemetry_or_composition_schema","context":"sitions\":[{\"name\":\"context.stop.DialogueBlock\"}]}, {\"name\":\"PlayerKillSignal\",\"compositions\":[{\"name\":\"custom.PlayerKill\"}]}, {\"name\":\"PlayerDespawnSignal\",\"compositions\":[{\"name\":\"custom.PlayerDespaw"}
+  ],
+  "padLockAndTurn":{
+    "fileOffset":"0xA10CE38","rva":"0xA10D838",
+    "leaRipCount":1,"leaSiteSamples":[{"lea":"0x187F0558","approxEntry":"0x187F0550"}]
+  },
+  "conclusions":{
+    "activePlayerIdentificationMechanism":"unknown",
+    "inputActionTableExists":true,
+    "playerControllerObjectFound":false,
+    "possessionApiFound":false,
+    "ownershipSeparateFromExistence":"unknown",
+    "multipleControlContextsEvidence":false,
+    "note":"Pad_/Key_PlayerInput_* tables show single-player-oriented action naming. Code that binds actions to an actor is not yet identified."
+  }
+}

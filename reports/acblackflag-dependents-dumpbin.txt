@@ -1,0 +1,84 @@
+Microsoft (R) COFF/PE Dumper Version 14.52.37029.0
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file C:\Games\AC Black Flag Resynced\ACBlackFlag.exe
+
+File Type: EXECUTABLE IMAGE
+
+  Image has the following dependencies:
+
+    ADVAPI32.dll
+    amd_ags_x64.dll
+    amd_fidelityfx_loader_dx12.dll
+    bcrypt.dll
+    COMCTL32.dll
+    d3d12.dll
+    d3d9.dll
+    DSTORAGE.dll
+    dxgi.dll
+    GameInput.dll
+    GDI32.dll
+    GFSDK_Aftermath_Lib.x64.dll
+    IPHLPAPI.DLL
+    libxell.dll
+    libxess.dll
+    libxess_fg.dll
+    api-ms-win-core-path-l1-1-0.dll
+    pdh.dll
+    SHLWAPI.dll
+    upc_r2_loader64.dll
+    USER32.dll
+    VERSION.dll
+    WINMM.dll
+    WS2_32.dll
+    WTSAPI32.dll
+    XINPUT9_1_0.dll
+    KERNEL32.dll
+    SHELL32.dll
+    ole32.dll
+    OLEAUT32.dll
+    SETUPAPI.dll
+    gdiplus.dll
+    HID.DLL
+    CRYPT32.dll
+    imagehlp.dll
+    WINTRUST.dll
+    ADVAPI32.dll
+    KERNEL32.dll
+    ntdll.dll
+    OLEAUT32.dll
+    SHELL32.dll
+    Steam64.dll
+
+  Image has the following delay load dependencies:
+
+    SDL2.dll
+
+  Summary
+
+      3E3000 .bss
+     FAEC000 .code
+        5000 .data1
+        1000 .data2
+        3000 .debug
+        4000 .didata
+     127C000 .edata
+        1000 .idata
+     9035000 .impdata
+       4D000 .link
+        1000 .nidata
+      349000 .reloc
+      257000 .rodata
+       4F000 .rsrc
+        1000 .sxdata
+        1000 .tls$
+     1E49000 .trace
+        1000 .v38
+      349000 .vmp0
+       4F000 .vmp1
+      612000 .vmp2
+        2000 .vmp3
+      A7B000 .vmp4
+        5000 .xdata
+      3E3000 .xtls

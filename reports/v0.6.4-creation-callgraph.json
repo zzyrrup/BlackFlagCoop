@@ -1,0 +1,56 @@
+{
+  "schemaVersion": 1,
+  "generatedUtc": "2026-11-12T15:42:00Z",
+  "milestone": "v0.6.4",
+  "handler": {
+    "entryRva": "0x1AC380",
+    "sizeBytes": 1738,
+    "processesQueueOrArray": true,
+    "createsActorsConfirmed": false,
+    "keyCallees": ["0x725400", "0xE95E80", "0x2EA3770", "0x44FCD00", "0x53519E0"]
+  },
+  "followUps": {
+    "controllers_0x7B00B60": {
+      "linkedByDirectCallFromHandler": false,
+      "sharedMappedCalleesWithHandler": [],
+      "defensibleRelationshipToHandler": "none_recovered — both are separately registered phase handlers from 0x5CBDFB0, not callers of each other",
+      "sizeBytes": 299,
+      "observedBehavior": {
+        "loadsListFrom": "[rcx+0x98]",
+        "countMask": "0x3FFF (same mask style as handler array count)",
+        "elementStrideHint": "0x18",
+        "searchesMagicAtPlus8": "0x8365D591",
+        "clearsFlag": "[list+0x15B]=0",
+        "roleHypothesis": "Walks a controller list and dispatches by flags — update/control phase, not creation"
+      },
+      "pursuedFurther": false,
+      "reason": "No call/data-flow edge to 0x1AC380 beyond sharing the registrar"
+    },
+    "updateActor_0x29C6910": {
+      "linkedByDirectCallFromHandler": false,
+      "sharedMappedCalleesWithHandler": [],
+      "defensibleRelationshipToHandler": "none_recovered — separately registered phase; only shared ecosystem is phase table",
+      "sizeBytes": 260,
+      "observedBehavior": {
+        "usesTEB": "gs:[0x58] TLS lookup",
+        "lazyAllocSize": "0xC via allocator 0x426EE50 (same allocator family as input action descriptors)",
+        "setsTlsFlag": "[tlsObj+0x1C18]=1 style store",
+        "roleConfirmed": "Per-thread lazy TLS bootstrap stub for the UpdateActorSingleThreaded phase — not an actor iteration/factory"
+      },
+      "pursuedFurther": false,
+      "reason": "No call/data-flow edge to 0x1AC380; body is TLS init, not creation"
+    },
+    "registrar_0x5CBDFB0": {
+      "calledByHandler": false,
+      "registersHandler": true,
+      "handlerLeaSite": "0x5CBE0DE"
+    }
+  },
+  "creationEvidence": {
+    "queueProcessingInHandler": true,
+    "allocatorValidatorCalled": true,
+    "confirmedEntityFactory": false,
+    "confirmedArchetypeSpawn": false,
+    "elementIdentity": "unknown — 16-byte records with float at +8; may be handles/jobs, not proven actors"
+  }
+}

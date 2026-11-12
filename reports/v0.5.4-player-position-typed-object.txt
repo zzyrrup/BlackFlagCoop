@@ -1,0 +1,1 @@
+﻿{"name":"player.position","type":"STANDARD","typeAttributes":[],"customAttributes":[{"name":"PlayerPosX"},{"name":"PlayerPosY"},{"name":"PlayerPosZ"},{"name":"TimeOfDay"},{"name":"FightState"},{"name":"Movement"},{"name":"PositionSource"},{"name":"DistanceTraveled"},{"name":"Ttp"},{"name":"World"},{"name":"CurrentPlaythroughId"}]}

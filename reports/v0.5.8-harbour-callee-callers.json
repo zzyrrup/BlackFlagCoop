@@ -1,0 +1,30 @@
+{
+  "counts":{
+    "ClearUnsafe": 1,
+    "Find": 0,
+    "DumpTo": 0,
+    "LoadFrom": 0,
+    "Shared5014570": 115949,
+    "ClearInner9650": 6,
+    "ClearJmp9450": 1
+  },
+  "samples":[
+{"target":"Shared5014570","op":"E8","siteRva":"0x230C","section":".impdata"},
+{"target":"Shared5014570","op":"E8","siteRva":"0x552C","section":".impdata"},
+{"target":"Shared5014570","op":"E8","siteRva":"0x5993","section":".impdata"},
+{"target":"Shared5014570","op":"E8","siteRva":"0x6771","section":".impdata"},
+{"target":"Shared5014570","op":"E8","siteRva":"0x6A54","section":".impdata"},
+{"target":"Shared5014570","op":"E8","siteRva":"0x6E97","section":".impdata"},
+{"target":"Shared5014570","op":"E8","siteRva":"0x8703","section":".impdata"},
+{"target":"Shared5014570","op":"E8","siteRva":"0x9519","section":".impdata"},
+{"target":"ClearInner9650","op":"E8","siteRva":"0x692958C","section":".impdata"},
+{"target":"ClearInner9650","op":"E8","siteRva":"0x69295BB","section":".impdata"},
+{"target":"ClearInner9650","op":"E8","siteRva":"0x69296F4","section":".impdata"},
+{"target":"ClearJmp9450","op":"E9","siteRva":"0x69296FE","section":".impdata"},
+{"target":"ClearInner9650","op":"E8","siteRva":"0x692E430","section":".impdata"},
+{"target":"ClearInner9650","op":"E8","siteRva":"0x692E796","section":".impdata"},
+{"target":"ClearInner9650","op":"E8","siteRva":"0x692E87C","section":".impdata"},
+{"target":"ClearUnsafe","op":"E9","siteRva":"0x7B63581","section":".impdata"},
+  ],
+  "sharedHelper":{"rva":"0x5014570","fileOffset":"0x5013B70","bytes":"48 3B 0D 89 EC 29 05 75 10 48 C1 C1 10 66 F7 C1 FF FF 75 01 C3 48 C1 C9"}
+}

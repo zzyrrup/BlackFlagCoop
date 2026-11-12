@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "generatedUtc": "2026-11-12T15:42:00Z",
+  "milestone": "v0.6.4",
+  "handlerRva": "0x1AC380",
+  "stringHitsInHandler": [],
+  "verified": {
+    "characterArchetypeRef": false,
+    "edwardSpecificAssetOrDef": false,
+    "characterComponentInit": false,
+    "transformInitialization": false,
+    "animationOrMovementInit": false,
+    "playerEntityReference": false,
+    "entityIdOrActorHandle": false
+  },
+  "observedButUnproven": [
+    {
+      "item": "float SIMD writes at element+8",
+      "status": "hypothesis_not_confirmed",
+      "note": "Could be priority/time/LOD scalar; not proven as transform init"
+    },
+    {
+      "item": "16-byte deferred queue elements",
+      "status": "hypothesis_not_confirmed",
+      "note": "Could hold entity/job handles; layout not identified as actor/Edward"
+    }
+  ],
+  "followUpPhases": {
+    "UpdateActorControllersSingleThreaded": "no character strings; controller-list walk",
+    "UpdateActorSingleThreaded": "TLS bootstrap only in registered stub 0x29C6910"
+  },
+  "note": "Proximity of phase names containing Actor is not proof of Edward/character creation."
+}

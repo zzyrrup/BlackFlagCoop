@@ -1,0 +1,19 @@
+{
+  "schemaVersion":1,
+  "generatedUtc":"2026-11-12T15:16:48.4287463Z",
+  "path":[
+    {"stage":1,"name":"raw_schema_bytes","status":"confirmed","detail":"LEA loads address of embedded player.position STANDARD object at 0xA1DEAFE"},
+    {"stage":2,"name":"length_immediate","status":"confirmed","detail":"R8D/EDX loaded with 0x4DB; window spans multiple event schemas; imm appears 6 time(s) in candidate"},
+    {"stage":3,"name":"passed_as_pointer_plus_length","status":"confirmed","detail":"call 0x53519E0 with pointer in RDX and length in R8 (first site); second site uses R9/EDX similarly then call 0x1A64E70"},
+    {"stage":4,"name":"copied_into_string_or_buffer","status":"strong_hypothesis","detail":"Strongly consistent with pointer+length string materialization (SSO branch). Not proven as schema parser."},
+    {"stage":5,"name":"parsed_into_structured_fields","status":"unconfirmed","detail":"No confirmed JSON field extraction in 0x53519E0; 0x1A64E70 not proven as parser"},
+    {"stage":6,"name":"runtime_descriptors_or_registry","status":"unconfirmed","detail":"No verified descriptor table inserts identified offline"},
+    {"stage":7,"name":"event_construction_or_dispatch","status":"unconfirmed","detail":"Trail does not reach a proven live event emitter"}
+  ],
+  "metrics":{
+    "schemaJsonLikeLeaCountInCandidate":92,
+    "callsStringHelper":true,
+    "callsFollowHelper":true
+  },
+  "summary":"Confirmed: schema bytes addressed and passed with length into helpers. Not confirmed: parse, registry, dispatch."
+}

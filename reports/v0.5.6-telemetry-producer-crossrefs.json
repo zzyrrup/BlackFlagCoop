@@ -1,0 +1,35 @@
+{
+  "schemaVersion":1,
+  "packedTableProbe":{
+    "fileOffset":"0xA13E3DE",
+    "hex":"6F 6E 00 55 49 43 6F 6D 70 6F 73 69 74 69 6F 6E 00 55 49 20 43 6F 6D 70 6F 73 69 74 69 6F 6E 00 70 6C 61 79 65 72 2E 70 6F 73 69 74 69 6F 6E 00 69 6E 76 61 6C 69 64 20 73 74 72 69 6E 67 5F 76 69 65 77 20 70 6F 73 69 74 69 6F 6E 00 69 6E 76 61 6C 69 64 20 73 74 72 69 6E 67 20 70 6F 73 69",
+    "ascii":"on.UIComposition.UI Composition.player.position.invalid string_view position.invalid string posi",
+    "byteBeforeIsNull":true,
+    "byteAfterNameIsNull":true,
+    "nameLength":15
+  },
+  "player_position_table_string_xrefs":{
+    "rva":"0xA13EDDE",
+    "va":"0x14A13EDDE",
+    "va_ref_hits":0,
+    "rva_ref_hits":0,
+    "va_ref_offsets":[]
+  },
+  "harbourStringIdExports":[
+    {"name":"Harbour_StringId_GetIdentifierLeftRotation","evidenceClass":"confirmed_export","telemetryBindingProven":false},
+    {"name":"Harbour_StringId_GetIdentifierRightRotation","evidenceClass":"confirmed_export","telemetryBindingProven":false},
+    {"name":"Harbour_StringId_GetIdentifierXorValue","evidenceClass":"confirmed_export","telemetryBindingProven":false},
+    {"name":"Harbour_StringId_Registry_ClearUnsafe","evidenceClass":"confirmed_export","telemetryBindingProven":false},
+    {"name":"Harbour_StringId_Registry_DumpTo","evidenceClass":"confirmed_export","telemetryBindingProven":false},
+    {"name":"Harbour_StringId_Registry_Find","evidenceClass":"confirmed_export","telemetryBindingProven":false},
+    {"name":"Harbour_StringId_Registry_Insert","evidenceClass":"confirmed_export","telemetryBindingProven":false},
+    {"name":"Harbour_StringId_Registry_LoadFrom","evidenceClass":"confirmed_export","telemetryBindingProven":false}
+  ],
+  "assessments":{
+    "playerPosAttributesAreJsonEmbeddedOnly":true,
+    "absolutePointerXrefsToPlayerPosFieldNamesFound":false,
+    "likelyRuntimeParsesSchemaBlob":true,
+    "harbourRegistryDumpToExists":true,
+    "harbourRegistryDumpToObservedOffline":false
+  }
+}

@@ -1,0 +1,54 @@
+{
+  "schemaVersion":1,
+  "generatedUtc":"2026-11-12T15:27:30.4328709Z",
+  "pass":"deep_refine",
+  "inputWrapper":{
+    "entryRva":"0x187F0550",
+    "endRva":"0x187F0575",
+    "sizeBytes":37,
+    "prologue":"56 48 83 EC 20 48 89 D6 4C 8D 05 D9 D2 91 F1 48 89 D1 BA 01 00 00 00 E8 64 A8 0F E9 48 89 F0 48",
+    "boundaryMethod":"first_ret",
+    "pattern":"push rsi; sub rsp,20h; mov rsi,rdx; lea r8,[Pad_LockAndTurnMovement]; mov rcx,rdx; mov edx,1; call helper; mov rax,rsi; epilogue; ret",
+    "leaTargets":[{"site":"0x187F0558","target":"0xA10D838","class":"input_action_name","preview":"Pad_LockAndTurnMovement"}],
+    "callees":[{"site":"0x187F0567","dest":"0x18EADD0","mapped":true}],
+    "directE8Callers":[],
+    "qwordPointersToEntry":[]
+  },
+  "sharedHelper":{
+    "entryRva":"0x18EADD0",
+    "endRva":"0x18EADE3",
+    "sizeBytes":19,
+    "prologue":"41 57 41 56 41 55 41 54 56 57 55 53 48 83 EC 28 4C 89 C3 89 D5 48 89 CE 48 8B 05 59 4F 68 09 80",
+    "e8CallerCountSample":8,
+    "e8CallersSample":["0x38FDABC","0x3A8A926","0x3A8AB66","0x3CA8B06","0x6030410","0x60308D3","0x187F0567","0x1A364384"],
+    "qwordPointersToEntry":[],
+    "mappedCalleesSample":[],
+    "leaSample":[],
+    "roleHypothesis":"Receives (object*, flags=1, actionName*). Likely registers/binds/looks-up an input action name against a table owned by arg0 — not a movement applicator."
+  },
+  "nearbyInputWrappers":{
+    "count":2,
+    "padCount":0,
+    "keyCount":0,
+    "sample":["0x187F0550 -> Pad_LockAndTurnMovement","0x187F0A00 -> Pad_Dive"]
+  },
+  "deferred":{
+    "entryRva":"0x5CBDFB0",
+    "endRva":"0x5CBE847",
+    "sizeBytes":2199,
+    "section":".impdata",
+    "prologue":"41 57 41 56 41 55 41 54 56 57 55 53 48 81 EC B8 00 00 00 4D 89 C5 48 89 54 24 78 48 89 CB 48 8B",
+    "directE8Callers":[],
+    "qwordPointersToEntry":[],
+    "phaseLabelSample":["ActorComponent::Begin","ActorComponent::End","UpdateActorLOD","CreateActorsDeferredSingleThreaded","GatherActorComponentsForSingleThreadedUpdate","GatherActorComponentsForMultiThreadedUpdate","UpdateActorControllersSingleThreaded","UpdateActorSingleThreaded","UpdateActorMultiThreaded","UpdateActorMultiThreadedInteractionGroups","ActorAfterAnimMultiThreadedInteraction","ActorAfterAnimMultiThreaded","ActorStateManagerUpdate"],
+    "mappedCalleesSample":[{"site":"0x5CBDFEC","dest":"0xB61FC0","mapped":true},{"site":"0x5CBDFFB","dest":"0x4DE3390","mapped":true},{"site":"0x5CBE013","dest":"0x4DE3390","mapped":true},{"site":"0x5CBE029","dest":"0x4DE3390","mapped":true},{"site":"0x5CBE0A4","dest":"0x4259C90","mapped":true},{"site":"0x5CBE0B3","dest":"0x4DE33A0","mapped":true},{"site":"0x5CBE0D1","dest":"0x4DE3390","mapped":true},{"site":"0x5CBE133","dest":"0x4259C90","mapped":true},{"site":"0x5CBE142","dest":"0x4DE33A0","mapped":true},{"site":"0x5CBE160","dest":"0x4DE3390","mapped":true},{"site":"0x5CBE1C9","dest":"0x4259C90","mapped":true},{"site":"0x5CBE1D8","dest":"0x4DE33A0","mapped":true},{"site":"0x5CBE1F6","dest":"0x4DE3390","mapped":true},{"site":"0x5CBE258","dest":"0x4259C90","mapped":true},{"site":"0x5CBE267","dest":"0x4DE33A0","mapped":true},{"site":"0x5CBE2F3","dest":"0x4259C90","mapped":true},{"site":"0x5CBE2FD","dest":"0x4DE33A0","mapped":true},{"site":"0x5CBE311","dest":"0x4DE3390","mapped":true},{"site":"0x5CBE35C","dest":"0x4259C90","mapped":true},{"site":"0x5CBE366","dest":"0x4DE33A0","mapped":true},{"site":"0x5CBE375","dest":"0x4DE3390","mapped":true},{"site":"0x5CBE46F","dest":"0x4259C90","mapped":true},{"site":"0x5CBE479","dest":"0x4DE33A0","mapped":true},{"site":"0x5CBE488","dest":"0x4DE3390","mapped":true},{"site":"0x5CBE513","dest":"0x179D320","mapped":true},{"site":"0x5CBE532","dest":"0x4259C90","mapped":true},{"site":"0x5CBE53C","dest":"0x4DE33A0","mapped":true},{"site":"0x5CBE54B","dest":"0x4DE3390","mapped":true},{"site":"0x5CBE572","dest":"0xB61FC0","mapped":true},{"site":"0x5CBE594","dest":"0x9B5190","mapped":true},{"site":"0x5CBE5A4","dest":"0x9B5190","mapped":true},{"site":"0x5CBE5AF","dest":"0x9B5190","mapped":true},{"site":"0x5CBE5BF","dest":"0x9B5190","mapped":true},{"site":"0x5CBE5CA","dest":"0x9B5190","mapped":true},{"site":"0x5CBE5D5","dest":"0x9B5190","mapped":true},{"site":"0x5CBE5E5","dest":"0x9B5190","mapped":true},{"site":"0x5CBE5F0","dest":"0x9B5190","mapped":true},{"site":"0x5CBE669","dest":"0x179D320","mapped":true},{"site":"0x5CBE68E","dest":"0x4259C90","mapped":true},{"site":"0x5CBE698","dest":"0x4DE33A0","mapped":true}],
+    "roleHypothesis":"Registers/wires many single-/multi-threaded actor/AI/update phase names to handler addresses — frame-phase table builder, not an actor factory."
+  },
+  "convergence":{
+    "sharedMappedCallees":[],
+    "sharedMappedCalleeCount":0,
+    "inputWrapperCallsDeferred":false,
+    "deferredCallsInputWrapper":false,
+    "verifiedEntityToInputLink":false
+  }
+}

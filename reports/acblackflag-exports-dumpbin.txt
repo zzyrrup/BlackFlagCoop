@@ -1,0 +1,424 @@
+Microsoft (R) COFF/PE Dumper Version 14.52.37029.0
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file C:\Games\AC Black Flag Resynced\ACBlackFlag.exe
+
+File Type: EXECUTABLE IMAGE
+
+  Section contains the following exports for ACBlackFlag.exe
+
+    00000000 characteristics
+    FFFFFFFF time date stamp
+        0.00 version
+           1 ordinal base
+         380 number of functions
+         377 number of names
+
+    ordinal hint RVA      name
+
+          1    0 0692D9E0 ?duplicateFactoryHandle@harbour@@YA?AV?$unique_ptr@XUTypeErasedDeleter@internal@harbour@@@std@@PEAX@Z
+          2    1 147A3730 AkMotionInitializeScePadFunctions
+          3    2 0A371CA8 D3D12SDKPath
+          4    3 0992E9C0 D3D12SDKVersion
+        233    4 0C793FE4 ExportProductMetadata
+          5    5 0692D990 Harbour_AsyncResult_Destroy
+          6    6 0692D790 Harbour_AsyncResult_RegisterObserver
+          7    7 0692D780 Harbour_AsyncResult_SetupReverseCallbacks
+          8    8 0692D950 Harbour_AsyncResult_UnregisterObserver
+          9    9 0692D9D0 Harbour_Factory_SetupReverseCallbacks
+         10    A 072EF530 Harbour_Keel_Config_Connection_Convert
+         11    B 072F3050 Harbour_Keel_Config_QUICConnection_Convert
+         12    C 072F3220 Harbour_Keel_Config_QUICStream_Convert
+         13    D 072F3410 Harbour_Keel_Config_QUICTerminal_Convert
+         14    E 072F1EF0 Harbour_Keel_Config_Security_BasicProvisioner_Convert
+         15    F 072F2BE0 Harbour_Keel_Config_Security_KeyServiceProvisioner_Convert
+         16   10 072EFF00 Harbour_Keel_Config_Stream_Convert
+         17   11 072F35E0 Harbour_Keel_Config_TCPConnection_Convert
+         18   12 072F37B0 Harbour_Keel_Config_TCPStream_Convert
+         19   13 072F39A0 Harbour_Keel_Config_TCPTerminal_Convert
+         20   14 072F1180 Harbour_Keel_Config_Terminal_Convert
+         21   15 072EA060 Harbour_Keel_Connection_Close
+         22   16 072EA150 Harbour_Keel_Connection_CreateStream
+         23   17 072EB7D0 Harbour_Keel_Connection_ForEach
+         24   18 072E9CC0 Harbour_Keel_Connection_GetConfig
+         25   19 072E9D30 Harbour_Keel_Connection_GetEmulator
+         26   1A 072E9C80 Harbour_Keel_Connection_GetHandle
+         27   1B 072E9F50 Harbour_Keel_Connection_GetId
+         28   1C 072E9D50 Harbour_Keel_Connection_GetLocalEndpoint
+         29   1D 072E9D10 Harbour_Keel_Connection_GetMetadata
+         30   1E 072E9E50 Harbour_Keel_Connection_GetRemoteEndpoint
+         31   1F 072E9F90 Harbour_Keel_Connection_GetState
+         32   20 072EB740 Harbour_Keel_Connection_GetStream
+         33   21 072E9C90 Harbour_Keel_Connection_GetTerminal
+         34   22 072E9FB0 Harbour_Keel_Connection_IsInitiator
+         35   23 072E9FF0 Harbour_Keel_Connection_Open
+         36   24 072E9FD0 Harbour_Keel_Connection_Pair
+         37   25 072E9C70 Harbour_Keel_Connection_Release
+         38   26 072EA0D0 Harbour_Keel_Connection_Send
+         39   27 072E9C20 Harbour_Keel_Connection_SetupReverseCallbacks
+         40   28 072F3F80 Harbour_Keel_Emulator_Bandwidth_Control_AsConstant
+         41   29 072F3F00 Harbour_Keel_Emulator_Bandwidth_Control_AsPassthrough
+         42   2A 072F3D60 Harbour_Keel_Emulator_Bandwidth_Control_Disable
+         43   2B 072F3E00 Harbour_Keel_Emulator_Bandwidth_Control_Enable
+         44   2C 072F3C10 Harbour_Keel_Emulator_Bandwidth_Control_GetSettings
+         45   2D 072F3BA0 Harbour_Keel_Emulator_Bandwidth_Control_GetState
+         46   2E 072F3BC0 Harbour_Keel_Emulator_Bandwidth_Control_GetType
+         47   2F 072F3EA0 Harbour_Keel_Emulator_Bandwidth_Control_Reset
+         48   30 072F4020 Harbour_Keel_Emulator_BidirectionalControls_GetRxControls
+         49   31 072F4030 Harbour_Keel_Emulator_BidirectionalControls_GetTxControls
+         50   32 072F4320 Harbour_Keel_Emulator_Controls_Disable
+         51   33 072F4380 Harbour_Keel_Emulator_Controls_Enable
+         52   34 072F4290 Harbour_Keel_Emulator_Controls_GetBandwidth
+         53   35 072F42A0 Harbour_Keel_Emulator_Controls_GetJitter
+         54   36 072F42C0 Harbour_Keel_Emulator_Controls_GetLatency
+         55   37 072F42E0 Harbour_Keel_Emulator_Controls_GetPacketLoss
+         56   38 072F4300 Harbour_Keel_Emulator_Controls_GetReordering
+         57   39 072F4050 Harbour_Keel_Emulator_Controls_GetSettings
+         58   3A 072F43E0 Harbour_Keel_Emulator_Controls_Reset
+         59   3B 072F3F00 Harbour_Keel_Emulator_Jitter_Control_AsPassthrough
+         60   3C 072F44E0 Harbour_Keel_Emulator_Jitter_Control_AsRandom
+         61   3D 072F3D60 Harbour_Keel_Emulator_Jitter_Control_Disable
+         62   3E 072F3E00 Harbour_Keel_Emulator_Jitter_Control_Enable
+         63   3F 072F3C10 Harbour_Keel_Emulator_Jitter_Control_GetSettings
+         64   40 072F3BA0 Harbour_Keel_Emulator_Jitter_Control_GetState
+         65   41 072F3BC0 Harbour_Keel_Emulator_Jitter_Control_GetType
+         66   42 072F3EA0 Harbour_Keel_Emulator_Jitter_Control_Reset
+         67   43 072F4560 Harbour_Keel_Emulator_Latency_Control_AsConstant
+         68   44 072F3F00 Harbour_Keel_Emulator_Latency_Control_AsPassthrough
+         69   45 072F4600 Harbour_Keel_Emulator_Latency_Control_AsUniformDistribution
+         70   46 072F3D60 Harbour_Keel_Emulator_Latency_Control_Disable
+         71   47 072F3E00 Harbour_Keel_Emulator_Latency_Control_Enable
+         72   48 072F3C10 Harbour_Keel_Emulator_Latency_Control_GetSettings
+         73   49 072F3BA0 Harbour_Keel_Emulator_Latency_Control_GetState
+         74   4A 072F3BC0 Harbour_Keel_Emulator_Latency_Control_GetType
+         75   4B 072F3EA0 Harbour_Keel_Emulator_Latency_Control_Reset
+         76   4C 072F3F00 Harbour_Keel_Emulator_PacketLoss_Control_AsPassthrough
+         77   4D 072F4670 Harbour_Keel_Emulator_PacketLoss_Control_AsRandom
+         78   4E 072F4710 Harbour_Keel_Emulator_PacketLoss_Control_AsTwoState
+         79   4F 072F3D60 Harbour_Keel_Emulator_PacketLoss_Control_Disable
+         80   50 072F3E00 Harbour_Keel_Emulator_PacketLoss_Control_Enable
+         81   51 072F3C10 Harbour_Keel_Emulator_PacketLoss_Control_GetSettings
+         82   52 072F3BA0 Harbour_Keel_Emulator_PacketLoss_Control_GetState
+         83   53 072F3BC0 Harbour_Keel_Emulator_PacketLoss_Control_GetType
+         84   54 072F3EA0 Harbour_Keel_Emulator_PacketLoss_Control_Reset
+         85   55 072F3F00 Harbour_Keel_Emulator_Reordering_Control_AsPassthrough
+         86   56 072F4820 Harbour_Keel_Emulator_Reordering_Control_AsRandom
+         87   57 072F3D60 Harbour_Keel_Emulator_Reordering_Control_Disable
+         88   58 072F3E00 Harbour_Keel_Emulator_Reordering_Control_Enable
+         89   59 072F3C10 Harbour_Keel_Emulator_Reordering_Control_GetSettings
+         90   5A 072F3BA0 Harbour_Keel_Emulator_Reordering_Control_GetState
+         91   5B 072F3BC0 Harbour_Keel_Emulator_Reordering_Control_GetType
+         92   5C 072F3EA0 Harbour_Keel_Emulator_Reordering_Control_Reset
+         93   5D 072EBEA0 Harbour_Keel_Keel_Construct
+         94   5E 072EC710 Harbour_Keel_Keel_CreateConnection
+         95   5F 072EBF50 Harbour_Keel_Keel_CreateTerminal
+         96   60 072EBF30 Harbour_Keel_Keel_Destroy
+         97   61 072ECFE0 Harbour_Keel_Keel_ForEach
+         98   62 072EBF40 Harbour_Keel_Keel_GetMetadata
+         99   63 072ECF10 Harbour_Keel_Keel_GetTerminal
+        100   64 072EBE90 Harbour_Keel_Keel_SetupReverseCallbacks
+        101   65 072ED060 Harbour_Keel_Keel_Update
+        102   66 072ED090 Harbour_Keel_Keel_UpdateUntilStopped
+        103   67 072ED140 Harbour_Keel_Metadata_Attach
+        104   68 072ED1F0 Harbour_Keel_Metadata_Find
+        105   69 072ED350 Harbour_Keel_Metadata_ForEach
+        106   6A 072ED130 Harbour_Keel_Metadata_SetupReverseCallbacks
+        107   6B 072F48B0 Harbour_Keel_Policies_Compression_SetupReverseCallbacks
+        108   6C 072F53D0 Harbour_Keel_Policies_ConnectionIncoming_SetupReverseCallbacks
+        109   6D 072F5C90 Harbour_Keel_Policies_Multiplexer_SetupReverseCallbacks
+        110   6E 072F63D0 Harbour_Keel_Policies_SecurityVerifier_SetupReverseCallbacks
+        111   6F 072F6660 Harbour_Keel_Policies_StreamIncoming_SetupReverseCallbacks
+        112   70 072ED620 Harbour_Keel_Stream_Close
+        113   71 072E9CC0 Harbour_Keel_Stream_GetConfig
+        114   72 072ED410 Harbour_Keel_Stream_GetConnection
+        115   73 072ED4E0 Harbour_Keel_Stream_GetDirection
+        116   74 072ED520 Harbour_Keel_Stream_GetFlow
+        117   75 072E9C80 Harbour_Keel_Stream_GetHandle
+        118   76 072ED460 Harbour_Keel_Stream_GetId
+        119   77 072ED440 Harbour_Keel_Stream_GetMetadata
+        120   78 072ED4A0 Harbour_Keel_Stream_GetPriority
+        121   79 072ED570 Harbour_Keel_Stream_GetState
+        122   7A 072ED500 Harbour_Keel_Stream_GetType
+        123   7B 072ED480 Harbour_Keel_Stream_IsInitiator
+        124   7C 072ED4C0 Harbour_Keel_Stream_IsReliable
+        125   7D 072ED5B0 Harbour_Keel_Stream_Open
+        126   7E 072ED590 Harbour_Keel_Stream_Pair
+        127   7F 072E9C70 Harbour_Keel_Stream_Release
+        128   80 072ED710 Harbour_Keel_Stream_Reset
+        129   81 072ED690 Harbour_Keel_Stream_Send
+        130   82 072ED3D0 Harbour_Keel_Stream_SetupReverseCallbacks
+        131   83 072EDA10 Harbour_Keel_Terminal_Close
+        132   84 072EDA80 Harbour_Keel_Terminal_CreateConnection
+        133   85 072EE330 Harbour_Keel_Terminal_ForEach
+        134   86 072ED800 Harbour_Keel_Terminal_GetConfig
+        135   87 072EE290 Harbour_Keel_Terminal_GetConnection
+        136   88 072ED870 Harbour_Keel_Terminal_GetId
+        137   89 072ED7D0 Harbour_Keel_Terminal_GetKeel
+        138   8A 072ED850 Harbour_Keel_Terminal_GetMetadata
+        139   8B 072ED8C0 Harbour_Keel_Terminal_GetState
+        140   8C 072ED8E0 Harbour_Keel_Terminal_GetURL
+        141   8D 072ED9A0 Harbour_Keel_Terminal_Open
+        142   8E 072ED780 Harbour_Keel_Terminal_SetupReverseCallbacks
+        143   8F 0546F210 Harbour_Keel__GetCurrentBuildType
+        144   90 072EE3B0 Harbour_Keel__GetProductVersion
+        145   91 072EBD90 Harbour_Keel__InitializeSdk
+        146   92 072EBE50 Harbour_Keel__UninitializeSdk
+        147   93 0692FEF0 Harbour_Logging_Pack_ForEach
+        148   94 0692FFD0 Harbour_Logging_Pack_ForEach_RichValue
+        149   95 0692FBE0 Harbour_Logging_Pack_GetData
+        150   96 0692FB80 Harbour_Logging_Pack_GetMetadata
+        151   97 0692FC00 Harbour_Logging_Pack_IsEmpty
+        152   98 0692FC20 Harbour_Logging_Pack_IsTruncated
+        153   99 0692FA20 Harbour_Logging_Pack_SetupReverseCallbacks
+        154   9A 0692FAD0 Harbour_Logging_Pack_SetupRichReverseCallbacks
+        155   9B 0692FD90 Harbour_Logging_Pack_ToJsonString
+        156   9C 0692FC30 Harbour_Logging_Pack_ToPrintableString
+        157   9D 0692EFA0 Harbour_Logging_Splitter_Close
+        158   9E 0692EE40 Harbour_Logging_Splitter_Disable
+        159   9F 0692ED00 Harbour_Logging_Splitter_Enable
+        160   A0 0692EAA0 Harbour_Logging_Splitter_Open
+        161   A1 0692EF80 Harbour_Logging_Splitter_Reset
+        162   A2 06930150 Harbour_Policy_Allocation_Define
+        163   A3 06930220 Harbour_Policy_Allocation_Reset
+        164   A4 06930130 Harbour_Policy_Allocation_SetupReverseCallbacks
+        165   A5 06930140 Harbour_Policy_Allocation_SetupReverseCallbacks2
+        166   A6 06930740 Harbour_Policy_Assertion_Define
+        167   A7 06930780 Harbour_Policy_Assertion_Reset
+        168   A8 06930730 Harbour_Policy_Assertion_SetupReverseCallbacks
+        169   A9 06930980 Harbour_Policy_ConcurrencyAlert_Define
+        170   AA 069309C0 Harbour_Policy_ConcurrencyAlert_Reset
+        171   AB 06930970 Harbour_Policy_ConcurrencyAlert_SetupReverseCallbacks
+        172   AC 06930B60 Harbour_Policy_Logging_Define
+        173   AD 06930CC0 Harbour_Policy_Logging_Reset
+        174   AE 06930B50 Harbour_Policy_Logging_SetupReverseCallbacks
+        175   AF 06931110 Harbour_Policy_Perf_Profiling_Define
+        176   B0 06931270 Harbour_Policy_Perf_Profiling_Reset
+        177   B1 069310B0 Harbour_Policy_Perf_Profiling_SetupReverseCallbacks
+        178   B2 0692DA40 Harbour_ProductVersion_Construct
+        179   B3 0692DB30 Harbour_ProductVersion_Destroy
+        180   B4 0692DB90 Harbour_ProductVersion_EqualityOperator
+        181   B5 0692DCC0 Harbour_ProductVersion_GreaterThanOperator
+        182   B6 0692DD10 Harbour_ProductVersion_GreaterThanOrEqualOperator
+        183   B7 0692DC10 Harbour_ProductVersion_InequalityOperator
+        184   B8 0692DB60 Harbour_ProductVersion_IsAlpha
+        185   B9 0692DB70 Harbour_ProductVersion_IsBeta
+        186   BA 0692DB50 Harbour_ProductVersion_IsDevelopment
+        187   BB 0692DB80 Harbour_ProductVersion_IsReleaseCandidate
+        188   BC 0692DC30 Harbour_ProductVersion_LessThanOperator
+        189   BD 0692DC70 Harbour_ProductVersion_LessThanOrEqualOperator
+        190   BE 053741F0 Harbour_Profiling_GearPerfPolicy_Disable
+        191   BF 053741F0 Harbour_Profiling_GearPerfPolicy_Dump
+        192   C0 053741F0 Harbour_Profiling_GearPerfPolicy_DumpToFile
+        193   C1 053741F0 Harbour_Profiling_GearPerfPolicy_Enable
+        194   C2 06931530 Harbour_Profiling_GearPerfPolicy_GetOutputPath
+        195   C3 053741F0 Harbour_Profiling_GearPerfPolicy_Initialize
+        196   C4 0535F280 Harbour_Profiling_GearPerfPolicy_IsEnabled
+        197   C5 0535F280 Harbour_Profiling_GearPerfPolicy_IsInitialized
+        198   C6 053741F0 Harbour_Profiling_GearPerfPolicy_SetBuildInfo
+        199   C7 053741F0 Harbour_Profiling_GearPerfPolicy_SetOutputPath
+        200   C8 053741F0 Harbour_Profiling_GearPerfPolicy_Uninitialize
+        201   C9 0692E280 Harbour_StopCallback_Construct
+        202   CA 0692E380 Harbour_StopCallback_Destroy
+        203   CB 0692E270 Harbour_StopCallback_SetupReverseCallbacks
+        204   CC 0692DF20 Harbour_StopSource_Construct
+        205   CD 0692E030 Harbour_StopSource_Destroy
+        206   CE 0692E040 Harbour_StopSource_GetToken
+        207   CF 0692E1F0 Harbour_StopSource_IsStopPossible
+        208   D0 0692E200 Harbour_StopSource_IsStopRequested
+        209   D1 0692E220 Harbour_StopSource_RequestStop
+        210   D2 0692E150 Harbour_StopToken_Construct
+        211   D3 0692E240 Harbour_StopToken_Destroy
+        212   D4 0692E250 Harbour_StopToken_IsStopPossible
+        213   D5 0692E200 Harbour_StopToken_IsStopRequested
+        214   D6 0535F280 Harbour_StringId_GetIdentifierLeftRotation
+        215   D7 0535F280 Harbour_StringId_GetIdentifierRightRotation
+        216   D8 0535F280 Harbour_StringId_GetIdentifierXorValue
+        217   D9 069296F0 Harbour_StringId_Registry_ClearUnsafe
+        218   DA 0692E550 Harbour_StringId_Registry_DumpTo
+        219   DB 0692E820 Harbour_StringId_Registry_Find
+        220   DC 0000D500 Harbour_StringId_Registry_Insert
+        221   DD 0692E3C0 Harbour_StringId_Registry_LoadFrom
+        222   DE 0692E940 Harbour_Tags__ForEach
+        223   DF 0692E8E0 Harbour_Tags__GetName
+        224   E0 0692E8D0 Harbour_Tags__SetupReverseCallbacks
+        225   E1 0692E9C0 Harbour_UUID_FromString
+        226   E2 0546F210 Harbour__GetCurrentBuildType
+        227   E3 0535F280 Harbour__GetCurrentPlatform
+        228   E4 0692DD50 Harbour__GetLastResult
+        229   E5 0535F280 Harbour__GetNativeEndian
+        230   E6 0692EA50 Harbour__GetProductVersion
+        231   E7 0692DDB0 Harbour__InitializeSdk
+        232   E8 0692DEB0 Harbour__UninitializeSdk
+        237   E9 0692DA10 __Harbour_FormatHint_TestHintName
+        238   EA 0692EFF0 __Harbour_Logging_Splitter_TestLog
+        239   EB 06930250 __Harbour_Policy_Allocation_TestAllocate
+        240   EC 069305B0 __Harbour_Policy_Allocation_TestDeallocate
+        241   ED 06930790 __Harbour_Policy_Assertion_TestAssert
+        242   EE 069309D0 __Harbour_Policy_ConcurrencyAlert_TestAlert
+        243   EF 06930E10 __Harbour_Policy_Logging_TestLog
+        244   F0 06930CF0 __Harbour_Policy_Logging_TestLoggable
+        245   F1 06931520 __Harbour_Policy_Perf_Profiling_TestNameThread
+        246   F2 069314C0 __Harbour_Policy_Perf_Profiling_TestRecordCounterF64
+        247   F3 06931460 __Harbour_Policy_Perf_Profiling_TestRecordCounterU64
+        248   F4 069313B0 __Harbour_Policy_Perf_Profiling_TestRecordEvent
+        249   F5 069312F0 __Harbour_Policy_Perf_Profiling_TestRecordTask
+        250   F6 06931350 __Harbour_Policy_Perf_Profiling_TestRecordWait
+        251   F7 06931400 __Harbour_Policy_Perf_Profiling_TestRecordWarningCount
+        252   F8 08FBDEE0 ctlAUXAccess
+        253   F9 08FBED80 ctlAllowPCIeLinkSpeedUpdate
+        254   FA 08FBDAD0 ctlCheckDriverVersion
+        255   FB 08FBD920 ctlClose
+        256   FC 08FBE890 ctlEccGetProperties
+        257   FD 08FBE8E0 ctlEccGetState
+        258   FE 08FBE930 ctlEccSetState
+        259   FF 08FBE520 ctlEdidManagement
+        260  100 08FBEA20 ctlEngineGetActivity
+        261  101 08FBE9D0 ctlEngineGetProperties
+        262  102 08FBE980 ctlEnumEngineGroups
+        263  103 08FBEA70 ctlEnumFans
+        264  104 08FBEDD0 ctlEnumFrequencyDomains
+        265  105 08FBF000 ctlEnumLeds
+        266  106 08FBF1E0 ctlEnumMemoryModules
+        267  107 08FBFDF0 ctlEnumPowerDomains
+        268  108 08FBFF80 ctlEnumTemperatureSensors
+        269  109 08FBDB20 ctlEnumerateDevices
+        270  10A 08FBDB70 ctlEnumerateDisplayOutputs
+        271  10B 08FBECE0 ctlEnumerateFirmwareComponents
+        272  10C 08FBDBC0 ctlEnumerateI2CPinPairs
+        273  10D 08FBEB10 ctlFanGetConfig
+        274  10E 08FBEAC0 ctlFanGetProperties
+        275  10F 08FBEC40 ctlFanGetState
+        276  110 08FBEB60 ctlFanSetDefaultMode
+        277  111 08FBEBA0 ctlFanSetFixedSpeedMode
+        278  112 08FBEBF0 ctlFanSetSpeedTableMode
+        279  113 08FBEE70 ctlFrequencyGetAvailableClocks
+        280  114 08FBEE20 ctlFrequencyGetProperties
+        281  115 08FBEEC0 ctlFrequencyGetRange
+        282  116 08FBEF60 ctlFrequencyGetState
+        283  117 08FBEFB0 ctlFrequencyGetThrottleTime
+        284  118 08FBEF10 ctlFrequencySetRange
+        285  119 08FBDCB0 ctlGetAdaperDisplayEncoderProperties
+        286  11A 08FBE070 ctlGetBrightnessSetting
+        287  11B 08FBE2A0 ctlGetCurrentScaling
+        288  11C 08FBDDA0 ctlGetCurrentSharpness
+        289  11D 08FBDC10 ctlGetDeviceProperties
+        290  11E 08FBDC60 ctlGetDisplayProperties
+        291  11F 08FBED30 ctlGetFirmwareComponentProperties
+        292  120 08FBEC90 ctlGetFirmwareProperties
+        293  121 08FBE430 ctlGetIntelArcSyncInfoForMonitor
+        294  122 08FBE480 ctlGetIntelArcSyncProfile
+        295  123 08FBE340 ctlGetLACEConfig
+        296  124 08FBE750 ctlGetLinkedDisplayAdapters
+        297  125 08FBDF30 ctlGetPowerOptimizationCaps
+        298  126 08FBDF80 ctlGetPowerOptimizationSetting
+        299  127 08FBDA80 ctlGetSet3DFeature
+        300  128 08FBE5C0 ctlGetSetCombinedDisplay
+        301  129 08FBE570 ctlGetSetCustomMode
+        302  12A 08FBE610 ctlGetSetDisplayGenlock
+        303  12B 08FBE840 ctlGetSetDisplaySettings
+        304  12C 08FBE7A0 ctlGetSetDynamicContrastEnhancement
+        305  12D 08FBE200 ctlGetSetRetroScaling
+        306  12E 08FBF190 ctlGetSetVideoProcessingFeature
+        307  12F 08FBE7F0 ctlGetSetWireFormat
+        308  130 08FBDD50 ctlGetSharpnessCaps
+        309  131 08FBDA30 ctlGetSupported3DCapabilities
+        310  132 08FBE1B0 ctlGetSupportedRetroScalingCapability
+        311  133 08FBE250 ctlGetSupportedScalingCapability
+        312  134 08FBF140 ctlGetSupportedVideoProcessingCapabilities
+        313  135 08FBE670 ctlGetVblankTimestamp
+        314  136 08FBDD00 ctlGetZeDevice
+        315  137 08FBDE40 ctlI2CAccess
+        316  138 08FBDE90 ctlI2CAccessOnPinPair
+        317  139 08FBD6A0 ctlInit
+        318  13A 08FBF050 ctlLedGetProperties
+        319  13B 08FBF0A0 ctlLedGetState
+        320  13C 08FBF0F0 ctlLedSetState
+        321  13D 08FBE6C0 ctlLinkDisplayAdapters
+        322  13E 08FBF2D0 ctlMemoryGetBandwidth
+        323  13F 08FBF230 ctlMemoryGetProperties
+        324  140 08FBF280 ctlMemoryGetState
+        325  141 08FBF320 ctlOverclockGetProperties
+        326  142 08FBF3B0 ctlOverclockGpuFrequencyOffsetGet
+        327  143 08FBF930 ctlOverclockGpuFrequencyOffsetGetV2
+        328  144 08FBF400 ctlOverclockGpuFrequencyOffsetSet
+        329  145 08FBF980 ctlOverclockGpuFrequencyOffsetSetV2
+        330  146 08FBF510 ctlOverclockGpuLockGet
+        331  147 08FBF560 ctlOverclockGpuLockSet
+        332  148 08FBF9E0 ctlOverclockGpuMaxVoltageOffsetGetV2
+        333  149 08FBFA30 ctlOverclockGpuMaxVoltageOffsetSetV2
+        334  14A 08FBF460 ctlOverclockGpuVoltageOffsetGet
+        335  14B 08FBF4B0 ctlOverclockGpuVoltageOffsetSet
+        336  14C 08FBF740 ctlOverclockPowerLimitGet
+        337  14D 08FBFB40 ctlOverclockPowerLimitGetV2
+        338  14E 08FBF790 ctlOverclockPowerLimitSet
+        339  14F 08FBFB90 ctlOverclockPowerLimitSetV2
+        340  150 08FBFCA0 ctlOverclockReadVFCurve
+        341  151 08FBF8F0 ctlOverclockResetToDefault
+        342  152 08FBF7F0 ctlOverclockTemperatureLimitGet
+        343  153 08FBFBF0 ctlOverclockTemperatureLimitGetV2
+        344  154 08FBF840 ctlOverclockTemperatureLimitSet
+        345  155 08FBFC40 ctlOverclockTemperatureLimitSetV2
+        346  156 08FBF5E0 ctlOverclockVramFrequencyOffsetGet
+        347  157 08FBF630 ctlOverclockVramFrequencyOffsetSet
+        348  158 08FBFA90 ctlOverclockVramMemSpeedLimitGetV2
+        349  159 08FBFAE0 ctlOverclockVramMemSpeedLimitSetV2
+        350  15A 08FBF690 ctlOverclockVramVoltageOffsetGet
+        351  15B 08FBF6E0 ctlOverclockVramVoltageOffsetSet
+        352  15C 08FBF370 ctlOverclockWaiverSet
+        353  15D 08FBFD00 ctlOverclockWriteCustomVFCurve
+        354  15E 08FBE160 ctlPanelDescriptorAccess
+        355  15F 08FBFD50 ctlPciGetProperties
+        356  160 08FBFDA0 ctlPciGetState
+        357  161 08FBE0C0 ctlPixelTransformationGetConfig
+        358  162 08FBE110 ctlPixelTransformationSetConfig
+        359  163 08FBFE90 ctlPowerGetEnergyCounter
+        360  164 08FBFEE0 ctlPowerGetLimits
+        361  165 08FBFE40 ctlPowerGetProperties
+        362  166 08FBFF30 ctlPowerSetLimits
+        363  167 08FBF8A0 ctlPowerTelemetryGet
+        364  168 08FBD9E0 ctlReservedCall
+        365  169 08FBE020 ctlSetBrightnessSetting
+        366  16A 08FBE2F0 ctlSetCurrentScaling
+        367  16B 08FBDDF0 ctlSetCurrentSharpness
+        368  16C 08FBE4D0 ctlSetIntelArcSyncProfile
+        369  16D 08FBE390 ctlSetLACEConfig
+        370  16E 08FBDFD0 ctlSetPowerOptimizationSetting
+        371  16F 08FBD8C0 ctlSetRuntimePath
+        372  170 08FBE3E0 ctlSoftwarePSR
+        373  171 08FBFFD0 ctlTemperatureGetProperties
+        374  172 08FC0020 ctlTemperatureGetState
+        375  173 08FBE710 ctlUnlinkDisplayAdapters
+        376  174 08FBD990 ctlWaitForPropertyChange
+        377  175 0B285F50 flite_lang_list
+        378  176 0B285F48 flite_lang_list_length
+        379  177 0B285F40 flite_voice_list
+        380  178 0AC0EAC0 g_pAKPluginList
+
+  Summary
+
+      3E3000 .bss
+     FAEC000 .code
+        5000 .data1
+        1000 .data2
+        3000 .debug
+        4000 .didata
+     127C000 .edata
+        1000 .idata
+     9035000 .impdata
+       4D000 .link
+        1000 .nidata
+      349000 .reloc
+      257000 .rodata
+       4F000 .rsrc
+        1000 .sxdata
+        1000 .tls$
+     1E49000 .trace
+        1000 .v38
+      349000 .vmp0
+       4F000 .vmp1
+      612000 .vmp2
+        2000 .vmp3
+      A7B000 .vmp4
+        5000 .xdata
+      3E3000 .xtls

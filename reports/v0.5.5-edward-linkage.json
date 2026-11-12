@@ -1,0 +1,27 @@
+{
+    "CharacterAttributeType":  "string",
+    "CharacterDictionaryOffset":  "0xA1D1903",
+    "EdwardLiteralLinkedToPlayerPosSchema":  false,
+    "edwardSamples":  [
+                          {
+                              "needle":  "Edward",
+                              "fileOffset":  "0xA1708A7",
+                              "rva":  "0xA1712A7",
+                              "context":  "ckward.maxReachDistanceBackward.reward.KenwayFleet_ClaimReward.edward.Edward.Wild Leopard.Keyboard.profilesLeaderboard.spacesLeaderboard.LogUsLeaderboard.profilesMeLeaderboard.InquiryBoardGoToBoard.Saccharine O"
+                          }
+                      ],
+    "characterSamples":  [
+                             {
+                                 "needle":  "{\"name\":\"Character\",\"type\":\"string\"",
+                                 "fileOffset":  "0xA1D1903",
+                                 "rva":  "0xA1D2303",
+                                 "context":  "Optional\":true}, {\"name\":\"channels\",\"type\":\"int\",\"isOptional\":false}, {\"name\":\"Character\",\"type\":\"string\",\"isOptional\":true}, {\"name\":\"ChestsAvailable\",\"type\":\"int\",\"isOptional\":true}, {\"name\":\"ChestsCollected\""
+                             }
+                         ],
+    "dualEdwardPathFromTelemetryAlone":  false,
+    "notes":  [
+                  "Character is a string telemetry attribute on many XYZ events; values unknown offline.",
+                  "No schema field named Edward on player.position.",
+                  "Cannot distinguish two independent Edwards from schemas alone."
+              ]
+}

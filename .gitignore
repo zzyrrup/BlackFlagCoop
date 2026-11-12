@@ -1,0 +1,84 @@
+# --- Build / CMake ---
+build/
+out/
+cmake-build-*/
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+compile_commands.json
+*.vcxproj
+*.vcxproj.filters
+*.vcxproj.user
+*.sln
+*.slnx
+*.recipe
+*.lastbuildstate
+*.tlog
+*.obj
+*.pdb
+*.ilk
+*.idb
+*.exp
+*.lib
+*.a
+*.so
+*.dylib
+
+# --- Plugin / loader binaries (never commit) ---
+*.asi
+*.dll
+*.exe
+!tools/**/*.cs
+# Keep scripts; ignore compiled offline analyzers next to sources
+tools/offline/*.exe
+tools/asi-loader-staging/
+
+# --- Backups & local deploy artifacts ---
+backups/
+**/game-deploy*/
+**/asi-update*/
+**/asi-rollback*/
+
+# --- Logs, dumps, caches ---
+*.log
+*.dmp
+*.mdmp
+*.etl
+*.tmp
+*.temp
+.cache/
+.vs/
+.vscode/*
+!.vscode/extensions.json
+*.user
+*.suo
+*.opensdf
+*.sdf
+ipch/
+
+# --- Secrets / credentials ---
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.pfx
+*.p12
+*.tok
+*credentials*
+*secret*
+*token*
+!.cursor/rules/**
+
+# --- OS / editor junk ---
+Thumbs.db
+Desktop.ini
+.DS_Store
+*~
+
+# --- Large / local-only media variants (root splash PNG is tracked) ---
+# (splash source zip is project art source — tracked intentionally)
+
+# --- OneDrive / sync noise ---
+~$*
+*.lnk

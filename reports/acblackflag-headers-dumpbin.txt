@@ -1,0 +1,452 @@
+Microsoft (R) COFF/PE Dumper Version 14.52.37029.0
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file C:\Games\AC Black Flag Resynced\ACBlackFlag.exe
+
+PE signature found
+
+File Type: EXECUTABLE IMAGE
+
+FILE HEADER VALUES
+            8664 machine (x64)
+              19 number of sections
+        6A67B1B3 time date stamp
+               0 file pointer to symbol table
+               0 number of symbols
+              F0 size of optional header
+              22 characteristics
+                   Executable
+                   Application can handle large (>2GB) addresses
+
+OPTIONAL HEADER VALUES
+             20B magic # (PE32+)
+           14.00 linker version
+        1C2C9800 size of code
+          72FC00 size of initialized data
+               0 size of uninitialized data
+        1DE26000 entry point (000000015DE26000)
+            1000 base of code
+       140000000 image base (0000000140000000 to 000000015DE26FFF)
+            1000 section alignment
+             200 file alignment
+            6.00 operating system version
+            0.00 image version
+            6.00 subsystem version
+               0 Win32 version
+        1DE27000 size of image
+             600 size of headers
+        1C8B69F2 checksum
+               2 subsystem (Windows GUI)
+            8120 DLL characteristics
+                   High Entropy Virtual Addresses
+                   NX compatible
+                   Terminal Server Aware
+          100000 size of stack reserve
+            1000 size of stack commit
+          100000 size of heap reserve
+            1000 size of heap commit
+               0 loader flags
+              10 number of directories
+        1C2CD040 [    40C8] RVA [size] of Export Directory
+        1D047878 [     35C] RVA [size] of Import Directory
+        1DA8E000 [   4E3D3] RVA [size] of Resource Directory
+        1D6A8000 [  3E5710] RVA [size] of Exception Directory
+        1C8A5C00 [    3D60] RVA [size] of Certificates Directory
+        1DADD000 [  348FFC] RVA [size] of Base Relocation Directory
+         A23D188 [      38] RVA [size] of Debug Directory
+               0 [       0] RVA [size] of Architecture Directory
+               0 [       0] RVA [size] of Global Pointer Directory
+        1D03D358 [      28] RVA [size] of Thread Storage Directory
+        1D6A7EC0 [     140] RVA [size] of Load Configuration Directory
+               0 [       0] RVA [size] of Bound Import Directory
+        1D011000 [    1568] RVA [size] of Import Address Table Directory
+        1D06D608 [      40] RVA [size] of Delay Import Directory
+               0 [       0] RVA [size] of COM Descriptor Directory
+               0 [       0] RVA [size] of Reserved Directory
+
+
+SECTION HEADER #1
+.impdata name
+ 9035000 virtual size
+    1000 virtual address (0000000140001000 to 0000000149035FFF)
+ 9035000 size of raw data
+     600 file pointer to raw data (00000600 to 090355FF)
+       0 file pointer to relocation table
+       0 file pointer to line numbers
+       0 number of relocations
+       0 number of line numbers
+60000020 flags
+         Code
+         Execute Read
+
+SECTION HEADER #2
+  .edata name
+ 127C000 virtual size
+ 9036000 virtual address (0000000149036000 to 000000014A2B1FFF)
+ 127C000 size of raw data
+ 9035600 file pointer to raw data (09035600 to 0A2B15FF)
+       0 file pointer to relocation table
+       0 file pointer to line numbers
+       0 number of relocations
+       0 number of line numbers
+40000040 flags
+         Initialized Data
+         Read Only
+
+  Debug Directories
+
+        Time Type        Size      RVA  Pointer
+    -------- ------- -------- -------- --------
+    6A67B1B3 cv            43 1C2D1120 1AD55520    Format: RSDS, {E5E6638C-CFEC-4B1D-BE92-412DB4EDD71E}, 4, ACBlackFlag.pdb
+    6A67B1B3 repro          0 00000000        0
+
+SECTION HEADER #3
+  .trace name
+ 1E49000 virtual size
+ A2B2000 virtual address (000000014A2B2000 to 000000014C0FAFFF)
+  8D4400 size of raw data
+ A2B1600 file pointer to raw data (0A2B1600 to 0AB859FF)
+       0 file pointer to relocation table
+       0 file pointer to line numbers
+       0 number of relocations
+       0 number of line numbers
+C0000040 flags
+         Initialized Data
+         Read Write
+
+SECTION HEADER #4
+   .xtls name
+  3E3000 virtual size
+ C0FB000 virtual address (000000014C0FB000 to 000000014C4DDFFF)
+  3E3000 size of raw data
+ AB85A00 file pointer to raw data (0AB85A00 to 0AF689FF)
+       0 file pointer to relocation table
+       0 file pointer to line numbers
+       0 number of relocations
+       0 number of line numbers
+40000040 flags
+         Initialized Data
+         Read Only
+
+SECTION HEADER #5
+  .xdata name
+    5000 virtual size
+ C4DE000 virtual address (000000014C4DE000 to 000000014C4E2FFF)
+    5000 size of raw data
+ AF68A00 file pointer to raw data (0AF68A00 to 0AF6D9FF)
+       0 file pointer to relocation table
+       0 file pointer to line numbers
+       0 number of relocations
+       0 number of line numbers
+40000040 flags
+         Initialized Data
+         Read Only
+
+SECTION HEADER #6
+   .tls$ name
+    1000 virtual size
+ C4E3000 virtual address (000000014C4E3000 to 000000014C4E3FFF)
+    1000 size of raw data
+ AF6DA00 file pointer to raw data (0AF6DA00 to 0AF6E9FF)
+       0 file pointer to relocation table
+       0 file pointer to line numbers
+       0 number of relocations
+       0 number of line numbers
+       0 flags
+
+SECTION HEADER #7
+  .idata name
+    1000 virtual size
+ C4E4000 virtual address (000000014C4E4000 to 000000014C4E4FFF)
+    1000 size of raw data
+ AF6EA00 file pointer to raw data (0AF6EA00 to 0AF6F9FF)
+       0 file pointer to relocation table
+       0 file pointer to line numbers
+       0 number of relocations
+       0 number of line numbers
+40000040 flags
+         Initialized Data
+         Read Only
+
+SECTION HEADER #8
+ .didata name
+    4000 virtual size
+ C4E5000 virtual address (000000014C4E5000 to 000000014C4E8FFF)
+     200 size of raw data
+ AF6FA00 file pointer to raw data (0AF6FA00 to 0AF6FBFF)
+       0 file pointer to relocation table
+       0 file pointer to line numbers
+       0 number of relocations
+       0 number of line numbers
+C0000040 flags
+         Initialized Data
+         Read Write
+
+SECTION HEADER #9
+  .data2 name
+    1000 virtual size
+ C4E9000 virtual address (000000014C4E9000 to 000000014C4E9FFF)
+    1000 size of raw data
+ AF6FC00 file pointer to raw data (0AF6FC00 to 0AF70BFF)
+       0 file pointer to relocation table
+       0 file pointer to line numbers
+       0 number of relocations
+       0 number of line numbers
+       0 flags
+
+SECTION HEADER #A
+  .debug name
+    3000 virtual size
+ C4EA000 virtual address (000000014C4EA000 to 000000014C4ECFFF)
+    3000 size of raw data
+ AF70C00 file pointer to raw data (0AF70C00 to 0AF73BFF)
+       0 file pointer to relocation table
+       0 file pointer to line numbers
+       0 number of relocations
+       0 number of line numbers
+40000040 flags
+         Initialized Data
+         Read Only
+
+SECTION HEADER #B
+   .vmp1 name
+   4F000 virtual size
+ C4ED000 virtual address (000000014C4ED000 to 000000014C53BFFF)
+   4F000 size of raw data
+ AF73C00 file pointer to raw data (0AF73C00 to 0AFC2BFF)
+       0 file pointer to relocation table
+       0 file pointer to line numbers
+       0 number of relocations
+       0 number of line numbers
+40000040 flags
+         Initialized Data
+         Read Only
+
+SECTION HEADER #C
+ .rodata name
+  257000 virtual size
+ C53C000 virtual address (000000014C53C000 to 000000014C792FFF)
+  257000 size of raw data
+ AFC2C00 file pointer to raw data (0AFC2C00 to 0B219BFF)
+       0 file pointer to relocation table
+       0 file pointer to line numbers
+       0 number of relocations
+       0 number of line numbers
+40000040 flags
+         Initialized Data
+         Read Only
+
+SECTION HEADER #D
+   .code name
+ FAEB174 virtual size
+ C793000 virtual address (000000014C793000 to 000000015C27E173)
+ FAEB200 size of raw data
+ B219C00 file pointer to raw data (0B219C00 to 1AD04DFF)
+       0 file pointer to relocation table
+       0 file pointer to line numbers
+       0 number of relocations
+       0 number of line numbers
+E0000020 flags
+         Code
+         Execute Read Write
+
+SECTION HEADER #E
+   .link name
+   4C317 virtual size
+1C27F000 virtual address (000000015C27F000 to 000000015C2CB316)
+   4C400 size of raw data
+1AD04E00 file pointer to raw data (1AD04E00 to 1AD511FF)
+       0 file pointer to relocation table
+       0 file pointer to line numbers
+       0 number of relocations
+       0 number of line numbers
+40000020 flags
+         Code
+         Read Only
+
+SECTION HEADER #F
+ .sxdata name
+      A8 virtual size
+1C2CC000 virtual address (000000015C2CC000 to 000000015C2CC0A7)
+     200 size of raw data
+1AD51200 file pointer to raw data (1AD51200 to 1AD513FF)
+       0 file pointer to relocation table
+       0 file pointer to line numbers
+       0 number of relocations
+       0 number of line numbers
+C0000020 flags
+         Code
+         Read Write
+
+SECTION HEADER #10
+  .data1 name
+    4178 virtual size
+1C2CD000 virtual address (000000015C2CD000 to 000000015C2D1177)
+    4200 size of raw data
+1AD51400 file pointer to raw data (1AD51400 to 1AD555FF)
+       0 file pointer to relocation table
+       0 file pointer to line numbers
+       0 number of relocations
+       0 number of line numbers
+40000040 flags
+         Initialized Data
+         Read Only
+
+SECTION HEADER #11
+    .bss name
+  3E2D7C virtual size
+1C2D2000 virtual address (000000015C2D2000 to 000000015C6B4D7B)
+  3E2E00 size of raw data
+1AD55600 file pointer to raw data (1AD55600 to 1B1383FF)
+       0 file pointer to relocation table
+       0 file pointer to line numbers
+       0 number of relocations
+       0 number of line numbers
+40000040 flags
+         Initialized Data
+         Read Only
+
+SECTION HEADER #12
+   .vmp0 name
+  348BD0 virtual size
+1C6B5000 virtual address (000000015C6B5000 to 000000015C9FDBCF)
+  348C00 size of raw data
+1B138400 file pointer to raw data (1B138400 to 1B480FFF)
+       0 file pointer to relocation table
+       0 file pointer to line numbers
+       0 number of relocations
+       0 number of line numbers
+40000040 flags
+         Initialized Data
+         Read Only
+
+SECTION HEADER #13
+ .nidata name
+    1000 virtual size
+1C9FE000 virtual address (000000015C9FE000 to 000000015C9FEFFF)
+     800 size of raw data
+1B481000 file pointer to raw data (1B481000 to 1B4817FF)
+       0 file pointer to relocation table
+       0 file pointer to line numbers
+       0 number of relocations
+       0 number of line numbers
+C0000000 flags
+         Read Write
+
+SECTION HEADER #14
+   .vmp2 name
+  6111EF virtual size
+1C9FF000 virtual address (000000015C9FF000 to 000000015D0101EE)
+  611200 size of raw data
+1B481800 file pointer to raw data (1B481800 to 1BA929FF)
+       0 file pointer to relocation table
+       0 file pointer to line numbers
+       0 number of relocations
+       0 number of line numbers
+60000020 flags
+         Code
+         Execute Read
+
+SECTION HEADER #15
+   .vmp3 name
+    1598 virtual size
+1D011000 virtual address (000000015D011000 to 000000015D012597)
+    1600 size of raw data
+1BA92A00 file pointer to raw data (1BA92A00 to 1BA93FFF)
+       0 file pointer to relocation table
+       0 file pointer to line numbers
+       0 number of relocations
+       0 number of line numbers
+C0000040 flags
+         Initialized Data
+         Read Write
+
+SECTION HEADER #16
+   .vmp4 name
+  A7A710 virtual size
+1D013000 virtual address (000000015D013000 to 000000015DA8D70F)
+  A7A800 size of raw data
+1BA94000 file pointer to raw data (1BA94000 to 1C50E7FF)
+       0 file pointer to relocation table
+       0 file pointer to line numbers
+       0 number of relocations
+       0 number of line numbers
+68000060 flags
+         Code
+         Initialized Data
+         Not Paged
+         Execute Read
+
+SECTION HEADER #17
+   .rsrc name
+   4E3D3 virtual size
+1DA8E000 virtual address (000000015DA8E000 to 000000015DADC3D2)
+   4E400 size of raw data
+1C50E800 file pointer to raw data (1C50E800 to 1C55CBFF)
+       0 file pointer to relocation table
+       0 file pointer to line numbers
+       0 number of relocations
+       0 number of line numbers
+40000040 flags
+         Initialized Data
+         Read Only
+
+SECTION HEADER #18
+  .reloc name
+  348FFC virtual size
+1DADD000 virtual address (000000015DADD000 to 000000015DE25FFB)
+  349000 size of raw data
+1C55CC00 file pointer to raw data (1C55CC00 to 1C8A5BFF)
+       0 file pointer to relocation table
+       0 file pointer to line numbers
+       0 number of relocations
+       0 number of line numbers
+42000040 flags
+         Initialized Data
+         Discardable
+         Read Only
+
+SECTION HEADER #19
+    .v38 name
+    1000 virtual size
+1DE26000 virtual address (000000015DE26000 to 000000015DE26FFF)
+     200 size of raw data
+1C8A5C00 file pointer to raw data (1C8A5C00 to 1C8A5DFF)
+       0 file pointer to relocation table
+       0 file pointer to line numbers
+       0 number of relocations
+       0 number of line numbers
+E00000E0 flags
+         Code
+         Initialized Data
+         Uninitialized Data
+         Execute Read Write
+
+  Summary
+
+      3E3000 .bss
+     FAEC000 .code
+        5000 .data1
+        1000 .data2
+        3000 .debug
+        4000 .didata
+     127C000 .edata
+        1000 .idata
+     9035000 .impdata
+       4D000 .link
+        1000 .nidata
+      349000 .reloc
+      257000 .rodata
+       4F000 .rsrc
+        1000 .sxdata
+        1000 .tls$
+     1E49000 .trace
+        1000 .v38
+      349000 .vmp0
+       4F000 .vmp1
+      612000 .vmp2
+        2000 .vmp3
+      A7B000 .vmp4
+        5000 .xdata
+      3E3000 .xtls

@@ -1,0 +1,79 @@
+{
+  "schemaVersion": 1,
+  "generatedUtc": "2026-11-12T15:30:00Z",
+  "milestone": "v0.6.3",
+  "function": {
+    "entryRva": "0x187F0550",
+    "entryFileOffset": "0x17277150",
+    "endRva": "0x187F0575",
+    "sizeBytes": 37,
+    "section": ".code",
+    "prologue": "56 48 83 EC 20 48 89 D6 4C 8D 05 D9 D2 91 F1 48 89 D1 BA 01 00 00 00 E8 64 A8 0F E9 48 89 F0 48 83 C4 20 5E C3",
+    "boundaryMethod": "first_ret_confirmed",
+    "disasmSummary": "push rsi; sub rsp,20h; mov rsi,rdx; lea r8,[Pad_LockAndTurnMovement]; mov rcx,rdx; mov edx,1; call 0x18EADD0; mov rax,rsi; add rsp,20h; pop rsi; ret"
+  },
+  "padLockAndTurnLeaSite": {
+    "rva": "0x187F0558",
+    "targetRva": "0xA10D838",
+    "string": "Pad_LockAndTurnMovement",
+    "globalLeaSitesToThisString": ["0x187F0558"]
+  },
+  "directCallersE8": [],
+  "qwordPointersToEntry": [],
+  "callee": {
+    "rva": "0x18EADD0",
+    "sizeBytesApprox": 255,
+    "boundaryNote": "Naive C3 scan false-positive on 'mov r11,r8' (4C 89 C3); real epilogue at +0xFE after pop r15",
+    "e8CallerSample": [
+      "0x187F0567",
+      "0x1A364384",
+      "0x38FDABC",
+      "0x3A8A926",
+      "0x3A8AB66",
+      "0x3CA8B06",
+      "0x6030410",
+      "0x60308D3"
+    ],
+    "namedCallerWrappers": [
+      {"wrapper": "0x187F0550", "action": "Pad_LockAndTurnMovement"},
+      {"wrapper": "0x187F0A00", "action": "Pad_Dive"},
+      {"wrapper": "0x1A364370", "action": "Pad_MayanRotatingLeverTurn"}
+    ],
+    "behaviorConfirmed": [
+      "Saves args: r8(actionName*)->r11, edx(flags)->ebp, rcx(object*)->rsi",
+      "Loads global flag/object at 0xAF6FD48; early-out if unset",
+      "Allocates 0x48-byte object via call 0x426EE50 (size edx=0x48, count r8d=8)",
+      "Installs vtable pointer 0x9255320 at [obj+0]",
+      "Stores action-name related fields; compares name via call 0x5338010 in a table walk",
+      "Writes resulting descriptor pointer through the incoming object (rsi)"
+    ],
+    "role": "Input-action descriptor allocate/bind/lookup helper — generic action-name table consumer"
+  },
+  "siblingWrappersSamePattern": [
+    {"entryRva": "0x187F0550", "action": "Pad_LockAndTurnMovement"},
+    {"entryRva": "0x187F0A00", "action": "Pad_Dive"}
+  ],
+  "metrics": {
+    "wrapperSizeBytes": 37,
+    "inputActionNameLeasInWrapper": 1,
+    "helperE8CallerSampleCount": 8
+  },
+  "conclusions": {
+    "isConfirmedPlayerMovementController": false,
+    "referencesPadLockAndTurnMovement": true,
+    "confirmedRole": "Thin per-action wrapper that binds/registers Pad_LockAndTurnMovement via shared helper 0x18EADD0",
+    "inputIdentifierResolution": "Resolved as ASCII action-name string pointer passed in r8; helper matches against an in-memory name table (call 0x5338010)",
+    "structuresReceivingInput": "Allocated 0x48-byte action descriptor with vtable 0x9255320; attached to caller-supplied object* (rcx/rdx)",
+    "movementCommandDestination": "untraced — this path stops at action binding/registration, not per-frame movement application",
+    "actorEntityComponentRefsFound": false,
+    "separateInputContextsFound": false,
+    "dispatchModel": "generic_action_name_system",
+    "confidence": "high_for_wrapper_and_helper_role; movement_downstream_unknown"
+  },
+  "safety": {
+    "analysisMode": "offline_pe_only",
+    "exeSha256": "19920F34BB2FAC814023EE3C27F0CECA1872E80A2AAFB37C092C419FFF77CC0D",
+    "asiSha256": "63B38877DDA7CC7CD9AB2619F94D3941C37F54C95A435EFE47084DC4CF2A50BE",
+    "asiPreservedAsV051": true
+  }
+}

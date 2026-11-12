@@ -1,0 +1,86 @@
+{
+  "schemaVersion":1,
+  "generatedUtc":"2026-11-12T09:00:10.4149778Z",
+  "standaloneCStringCandidates":[
+    {
+      "name":"PlayerPosX",
+      "totalHitsAtLeast":30,
+      "possibleCStringHits":0,
+      "quotedOrJsonHits":30,
+      "samples":[{"fileOffset":"0xA1D660E","section":".edata","kind":"json_or_quoted","context":"\":\"string\",\"isOptional\":true}, {\"name\":\"PlayerPosX\",\"type\":\"float\",\"isOptional\":true}, {\"n"},{"fileOffset":"0xA1D687A","section":".edata","kind":"json_or_quoted","context":"\":\"Ttp\"},{\"name\":\"PlayerPosY\"},{\"name\":\"PlayerPosX\"},{\"name\":\"World\"}]}, {\"name\":\"custom.p"},{"fileOffset":"0xA1D69A2","section":".edata","kind":"json_or_quoted","context":"erPosY\"},{\"name\":\"PlayerPosZ\"},{\"name\":\"PlayerPosX\"},{\"name\":\"Ttp\"},{\"name\":\"World\"},{\"nam"},{"fileOffset":"0xA1D6ED9","section":".edata","kind":"json_or_quoted","context":"e\":\"TimeOfDay\"},{\"name\":\"Ttp\"},{\"name\":\"PlayerPosX\"},{\"name\":\"PlayerPosY\"},{\"name\":\"Player"},{"fileOffset":"0xA1D7B73","section":".edata","kind":"json_or_quoted","context":"EntrySource\"},{\"name\":\"World\"},{\"name\":\"PlayerPosX\"},{\"name\":\"PlayerPosY\"},{\"name\":\"Player"},{"fileOffset":"0xA1D7E6F","section":".edata","kind":"json_or_quoted","context":"onStateName\"},{\"name\":\"World\"},{\"name\":\"PlayerPosX\"},{\"name\":\"PlayerPosY\"},{\"name\":\"Player"}],
+      "interpretation":"Primarily JSON/quoted/packed forms; absolute string-pointer xrefs may be absent if runtime parses blob"
+    },
+    {
+      "name":"PlayerPosY",
+      "totalHitsAtLeast":30,
+      "possibleCStringHits":0,
+      "quotedOrJsonHits":30,
+      "samples":[{"fileOffset":"0xA1D6646","section":".edata","kind":"json_or_quoted","context":"e\":\"float\",\"isOptional\":true}, {\"name\":\"PlayerPosY\",\"type\":\"float\",\"isOptional\":true}, {\"n"},{"fileOffset":"0xA1D6864","section":".edata","kind":"json_or_quoted","context":"\":\"PlayerPosZ\"},{\"name\":\"Ttp\"},{\"name\":\"PlayerPosY\"},{\"name\":\"PlayerPosX\"},{\"name\":\"World\""},{"fileOffset":"0xA1D6976","section":".edata","kind":"json_or_quoted","context":":\"InventoryCollectibleSource\"},{\"name\":\"PlayerPosY\"},{\"name\":\"PlayerPosZ\"},{\"name\":\"Player"},{"fileOffset":"0xA1D6EEF","section":".edata","kind":"json_or_quoted","context":"\":\"Ttp\"},{\"name\":\"PlayerPosX\"},{\"name\":\"PlayerPosY\"},{\"name\":\"PlayerPosZ\"},{\"name\":\"World\""},{"fileOffset":"0xA1D7B89","section":".edata","kind":"json_or_quoted","context":"\"World\"},{\"name\":\"PlayerPosX\"},{\"name\":\"PlayerPosY\"},{\"name\":\"PlayerPosZ\"},{\"name\":\"Charac"},{"fileOffset":"0xA1D7E85","section":".edata","kind":"json_or_quoted","context":"\"World\"},{\"name\":\"PlayerPosX\"},{\"name\":\"PlayerPosY\"},{\"name\":\"PlayerPosZ\"},{\"name\":\"Charac"}],
+      "interpretation":"Primarily JSON/quoted/packed forms; absolute string-pointer xrefs may be absent if runtime parses blob"
+    },
+    {
+      "name":"PlayerPosZ",
+      "totalHitsAtLeast":30,
+      "possibleCStringHits":0,
+      "quotedOrJsonHits":30,
+      "samples":[{"fileOffset":"0xA1D667E","section":".edata","kind":"json_or_quoted","context":"e\":\"float\",\"isOptional\":true}, {\"name\":\"PlayerPosZ\",\"type\":\"float\",\"isOptional\":true}, {\"n"},{"fileOffset":"0xA1D683F","section":".edata","kind":"json_or_quoted","context":"\"name\":\"CurrentPlaythroughId\"},{\"name\":\"PlayerPosZ\"},{\"name\":\"Ttp\"},{\"name\":\"PlayerPosY\"},"},{"fileOffset":"0xA1D698C","section":".edata","kind":"json_or_quoted","context":"Source\"},{\"name\":\"PlayerPosY\"},{\"name\":\"PlayerPosZ\"},{\"name\":\"PlayerPosX\"},{\"name\":\"Ttp\"},"},{"fileOffset":"0xA1D6F05","section":".edata","kind":"json_or_quoted","context":"erPosX\"},{\"name\":\"PlayerPosY\"},{\"name\":\"PlayerPosZ\"},{\"name\":\"World\"},{\"name\":\"CurrentPlay"},{"fileOffset":"0xA1D7B9F","section":".edata","kind":"json_or_quoted","context":"erPosX\"},{\"name\":\"PlayerPosY\"},{\"name\":\"PlayerPosZ\"},{\"name\":\"Character\"},{\"name\":\"Ttp\"},{"},{"fileOffset":"0xA1D7E9B","section":".edata","kind":"json_or_quoted","context":"erPosX\"},{\"name\":\"PlayerPosY\"},{\"name\":\"PlayerPosZ\"},{\"name\":\"Character\"},{\"name\":\"Current"}],
+      "interpretation":"Primarily JSON/quoted/packed forms; absolute string-pointer xrefs may be absent if runtime parses blob"
+    },
+    {
+      "name":"player.position",
+      "totalHitsAtLeast":3,
+      "possibleCStringHits":1,
+      "quotedOrJsonHits":2,
+      "samples":[{"fileOffset":"0xA13E3DE","section":".edata","kind":"possible_cstring","context":"Repetition.UIComposition.UI Composition.player.position.invalid string_view position.invalid st"},{"fileOffset":"0xA1D77E7","section":".edata","kind":"json_or_quoted","context":"layerPosition\",\"compositions\":[{\"name\":\"player.position\"}]}, {\"name\":\"BoatNavigationStartSignal"},{"fileOffset":"0xA1DE107","section":".edata","kind":"json_or_quoted","context":",{\"name\":\"MenuSequenceId\"}]}, .{\"name\":\"player.position\",\"type\":\"STANDARD\",\"typeAttributes\":[],"}],
+      "interpretation":"Has possible null-terminated occurrences; xrefs may target those"
+    },
+    {
+      "name":"PositionSource",
+      "totalHitsAtLeast":4,
+      "possibleCStringHits":1,
+      "quotedOrJsonHits":2,
+      "samples":[{"fileOffset":"0x9995B62","section":".edata","kind":"possible_cstring","context":"......IKAxisSourceData................IKPositionSource................IKPositionSourceData...."},{"fileOffset":"0x9995B82","section":".edata","kind":"embedded_or_packed","context":"......IKPositionSource................IKPositionSourceData............IKRotationSource........"},{"fileOffset":"0xA1D5677","section":".edata","kind":"json_or_quoted","context":"\":\"string\",\"isOptional\":true}, {\"name\":\"PositionSource\",\"type\":\"string\",\"isOptional\":true}, {\""},{"fileOffset":"0xA1DE1DC","section":".edata","kind":"json_or_quoted","context":"ghtState\"},{\"name\":\"Movement\"},{\"name\":\"PositionSource\"},{\"name\":\"DistanceTraveled\"},{\"name\":\""}],
+      "interpretation":"Has possible null-terminated occurrences; xrefs may target those"
+    },
+    {
+      "name":"FightState",
+      "totalHitsAtLeast":3,
+      "possibleCStringHits":0,
+      "quotedOrJsonHits":2,
+      "samples":[{"fileOffset":"0xA13AC9D","section":".edata","kind":"embedded_or_packed","context":"lsTorqueRatio.FightLogicFXParameterLogicFightStateRatio.QuadrupedProp_RightForeRatio.Quadr"},{"fileOffset":"0xA1CF10D","section":".edata","kind":"json_or_quoted","context":"\":\"string\",\"isOptional\":true}, {\"name\":\"FightState\",\"type\":\"string\",\"isOptional\":true}, {\""},{"fileOffset":"0xA1DE1B2","section":".edata","kind":"json_or_quoted","context":"yerPosZ\"},{\"name\":\"TimeOfDay\"},{\"name\":\"FightState\"},{\"name\":\"Movement\"},{\"name\":\"Position"}],
+      "interpretation":"Primarily JSON/quoted/packed forms; absolute string-pointer xrefs may be absent if runtime parses blob"
+    },
+    {
+      "name":"Movement",
+      "totalHitsAtLeast":18,
+      "possibleCStringHits":8,
+      "quotedOrJsonHits":2,
+      "samples":[{"fileOffset":"0xA10CE22","section":".edata","kind":"possible_cstring","context":"utomovement.TelekinisisSetHierachyFatherMovement.stepMovement.Pad_LockAndTurnMovement.pl"},{"fileOffset":"0xA10CE2F","section":".edata","kind":"possible_cstring","context":"elekinisisSetHierachyFatherMovement.stepMovement.Pad_LockAndTurnMovement.player.achievem"},{"fileOffset":"0xA10CE47","section":".edata","kind":"possible_cstring","context":"herMovement.stepMovement.Pad_LockAndTurnMovement.player.achievement.Passement.Progressio"},{"fileOffset":"0xA11730D","section":".edata","kind":"possible_cstring","context":"ntShapePpuAddress.ipAddress.baseAddress.MovementDoublePress.Brightness.softness.ctlSetCu"},{"fileOffset":"0xA1232E8","section":".edata","kind":"embedded_or_packed","context":"s.movementProperties.hkaiAvoidanceSolverMovementProperties.hkaiMovementProperties.ctlMem"},{"fileOffset":"0xA1232FF","section":".edata","kind":"embedded_or_packed","context":"aiAvoidanceSolverMovementProperties.hkaiMovementProperties.ctlMemoryGetProperties.ctlFre"}],
+      "interpretation":"Has possible null-terminated occurrences; xrefs may target those"
+    },
+    {
+      "name":"CurrentPlaythroughId",
+      "totalHitsAtLeast":30,
+      "possibleCStringHits":0,
+      "quotedOrJsonHits":30,
+      "samples":[{"fileOffset":"0xA1D5380","section":".edata","kind":"json_or_quoted","context":"\":\"string\",\"isOptional\":true}, {\"name\":\"CurrentPlaythroughId\",\"type\":\"string\",\"isOptional\":true}, {\""},{"fileOffset":"0xA1D681F","section":".edata","kind":"json_or_quoted","context":"\":\"InventoryConsumableSource\"},{\"name\":\"CurrentPlaythroughId\"},{\"name\":\"PlayerPosZ\"},{\"name\":\"Ttp\"},"},{"fileOffset":"0xA1D69D8","section":".edata","kind":"json_or_quoted","context":"\"name\":\"Ttp\"},{\"name\":\"World\"},{\"name\":\"CurrentPlaythroughId\"}]}, {\"name\":\"custom.ShipLoadout\",\"type"},{"fileOffset":"0xA1D6C73","section":".edata","kind":"json_or_quoted","context":"rage\"},{\"name\":\"CombatRating\"},{\"name\":\"CurrentPlaythroughId\"},{\"name\":\"Ttp\"},{\"name\":\"World\"}]}, {\""},{"fileOffset":"0xA1D6D80","section":".edata","kind":"json_or_quoted","context":"ietyThresholdActivationState\"},{\"name\":\"CurrentPlaythroughId\"},{\"name\":\"Ttp\"},{\"name\":\"World\"}]}, {\""},{"fileOffset":"0xA1D6F2C","section":".edata","kind":"json_or_quoted","context":"\"PlayerPosZ\"},{\"name\":\"World\"},{\"name\":\"CurrentPlaythroughId\"},{\"name\":\"PlayerLevel\"},{\"name\":\"Playe"}],
+      "interpretation":"Primarily JSON/quoted/packed forms; absolute string-pointer xrefs may be absent if runtime parses blob"
+    },
+    {
+      "name":"PlayerPosition",
+      "totalHitsAtLeast":1,
+      "possibleCStringHits":0,
+      "quotedOrJsonHits":1,
+      "samples":[{"fileOffset":"0xA1D77BE","section":".edata","kind":"json_or_quoted","context":"artSignal\",\"compositions\":[]}, {\"name\":\"PlayerPosition\",\"compositions\":[{\"name\":\"player.positi"}],
+      "interpretation":"Primarily JSON/quoted/packed forms; absolute string-pointer xrefs may be absent if runtime parses blob"
+    },
+    {
+      "name":"BodyDropGlobalPositionX",
+      "totalHitsAtLeast":2,
+      "possibleCStringHits":0,
+      "quotedOrJsonHits":2,
+      "samples":[{"fileOffset":"0xA1D38E4","section":".edata","kind":"json_or_quoted","context":"ype\":\"int\",\"isOptional\":true}, {\"name\":\"BodyDropGlobalPositionX\",\"type\":\"float\",\"isOptional\":true}, {\"n"},{"fileOffset":"0xA1D6F7B","section":".edata","kind":"json_or_quoted","context":"evel\"},{\"name\":\"PlayerAction\"},{\"name\":\"BodyDropGlobalPositionX\"},{\"name\":\"BodyDropGlobalPositionY\"},{\""}],
+      "interpretation":"Primarily JSON/quoted/packed forms; absolute string-pointer xrefs may be absent if runtime parses blob"
+    }
+  ]
+}

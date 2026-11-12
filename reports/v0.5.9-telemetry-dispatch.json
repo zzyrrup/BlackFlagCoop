@@ -1,0 +1,44 @@
+﻿{
+  "schemaVersion": 1,
+  "generatedUtc": "2026-11-12T15:04:46.7408976Z",
+  "method": "offline_string_beacon_dispatch_sink_scan",
+  "stringBeacons": [
+    {"needle":"LiveTelemetry","hitsInScanWindow":2,"windowNote":"edata_section","samples":[{"fileOffset":"0xA0FEFAF","rva":"0xA0FF9AF","context":" of the Metric Categories to change the export to LiveTelemetry.JobRetryFailedPrimaryStoreSync::calculateNextRetry.Naxos Quarry.Oreos Quarry.Suenites Quarry.Aliki Quarry."},{"fileOffset":"0xA1567CC","rva":"0xA1571CC","context":"ricsRuntineConfig.ConnectivityRuntimeConfig.OnlineLiveTelemetryRuntimeConfig.UIHubMediaLibraryRuntimeConfig.PrimaryShopWebStoreUrlSuffixRuntimeConfig.ProjectMenuURLSuffix"}]},
+    {"needle":"us-sdkClientTelemetry","hitsInScanWindow":1,"windowNote":"edata_section","samples":[{"fileOffset":"0xA0FEF5E","rva":"0xA0FF95E","context":"dGeometry.hkdGeometry.hclVdbVCPGeometry.telemetry.us-sdkClientTelemetry.CRC Array of the Metric Categories to change the export to LiveTelemetry.JobRetryFailedPrimaryStor"}]},
+    {"needle":"Metric Categories","hitsInScanWindow":2,"windowNote":"edata_section","samples":[{"fileOffset":"0xA0FEF85","rva":"0xA0FF985","context":".telemetry.us-sdkClientTelemetry.CRC Array of the Metric Categories to change the export to LiveTelemetry.JobRetryFailedPrimaryStoreSync::calculateNextRetry.Naxos Quarry."},{"fileOffset":"0xA109145","rva":"0xA109B45","context":"peCast.hk::Cast.0st.rsqrt.Stsort.CRC Array of the Metric Categories to disable the export.hkSerialize::Note::Export.hkViewport.transport.support.game.mobile.customerSuppo"}]},
+    {"needle":"SendEvent","hitsInScanWindow":21,"windowNote":"edata_section","samples":[{"fileOffset":"0xA0FF41C","rva":"0xA0FFE1C","context":"ry.setPrimaryStoreInventory.JobPrimaryStoreSyncAndSendEvent::getPrimaryStoreInventory.JobPrimaryStoreSyncAndSendEvent::syncPrimaryStoreInventory.InventoryClient-Inventory"},{"fileOffset":"0xA0FF456","rva":"0xA0FFE56","context":"t::getPrimaryStoreInventory.JobPrimaryStoreSyncAndSendEvent::syncPrimaryStoreInventory.InventoryClient-Inventory.FontDirectory.No Root Directory.trajectory.hkaiJumpDetect"}]},
+    {"needle":"EventQueue","hitsInScanWindow":1,"windowNote":"edata_section","samples":[{"fileOffset":"0xA159C60","rva":"0xA15A660","context":"e.hkaiWorldCommands::AddPathRequestQueue.sizeOfToiEventQueue.packetQueue.FusionGraphicsQueue.FastLoadStreamerDirectStorageMainQueue.taskQueue.hkDefaultTaskQueue.hkTaskQue"}]},
+    {"needle":"submit","hitsInScanWindow":10,"windowNote":"edata_section","samples":[{"fileOffset":"0xA11B97E","rva":"0xA11C37E","context":"tArrayOperations.LastOperations.hkMapOperations.resubmitEarlyIterationTerminations.animations.vertexAnimations.populations.PopulationClient::requestPopulations.JobRequest"},{"fileOffset":"0xA17E006","rva":"0xA17EA06","context":"d to compress data.Handling crypto data.Failed to submit pending crypto data.Submitting pending crypto data.Submitted pending crypto data.Handled crypto data.Handling str"}]},
+    {"needle":"SubmitEvent","hitsInScanWindow":0,"windowNote":"edata_section","samples":[]},
+    {"needle":"JobQueueAndSendEvents","hitsInScanWindow":5,"windowNote":"edata_section","samples":[{"fileOffset":"0xA108CB8","rva":"0xA1096B8","context":"ternal::sendRequest.JobSendRemoteLog::sendRequest.JobQueueAndSendEventsBase::sendRequest.JobCreateRoamingProfile::sendRequest.JobHandlePrimaryStoreSync::sendRequest.JobEx"},{"fileOffset":"0xA114598","rva":"0xA114F98","context":"PilotFacadeNavMeshRequests.GatherPlanningRequests.JobQueueAndSendEventsBase::prepareRequests.WaitForPendingPreloadedRequests.Too Many Requests.RequestLiveQuests.setLiveQu"}]},
+    {"needle":"PrimaryStoreSyncAndSendEvent","hitsInScanWindow":8,"windowNote":"edata_section","samples":[{"fileOffset":"0xA0FF409","rva":"0xA0FFE09","context":"PrimaryStoreInventory.setPrimaryStoreInventory.JobPrimaryStoreSyncAndSendEvent::getPrimaryStoreInventory.JobPrimaryStoreSyncAndSendEvent::syncPrimaryStoreInventory.Invent"},{"fileOffset":"0xA0FF443","rva":"0xA0FFE43","context":"toreSyncAndSendEvent::getPrimaryStoreInventory.JobPrimaryStoreSyncAndSendEvent::syncPrimaryStoreInventory.InventoryClient-Inventory.FontDirectory.No Root Directory.trajec"}]},
+    {"needle":"telemetry","hitsInScanWindow":1,"windowNote":"edata_section","samples":[{"fileOffset":"0xA0FEF54","rva":"0xA0FF954","context":"HeightFieldGeometry.hkdGeometry.hclVdbVCPGeometry.telemetry.us-sdkClientTelemetry.CRC Array of the Metric Categories to change the export to LiveTelemetry.JobRetryFailedP"}]},
+    {"needle":"Analytics","hitsInScanWindow":0,"windowNote":"edata_section","samples":[]},
+    {"needle":"TelemetryEvent","hitsInScanWindow":0,"windowNote":"edata_section","samples":[]},
+    {"needle":"PlayerPosX","hitsInScanWindow":62,"windowNote":"edata_section","samples":[{"fileOffset":"0xA1D660E","rva":"0xA1D700E","context":"ate\",\"type\":\"string\",\"isOptional\":true}, {\"name\":\"PlayerPosX\",\"type\":\"float\",\"isOptional\":true}, {\"name\":\"PlayerPosY\",\"type\":\"float\",\"isOptional\":true}, {\"name\":\"PlayerPo"},{"fileOffset":"0xA1D687A","rva":"0xA1D727A","context":"Z\"},{\"name\":\"Ttp\"},{\"name\":\"PlayerPosY\"},{\"name\":\"PlayerPosX\"},{\"name\":\"World\"}]}, {\"name\":\"custom.player.inventory.collectible\",\"type\":\"CUSTOM\",\"typeAttributes\":[],\"cust"}]},
+    {"needle":"PositionSource","hitsInScanWindow":4,"windowNote":"edata_section","samples":[{"fileOffset":"0x9995B62","rva":"0x9996562","context":"rce.............IKAxisSourceData................IKPositionSource................IKPositionSourceData............IKRotationSource................IKRotationSourceData.IKSca"},{"fileOffset":"0x9995B82","rva":"0x9996582","context":"................IKPositionSource................IKPositionSourceData............IKRotationSource................IKRotationSourceData.IKScalarSource.............IKScalarSo"}]},
+    {"needle":"FightState","hitsInScanWindow":3,"windowNote":"edata_section","samples":[{"fileOffset":"0xA13AC9D","rva":"0xA13B69D","context":"Ratio.wheelsTorqueRatio.FightLogicFXParameterLogicFightStateRatio.QuadrupedProp_RightForeRatio.QuadrupedProp_LeftForeRatio.maxGarbageRatio.SlidingEffectorExternalForceRat"},{"fileOffset":"0xA1CF10D","rva":"0xA1CFB0D","context":"ate\",\"type\":\"string\",\"isOptional\":true}, {\"name\":\"FightState\",\"type\":\"string\",\"isOptional\":true}, {\"name\":\"FishSchoolUses\",\"type\":\"int\",\"isOptional\":true}, {\"name\":\"FortD"}]},
+    {"needle":"invalid string_view position","hitsInScanWindow":1,"windowNote":"edata_section","samples":[{"fileOffset":"0xA13E3EE","rva":"0xA13EDEE","context":"tion.UIComposition.UI Composition.player.position.invalid string_view position.invalid string position.rawPosition.startPosition.currentPosition.AgentPosition.exitPositio"}]},
+    {"needle":"rawPosition","hitsInScanWindow":1,"windowNote":"edata_section","samples":[{"fileOffset":"0xA13E423","rva":"0xA13EE23","context":"alid string_view position.invalid string position.rawPosition.startPosition.currentPosition.AgentPosition.exitPosition.TemporalReservoirHitPosition.SpatialReservoirHitPos"}]}
+  ],
+  "standardEventConstruction": {
+    "schemaShapeConfirmed": true,
+    "builderFunctionIdentified": false,
+    "attributeIdResolutionIdentified": false,
+    "floatPopulationRoutineIdentified": false,
+    "notes": "player.position is declared STANDARD with named customAttributes; no offline builder/dispatch RVA found"
+  },
+  "sinkHypotheses": [
+    {"id":"live_telemetry_export","confidence":"naming_only","detail":"LiveTelemetry / Metric Categories / us-sdkClientTelemetry strings suggest external metrics export path","provenForPlayerPosition":false},
+    {"id":"job_send_event_primary_store","confidence":"naming_only","detail":"Job*SendEvent / PrimaryStoreSyncAndSendEvent strings are store-sync jobs, not proven player.position dispatch","provenForPlayerPosition":false},
+    {"id":"local_file_sink","confidence":"unverified","detail":"No confirmed local telemetry log format for these events in this pass","provenForPlayerPosition":false},
+    {"id":"in_memory_only","confidence":"unverified","detail":"Possible that events are built and dropped/sampled without durable local retention","provenForPlayerPosition":false}
+  ],
+  "conclusions": {
+    "dispatchFunctionFound": false,
+    "serializationFunctionFound": false,
+    "playerPosLinkedToGameplayProducer": false,
+    "eventDataRetention": "unknown",
+    "strongestDispatchLead": "LiveTelemetry / client telemetry naming — unproven connection to player.position"
+  }
+}

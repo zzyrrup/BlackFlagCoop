@@ -1,0 +1,84 @@
+{
+    "schemaVersion":  1,
+    "generatedUtc":  "2026-11-12T08:51:02.8164588Z",
+    "confirmedExecutableProducerFunction":  false,
+    "confirmedAttributePopulationRoutine":  false,
+    "confirmedDispatchQueue":  false,
+    "stringBeacons":  [
+                          {
+                              "needle":  "Telemetry",
+                              "fileOffset":  "0xA0FEF6A",
+                              "rva":  "0xA0FF96A",
+                              "context":  "ightFieldGeometry.hkdGeometry.hclVdbVCPGeometry.telemetry.us-sdkClientTelemetry.CRC Array of the Metric Categories to change the export to LiveTelemetry.JobRetryFailedPrimaryStoreSync::calculateNextRetry.Naxos "
+                          },
+                          {
+                              "needle":  "Telemetry",
+                              "fileOffset":  "0xA0FEFB3",
+                              "rva":  "0xA0FF9B3",
+                              "context":  "emetry.CRC Array of the Metric Categories to change the export to LiveTelemetry.JobRetryFailedPrimaryStoreSync::calculateNextRetry.Naxos Quarry.Oreos Quarry.Suenites Quarry.Aliki Quarry.Mt. Pentelikos Marble Qu"
+                          },
+                          {
+                              "needle":  "Telemetry",
+                              "fileOffset":  "0xA110D8D",
+                              "rva":  "0xA11178D",
+                              "context":  "t.AllEntryConditionsAreMet.UPC_StreamingCurrentUserCountryGet.ctlPowerTelemetryGet.UPC_StreamingNetworkDelayForInputGet.UPC_StoreProductListGet.UPC_ProductListGet.ctlOverclockPowerLimitGet.ctlOverclockTemperatu"
+                          },
+                          {
+                              "needle":  "telemetry",
+                              "fileOffset":  "0xA0FEF54",
+                              "rva":  "0xA0FF954",
+                              "context":  "htFieldGeometry.hknpHeightFieldGeometry.hkdGeometry.hclVdbVCPGeometry.telemetry.us-sdkClientTelemetry.CRC Array of the Metric Categories to change the export to LiveTelemetry.JobRetryFailedPrimaryStoreSync::cal"
+                          },
+                          {
+                              "needle":  "SendEvent",
+                              "fileOffset":  "0xA0FF41C",
+                              "rva":  "0xA0FFE1C",
+                              "context":  "tPrimaryStoreInventory.setPrimaryStoreInventory.JobPrimaryStoreSyncAndSendEvent::getPrimaryStoreInventory.JobPrimaryStoreSyncAndSendEvent::syncPrimaryStoreInventory.InventoryClient-Inventory.FontDirectory.No Ro"
+                          },
+                          {
+                              "needle":  "SendEvent",
+                              "fileOffset":  "0xA0FF456",
+                              "rva":  "0xA0FFE56",
+                              "context":  "StoreSyncAndSendEvent::getPrimaryStoreInventory.JobPrimaryStoreSyncAndSendEvent::syncPrimaryStoreInventory.InventoryClient-Inventory.FontDirectory.No Root Directory.trajectory.hkaiJumpDetectionSettingsTrajector"
+                          },
+                          {
+                              "needle":  "SendEvent",
+                              "fileOffset":  "0xA108CC3",
+                              "rva":  "0xA1096C3",
+                              "context":  "ileInfoExternal::sendRequest.JobSendRemoteLog::sendRequest.JobQueueAndSendEventsBase::sendRequest.JobCreateRoamingProfile::sendRequest.JobHandlePrimaryStoreSync::sendRequest.JobExtendSessionPeriodic::sendReques"
+                          },
+                          {
+                              "needle":  "EventQueue",
+                              "fileOffset":  "0xA159C60",
+                              "rva":  "0xA15A660",
+                              "context":  ".hkaiPathRequestQueue.hkaiWorldCommands::AddPathRequestQueue.sizeOfToiEventQueue.packetQueue.FusionGraphicsQueue.FastLoadStreamerDirectStorageMainQueue.taskQueue.hkDefaultTaskQueue.hkTaskQueue.hkRefTaskQueue.hk"
+                          },
+                          {
+                              "needle":  "PlayerPosX",
+                              "fileOffset":  "0xA1D660E",
+                              "rva":  "0xA1D700E",
+                              "context":  "{\"name\":\"PlayerNavState\",\"type\":\"string\",\"isOptional\":true}, {\"name\":\"PlayerPosX\",\"type\":\"float\",\"isOptional\":true}, {\"name\":\"PlayerPosY\",\"type\":\"float\",\"isOptional\":true}, {\"name\":\"PlayerPosZ\",\"type\":\"float\",\""
+                          },
+                          {
+                              "needle":  "PlayerPosX",
+                              "fileOffset":  "0xA1D687A",
+                              "rva":  "0xA1D727A",
+                              "context":  "},{\"name\":\"PlayerPosZ\"},{\"name\":\"Ttp\"},{\"name\":\"PlayerPosY\"},{\"name\":\"PlayerPosX\"},{\"name\":\"World\"}]}, {\"name\":\"custom.player.inventory.collectible\",\"type\":\"CUSTOM\",\"typeAttributes\":[],\"customAttributes\":[{\"nam"
+                          },
+                          {
+                              "needle":  "PlayerPosX",
+                              "fileOffset":  "0xA1D69A2",
+                              "rva":  "0xA1D73A2",
+                              "context":  "lectibleSource\"},{\"name\":\"PlayerPosY\"},{\"name\":\"PlayerPosZ\"},{\"name\":\"PlayerPosX\"},{\"name\":\"Ttp\"},{\"name\":\"World\"},{\"name\":\"CurrentPlaythroughId\"}]}, {\"name\":\"custom.ShipLoadout\",\"type\":\"CUSTOM\",\"typeAttributes"
+                          }
+                      ],
+    "assessment":  {
+                       "schemaIsNotProducer":  true,
+                       "playerPositionValuesProvenFromCharacterTransform":  false,
+                       "notes":  [
+                                     "Schemas and typed field dictionaries confirm payload shape.",
+                                     "No verified function identified that constructs player.position or writes PlayerPos fields.",
+                                     "Platform networking libraries remain unproven as pose producers."
+                                 ]
+                   }
+}

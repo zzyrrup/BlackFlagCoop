@@ -1,0 +1,18 @@
+{
+  "schemaVersion":1,
+  "generatedUtc":"2026-11-12T15:16:48.4297452Z",
+  "searchedIn":["0x57AF060","lea_targets","helpers_indirectly"],
+  "connections":{
+    "playerPositionUpdates":false,
+    "playerMovement":false,
+    "characterActorEntity":false,
+    "transformUpdates":false,
+    "edwardInitOrActorCreation":false
+  },
+  "leaTargetHints":{
+    "edwardOrKenwayStringSeen":true,
+    "transformLikeStringSeen":false
+  },
+  "assessment":"No defensible link from this schema-chunk consumer path to live pose, movement, actor, transform, or Edward creation. Telemetry schema text ≠ gameplay coordinates.",
+  "secondEdwardPath":"Not advanced by this finding. Next: finish determining whether helpers populate a registry usable at runtime; separately continue actor/control architecture research."
+}

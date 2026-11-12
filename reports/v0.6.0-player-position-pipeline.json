@@ -1,0 +1,34 @@
+{
+  "schemaVersion":1,
+  "generatedUtc":"2026-11-12T15:10:27.6428305Z",
+  "reassessmentAfterConsumerHunt":true,
+  "coreCatalogCodeReferencesFound":true,
+  "confirmedSchemaLoader":false,
+  "playerPosition":{
+    "compositionFileOffset":"0xA1D77B5",
+    "eventFileOffset":"0xA1DE0FE",
+    "runtimeProducerIdentified":false,
+    "floatSourceIdentified":false,
+    "activePlayerCharacterLink":false,
+    "edwardActorOrTransformLink":false,
+    "verifiedConnectionToIdentifiedConsumer":false,
+    "note":"Even if code references the catalog region, no instruction trail yet proves player.position event construction or XYZ population"
+  },
+  "liveTelemetryAndSendEvent":[
+    {"name":"LiveTelemetry","fileOffset":"0xA0FEFAF","rva":"0xA0FF9AF","leaRipHits":0,"absVaHits":0,"connectedToCoreCatalogConsumer":false,"evidenceClass":"string_only_or_indirect","samples":[]},
+    {"name":"OnlineLiveTelemetryRuntimeConfig","fileOffset":"0xA1567C6","rva":"0xA1571C6","leaRipHits":1,"absVaHits":0,"connectedToCoreCatalogConsumer":false,"evidenceClass":"code_references_string","samples":[{"siteRva":"0x1819C54","siteFileOffset":"0x1819254","section":".impdata","mnemonic":"lea_rip_rel","bytes":"48 8D 15 6B D5 93 08","targetRva":"0xA1571C6","targetFileOffset":"0xA1567C6","regionTag":"pipeline_string","confidence":"high_lea_to_string"}]},
+    {"name":"us-sdkClientTelemetry","fileOffset":"0xA0FEF5E","rva":"0xA0FF95E","leaRipHits":0,"absVaHits":0,"connectedToCoreCatalogConsumer":false,"evidenceClass":"string_only_or_indirect","samples":[]},
+    {"name":"JobPrimaryStoreSyncAndSendEvent","fileOffset":"0xA0FF406","rva":"0xA0FFE06","leaRipHits":1,"absVaHits":0,"connectedToCoreCatalogConsumer":false,"evidenceClass":"code_references_string","samples":[{"siteRva":"0x59AD592","siteFileOffset":"0x59ACB92","section":".impdata","mnemonic":"lea_rip_rel","bytes":"48 8D 05 6D 28 75 04","targetRva":"0xA0FFE06","targetFileOffset":"0xA0FF406","regionTag":"pipeline_string","confidence":"high_lea_to_string"}]},
+    {"name":"JobQueueAndSendEventsBase","fileOffset":"0xA108CB8","rva":"0xA1096B8","leaRipHits":2,"absVaHits":0,"connectedToCoreCatalogConsumer":false,"evidenceClass":"code_references_string","samples":[{"siteRva":"0x16EAD18","siteFileOffset":"0x16EA318","section":".impdata","mnemonic":"lea_rip_rel","bytes":"48 8D 05 99 E9 A1 08","targetRva":"0xA1096B8","targetFileOffset":"0xA108CB8","regionTag":"pipeline_string","confidence":"high_lea_to_string"},{"siteRva":"0x16EC59D","siteFileOffset":"0x16EBB9D","section":".impdata","mnemonic":"lea_rip_rel","bytes":"48 8D 05 14 D1 A1 08","targetRva":"0xA1096B8","targetFileOffset":"0xA108CB8","regionTag":"pipeline_string","confidence":"high_lea_to_string"}]},
+    {"name":"Metric Categories","fileOffset":"0xA0FEF85","rva":"0xA0FF985","leaRipHits":0,"absVaHits":0,"connectedToCoreCatalogConsumer":false,"evidenceClass":"string_only_or_indirect","samples":[]}
+  ],
+  "pipelineDirection":{
+    "runtimeDescriptors":"unproven",
+    "attributeLookup":"unproven",
+    "eventConstruction":"unproven",
+    "serializationOrSubmission":"LiveTelemetry/Job*SendEvent have string presence; code LEA refs reported separately; not linked to player.position",
+    "gameplayProducers":"unproven",
+    "trailStopsAt":"RIP-relative references into catalog range — function purpose not established beyond data addressing"
+  },
+  "topCandidateEntries":["0x57AF060","0x78824E0","0x7880000","0x53CBA00","0x8FD5110"]
+}

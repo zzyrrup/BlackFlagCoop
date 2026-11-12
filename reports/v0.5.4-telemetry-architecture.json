@@ -1,0 +1,41 @@
+{
+    "schemaVersion":  1,
+    "generatedUtc":  "2026-11-12T08:24:24.8945608Z",
+    "systemsObserved":  [
+                            {
+                                "exposesPose":  false,
+                                "evidence":  "PlayerPosition compositions player.position among *Signal entries",
+                                "name":  "Composition/signal catalog",
+                                "notes":  "Declares signal names; does not define XYZ fields"
+                            },
+                            {
+                                "exposesPose":  "schema_only",
+                                "evidence":  "player.position STANDARD event with PlayerPosX/Y/Z customAttributes",
+                                "name":  "Telemetry event attribute schemas",
+                                "notes":  "Strongest lead for position-shaped telemetry payload; no confirmed runtime reader API"
+                            },
+                            {
+                                "exposesPose":  false,
+                                "evidence":  "SaveGameStartSignal/StopSignal compose context.start/stop.SaveGame",
+                                "name":  "SaveGame context signals",
+                                "notes":  "Lifecycle signals only in recovered objects"
+                            },
+                            {
+                                "exposesPose":  false,
+                                "evidence":  "PlayerNavStart/StopSignal",
+                                "name":  "PlayerNav context signals",
+                                "notes":  "Navigation session markers, not coordinate payloads in composition objects"
+                            },
+                            {
+                                "exposesPose":  false,
+                                "evidence":  "v0.5.2 export report",
+                                "name":  "Harbour/Keel exports",
+                                "notes":  "Platform networking, not player pose"
+                            }
+                        ],
+    "safeFutureTestIdeas":  [
+                                "Offline: finish catalog of all events with PlayerPosX/Y/Z and any attribute-type dictionary if present",
+                                "Controlled later test: observe whether Ubisoft telemetry/debug sinks emit player.position payloads during gameplay (read-only external capture if legally/technically available) — do not invent memory offsets",
+                                "Do not implement ASI memory reader from PlayerPos* names alone"
+                            ]
+}

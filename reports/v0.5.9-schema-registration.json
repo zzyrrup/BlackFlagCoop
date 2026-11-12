@@ -1,0 +1,71 @@
+﻿{
+  "schemaVersion": 1,
+  "generatedUtc": "2026-11-12T15:04:46.5903877Z",
+  "method": "offline_edata_structure_export_and_string_beacon_scan",
+  "imageBase": "0x140000000",
+  "edataWindow": {"fileStart":"0x9035600","fileEnd":"0xA2B1600"},
+  "blobInventory": {
+    "typeStandardOccurrences": 23,
+    "typeCustomOccurrences": 68,
+    "compositionsArrayOccurrences": 119,
+    "namePlayerPositionOccurrences": 1,
+    "namePlayerDotPositionOccurrences": 2
+  },
+  "confirmedSites": {
+    "PlayerPositionComposition": {"fileOffset":"0xA1D77B5","rva":"0xA1D81B5","section":".edata","objectSnippet":"{\"name\":\"PlayerPosition\",\"compositions\":[{\"name\":\"player.position\"}]}"},
+    "playerPositionEvent": {"fileOffset":"0xA1DE0FE","rva":"0xA1DEAFE","section":".edata","objectSnippet":"{\"name\":\"player.position\",\"type\":\"STANDARD\",\"typeAttributes\":[],\"customAttributes\":[{\"name\":\"PlayerPosX\"},{\"name\":\"PlayerPosY\"},{\"name\":\"PlayerPosZ\"},{\"name\":\"TimeOfDay\"},{\"name\":\"FightState\"},{\"name\":\"Movement\"},{\"name\":\"PositionSource\"},{\"name\":\"DistanceTraveled\"},{\"name\":\"Ttp\"},{\"name\":\"World\"},{\"name\":\"CurrentPlaythroughId\"}]}"},
+    "PlayerPosXDictionary": {"fileOffset":"0xA1D6605","rva":"0xA1D7005","section":".edata","type":"float","context":"\"isOptional\":true}, {\"name\":\"PlayerPosX\",\"type\":\"float\",\"isOptional\":true}, {\"name\":\"PlayerPosY\",\"type\":\"float\",\"isOptional\":true}, {\"name\":\"PlayerPosZ\",\"type\":\"float\",\"isOptional\":true}, {\"name\":\"pla"},
+    "playerPositionCStringToken": {"fileOffset":"0xA13E3DE","rva":"0xA13EDDE","section":".edata","context":"Repetition.UIComposition.UI Composition.player.position.invalid string_view position.invalid string position.rawPosition"}
+  },
+  "absoluteVaXrefsInExecutableSections": {
+    "playerPositionCString": 0,
+    "playerPositionEventJsonSite": 0,
+    "PlayerPosXDictSite": 0,
+    "note": "0 means no classic relocated pointer table found; relative/blob parse still possible"
+  },
+  "parseAndLoaderStringBeacons": [
+    {"needle":"Failed to parse","totalHits":10,"samples":[{"fileOffset":"0xA15C6CE","rva":"0xA15D0CE","section":".edata","context":"t of the X.509 intermediate certificate.Failed to parse certificate.Passphrase used to protect the certificate.Failed to decode certificate."},{"fileOffset":"0xA15D185","rva":"0xA15DB85","section":".edata","context":"icate not found in Key Service response.Failed to parse the JSON response.JobCreatePartyUbi::processDeletePartyResponse.JobRequestBlocklist:"}]},
+    {"needle":"failed to parse","totalHits":0,"samples":[]},
+    {"needle":"ParseError","totalHits":0,"samples":[]},
+    {"needle":"JSON parse","totalHits":0,"samples":[]},
+    {"needle":"customAttributes","totalHits":126,"samples":[{"fileOffset":"0xA120C45","rva":"0xA121645","section":".edata","context":"UpdateGroupAttributes.booleanAttributes.customAttributes.hkCustomAttributes.RaytracingMaterialAttributes.spacesConfigsSsiAttributes.listsOfA"},{"fileOffset":"0xA1D674F","rva":"0xA1D714F","section":".edata","context":"e\",\"type\":\"CUSTOM\",\"typeAttributes\":[],\"customAttributes\":[{\"name\":\"InventoryConsumableAmount\"},{\"name\":\"InventoryConsumableBalance\"},{\"name"}]},
+    {"needle":"typeAttributes","totalHits":126,"samples":[{"fileOffset":"0xA120D45","rva":"0xA121745","section":".edata","context":"reInstantiationClient-ListsOfAttributes.typeAttributes.floatRangeAttributes.integerRangeAttributes.compressedAttributes.staticAttributes.hka"},{"fileOffset":"0xA1D673B","rva":"0xA1D713B","section":".edata","context":".inventory.consumable\",\"type\":\"CUSTOM\",\"typeAttributes\":[],\"customAttributes\":[{\"name\":\"InventoryConsumableAmount\"},{\"name\":\"InventoryConsum"}]},
+    {"needle":"isOptional","totalHits":550,"samples":[{"fileOffset":"0xA14CCC8","rva":"0xA14D6C8","section":".edata","context":"pMaskDataInternal.confidential_optional.isOptional.hk::Optional.promotional.Ctrl Additional.unidirectional.bidirectional.hkMpRational. Profe"},{"fileOffset":"0xA1CE3C5","rva":"0xA1CEDC5","section":".edata","context":"ame\":\"marketingOptIn\",\"type\":\"boolean\",\"isOptional\":true}, {\"name\":\"MenuInteraction\",\"type\":\"string\",\"isOptional\":true}, {\"name\":\"MenuItem\","}]},
+    {"needle":"RegisterEvent","totalHits":0,"samples":[]},
+    {"needle":"RegisterComposition","totalHits":0,"samples":[]},
+    {"needle":"LoadSchema","totalHits":0,"samples":[]},
+    {"needle":"schema","totalHits":0,"samples":[]},
+    {"needle":"CompositionRegistry","totalHits":0,"samples":[]},
+    {"needle":"TelemetrySchema","totalHits":0,"samples":[]},
+    {"needle":"EventSchema","totalHits":0,"samples":[]},
+    {"needle":"STANDARD","totalHits":23,"samples":[{"fileOffset":"0xA1D6DDE","rva":"0xA1D77DE","section":".edata","context":"]}, {\"name\":\"hardwareSpecs.ps5\",\"type\":\"STANDARD\",\"typeAttributes\":[{\"name\":\"isProMode\"}],\"customAttributes\":[]}, {\"name\":\"custom.player.act"},{"fileOffset":"0xA1DE120","rva":"0xA1DEB20","section":".edata","context":"}]}, .{\"name\":\"player.position\",\"type\":\"STANDARD\",\"typeAttributes\":[],\"customAttributes\":[{\"name\":\"PlayerPosX\"},{\"name\":\"PlayerPosY\"},{\"name"}]},
+    {"needle":"LiveTelemetry","totalHits":2,"samples":[{"fileOffset":"0xA0FEFAF","rva":"0xA0FF9AF","section":".edata","context":"tric Categories to change the export to LiveTelemetry.JobRetryFailedPrimaryStoreSync::calculateNextRetry.Naxos Quarry.Oreos Quarry.Suenites "},{"fileOffset":"0xA1567CC","rva":"0xA1571CC","section":".edata","context":"eConfig.ConnectivityRuntimeConfig.OnlineLiveTelemetryRuntimeConfig.UIHubMediaLibraryRuntimeConfig.PrimaryShopWebStoreUrlSuffixRuntimeConfig."}]},
+    {"needle":"Metric Categories","totalHits":2,"samples":[{"fileOffset":"0xA0FEF85","rva":"0xA0FF985","section":".edata","context":".us-sdkClientTelemetry.CRC Array of the Metric Categories to change the export to LiveTelemetry.JobRetryFailedPrimaryStoreSync::calculateNex"},{"fileOffset":"0xA109145","rva":"0xA109B45","section":".edata","context":":Cast.0st.rsqrt.Stsort.CRC Array of the Metric Categories to disable the export.hkSerialize::Note::Export.hkViewport.transport.support.game."}]},
+    {"needle":"us-sdkClientTelemetry","totalHits":1,"samples":[{"fileOffset":"0xA0FEF5E","rva":"0xA0FF95E","section":".edata","context":"hkdGeometry.hclVdbVCPGeometry.telemetry.us-sdkClientTelemetry.CRC Array of the Metric Categories to change the export to LiveTelemetry.JobRe"}]},
+    {"needle":"UIComposition","totalHits":1,"samples":[{"fileOffset":"0xA13E3C1","rva":"0xA13EDC1","section":".edata","context":"entSeasonRepetition.eRelativeRepetition.UIComposition.UI Composition.player.position.invalid string_view position.invalid string position.ra"}]}
+  ],
+  "relatedPeExports": [
+    {"name":"Harbour_StringId_GetIdentifierLeftRotation","rva":"0x535F280","fileOffset":"0x535E880","section":".impdata","note":"export_symbol_only_not_proven_schema_loader"},
+    {"name":"Harbour_StringId_GetIdentifierRightRotation","rva":"0x535F280","fileOffset":"0x535E880","section":".impdata","note":"export_symbol_only_not_proven_schema_loader"},
+    {"name":"Harbour_StringId_GetIdentifierXorValue","rva":"0x535F280","fileOffset":"0x535E880","section":".impdata","note":"export_symbol_only_not_proven_schema_loader"},
+    {"name":"Harbour_StringId_Registry_ClearUnsafe","rva":"0x69296F0","fileOffset":"0x6928CF0","section":".impdata","note":"export_symbol_only_not_proven_schema_loader"},
+    {"name":"Harbour_StringId_Registry_DumpTo","rva":"0x692E550","fileOffset":"0x692DB50","section":".impdata","note":"export_symbol_only_not_proven_schema_loader"},
+    {"name":"Harbour_StringId_Registry_Find","rva":"0x692E820","fileOffset":"0x692DE20","section":".impdata","note":"export_symbol_only_not_proven_schema_loader"},
+    {"name":"Harbour_StringId_Registry_Insert","rva":"0xD500","fileOffset":"0xCB00","section":".impdata","note":"export_symbol_only_not_proven_schema_loader"},
+    {"name":"Harbour_StringId_Registry_LoadFrom","rva":"0x692E3C0","fileOffset":"0x692D9C0","section":".impdata","note":"export_symbol_only_not_proven_schema_loader"},
+    {"name":"ctlPowerTelemetryGet","rva":"0x8FBF8A0","fileOffset":"0x8FBEEA0","section":".impdata","note":"export_symbol_only_not_proven_schema_loader"}
+  ],
+  "relatedPeExportCount": 9,
+  "conclusions": {
+    "compositionSchemasEmbeddedInEdata": true,
+    "playerPositionRegisteredAsSchemaEntry": true,
+    "playerPositionRegistrationMeans": "static JSON-like schema blob entry PlayerPosition -> player.position AND STANDARD event named player.position; runtime registration function NOT identified",
+    "credibleJsonParserFunctionIdentified": false,
+    "harbourAssumedInvolved": false,
+    "harbourProvenInvolved": false,
+    "confirmedVsGuess": {
+      "confirmed": ["PlayerPosition composition map","player.position STANDARD event schema","PlayerPosX/Y/Z float dictionary entries","schemas live in .edata"],
+      "notConfirmed": ["runtime JSON parser RVA","composition registry object","callers that load these blobs","runtime registration of player.position beyond static embedding"]
+    }
+  }
+}

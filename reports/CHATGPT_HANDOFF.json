@@ -1,0 +1,136 @@
+{
+  "schemaVersion": 1,
+  "generatedUtc": "2026-11-12T15:50:00Z",
+  "handoffFor": "ChatGPT",
+  "executor": "Cursor",
+  "machine": "PC1",
+  "repository": {
+    "url": "https://github.com/zzyrrup/BlackFlagCoop",
+    "defaultBranch": "main"
+  },
+  "project": {
+    "name": "BlackFlagCoop",
+    "goal": "Research path toward co-op for AC Black Flag Resynced (two Edwards / shared world / LAN-internet); not claimed achieved",
+    "functionalityChangedByThisHandoffSetup": false
+  },
+  "milestone": {
+    "currentId": "v0.6.4",
+    "currentTitle": "Deferred Actor Creation Handler Investigation",
+    "status": "complete",
+    "setupMilestone": "github-chatgpt-handoff-scaffold"
+  },
+  "asi": {
+    "version": "0.5.1",
+    "sha256": "63B38877DDA7CC7CD9AB2619F94D3941C37F54C95A435EFE47084DC4CF2A50BE",
+    "deployAuthorized": false,
+    "preserveWorkingAsi": true
+  },
+  "game": {
+    "title": "Assassin's Creed Black Flag Resynced",
+    "version": "1.0.6",
+    "executable": "ACBlackFlag.exe",
+    "exeSha256": "19920F34BB2FAC814023EE3C27F0CECA1872E80A2AAFB37C092C419FFF77CC0D"
+  },
+  "build": {
+    "generator": "Visual Studio 18 2026",
+    "architecture": "x64",
+    "configure": "cmake -S . -B build -G \"Visual Studio 18 2026\" -A x64",
+    "build": "cmake --build build --config Release"
+  },
+  "network": {
+    "architecture": "BFC TCP session; msgs 1-8; heartbeat; poseVerified sanitize",
+    "lanTestStatus": "net_test / LAN scripts present; plugin net != engine replication",
+    "pc2Untouched": true,
+    "changesAuthorized": false
+  },
+  "engineFindings": {
+    "summary": [
+      "0x5CBDFB0 is phase registrar, not actor factory",
+      "0x1AC380 is CreateActorsDeferredSingleThreaded handler and deferred queue processor",
+      "0x187F0550 is Pad_LockAndTurnMovement action-bind wrapper via 0x18EADD0",
+      "Action vtable 0x9255320 installed by descriptor constructors",
+      "0x7B00B60 and 0x29C6910 not call-linked to 0x1AC380"
+    ],
+    "keyRvas": {
+      "inputWrapper": "0x187F0550",
+      "inputHelper": "0x18EADD0",
+      "actionVtable": "0x9255320",
+      "phaseRegistrar": "0x5CBDFB0",
+      "deferredHandler": "0x1AC380",
+      "perElementA": "0x725400",
+      "perElementB": "0xE95E80",
+      "controllersPhase": "0x7B00B60",
+      "updateActorStub": "0x29C6910"
+    }
+  },
+  "confirmed": [
+    "ASI v0.5.1 hash 63B38877… is the preserved working plugin",
+    "0x1AC380 processes deferred array at +0xAC0/+0xAC8 stride 0x10",
+    "0x5CBDFB0 registers CreateActorsDeferredSingleThreaded -> 0x1AC380",
+    "Input path at 0x187F0550 is not a movement controller",
+    "No verified input-to-character connection as of v0.6.4"
+  ],
+  "hypotheses": [
+    "Deferred elements are actor or job handles",
+    "0xE95E80 performs creation or activation",
+    "Float at element+8 may relate to timing/LOD/transform",
+    "Dual Edward may be plausible via multi-actor phase infrastructure"
+  ],
+  "blockers": [
+    "No confirmed Edward/character factory",
+    "No verified ownership or dual input context",
+    "Spawn/possession tests not authorized"
+  ],
+  "mostRecentCompletedMilestone": {
+    "id": "v0.6.4",
+    "docs": ["docs/v0.6.4-deferred-actor-handler.md"],
+    "reports": [
+      "reports/v0.6.4-handler-disassembly.json",
+      "reports/v0.6.4-creation-callgraph.json",
+      "reports/v0.6.4-character-connections.json",
+      "reports/v0.6.4-input-action-consumers.json",
+      "reports/v0.6.4-second-edward-feasibility.json"
+    ]
+  },
+  "nextRecommendedMilestone": {
+    "id": "v0.6.5",
+    "title": "Per-element deferred callee decode",
+    "primaryRvas": ["0xE95E80", "0x725400"],
+    "objective": "Recover 16-byte element layout and determine whether elements are entities/actors",
+    "forbidden": ["spawn", "deploy", "game modify", "PC2", "force-push"]
+  },
+  "filesChangedThisUpdate": [
+    ".gitignore",
+    ".cursor/rules/blackflagcoop-handoff.mdc",
+    "docs/CHATGPT_HANDOFF.md",
+    "reports/CHATGPT_HANDOFF.json"
+  ],
+  "tests": [
+    {
+      "name": "offline_pe_v0.6.4",
+      "result": "pass",
+      "notes": "DeferredHandler064 produced reports"
+    },
+    {
+      "name": "game_launch_deploy",
+      "result": "not_run",
+      "notes": "forbidden for research/handoff setup"
+    }
+  ],
+  "safety": {
+    "pc1Only": true,
+    "gameInstallsUnmodified": true,
+    "asiPreserved": true,
+    "noForcePush": true,
+    "noSecretsCommitted": true,
+    "noGameBinariesCommitted": true
+  },
+  "chatgptNextReviewInstructions": [
+    "Read docs/CHATGPT_HANDOFF.md and this JSON first",
+    "Review latest commit diff on main",
+    "Separate confirmed vs hypotheses",
+    "Propose next single milestone (prefer v0.6.5 offline 0xE95E80/0x725400)",
+    "Do not authorize deploy/spawn unless user explicitly overrides",
+    "Return PC1-executable instructions for Cursor"
+  ]
+}

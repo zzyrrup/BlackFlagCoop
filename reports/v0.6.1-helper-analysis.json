@@ -1,0 +1,41 @@
+{
+  "schemaVersion":1,
+  "generatedUtc":"2026-11-12T15:16:48.4357453Z",
+  "helper_0x53519E0":{
+    "entryRva":"0x53519E0",
+    "entryFileOffset":"0x5350FE0",
+    "endRva":"0x535204D",
+    "sizeBytes":1645,
+    "boundaryMethod":"ret_then_int3",
+    "prologueBytes":"48 8B C1 4C 8D 15 16 E6 CA FA 49 83 F8 0F 0F 87 0C 01 00 00 66 66 66 66",
+    "callerCountE8":40,
+    "callerSamples":["0x246A","0x2B8B","0x819C","0x849A","0x8C51","0xACB1","0xAD67","0xAE1D","0xAE87","0xAF0E","0xAFB6","0xB079","0x102D8","0x18732","0x1B5FF"],
+    "analysis":{
+      "comparesR8To0xF_SSOThreshold":true,
+      "hasRepMovsbOrMovsd":false,
+      "internalE8CallCount":4,
+      "argumentHypothesis":"RCX=dst string object (this); RDX=source pointer; R8=length — consistent with SSO string assign/construct",
+      "confirmedJsonParser":false,
+      "confirmedRegistryInsert":false,
+      "assessment":"Strongly consistent with pointer+length string materialization (SSO branch). Not proven as schema parser."
+    }
+  },
+  "helper_0x1A64E70":{
+    "entryRva":"0x1A64E70",
+    "entryFileOffset":"0x1A64470",
+    "endRva":"0x1A64FE6",
+    "sizeBytes":374,
+    "boundaryMethod":"int3_run",
+    "prologueBytes":"41 57 41 56 41 55 41 54 56 57 55 53 48 83 EC 28 48 BD FF FF FF FF FF FF",
+    "callerCountE8":40,
+    "callerSamples":["0xD33CFD","0xD33E56","0xD36EA6","0x242C68F","0x242D0E3","0x242D16D","0x242D868","0x242D90B","0x242D99E","0x242DA41","0x242DAC8","0x242F29D","0x242F341","0x2BDB24D","0x2BDB27A"],
+    "analysis":{
+      "internalE8CallCount":13,
+      "cmpImmAsciiBraceLike":0,
+      "cmpImmAsciiQuoteLike":0,
+      "leaToPlayerPositionEvent":false,
+      "confirmedJsonParser":false,
+      "assessment":"Larger follow-on function. May process a string/object previously constructed; JSON-parse not confirmed from punctuation-imm heuristics alone."
+    }
+  }
+}
