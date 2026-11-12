@@ -1,0 +1,1896 @@
+===== v0.6.23 FACTORY FEED + POSSESSION-LIKE HELPERS =====
+exeSha256=19920F34BB2FAC814023EE3C27F0CECA1872E80A2AAFB37C092C419FFF77CC0D
+
+===== TIGHT FACTORY CALLERS =====
+LEA LookupKey sites=120
+
+--- factory 0x238590 E8=176 LEA=0 ---
+uniqueCallerFuncs=135
+  CALLER 0x5D460 sites=1 key=False sizeImm=False keyLookup=False lookup=True alloc=True outer=False
+    ALLOC @0x5D7D5
+    LOOKUP @0x5D9B2
+    CALL_FACTORY @0x5DBFF
+    str "Invalid pointer not allocated by our allocators "
+  CALLER 0xE9FA0 sites=1 key=False sizeImm=False keyLookup=False lookup=False alloc=False outer=False
+    CALL_FACTORY @0xEA310
+  CALLER 0xEA3B0 sites=1 key=False sizeImm=False keyLookup=False lookup=False alloc=False outer=False
+    CALL_FACTORY @0xEAACC
+  CALLER 0xFBDF0 sites=3 key=False sizeImm=False keyLookup=False lookup=False alloc=False outer=False
+    CALL_FACTORY @0xFBEC9
+    CALL_FACTORY @0xFC05F
+    CALL_FACTORY @0xFC091
+  CALLER 0x11E780 sites=1 key=False sizeImm=False keyLookup=False lookup=False alloc=False outer=False
+    CALL_FACTORY @0x11F70A
+    str "Invalid pointer not allocated by our allocators "
+  CALLER 0x125120 sites=1 key=False sizeImm=False keyLookup=False lookup=False alloc=False outer=False
+    CALL_FACTORY @0x126755
+  CALLER 0x1EAE1C sites=4 key=False sizeImm=False keyLookup=False lookup=False alloc=False outer=False
+    CALL_FACTORY @0x1EB208
+    CALL_FACTORY @0x1EB223
+    CALL_FACTORY @0x1EB241
+    CALL_FACTORY @0x1EB498
+  CALLER 0x208BA0 sites=1 key=False sizeImm=False keyLookup=False lookup=False alloc=False outer=False
+    CALL_FACTORY @0x208C89
+
+--- factory 0x256280 E8=61 LEA=0 ---
+uniqueCallerFuncs=49
+  CALLER 0x50B3A0 sites=3 key=False sizeImm=False keyLookup=False lookup=False alloc=False outer=False
+    CALL_FACTORY @0x50B415
+    CALL_FACTORY @0x50B4D8
+    CALL_FACTORY @0x50B544
+    str "AWAVVWSH"
+  CALLER 0x50B570 sites=1 key=False sizeImm=False keyLookup=False lookup=False alloc=False outer=False
+    CALL_FACTORY @0x50B635
+    CALL_FACTORY @0x50B685
+    str "AWAVVWSH"
+  CALLER 0x50B670 sites=1 key=False sizeImm=False keyLookup=False lookup=False alloc=False outer=False
+    CALL_FACTORY @0x50B685
+    CALL_FACTORY @0x50B6E7
+  CALLER 0x50B6B0 sites=1 key=False sizeImm=False keyLookup=False lookup=False alloc=False outer=False
+    CALL_FACTORY @0x50B6E7
+    str "Too many elements for %sArray. Size: %u, Max Siz"
+    str "Small"
+  CALLER 0x5516A0 sites=1 key=False sizeImm=False keyLookup=False lookup=False alloc=False outer=False
+    CALL_FACTORY @0x551752
+  CALLER 0x1203F00 sites=1 key=False sizeImm=False keyLookup=False lookup=False alloc=False outer=False
+    CALL_FACTORY @0x1203F7A
+  CALLER 0x13BE700 sites=1 key=False sizeImm=False keyLookup=False lookup=False alloc=False outer=False
+    CALL_FACTORY @0x13BE71A
+  CALLER 0x14EF270 sites=4 key=False sizeImm=False keyLookup=False lookup=False alloc=False outer=False
+    CALL_FACTORY @0x14EF2ED
+    CALL_FACTORY @0x14EF32F
+    CALL_FACTORY @0x14EF36F
+    CALL_FACTORY @0x14EF467
+
+--- factory 0x218900 E8=2 LEA=0 ---
+uniqueCallerFuncs=2
+  CALLER 0x218600 sites=1 key=False sizeImm=False keyLookup=False lookup=True alloc=False outer=False
+    CALL_FACTORY @0x21860F
+    LOOKUP @0x218689
+  CALLER 0x2201B0 sites=1 key=False sizeImm=False keyLookup=False lookup=True alloc=True outer=False
+    CALL_FACTORY @0x2201D5
+    LOOKUP @0x2201F3
+    ALLOC @0x2203A5
+    LOOKUP @0x2207E5
+    ALLOC @0x2208FB
+    str "Invalid pointer not allocated by our allocators "
+
+--- factory 0x218660 E8=0 LEA=0 ---
+uniqueCallerFuncs=0
+
+--- factory 0x21FA70 E8=0 LEA=0 ---
+uniqueCallerFuncs=0
+
+===== FACTORY FEED CROSS =====
+totalCallerRecords=186
+keyTiedCallers=0
+sizeImmCallers=0
+outerCtorCallers=0
+
+===== KEY-FUNC ∩ FACTORY-CALLER =====
+intersectCount=0
+
+===== KEY-LEA FUNCS: factory/Lookup/Alloc edges =====
+  KEYFUNC 0x1B6AFF0 factory=False lookup=True alloc=True outer=False sizeImm=False factories=[]
+  KEYFUNC 0x26D28E0 factory=False lookup=True alloc=True outer=False sizeImm=False factories=[]
+  KEYFUNC 0x2F2C1A0 factory=False lookup=True alloc=True outer=False sizeImm=False factories=[]
+keyFuncsWithInterestingEdges=3
+
+===== POSSESSION-LIKE 0x546D150 CONSUMERS =====
+helperSites=41 uniqueFuncs=32
+
+===== DEEP 0x184400 (helper-consumer) size=481 sec=.impdata =====
+role=helper-consumer t98=False tA0=False t40=True v2B0=False block=False key=False factory=False outer=False alloc=False lookup=False
+  CALL_HELPER @0x18444D
+  str "Too many elements for %sArray. Size: %u, Max Siz"
+  str "Small"
+  callee 0x363F970
+  callee 0x546D150 *** HELPER ***
+  callee 0x5014570
+  callee 0x42EB100
+  callee 0x4265F00
+  callee 0xE6E0
+--- head ---
+0x184400 push r15
+0x184402 push r14
+0x184404 push r13
+0x184406 push r12
+0x184408 push rsi
+0x184409 push rdi
+0x18440A push rbp
+0x18440B push rbx
+0x18440C sub rsp,68
+0x184410 mov rsi,r8
+0x184413 mov rdi,rdx
+0x184416 mov rbx,rcx
+0x184419 mov rax,[rip+0A12EDE0]
+0x184420 xor rax,rsp
+0x184423 mov [rsp+60],rax
+0x184428 mov r14d,3FFF
+0x18442E mov r15d,[rdx+8]
+0x184432 and r15d,r14d
+0x184435 call 000000014363F970
+0x18443A mov eax,[rdi+8]
+0x18443D and eax,r14d
+0x184440 cmp r15d,eax
+0x184443 jae short 00000001401844B8
+0x184445 mov ebp,0AAAAAAAB
+0x18444A mov rcx,rbx
+0x18444D call 000000014546D150 *** HELPER ***
+0x184452 mov r12d,[rsi+8]
+0x184456 mov edx,r12d
+0x184459 and edx,3FFF
+0x18445F mov ecx,r12d
+0x184462 shr ecx,10
+0x184465 and ecx,3FFF
+0x18446B cmp edx,ecx
+0x18446D jae short 00000001401844D7
+0x18446F mov r13,[rsi]
+0x184472 mov edx,r12d
+0x184475 and edx,r14d
+0x184478 lea ebp,[rdx+1]
+0x18447B mov ecx,r12d
+0x18447E cmp edx,r14d
+0x184481 je near ptr 000000014018457F
+0x184487 shl r12d,3
+0x18448B and r12d,1FFF8
+0x184492 and ebp,r14d
+0x184495 and ecx,0FFFFC000
+
+===== DEEP 0xE861E0 (helper-consumer) size=3349 sec=.impdata =====
+role=block-copy-consumer t98=False tA0=True t40=True v2B0=False block=True key=False factory=False outer=False alloc=False lookup=False
+  CALL_HELPER @0xE863C7
+  str "Invalid pointer not allocated by our allocators "
+  str "Too many elements for %sArray. Size: %u, Max Siz"
+  str "Small"
+  callee 0x4D85220
+  callee 0xD530
+  callee 0x546D150 *** HELPER ***
+  callee 0x4422AF0
+  callee 0x5014570
+  callee 0xE6E0
+  callee 0x42EB100
+  callee 0x4265F00
+  callee 0x142540
+  callee 0x142520
+--- head ---
+0xE861E0 push r15
+0xE861E2 push r14
+0xE861E4 push r13
+0xE861E6 push r12
+0xE861E8 push rsi
+0xE861E9 push rdi
+0xE861EA push rbp
+0xE861EB push rbx
+0xE861EC sub rsp,278
+0xE861F3 vmovaps [rsp+260],xmm15
+0xE861FC vmovaps [rsp+250],xmm14
+0xE86205 vmovaps [rsp+240],xmm13
+0xE8620E vmovaps [rsp+230],xmm12
+0xE86217 vmovaps [rsp+220],xmm11
+0xE86220 vmovaps [rsp+210],xmm10
+0xE86229 vmovaps [rsp+200],xmm9
+0xE86232 vmovaps [rsp+1F0],xmm8
+0xE8623B vmovaps [rsp+1E0],xmm7
+0xE86244 vmovaps [rsp+1D0],xmm6
+0xE8624D mov rax,[rip+942CFAC]
+0xE86254 xor rax,rsp
+0xE86257 mov [rsp+1C8],rax
+0xE8625F mov r13d,[rcx+38]
+0xE86263 test r13d,3FFF
+0xE8626A je near ptr 0000000140E865C3
+0xE86270 mov rax,[rcx+28]
+0xE86274 test byte ptr [rax+0B],80
+0xE86278 je near ptr 0000000140E865C3
+0xE8627E mov rdi,[rax]
+0xE86281 test rdi,rdi
+0xE86284 je near ptr 0000000140E865C3
+0xE8628A test byte ptr [rdi+154],1
+0xE86291 je near ptr 0000000140E865C3
+0xE86297 mov rsi,rdx
+0xE8629A cmp byte ptr [rcx+44],0
+0xE8629E je near ptr 0000000140E86644
+0xE862A4 shl r13d,3
+0xE862A8 and r13d,1FFF8
+0xE862AF je near ptr 0000000140E865C3
+0xE862B5 mov rbp,[rcx+30]
+0xE862B9 xor r14d,r14d
+0xE862BC vxorps xmm6,xmm6,xmm6
+0xE862C0 lea rbx,[rsp+180]
+0xE862C8 lea r15,[rsp+170]
+0xE862D0 jmp near ptr 0000000140E86477
+
+===== DEEP 0x11E19D0 (helper-consumer) size=4197 sec=.impdata =====
+role=block-copy-consumer t98=False tA0=False t40=True v2B0=False block=True key=False factory=False outer=False alloc=True lookup=False
+  CALL_ALLOC @0x11E1A20
+  CALL_HELPER @0x11E26C9
+  str "Invalid pointer not allocated by our allocators "
+  callee 0x426EE50
+  callee 0x30144B0
+  callee 0x7178A0
+  callee 0x5014570
+  callee 0xE6E0
+  callee 0x115F750
+  callee 0x47CBC60
+  callee 0xD530
+  callee 0x4B6BCA0
+  callee 0x4B88450
+  callee 0xD13F00
+  callee 0x296CC0
+  callee 0x49942B0
+  callee 0x546D150 *** HELPER ***
+--- head ---
+0x11E19D0 push r14
+0x11E19D2 push rsi
+0x11E19D3 push rdi
+0x11E19D4 push rbp
+0x11E19D5 push rbx
+0x11E19D6 sub rsp,40
+0x11E19DA mov edi,edx
+0x11E19DC mov rsi,rcx
+0x11E19DF mov rax,[rip+90D181A]
+0x11E19E6 xor rax,rsp
+0x11E19E9 mov [rsp+38],rax
+0x11E19EE mov rbx,[rcx+3598]
+0x11E19F5 test rbx,rbx
+0x11E19F8 jne near ptr 00000001411E2472
+0x11E19FE mov rax,[rip+9D8E343]
+0x11E1A05 cmp byte ptr [rax+2A],0
+0x11E1A09 je near ptr 00000001411E243C
+0x11E1A0F mov rbx,rax
+0x11E1A12 mov rcx,rbx
+0x11E1A15 mov edx,1B0
+0x11E1A1A mov r8d,10
+0x11E1A20 call 000000014426EE50 *** ALLOC ***
+0x11E1A25 mov r14,rax
+0x11E1A28 test rax,rax
+0x11E1A2B je near ptr 00000001411E2558
+0x11E1A31 mov rax,[rsi+38]
+0x11E1A35 mov rdx,[rax+58]
+0x11E1A39 mov rcx,r14
+0x11E1A3C mov r8d,edi
+0x11E1A3F call 00000001430144B0
+0x11E1A44 mov [rsi+3598],r14
+0x11E1A4B mov al,[rsi+2095]
+0x11E1A51 test al,al
+0x11E1A53 jne short 00000001411E1A93
+0x11E1A55 lea rax,[rsi+2080]
+0x11E1A5C lea rcx,[rsi+2490]
+0x11E1A63 mov rdx,[rip+9AF753E]
+0x11E1A6A cmp byte ptr [rdx+2E4],0
+0x11E1A71 cmove rcx,rax
+0x11E1A75 mov r8d,[rdx+2DC]
+0x11E1A7C add rcx,270
+0x11E1A83 mov edx,3D
+0x11E1A88 call 00000001407178A0
+0x11E1A8D mov al,[rsi+2095]
+0x11E1A93 inc al
+
+===== DEEP 0x14769B0 (helper-consumer) size=3551 sec=.impdata =====
+role=block-copy-consumer t98=False tA0=True t40=True v2B0=False block=True key=False factory=False outer=False alloc=False lookup=False
+  CALL_HELPER @0x1476D15
+  CALL_HELPER @0x1476D48
+  callee 0xD510
+  callee 0xD530
+  callee 0x4C3DF60
+  callee 0x1477780
+  callee 0x546D150 *** HELPER ***
+  callee 0xE1DBE0
+  callee 0x1164130
+  callee 0x539CFD0
+  callee 0x11638A0
+  callee 0x5014570
+  callee 0x42256B0
+  callee 0x450D890
+--- head ---
+0x14769B0 push r15
+0x14769B2 push r14
+0x14769B4 push r13
+0x14769B6 push r12
+0x14769B8 push rsi
+0x14769B9 push rdi
+0x14769BA push rbp
+0x14769BB push rbx
+0x14769BC sub rsp,1C8
+0x14769C3 vmovaps [rsp+1B0],xmm13
+0x14769CC vmovaps [rsp+1A0],xmm12
+0x14769D5 vmovaps [rsp+190],xmm11
+0x14769DE vmovaps [rsp+180],xmm10
+0x14769E7 vmovaps [rsp+170],xmm9
+0x14769F0 vmovaps [rsp+160],xmm8
+0x14769F9 vmovaps [rsp+150],xmm7
+0x1476A02 vmovaps [rsp+140],xmm6
+0x1476A0B mov rax,[rip+8E3C7EE]
+0x1476A12 xor rax,rsp
+0x1476A15 mov [rsp+138],rax
+0x1476A1D test rdx,rdx
+0x1476A20 je near ptr 0000000141477358
+0x1476A26 mov r12,rdx
+0x1476A29 mov rax,[rdx+0A8]
+0x1476A30 test rax,rax
+0x1476A33 je near ptr 0000000141477358
+0x1476A39 cmp qword ptr [rax+14E8],0
+0x1476A41 je near ptr 0000000141477358
+0x1476A47 mov rsi,rcx
+0x1476A4A mov rax,[rcx]
+0x1476A4D test byte ptr [rax+0B],80
+0x1476A51 je near ptr 0000000141477358
+0x1476A57 mov rax,[rax]
+0x1476A5A test rax,rax
+0x1476A5D je near ptr 0000000141477358
+0x1476A63 test byte ptr [rax+1A5],2
+0x1476A6A je near ptr 0000000141477358
+0x1476A70 mov r15,r9
+0x1476A73 mov rdi,r8
+0x1476A76 mov rbx,[rsp+238]
+0x1476A7E vmovss xmm2,dword ptr [r12+20]
+0x1476A85 vmovss xmm3,dword ptr [r12+34]
+0x1476A8C vmovss xmm0,dword ptr [r12+48]
+0x1476A93 vmovss xmm7,dword ptr [rip+7BBF785]
+0x1476A9B vaddss xmm1,xmm2,xmm7
+
+===== DEEP 0x148A0C0 (helper-consumer) size=382 sec=.impdata =====
+role=block-copy-consumer t98=True tA0=False t40=True v2B0=False block=True key=False factory=False outer=False alloc=False lookup=False
+  CALL_HELPER @0x148A1F2
+  callee 0x546D150 *** HELPER ***
+--- head ---
+0x148A0C0 push rsi
+0x148A0C1 push rdi
+0x148A0C2 push rbx
+0x148A0C3 sub rsp,20
+0x148A0C7 or byte ptr [rcx+23],2
+0x148A0CB mov rsi,[rcx+18]
+0x148A0CF mov rdi,[rsi+98] *** +98 ***
+0x148A0D6 test rdi,rdi
+0x148A0D9 je short 000000014148A0E1
+0x148A0DB add rdi,40
+0x148A0DF jmp short 000000014148A0E8
+0x148A0E1 mov rdi,[rip+0AB8C358]
+0x148A0E8 mov eax,[rdi+8]
+0x148A0EB cmp eax,2
+0x148A0EE je short 000000014148A165
+0x148A0F0 cmp eax,1
+0x148A0F3 je short 000000014148A136
+0x148A0F5 vmovups ymm0,[rsi+20]
+0x148A0FA vmovups ymm1,[rsi+30]
+0x148A0FF vmovups [rcx+50],ymm1
+0x148A104 vmovups [rcx+40],ymm0
+0x148A109 vmovaps xmm0,[rsi+50]
+0x148A10E vmovaps [rcx+70],xmm0
+0x148A113 vmovaps xmm0,[rsi+60]
+0x148A118 vmovaps [rcx+80],xmm0
+0x148A120 mov byte ptr [rcx+98],1 *** +98 ***
+0x148A127 add rsp,20
+0x148A12B pop rbx
+0x148A12C pop rdi
+0x148A12D pop rsi
+0x148A12E vzeroupper
+0x148A131 jmp near ptr 000000014148A240
+0x148A136 mov rax,[rdi]
+0x148A139 mov edx,[rip+9701A81]
+0x148A13F mov r8,gs:[58]
+0x148A148 mov rdx,[r8+rdx*8]
+0x148A14C movsxd r8,dword ptr [rax+8]
+0x148A150 sar r8,1F
+0x148A154 or r8,[rdx+1C88]
+0x148A15B test [rax],r8
+0x148A15E je short 000000014148A0F5
+0x148A160 jmp near ptr 000000014148A1EC
+0x148A165 cmp word ptr [rdi+10],0FFFF
+0x148A16A je short 000000014148A0F5
+0x148A16C mov rdx,[rdi]
+
+===== DEEP 0x1806030 (helper-consumer) size=1139 sec=.impdata =====
+role=block-copy-consumer t98=False tA0=False t40=True v2B0=False block=True key=False factory=False outer=False alloc=False lookup=False
+  CALL_HELPER @0x18060C1
+  CALL_HELPER @0x18060E5
+  callee 0x18064B0
+  callee 0x546D150 *** HELPER ***
+  callee 0xD530
+  callee 0x5014570
+--- head ---
+0x1806030 push rsi
+0x1806031 push rdi
+0x1806032 push rbx
+0x1806033 sub rsp,0A0
+0x180603A vmovaps [rsp+90],xmm11
+0x1806043 vmovaps [rsp+80],xmm10
+0x180604C vmovaps [rsp+70],xmm9
+0x1806052 vmovaps [rsp+60],xmm8
+0x1806058 vmovaps [rsp+50],xmm7
+0x180605E vmovaps [rsp+40],xmm6
+0x1806064 mov rdi,rdx
+0x1806067 mov rsi,rcx
+0x180606A mov rax,[rip+8AAD18F]
+0x1806071 xor rax,rsp
+0x1806074 mov [rsp+38],rax
+0x1806079 mov rax,[r8]
+0x180607C mov rax,[rax+158]
+0x1806083 test byte ptr [rax+0B],80
+0x1806087 vxorps xmm6,xmm6,xmm6
+0x180608B vmovaps xmm8,[rip+7FB09BD]
+0x1806093 je near ptr 00000001418063BB
+0x1806099 mov rcx,[rax]
+0x180609C test rcx,rcx
+0x180609F je near ptr 00000001418063BB
+0x18060A5 call 00000001418064B0
+0x18060AA vmovaps xmm0,xmm8
+0x18060AE vxorps xmm2,xmm2,xmm2
+0x18060B2 test rax,rax
+0x18060B5 je near ptr 0000000141806207
+0x18060BB mov rbx,rax
+0x18060BE mov rcx,rax
+0x18060C1 call 000000014546D150 *** HELPER ***
+0x18060C6 vmovaps xmm9,[rax+30]
+0x18060CB call 000000014000D530
+0x18060D0 vmovaps xmm6,xmm0
+0x18060D4 vmovaps xmm10,[rbx+50]
+0x18060D9 call 000000014000D530
+0x18060DE vmovaps xmm7,xmm0
+0x18060E2 mov rcx,rbx
+0x18060E5 call 000000014546D150 *** HELPER ***
+0x18060EA vmovss xmm3,dword ptr [rax]
+0x18060EE vmovss xmm4,dword ptr [rax+14]
+0x18060F3 vmovss xmm2,dword ptr [rax+28]
+0x18060F8 vmovss xmm0,dword ptr [rip+7830120]
+0x1806100 vaddss xmm1,xmm3,xmm0
+
+===== DEEP 0x1D25E20 (helper-consumer) size=5102 sec=.impdata =====
+role=arm-neighbor-like t98=True tA0=True t40=True v2B0=True block=True key=False factory=False outer=False alloc=True lookup=False
+  CALL_HELPER @0x1D2611B
+  CALL_HELPER @0x1D26137
+  CALL_HELPER @0x1D26168
+  CALL_HELPER @0x1D2618E
+  CALL_HELPER @0x1D26698
+  CALL_ALLOC @0x1D26A68
+  CALL_ALLOC @0x1D26C33
+  str "Too many elements for %sArray. Size: %u, Max Siz"
+  str "Small"
+  callee 0x5014570
+  callee 0x1754A0
+  callee 0xD530
+  callee 0xD550
+  callee 0x4CBCB20
+  callee 0x546D150 *** HELPER ***
+  callee 0xD510
+  callee 0x142520
+  callee 0x142E0
+  callee 0x14300
+  callee 0x142C0
+  callee 0x66CA350
+  callee 0x55E8040
+  callee 0x281A940
+--- head ---
+0x1D25E20 push r15
+0x1D25E22 push r14
+0x1D25E24 push r13
+0x1D25E26 push r12
+0x1D25E28 push rsi
+0x1D25E29 push rdi
+0x1D25E2A push rbp
+0x1D25E2B push rbx
+0x1D25E2C sub rsp,518
+0x1D25E33 vmovaps [rsp+500],xmm15
+0x1D25E3C vmovaps [rsp+4F0],xmm14
+0x1D25E45 vmovaps [rsp+4E0],xmm13
+0x1D25E4E vmovaps [rsp+4D0],xmm12
+0x1D25E57 vmovaps [rsp+4C0],xmm11
+0x1D25E60 vmovaps [rsp+4B0],xmm10
+0x1D25E69 vmovapd [rsp+4A0],xmm9
+0x1D25E72 vmovaps [rsp+490],xmm8
+0x1D25E7B vmovaps [rsp+480],xmm7
+0x1D25E84 vmovaps [rsp+470],xmm6
+0x1D25E8D mov rax,[rip+858D36C]
+0x1D25E94 xor rax,rsp
+0x1D25E97 mov [rsp+468],rax
+0x1D25E9F mov rax,[rcx+70]
+0x1D25EA3 test byte ptr [rax+0B],80
+0x1D25EA7 je near ptr 0000000141D25F3F
+0x1D25EAD cmp qword ptr [rax],0
+0x1D25EB1 je near ptr 0000000141D25F3F
+0x1D25EB7 mov r14,[rdx+8]
+0x1D25EBB movzx eax,byte ptr [r14+173]
+0x1D25EC3 cmp rax,0FF
+0x1D25EC9 je short 0000000141D25F3F
+0x1D25ECB mov r9,[r14+138]
+0x1D25ED2 cmp qword ptr [r9+rax*8],0
+0x1D25ED7 je short 0000000141D25F3F
+0x1D25ED9 mov rax,[rcx+0C8]
+0x1D25EE0 movsxd rbx,dword ptr [rax+8]
+0x1D25EE4 sar rbx,1F
+0x1D25EE8 and rbx,[rax]
+0x1D25EEB je short 0000000141D25F3F
+0x1D25EED vxorps xmm8,xmm8,xmm8
+0x1D25EF2 vmovaps [rsp+190],xmm8
+0x1D25EFB vxorps xmm7,xmm7,xmm7
+0x1D25EFF cmp byte ptr [rcx+0E5],0
+0x1D25F06 vxorps xmm10,xmm10,xmm10
+0x1D25F0B vxorpd xmm9,xmm9,xmm9
+
+===== DEEP 0x21525F0 (helper-consumer) size=1197 sec=.impdata =====
+role=block-copy-consumer t98=False tA0=True t40=True v2B0=False block=True key=False factory=False outer=False alloc=False lookup=False
+  CALL_HELPER @0x2152990
+  CALL_HELPER @0x2152A28
+  callee 0x45B77B0
+  callee 0x5014570
+  callee 0xD530
+  callee 0x7CD5820
+  callee 0x546D150 *** HELPER ***
+  callee 0xD510
+--- head ---
+0x21525F0 push rsi
+0x21525F1 push rdi
+0x21525F2 push rbp
+0x21525F3 push rbx
+0x21525F4 sub rsp,78
+0x21525F8 vmovaps [rsp+60],xmm8
+0x21525FE vmovaps [rsp+50],xmm7
+0x2152604 vmovaps [rsp+40],xmm6
+0x215260A mov rsi,rcx
+0x215260D mov rax,[rip+8160BEC]
+0x2152614 xor rax,rsp
+0x2152617 mov [rsp+38],rax
+0x215261C movzx eax,word ptr [rdx+0A8]
+0x2152623 test eax,3FFF
+0x2152628 jne short 0000000142152633
+0x215262A lea rax,[rip+8E2159F]
+0x2152631 jmp short 000000014215263A
+0x2152633 mov rax,[rdx+0A0] *** +A0 ***
+0x215263A mov rax,[rax]
+0x215263D test byte ptr [rax+0B],80
+0x2152641 je near ptr 00000001421528EA
+0x2152647 mov rdi,[rax]
+0x215264A test rdi,rdi
+0x215264D je near ptr 00000001421528EA
+0x2152653 test byte ptr [rdi+154],1
+0x215265A je near ptr 00000001421528EA
+0x2152660 movzx eax,word ptr [rdx+0D8]
+0x2152667 test eax,3FFF
+0x215266C jne short 0000000142152681
+0x215266E lea rax,[rip+8E2155B]
+0x2152675 jmp short 0000000142152688
+0x2152677 test rbx,rbx
+0x215267A jne short 00000001421526D5
+0x215267C jmp near ptr 000000014215272F
+0x2152681 mov rax,[rdx+0D0]
+0x2152688 mov rax,[rax]
+0x215268B test byte ptr [rax+0B],80
+0x215268F je near ptr 0000000142152829
+0x2152695 mov rbx,[rax]
+0x2152698 test rbx,rbx
+0x215269B je near ptr 0000000142152829
+0x21526A1 test byte ptr [rbx+154],1
+0x21526A8 je near ptr 0000000142152829
+0x21526AE mov bpl,2
+0x21526B1 test rdi,rdi
+
+===== DEEP 0x216BF10 (helper-consumer) size=148 sec=.impdata =====
+role=block-copy-consumer t98=False tA0=False t40=True v2B0=False block=True key=False factory=False outer=False alloc=False lookup=False
+  CALL_HELPER @0x216BF31
+  callee 0x546D150 *** HELPER ***
+  callee 0xD530
+  callee 0xD510
+--- head ---
+0x216BF10 push rsi
+0x216BF11 push rdi
+0x216BF12 sub rsp,48
+0x216BF16 vmovaps [rsp+30],xmm7
+0x216BF1C vmovaps [rsp+20],xmm6
+0x216BF22 mov rsi,rdx
+0x216BF25 mov rdi,rcx
+0x216BF28 mov rcx,[rcx+18]
+0x216BF2C test rcx,rcx
+0x216BF2F je short 000000014216BF9E
+0x216BF31 call 000000014546D150 *** HELPER ***
+0x216BF36 vmovaps xmm6,[rax+30]
+0x216BF3B call 000000014000D530
+0x216BF40 vxorps xmm7,xmm7,xmm7
+0x216BF44 vblendvps xmm0,xmm6,xmm7,xmm0
+0x216BF4A vaddps xmm0,xmm0,[rdi+30]
+0x216BF4F mov rax,[rdi+18]
+0x216BF53 vshufps xmm1,xmm0,xmm0,0AA
+0x216BF58 vshufps xmm2,xmm0,xmm0,55
+0x216BF5D vbroadcastss xmm0,xmm0
+0x216BF62 vmovaps xmm6,[rax+20]
+0x216BF67 vfmadd213ps xmm6,xmm0,[rax+50]
+0x216BF6D vfmadd231ps xmm6,xmm2,[rax+30]
+0x216BF73 vfmadd231ps xmm6,xmm1,[rax+40]
+0x216BF79 call 000000014000D510
+0x216BF7E vblendvps xmm0,xmm7,xmm6,xmm0
+0x216BF84 vmovaps [rsi],xmm0
+0x216BF88 mov rax,rsi
+0x216BF8B vmovaps xmm6,[rsp+20]
+0x216BF91 vmovaps xmm7,[rsp+30]
+0x216BF97 add rsp,48
+0x216BF9B pop rdi
+0x216BF9C pop rsi
+0x216BF9D ret
+0x216BF9E vxorps xmm0,xmm0,xmm0
+0x216BFA2 jmp short 000000014216BF84
+
+===== DEEP 0x2335140 (neighbor-baseline) size=394 sec=.impdata =====
+role=neighbor-baseline t98=True tA0=False t40=True v2B0=True block=True key=False factory=False outer=False alloc=False lookup=False
+  CALL_HELPER @0x2335281
+  callee 0x546D150 *** HELPER ***
+--- head ---
+0x2335140 push rsi
+0x2335141 push rdi
+0x2335142 push rbx
+0x2335143 sub rsp,20
+0x2335147 or byte ptr [rcx+23],1
+0x233514B test edx,0FFFFFFFD
+0x2335151 jne short 00000001423351C0
+0x2335153 mov rsi,rcx
+0x2335156 mov rax,[rcx]
+0x2335159 mov edx,3
+0x233515E call qword ptr [rax+2B0] *** V2B0 ***
+0x2335164 mov rcx,[rsi+18]
+0x2335168 mov rdi,[rcx+98] *** +98 ***
+0x233516F test rdi,rdi
+0x2335172 je short 000000014233517A
+0x2335174 add rdi,40
+0x2335178 jmp short 0000000142335181
+0x233517A mov rdi,[rip+9CE12BF]
+0x2335181 mov eax,[rdi+8]
+0x2335184 cmp eax,2
+0x2335187 je short 00000001423351FA
+0x2335189 cmp eax,1
+0x233518C je short 00000001423351CB
+0x233518E vmovups ymm0,[rcx+20]
+0x2335193 vmovups ymm1,[rcx+30]
+0x2335198 vmovups [rsi+50],ymm1
+0x233519D vmovups [rsi+40],ymm0
+0x23351A2 vmovaps xmm0,[rcx+50]
+0x23351A7 vmovaps [rsi+70],xmm0
+0x23351AC vmovaps xmm0,[rcx+60]
+0x23351B1 vmovaps [rsi+80],xmm0
+0x23351B9 mov byte ptr [rsi+98],1 *** +98 ***
+0x23351C0 add rsp,20
+0x23351C4 pop rbx
+0x23351C5 pop rdi
+0x23351C6 pop rsi
+0x23351C7 vzeroupper
+0x23351CA ret
+0x23351CB mov rax,[rdi]
+0x23351CE mov edx,[rip+88569EC]
+0x23351D4 mov r8,gs:[58]
+0x23351DD mov rdx,[r8+rdx*8]
+0x23351E1 movsxd r8,dword ptr [rax+8]
+0x23351E5 sar r8,1F
+0x23351E9 or r8,[rdx+1C88]
+
+===== DEEP 0x2336560 (arm-neighbor-like) size=58 sec=.impdata =====
+role=thin-wrapper t98=False tA0=False t40=False v2B0=False block=True key=False factory=False outer=False alloc=False lookup=False
+  CALL_HELPER @0x233656E
+  callee 0x546D150 *** HELPER ***
+  callee 0xD530
+--- head ---
+0x2336560 push rsi
+0x2336561 sub rsp,30
+0x2336565 vmovaps [rsp+20],xmm6
+0x233656B mov rsi,rdx
+0x233656E call 000000014546D150 *** HELPER ***
+0x2336573 vmovaps xmm6,[rax+30]
+0x2336578 call 000000014000D530
+0x233657D vxorps xmm1,xmm1,xmm1
+0x2336581 vblendvps xmm0,xmm6,xmm1,xmm0
+0x2336587 vmovaps [rsi],xmm0
+0x233658B mov rax,rsi
+0x233658E vmovaps xmm6,[rsp+20]
+0x2336594 add rsp,30
+0x2336598 pop rsi
+0x2336599 ret
+
+===== DEEP 0x2364EE0 (helper-consumer) size=286 sec=.impdata =====
+role=sideblock-walker t98=False tA0=True t40=False v2B0=False block=True key=False factory=False outer=False alloc=False lookup=False
+  CALL_HELPER @0x2364F16
+  callee 0x546D150 *** HELPER ***
+  callee 0x4422AF0
+--- head ---
+0x2364EE0 push rsi
+0x2364EE1 push rdi
+0x2364EE2 sub rsp,28
+0x2364EE6 mov rax,[rdx+1B0]
+0x2364EED test byte ptr [rax+0B],80
+0x2364EF1 je near ptr 0000000142364FCA
+0x2364EF7 mov rsi,[rax]
+0x2364EFA test rsi,rsi
+0x2364EFD je near ptr 0000000142364FCA
+0x2364F03 test byte ptr [rsi+154],1
+0x2364F0A je near ptr 0000000142364FCA
+0x2364F10 mov rdi,[r8]
+0x2364F13 mov rcx,rsi
+0x2364F16 call 000000014546D150 *** HELPER ***
+0x2364F1B vmovaps xmm0,[rax]
+0x2364F1F vmovaps xmm1,[rdi+0A0] *** +A0 ***
+0x2364F27 vsubps xmm2,xmm1,xmm0
+0x2364F2B vsubps xmm0,xmm0,xmm1
+0x2364F2F vmaxps xmm1,xmm0,xmm2
+0x2364F33 vbroadcastss xmm0,dword ptr [rip+6CE9B14]
+0x2364F3C vcmpltps xmm1,xmm0,xmm1
+0x2364F41 vtestps xmm1,xmm1
+0x2364F46 jne near ptr 0000000142364FD1
+0x2364F4C vmovaps xmm1,[rax+10]
+0x2364F51 vmovaps xmm2,[rdi+0B0]
+0x2364F59 vsubps xmm3,xmm2,xmm1
+0x2364F5D vsubps xmm1,xmm1,xmm2
+0x2364F61 vmaxps xmm1,xmm1,xmm3
+0x2364F65 vcmpltps xmm1,xmm0,xmm1
+0x2364F6A vtestps xmm1,xmm1
+0x2364F6F jne short 0000000142364FD1
+0x2364F71 vmovaps xmm1,[rax+20]
+0x2364F76 vmovaps xmm2,[rdi+0C0]
+0x2364F7E vsubps xmm3,xmm2,xmm1
+0x2364F82 vsubps xmm1,xmm1,xmm2
+0x2364F86 vmaxps xmm1,xmm1,xmm3
+0x2364F8A vcmpltps xmm1,xmm0,xmm1
+0x2364F8F vtestps xmm1,xmm1
+0x2364F94 jne short 0000000142364FD1
+0x2364F96 vmovaps xmm1,[rax+30]
+0x2364F9B vmovaps xmm2,[rdi+0D0]
+0x2364FA3 vsubps xmm3,xmm2,xmm1
+0x2364FA7 vsubps xmm1,xmm1,xmm2
+0x2364FAB vmaxps xmm1,xmm1,xmm3
+0x2364FAF vcmpltps xmm0,xmm0,xmm1
+
+===== DEEP 0x3269350 (helper-consumer) size=1004 sec=.impdata =====
+role=block-copy-consumer t98=False tA0=False t40=True v2B0=False block=True key=False factory=False outer=False alloc=False lookup=True
+  CALL_HELPER @0x3269391
+  CALL_LOOKUP @0x32694E7
+  CALL_LOOKUP @0x32695B7
+  CALL_LOOKUP @0x3269644
+  callee 0x546D150 *** HELPER ***
+  callee 0x4BE3E00
+  callee 0x44FC200
+  callee 0x53519E0
+  callee 0x7FDAFF0
+  callee 0x448D480
+  callee 0x429F9E0
+  callee 0x9CCD30
+  callee 0xBF4200
+  callee 0x4BB25E0
+  callee 0xC12370
+  callee 0x5014570
+  callee 0x12897E0
+  callee 0x42256B0
+--- head ---
+0x3269350 push r15
+0x3269352 push r14
+0x3269354 push r12
+0x3269356 push rsi
+0x3269357 push rdi
+0x3269358 push rbp
+0x3269359 push rbx
+0x326935A sub rsp,60
+0x326935E mov rsi,rcx
+0x3269361 mov rax,[rip+7049E98]
+0x3269368 xor rax,rsp
+0x326936B mov [rsp+58],rax
+0x3269370 mov rcx,[rcx+18]
+0x3269374 vmovups ymm0,[rcx+20]
+0x3269379 vmovups ymm1,[rcx+40]
+0x326937E vmovups [rsi+1D0],ymm0
+0x3269386 vmovups [rsi+1F0],ymm1
+0x326938E vzeroupper
+0x3269391 call 000000014546D150 *** HELPER ***
+0x3269396 vmovups ymm0,[rax]
+0x326939A vmovups ymm1,[rax+20]
+0x326939F vmovups [rsi+210],ymm0
+0x32693A7 vmovups [rsi+230],ymm1
+0x32693AF lea r14,[rsi+164]
+0x32693B6 mov rcx,[rsi+18]
+0x32693BA lea rdx,[rip+7B9D677]
+0x32693C1 lea rbx,[rsp+30]
+0x32693C6 lea rdi,[rsp+50]
+0x32693CB mov r8,rbx
+0x32693CE mov r9,rdi
+0x32693D1 vzeroupper
+0x32693D4 call 0000000144BE3E00
+0x32693D9 mov rdi,[rdi]
+0x32693DC mov rbx,[rbx]
+0x32693DF sub rdi,rbx
+0x32693E2 mov r12,rdi
+0x32693E5 shr r12,3
+0x32693E9 mov eax,[rsi+16C]
+0x32693EF mov r15d,eax
+0x32693F2 and r15d,3FFF
+0x32693F9 lea ecx,[r15+r12]
+0x32693FD shr eax,10
+0x3269400 and eax,3FFF
+0x3269405 cmp ecx,eax
+0x3269407 ja near ptr 00000001432696B0
+
+===== DEEP 0x34EABE0 (helper-consumer) size=2222 sec=.impdata =====
+role=block-copy-consumer t98=True tA0=False t40=True v2B0=False block=True key=False factory=False outer=False alloc=True lookup=False
+  CALL_HELPER @0x34EAEAD
+  CALL_HELPER @0x34EAFF0
+  CALL_ALLOC @0x34EB3A2
+  str "Invalid pointer not allocated by our allocators "
+  callee 0xD530
+  callee 0xE6E0
+  callee 0x5014570
+  callee 0x546D150 *** HELPER ***
+  callee 0xD550
+  callee 0x34E7A50
+  callee 0x70A1070
+  callee 0x426EE50
+  callee 0x70A3C90
+  callee 0xCE82A0
+  callee 0x70A38C0
+  callee 0x70A3B50
+  callee 0x1380F20
+  callee 0xD3D2B0
+--- head ---
+0x34EABE0 push r15
+0x34EABE2 push r14
+0x34EABE4 push r13
+0x34EABE6 push r12
+0x34EABE8 push rsi
+0x34EABE9 push rdi
+0x34EABEA push rbx
+0x34EABEB sub rsp,260
+0x34EABF2 vmovaps [rsp+250],xmm11
+0x34EABFB vmovaps [rsp+240],xmm10
+0x34EAC04 vmovaps [rsp+230],xmm9
+0x34EAC0D vmovaps [rsp+220],xmm8
+0x34EAC16 vmovaps [rsp+210],xmm7
+0x34EAC1F vmovaps [rsp+200],xmm6
+0x34EAC28 mov rax,[rip+6DC85D1]
+0x34EAC2F xor rax,rsp
+0x34EAC32 mov [rsp+1F8],rax
+0x34EAC3A mov r13,[rdx]
+0x34EAC3D test r13,r13
+0x34EAC40 je near ptr 00000001434EAE2D
+0x34EAC46 mov rdi,rdx
+0x34EAC49 mov rsi,rcx
+0x34EAC4C mov rdx,[r13]
+0x34EAC50 mov rax,[rdx+30]
+0x34EAC54 movzx ecx,word ptr [rax+4C]
+0x34EAC58 movzx eax,word ptr [rax+4E]
+0x34EAC5C cmp cx,[rip+81353D1]
+0x34EAC63 jb short 00000001434EAC85
+0x34EAC65 cmp ax,[rip+81353CA]
+0x34EAC6C ja short 00000001434EAC85
+0x34EAC6E vmovss xmm0,dword ptr [r13+10]
+0x34EAC74 vmovss dword ptr [rsi+8],xmm0
+0x34EAC79 mov rax,[rdx+30]
+0x34EAC7D movzx ecx,word ptr [rax+4C]
+0x34EAC81 movzx eax,word ptr [rax+4E]
+0x34EAC85 cmp cx,[rip+81355A8]
+0x34EAC8C jb near ptr 00000001434EAE2D
+0x34EAC92 cmp ax,[rip+813559D]
+0x34EAC99 ja near ptr 00000001434EAE2D
+0x34EAC9F mov rax,[rdi+8]
+0x34EACA3 mov rcx,[rdi+10]
+0x34EACA7 mov rbx,[rax+18]
+0x34EACAB mov rax,[rcx+720]
+0x34EACB2 test byte ptr [rax+0B],80
+0x34EACB6 vmovss xmm6,dword ptr [rip+5B4B562]
+
+===== DEEP 0x4BDAA20 (helper-consumer) size=1715 sec=.impdata =====
+role=block-copy-consumer t98=True tA0=False t40=True v2B0=False block=True key=False factory=False outer=False alloc=False lookup=False
+  CALL_HELPER @0x4BDB08E
+  callee 0x5354820
+  callee 0x7F5660
+  callee 0x4BDB0E0
+  callee 0x7F46B0
+  callee 0x5014570
+  callee 0x7F4B20
+  callee 0x853B0
+  callee 0x42256B0
+  callee 0x450D890
+  callee 0x66E6000
+  callee 0x4C4810
+  callee 0x546D150 *** HELPER ***
+  callee 0x1D7F60
+  callee 0xA299E0
+--- head ---
+0x4BDAA20 push r15
+0x4BDAA22 push r14
+0x4BDAA24 push r13
+0x4BDAA26 push r12
+0x4BDAA28 push rsi
+0x4BDAA29 push rdi
+0x4BDAA2A push rbp
+0x4BDAA2B push rbx
+0x4BDAA2C sub rsp,98
+0x4BDAA33 mov rsi,rcx
+0x4BDAA36 mov rax,[rip+56D87C3]
+0x4BDAA3D xor rax,rsp
+0x4BDAA40 mov [rsp+90],rax
+0x4BDAA48 mov rax,[r8]
+0x4BDAA4B lea rcx,[rip+7438DDE]
+0x4BDAA52 cmp rax,rcx
+0x4BDAA55 je near ptr 0000000144BDAE5F
+0x4BDAA5B lea rcx,[rip+741E91E]
+0x4BDAA62 cmp rax,rcx
+0x4BDAA65 jne near ptr 0000000144BDAB0A
+0x4BDAA6B test edx,0FFFFFFFD
+0x4BDAA71 jne near ptr 0000000144BDAE31
+0x4BDAA77 mov rax,[rsi+98] *** +98 ***
+0x4BDAA7E test rax,rax
+0x4BDAA81 jne near ptr 0000000144BDAFFD
+0x4BDAA87 xor eax,eax
+0x4BDAA89 test rax,rax
+0x4BDAA8C jne short 0000000144BDAA97
+0x4BDAA8E mov rax,[rip+743B9AB]
+0x4BDAA95 jmp short 0000000144BDAA9B
+0x4BDAA97 add rax,40
+0x4BDAA9B mov ecx,[rax+8]
+0x4BDAA9E cmp edx,2
+0x4BDAAA1 je near ptr 0000000144BDAC94
+0x4BDAAA7 cmp ecx,1
+0x4BDAAAA jne near ptr 0000000144BDAE31
+0x4BDAAB0 jmp near ptr 0000000144BDB010
+0x4BDAAB5 mov rcx,r14
+0x4BDAAB8 call rdx
+0x4BDAABA mov rax,[r14]
+0x4BDAABD jmp near ptr 0000000144BDAB7A
+0x4BDAAC2 mov r15d,edx
+0x4BDAAC5 lea rcx,[rip+6399014]
+0x4BDAACC lea r9,[rip+7438C65]
+0x4BDAAD3 xor edx,edx
+
+===== DEEP 0x5F01210 (helper-consumer) size=1118 sec=.impdata =====
+role=block-copy-consumer t98=True tA0=True t40=True v2B0=False block=True key=False factory=False outer=False alloc=False lookup=True
+  CALL_LOOKUP @0x5F0135A
+  CALL_HELPER @0x5F01649
+  callee 0x5DE220
+  callee 0x5F01670
+  callee 0x5F01B50
+  callee 0x429F9E0
+  callee 0xD530
+  callee 0x18CC4D0
+  callee 0x2396A0
+  callee 0x5014570
+  callee 0x45B64D0
+  callee 0x1698140
+  callee 0x546D150 *** HELPER ***
+--- head ---
+0x5F01210 push r15
+0x5F01212 push r14
+0x5F01214 push r13
+0x5F01216 push r12
+0x5F01218 push rsi
+0x5F01219 push rdi
+0x5F0121A push rbp
+0x5F0121B push rbx
+0x5F0121C sub rsp,108
+0x5F01223 vmovaps [rsp+0F0],xmm7
+0x5F0122C vmovaps [rsp+0E0],xmm6
+0x5F01235 mov rsi,rdx
+0x5F01238 mov rax,[rip+43B1FC1]
+0x5F0123F xor rax,rsp
+0x5F01242 mov [rsp+0D8],rax
+0x5F0124A mov rax,[r8+208]
+0x5F01251 movsxd r12,dword ptr [rax+8]
+0x5F01255 sar r12,1F
+0x5F01259 and r12,[rax]
+0x5F0125C je near ptr 0000000145F014E8
+0x5F01262 mov rdi,rcx
+0x5F01265 cmp byte ptr [rcx+0ED],0
+0x5F0126C jne near ptr 0000000145F0143A
+0x5F01272 mov r14,r9
+0x5F01275 lea r15,[r9+108]
+0x5F0127C mov rax,[r9+108]
+0x5F01283 test byte ptr [rax+0B],80
+0x5F01287 je short 0000000145F01295
+0x5F01289 mov r13,[rax]
+0x5F0128C test r13,r13
+0x5F0128F jne near ptr 0000000145F01606
+0x5F01295 vmovups ymm0,[rip+4CDD1F3]
+0x5F0129D vmovups [rsp+0B0],ymm0
+0x5F012A6 vmovups ymm0,[rip+4CDD1C2]
+0x5F012AE vmovups [rsp+90],ymm0
+0x5F012B7 cmp byte ptr [rdi+0EC],0
+0x5F012BE jne near ptr 0000000145F015A3
+0x5F012C4 xor r13d,r13d
+0x5F012C7 lea r8,[rsp+90]
+0x5F012CF mov rcx,r12
+0x5F012D2 mov rdx,r15
+0x5F012D5 vzeroupper
+0x5F012D8 call 00000001405DE220
+0x5F012DD lea rbx,[rsp+78]
+0x5F012E2 vxorps xmm0,xmm0,xmm0
+
+===== DEEP 0x5FC47B0 (helper-consumer) size=687 sec=.impdata =====
+role=sideblock-walker t98=True tA0=False t40=False v2B0=False block=True key=False factory=False outer=False alloc=False lookup=False
+  CALL_HELPER @0x5FC4970
+  callee 0xB0EFA0
+  callee 0x15BBA30
+  callee 0x42256B0
+  callee 0x450D890
+  callee 0x546D150 *** HELPER ***
+--- head ---
+0x5FC47B0 push r15
+0x5FC47B2 push r14
+0x5FC47B4 push r13
+0x5FC47B6 push r12
+0x5FC47B8 push rsi
+0x5FC47B9 push rdi
+0x5FC47BA push rbp
+0x5FC47BB push rbx
+0x5FC47BC sub rsp,28
+0x5FC47C0 mov rbx,r9
+0x5FC47C3 mov ebp,r8d
+0x5FC47C6 mov rdi,rdx
+0x5FC47C9 mov rsi,rcx
+0x5FC47CC lea rax,[rip+316DA2D]
+0x5FC47D3 mov [rcx],rax
+0x5FC47D6 xor r14d,r14d
+0x5FC47D9 mov [rcx+8],r14
+0x5FC47DD add rcx,10
+0x5FC47E1 call 0000000140B0EFA0
+0x5FC47E6 lea rax,[rip+3362AC3]
+0x5FC47ED mov [rsi+14E0],rax
+0x5FC47F4 mov eax,80000000
+0x5FC47F9 and eax,[rsi+14F0]
+0x5FC47FF or eax,0C000
+0x5FC4804 mov [rsi+14F0],eax
+0x5FC480A mov [rsi+14E8],r14
+0x5FC4811 mov [rsi+14F8],rdi
+0x5FC4818 vmovups ymm0,[rip+4C19C50]
+0x5FC4820 vmovups [rsi+1500],ymm0
+0x5FC4828 vmovups ymm0,[rip+4C19C60]
+0x5FC4830 vmovups [rsi+1520],ymm0
+0x5FC4838 mov rax,[rip+4FAF391]
+0x5FC483F mov [rsi+1540],rax
+0x5FC4846 lea r15,[rip+4FAF38B]
+0x5FC484D cmp rax,r15
+0x5FC4850 jne near ptr 0000000145FC4A28
+0x5FC4856 lea rax,[rsi+1548]
+0x5FC485D mov [rsi+1548],r15
+0x5FC4864 mov [rsi+1550],bpl
+0x5FC486B test rdi,rdi
+0x5FC486E je short 0000000145FC4898
+0x5FC4870 mov rdi,[rsp+90]
+0x5FC4878 test rdi,rdi
+0x5FC487B je short 0000000145FC4886
+0x5FC487D test bpl,bpl
+
+===== DEEP 0x5FDE0F0 (helper-consumer) size=866 sec=.impdata =====
+role=block-copy-consumer t98=False tA0=True t40=True v2B0=False block=True key=False factory=False outer=False alloc=False lookup=False
+  CALL_HELPER @0x5FDE3F3
+  callee 0x4D58680
+  callee 0xD530
+  callee 0x4F64CD0
+  callee 0x533039C
+  callee 0x4F650C8
+  callee 0x2396A0
+  callee 0x5014570
+  callee 0x45B64D0
+  callee 0x4E1DA50
+  callee 0x546D150 *** HELPER ***
+--- head ---
+0x5FDE0F0 push r14
+0x5FDE0F2 push rsi
+0x5FDE0F3 push rdi
+0x5FDE0F4 push rbx
+0x5FDE0F5 sub rsp,0C8
+0x5FDE0FC vmovaps [rsp+0B0],xmm12
+0x5FDE105 vmovaps [rsp+0A0],xmm11 *** +A0 ***
+0x5FDE10E vmovaps [rsp+90],xmm10
+0x5FDE117 vmovaps [rsp+80],xmm9
+0x5FDE120 vmovaps [rsp+70],xmm8
+0x5FDE126 vmovaps [rsp+60],xmm7
+0x5FDE12C vmovaps [rsp+50],xmm6
+0x5FDE132 mov rsi,rdx
+0x5FDE135 mov rdi,rcx
+0x5FDE138 mov rax,[rip+42D50C1]
+0x5FDE13F xor rax,rsp
+0x5FDE142 mov [rsp+48],rax
+0x5FDE147 mov rax,[r9+78]
+0x5FDE14B test byte ptr [rax+0B],80
+0x5FDE14F je near ptr 0000000145FDE323
+0x5FDE155 mov r14,[rax]
+0x5FDE158 test r14,r14
+0x5FDE15B je near ptr 0000000145FDE323
+0x5FDE161 test byte ptr [r14+154],1
+0x5FDE169 je near ptr 0000000145FDE323
+0x5FDE16F mov rbx,r9
+0x5FDE172 cmp byte ptr [rdi+0E1],0
+0x5FDE179 jne near ptr 0000000145FDE3DE
+0x5FDE17F lea rdx,[rsp+20]
+0x5FDE184 mov rcx,r14
+0x5FDE187 call 0000000144D58680
+0x5FDE18C cmp byte ptr [rdi+0E1],0
+0x5FDE193 jne near ptr 0000000145FDE3F0
+0x5FDE199 add r14,50
+0x5FDE19D vmovaps xmm6,[r14]
+0x5FDE1A2 call 000000014000D530
+0x5FDE1A7 vxorps xmm1,xmm1,xmm1
+0x5FDE1AB vblendvps xmm0,xmm6,xmm1,xmm0
+0x5FDE1B1 vmovaps [rbx+80],xmm0
+0x5FDE1B9 vmovaps xmm0,[rsp+20]
+0x5FDE1BF vmovaps [rbx+90],xmm0
+0x5FDE1C7 vmovss xmm4,dword ptr [rsp+20]
+0x5FDE1CD vmovss xmm5,dword ptr [rsp+24]
+0x5FDE1D3 vmovss xmm2,dword ptr [rsp+28]
+0x5FDE1D9 vmulss xmm0,xmm2,xmm4
+
+===== DEEP 0x66E3F20 (helper-consumer) size=140 sec=.impdata =====
+role=block-copy-consumer t98=True tA0=False t40=True v2B0=False block=True key=False factory=False outer=False alloc=False lookup=False
+  CALL_HELPER @0x66E3F8E
+  callee 0x4643150
+  callee 0x546D150 *** HELPER ***
+--- head ---
+0x66E3F20 push rsi
+0x66E3F21 push rdi
+0x66E3F22 sub rsp,28
+0x66E3F26 mov rsi,rcx
+0x66E3F29 mov rdi,[rcx+18]
+0x66E3F2D mov rcx,[rdi+98] *** +98 ***
+0x66E3F34 test rcx,rcx
+0x66E3F37 je short 00000001466E3F3F
+0x66E3F39 add rcx,40
+0x66E3F3D jmp short 00000001466E3F46
+0x66E3F3F mov rcx,[rip+59324FA]
+0x66E3F46 call 0000000144643150
+0x66E3F4B test al,al
+0x66E3F4D jne short 00000001466E3F8B
+0x66E3F4F vmovups ymm0,[rdi+20]
+0x66E3F54 vmovups ymm1,[rdi+30]
+0x66E3F59 vmovups [rsi+50],ymm1
+0x66E3F5E vmovups [rsi+40],ymm0
+0x66E3F63 vmovaps xmm0,[rdi+50]
+0x66E3F68 vmovaps [rsi+70],xmm0
+0x66E3F6D vmovaps xmm0,[rdi+60]
+0x66E3F72 vmovaps [rsi+80],xmm0
+0x66E3F7A mov byte ptr [rsi+98],1 *** +98 ***
+0x66E3F81 add rsp,28
+0x66E3F85 pop rdi
+0x66E3F86 pop rsi
+0x66E3F87 vzeroupper
+0x66E3F8A ret
+0x66E3F8B mov rcx,rdi
+0x66E3F8E call 000000014546D150 *** HELPER ***
+0x66E3F93 vmovups ymm0,[rax]
+0x66E3F97 vmovups ymm1,[rax+20]
+0x66E3F9C vmovups [rsi+40],ymm0
+0x66E3FA1 vmovups [rsi+60],ymm1
+0x66E3FA6 vxorps xmm0,xmm0,xmm0
+0x66E3FAA jmp short 00000001466E3F72
+
+===== DEEP 0x6D1E970 (helper-consumer) size=892 sec=.impdata =====
+role=block-copy-consumer t98=False tA0=False t40=True v2B0=False block=True key=False factory=False outer=False alloc=False lookup=False
+  CALL_HELPER @0x6D1EBD1
+  callee 0x6D1ECF0
+  callee 0x4F1CA50
+  callee 0x5014570
+  callee 0x42EB170
+  callee 0x778ED0
+  callee 0xC26DF0
+  callee 0x70AC790
+  callee 0x45B64D0
+  callee 0x83D400
+  callee 0x6D1EDA0
+  callee 0x4DF4DB0
+  callee 0x4DF6060
+  callee 0x546D150 *** HELPER ***
+  callee 0x4422AF0
+--- head ---
+0x6D1E970 push r15
+0x6D1E972 push r14
+0x6D1E974 push r13
+0x6D1E976 push r12
+0x6D1E978 push rsi
+0x6D1E979 push rdi
+0x6D1E97A push rbp
+0x6D1E97B push rbx
+0x6D1E97C sub rsp,108
+0x6D1E983 mov rax,[rip+3594876]
+0x6D1E98A xor rax,rsp
+0x6D1E98D mov [rsp+100],rax
+0x6D1E995 mov rsi,[rcx+20]
+0x6D1E999 test rsi,rsi
+0x6D1E99C je short 0000000146D1E9E1
+0x6D1E99E xor edi,edi
+0x6D1E9A0 test rdx,rdx
+0x6D1E9A3 je short 0000000146D1E9E3
+0x6D1E9A5 test r8,r8
+0x6D1E9A8 je short 0000000146D1E9E3
+0x6D1E9AA mov rbx,rdx
+0x6D1E9AD mov [rsp+58],r8
+0x6D1E9B2 mov rcx,r8
+0x6D1E9B5 call 0000000146D1ECF0
+0x6D1E9BA test rax,rax
+0x6D1E9BD je short 0000000146D1E9E1
+0x6D1E9BF mov r14,rax
+0x6D1E9C2 mov rax,[rax]
+0x6D1E9C5 cmp dword ptr [rax-9],0
+0x6D1E9C9 je short 0000000146D1E9E1
+0x6D1E9CB mov rcx,r14
+0x6D1E9CE call 0000000144F1CA50
+0x6D1E9D3 mov ebp,eax
+0x6D1E9D5 mov rcx,r14
+0x6D1E9D8 call 0000000144F1CA50
+0x6D1E9DD test eax,eax
+0x6D1E9DF jne short 0000000146D1EA09
+0x6D1E9E1 xor edi,edi
+0x6D1E9E3 mov rcx,[rsp+100]
+0x6D1E9EB xor rcx,rsp
+0x6D1E9EE call 0000000145014570
+0x6D1E9F3 mov eax,edi
+0x6D1E9F5 add rsp,108
+0x6D1E9FC pop rbx
+0x6D1E9FD pop rbp
+
+===== DEEP 0x6D1ECF0 (helper-consumer) size=365 sec=.impdata =====
+role=block-copy-consumer t98=False tA0=True t40=True v2B0=False block=True key=False factory=False outer=False alloc=False lookup=False
+  CALL_HELPER @0x6D1EDE2
+  callee 0x4DF4DB0
+  callee 0x4DADC50
+  callee 0x4DCD470
+  callee 0x546D150 *** HELPER ***
+  callee 0x4868810
+  callee 0x372040
+  callee 0x5014570
+--- head ---
+0x6D1ECF0 push rsi
+0x6D1ECF1 push rdi
+0x6D1ECF2 push rbx
+0x6D1ECF3 sub rsp,20
+0x6D1ECF7 mov rsi,rcx
+0x6D1ECFA xor edi,edi
+0x6D1ECFC mov rbx,rdi
+0x6D1ECFF jmp short 0000000146D1ED27
+0x6D1ED01 mov rcx,rsi
+0x6D1ED04 call 0000000144DF4DB0
+0x6D1ED09 mov rcx,rax
+0x6D1ED0C call 0000000144DADC50
+0x6D1ED11 mov rcx,[rax]
+0x6D1ED14 movsxd rax,dword ptr [rcx+8]
+0x6D1ED18 sar rax,1F
+0x6D1ED1C and rax,[rcx]
+0x6D1ED1F mov rsi,rax
+0x6D1ED22 test rax,rax
+0x6D1ED25 je short 0000000146D1ED55
+0x6D1ED27 movzx eax,byte ptr [rsi+173]
+0x6D1ED2E cmp rax,0FF
+0x6D1ED34 je short 0000000146D1ED46
+0x6D1ED36 mov rcx,[rsi+138]
+0x6D1ED3D mov rdi,[rcx+rax*8]
+0x6D1ED41 test rdi,rdi
+0x6D1ED44 jne short 0000000146D1ED63
+0x6D1ED46 mov rcx,rsi
+0x6D1ED49 call 0000000144DCD470
+0x6D1ED4E test rax,rax
+0x6D1ED51 jne short 0000000146D1ED1F
+0x6D1ED53 jmp short 0000000146D1ED01
+0x6D1ED55 mov rdi,rbx
+0x6D1ED58 mov rax,rdi
+0x6D1ED5B add rsp,20
+0x6D1ED5F pop rbx
+0x6D1ED60 pop rdi
+0x6D1ED61 pop rsi
+0x6D1ED62 ret
+0x6D1ED63 mov rbx,[rdi+18]
+0x6D1ED67 mov rcx,rbx
+0x6D1ED6A call 0000000144DCD470
+0x6D1ED6F mov rsi,rax
+0x6D1ED72 test rax,rax
+0x6D1ED75 jne short 0000000146D1ED95
+0x6D1ED77 mov rcx,rbx
+
+===== DEEP 0x6D24E60 (helper-consumer) size=460 sec=.impdata =====
+role=block-copy-consumer t98=False tA0=False t40=True v2B0=False block=True key=False factory=False outer=False alloc=False lookup=False
+  CALL_HELPER @0x6D24E9D
+  callee 0x546D150 *** HELPER ***
+  callee 0x4422AF0
+  callee 0x441BAC0
+  callee 0x5014570
+--- head ---
+0x6D24E60 push rsi
+0x6D24E61 push rdi
+0x6D24E62 sub rsp,98
+0x6D24E69 vmovaps [rsp+80],xmm6
+0x6D24E72 mov rax,[rip+358E387]
+0x6D24E79 xor rax,rsp
+0x6D24E7C mov [rsp+78],rax
+0x6D24E81 mov rax,[rcx+10]
+0x6D24E85 movsxd rdi,dword ptr [rax+8]
+0x6D24E89 sar rdi,1F
+0x6D24E8D and rdi,[rax]
+0x6D24E90 je near ptr 0000000146D24F38
+0x6D24E96 mov rsi,rcx
+0x6D24E99 mov rcx,[rcx+18]
+0x6D24E9D call 000000014546D150 *** HELPER ***
+0x6D24EA2 vmovaps xmm0,[rsi+20]
+0x6D24EA7 vmovaps xmm1,[rax]
+0x6D24EAB vsubps xmm2,xmm1,xmm0
+0x6D24EAF vsubps xmm0,xmm0,xmm1
+0x6D24EB3 vmaxps xmm0,xmm0,xmm2
+0x6D24EB7 vbroadcastss xmm6,dword ptr [rip+2329B90]
+0x6D24EC0 vcmpltps xmm0,xmm6,xmm0
+0x6D24EC5 vtestps xmm0,xmm0
+0x6D24ECA je near ptr 0000000146D24FB5
+0x6D24ED0 lea rdx,[rsi+20]
+0x6D24ED4 mov rcx,[rsi+18]
+0x6D24ED8 call 0000000144422AF0
+0x6D24EDD vmovaps xmm0,[rdi+20]
+0x6D24EE2 vmovaps xmm1,[rdi+30]
+0x6D24EE7 vmovaps xmm2,[rdi+40]
+0x6D24EEC vmovaps xmm3,[rdi+50]
+0x6D24EF1 mov rcx,[rsi+18]
+0x6D24EF5 vmovaps xmm4,[rcx+20]
+0x6D24EFA vsubps xmm5,xmm4,xmm0
+0x6D24EFE vsubps xmm4,xmm0,xmm4
+0x6D24F02 vmaxps xmm4,xmm4,xmm5
+0x6D24F06 vcmpltps xmm4,xmm6,xmm4
+0x6D24F0B vtestps xmm4,xmm4
+0x6D24F10 je short 0000000146D24F58
+0x6D24F12 lea rdx,[rsp+20]
+0x6D24F17 vmovaps [rdx],xmm0
+0x6D24F1B vmovaps [rdx+10],xmm1
+0x6D24F20 vmovaps [rdx+20],xmm2
+0x6D24F25 vmovaps [rdx+30],xmm3
+0x6D24F2A vxorps xmm0,xmm0,xmm0
+
+===== DEEP 0x6E23A10 (helper-consumer) size=500 sec=.impdata =====
+role=block-copy-consumer t98=True tA0=True t40=True v2B0=False block=True key=False factory=False outer=False alloc=False lookup=False
+  CALL_HELPER @0x6E23B94
+  callee 0x43CAA80
+  callee 0x39C97E0
+  callee 0x4DB8D40
+  callee 0x5014570
+  callee 0x546D150 *** HELPER ***
+  callee 0xF1FD90
+  callee 0x18D8450
+  callee 0x1428290
+  callee 0x448D480
+--- head ---
+0x6E23A10 push r15
+0x6E23A12 push r14
+0x6E23A14 push r13
+0x6E23A16 push r12
+0x6E23A18 push rsi
+0x6E23A19 push rdi
+0x6E23A1A push rbp
+0x6E23A1B push rbx
+0x6E23A1C sub rsp,0C8
+0x6E23A23 mov esi,ecx
+0x6E23A25 mov rax,[rip+348F7D4]
+0x6E23A2C xor rax,rsp
+0x6E23A2F mov [rsp+0C0],rax
+0x6E23A37 movzx eax,byte ptr [rdx+176]
+0x6E23A3E cmp rax,0FF
+0x6E23A44 je near ptr 0000000146E23B09
+0x6E23A4A mov rcx,[rdx+138]
+0x6E23A51 mov rdi,[rcx+rax*8]
+0x6E23A55 movzx eax,byte ptr [r8+176]
+0x6E23A5D cmp rax,0FF
+0x6E23A63 je near ptr 0000000146E23B10
+0x6E23A69 mov rcx,[r8+138]
+0x6E23A70 mov rbx,[rcx+rax*8]
+0x6E23A74 mov rax,[rdx+98] *** +98 ***
+0x6E23A7B test rax,rax
+0x6E23A7E je near ptr 0000000146E23B24
+0x6E23A84 movzx eax,word ptr [rax+60]
+0x6E23A88 test eax,3FFF
+0x6E23A8D je near ptr 0000000146E23B24
+0x6E23A93 mov rcx,rdi
+0x6E23A96 mov edx,esi
+0x6E23A98 call 00000001443CAA80
+0x6E23A9D mov r14,rax
+0x6E23AA0 mov rcx,rbx
+0x6E23AA3 mov edx,esi
+0x6E23AA5 call 00000001443CAA80
+0x6E23AAA mov rsi,rax
+0x6E23AAD lea rax,[rsp+0A0] *** +A0 ***
+0x6E23AB5 mov dword ptr [rax-8],48000
+0x6E23ABC mov [rax-10],rax
+0x6E23AC0 movzx edx,word ptr [r14+0C]
+0x6E23AC5 lea rbx,[rsp+90]
+0x6E23ACD mov rcx,rdi
+0x6E23AD0 mov r8,rbx
+0x6E23AD3 call 00000001439C97E0
+
+===== DEEP 0x6E25C50 (helper-consumer) size=378 sec=.impdata =====
+role=block-copy-consumer t98=False tA0=True t40=True v2B0=False block=True key=False factory=False outer=False alloc=False lookup=False
+  CALL_HELPER @0x6E25CB2
+  callee 0x4F5D520
+  callee 0x546D150 *** HELPER ***
+  callee 0xD530
+  callee 0x5014570
+--- head ---
+0x6E25C50 push rsi
+0x6E25C51 push rdi
+0x6E25C52 sub rsp,188
+0x6E25C59 vmovaps [rsp+170],xmm9
+0x6E25C62 vmovaps [rsp+160],xmm8
+0x6E25C6B vmovaps [rsp+150],xmm7
+0x6E25C74 vmovaps [rsp+140],xmm6
+0x6E25C7D mov rsi,rcx
+0x6E25C80 mov rax,[rip+348D579]
+0x6E25C87 xor rax,rsp
+0x6E25C8A mov [rsp+138],rax
+0x6E25C92 mov rax,[rcx+38]
+0x6E25C96 mov rcx,[rax+58]
+0x6E25C9A lea rdi,[rsp+0F0]
+0x6E25CA2 mov rdx,rdi
+0x6E25CA5 call 0000000144F5D520
+0x6E25CAA mov rax,[rsi+38]
+0x6E25CAE mov rcx,[rax+58]
+0x6E25CB2 call 000000014546D150 *** HELPER ***
+0x6E25CB7 vbroadcastss ymm0,dword ptr [rax+30]
+0x6E25CBD vbroadcastss ymm1,dword ptr [rax+34]
+0x6E25CC3 vbroadcastss ymm2,dword ptr [rax+38]
+0x6E25CC9 vbroadcastss ymm3,dword ptr [rax+3C]
+0x6E25CCF mov rax,[rsi+38]
+0x6E25CD3 mov rax,[rax+58]
+0x6E25CD7 vmovaps xmm7,[rax+20]
+0x6E25CDC vmovaps xmm8,[rax+30]
+0x6E25CE1 vmovaps xmm9,[rax+40]
+0x6E25CE6 vmulps xmm1,xmm1,[rdi+10]
+0x6E25CEB vfmadd231ps xmm1,xmm0,[rdi]
+0x6E25CF0 vfmadd132ps xmm2,xmm1,[rdi+20]
+0x6E25CF6 vfmadd132ps xmm3,xmm2,[rdi+30]
+0x6E25CFC vmovups [rsp+20],ymm3
+0x6E25D02 vzeroupper
+0x6E25D05 call 000000014000D530
+0x6E25D0A vmovaps xmm6,xmm0
+0x6E25D0E call 000000014000D530
+0x6E25D13 vxorps xmm1,xmm1,xmm1
+0x6E25D17 vmovups ymm2,[rsp+20]
+0x6E25D1D vblendvps xmm2,xmm2,xmm1,xmm6
+0x6E25D23 vblendvps xmm0,xmm2,[rip+2990D23],xmm0
+0x6E25D2D lea rdx,[rsp+40]
+0x6E25D32 vmovaps [rdx],xmm7
+0x6E25D36 vmovaps [rdx+10],xmm8
+0x6E25D3B vmovaps [rdx+20],xmm9
+
+===== DEEP 0x6E45860 (helper-consumer) size=596 sec=.impdata =====
+role=block-copy-consumer t98=False tA0=False t40=True v2B0=False block=True key=False factory=False outer=False alloc=False lookup=False
+  CALL_HELPER @0x6E4589C
+  callee 0x546D150 *** HELPER ***
+  callee 0x6E45EB0
+  callee 0xD530
+  callee 0x8E6EDF0
+  callee 0x5014570
+--- head ---
+0x6E45860 push r14
+0x6E45862 push rsi
+0x6E45863 push rdi
+0x6E45864 push rbx
+0x6E45865 sub rsp,0D8
+0x6E4586C vmovaps [rsp+0C0],xmm7
+0x6E45875 vmovaps [rsp+0B0],xmm6
+0x6E4587E mov rsi,r8
+0x6E45881 mov rbx,rdx
+0x6E45884 mov rdi,rcx
+0x6E45887 mov rax,[rip+346D972]
+0x6E4588E xor rax,rsp
+0x6E45891 mov [rsp+0A8],rax
+0x6E45899 mov rcx,rdx
+0x6E4589C call 000000014546D150 *** HELPER ***
+0x6E458A1 vmovups ymm0,[rax]
+0x6E458A5 vmovups ymm1,[rax+20]
+0x6E458AA vmovups [rdi+30],ymm0
+0x6E458AF vmovups [rdi+50],ymm1
+0x6E458B4 lea r14,[rsp+60]
+0x6E458B9 mov rcx,rdi
+0x6E458BC mov rdx,rbx
+0x6E458BF mov r8,r14
+0x6E458C2 vzeroupper
+0x6E458C5 call 0000000146E45EB0
+0x6E458CA vmovss xmm2,dword ptr [r14]
+0x6E458CF vmovss xmm3,dword ptr [r14+14]
+0x6E458D5 vmovss xmm1,dword ptr [r14+28]
+0x6E458DB vmovss xmm4,dword ptr [rip+21F093D]
+0x6E458E3 vaddss xmm0,xmm2,xmm4
+0x6E458E7 vaddss xmm5,xmm3,xmm1
+0x6E458EB vaddss xmm0,xmm0,xmm5
+0x6E458EF vucomiss xmm0,xmm4
+0x6E458F3 jbe short 0000000146E45964
+0x6E458F5 vrsqrtss xmm1,xmm0,xmm0
+0x6E458F9 vmulss xmm2,xmm0,xmm1
+0x6E458FD vfmadd213ss xmm2,xmm1,[rip+22EC592]
+0x6E45906 vmulss xmm1,xmm1,dword ptr [rip+222C29E]
+0x6E4590E vmulss xmm1,xmm1,xmm2
+0x6E45912 vmulss xmm1,xmm1,dword ptr [rip+222C232]
+0x6E4591A vmovss xmm2,dword ptr [rsp+64]
+0x6E45920 vsubss xmm2,xmm2,dword ptr [rsp+70]
+0x6E45926 vmovss xmm3,dword ptr [rsp+80]
+0x6E4592F vsubss xmm3,xmm3,dword ptr [rsp+68]
+0x6E45935 vmovss xmm4,dword ptr [rsp+78]
+
+===== DEEP 0x7F9BE80 (helper-consumer) size=1315 sec=.impdata =====
+role=block-copy-consumer t98=False tA0=True t40=True v2B0=False block=True key=False factory=False outer=False alloc=False lookup=False
+  CALL_HELPER @0x7F9C0DC
+  CALL_HELPER @0x7F9C298
+  callee 0x546D150 *** HELPER ***
+  callee 0xD530
+--- head ---
+0x7F9BE80 push rsi
+0x7F9BE81 sub rsp,1E0
+0x7F9BE88 vmovaps [rsp+1D0],xmm15
+0x7F9BE91 vmovaps [rsp+1C0],xmm14
+0x7F9BE9A vmovaps [rsp+1B0],xmm13
+0x7F9BEA3 vmovaps [rsp+1A0],xmm12
+0x7F9BEAC vmovaps [rsp+190],xmm11
+0x7F9BEB5 vmovaps [rsp+180],xmm10
+0x7F9BEBE vmovaps [rsp+170],xmm9
+0x7F9BEC7 vmovaps [rsp+160],xmm8
+0x7F9BED0 vmovaps [rsp+150],xmm7
+0x7F9BED9 vmovaps [rsp+140],xmm6
+0x7F9BEE2 mov rax,[rcx+70]
+0x7F9BEE6 test rax,rax
+0x7F9BEE9 je near ptr 0000000147F9C1AA
+0x7F9BEEF mov rsi,rcx
+0x7F9BEF2 cmp qword ptr [rcx+78],0
+0x7F9BEF7 je near ptr 0000000147F9C1AA
+0x7F9BEFD movzx ecx,byte ptr [rsi+0D5]
+0x7F9BF04 shl ecx,4
+0x7F9BF07 or rcx,160
+0x7F9BF0E vmovaps xmm2,[rip+2C4255A]
+0x7F9BF16 vmovaps xmm1,[rip+2C42562]
+0x7F9BF1E vmovaps xmm0,[rip+2C4256A]
+0x7F9BF26 vmovss xmm4,dword ptr [rsi+150]
+0x7F9BF2E vmovss xmm3,dword ptr [rsi+154]
+0x7F9BF36 vaddss xmm5,xmm4,xmm4
+0x7F9BF3A vmulss xmm6,xmm5,xmm3
+0x7F9BF3E vmovss xmm7,dword ptr [rsi+158]
+0x7F9BF46 vmulss xmm8,xmm7,xmm5
+0x7F9BF4A vmovss xmm9,dword ptr [rsi+15C]
+0x7F9BF52 vmulss xmm10,xmm9,xmm5
+0x7F9BF56 vaddss xmm11,xmm3,xmm3
+0x7F9BF5A vmulss xmm12,xmm11,xmm3
+0x7F9BF5E vmulss xmm13,xmm11,xmm7
+0x7F9BF62 vmulss xmm11,xmm9,xmm11
+0x7F9BF67 vaddss xmm3,xmm7,xmm7
+0x7F9BF6B vmulss xmm7,xmm3,xmm7
+0x7F9BF6F vmulss xmm9,xmm9,xmm3
+0x7F9BF73 vaddss xmm14,xmm12,xmm7
+0x7F9BF77 vmovss xmm3,dword ptr [rip+109A2A1]
+0x7F9BF7F vsubss xmm14,xmm3,xmm14
+0x7F9BF84 vblendps xmm14,xmm2,xmm14,3
+0x7F9BF8A vsubss xmm15,xmm6,xmm9
+0x7F9BF8F vblendps xmm15,xmm1,xmm15,3
+
+===== DEEP 0x7FCE730 (helper-consumer) size=212 sec=.impdata =====
+role=block-copy-consumer t98=False tA0=False t40=True v2B0=False block=True key=False factory=False outer=False alloc=False lookup=False
+  CALL_HELPER @0x7FCE781
+  callee 0x448D480
+  callee 0x546D150 *** HELPER ***
+  callee 0xD530
+  callee 0xD510
+  callee 0x53630
+--- head ---
+0x7FCE730 push rsi
+0x7FCE731 push rdi
+0x7FCE732 sub rsp,58
+0x7FCE736 vmovaps [rsp+40],xmm8
+0x7FCE73C vmovaps [rsp+30],xmm7
+0x7FCE742 vmovaps [rsp+20],xmm6
+0x7FCE748 mov rsi,rdx
+0x7FCE74B cmp dword ptr [rcx+0E8],17
+0x7FCE752 jne short 0000000147FCE7D2
+0x7FCE754 mov rax,[rcx+8]
+0x7FCE758 movsxd rdi,dword ptr [rax+8]
+0x7FCE75C sar rdi,1F
+0x7FCE760 and rdi,[rax]
+0x7FCE763 je short 0000000147FCE7E0
+0x7FCE765 lea rdx,[rip+33BCEC4]
+0x7FCE76C mov rcx,rdi
+0x7FCE76F call 000000014448D480
+0x7FCE774 test rax,rax
+0x7FCE777 je short 0000000147FCE7E0
+0x7FCE779 vmovaps xmm6,[rax+30]
+0x7FCE77E mov rcx,rdi
+0x7FCE781 call 000000014546D150 *** HELPER ***
+0x7FCE786 vmovaps xmm7,[rax+30]
+0x7FCE78B call 000000014000D530
+0x7FCE790 vxorps xmm8,xmm8,xmm8
+0x7FCE795 vblendvps xmm0,xmm7,xmm8,xmm0
+0x7FCE79B vaddps xmm0,xmm0,xmm6
+0x7FCE79F vshufps xmm1,xmm0,xmm0,0AA
+0x7FCE7A4 vshufps xmm2,xmm0,xmm0,55
+0x7FCE7A9 vbroadcastss xmm0,xmm0
+0x7FCE7AE vmovaps xmm6,[rdi+20]
+0x7FCE7B3 vfmadd213ps xmm6,xmm0,[rdi+50]
+0x7FCE7B9 vfmadd231ps xmm6,xmm2,[rdi+30]
+0x7FCE7BF vfmadd231ps xmm6,xmm1,[rdi+40]
+0x7FCE7C5 call 000000014000D510
+0x7FCE7CA vblendvps xmm0,xmm8,xmm6,xmm0
+0x7FCE7D0 jmp short 0000000147FCE7E4
+0x7FCE7D2 add rcx,10
+0x7FCE7D6 mov rdx,rsi
+0x7FCE7D9 call 0000000140053630
+0x7FCE7DE jmp short 0000000147FCE7E8
+0x7FCE7E0 vxorps xmm0,xmm0,xmm0
+0x7FCE7E4 vmovaps [rsi],xmm0
+0x7FCE7E8 mov rax,rsi
+0x7FCE7EB vmovaps xmm6,[rsp+20]
+
+===== DEEP 0x7FDAD90 (helper-consumer) size=248 sec=.impdata =====
+role=block-copy-consumer t98=False tA0=False t40=True v2B0=False block=True key=False factory=False outer=False alloc=False lookup=False
+  CALL_HELPER @0x7FDAE60
+  callee 0x4C4810
+  callee 0x448D480
+  callee 0x3269740
+  callee 0x3269970
+  callee 0x546D150 *** HELPER ***
+--- head ---
+0x7FDAD90 push rsi
+0x7FDAD91 push rdi
+0x7FDAD92 sub rsp,28
+0x7FDAD96 mov rdi,rdx
+0x7FDAD99 mov rsi,rcx
+0x7FDAD9C or byte ptr [rcx+23],2
+0x7FDADA0 mov rcx,[rcx+18]
+0x7FDADA4 xor edx,edx
+0x7FDADA6 mov r8w,1
+0x7FDADAB call 00000001404C4810
+0x7FDADB0 mov rcx,[rsi+18]
+0x7FDADB4 lea rdx,[rip+34C574D]
+0x7FDADBB call 000000014448D480
+0x7FDADC0 test rax,rax
+0x7FDADC3 je short 0000000147FDADDD
+0x7FDADC5 lea rcx,[rsi+178]
+0x7FDADCC add rax,580
+0x7FDADD2 mov rdx,rax
+0x7FDADD5 mov r8,rsi
+0x7FDADD8 call 0000000143269740
+0x7FDADDD mov rcx,[rsi+18]
+0x7FDADE1 lea rdx,[rip+34B1198]
+0x7FDADE8 call 000000014448D480
+0x7FDADED test rax,rax
+0x7FDADF0 je short 0000000147FDAE0A
+0x7FDADF2 lea rcx,[rsi+178]
+0x7FDADF9 add rax,448
+0x7FDADFF mov rdx,rax
+0x7FDAE02 mov r8,rsi
+0x7FDAE05 call 0000000143269970
+0x7FDAE0A lea rax,[rdi+1688]
+0x7FDAE11 mov [rsi+1B8],rax
+0x7FDAE18 mov rax,[rdi+16B8]
+0x7FDAE1F mov [rsi+1A0],rax
+0x7FDAE26 mov [rsi+1A8],rax
+0x7FDAE2D mov qword ptr [rsi+1B0],0
+0x7FDAE38 mov byte ptr [rsi+1C0],0
+0x7FDAE3F mov rcx,[rsi+18]
+0x7FDAE43 vmovups ymm0,[rcx+20]
+0x7FDAE48 vmovups ymm1,[rcx+40]
+0x7FDAE4D vmovups [rsi+1D0],ymm0
+0x7FDAE55 vmovups [rsi+1F0],ymm1
+0x7FDAE5D vzeroupper
+0x7FDAE60 call 000000014546D150 *** HELPER ***
+0x7FDAE65 vmovups ymm0,[rax]
+
+===== DEEP 0x7FDBA10 (helper-consumer) size=2307 sec=.impdata =====
+role=block-copy-consumer t98=False tA0=True t40=True v2B0=False block=True key=False factory=False outer=False alloc=False lookup=False
+  CALL_HELPER @0x7FDBA7E
+  callee 0x546D150 *** HELPER ***
+  callee 0x4DCD470
+  callee 0xD510
+  callee 0x142520
+  callee 0x142E0
+  callee 0x14300
+  callee 0x142C0
+  callee 0xD530
+  callee 0x4422AF0
+  callee 0x5014570
+  callee 0x441BAC0
+  callee 0x7FDC7D0
+--- head ---
+0x7FDBA10 push rsi
+0x7FDBA11 push rdi
+0x7FDBA12 sub rsp,1C8
+0x7FDBA19 vmovaps [rsp+1B0],xmm13
+0x7FDBA22 vmovaps [rsp+1A0],xmm12
+0x7FDBA2B vmovaps [rsp+190],xmm11
+0x7FDBA34 vmovaps [rsp+180],xmm10
+0x7FDBA3D vmovaps [rsp+170],xmm9
+0x7FDBA46 vmovaps [rsp+160],xmm8
+0x7FDBA4F vmovaps [rsp+150],xmm7
+0x7FDBA58 vmovaps [rsp+140],xmm6
+0x7FDBA61 vmovaps xmm6,xmm1
+0x7FDBA65 mov rsi,rcx
+0x7FDBA68 mov rax,[rip+22D7791]
+0x7FDBA6F xor rax,rsp
+0x7FDBA72 mov [rsp+138],rax
+0x7FDBA7A mov rcx,[rcx+18]
+0x7FDBA7E call 000000014546D150 *** HELPER ***
+0x7FDBA83 vmovups ymm0,[rax]
+0x7FDBA87 vmovups ymm1,[rax+20]
+0x7FDBA8C vmovups [rsp+0A0],ymm0 *** +A0 ***
+0x7FDBA95 vmovups [rsp+0C0],ymm1
+0x7FDBA9E mov rcx,[rsi+18]
+0x7FDBAA2 vzeroupper
+0x7FDBAA5 call 0000000144DCD470
+0x7FDBAAA test rax,rax
+0x7FDBAAD je near ptr 0000000147FDBE71
+0x7FDBAB3 lea rdi,[rsp+0A0] *** +A0 ***
+0x7FDBABB vmovaps xmm0,[rdi]
+0x7FDBABF vmovaps xmm1,[rdi+10]
+0x7FDBAC4 vmovaps xmm2,[rdi+20]
+0x7FDBAC9 vmovaps xmm9,[rdi+30]
+0x7FDBACE vunpcklps xmm8,xmm0,xmm2
+0x7FDBAD2 vunpcklps xmm10,xmm1,xmm9
+0x7FDBAD7 vunpckhps xmm0,xmm0,xmm2
+0x7FDBADB vunpckhps xmm1,xmm1,xmm9
+0x7FDBAE0 vunpcklps xmm11,xmm0,xmm1
+0x7FDBAE4 call 000000014000D510
+0x7FDBAE9 vbroadcastss xmm1,dword ptr [rip+105A72E]
+0x7FDBAF2 vxorps xmm7,xmm7,xmm7
+0x7FDBAF6 vblendvps xmm0,xmm7,xmm1,xmm0
+0x7FDBAFC vunpcklps xmm2,xmm8,xmm10
+0x7FDBB01 vunpckhps xmm3,xmm8,xmm10
+0x7FDBB06 vmovaps xmm4,[rsi+50]
+0x7FDBB0B vmulps xmm2,xmm4,xmm2
+
+===== DEEP 0x8D76E90 (helper-consumer) size=43 sec=.impdata =====
+role=thin-wrapper t98=False tA0=False t40=False v2B0=False block=True key=False factory=False outer=False alloc=False lookup=False
+  CALL_HELPER @0x8D76E98
+  callee 0x546D150 *** HELPER ***
+--- head ---
+0x8D76E90 push rsi
+0x8D76E91 sub rsp,20
+0x8D76E95 mov rsi,rdx
+0x8D76E98 call 000000014546D150 *** HELPER ***
+0x8D76E9D vmovups ymm0,[rax]
+0x8D76EA1 vmovups ymm1,[rax+20]
+0x8D76EA6 vmovups [rsi],ymm0
+0x8D76EAA vmovups [rsi+20],ymm1
+0x8D76EAF mov rax,rsi
+0x8D76EB2 add rsp,20
+0x8D76EB6 pop rsi
+0x8D76EB7 vzeroupper
+0x8D76EBA ret
+
+===== DEEP 0x8DB8D40 (helper-consumer) size=625 sec=.impdata =====
+role=block-copy-consumer t98=False tA0=False t40=True v2B0=False block=True key=False factory=False outer=False alloc=False lookup=False
+  CALL_HELPER @0x8DB8D6B
+  callee 0x546D150 *** HELPER ***
+  callee 0xD530
+  callee 0x4E1DA50
+  callee 0x4D58680
+  callee 0x5014570
+  callee 0x296CC0
+  callee 0x44DD880
+  callee 0x2970D0
+  callee 0x49942B0
+  callee 0x42256B0
+  callee 0x450D890
+  callee 0x8DB8FC0
+--- head ---
+0x8DB8D40 push rsi
+0x8DB8D41 push rdi
+0x8DB8D42 push rbx
+0x8DB8D43 sub rsp,60
+0x8DB8D47 vmovaps [rsp+50],xmm7
+0x8DB8D4D vmovaps [rsp+40],xmm6
+0x8DB8D53 mov rdi,rdx
+0x8DB8D56 mov rsi,rcx
+0x8DB8D59 mov rax,[rip+14FA4A0]
+0x8DB8D60 xor rax,rsp
+0x8DB8D63 mov [rsp+38],rax
+0x8DB8D68 mov rcx,rdx
+0x8DB8D6B call 000000014546D150 *** HELPER ***
+0x8DB8D70 vmovaps xmm6,[rax+30]
+0x8DB8D75 call 000000014000D530
+0x8DB8D7A vxorps xmm7,xmm7,xmm7
+0x8DB8D7E vblendvps xmm0,xmm6,xmm7,xmm0
+0x8DB8D84 vmovaps [rsi],xmm0
+0x8DB8D88 vmovaps xmm6,[rdi+50]
+0x8DB8D8D call 000000014000D530
+0x8DB8D92 vblendvps xmm0,xmm6,xmm7,xmm0
+0x8DB8D98 vmovaps [rsi+10],xmm0
+0x8DB8D9D lea rbx,[rsp+20]
+0x8DB8DA2 mov rcx,rdi
+0x8DB8DA5 mov rdx,rbx
+0x8DB8DA8 call 0000000144E1DA50
+0x8DB8DAD vmovaps xmm0,[rbx]
+0x8DB8DB1 vmovaps [rsi+20],xmm0
+0x8DB8DB6 lea rbx,[rsp+20]
+0x8DB8DBB mov rcx,rdi
+0x8DB8DBE mov rdx,rbx
+0x8DB8DC1 call 0000000144D58680
+0x8DB8DC6 vmovaps xmm0,[rbx]
+0x8DB8DCA vmovaps [rsi+30],xmm0
+0x8DB8DCF mov rcx,[rsp+38]
+0x8DB8DD4 xor rcx,rsp
+0x8DB8DD7 call 0000000145014570
+0x8DB8DDC vmovaps xmm6,[rsp+40]
+0x8DB8DE2 vmovaps xmm7,[rsp+50]
+0x8DB8DE8 add rsp,60
+0x8DB8DEC pop rbx
+0x8DB8DED pop rdi
+0x8DB8DEE pop rsi
+0x8DB8DEF ret
+0x8DB8DF0 push r15
+
+===== DEEP 0x8DF6C60 (helper-consumer) size=195 sec=.impdata =====
+role=helper-consumer t98=False tA0=False t40=False v2B0=False block=True key=False factory=False outer=False alloc=False lookup=False
+  CALL_HELPER @0x8DF6C97
+  callee 0x546D150 *** HELPER ***
+  callee 0xD530
+--- head ---
+0x8DF6C60 push r14
+0x8DF6C62 push rsi
+0x8DF6C63 push rdi
+0x8DF6C64 push rbx
+0x8DF6C65 sub rsp,38
+0x8DF6C69 vmovaps [rsp+20],xmm6
+0x8DF6C6F mov rsi,r8
+0x8DF6C72 mov rdi,rdx
+0x8DF6C75 mov rax,[rcx+8]
+0x8DF6C79 mov rdx,[rcx+18]
+0x8DF6C7D mov rbx,[rax+3A0]
+0x8DF6C84 mov r14d,[rcx+90]
+0x8DF6C8B mov rax,[rdx+10]
+0x8DF6C8F mov rax,[rax+10]
+0x8DF6C93 mov rcx,[rax+18]
+0x8DF6C97 call 000000014546D150 *** HELPER ***
+0x8DF6C9C vmovaps xmm6,[rax+30]
+0x8DF6CA1 call 000000014000D530
+0x8DF6CA6 and r14,3FFF
+0x8DF6CAD je short 0000000148DF6CDB
+0x8DF6CAF vxorps xmm1,xmm1,xmm1
+0x8DF6CB3 vblendvps xmm1,xmm6,xmm1,xmm0
+0x8DF6CB9 vmovaps xmm0,[rdi]
+0x8DF6CBD vsubps xmm1,xmm1,[rsi]
+0x8DF6CC1 shl r14d,4
+0x8DF6CC5 xor ecx,ecx
+0x8DF6CC7 vmovss xmm2,dword ptr [rip+257D81]
+0x8DF6CCF vmovss xmm3,dword ptr [rip+9C0519]
+0x8DF6CD7 xor eax,eax
+0x8DF6CD9 jmp short 0000000148DF6CEA
+0x8DF6CDB xor eax,eax
+0x8DF6CDD jmp short 0000000148DF6D13
+0x8DF6CDF inc eax
+0x8DF6CE1 add rcx,10
+0x8DF6CE5 cmp r14,rcx
+0x8DF6CE8 je short 0000000148DF6D10
+0x8DF6CEA vaddps xmm4,xmm1,[rbx+rcx]
+0x8DF6CEF vmulps xmm4,xmm4,xmm0
+0x8DF6CF3 vhaddps xmm5,xmm4,xmm4
+0x8DF6CF7 vshufpd xmm4,xmm4,xmm4,1
+0x8DF6CFC vaddss xmm4,xmm5,xmm4
+0x8DF6D00 vucomiss xmm4,xmm2
+0x8DF6D04 ja short 0000000148DF6CDF
+0x8DF6D06 vucomiss xmm4,xmm3
+0x8DF6D0A jae short 0000000148DF6CE1
+
+===== POSSESSION SIGNAL CROSS =====
+decoded=32 v2B0=2 key=0 factory=0 outer=0 blockCopy=31 side98=9
+  SIGNAL 0x1D25E20 role=arm-neighbor-like v2B0=True key=False factory=False outer=False block=True
+  SIGNAL 0x2335140 role=neighbor-baseline v2B0=True key=False factory=False outer=False block=True
+  SIGNAL 0x2336560 role=thin-wrapper v2B0=False key=False factory=False outer=False block=True
+
+===== v0.6.23 SYNTHESIS (manual deep follow-up) =====
+TypeInfo base: LookupKey 0xB2898C8 == ti; size @ ti+0x20 = 0xB2898E8; ctor @ ti+0x50 = 0xB289918.
+LEA census: key=170 sizeFld=0 ctorFld=0 (size/ctor only written by InstallerA; no absolute readers).
+
+FACTORY KEY FEED: unsupported offline
+- 186 tight-factory caller records: keyTied=0 sizeImm=0 intersect(keyFunc,factoryCaller)=0
+- Key funcs with Lookup+Alloc but NO tight factory: 0x1B6AFF0, 0x26D28E0, 0x2F2C1A0 (alternate alloc paths)
+- Example factory caller 0x5D460: uses Lookup/factory with runtime TypeInfo from object fields — not RIP key 0xB2898C8
+
+POSSESSION-LIKE HELPERS:
+- 0x2336560 (58 B): thin wrapper; helper -> [rax+30] blend -> store [rsi]; position extract, not possession
+- 0x1D25E20: multi-helper spatial/matrix consumer (vmovups/vfmadd from helper return); transform LOD math, not input ownership
+- 0x2335140 neighbor: edx=3 arm [vt+0x2B0] then helper block-copy into +0x40.. (prior milestone)
+- Across 32 decoded helper funcs: 0 key-linked, 0 factory-linked; v2B0 only neighbor + 0x1D25E20 family signal
+- Possession/control of second Edward: NOT proven
+
