@@ -1,0 +1,48 @@
+{
+  "schemaVersion": 1,
+  "milestone": "v0.6.15",
+  "generatedUtc": "2026-11-12T18:20:00Z",
+  "exeSha256": "19920F34BB2FAC814023EE3C27F0CECA1872E80A2AAFB37C092C419FFF77CC0D",
+  "targets": [
+    {
+      "rva": "0x53F31A0",
+      "role": "gate-setter",
+      "stubs": ["0x7BB020"],
+      "armingHelper": "0x21085D0",
+      "edataSlot": "0x9490078",
+      "notes": [
+        "no direct E8/LEA/qword to entry",
+        "stub 0x7BB020 tests +0x61 bit1 then jmp 0x53F31A0; alt jmp 0xE95E80",
+        "arming 0x21085D0 requires +0x98==0, nested +0x18/+0xA8, bit1 clear; then vcall [vt+0x2B0] edx=2",
+        "vmp RVA32 hits are bounds noise"
+      ],
+      "hits": [
+        { "kind": "e9", "site": "0x7BB12D", "func": "0x7BB020", "sec": ".impdata", "note": "tail jmp to gate-setter" },
+        { "kind": "stubE8", "site": "0x21085FE", "func": "0x21085D0", "sec": ".impdata", "note": "stub=0x7BB020" },
+        { "kind": "armingQword", "site": "0x9490078", "func": "0x0", "sec": ".edata", "note": "slot=0x21085D0" },
+        { "kind": "rva32", "site": "0x1C6D80F8", "func": "0x0", "sec": ".vmp0", "note": "bounds?" },
+        { "kind": "rva32", "site": "0x1D7EB928", "func": "0x0", "sec": ".vmp4", "note": "bounds?" },
+        { "kind": "stubRva32", "site": "0x1D6C0F24", "func": "0x0", "sec": ".vmp4", "note": "stub=0x7BB020" }
+      ]
+    },
+    {
+      "rva": "0xF1C240",
+      "role": "bit-writer",
+      "stubs": ["0xF1C230", "0x210A9F0"],
+      "edataSlots": ["0x9303E30", "0x9303E38"],
+      "notes": [
+        "no direct E8/LEA to entry",
+        "0xF1C230: mov rcx,rdx; mov dl,1; jmp bit-writer",
+        "0x210A9F0: mov rcx,rdx; xor edx,edx; jmp bit-writer",
+        "adjacent .edata slots publish the thunk pair"
+      ],
+      "hits": [
+        { "kind": "e9", "site": "0xF1C235", "func": "0xF1C230", "sec": ".impdata", "note": "thunk bit=1" },
+        { "kind": "e9", "site": "0x210A9F5", "func": "0x210A9F0", "sec": ".impdata", "note": "thunk bit=0" },
+        { "kind": "stubQword", "site": "0x9303E38", "func": "0x0", "sec": ".edata", "note": "stub=0xF1C230" },
+        { "kind": "stubQword", "site": "0x9303E30", "func": "0x0", "sec": ".edata", "note": "stub=0x210A9F0" },
+        { "kind": "rva32", "site": "0x1D6D8534", "func": "0x0", "sec": ".vmp4", "note": "bounds?" }
+      ]
+    }
+  ]
+}
