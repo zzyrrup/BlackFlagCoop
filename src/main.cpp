@@ -1,6 +1,7 @@
 #include "game/player_probe.h"
 #include "game/player_telemetry.h"
 #include "game/runtime_diag.h"
+#include "game/second_edward.h"
 #include "logger.h"
 #include "network/network.h"
 #include "splash.h"
@@ -11,7 +12,7 @@
 
 namespace {
 
-constexpr const char* kPluginVersion = "0.5.1";
+constexpr const char* kPluginVersion = "0.8.0-dev";
 
 // 0 = not started, 1 = initialization in progress or finished.
 volatile LONG g_initializeOnce = 0;
@@ -49,7 +50,8 @@ extern "C" __declspec(dllexport) void InitializeASI() {
         std::to_string(static_cast<unsigned long long>(processId)));
     bfc::Logger::Info("Initialization timestamp " + timestamp);
     bfc::Logger::Info(
-        "Phase: v0.5.1 safe runtime diagnostics (no full-module scans at init)");
+        "Phase: v0.8.0-dev second Edward gate "
+        "(default off, no native spawn call, no session socket)");
 
     // Prepare Winsock foundation only. Do not open host/client sessions yet.
     if (bfc::Network::Initialize()) {
@@ -76,6 +78,10 @@ extern "C" __declspec(dllexport) void InitializeASI() {
         bfc::Logger::Info(
             "Coordinate reader: DISABLED (no verified Edward world-position source)");
     }
+
+    const bfc::SecondEdwardDecision secondEdward =
+        bfc::EvaluateSecondEdward(bfc::SecondEdwardGateFromEnvironment());
+    bfc::Logger::Info(bfc::FormatSecondEdwardDecision(secondEdward));
 
     if (bfc::StartSplashScreen()) {
         bfc::Logger::Info("Startup splash requested");

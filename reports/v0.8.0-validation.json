@@ -1,0 +1,40 @@
+{
+  "schemaVersion": 1,
+  "milestone": "v0.8.0",
+  "generatedUtc": "2026-11-12T19:50:00Z",
+  "nativeSpawnPathConfirmed": false,
+  "secondActorInstantiated": false,
+  "independentInputImplemented": false,
+  "missingLink": "No callsite builds SpawnNPCParams (registrar 0x80F23E0, hash 0x94D05600) or SpawnCharacterParams (0x80F2330, hash 0xFB7FF6A5) and creates a world entity. Registrars and 0x20-stride descriptor methods serialize or copy params.",
+  "candidateType": "SpawnNPCParams",
+  "gate": "BFC_SECOND_EDWARD",
+  "gateDefault": "off",
+  "nativeSpawnCallable": false,
+  "build": {
+    "generator": "Visual Studio 18 2026",
+    "architecture": "x64",
+    "config": "Release",
+    "result": "pass",
+    "compiler": "MSVC 19.52.37029.0"
+  },
+  "tests": [
+    {"name": "BlackFlagCoopSecondEdwardTest", "result": "pass", "summary": "ALL PASS"},
+    {"name": "ctest SecondEdward", "result": "pass"}
+  ],
+  "candidateAsi": {
+    "version": "0.8.0-dev",
+    "path": "build/bin/Release/BlackFlagCoop.asi",
+    "bytes": 102400,
+    "sha256": "570F0F91A4B2D4A0B37093FF55BBA601BCC3C296603FE99EF4CD780EC38040B8",
+    "deployed": false
+  },
+  "installedAsi": {
+    "version": "0.5.1",
+    "path": "C:\\Games\\AC Black Flag Resynced\\BlackFlagCoop.asi",
+    "bytes": 99840,
+    "sha256": "63B38877DDA7CC7CD9AB2619F94D3941C37F54C95A435EFE47084DC4CF2A50BE",
+    "replaced": false
+  },
+  "gameLaunch": "not_run",
+  "pc2": "untouched"
+}

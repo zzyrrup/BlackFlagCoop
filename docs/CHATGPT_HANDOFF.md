@@ -3,7 +3,7 @@
 **Last updated:** 2026-11-12  
 **Machine:** PC1 only  
 **Repo:** https://github.com/zzyrrup/BlackFlagCoop  
-**Branch:** `cursor/v085-vt-owner-ctors-8285` (PR into `cursor/v084-ctor-reverse-8285`; do not push main)  
+**Branch:** `cursor/v080-second-edward-4d8f` (PR into `cursor/v085-vt-owner-ctors-8285`; do not push main)  
 **Initial commit:** `e12e70150656ac80742f10b496f7e5556e7985b7`
 
 This document is the primary human-readable bridge between Cursor (local execution) and ChatGPT (review / next instructions). Update it after every completed milestone.
@@ -25,9 +25,9 @@ Ultimate vision is **not claimed as achieved**. Dual-Edward co-op remains unprov
 
 ## 2. Current development milestone
 
-**v0.6.25 complete** — Owner VT[0] ctors mapped (`0x13612B0` / `0x5781490`); 0 E8 callers (table-dispatched); spatial/neigh ctors init shared `+0x98` enrollment field.
+**v0.8.0 in review** — Spawn-parameter types identified (`SpawnNPCParams` registrar `0x80F23E0`). They serialize/copy params. No world-create callsite, so the candidate ASI refuses to spawn. Gate `BFC_SECOND_EDWARD` defaults off.
 
-Prior: v0.6.5–v0.6.24 preserved. Offline only. No ASI, spawn, or networking change.
+Prior: v0.6.25 complete on `cursor/v085-vt-owner-ctors-8285`. v0.6.5–v0.6.24 preserved. No deploy, no gameplay test, no networking change.
 
 ---
 
@@ -35,8 +35,9 @@ Prior: v0.6.5–v0.6.24 preserved. Offline only. No ASI, spawn, or networking ch
 
 | Item | Value |
 |------|--------|
-| Working in-game ASI | **v0.5.1** |
+| Working in-game ASI | **v0.5.1** (still installed; verified this milestone) |
 | ASI SHA256 | `63B38877DDA7CC7CD9AB2619F94D3941C37F54C95A435EFE47084DC4CF2A50BE` |
+| Candidate ASI | **v0.8.0-dev**, not deployed. SHA256 `570F0F91A4B2D4A0B37093FF55BBA601BCC3C296603FE99EF4CD780EC38040B8` (102,400 bytes) |
 | Deploy status | **Do not replace** without explicit user approval |
 
 ---
@@ -107,6 +108,7 @@ High-signal offline findings (see `docs/v0.6.*` and `reports/v0.6.*`):
 - **v0.6.23:** Tight-factory callers do **not** LEA key/`0x20F0` (186 records, 0 hits). Helper deep-decode: `0x2336560` position extract; `0x1D25E20` spatial math — not possession. Still no Edward/create path.
 - **v0.6.24:** Outer `0x59D9660` = InstallerA TypeInfo registration only (0 E8). Neighbor/Spatial = `.edata` methods; owner vtables `0x976B2D0`/`0x9236E00`. Still no Edward/create path.
 - **v0.6.25:** Owner VT[0] ctors `0x13612B0`/`0x5781490` (0 E8); spat/neigh ctors init `+0x98` (enrollment side-block field). Still no Edward/create path.
+- **v0.8.0:** Spawn-parameter registrars confirmed (`SpawnNPCParams` `0x80F23E0` hash `0x94D05600`, `SpawnPlayerParams` `0x80F2A20` hash `0x51BA3541`, `SpawnCharacterParams` `0x80F2330` hash `0xFB7FF6A5`). Descriptor stride `0x20`; slot +0 is `ret` `0x53741F0`; +0x10 is a field visitor; +0x18 is a params copy. **No** create/apply callsite. Candidate gate refuses the call.
 
 ---
 
@@ -169,6 +171,8 @@ High-signal offline findings (see `docs/v0.6.*` and `reports/v0.6.*`):
 - Lookup+Alloc cands `0x1B6AFF0`/`0x26D28E0`/`0x2F2C1A0` are **not** on the Outer reverse path.
 - Neighbor/Spatial are **vtable methods** (`.edata 0x976B3E0` / `0x9236E58`); owner table bases `0x976B2D0` (+0x110) / `0x9236E00` (+0x58); installers `0x13612B0` / `0x5563CF0`/`0x6CF34A0` (spatial inits `+0x98`).
 - Owner **VT[0]** ctors: neigh `0x13612B0`, spat `0x5781490` (+ family `0x3D522C0`/`0x5563CF0`/`0x6CF34A0`/`0x6CF3750`); **0 E8** callers; spat/neigh ctors init shared **`+0x98`** field (enrollment side-block offset).
+- Spawn-parameter registrars and hashes listed in `docs/v0.8.0-second-edward-plan.md`. Player/NPC/first-person/boat registrars have **0** direct `E8` callers. `SpawnCharacterParams` is called only by those derived registrars.
+- Descriptor record stride **`0x20`**. Shared `+0` slot `0x53741F0` is `ret`. NPC `+0x18` `0x5E3DB0` and player `+0x18` `0x21F5950` copy a params object via `0x43DCB00`. They are not a world spawn.
 - Input lead `0x187F0550` is action-name bind, not a movement controller.
 - No verified shared entity/ownership edge between input bind path and deferred handler.
 - No Edward, character, archetype, player, or transform string in either worker or the producer wrapper.
@@ -203,43 +207,47 @@ High-signal offline findings (see `docs/v0.6.*` and `reports/v0.6.*`):
 
 ## 9. Current blockers
 
-- No confirmed character/Edward factory or archetype reuse path. Queue only enqueues/activates existing objects.
-- Who Allocates then invokes owner VT[0] ctors still open; side-block attach→arming on same instances unproven.
+- No confirmed character/Edward **create/apply** callsite. Spawn-parameter types are serializers and copies. The deferred queue still only updates existing objects.
+- Missing link: who fills `SpawnNPCParams` (`0x80F23E0` / hash `0x94D05600`) or `SpawnCharacterParams` and passes it to a world/entity create. Next xrefs: `0x5E3DB0`, `0x21F5950`, hashes `0x94D05600` and `0x51BA3541` outside the registrars.
+- Who Allocates then invokes owner VT[0] ctors still open; that LOD chain is not the character factory.
 - No verified input→character ownership/control binding.
-- No safe authorized spawn/possession test design yet.
+- No in-game second-Edward test in this milestone. The candidate refuses the call even when `BFC_SECOND_EDWARD=1`.
 - GitHub handoff must stay free of ASI/game binaries.
 
 ---
 
 ## 10. Most recent completed milestone
 
-**v0.6.25 — Owner VT constructors + enrollment +0x98 link**
+**v0.8.0 — Second Edward proof-of-life (gate refuses; factory callsite still missing)**
 
 Deliverables:
 
-- `docs/v0.6.25-vt-owner-ctors.md`
-- `reports/v0.6.25-funcs-deep.json`
-- `reports/v0.6.25-summary.json`
-- `reports/v0.6.25-second-edward-feasibility.json`
-- `reports/v085-raw/evidence.txt`
-- `tools/offline/VtOwner085/`
+- `docs/v0.8.0-second-edward-plan.md`
+- `docs/v0.8.0-manual-pc1-checklist.md`
+- `src/game/second_edward.cpp` / `second_edward.h`
+- `tools/second_edward_test/main.cpp`
+- `tools/offline/SpawnPath080/`
+- `reports/v0.8.0-spawn-*.json`
+- `reports/v0.8.0-validation.json`
 
-v0.6.4–v0.6.24 reports were left in place.
+v0.6.25 and earlier reports were left in place. Installed ASI was not replaced.
 
 ---
 
 ## 11. Next recommended milestone
 
-**v0.6.26 (proposed):** Offline find who Allocates then invokes owner **VT[0]** ctors (`0x13612B0` / `0x5781490`); prove `0xE95E80` side-block attach + arming on those same instances. Still no spawn, deploy, live memory, or PC2 unless separately authorized.
+**v0.8.1 (proposed):** Offline xref of NPC copy `0x5E3DB0`, player copy `0x21F5950`, and hashes `0x94D05600` / `0x51BA3541` outside the registrars, to find the function that applies a spawn-params object to the world. Still no speculative call, deploy, live memory, or PC2 unless separately authorized. Do not return to the deferred-queue chain for this question.
 
 ---
 
 ## 12. Files changed in the latest milestone
 
-- `docs/v0.6.25-vt-owner-ctors.md`
-- `reports/v0.6.25-*.json`
-- `reports/v085-raw/evidence.txt`
-- `tools/offline/VtOwner085/`
+- `docs/v0.8.0-second-edward-plan.md`
+- `docs/v0.8.0-manual-pc1-checklist.md`
+- `src/game/second_edward.cpp`, `src/game/second_edward.h`, `src/main.cpp`, `CMakeLists.txt`
+- `tools/second_edward_test/main.cpp`
+- `tools/offline/SpawnPath080/`
+- `reports/v0.8.0-*.json`
 - `docs/CHATGPT_HANDOFF.md`
 - `reports/CHATGPT_HANDOFF.json`
 
@@ -270,6 +278,10 @@ v0.6.4–v0.6.24 reports were left in place.
 | Offline factory-feed/possession v0.6.23 (`FactoryFeed083`) | Pass; 0 key-tied factory callers; helpers = transform/position |
 | Offline ctor-reverse/ownership v0.6.24 (`CtorReverse084`) | Pass; Outer=InstallerA LEA only; vtable owners mapped |
 | Offline VT owner ctors v0.6.25 (`VtOwner085`) | Pass; VT[0] ctors; +0x98 enrollment link |
+| Offline spawn-param scan v0.8.0 (`SpawnPath080`) | Pass; serializers found; create callsite absent |
+| `BlackFlagCoopSecondEdwardTest` / ctest `SecondEdward` | Pass (35 checks, ALL PASS) |
+| VS 18 2026 x64 Release `BlackFlagCoop.asi` | Pass; SHA256 `570F0F91A4B2D4A0B37093FF55BBA601BCC3C296603FE99EF4CD780EC38040B8` |
+| Installed ASI still v0.5.1 | Pass; `63B38877DDA7CC7CD9AB2619F94D3941C37F54C95A435EFE47084DC4CF2A50BE` |
 | Subject MSVC RTTI name | **Not found** (game types RTTI-stripped) |
 | Game launch / ASI deploy | **Not performed** |
 | Spawn / inject / live memory | **Not performed** |
@@ -295,6 +307,6 @@ When reviewing the GitHub repository after a Cursor push:
 2. Diff against the previous handoff `milestoneId` / commit.
 3. Treat only **confirmed** items as facts; keep hypotheses labeled.
 4. Propose the **next single milestone** with: objective, in-scope RVAs/files, out-of-scope (spawn/deploy/PC2), required deliverables paths, and acceptance checks.
-5. Prefer **v0.6.26**: who Allocates then invokes owner VT[0] ctors; prove `0xE95E80` + arming on same instances. Do not expect E8 to Outer/owner VT[0] ctors; do not treat helper position extract as possession; do not treat loose fullPattern as proven; do not treat field-offset `0x20F0` as heap size; avoid `+0x61`-only ranking; do not conflate wrap modes with the enrollment gate; do not rely on MSVC RTTI for game types.
+5. Prefer **v0.8.1**: xref `0x5E3DB0`, `0x21F5950`, and hashes `0x94D05600` / `0x51BA3541` outside the spawn-param registrars. Do not treat those registrars, the `0x20`-stride copy helpers, or the deferred queue as the character factory. Do not call an RVA until the create/apply arguments are confirmed.
 6. Do not instruct Cursor to deploy ASI, spawn, use live memory, or touch PC2/save data unless the user explicitly overrides safety.
 7. Return instructions Cursor can execute verbatim on PC1 on a dedicated branch + PR (never push main).
