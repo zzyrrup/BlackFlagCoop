@@ -7,10 +7,10 @@
   "repository": {
     "url": "https://github.com/zzyrrup/BlackFlagCoop",
     "defaultBranch": "main",
-    "latestCommit": "441bd675a18b0db3255eb69c26fd86ec2cae2dc5",
+    "latestCommit": "6cdae9fe64b80077c7228558b71c4d41b4cb42a2",
     "initialCommit": "e12e70150656ac80742f10b496f7e5556e7985b7",
-    "tracking": "cursor/v065-deferred-queue-worker-007d",
-    "note": "latestCommit is updated to this milestone commit after it is created. Do not push this branch to main directly."
+    "branch": "cursor/v065-deferred-queue-worker-007d",
+    "base": "main"
   },
   "project": {
     "name": "BlackFlagCoop",
