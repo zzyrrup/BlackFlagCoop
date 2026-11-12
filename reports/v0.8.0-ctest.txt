@@ -1,0 +1,2 @@
+Internal ctest changing into directory: /tmp/bfc-vs-build
+Failed to change working directory to "/tmp/bfc-vs-build" : No such file or directory

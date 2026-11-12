@@ -1,0 +1,50 @@
+[
+  {
+    "ref": "origin/main",
+    "commit": "441bd675a18b0db3255eb69c26fd86ec2cae2dc5",
+    "projectVersion": "0.5.1",
+    "pluginVersion": "0.5.1",
+    "ctestNames": [],
+    "note": "Baseline this branch started from. No enable_testing()."
+  },
+  {
+    "ref": "origin/cursor/v070-session-panel-ba61",
+    "commit": "611f186476e9e51a2a3d63cb81ede00d44b1f184",
+    "projectVersion": "0.7.0",
+    "pluginVersion": "bfc::kSessionPanelVersion",
+    "ctestNames": ["SessionPanel"],
+    "note": "PR #6. NetTest self-test modes are not registered. Not edited."
+  },
+  {
+    "ref": "origin/cursor/v070-pc1-smoke-5709",
+    "commit": "078fabc6e4e0871be55d1d374d338b30b90f4dd9",
+    "projectVersion": "0.7.0",
+    "pluginVersion": "bfc::kSessionPanelVersion",
+    "ctestNames": ["SessionPanel"],
+    "note": "PR #27. Preserved exactly. Not edited."
+  },
+  {
+    "ref": "origin/cursor/v080-second-edward-4d8f",
+    "commit": "b570413711ed23857c00b5e4ee4d08ff705c0a0e",
+    "projectVersion": "0.8.0",
+    "pluginVersion": "0.8.0-dev",
+    "ctestNames": ["SecondEdward"],
+    "note": "PR #28. NetTest self-test modes are not registered. Not edited."
+  },
+  {
+    "ref": "origin/cursor/v080-spawn-callers-a9fe",
+    "commit": "61510e39593c06488c1a741a1e909755e90b3790",
+    "projectVersion": "0.8.0",
+    "pluginVersion": "0.8.0-dev",
+    "ctestNames": ["SpawnContract", "PuppetLifecycle", "BuilderPath"],
+    "note": "PR #29. NetTest self-test modes are not registered. Not edited."
+  },
+  {
+    "ref": "origin/cursor/v086-alloc-vt0-8285",
+    "commit": "dae256e62cbd5087d1bfbad737a40cfe1033c909",
+    "projectVersion": "0.5.1",
+    "pluginVersion": "0.5.1",
+    "ctestNames": [],
+    "note": "PR #30 research tip. CMake still matches the v0.5.1 tree. No CTest. Not edited."
+  }
+]

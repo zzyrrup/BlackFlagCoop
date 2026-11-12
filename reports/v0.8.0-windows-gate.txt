@@ -1,0 +1,11 @@
+-- The CXX compiler identification is GNU 13.3.0
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /usr/bin/g++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+CMake Error at CMakeLists.txt:10 (message):
+  BlackFlagCoop only supports Windows.
+
+
+-- Configuring incomplete, errors occurred!

@@ -131,3 +131,8 @@ if(MSVC)
         /EHsc
     )
 endif()
+
+# Workstream 9 owns cmake/bfc_offline_tests.cmake. Specialist branches that
+# forked this file should include that module themselves; do not replace their
+# CMakeLists.txt with this copy.
+include(${CMAKE_CURRENT_SOURCE_DIR}/cmake/bfc_offline_tests.cmake)
