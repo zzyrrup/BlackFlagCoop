@@ -1,0 +1,660 @@
+===== v0.6.8 SUBJECT CTOR / LOD SIBLING =====
+exeSha256=19920F34BB2FAC814023EE3C27F0CECA1872E80A2AAFB37C092C419FFF77CC0D
+imageBase=0x140000000
+
+===== DECODE LOD SIBLING 0x67BDB30 =====
+entry=0x67BDB30 end=0x67BDB50 size=32 sec=.impdata prologue=48 8B 49 08 48 8B 52 08 45 31 C0 48 39 D1 B8 00
+roleHypothesis=comparator: load [rcx+8]/[rdx+8], return 0 if equal else +/-1
+  0x67BDB30 mov rcx,[rcx+8]
+  0x67BDB34 mov rdx,[rdx+8]
+  0x67BDB38 xor r8d,r8d
+  0x67BDB3B cmp rcx,rdx
+  0x67BDB3E mov eax,0
+  0x67BDB43 sbb eax,eax
+  0x67BDB45 or eax,1
+  0x67BDB48 cmp rcx,rdx
+  0x67BDB4B cmove eax,r8d
+  0x67BDB4F ret
+directCallees(comparator)=(none)
+--- adjacent function 0x67BDB50 (NOT the LOD bundle entry) ---
+func 0x67BDB50 end=0x67BDBDC size=140 sec=.impdata prologue=41 56 56 57 53 48 83 EC 38 4C 89 C3
+  0x67BDB50 push r14
+  0x67BDB52 push rsi
+  0x67BDB53 push rdi
+  0x67BDB54 push rbx
+  0x67BDB55 sub rsp,38
+  0x67BDB59 mov rbx,r8
+  0x67BDB5C mov rsi,rdx
+  0x67BDB5F mov rdi,rcx
+  0x67BDB62 mov rax,[rip+3AF5697]
+  0x67BDB69 xor rax,rsp
+  0x67BDB6C mov [rsp+30],rax
+  0x67BDB71 lea r8,[rsp+28]
+  0x67BDB76 mov qword ptr [r8],0
+  0x67BDB7D lea r14,[rsp+24]
+  0x67BDB82 mov rcx,r9
+  0x67BDB85 mov rdx,r14
+  0x67BDB88 call 00000001447CC9B0
+  0x67BDB8D mov eax,[r14]
+  0x67BDB90 test eax,eax
+  0x67BDB92 js short 00000001467BDBA1
+  0x67BDB94 lea rdx,[rsp+28]
+  0x67BDB99 mov rcx,rbx
+  0x67BDB9C call qword ptr [rdi+10]
+  0x67BDB9F xor eax,eax
+  0x67BDBA1 mov [rsi],eax
+  0x67BDBA3 mov rax,[rsp+28]
+  0x67BDBA8 test rax,rax
+  0x67BDBAB je short 00000001467BDBC2
+  0x67BDBAD lock dec dword ptr [rax+8]
+  0x67BDBB1 jne short 00000001467BDBC2
+  0x67BDBB3 mov rcx,[rsp+28]
+  0x67BDBB8 test rcx,rcx
+  0x67BDBBB je short 00000001467BDBC2
+  0x67BDBBD call 0000000144DF2B90
+  0x67BDBC2 mov rcx,[rsp+30]
+  0x67BDBC7 xor rcx,rsp
+  0x67BDBCA call 0000000145014570
+  0x67BDBCF mov rax,rsi
+  0x67BDBD2 add rsp,38
+  0x67BDBD6 pop rbx
+  0x67BDBD7 pop rdi
+  0x67BDBD8 pop rsi
+  0x67BDBD9 pop r14
+  0x67BDBDB ret
+--- adjacent-callee 0x47CC9B0 ---
+func 0x47CC9B0 end=0x47CCAB2 size=258 sec=.impdata prologue=41 56 56 57 53 48 83 EC 38 48 89 D6
+  0x47CC9B0 push r14
+  0x47CC9B2 push rsi
+  0x47CC9B3 push rdi
+  0x47CC9B4 push rbx
+  0x47CC9B5 sub rsp,38
+  0x47CC9B9 mov rsi,rdx
+  0x47CC9BC mov rax,[rip+5AE683D]
+  0x47CC9C3 xor rax,rsp
+  0x47CC9C6 mov [rsp+30],rax
+  0x47CC9CB movzx eax,byte ptr [rcx+14]
+  0x47CC9CF cmp eax,4
+  0x47CC9D2 jne near ptr 00000001447CCAFF
+  0x47CC9D8 xor r14d,r14d
+  0x47CC9DB cmp rcx,r8
+  0x47CC9DE je short 00000001447CCA02
+  0x47CC9E0 mov rdi,[r8]
+  0x47CC9E3 mov rax,[rcx]
+  0x47CC9E6 cmp rdi,rax
+  0x47CC9E9 je short 00000001447CCA02
+  0x47CC9EB xor r14d,r14d
+  0x47CC9EE test rax,rax
+  0x47CC9F1 je short 00000001447CCA27
+  0x47CC9F3 lock inc dword ptr [rax+8]
+  0x47CC9F7 mov rax,[rcx]
+  0x47CC9FA mov [r8],rax
+  0x47CC9FD test rdi,rdi
+  0x47CCA00 jne short 00000001447CCA1F
+  0x47CCA02 mov [rsi],r14d
+  0x47CCA05 mov rcx,[rsp+30]
+  0x47CCA0A xor rcx,rsp
+  0x47CCA0D call 0000000145014570
+  0x47CCA12 mov rax,rsi
+  0x47CCA15 add rsp,38
+  0x47CCA19 pop rbx
+  0x47CCA1A pop rdi
+  0x47CCA1B pop rsi
+  0x47CCA1C pop r14
+  0x47CCA1E ret
+  0x47CCA1F lock dec dword ptr [rdi+8]
+  0x47CCA23 jne short 00000001447CCA02
+  0x47CCA25 jmp short 00000001447CCA2B
+  0x47CCA27 xor eax,eax
+  0x47CCA29 jmp short 00000001447CC9FA
+  0x47CCA2B mov rax,[rip+679ACD6]
+  0x47CCA32 mov rcx,rdi
+  0x47CCA35 shr rcx,1C
+  0x47CCA39 mov rdx,7FFFFFFF8
+  0x47CCA43 and rdx,rcx
+  str func0x47CC9B0 0x47CCA92 "Invalid pointer not allocated by our allocators or already freed: 0x%p"
+--- adjacent-callee 0x4DF2B90 ---
+func 0x4DF2B90 end=0x4DF2C92 size=258 sec=.impdata prologue=56 57 53 48 83 EC 40 48 8B 05 62 06
+  0x4DF2B90 push rsi
+  0x4DF2B91 push rdi
+  0x4DF2B92 push rbx
+  0x4DF2B93 sub rsp,40
+  0x4DF2B97 mov rax,[rip+54C0662]
+  0x4DF2B9E xor rax,rsp
+  0x4DF2BA1 mov [rsp+38],rax
+  0x4DF2BA6 test rcx,rcx
+  0x4DF2BA9 je near ptr 0000000144DF2CAE
+  0x4DF2BAF mov rsi,rcx
+  0x4DF2BB2 mov rax,[rip+6174B4F]
+  0x4DF2BB9 shr rcx,1C
+  0x4DF2BBD mov rdx,7FFFFFFF8
+  0x4DF2BC7 and rdx,rcx
+  0x4DF2BCA mov rax,[rax+rdx]
+  0x4DF2BCE test rax,rax
+  0x4DF2BD1 je near ptr 0000000144DF2CA2
+  0x4DF2BD7 mov ecx,esi
+  0x4DF2BD9 shr ecx,0F
+  0x4DF2BDC and ecx,0FFFE
+  0x4DF2BE2 movzx eax,byte ptr [rax+rcx]
+  0x4DF2BE6 cmp al,0FF
+  0x4DF2BE8 jne short 0000000144DF2BF8
+  0x4DF2BEA mov edi,[rip+6175324]
+  0x4DF2BF0 cmp dil,0FF
+  0x4DF2BF4 jne short 0000000144DF2C48
+  0x4DF2BF6 jmp short 0000000144DF2C01
+  0x4DF2BF8 movzx edi,al
+  0x4DF2BFB cmp dil,0FF
+  0x4DF2BFF jne short 0000000144DF2C48
+  0x4DF2C01 lock inc dword ptr [rip+6146530]
+  0x4DF2C08 lea rax,[rip+614632A]
+  0x4DF2C0F mov [rsp+28],rax
+  0x4DF2C14 mov dword ptr [rsp+30],100
+  0x4DF2C1C lea rdx,[rip+53D06B1]
+  0x4DF2C23 lea rcx,[rsp+28]
+  0x4DF2C28 mov r8,rsi
+  0x4DF2C2B mov r9d,0FF
+  0x4DF2C31 call 000000014000E6E0
+  0x4DF2C36 mov dword ptr [2],0
+  0x4DF2C41 lock dec dword ptr [rip+61464F0]
+  0x4DF2C48 movzx eax,dil
+  0x4DF2C4C lea rcx,[rip+6174A5D]
+  0x4DF2C53 mov rdi,[rcx+rax*8+60]
+  0x4DF2C58 mov rax,[rdi]
+  0x4DF2C5B mov rcx,rdi
+  0x4DF2C5E mov rdx,rsi
+  0x4DF2C61 xor r8d,r8d
+  str func0x4DF2B90 0x4DF2C1C "Invalid pointer not allocated by our allocators or already freed: 0x%p"
+--- adjacent-callee 0x5014570 ---
+func 0x5014570 end=0x501458E size=30 sec=.impdata prologue=48 3B 0D 89 EC 29 05 75 10 48 C1 C1
+  0x5014570 cmp rcx,[rip+529EC89]
+  0x5014577 jne short 0000000145014589
+  0x5014579 rol rcx,10
+  0x501457D test cx,0FFFF
+  0x5014582 jne short 0000000145014585
+  0x5014584 ret
+  0x5014585 ror rcx,10
+  0x5014589 jmp near ptr 0000000145049D0C
+
+===== DECODE LOD TAIL 0x1A5A00 (bundle +0xE30) =====
+func 0x1A5A00 end=0x1A5A0A size=10 sec=.impdata prologue=48 89 C8 48 89 D1 48 FF 60 08 CC CC
+  0x1A5A00 mov rax,rcx
+  0x1A5A03 mov rcx,rdx
+  0x1A5A06 jmp qword ptr [rax+8]
+
+===== XREFS TO 0x67BDB30 =====
+lodSibling E8=0 LEA=40 QWORD=0 RVA32=0
+  lea 0x792F2 sec=.impdata func≈0x78FD0
+  lea 0x792F3 sec=.impdata func≈0x78FD0
+  lea 0xA99A0 sec=.impdata func≈0xA9560
+  lea 0xA99A1 sec=.impdata func≈0xA9560
+  lea 0xAE4F5 sec=.impdata func≈0xAE3F0
+  lea 0xAE4F6 sec=.impdata func≈0xAE3F0
+  lea 0xAFB23 sec=.impdata func≈0xAFAC0
+  lea 0xAFB24 sec=.impdata func≈0xAFAC0
+  lea 0xB8C87 sec=.impdata func≈0xB80C0
+  lea 0xB8C88 sec=.impdata func≈0xB80C0
+  lea 0xCAE8A sec=.impdata func≈0xC9B60
+  lea 0xCAE8B sec=.impdata func≈0xC9B60
+  lea 0xFE768 sec=.impdata func≈0xFE700
+  lea 0xFE769 sec=.impdata func≈0xFE700
+  lea 0x122FE1 sec=.impdata func≈0x122A80
+  lea 0x122FE2 sec=.impdata func≈0x122A80
+  lea 0x1B2871 sec=.impdata func≈0x1B2790
+  lea 0x1B2872 sec=.impdata func≈0x1B2790
+  lea 0x1B28C8 sec=.impdata func≈0x1B2790
+  lea 0x1B28C9 sec=.impdata func≈0x1B2790
+  lea 0x25222C sec=.impdata func≈0x252190
+  lea 0x25222D sec=.impdata func≈0x252190
+  lea 0x288885 sec=.impdata func≈0x288650
+  lea 0x288886 sec=.impdata func≈0x288650
+  lea 0x306C91 sec=.impdata func≈0x306A00
+  lea 0x306C92 sec=.impdata func≈0x306A00
+  lea 0x317E1A sec=.impdata func≈0x317DC0
+  lea 0x317E1B sec=.impdata func≈0x317DC0
+  lea 0x33863E sec=.impdata func≈0x338470
+  lea 0x33863F sec=.impdata func≈0x338470
+  lea 0x36F1B3 sec=.impdata func≈0x36F0B0
+  lea 0x36F1B4 sec=.impdata func≈0x36F0B0
+  lea 0x36F2B3 sec=.impdata func≈0x36F0B0
+  lea 0x36F2B4 sec=.impdata func≈0x36F0B0
+  lea 0x38C4C8 sec=.impdata func≈0x38BF10
+  lea 0x38C4C9 sec=.impdata func≈0x38BF10
+  lea 0x38C519 sec=.impdata func≈0x38BF10
+  lea 0x38C51A sec=.impdata func≈0x38BF10
+  lea 0x39E4D2 sec=.impdata func≈0x39E340
+  lea 0x39E4D3 sec=.impdata func≈0x39E340
+
+===== FINGERPRINT FIELD USE (+0x61 / +0x98 / +0x3CD0) =====
+dispSeedSites=20001
+candidateFuncs=128 with+61=33 with+98=31 with+3CD0=67
+
+===== NESTED CHAIN +0x18 -> +0xA8 -> +0x3CD0 =====
+disp3CD0Seeds=400
+  chain @0xB162D func≈0xB12D0 seed3CD0=0xB1697
+  chain @0xF2263 func≈0xF2090 seed3CD0=0xF2236
+  chain @0x2296F7 func≈0x2295E0 seed3CD0=0x2296E0
+  chain @0x22CDBD func≈0x22CC70 seed3CD0=0x22CDA6
+  chain @0x30796D func≈0x307870 seed3CD0=0x30791E
+  chain @0x36EC84 func≈0x36EA70 seed3CD0=0x36EC96
+  chain @0x388EF1 func≈0x388ED0 seed3CD0=0x388F33
+  chain @0x400B97 func≈0x400B50 seed3CD0=0x400B80
+  chain @0x444728 func≈0x4444C0 seed3CD0=0x44476D
+  chain @0x4F4116 func≈0x4F3FA0 seed3CD0=0x4F40E2
+  chain @0x6A2F67 func≈0x6A2DA0 seed3CD0=0x6A2F50
+  chain @0x6A364C func≈0x6A32C0 seed3CD0=0x6A3682
+  chain @0x6A3802 func≈0x6A32C0 seed3CD0=0x6A37E3
+  chain @0x6B51CE func≈0x6B5140 seed3CD0=0x6B51B7
+  chain @0x70F760 func≈0x70F5E0 seed3CD0=0x70F740
+  chain @0x725433 func≈0x725400 seed3CD0=0x725440
+  chain @0x72557C func≈0x725400 seed3CD0=0x7255DB
+  chain @0x73FFED func≈0x73FFA0 seed3CD0=0x73FFFB
+  chain @0x74FF0D func≈0x74FEA0 seed3CD0=0x74FF1A
+  chain @0x803078 func≈0x802F90 seed3CD0=0x803085
+  chain @0x84BE0D func≈0x84BA30 seed3CD0=0x84BE7A
+  chain @0x89F5BF func≈0x89F5A0 seed3CD0=0x89F5E2
+  chain @0x91C965 func≈0x91C940 seed3CD0=0x91C98D
+  chain @0x9A4DF4 func≈0x9A4CD0 seed3CD0=0x9A4DB8
+  chain @0x9A5003 func≈0x9A4CD0 seed3CD0=0x9A4FC7
+  chain @0x9A5877 func≈0x9A5800 seed3CD0=0x9A583C
+  chain @0xA074B9 func≈0xA07490 seed3CD0=0xA074C6
+  chain @0xA08DD5 func≈0xA08D80 seed3CD0=0xA08DA8
+  chain @0xA18B55 func≈0xA188B0 seed3CD0=0xA18B3E
+  chain @0xA1F123 func≈0xA1F0C0 seed3CD0=0xA1F0F0
+  chain @0xA50EE7 func≈0xA50DB0 seed3CD0=0xA50ED3
+  chain @0xA514BF func≈0xA510B0 seed3CD0=0xA514AB
+  chain @0xA51830 func≈0xA510B0 seed3CD0=0xA5181C
+  chain @0xA61E23 func≈0xA61DD0 seed3CD0=0xA61E31
+  chain @0xAE1CF0 func≈0xAE19B0 seed3CD0=0xAE1CCB
+  chain @0xAE65C0 func≈0xAE6350 seed3CD0=0xAE6614
+  chain @0xB34F3C func≈0xB34F20 seed3CD0=0xB34F88
+  chain @0xB452F5 func≈0xB45270 seed3CD0=0xB452C6
+  chain @0xB454FA func≈0xB45270 seed3CD0=0xB454CE
+  chain @0xBF3F2C func≈0xBF3EA0 seed3CD0=0xBF3F42
+  chain @0xBF3F9F func≈0xBF3EA0 seed3CD0=0xBF4000
+  chain @0xC04BED func≈0xC04580 seed3CD0=0xC04BC3
+  chain @0xC096FB func≈0xC096B0 seed3CD0=0xC096E2
+  chain @0xC9611E func≈0xC96100 seed3CD0=0xC96178
+  chain @0xCA67B8 func≈0xCA6620 seed3CD0=0xCA679E
+  chain @0xD03B6C func≈0xD03B20 seed3CD0=0xD03B79
+  chain @0xD227F7 func≈0xD22740 seed3CD0=0xD22804
+  chain @0xD7B980 func≈0xD7B900 seed3CD0=0xD7B954
+  chain @0xD87E02 func≈0xD87C40 seed3CD0=0xD87DEE
+  chain @0xDB0FA7 func≈0xDB0EE0 seed3CD0=0xDB0F94
+  chain @0xDB679B func≈0xDB6420 seed3CD0=0xDB67E3
+  chain @0xDC0798 func≈0xDC0740 seed3CD0=0xDC0781
+  chain @0xDC5713 func≈0xDC56D0 seed3CD0=0xDC56FC
+  chain @0xDDBD11 func≈0xDDBCF0 seed3CD0=0xDDBD46
+  chain @0xDDFE9D func≈0xDDFE30 seed3CD0=0xDDFE83
+  chain @0xDE3ABC func≈0xDE3990 seed3CD0=0xDE3A9F
+  chain @0xDE5741 func≈0xDE5720 seed3CD0=0xDE57A9
+  chain @0xDE5B4D func≈0xDE5B00 seed3CD0=0xDE5B36
+  chain @0xDE6803 func≈0xDE67A0 seed3CD0=0xDE67EC
+  chain @0xDE7F37 func≈0xDE7F30 seed3CD0=0xDE7F8E
+nestedChainSites=60
+
+===== TOP FINGERPRINT FUNCTIONS / VTABLE RTTI =====
+FUNC 0x519E20 score=47 +61=7 +98=0 +18=15 +A8=0 +3CD0=0 nest=0 vtInstall=13 sec=.impdata
+  vtable 0xAF73B90 RTTI=(none)
+  vtable 0xAF73BD8 RTTI=(none)
+  vtable 0xD9EE10 RTTI=(none)
+  vtable 0xAF676B0 RTTI=(none)
+  vtable 0x3D2AF00 RTTI=(none)
+  vtable 0x452B390 RTTI=(none)
+  vtable 0x28489A0 RTTI=(none)
+  vtable 0xAF73BD0 RTTI=(none)
+  note +0x61 @0x51A131 cmp byte ptr [rdi+61],0
+  note +0x61 @0x51A168 cmp byte ptr [rdi+61],0
+  note +0x61 @0x51A31B mov dword ptr [rdx+61],0
+  note +0x61 @0x51B01D mov al,[rsi+61]
+  note +0x61 @0x51B127 mov dword ptr [rsi+61],0
+  note +0x61 @0x51B4BB mov al,[rsi+61]
+FUNC 0x2D4F30 score=36 +61=6 +98=0 +18=6 +A8=0 +3CD0=0 nest=0 vtInstall=9 sec=.impdata
+  vtable 0x9782870 RTTI=(none)
+  vtable 0xAF676B0 RTTI=(none)
+  note +0x61 @0x2D53C7 mov byte ptr [r13+61],0
+  note +0x61 @0x2D548D mov byte ptr [r13+61],0
+  note +0x61 @0x2D55D0 mov [r13+61],r14b
+  note +0x61 @0x2D5721 mov byte ptr [r13+61],0
+  note +0x61 @0x2D5CD9 mov byte ptr [r13+61],0
+  note +0x61 @0x2D6008 mov byte ptr [r13+61],0
+FUNC 0x3D2C40 score=20 +61=0 +98=2 +18=1 +A8=0 +3CD0=2 nest=0 vtInstall=1 sec=.impdata
+  vtable 0xB0751C0 RTTI=(none)
+  note +0x98 @0x3D2F05 mov eax,[rsi+98]
+  note +0x3CD0 @0x3D2F0B mov rcx,[rax+3CD0]
+  note +0x98 @0x3D307F mov eax,[rsi+98]
+  note +0x3CD0 @0x3D3085 mov rcx,[rax+3CD0]
+  note vtInstall lea@0x3D2E4D -> 0xB0751C0
+FUNC 0x1D9CC0 score=33 +61=3 +98=2 +18=8 +A8=0 +3CD0=0 nest=0 vtInstall=8 sec=.impdata
+  vtable 0xAF73AE0 RTTI=(none)
+  vtable 0xAF73BD8 RTTI=(none)
+  vtable 0xAE86F28 RTTI=(none)
+  vtable 0xAF73B90 RTTI=(none)
+  vtable 0xAF676B0 RTTI=(none)
+  note +0x61 @0x1DA0F7 movzx ecx,byte ptr [r14+61]
+  note +0x61 @0x1DA164 movzx r9d,byte ptr [rdx+61]
+  note +0x98 @0x1DA26A mov ebx,[rcx+98]
+  note +0x61 @0x1DA2FA movzx r8d,byte ptr [rdx+61]
+  note +0x98 @0x1DA81B mov ebx,[rdx+98]
+  note vtInstall lea@0x1DA086 -> 0xAF73AE0
+FUNC 0xB12D0 score=29 +61=0 +98=0 +18=8 +A8=1 +3CD0=1 nest=1 vtInstall=7 sec=.impdata
+  vtable 0xAF73BD8 RTTI=(none)
+  vtable 0xAF73B90 RTTI=(none)
+  vtable 0xB46A060 RTTI=(none)
+  vtable 0xAF676B0 RTTI=(none)
+  vtable 0x9977020 RTTI=(none)
+  note +0x3CD0 @0xB1695 mov rcx,[rax+3CD0]
+  note vtInstall lea@0xB13C4 -> 0xAF73BD8
+  note vtInstall lea@0xB13DF -> 0xAF73B90
+  note vtInstall lea@0xB169C -> 0xB46A060
+  note vtInstall lea@0xB1A39 -> 0xAF676B0
+  note vtInstall lea@0xB1B20 -> 0xAF676B0
+FUNC 0x22CC70 score=15 +61=0 +98=0 +18=2 +A8=1 +3CD0=1 nest=0 vtInstall=4 sec=.impdata
+  vtable 0x928C568 RTTI=(none)
+  vtable 0xAF73BD0 RTTI=(none)
+  vtable 0x928C548 RTTI=(none)
+  vtable 0xB46A060 RTTI=(none)
+  note +0x3CD0 @0x22CDA4 mov rcx,[rax+3CD0]
+  note vtInstall lea@0x22CCC3 -> 0x928C568
+  note vtInstall lea@0x22CCD8 -> 0xAF73BD0
+  note vtInstall lea@0x22CD6C -> 0x928C548
+  note vtInstall lea@0x22CDAB -> 0xB46A060
+FUNC 0x400B50 score=11 +61=0 +98=0 +18=1 +A8=1 +3CD0=1 nest=0 vtInstall=2 sec=.impdata
+  vtable 0xB46A060 RTTI=(none)
+  vtable 0x93DD990 RTTI=(none)
+  note +0x3CD0 @0x400B7E mov rcx,[rax+3CD0]
+  note vtInstall lea@0x400B85 -> 0xB46A060
+  note vtInstall lea@0x400C4A -> 0x93DD990
+FUNC 0x4CD390 score=23 +61=0 +98=0 +18=1 +A8=0 +3CD0=3 nest=0 vtInstall=4 sec=.impdata
+  vtable 0xB33F540 RTTI=(none)
+  vtable 0xB305390 RTTI=(none)
+  vtable 0xA025188 RTTI=(none)
+  vtable 0xB324370 RTTI=(none)
+  note +0x3CD0 @0x4CD3E2 mov rcx,[rax+3CD0]
+  note +0x3CD0 @0x4CD622 mov rcx,[rax+3CD0]
+  note +0x3CD0 @0x4CD9EA mov rcx,[rax+3CD0]
+  note vtInstall lea@0x4CD3E9 -> 0xB33F540
+  note vtInstall lea@0x4CD629 -> 0xB305390
+  note vtInstall lea@0x4CD977 -> 0xA025188
+FUNC 0xF2090 score=9 +61=0 +98=0 +18=0 +A8=0 +3CD0=1 nest=0 vtInstall=2 sec=.impdata
+  vtable 0xB2863E8 RTTI=(none)
+  vtable 0x913E190 RTTI=(none)
+  note +0x3CD0 @0xF2234 mov rcx,[rax+3CD0]
+  note vtInstall lea@0xF21CB -> 0xB2863E8
+  note vtInstall lea@0xF2356 -> 0x913E190
+FUNC 0x2295E0 score=11 +61=0 +98=0 +18=0 +A8=0 +3CD0=1 nest=0 vtInstall=3 sec=.impdata
+  vtable 0xB46A060 RTTI=(none)
+  vtable 0xAF73BD0 RTTI=(none)
+  note +0x3CD0 @0x2296DE mov rcx,[r8+3CD0]
+  note vtInstall lea@0x2296E5 -> 0xB46A060
+  note vtInstall lea@0x229AA9 -> 0xAF73BD0
+  note vtInstall lea@0x229B4F -> 0xAF73BD0
+FUNC 0x307870 score=9 +61=0 +98=0 +18=0 +A8=0 +3CD0=1 nest=0 vtInstall=2 sec=.impdata
+  vtable 0xAF73BD0 RTTI=(none)
+  vtable 0xBECAB78 RTTI=(none)
+  note +0x3CD0 @0x30791C mov rcx,[rax+3CD0]
+  note vtInstall lea@0x3078E5 -> 0xAF73BD0
+  note vtInstall lea@0x307923 -> 0xBECAB78
+FUNC 0x4444C0 score=33 +61=0 +98=0 +18=2 +A8=0 +3CD0=1 nest=1 vtInstall=10 sec=.impdata
+  vtable 0xB46A060 RTTI=(none)
+  vtable 0x9145218 RTTI=(none)
+  vtable 0x91452F0 RTTI=(none)
+  vtable 0x53B6A70 RTTI=(none)
+  vtable 0x10326A0 RTTI=(none)
+  vtable 0x535C840 RTTI=(none)
+  vtable 0x6ADEE10 RTTI=(none)
+  vtable 0x6ADEEE0 RTTI=(none)
+  note +0x3CD0 @0x44476B mov rcx,[rax+3CD0]
+  note vtInstall lea@0x444595 -> 0xB46A060
+  note vtInstall lea@0x44460F -> 0x9145218
+  note vtInstall lea@0x4446B7 -> 0x91452F0
+  note vtInstall lea@0x444772 -> 0xB46A060
+  note vtInstall lea@0x444948 -> 0x53B6A70
+FUNC 0x4F3FA0 score=5 +61=0 +98=0 +18=0 +A8=0 +3CD0=1 nest=0 vtInstall=0 sec=.impdata
+  note +0x3CD0 @0x4F40E0 mov rcx,[rax+3CD0]
+FUNC 0x1377D0 score=38 +61=0 +98=0 +18=13 +A8=1 +3CD0=2 nest=0 vtInstall=13 sec=.impdata
+  vtable 0xB46A060 RTTI=(none)
+  vtable 0xAF73BD8 RTTI=(none)
+  vtable 0xAF73B90 RTTI=(none)
+  vtable 0xAF676B0 RTTI=(none)
+  note +0x3CD0 @0x137A1C mov rcx,[rax+3CD0]
+  note +0x3CD0 @0x139B12 mov rcx,[rax+3CD0]
+  note vtInstall lea@0x137A23 -> 0xB46A060
+  note vtInstall lea@0x137B8F -> 0xAF73BD8
+  note vtInstall lea@0x137CFD -> 0xAF73BD8
+  note vtInstall lea@0x138BA9 -> 0xAF73BD8
+FUNC 0x1CB090 score=34 +61=0 +98=0 +18=5 +A8=1 +3CD0=2 nest=0 vtInstall=11 sec=.impdata
+  vtable 0xBFF71E8 RTTI=(none)
+  vtable 0xAF676B0 RTTI=(none)
+  vtable 0xB653158 RTTI=(none)
+  vtable 0xB653190 RTTI=(none)
+  vtable 0xAF73BD8 RTTI=(none)
+  vtable 0x96C7210 RTTI=(none)
+  vtable 0x96C74A0 RTTI=(none)
+  note +0x3CD0 @0x1CB1C7 mov rcx,[rcx+3CD0]
+  note +0x3CD0 @0x1CB31E mov rcx,[rax+3CD0]
+  note vtInstall lea@0x1CB1CE -> 0xBFF71E8
+  note vtInstall lea@0x1CB5BD -> 0xAF676B0
+  note vtInstall lea@0x1CB805 -> 0xB653158
+  note vtInstall lea@0x1CB81B -> 0xB653190
+FUNC 0x58F690 score=12 +61=0 +98=3 +18=13 +A8=0 +3CD0=0 nest=0 vtInstall=0 sec=.impdata
+  note +0x98 @0x58F950 mov rdx,[rsp+98]
+  note +0x98 @0x58FB0A mov rax,[rsp+98]
+  note +0x98 @0x590900 mov rdx,[rsp+98]
+FUNC 0x32F950 score=10 +61=0 +98=2 +18=1 +A8=4 +3CD0=0 nest=0 vtInstall=0 sec=.impdata
+  note +0x98 @0x33042D vbroadcastss xmm0,dword ptr [rbx+98]
+  note +0x98 @0x330430 sbb [rbx+98],al
+FUNC 0x388170 score=18 +61=0 +98=0 +18=2 +A8=0 +3CD0=2 nest=0 vtInstall=4 sec=.impdata
+  vtable 0xAF676B0 RTTI=(none)
+  vtable 0xB33F540 RTTI=(none)
+  vtable 0xB33F730 RTTI=(none)
+  note +0x3CD0 @0x388476 mov rcx,[rsi+3CD0]
+  note +0x3CD0 @0x3884D5 mov rcx,[rsi+3CD0]
+  note vtInstall lea@0x38826B -> 0xAF676B0
+  note vtInstall lea@0x388432 -> 0xAF676B0
+  note vtInstall lea@0x38847D -> 0xB33F540
+  note vtInstall lea@0x3884DC -> 0xB33F730
+FUNC 0x389280 score=32 +61=0 +98=0 +18=4 +A8=0 +3CD0=2 nest=0 vtInstall=11 sec=.impdata
+  vtable 0xB33F540 RTTI=(none)
+  vtable 0xAF73BD8 RTTI=(none)
+  vtable 0xAF73B90 RTTI=(none)
+  vtable 0xB324370 RTTI=(none)
+  vtable 0xAF676B0 RTTI=(none)
+  note +0x3CD0 @0x38954A mov rcx,[rax+3CD0]
+  note +0x3CD0 @0x3896D0 mov rcx,[rax+3CD0]
+  note vtInstall lea@0x389551 -> 0xB33F540
+  note vtInstall lea@0x389632 -> 0xAF73BD8
+  note vtInstall lea@0x38964D -> 0xAF73B90
+  note vtInstall lea@0x3896D7 -> 0xB324370
+FUNC 0x406A60 score=16 +61=0 +98=0 +18=0 +A8=0 +3CD0=2 nest=0 vtInstall=3 sec=.impdata
+  vtable 0xB305390 RTTI=(none)
+  vtable 0xB33F540 RTTI=(none)
+  vtable 0xB324370 RTTI=(none)
+  note +0x3CD0 @0x406A9F mov rcx,[rdx+3CD0]
+  note +0x3CD0 @0x406BEB mov rcx,[rbx+3CD0]
+  note vtInstall lea@0x406AA6 -> 0xB305390
+  note vtInstall lea@0x406BB4 -> 0xB33F540
+  note vtInstall lea@0x406BF2 -> 0xB324370
+FUNC 0x54B090 score=16 +61=0 +98=0 +18=6 +A8=0 +3CD0=2 nest=0 vtInstall=3 sec=.impdata
+  vtable 0xBED8FE0 RTTI=(none)
+  vtable 0xA0993E8 RTTI=(none)
+  note +0x3CD0 @0x54B220 mov rcx,[rax+3CD0]
+  note +0x3CD0 @0x54B7E9 mov rcx,[rax+3CD0]
+  note vtInstall lea@0x54B227 -> 0xBED8FE0
+  note vtInstall lea@0x54B2B3 -> 0xA0993E8
+  note vtInstall lea@0x54B7F0 -> 0xBED8FE0
+FUNC 0x2A9D0 score=15 +61=0 +98=1 +18=0 +A8=0 +3CD0=1 nest=0 vtInstall=3 sec=.impdata
+  vtable 0x913DCE0 RTTI=(none)
+  vtable 0xBFDE148 RTTI=(none)
+  vtable 0xAF73BD8 RTTI=(none)
+  note +0x98 @0x2AB82 mov r14d,[r13+98]
+  note +0x3CD0 @0x2AFD9 mov rcx,[rax+3CD0]
+  note vtInstall lea@0x2AAB5 -> 0x913DCE0
+  note vtInstall lea@0x2AC05 -> 0xBFDE148
+  note vtInstall lea@0x2AD28 -> 0xAF73BD8
+FUNC 0xE5450 score=12 +61=0 +98=2 +18=3 +A8=0 +3CD0=0 nest=0 vtInstall=2 sec=.impdata
+  vtable 0x91685C0 RTTI=(none)
+  vtable 0x97B8A70 RTTI=(none)
+  note +0x98 @0xE5BEF vbroadcastss xmm8,dword ptr [rsi+98]
+  note +0x98 @0xE5BF2 sbb [rsi+98],al
+  note vtInstall lea@0xE55F6 -> 0x91685C0
+  note vtInstall lea@0xE614F -> 0x97B8A70
+FUNC 0x44DDF0 score=8 +61=0 +98=2 +18=7 +A8=0 +3CD0=0 nest=0 vtInstall=0 sec=.impdata
+  note +0x98 @0x44E5B0 vbroadcastss xmm0,dword ptr [rsp+98]
+  note +0x98 @0x44E5B0 vbroadcastss xmm0,dword ptr [rsp+98]
+FUNC 0x500ED0 score=8 +61=0 +98=2 +18=1 +A8=0 +3CD0=0 nest=0 vtInstall=0 sec=.impdata
+  note +0x98 @0x500EFB call qword ptr [rax+98]
+  note +0x98 @0x500F08 mov rax,[rax+98]
+FUNC 0x4AD40 score=15 +61=0 +98=0 +18=2 +A8=1 +3CD0=1 nest=0 vtInstall=4 sec=.impdata
+  vtable 0xAF73BD8 RTTI=(none)
+  vtable 0xAF73B90 RTTI=(none)
+  vtable 0xBFDE148 RTTI=(none)
+  vtable 0xB1CF0C0 RTTI=(none)
+  note +0x3CD0 @0x4AEC6 mov rcx,[rax+3CD0]
+  note vtInstall lea@0x4AE09 -> 0xAF73BD8
+  note vtInstall lea@0x4AE24 -> 0xAF73B90
+  note vtInstall lea@0x4AECD -> 0xBFDE148
+  note vtInstall lea@0x4AF4E -> 0xB1CF0C0
+FUNC 0x9C6C0 score=6 +61=2 +98=0 +18=0 +A8=0 +3CD0=0 nest=0 vtInstall=0 sec=.impdata
+  note +0x61 @0x9C7AD cmp byte ptr [rcx+61],0
+  note +0x61 @0x9C88C cmp byte ptr [rcx+61],0
+FUNC 0x1BB480 score=28 +61=0 +98=1 +18=11 +A8=1 +3CD0=0 nest=0 vtInstall=11 sec=.impdata
+  vtable 0xAF676B0 RTTI=(none)
+  note +0x98 @0x1BC630 mov rcx,[rsp+98]
+  note vtInstall lea@0x1BBD45 -> 0xAF676B0
+  note vtInstall lea@0x1BBE87 -> 0xAF676B0
+  note vtInstall lea@0x1BC1FD -> 0xAF676B0
+  note vtInstall lea@0x1BC2F8 -> 0xAF676B0
+  note vtInstall lea@0x1BC351 -> 0xAF676B0
+FUNC 0x2D3320 score=12 +61=2 +98=0 +18=0 +A8=0 +3CD0=0 nest=0 vtInstall=3 sec=.impdata
+  vtable 0x9782870 RTTI=(none)
+  note +0x61 @0x2D33F6 mov byte ptr [r14+61],0
+  note +0x61 @0x2D357A mov byte ptr [r14+61],0
+  note vtInstall lea@0x2D33C1 -> 0x9782870
+  note vtInstall lea@0x2D3479 -> 0x9782870
+  note vtInstall lea@0x2D3549 -> 0x9782870
+FUNC 0x431990 score=6 +61=2 +98=0 +18=2 +A8=0 +3CD0=0 nest=0 vtInstall=0 sec=.impdata
+  note +0x61 @0x431AFB cmp byte ptr [rsi+61],0
+  note +0x61 @0x431B78 mov byte ptr [rsi+61],1
+FUNC 0x4CF170 score=8 +61=2 +98=0 +18=4 +A8=0 +3CD0=0 nest=0 vtInstall=1 sec=.impdata
+  vtable 0xC049E60 RTTI=(none)
+  note +0x61 @0x4CF1FA cmp byte ptr [rsi+61],0
+  note +0x61 @0x4CF297 mov [rsi+61],al
+  note vtInstall lea@0x4CFBF2 -> 0xC049E60
+FUNC 0x24090 score=7 +61=0 +98=0 +18=2 +A8=0 +3CD0=1 nest=0 vtInstall=1 sec=.impdata
+  vtable 0xBFDE148 RTTI=(none)
+  note +0x3CD0 @0x24381 mov rcx,[rax+3CD0]
+  note vtInstall lea@0x24388 -> 0xBFDE148
+FUNC 0x2D440 score=5 +61=0 +98=0 +18=0 +A8=0 +3CD0=1 nest=0 vtInstall=0 sec=.impdata
+  note +0x3CD0 @0x2D47A mov rax,[rax+3CD0]
+FUNC 0x35760 score=7 +61=0 +98=0 +18=0 +A8=0 +3CD0=1 nest=0 vtInstall=1 sec=.impdata
+  vtable 0xBEC3F78 RTTI=(none)
+  note +0x3CD0 @0x357AD mov rcx,[rax+3CD0]
+  note vtInstall lea@0x357B4 -> 0xBEC3F78
+FUNC 0x5C460 score=7 +61=0 +98=0 +18=0 +A8=1 +3CD0=1 nest=0 vtInstall=1 sec=.impdata
+  vtable 0xBE52570 RTTI=(none)
+  note +0x3CD0 @0x5C489 mov rcx,[rax+3CD0]
+  note vtInstall lea@0x5C490 -> 0xBE52570
+FUNC 0x5FAB0 score=7 +61=0 +98=0 +18=0 +A8=1 +3CD0=1 nest=0 vtInstall=1 sec=.impdata
+  vtable 0xBE52570 RTTI=(none)
+  note +0x3CD0 @0x5FADC mov rax,[rax+3CD0]
+  note vtInstall lea@0x5FAE3 -> 0xBE52570
+FUNC 0x5FC00 score=17 +61=0 +98=0 +18=2 +A8=0 +3CD0=1 nest=0 vtInstall=6 sec=.impdata
+  vtable 0x67B6B20 RTTI=(none)
+  vtable 0xBFDE148 RTTI=(none)
+  vtable 0x928C548 RTTI=(none)
+  vtable 0x560B2E0 RTTI=(none)
+  vtable 0xAF73BD8 RTTI=(none)
+  note +0x3CD0 @0x5FD35 mov rcx,[rax+3CD0]
+  note vtInstall lea@0x5FC30 -> 0x67B6B20
+  note vtInstall lea@0x5FD3C -> 0xBFDE148
+  note vtInstall lea@0x5FE8E -> 0x928C548
+  note vtInstall lea@0x5FFFD -> 0x928C548
+  note vtInstall lea@0x600DB -> 0x560B2E0
+FUNC 0x6B560 score=13 +61=0 +98=0 +18=1 +A8=0 +3CD0=1 nest=0 vtInstall=4 sec=.impdata
+  vtable 0xB46A060 RTTI=(none)
+  vtable 0xB481050 RTTI=(none)
+  vtable 0xAF73BD8 RTTI=(none)
+  vtable 0xBFF71E8 RTTI=(none)
+  note +0x3CD0 @0x6C037 mov rcx,[rbx+3CD0]
+  note vtInstall lea@0x6B8A6 -> 0xB46A060
+  note vtInstall lea@0x6B8C3 -> 0xB481050
+  note vtInstall lea@0x6B95A -> 0xAF73BD8
+  note vtInstall lea@0x6C03E -> 0xBFF71E8
+FUNC 0xA9560 score=5 +61=0 +98=0 +18=3 +A8=0 +3CD0=1 nest=0 vtInstall=0 sec=.impdata
+  note +0x3CD0 @0xA996D mov rcx,[rax+3CD0]
+FUNC 0xBBFD0 score=7 +61=0 +98=0 +18=0 +A8=0 +3CD0=1 nest=0 vtInstall=1 sec=.impdata
+  vtable 0xB46A060 RTTI=(none)
+  note +0x3CD0 @0xBBFD8 mov rcx,[rcx+3CD0]
+  note vtInstall lea@0xBBFDF -> 0xB46A060
+
+===== OR [reg+0x61], 4 SITES =====
+  or61bit2 @0x2E98AA8 func≈0x2E97FC0 or byte ptr [rbx+61],4
+  or61bit2 @0x2E9B3D6 func≈0x2E97FC0 or byte ptr [rbx+61],4
+  or61bit2 @0x2E9B486 func≈0x2E97FC0 or byte ptr [r14+61],4
+  or61bit2 @0x2E9B487 func≈0x2E97FC0 or byte ptr [rsi+61],4
+  or61bit2 @0x1D7AD9CC func≈0x1D7AD98C or byte ptr [rdi+61],4
+or61bit2Sites=5
+
+===== CONTROL: WORKER/WRAPPER RTTI + KEY =====
+  (no MSVC RTTI in 0xE95E80)
+  (no MSVC RTTI in 0x2E97FC0)
+opaqueKey@0xB2898C8 hex=A2 C3 FF FF FF FF 06 C4 C2 3B EB F0 5D 3C 00 00 00 00 09 F0 5D 3C 00 00 00 00 E8 10 AF 5A 01 00
+
+===== STRINGS IN TOP FUNCS =====
+  str func0x519E20 0x51ABBA "forge"
+  str func0x519E20 0x51AC1B "Data{}.{}"
+  str func0x519E20 0x51ACA5 "Invalid pointer not allocated by our allocators or already freed: 0x%p"
+  str func0x519E20 0x51AD93 "Invalid pointer not allocated by our allocators or already freed: 0x%p"
+  str func0x519E20 0x51B029 "AWAVVWUSH"
+  str func0x519E20 0x51B1EF "Invalid pointer not allocated by our allocators or already freed: 0x%p"
+  str func0x2D4F30 0x2D5562 "Invalid pointer not allocated by our allocators or already freed: 0x%p"
+  str func0x2D4F30 0x2D6424 "ClothRagdollObject"
+  str func0x2D4F30 0x2D647D "ClothRagdollObject"
+  str func0x2D4F30 0x2D64D6 "Too many elements for %sArray. Size: %u, Max Size: %u"
+  str func0x2D4F30 0x2D64DD "Small"
+  str func0x2D4F30 0x2D6537 "ClothRagdollObject"
+  str func0x2D4F30 0x2D6599 "ClothRagdollObject"
+  str func0x2D4F30 0x2D65F5 "ClothRagdollObject"
+  str func0x3D2C40 0x3D2E35 "AWAVVWSH"
+  str func0x3D2C40 0x3D338B "Too many elements for %sArray. Size: %u, Max Size: %u"
+  str func0x3D2C40 0x3D3392 "Small"
+  str func0x1D9CC0 0x1DA9E4 "Invalid pointer not allocated by our allocators or already freed: 0x%p"
+  str func0x1D9CC0 0x1DABA3 "Invalid pointer not allocated by our allocators or already freed: 0x%p"
+  str func0x1D9CC0 0x1DADA8 "Too many elements for %sArray. Size: %u, Max Size: %u"
+  str func0x1D9CC0 0x1DAE2E "Too many elements for %sArray. Size: %u, Max Size: %u"
+  str func0x1D9CC0 0x1DB0C6 "Too many elements for %sArray. Size: %u, Max Size: %u"
+  str func0x1D9CC0 0x1DB12D "Too many elements for %sArray. Size: %u, Max Size: %u"
+  str func0x1D9CC0 0x1DB1CA "Too many elements for %sArray. Size: %u, Max Size: %u"
+  str func0x1D9CC0 0x1DB2AB "Too many elements for %sArray. Size: %u, Max Size: %u"
+  str func0x1D9CC0 0x1DB34F "Too many elements for %sArray. Size: %u, Max Size: %u"
+  str func0xB12D0 0xB1AF5 "Invalid pointer not allocated by our allocators or already freed: 0x%p"
+  str func0xB12D0 0xB1C80 "Invalid pointer not allocated by our allocators or already freed: 0x%p"
+  str func0xB12D0 0xB1D0B "Invalid pointer not allocated by our allocators or already freed: 0x%p"
+  str func0xB12D0 0xB1EDF "Too many elements for %sArray. Size: %u, Max Size: %u"
+  str func0xB12D0 0xB1EE6 "Small"
+  str func0x1377D0 0x138E9D "Too many elements for %sArray. Size: %u, Max Size: %u"
+  str func0x1377D0 0x138EA4 "Small"
+  str func0x1CB090 0x1CB592 "Invalid pointer not allocated by our allocators or already freed: 0x%p"
+  str func0x1CB090 0x1CC14D "Too many elements for %sArray. Size: %u, Max Size: %u"
+  str func0x1CB090 0x1CC1AA "Too many elements for %sArray. Size: %u, Max Size: %u"
+  str func0x1CB090 0x1CC241 "Too many elements for %sArray. Size: %u, Max Size: %u"
+  str func0x1CB090 0x1CC24D "Small"
+
+===== MSVC .?AV* TYPE STRINGS (Actor/Entity/Character/Edward/Player) =====
+interestingTypeDescriptors=0
+
+===== STRONG CTOR-LIKE CANDIDATES (+61 write & +98/nest) =====
+STRONG 0x1D9CC0 score=33 +61=3 +98=2 +3CD0=0 nest=0 vt=8
+  str func0x1D9CC0 0x1DA9E4 "Invalid pointer not allocated by our allocators or already freed: 0x%p"
+  str func0x1D9CC0 0x1DABA3 "Invalid pointer not allocated by our allocators or already freed: 0x%p"
+  alignedVt 0xAF73AE0 (no RTTI)
+  alignedVt 0xAF73BD8 (no RTTI)
+  alignedVt 0xAE86F28 (no RTTI)
+  alignedVt 0xAF73B90 (no RTTI)
+  alignedVt 0xAF676B0 (no RTTI)
+
+===== CONTROL FUNCS PRESENT IN CANDIDATES =====
+  known 0x725400 inFingerprintSet=True
+  known 0xE95E80 inFingerprintSet=False
+  known 0x2E97FC0 inFingerprintSet=False
+  known 0x2E97B60 inFingerprintSet=False

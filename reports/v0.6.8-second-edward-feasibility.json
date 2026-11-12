@@ -1,0 +1,26 @@
+{
+  "schemaVersion": 1,
+  "milestone": "v0.6.8",
+  "generatedUtc": "2026-11-12T17:05:00Z",
+  "exeSha256": "19920F34BB2FAC814023EE3C27F0CECA1872E80A2AAFB37C092C419FFF77CC0D",
+  "createSecondEdward": {
+    "class": "unsupported",
+    "reason": "No constructor proven to create Edward; LOD sibling is a comparator, not a factory"
+  },
+  "identifySubjectType": {
+    "class": "unsupported",
+    "reason": "MSVC RTTI stripped for game types; fingerprint candidates lack recoverable COL names"
+  },
+  "lodSiblingUseful": {
+    "class": "confirmed",
+    "reason": "0x67BDB30 is a 32-byte [arg+8] equality/order comparator in the UpdateActorLOD bundle"
+  },
+  "liveMemoryProbe": {
+    "class": "blocked",
+    "reason": "Not authorized this milestone"
+  },
+  "next": {
+    "primary": "Deep-decode 0x519E20 / 0x2D4F30 / 0x1D9CC0 and consumers of LOD comparator+thunk",
+    "avoid": ["live memory", "ASI deploy", "spawn", "PC2", "MSVC-RTTI-only naming"]
+  }
+}
