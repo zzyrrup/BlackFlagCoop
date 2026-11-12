@@ -25,9 +25,9 @@ Ultimate vision is **not claimed as achieved**. Dual-Edward co-op remains unprov
 
 ## 2. Current development milestone
 
-**v0.6.26 complete** — Alloc→owner VT[0] is **indirect-only** (0 Alloc+LEA/abs); SideBlock Alloc(0x160)+`[this+0x98]` attach proven; Arming/ArmWrap load same pointer slot (structural same-instance).
+**v0.6.27 complete** — No static TypeInfo/`[ti+0x50]` binding to owner VT[0] (vtable-only embeds; Outer LEA contrast); pointer `+0x98` (SideBlock/Arming) vs Spatial inline `+0x98` classified as distinct layouts.
 
-Prior: v0.6.5–v0.6.25 preserved. Offline only. No ASI, spawn, or networking change.
+Prior: v0.6.5–v0.6.26 preserved. Offline only. No ASI, spawn, or networking change.
 
 ---
 
@@ -108,6 +108,7 @@ High-signal offline findings (see `docs/v0.6.*` and `reports/v0.6.*`):
 - **v0.6.24:** Outer `0x59D9660` = InstallerA TypeInfo registration only (0 E8). Neighbor/Spatial = `.edata` methods; owner vtables `0x976B2D0`/`0x9236E00`. Still no Edward/create path.
 - **v0.6.25:** Owner VT[0] ctors `0x13612B0`/`0x5781490` (0 E8); spat/neigh ctors init `+0x98` (enrollment side-block field). Still no Edward/create path.
 - **v0.6.26:** No Alloc→VT[0] static path (in-place ctors, table-only); SideBlock Alloc+attach + Arming/ArmWrap `[this+0x98]` pointer-slot same-instance confirmed. Still no Edward/create path.
+- **v0.6.27:** No static TypeInfo/`+0x50` → owner VT[0] (0 LEA/movabs/store; Outer LEA contrast); pointer vs Spatial inline `+0x98` distinct. Still no Edward/create path.
 
 ---
 
@@ -173,6 +174,8 @@ High-signal offline findings (see `docs/v0.6.*` and `reports/v0.6.*`):
 - **No** PE-static Alloc→owner VT[0] path (0 movabs / 0 Alloc+LEA owner VT / 0 LEA-near-Alloc); VT[0] ctors are in-place and table-dispatched only.
 - SideBlock `0xE95E80`: Alloc(0x160) then `mov [this+98],block` + back-ptr `[block+100]=this`; sole E8 callers in queue handler `0x1AC380`.
 - Arming `0x21085D0` / ArmWrap `0x2108620` load `[this+98]` as side-block pointer — **pointer-slot same-instance** with SideBlock attach (structural; live Neighbor VT identity still unproven).
+- **No** static TypeInfo/`[ti+0x50]` binding to owner VT[0] (0 LEA/movabs/`+0x50` store; only VT-table embeds). Outer ctor still has LEA×2 registration contrast. Tight factories remain generic `[ti+0x50]` consumers.
+- **`+0x98` layouts are distinct:** pointer family (SideBlock/Arming/ArmWrap/NeighRelated/Helper/Neighbor method) vs Spatial inline family (`add/lea +98` then sub-init in Spat VT0/instA/instB); SpatInstC mixed.
 - Input lead `0x187F0550` is action-name bind, not a movement controller.
 - No verified shared entity/ownership edge between input bind path and deferred handler.
 - No Edward, character, archetype, player, or transform string in either worker or the producer wrapper.
@@ -183,7 +186,8 @@ High-signal offline findings (see `docs/v0.6.*` and `reports/v0.6.*`):
 - The queued object is an actor or character (LOD-tracked).
 - The 0x160 side block is activation state for that object.
 - Runtime (non-RIP) TypeInfo pointer for `0xB2898C8` may still reach a tight factory.
-- TypeInfo `[ti+0x50]` (or equivalent) invokes owner VT[0] after some Allocator.
+- Runtime/reloc TypeInfo registration (not PE-static) may still bind owner VT[0] at `+0x50`.
+- Some outer/factory ctor constructs Neighbor/Spatial objects by Alloc then VT install / `call [vt+0]` without a TypeInfo ctor field.
 - Enrollment-family objects with pointer `+0x98` are the same live Neighbor VT instances that host spat/neigh methods.
 - Dual Edward / dual input context is feasible somewhere else in the engine.
 
@@ -204,14 +208,16 @@ High-signal offline findings (see `docs/v0.6.*` and `reports/v0.6.*`):
 - Expecting a direct `E8 0x59D9660` create site (none; TypeInfo icall only).
 - Expecting E8 callers of owner VT[0] ctors (none; table-dispatched).
 - Expecting a co-located Allocator + LEA owner VT / movabs ctor path for VT[0] (none offline).
+- Expecting a static TypeInfo/`[ti+0x50]` field equal to owner VT[0] (none offline; Outer still LEA-registered).
+- Conflating Spatial inline `+0x98` with SideBlock/Arming pointer `+0x98` (distinct layouts).
 
 ---
 
 ## 9. Current blockers
 
 - No confirmed character/Edward factory or archetype reuse path. Queue only enqueues/activates existing objects.
-- Alloc→owner VT[0] remains table/TypeInfo-indirect (no PE static site); TypeInfo `+0x50` binding to these ctors not recovered.
-- Pointer-slot same-instance SideBlock↔Arming confirmed; live object identity / Edward create still unproven.
+- Static TypeInfo/`+0x50` → owner VT[0] absent; construction path for Neighbor/Spatial objects still open.
+- Pointer vs inline `+0x98` classified; live object identity / Edward create still unproven.
 - No verified input→character ownership/control binding.
 - No safe authorized spawn/possession test design yet.
 - GitHub handoff must stay free of ASI/game binaries.
@@ -220,33 +226,33 @@ High-signal offline findings (see `docs/v0.6.*` and `reports/v0.6.*`):
 
 ## 10. Most recent completed milestone
 
-**v0.6.26 — Alloc→VT[0] indirect-only + SideBlock/Arming same-instance**
+**v0.6.27 — TypeInfo `[ti+0x50]` vs owner VT[0] + `+0x98` classification**
 
 Deliverables:
 
-- `docs/v0.6.26-alloc-vt0.md`
-- `reports/v0.6.26-funcs-deep.json`
-- `reports/v0.6.26-summary.json`
-- `reports/v0.6.26-second-edward-feasibility.json`
-- `reports/v086-raw/evidence.txt`
-- `tools/offline/AllocVt086/`
+- `docs/v0.6.27-ti50-plus98.md`
+- `reports/v0.6.27-funcs-deep.json`
+- `reports/v0.6.27-summary.json`
+- `reports/v0.6.27-second-edward-feasibility.json`
+- `reports/v087-raw/evidence.txt`
+- `tools/offline/Ti50Plus087/`
 
-v0.6.4–v0.6.25 reports were left in place.
+v0.6.4–v0.6.26 reports were left in place.
 
 ---
 
 ## 11. Next recommended milestone
 
-**v0.6.27 (proposed):** Offline reverse TypeInfo/`[ti+0x50]` consumers that invoke owner VT[0]; classify pointer `+0x98` (SideBlock) vs Spatial inline `+0x98`. Still no spawn, deploy, live memory, or PC2 unless separately authorized.
+**v0.6.28 (proposed):** Offline find which outer/factory path constructs Neighbor/Spatial objects (VT install / `call [vt+0]` without static TypeInfo+0x50); optional reloc/runtime TypeInfo registration leads. Still no spawn, deploy, live memory, or PC2 unless separately authorized.
 
 ---
 
 ## 12. Files changed in the latest milestone
 
-- `docs/v0.6.26-alloc-vt0.md`
-- `reports/v0.6.26-*.json`
-- `reports/v086-raw/evidence.txt`
-- `tools/offline/AllocVt086/`
+- `docs/v0.6.27-ti50-plus98.md`
+- `reports/v0.6.27-*.json`
+- `reports/v087-raw/evidence.txt`
+- `tools/offline/Ti50Plus087/`
 - `docs/CHATGPT_HANDOFF.md`
 - `reports/CHATGPT_HANDOFF.json`
 
@@ -278,6 +284,7 @@ v0.6.4–v0.6.25 reports were left in place.
 | Offline ctor-reverse/ownership v0.6.24 (`CtorReverse084`) | Pass; Outer=InstallerA LEA only; vtable owners mapped |
 | Offline VT owner ctors v0.6.25 (`VtOwner085`) | Pass; VT[0] ctors; +0x98 enrollment link |
 | Offline Alloc/VT0 + same-instance v0.6.26 (`AllocVt086`) | Pass; Alloc→VT[0] indirect-only; SideBlock+Arming `+0x98` confirmed |
+| Offline ti50/+0x98 classify v0.6.27 (`Ti50Plus087`) | Pass; no static ti+50→VT[0]; pointer vs inline `+0x98` distinct |
 | Subject MSVC RTTI name | **Not found** (game types RTTI-stripped) |
 | Game launch / ASI deploy | **Not performed** |
 | Spawn / inject / live memory | **Not performed** |
@@ -303,6 +310,6 @@ When reviewing the GitHub repository after a Cursor push:
 2. Diff against the previous handoff `milestoneId` / commit.
 3. Treat only **confirmed** items as facts; keep hypotheses labeled.
 4. Propose the **next single milestone** with: objective, in-scope RVAs/files, out-of-scope (spawn/deploy/PC2), required deliverables paths, and acceptance checks.
-5. Prefer **v0.6.27**: TypeInfo/`[ti+0x50]` → owner VT[0]; classify pointer vs inline `+0x98`. Do not expect E8 to Outer/owner VT[0] ctors; do not treat helper position extract as possession; do not treat layout-only same-offset as live Edward identity; do not treat field-offset `0x20F0` as heap size; avoid `+0x61`-only ranking; do not conflate wrap modes with the enrollment gate; do not rely on MSVC RTTI for game types.
+5. Prefer **v0.6.28**: Neighbor/Spatial object construction path without static TypeInfo+0x50. Do not expect E8 to Outer/owner VT[0] ctors; do not expect static `[ti+0x50]==VT[0]`; do not conflate Spatial inline `+0x98` with SideBlock pointer; do not treat helper position extract as possession; do not treat layout-only same-offset as live Edward identity; avoid `+0x61`-only ranking; do not rely on MSVC RTTI for game types.
 6. Do not instruct Cursor to deploy ASI, spawn, use live memory, or touch PC2/save data unless the user explicitly overrides safety.
 7. Return instructions Cursor can execute verbatim on PC1 on a dedicated branch + PR (never push main).

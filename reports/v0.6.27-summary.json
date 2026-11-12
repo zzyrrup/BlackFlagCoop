@@ -1,0 +1,24 @@
+{
+  "schemaVersion": 1,
+  "milestone": "v0.6.27",
+  "generatedUtc": "2026-11-12T20:36:46Z",
+  "exeSha256": "19920F34BB2FAC814023EE3C27F0CECA1872E80A2AAFB37C092C419FFF77CC0D",
+  "ti50OwnerVt0": {
+    "staticBindingFound": false,
+    "leaCtorSites": 0,
+    "movabsSites": 0,
+    "storePlus50Hits": 0,
+    "nonVtTypeInfoShapeHits": 0,
+    "verdict": "not_found_static",
+    "genericTi50Consumers": [{ "entry": "0x238590", "icall50": 1, "callsAlloc": true }, { "entry": "0x256280", "icall50": 1, "callsAlloc": true }, { "entry": "0x218900", "icall50": 1, "callsAlloc": true }, { "entry": "0x218660", "icall50": 2, "callsAlloc": true }, { "entry": "0x21FA70", "icall50": 1, "callsAlloc": true }]
+  },
+  "plus98": {
+    "pointer": 6,
+    "inline": 4,
+    "mixed": 1,
+    "distinctLayouts": true,
+    "pointerFamily": ["SideBlock 0xE95E80", "Arming 0x21085D0", "ArmWrap 0x2108620", "NeighRelated 0x3D522C0 zero"],
+    "inlineFamily": ["Spat VT0 0x5781490", "SpatInstA 0x5563CF0", "SpatInstB 0x6CF34A0"]
+  },
+  "edwardOrPlayerTypeConfirmed": false
+}
