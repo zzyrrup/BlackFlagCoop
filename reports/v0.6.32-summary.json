@@ -1,0 +1,26 @@
+{
+  "schemaVersion": 1,
+  "milestone": "v0.6.32",
+  "generatedUtc": "2026-11-12T21:23:41Z",
+  "exeSha256": "19920F34BB2FAC814023EE3C27F0CECA1872E80A2AAFB37C092C419FFF77CC0D",
+  "typedVcalls": {
+    "staticVtCompareAbsent": true,
+    "neighborSlot": "0x110",
+    "neighborEdxFilter": [2, 3],
+    "soleEdx3To2B0": true,
+    "vt20StillVcallOnly": true,
+    "nest18ToVcall20": 12898,
+    "nest18ToVcall110": 26,
+    "typed": true
+  },
+  "neighborUpstream": {
+    "ownerEdx3": "0x6193380",
+    "ownerEdx2": "0x61934C0",
+    "ownerTable": "0x9242FE8",
+    "lookupHelper": "0x4DBF820",
+    "gateHelper": "0x4DEAC50",
+    "ownerFuncs": ["0x188FC30", "0x5A77350", "0x6193380", "0x61934C0", "0xEFD9F92"],
+    "mapped": true
+  },
+  "edwardOrPlayerTypeConfirmed": false
+}

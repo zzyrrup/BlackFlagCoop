@@ -3,7 +3,7 @@
 **Last updated:** 2026-11-12  
 **Machine:** PC1 only  
 **Repo:** https://github.com/zzyrrup/BlackFlagCoop  
-**Branch:** `cursor/v091-vt20-callers-8285` (PR into `cursor/v090-tihelper-lookup-8285`; do not push main)  
+**Branch:** `cursor/v092-typed-vcall-8285` (PR into `cursor/v091-vt20-callers-8285`; do not push main)  
 **Initial commit:** `e12e70150656ac80742f10b496f7e5556e7985b7`
 
 This document is the primary human-readable bridge between Cursor (local execution) and ChatGPT (review / next instructions). Update it after every completed milestone.
@@ -25,9 +25,9 @@ Ultimate vision is **not claimed as achieved**. Dual-Edward co-op remains unprov
 
 ## 2. Current development milestone
 
-**v0.6.31 complete** — Neigh/Spat VT`[+0x20]` construct is **vcall-only**. `+0x98` splits into byte (NeighRel/Neighbor this), pointer (SideBlock/nested+0x18), and spatial inline; Neighbor `0x2335140` bridges byte+pointer.
+**v0.6.32 complete** — No static Neigh/Spat VT-compare; Neighbor typed by vcall **`[vt+0x110]`** with edx∈{2,3}; sole edx=3→`[vt+0x2B0]` is Neighbor; upstream owners `0x6193380`/`0x61934C0` via LookupHelper `0x4DBF820`, table `@0x9242FE8`.
 
-Prior: v0.6.5–v0.6.30 preserved. Offline only. No ASI, spawn, or networking change.
+Prior: v0.6.5–v0.6.31 preserved. Offline only. No ASI, spawn, or networking change.
 
 ---
 
@@ -113,6 +113,7 @@ High-signal offline findings (see `docs/v0.6.*` and `reports/v0.6.*`):
 - **v0.6.29:** Neighbor TypeInfo PE-static `@0xAAD2290` (`+0x50`=NeighRel, `+0x20`=`0xB0`, keyHash); SpatA/SpatB TypeInfo feeds + VT`[+0x20]`→TiHelper construct. Still no Edward/create path.
 - **v0.6.30:** TiHelper=`TypeInfo construct helper` (not Lookup); Neigh/SpatTi **absent** from tight-factory Lookup feeds; Neigh `0xB0` `+0x98`=byte field init (≠ SideBlock). Still no Edward/create path.
 - **v0.6.31:** VT`[+0x20]` vcall-only; Neighbor bridges byte `this+0x98` + pointer `[this+0x18]+0x98`. Still no Edward/create path.
+- **v0.6.32:** No static Neigh/Spat VT-compare; Neighbor typed by `+0x110`+edx∈{2,3}; sole edx=3→`[vt+0x2B0]`; owners `0x6193380`/`0x61934C0` via LookupHelper. Still no Edward/create path.
 
 ---
 
@@ -190,6 +191,8 @@ High-signal offline findings (see `docs/v0.6.*` and `reports/v0.6.*`):
 - **Neigh size `0xB0` / `+0x98`:** NeighRel zeros byte at `+0x98` (object field); **not** SideBlock pointer enroll; Spat VT20 uses inline `add reg,98`.
 - **VT`[+0x20]` callers:** Neigh/Spat construct methods are **vcall-only** (0 E8/LEA/FF15; sole embeds = VT slots). Generic `call [rax+20]` widespread but untyped offline.
 - **`+0x98` consumer map:** byte family (NeighRel / Neighbor this); pointer family (SideBlock/Arming/Helper546); spatial inline. **Neighbor `0x2335140`** bridges: pointer on `[this+0x18]+0x98`, byte on `this+0x98`.
+- **Typed Neigh/Spat vcalls (offline):** **no** static VT-compare (0 movabs / LEA-compare beyond installers). Neighbor entry typed as **`call [vt+0x110]`** with **edx ∈ {2,3}**; sole `mov edx,3`→`[vt+0x2B0]` site is Neighbor itself. VT`[+0x20]` remains vcall-only.
+- **Neighbor upstream owners:** `0x6193380` (edx=3) / `0x61934C0` (edx=2) call `[vt+0x110]` after GateHelper `0x4DEAC50` + LookupHelper `0x4DBF820`; published at table **`0x9242FE8`** (E8=0). Owner `lea[+0x18]` is a field arg to `+0x118`, **not** Neighbor’s nested pointer `mov [this+18]`.
 - Input lead `0x187F0550` is action-name bind, not a movement controller.
 - No verified shared entity/ownership edge between input bind path and deferred handler.
 - No Edward, character, archetype, player, or transform string in either worker or the producer wrapper.
@@ -200,8 +203,8 @@ High-signal offline findings (see `docs/v0.6.*` and `reports/v0.6.*`):
 - The queued object is an actor or character (LOD-tracked).
 - The 0x160 side block is activation state for that object.
 - Runtime (non-RIP) TypeInfo pointer for `0xB2898C8` may still reach a tight factory.
-- Typed vcall sites into Neigh/Spat objects (VT compare / nest `+0x18`) identify construct consumers.
-- Upstream owners of Neighbor / edx=3 `[vt+0x2B0]` path feed enrollment↔Neigh bridging.
+- LookupHelper `0x4DBF820` runtime return is Neigh-family VT (needs live or deeper static identity).
+- Owner-table `@0x9242FE8` dispatcher and Neighbor nest `+0x18` pointer objects relate to SideBlock enrollment family.
 - Dual Edward / dual input context is feasible somewhere else in the engine.
 
 ### Disproven on this path
@@ -231,13 +234,15 @@ High-signal offline findings (see `docs/v0.6.*` and `reports/v0.6.*`):
 - Conflating NeighRel `+0x98` byte zero-init with SideBlock pointer enroll.
 - Expecting E8/LEA callers of Neigh/Spat VT`[+0x20]` (vcall-only).
 - Assuming Neighbor-method `this` holds SideBlock pointer at `+0x98` (it holds a byte; pointer is on nested `+0x18`).
+- Expecting static Neigh/Spat VT-compare to type construct consumers (absent offline; Neighbor typed by slot+edx).
+- Conflating owner `lea[+0x18]` field arg with Neighbor nested `mov [this+18]` pointer.
 
 ---
 
 ## 9. Current blockers
 
 - No confirmed character/Edward factory or archetype reuse path. Queue only enqueues/activates existing objects.
-- Typed Neigh/Spat vcall sites and Neighbor upstream owners still open offline.
+- LookupHelper return type / owner-table dispatcher / nest→SideBlock link still open offline.
 - Live object identity / Edward create still unproven.
 - No verified input→character ownership/control binding.
 - No safe authorized spawn/possession test design yet.
@@ -247,37 +252,37 @@ High-signal offline findings (see `docs/v0.6.*` and `reports/v0.6.*`):
 
 ## 10. Most recent completed milestone
 
-**v0.6.31 — VT[+0x20] callers + 0xB0/+0x98 consumers**
+**v0.6.32 — Typed Neigh/Spat vcalls + Neighbor upstream**
 
 Deliverables:
 
-- `docs/v0.6.31-vt20-callers.md`
-- `docs/v0.6.31-funcs-deep.md`
-- `docs/v0.6.31-second-edward-feasibility.md`
-- `reports/v0.6.31-funcs-deep.json`
-- `reports/v0.6.31-summary.json`
-- `reports/v0.6.31-second-edward-feasibility.json`
-- `reports/v091-raw/evidence.txt`
-- `tools/offline/Vt20Callers091/`
+- `docs/v0.6.32-typed-vcall.md`
+- `docs/v0.6.32-funcs-deep.md`
+- `docs/v0.6.32-second-edward-feasibility.md`
+- `reports/v0.6.32-funcs-deep.json`
+- `reports/v0.6.32-summary.json`
+- `reports/v0.6.32-second-edward-feasibility.json`
+- `reports/v092-raw/evidence.txt`
+- `tools/offline/TypedVcall092/`
 
-v0.6.4–v0.6.30 reports were left in place.
+v0.6.4–v0.6.31 reports were left in place.
 
 ---
 
 ## 11. Next recommended milestone
 
-**v0.6.32 (proposed):** Offline find typed vcall sites into Neigh/Spat objects (VT compare or enrollment nest `+0x18`); map Neighbor bridge owners upstream of edx=3/`[vt+0x2B0]`. Still no spawn, deploy, live memory, or PC2 unless separately authorized.
+**v0.6.33 (proposed):** Offline identify LookupHelper `0x4DBF820` return type; map who dispatches owner table `0x9242FE8`; relate Neighbor nest `+0x18` pointer objects to SideBlock family. Still no spawn, deploy, live memory, or PC2 unless separately authorized.
 
 ---
 
 ## 12. Files changed in the latest milestone
 
-- `docs/v0.6.31-vt20-callers.md`
-- `docs/v0.6.31-funcs-deep.md`
-- `docs/v0.6.31-second-edward-feasibility.md`
-- `reports/v0.6.31-*.json`
-- `reports/v091-raw/evidence.txt`
-- `tools/offline/Vt20Callers091/`
+- `docs/v0.6.32-typed-vcall.md`
+- `docs/v0.6.32-funcs-deep.md`
+- `docs/v0.6.32-second-edward-feasibility.md`
+- `reports/v0.6.32-*.json`
+- `reports/v092-raw/evidence.txt`
+- `tools/offline/TypedVcall092/`
 - `docs/CHATGPT_HANDOFF.md`
 - `reports/CHATGPT_HANDOFF.json`
 
@@ -314,6 +319,7 @@ v0.6.4–v0.6.30 reports were left in place.
 | Offline Neigh TI / Spat feeds v0.6.29 (`NeighTiFeed089`) | Pass; Neigh PE-static TI; SpatA/B feeds + VT[+0x20]→TiHelper |
 | Offline TiHelper/Lookup/0xB0 v0.6.30 (`TiHelper090`) | Pass; TiHelper=construct helper; Lookup feed absent; 0xB0 +98 byte ≠ SideBlock |
 | Offline VT20 callers/+98 map v0.6.31 (`Vt20Callers091`) | Pass; VT[+0x20] vcall-only; Neighbor bridges byte+pointer +98 |
+| Offline typed vcall/upstream v0.6.32 (`TypedVcall092`) | Pass; no static VT-compare; +0x110+edx typed Neighbor; owners via LookupHelper |
 | Subject MSVC RTTI name | **Not found** (game types RTTI-stripped) |
 | Game launch / ASI deploy | **Not performed** |
 | Spawn / inject / live memory | **Not performed** |
@@ -339,6 +345,6 @@ When reviewing the GitHub repository after a Cursor push:
 2. Diff against the previous handoff `milestoneId` / commit.
 3. Treat only **confirmed** items as facts; keep hypotheses labeled.
 4. Propose the **next single milestone** with: objective, in-scope RVAs/files, out-of-scope (spawn/deploy/PC2), required deliverables paths, and acceptance checks.
-5. Prefer **v0.6.32**: typed vcall sites into Neigh/Spat; Neighbor bridge owners upstream of edx=3/`[vt+0x2B0]`. Do not expect E8 to VT`[+0x20]`; do not assume Neighbor `this+0x98` is SideBlock pointer; do not treat TiHelper as Lookup; do not expect Neigh/SpatTi into tight factories; do not expect a runtime Neighbor SpatRegistrar; do not expect E8 to Outer/owner VT[0] ctors; do not treat Outer/InstallerA as NS factory; do not treat helper position extract as possession; avoid `+0x61`-only ranking; do not rely on MSVC RTTI for game types.
+5. Prefer **v0.6.33**: LookupHelper `0x4DBF820` return identity; owner-table `0x9242FE8` dispatch; nest `+0x18` vs SideBlock. Do not expect static Neigh/Spat VT-compare; do not conflate owner `lea[+0x18]` with Neighbor nested pointer; do not expect E8 to VT`[+0x20]` or owner cluster; do not assume Neighbor `this+0x98` is SideBlock pointer; do not treat TiHelper as Lookup; do not expect Neigh/SpatTi into tight factories; do not expect a runtime Neighbor SpatRegistrar; do not expect E8 to Outer/owner VT[0] ctors; do not treat Outer/InstallerA as NS factory; do not treat helper position extract as possession; avoid `+0x61`-only ranking; do not rely on MSVC RTTI for game types.
 6. Do not instruct Cursor to deploy ASI, spawn, use live memory, or touch PC2/save data unless the user explicitly overrides safety.
 7. Return instructions Cursor can execute verbatim on PC1 on a dedicated branch + PR (never push main).

@@ -1,0 +1,123 @@
+===== v0.6.32 TYPED VCALL + NEIGHBOR UPSTREAM =====
+exeSha256=19920F34BB2FAC814023EE3C27F0CECA1872E80A2AAFB37C092C419FFF77CC0D
+
+===== SLOT IDENTITY =====
+Neigh VT[+0x110] @0x976B3E0=0x2335140 expect Neighbor match=True
+Neigh VT[+0x20]=0x3D52400 Spat VT[+0x20]=0x6CF34E0
+
+===== STATIC VT-COMPARE / MOVABS TYPING =====
+movabs NeighVt=0 SpatVt=0 Neighbor=0 NeighVt20=0 SpatVt20=0
+LEA NeighVt=4 SpatVt=6 (installers only; see prior)
+staticVtCompareAbsent=True
+
+===== edx=3 -> call [reg+0x2B0] =====
+sites=1
+  @0x2335159 call@0x233515E func=0x2335140 *** NEIGHBOR ***
+soleNeighborEdx3_2B0=True
+
+===== UPSTREAM: mov edx,2|3 then call [reg+0x110] =====
+owner sites=10 uniqueFuncs=5
+  func 0x61934C0 x3 edx=[2] *** OWNER CLUSTER ***
+  func 0x6193380 x3 edx=[3] *** OWNER CLUSTER ***
+  func 0x5A77350 x2 edx=[2,3]
+  func 0x188FC30 x1 edx=[2]
+  func 0xEFD9F92 x1 edx=[3]
+
+===== PRIMARY OWNER BODIES =====
+edx=3 primary 0x6193380:
+  0x6193380: push rsi
+  0x6193381: push rbx
+  0x6193382: sub rsp,28
+  0x6193386: mov ebx,edx
+  0x6193388: mov rsi,rcx
+  0x619338B: call 0000000144DEAC50 *** GATE ***
+  0x6193390: mov rdx,[rax]
+  0x6193393: mov rcx,rax
+  0x6193396: call qword ptr [rdx+58] *** +58 ***
+  0x6193399: test al,al
+  0x619339B: je short 00000001461933B0
+  0x619339D: mov al,[rsi+3A]
+  0x61933B6: ret
+  0x61933B7: call 0000000144DBF820 *** LOOKUP ***
+  0x61933C6: mov edx,3 *** EDX ***
+  0x61933CB: call qword ptr [r9+118] *** +118 ***
+  0x61933D2: call 0000000144DBF820 *** LOOKUP ***
+  0x61933E5: mov edx,3 *** EDX ***
+  0x61933EA: call qword ptr [r8+110] *** +110 ***
+  0x61933F5: call 0000000144DBF820 *** LOOKUP ***
+  0x6193405: mov edx,3 *** EDX ***
+  0x619340A: call qword ptr [r8+110] *** +110 ***
+  0x619342B: call 0000000144DEAC50 *** GATE ***
+  0x6193436: call qword ptr [rdx+58] *** +58 ***
+  0x6193456: ret
+  0x6193457: call 0000000144DBF820 *** LOOKUP ***
+  E8 callers=0 (0 => table-dispatched owners)
+edx=2 primary (field +0x18 arg to +0x118, then +0x110) 0x61934C0:
+  0x61934C0: push rsi
+  0x61934C1: push rbx
+  0x61934C2: sub rsp,28
+  0x61934C6: mov ebx,edx
+  0x61934C8: mov rsi,rcx
+  0x61934CB: call 0000000144DEAC50 *** GATE ***
+  0x61934D0: mov rdx,[rax]
+  0x61934D3: mov rcx,rax
+  0x61934D6: call qword ptr [rdx+58] *** +58 ***
+  0x61934D9: test al,al
+  0x61934DB: je short 00000001461934F0
+  0x61934DD: mov al,[rsi+3D]
+  0x61934F6: ret
+  0x61934F7: call 0000000144DBF820 *** LOOKUP ***
+  0x61934FC: lea r8,[rsi+18] *** +18 ***
+  0x6193506: mov edx,2 *** EDX ***
+  0x619350B: call qword ptr [r9+118] *** +118 ***
+  0x6193512: call 0000000144DBF820 *** LOOKUP ***
+  0x6193525: mov edx,2 *** EDX ***
+  0x619352A: call qword ptr [r8+110] *** +110 ***
+  0x6193535: call 0000000144DBF820 *** LOOKUP ***
+  0x619353A: vmovss xmm2,dword ptr [rsi+18] *** +18 ***
+  0x6193545: mov edx,2 *** EDX ***
+  0x619354A: call qword ptr [r8+110] *** +110 ***
+  0x619356B: call 0000000144DEAC50 *** GATE ***
+  0x6193576: call qword ptr [rdx+58] *** +58 ***
+  0x6193596: ret
+  0x6193597: call 0000000144DBF820 *** LOOKUP ***
+  E8 callers=0 (0 => table-dispatched owners)
+
+===== OWNER CLUSTER TABLE EMBEDS =====
+  0x61932E0 embeds=1 @0x9242FE8
+  0x6193380 embeds=1 @0x9242FF8
+  0x6193420 embeds=1 @0x9243008
+  0x61934C0 embeds=1 @0x9243028
+  0x6193560 embeds=1 @0x9243018
+  0x6193600 embeds=1 @0x9243038
+  0x61936A0 embeds=1 @0x9243048
+table window @0x9242FE8:
+  0x9242FE8=0x61932E0 *** OWNER ***
+  0x9242FF0=0x5C34800
+  0x9242FF8=0x6193380 *** OWNER ***
+  0x9243000=0x74749A0
+  0x9243008=0x6193420 *** OWNER ***
+  0x9243010=0x74749C0
+  0x9243018=0x6193560 *** OWNER ***
+  0x9243020=0x74749B0
+  0x9243028=0x61934C0 *** OWNER ***
+  0x9243030=0x74749D0
+  0x9243038=0x6193600 *** OWNER ***
+  0x9243040=0x74749E0
+  0x9243048=0x61936A0 *** OWNER ***
+
+===== LOOKUP HELPERS =====
+GateHelper 0x4DEAC50 E8 callers sampled=21
+LookupHelper 0x4DBF820 (hash-bucket object get) E8 sampled=40
+Pattern: GateHelper -> LookupHelper -> mov r8,[obj]; mov edx,2|3; call [r8+0x110]
+NOTE: lea [rsi+18] in edx=2 owner is FIELD ADDRESS arg to vcall +0x118, NOT the Neighbor nested-object load (mov rcx,[this+18]).
+
+===== NEST +0x18 IDIOMS =====
+Neighbor nested load mov [this+0x18] then pointer[+0x98]=True
+mov [reg+18] then call [reg+0x20] sites~=12898 (common untyped idiom; not NS-specific offline)
+mov [reg+18] then call [reg+0x110] sites~=26
+NeighVt20/SpatVt20 E8 still 0/0 (vcall-only construct)
+
+===== VERDICTS =====
+1) No static Neigh/Spat VT-compare typing offline; VT[+0x20] remains vcall-only. Typed Neighbor entry is slot +0x110 with edx in {2,3}. typedSites=True
+2) Upstream of Neighbor edx=3/[vt+0x2B0]: owner cluster (e.g. 0x6193380 edx=3, 0x61934C0 edx=2) via LookupHelper 0x4DBF820 then call [vt+0x110]; table @0x9242FE8. upstreamMapped=True
