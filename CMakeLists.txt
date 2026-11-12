@@ -131,3 +131,45 @@ if(MSVC)
         /EHsc
     )
 endif()
+
+# v0.8.0 workstream 6 — offline remote puppet lifecycle. No game calls.
+# Owned by cursor/v080-remote-puppet-lifecycle-f464. Does not link the ASI.
+add_library(BlackFlagCoopPuppetLifecycle STATIC
+    src/coop/remote_puppet_lifecycle.cpp
+    src/coop/remote_puppet_lifecycle.h
+)
+target_include_directories(BlackFlagCoopPuppetLifecycle PUBLIC src)
+target_compile_features(BlackFlagCoopPuppetLifecycle PUBLIC cxx_std_17)
+if(MSVC)
+    target_compile_options(BlackFlagCoopPuppetLifecycle PRIVATE
+        /W4
+        /permissive-
+        /EHsc
+    )
+else()
+    target_compile_options(BlackFlagCoopPuppetLifecycle PRIVATE
+        -Wall -Wextra -Wpedantic
+    )
+endif()
+
+add_executable(BlackFlagCoopPuppetLifecycleTest
+    tools/remote_puppet_lifecycle_test/main.cpp
+)
+target_link_libraries(BlackFlagCoopPuppetLifecycleTest PRIVATE
+    BlackFlagCoopPuppetLifecycle
+)
+target_compile_features(BlackFlagCoopPuppetLifecycleTest PRIVATE cxx_std_17)
+if(MSVC)
+    target_compile_options(BlackFlagCoopPuppetLifecycleTest PRIVATE
+        /W4
+        /permissive-
+        /EHsc
+    )
+else()
+    target_compile_options(BlackFlagCoopPuppetLifecycleTest PRIVATE
+        -Wall -Wextra -Wpedantic
+    )
+endif()
+
+enable_testing()
+add_test(NAME remote_puppet_lifecycle COMMAND BlackFlagCoopPuppetLifecycleTest)
