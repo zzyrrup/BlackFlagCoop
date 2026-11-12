@@ -7,7 +7,8 @@
   "repository": {
     "url": "https://github.com/zzyrrup/BlackFlagCoop",
     "defaultBranch": "main",
-    "latestCommit": "e12e70150656ac80742f10b496f7e5556e7985b7",
+    "latestCommit": "c7e43650e6ec307ac0891f682421fae36da5bb07",
+    "initialCommit": "e12e70150656ac80742f10b496f7e5556e7985b7",
     "tracking": "origin/main"
   },
   "project": {
