@@ -1,0 +1,155 @@
+{
+  "schemaVersion": 1,
+  "workstream": "9/7",
+  "milestone": "v0.8.0-build-validation",
+  "generatedUtc": "2026-11-12T20:41:51Z",
+  "commit": "441bd675a18b0db3255eb69c26fd86ec2cae2dc5",
+  "branch": "cursor/v080-build-validation-ba41",
+  "dirty": true,
+  "host": {
+    "system": "Linux",
+    "machine": "x86_64",
+    "python": "3.12.3",
+    "cmake": "3.28.3"
+  },
+  "compiler": {
+    "configured": false,
+    "id": null,
+    "version": null,
+    "generatorRequested": "Visual Studio 18 2026",
+    "architectureRequested": "x64",
+    "configRequested": "Release"
+  },
+  "deploymentStatus": "not_deployed",
+  "deployed": false,
+  "gameLaunched": false,
+  "installedAsi": {
+    "version": "0.5.1",
+    "sha256": "63B38877DDA7CC7CD9AB2619F94D3941C37F54C95A435EFE47084DC4CF2A50BE",
+    "preserved": true,
+    "modifiedByThisRun": false,
+    "checkedOnThisMachine": false,
+    "note": "Known-good v0.5.1 hash recorded for comparison. This run did not open, hash, or replace an installed ASI."
+  },
+  "candidateAsi": {
+    "present": false,
+    "path": "build/bin/Release/BlackFlagCoop.asi",
+    "bytes": null,
+    "sha256": null,
+    "deployed": false
+  },
+  "commands": {
+    "configure": "cmake -S . -B build -G \"Visual Studio 18 2026\" -A x64",
+    "build": "cmake --build build --config Release",
+    "ctest": "ctest --test-dir build -C Release --output-on-failure"
+  },
+  "configure": {
+    "result": "fail",
+    "detail": "CMake on this machine has no Visual Studio 18 2026 generator."
+  },
+  "build": {
+    "result": "fail",
+    "detail": "Build directory was not produced by configure."
+  },
+  "tests": {
+    "ctest": {
+      "result": "fail",
+      "passed": 0,
+      "failed": null,
+      "detail": "CTest had no build directory."
+    },
+    "python": {
+      "result": "pass",
+      "detail": "14 tests, unittest discover tools/build_validation_test"
+    }
+  },
+  "staticAudit": {
+    "ok": true,
+    "projectVersion": "0.5.1",
+    "pluginVersion": "0.5.1",
+    "ctestNames": [
+      "NetDiagSelfTest",
+      "NetSelfTest"
+    ],
+    "errors": [],
+    "warnings": [
+      "MSVC warnings are not treated as errors (/WX is unset).",
+      "BlackFlagCoopExeStringProbe is built but not registered with CTest. It needs a local game executable, which is not in the repo."
+    ]
+  },
+  "branchSurvey": [
+    {
+      "ref": "origin/main",
+      "commit": "441bd675a18b0db3255eb69c26fd86ec2cae2dc5",
+      "projectVersion": "0.5.1",
+      "pluginVersion": "0.5.1",
+      "ctestNames": [],
+      "note": "Baseline this branch started from. No enable_testing()."
+    },
+    {
+      "ref": "origin/cursor/v070-session-panel-ba61",
+      "commit": "611f186476e9e51a2a3d63cb81ede00d44b1f184",
+      "projectVersion": "0.7.0",
+      "pluginVersion": "bfc::kSessionPanelVersion",
+      "ctestNames": [
+        "SessionPanel"
+      ],
+      "note": "PR #6. NetTest self-test modes are not registered. Not edited."
+    },
+    {
+      "ref": "origin/cursor/v070-pc1-smoke-5709",
+      "commit": "078fabc6e4e0871be55d1d374d338b30b90f4dd9",
+      "projectVersion": "0.7.0",
+      "pluginVersion": "bfc::kSessionPanelVersion",
+      "ctestNames": [
+        "SessionPanel"
+      ],
+      "note": "PR #27. Preserved exactly. Not edited."
+    },
+    {
+      "ref": "origin/cursor/v080-second-edward-4d8f",
+      "commit": "b570413711ed23857c00b5e4ee4d08ff705c0a0e",
+      "projectVersion": "0.8.0",
+      "pluginVersion": "0.8.0-dev",
+      "ctestNames": [
+        "SecondEdward"
+      ],
+      "note": "PR #28. NetTest self-test modes are not registered. Not edited."
+    },
+    {
+      "ref": "origin/cursor/v080-spawn-callers-a9fe",
+      "commit": "61510e39593c06488c1a741a1e909755e90b3790",
+      "projectVersion": "0.8.0",
+      "pluginVersion": "0.8.0-dev",
+      "ctestNames": [
+        "SpawnContract",
+        "PuppetLifecycle",
+        "BuilderPath"
+      ],
+      "note": "PR #29. NetTest self-test modes are not registered. Not edited."
+    },
+    {
+      "ref": "origin/cursor/v086-alloc-vt0-8285",
+      "commit": "dae256e62cbd5087d1bfbad737a40cfe1033c909",
+      "projectVersion": "0.5.1",
+      "pluginVersion": "0.5.1",
+      "ctestNames": [],
+      "note": "PR #30 research tip. CMake still matches the v0.5.1 tree. No CTest. Not edited."
+    }
+  ],
+  "extraDiagnostic": {
+    "nonWindowsConfigure": {
+      "generator": "Unix Makefiles",
+      "result": "fail",
+      "detail": "BlackFlagCoop only supports Windows.",
+      "note": "Diagnostic only. This is not the Visual Studio 18 2026 workflow."
+    }
+  },
+  "limitations": [
+    "Visual Studio 18 2026 x64 Release was not available on this host, so no candidate ASI was produced.",
+    "CTest for NetDiagSelfTest and NetSelfTest is registered and was not executed.",
+    "Passing the Python recorder tests does not mean the ASI loads in Assassin's Creed.",
+    "Specialist branches were inspected read-only and were not edited.",
+    "PR #27 was not modified."
+  ]
+}

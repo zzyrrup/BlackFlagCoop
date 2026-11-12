@@ -1,0 +1,1 @@
+Error: /tmp/bfc-vs-build is not a directory
