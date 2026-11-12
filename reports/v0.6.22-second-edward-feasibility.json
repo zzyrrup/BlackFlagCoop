@@ -1,0 +1,14 @@
+{
+  "schemaVersion": 1,
+  "milestone": "v0.6.22",
+  "generatedUtc": "2026-11-12T19:09:47Z",
+  "exeSha256": "19920F34BB2FAC814023EE3C27F0CECA1872E80A2AAFB37C092C419FFF77CC0D",
+  "createSecondEdward": { "class": "unsupported", "reason": "Tight TypeInfo factories construct typed heap objects from arbitrary TypeInfo; no Edward-specific create or possession path proven" },
+  "typeInfoFactory": { "class": "confirmed", "reason": "Confirmed generic factory idiom Lookup/ti -> dword[ti+0x20] -> Allocator(edx=size) -> icall[ti+0x50]; not LookupKey-tied for 0xB2898C8", "keyTiedTight": false },
+  "helper546Consumers": { "class": "confirmed", "reason": "Mapped 32 caller funcs (31 beyond neighbor); roles classified offline" },
+  "liveMemoryProbe": { "class": "blocked", "reason": "Not authorized" },
+  "next": {
+    "primary": "Find which tight-factory callers feed TypeInfo for key 0xB2898C8 / size 0x20F0; deep-decode possession-like helper consumers",
+    "avoid": ["live memory", "ASI deploy", "spawn", "PC2", "+0x61-only ranking", "field-offset 0x20F0 as heap size", "treat loose fullPattern as proven"]
+  }
+}

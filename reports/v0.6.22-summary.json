@@ -1,0 +1,25 @@
+{
+  "schemaVersion": 1,
+  "milestone": "v0.6.22",
+  "generatedUtc": "2026-11-12T19:09:47Z",
+  "exeSha256": "19920F34BB2FAC814023EE3C27F0CECA1872E80A2AAFB37C092C419FFF77CC0D",
+  "factory": {
+    "candidates": 48,
+    "looseFullPattern": true,
+    "tightVerified": true,
+    "keyTiedPartial": true,
+    "keyTiedTight": false,
+    "idiom": "Lookup/ti -> dword[ti+0x20] size -> Allocator(edx=size) -> icall[ti+0x50] ctor",
+    "tightHits": ["0x218660", "0x218900", "0x21FA70", "0x238590", "0x256280"],
+    "looseFullHits": ["0x3F710", "0x1AA9D0", "0x1CB090", "0x1D31E0", "0x1EFE80", "0x218660", "0x218900", "0x21FA70", "0x2201B0", "0x238590", "0x256280", "0x566BB0", "0x807CA0", "0x8D2A00", "0x99E390", "0x2F2C1A0"],
+    "keyHits": ["0x251E50", "0x388ED0", "0x60D6C0", "0x725400", "0xA07490", "0xA61DD0", "0xE3D8D0", "0xF1C240", "0x143F800", "0x17C5A50", "0x183E1D0", "0x184CF20", "0x18C7870", "0x19783A0", "0x19C02B0", "0x1B6AFF0", "0x1C10D50", "0x1E944A0", "0x26B9710", "0x26D28E0"]
+  },
+  "helper546": {
+    "callerSites": 41,
+    "uniqueFuncs": 32,
+    "beyondNeighbor": 31,
+    "decoded": 18,
+    "roles": {"helper-consumer": 1, "block-copy-consumer": 12, "arm-neighbor-like": 1, "thin-wrapper": 1, "sideblock-walker": 2}
+  },
+  "edwardOrPlayerTypeConfirmed": false
+}

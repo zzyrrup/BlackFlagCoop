@@ -1,14 +1,14 @@
 {
   "schemaVersion": 1,
-  "generatedUtc": "2026-11-12T19:06:00Z",
+  "generatedUtc": "2026-11-12T19:12:00Z",
   "handoffFor": "ChatGPT",
   "executor": "Cursor",
   "machine": "PC1",
   "repository": {
     "url": "https://github.com/zzyrrup/BlackFlagCoop",
     "defaultBranch": "main",
-    "featureBranch": "cursor/v081-typeinfo-edx3-8285",
-    "baseBranch": "cursor/v080-activ-heap-size-8285",
+    "featureBranch": "cursor/v082-typeinfo-factory-8285",
+    "baseBranch": "cursor/v081-typeinfo-edx3-8285",
     "doNotPushMain": true,
     "initialCommit": "e12e70150656ac80742f10b496f7e5556e7985b7"
   },
@@ -18,10 +18,10 @@
     "functionalityChangedByThisMilestone": false
   },
   "milestone": {
-    "currentId": "v0.6.21",
-    "currentTitle": "TypeInfo alloc consumer scan + edx=3 / 0x546D150 decode",
+    "currentId": "v0.6.22",
+    "currentTitle": "Generic TypeInfo factory idiom + 0x546D150 consumer map",
     "status": "complete",
-    "priorPreserved": ["v0.6.4", "v0.6.5", "v0.6.6", "v0.6.7", "v0.6.8", "v0.6.9", "v0.6.10", "v0.6.11", "v0.6.12", "v0.6.13", "v0.6.14", "v0.6.15", "v0.6.16", "v0.6.17", "v0.6.18", "v0.6.19", "v0.6.20"]
+    "priorPreserved": ["v0.6.4", "v0.6.5", "v0.6.6", "v0.6.7", "v0.6.8", "v0.6.9", "v0.6.10", "v0.6.11", "v0.6.12", "v0.6.13", "v0.6.14", "v0.6.15", "v0.6.16", "v0.6.17", "v0.6.18", "v0.6.19", "v0.6.20", "v0.6.21"]
   },
   "asi": {
     "version": "0.5.1",
@@ -37,7 +37,7 @@
   },
   "build": {
     "asiRebuilt": false,
-    "offlineTools": ["tools/offline/TypeInfo081"]
+    "offlineTools": ["tools/offline/TiFactory082"]
   },
   "network": {
     "changesAuthorized": false,
@@ -45,57 +45,63 @@
   },
   "engineFindings": {
     "summary": [
-      "No absolute RIP reader of TypeInfo size 0xB2898E8; no Allocator(0x20F0) site",
-      "0x20F0 also used as field offsets (e.g. inside 0x4250 alloc at 0x3670EF0)",
-      "0x546D150 shared helper (491 B, 40 callers) returns transform/source ptr from +0x98 or nested +0xA0",
-      "edx=3 [vt+0x2B0] uses same arm-table trampoline/wrap as edx=2",
+      "Tight TypeInfo factory idiom: dword[ti+0x20] size -> Allocator(edx=size) -> icall[ti+0x50] ctor",
+      "Tight hits: 0x238590 (80 xrefs), 0x256280 (61), 0x218900, 0x218660, 0x21FA70",
+      "No LookupKey-tied tight factory for 0xB2898C8; loose key hit 0x2F2C1A0 fails tight",
+      "0x546D150: 41 sites / 32 funcs / 31 beyond neighbor; mostly block-copy consumers",
       "No Edward/create path"
     ],
     "keyRvas": {
+      "lookup": "0x429F9E0",
+      "allocator": "0x426EE50",
+      "lookupKey": "0xB2898C8",
       "sizeField": "0xB2898E8",
       "ctorField": "0xB289918",
       "registeredSize": "0x20F0",
+      "outerCtor": "0x59D9660",
+      "tightFactoryPrimary": "0x238590",
+      "tightFactorySecondary": "0x256280",
       "helper546": "0x546D150",
-      "neighbor": "0x2335140",
-      "armTrampoline": "0x4656C80",
-      "armWrap": "0x2108620"
+      "neighbor": "0x2335140"
     }
   },
   "confirmed": [
     "ASI v0.5.1 preserved; no deploy",
-    "No hard-coded Alloc(0x20F0) / absolute size-field consumer",
-    "0x546D150 decoded; edx=3 shares edx=2 arm chain",
+    "Generic TypeInfo factory idiom tight-verified (5 sites)",
+    "No key-tied tight factory for this record",
+    "0x546D150 consumers mapped beyond neighbor",
     "No live memory this milestone"
   ],
   "hypotheses": [
-    "Generic TypeInfo factory uses Lookup then [ti+0x20]/[ti+0x50] rather than absolute RIP to this record"
+    "A tight-factory caller supplies TypeInfo for key 0xB2898C8 / size 0x20F0",
+    "Selected helper consumers may relate to possession/control"
   ],
   "blockers": [
-    "Generic TypeInfo factory for this record not uniquely identified",
+    "No LookupKey-tied tight factory feed for 0x20F0 record",
     "No input/possession path",
     "Spawn tests not authorized"
   ],
   "mostRecentCompletedMilestone": {
-    "id": "v0.6.21",
-    "docs": ["docs/v0.6.21-typeinfo-edx3.md"],
+    "id": "v0.6.22",
+    "docs": ["docs/v0.6.22-typeinfo-factory.md"],
     "reports": [
-      "reports/v0.6.21-funcs-deep.json",
-      "reports/v0.6.21-summary.json",
-      "reports/v0.6.21-second-edward-feasibility.json",
-      "reports/v081-raw/evidence.txt"
+      "reports/v0.6.22-funcs-deep.json",
+      "reports/v0.6.22-summary.json",
+      "reports/v0.6.22-second-edward-feasibility.json",
+      "reports/v082-raw/evidence.txt"
     ]
   },
   "nextRecommendedMilestone": {
-    "id": "v0.6.22",
-    "title": "Generic TypeInfo factory Lookup->[ti+0x20]->Alloc->[ti+0x50]; map 0x546D150 consumers",
-    "primary": ["Lookup factory pattern", "0x546D150 consumers", "possession/control candidates"],
-    "forbidden": ["spawn", "deploy", "live memory", "PC2", "save-data", "force-push main", "+0x61-only ranking", "field-offset 0x20F0 as heap size"]
+    "id": "v0.6.23",
+    "title": "Tight-factory callers for key 0xB2898C8 / 0x20F0; possession-like 0x546D150 consumers",
+    "primary": ["factory callers feeding key/size", "possession-like helper consumers"],
+    "forbidden": ["spawn", "deploy", "live memory", "PC2", "save-data", "force-push main", "+0x61-only ranking", "field-offset 0x20F0 as heap size", "treat loose fullPattern as proven"]
   },
   "tests": [
-    { "name": "TypeInfo081_build_scan", "result": "pass" },
-    { "name": "alloc_0x20F0_scan", "result": "pass_none" },
-    { "name": "helper546_decode", "result": "pass" },
-    { "name": "edx3_arm_chain", "result": "pass" },
+    { "name": "TiFactory082_build_scan", "result": "pass" },
+    { "name": "tight_factory_verify", "result": "pass_5" },
+    { "name": "key_tied_tight", "result": "pass_none" },
+    { "name": "helper546_consumer_map", "result": "pass" },
     { "name": "game_launch_deploy", "result": "not_run" },
     { "name": "spawn_live_memory", "result": "not_run" }
   ],
@@ -111,9 +117,9 @@
   },
   "chatgptNextReviewInstructions": [
     "Read docs/CHATGPT_HANDOFF.md and this JSON first",
-    "Review v0.6.21 PR; preserve v0.6.4-v0.6.20 history",
+    "Review v0.6.22 PR; preserve v0.6.4-v0.6.21 history",
     "Separate confirmed vs hypotheses",
-    "Propose v0.6.22 generic TypeInfo factory + 0x546D150 consumers",
+    "Propose v0.6.23 tight-factory callers for key/size + possession-like helper consumers",
     "Do not authorize deploy/spawn/live memory/PC2 unless user overrides",
     "Return PC1 branch+PR instructions"
   ]
