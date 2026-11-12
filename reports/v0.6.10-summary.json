@@ -1,0 +1,13 @@
+{
+  "schemaVersion": 1,
+  "milestone": "v0.6.10",
+  "generatedUtc": "2026-11-12T17:23:05Z",
+  "exeSha256": "19920F34BB2FAC814023EE3C27F0CECA1872E80A2AAFB37C092C419FFF77CC0D",
+  "backwardNodeCount": 200,
+  "nestedSeeds": 81,
+  "nodesCallingAllocator": 21,
+  "lodConsumersClassified": 35,
+  "lodBundleLikeCount": 14,
+  "edwardOrPlayerTypeConfirmed": false,
+  "avoidedPlus61OnlyRanking": true
+}

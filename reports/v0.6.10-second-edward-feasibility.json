@@ -1,0 +1,26 @@
+{
+  "schemaVersion": 1,
+  "milestone": "v0.6.10",
+  "generatedUtc": "2026-11-12T17:30:00Z",
+  "exeSha256": "19920F34BB2FAC814023EE3C27F0CECA1872E80A2AAFB37C092C419FFF77CC0D",
+  "createSecondEdward": {
+    "class": "unsupported",
+    "reason": "Backward trace finds allocator-linked nested-chain nodes but not an Edward factory"
+  },
+  "allocatorOnQueuePath": {
+    "class": "plausible",
+    "reason": "0x400B50 and 0x4444C0 are nested-chain + lookup + call 0x426EE50 at depth 0"
+  },
+  "lodConsumersClassified": {
+    "class": "confirmed",
+    "reason": "Only phase registrar installs stub+cmp+thunk at +0xE18 bundle; others are generic cmp/thunk installs"
+  },
+  "liveMemoryProbe": {
+    "class": "blocked",
+    "reason": "Not authorized"
+  },
+  "next": {
+    "primary": "Deep-decode 0x400B50 / 0x4444C0 and their callers toward enqueue enrollment",
+    "avoid": ["live memory", "ASI deploy", "spawn", "PC2", "+0x61-only ranking"]
+  }
+}
