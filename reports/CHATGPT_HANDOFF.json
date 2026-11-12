@@ -1,14 +1,14 @@
 {
   "schemaVersion": 1,
-  "generatedUtc": "2026-11-12T21:14:00Z",
+  "generatedUtc": "2026-11-12T21:30:00Z",
   "handoffFor": "ChatGPT",
   "executor": "Cursor",
   "machine": "PC1",
   "repository": {
     "url": "https://github.com/zzyrrup/BlackFlagCoop",
     "defaultBranch": "main",
-    "featureBranch": "cursor/v091-vt20-callers-8285",
-    "baseBranch": "cursor/v090-tihelper-lookup-8285",
+    "featureBranch": "cursor/v092-typed-vcall-8285",
+    "baseBranch": "cursor/v091-vt20-callers-8285",
     "doNotPushMain": true,
     "initialCommit": "e12e70150656ac80742f10b496f7e5556e7985b7"
   },
@@ -18,10 +18,10 @@
     "functionalityChangedByThisMilestone": false
   },
   "milestone": {
-    "currentId": "v0.6.31",
-    "currentTitle": "VT[+0x20] callers + 0xB0/+0x98 consumers",
+    "currentId": "v0.6.32",
+    "currentTitle": "Typed Neigh/Spat vcalls + Neighbor upstream",
     "status": "complete",
-    "priorPreserved": ["v0.6.4", "v0.6.5", "v0.6.6", "v0.6.7", "v0.6.8", "v0.6.9", "v0.6.10", "v0.6.11", "v0.6.12", "v0.6.13", "v0.6.14", "v0.6.15", "v0.6.16", "v0.6.17", "v0.6.18", "v0.6.19", "v0.6.20", "v0.6.21", "v0.6.22", "v0.6.23", "v0.6.24", "v0.6.25", "v0.6.26", "v0.6.27", "v0.6.28", "v0.6.29", "v0.6.30"]
+    "priorPreserved": ["v0.6.4", "v0.6.5", "v0.6.6", "v0.6.7", "v0.6.8", "v0.6.9", "v0.6.10", "v0.6.11", "v0.6.12", "v0.6.13", "v0.6.14", "v0.6.15", "v0.6.16", "v0.6.17", "v0.6.18", "v0.6.19", "v0.6.20", "v0.6.21", "v0.6.22", "v0.6.23", "v0.6.24", "v0.6.25", "v0.6.26", "v0.6.27", "v0.6.28", "v0.6.29", "v0.6.30", "v0.6.31"]
   },
   "asi": {
     "version": "0.5.1",
@@ -37,7 +37,7 @@
   },
   "build": {
     "asiRebuilt": false,
-    "offlineTools": ["tools/offline/Vt20Callers091"]
+    "offlineTools": ["tools/offline/TypedVcall092"]
   },
   "network": {
     "changesAuthorized": false,
@@ -45,65 +45,69 @@
   },
   "engineFindings": {
     "summary": [
-      "Neigh/Spat VT[+0x20] construct is vcall-only (0 E8/LEA/FF15; embeds are VT slots only)",
-      "Generic call[rax+20] widespread (4659) but untyped to NS offline",
-      "+0x98 families: byte (NeighRel/Neighbor this), pointer (SideBlock/Arming/nested+0x18), spatial inline",
-      "Neighbor 0x2335140 bridges byte this+0x98 with pointer [this+0x18]+0x98 after edx=3 [vt+0x2B0]",
-      "No Edward/create path"
+      "No static Neigh/Spat VT-compare (0 movabs / LEA-compare beyond installers)",
+      "Neighbor typed by call [vt+0x110] with edx in {2,3}; sole edx=3->[vt+0x2B0] is Neighbor 0x2335140",
+      "Upstream owners 0x6193380 (edx=3) / 0x61934C0 (edx=2) after LookupHelper 0x4DBF820; table 0x9242FE8; E8=0",
+      "Owner lea[+0x18] is field arg to +0x118, not Neighbor nested pointer",
+      "VT[+0x20] still vcall-only; no Edward/create path"
     ],
     "keyRvas": {
-      "neighVt20": "0x3D52400",
-      "spatVt20": "0x6CF34E0",
       "neighbor": "0x2335140",
       "neighborSlot": "0x976B3E0",
-      "neighRel": "0x3D522C0",
-      "sideBlock": "0xE95E80",
-      "arming": "0x21085D0",
-      "helper546": "0x546D150",
+      "ownerEdx3": "0x6193380",
+      "ownerEdx2": "0x61934C0",
+      "ownerTable": "0x9242FE8",
+      "lookupHelper": "0x4DBF820",
+      "gateHelper": "0x4DEAC50",
+      "neighVt20": "0x3D52400",
+      "spatVt20": "0x6CF34E0",
       "tiHelper": "0x43DCB00"
     }
   },
   "confirmed": [
     "ASI v0.5.1 preserved; no deploy",
-    "VT[+0x20] vcall-only construct dispatch",
-    "+0x98 byte vs pointer vs spatial families mapped",
-    "Neighbor bridges byte(this) + pointer(nested+0x18)",
+    "No static Neigh/Spat VT-compare offline",
+    "Neighbor typed by +0x110 + edx in {2,3}",
+    "Sole edx=3->[vt+0x2B0] is Neighbor",
+    "Upstream owner cluster via LookupHelper; table-dispatched",
     "No live memory this milestone"
   ],
   "hypotheses": [
-    "Typed VT-compare vcall sites identify Neigh/Spat construct consumers",
-    "Upstream of Neighbor/edx=3 path owns enrollment nest wiring"
+    "LookupHelper 0x4DBF820 runtime return is Neigh-family VT",
+    "Owner-table 0x9242FE8 dispatcher and nest+0x18 pointer objects relate to SideBlock enrollment"
   ],
   "blockers": [
-    "Typed Neigh/Spat vcall sites open offline",
-    "Neighbor upstream owners open",
+    "LookupHelper return type open offline",
+    "Owner-table dispatcher open",
+    "Nest+0x18 vs SideBlock link open",
     "No input/possession path",
     "Spawn tests not authorized"
   ],
   "mostRecentCompletedMilestone": {
-    "id": "v0.6.31",
+    "id": "v0.6.32",
     "docs": [
-      "docs/v0.6.31-vt20-callers.md",
-      "docs/v0.6.31-funcs-deep.md",
-      "docs/v0.6.31-second-edward-feasibility.md"
+      "docs/v0.6.32-typed-vcall.md",
+      "docs/v0.6.32-funcs-deep.md",
+      "docs/v0.6.32-second-edward-feasibility.md"
     ],
     "reports": [
-      "reports/v0.6.31-funcs-deep.json",
-      "reports/v0.6.31-summary.json",
-      "reports/v0.6.31-second-edward-feasibility.json",
-      "reports/v091-raw/evidence.txt"
+      "reports/v0.6.32-funcs-deep.json",
+      "reports/v0.6.32-summary.json",
+      "reports/v0.6.32-second-edward-feasibility.json",
+      "reports/v092-raw/evidence.txt"
     ]
   },
   "nextRecommendedMilestone": {
-    "id": "v0.6.32",
-    "title": "Typed Neigh/Spat vcall sites; Neighbor bridge upstream of edx=3/[vt+0x2B0]",
-    "primary": ["Typed vcall into Neigh/Spat", "Neighbor bridge owners upstream of edx=3 arm path"],
-    "forbidden": ["spawn", "deploy", "live memory", "PC2", "save-data", "force-push main", "expect E8 to VT[+0x20]", "assume Neighbor this+0x98 is SideBlock pointer"]
+    "id": "v0.6.33",
+    "title": "LookupHelper return + owner-table dispatch + nest/+0x18 SideBlock",
+    "primary": ["LookupHelper 0x4DBF820 return identity", "Owner table 0x9242FE8 dispatch", "Nest +0x18 vs SideBlock family"],
+    "forbidden": ["spawn", "deploy", "live memory", "PC2", "save-data", "force-push main", "expect static VT-compare to Neigh/Spat", "conflate owner lea[+0x18] with Neighbor nested pointer"]
   },
   "tests": [
-    { "name": "Vt20Callers091_build_scan", "result": "pass" },
-    { "name": "vt20_vcall_only", "result": "pass" },
-    { "name": "plus98_family_map_neighbor_bridge", "result": "pass" },
+    { "name": "TypedVcall092_build_scan", "result": "pass" },
+    { "name": "static_vt_compare_absent", "result": "pass" },
+    { "name": "sole_edx3_to_2b0_neighbor", "result": "pass" },
+    { "name": "owner_cluster_lookuphelper", "result": "pass" },
     { "name": "game_launch_deploy", "result": "not_run" },
     { "name": "spawn_live_memory", "result": "not_run" }
   ],
@@ -119,9 +123,9 @@
   },
   "chatgptNextReviewInstructions": [
     "Read docs/CHATGPT_HANDOFF.md and this JSON first",
-    "Review v0.6.31 PR; preserve v0.6.4-v0.6.30 history",
+    "Review v0.6.32 PR; preserve v0.6.4-v0.6.31 history",
     "Separate confirmed vs hypotheses",
-    "Propose v0.6.32 typed vcall + Neighbor upstream",
+    "Propose v0.6.33 LookupHelper return + owner-table + nest SideBlock",
     "Do not authorize deploy/spawn/live memory/PC2 unless user overrides",
     "Return PC1 branch+PR instructions"
   ]

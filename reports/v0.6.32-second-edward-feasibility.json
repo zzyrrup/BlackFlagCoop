@@ -1,0 +1,14 @@
+{
+  "schemaVersion": 1,
+  "milestone": "v0.6.32",
+  "generatedUtc": "2026-11-12T21:23:41Z",
+  "exeSha256": "19920F34BB2FAC814023EE3C27F0CECA1872E80A2AAFB37C092C419FFF77CC0D",
+  "createSecondEdward": { "class": "unsupported", "reason": "Typed +0x110 / nest paths are NS bridge dispatch, not Edward create" },
+  "typedVcalls": { "class": "confirmed", "reason": "No static Neigh/Spat VT-compare; Neighbor typed by slot +0x110 with edx in {2,3}; sole edx=3->[vt+0x2B0] is Neighbor itself; VT[+0x20] still vcall-only" },
+  "neighborUpstream": { "class": "confirmed", "reason": "Owner cluster 0x6193380 (edx=3) / 0x61934C0 (edx=2) call [vt+0x110] after LookupHelper 0x4DBF820; published at table 0x9242FE8; E8=0 (table-dispatched)" },
+  "liveMemoryProbe": { "class": "blocked", "reason": "Not authorized" },
+  "next": {
+    "primary": "Identify runtime type returned by LookupHelper 0x4DBF820 (live or deeper static); map who dispatches owner table 0x9242FE8; relate nest+0x18 pointer objects to enrollment SideBlock family",
+    "avoid": ["live memory", "ASI deploy", "spawn", "PC2", "expect static VT-compare to Neigh/Spat", "conflate owner lea[+0x18] field arg with Neighbor nested pointer"]
+  }
+}
