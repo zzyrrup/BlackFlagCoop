@@ -7,7 +7,7 @@
   "repository": {
     "url": "https://github.com/zzyrrup/BlackFlagCoop",
     "defaultBranch": "main",
-    "latestCommit": "34dedc40853bc27ddff6c840a68206534fd7cdf5",
+    "latestCommit": "79f2762803914b45ea669982ff1d44c476ff09c2",
     "initialCommit": "e12e70150656ac80742f10b496f7e5556e7985b7",
     "tracking": "origin/main"
   },
@@ -75,7 +75,7 @@
   ],
   "c2NextEdge": {
     "branch": "cursor/v080-c2-vt90-edge-530e",
-    "parentCommit": "768ad21",
+    "parentCommit": "a12d5b1",
     "advances": "C2",
     "site": "0x1F75EA7",
     "slot": "vt+0x90",
