@@ -1,14 +1,14 @@
 {
   "schemaVersion": 1,
-  "generatedUtc": "2026-11-12T19:12:00Z",
+  "generatedUtc": "2026-11-12T19:18:00Z",
   "handoffFor": "ChatGPT",
   "executor": "Cursor",
   "machine": "PC1",
   "repository": {
     "url": "https://github.com/zzyrrup/BlackFlagCoop",
     "defaultBranch": "main",
-    "featureBranch": "cursor/v082-typeinfo-factory-8285",
-    "baseBranch": "cursor/v081-typeinfo-edx3-8285",
+    "featureBranch": "cursor/v083-factory-feed-8285",
+    "baseBranch": "cursor/v082-typeinfo-factory-8285",
     "doNotPushMain": true,
     "initialCommit": "e12e70150656ac80742f10b496f7e5556e7985b7"
   },
@@ -18,10 +18,10 @@
     "functionalityChangedByThisMilestone": false
   },
   "milestone": {
-    "currentId": "v0.6.22",
-    "currentTitle": "Generic TypeInfo factory idiom + 0x546D150 consumer map",
+    "currentId": "v0.6.23",
+    "currentTitle": "Factory key feed scan + possession-like helper deep-decode",
     "status": "complete",
-    "priorPreserved": ["v0.6.4", "v0.6.5", "v0.6.6", "v0.6.7", "v0.6.8", "v0.6.9", "v0.6.10", "v0.6.11", "v0.6.12", "v0.6.13", "v0.6.14", "v0.6.15", "v0.6.16", "v0.6.17", "v0.6.18", "v0.6.19", "v0.6.20", "v0.6.21"]
+    "priorPreserved": ["v0.6.4", "v0.6.5", "v0.6.6", "v0.6.7", "v0.6.8", "v0.6.9", "v0.6.10", "v0.6.11", "v0.6.12", "v0.6.13", "v0.6.14", "v0.6.15", "v0.6.16", "v0.6.17", "v0.6.18", "v0.6.19", "v0.6.20", "v0.6.21", "v0.6.22"]
   },
   "asi": {
     "version": "0.5.1",
@@ -37,7 +37,7 @@
   },
   "build": {
     "asiRebuilt": false,
-    "offlineTools": ["tools/offline/TiFactory082"]
+    "offlineTools": ["tools/offline/FactoryFeed083"]
   },
   "network": {
     "changesAuthorized": false,
@@ -45,15 +45,13 @@
   },
   "engineFindings": {
     "summary": [
-      "Tight TypeInfo factory idiom: dword[ti+0x20] size -> Allocator(edx=size) -> icall[ti+0x50] ctor",
-      "Tight hits: 0x238590 (80 xrefs), 0x256280 (61), 0x218900, 0x218660, 0x21FA70",
-      "No LookupKey-tied tight factory for 0xB2898C8; loose key hit 0x2F2C1A0 fails tight",
-      "0x546D150: 41 sites / 32 funcs / 31 beyond neighbor; mostly block-copy consumers",
+      "No tight-factory caller feeds TypeInfo for 0xB2898C8 / 0x20F0 (186 callers; 0 key LEA; 0 size-imm; 0 intersect)",
+      "Key Lookup+Alloc without tight factory: 0x1B6AFF0, 0x26D28E0, 0x2F2C1A0",
+      "0x2336560 thin position extract from helper; 0x1D25E20 spatial/matrix consumer",
+      "Helper consumers not proven as possession/control",
       "No Edward/create path"
     ],
     "keyRvas": {
-      "lookup": "0x429F9E0",
-      "allocator": "0x426EE50",
       "lookupKey": "0xB2898C8",
       "sizeField": "0xB2898E8",
       "ctorField": "0xB289918",
@@ -62,46 +60,46 @@
       "tightFactoryPrimary": "0x238590",
       "tightFactorySecondary": "0x256280",
       "helper546": "0x546D150",
-      "neighbor": "0x2335140"
+      "neighbor": "0x2335140",
+      "positionExtract": "0x2336560",
+      "spatialConsumer": "0x1D25E20"
     }
   },
   "confirmed": [
     "ASI v0.5.1 preserved; no deploy",
-    "Generic TypeInfo factory idiom tight-verified (5 sites)",
-    "No key-tied tight factory for this record",
-    "0x546D150 consumers mapped beyond neighbor",
+    "No RIP key/size feed from tight-factory callers to this TypeInfo",
+    "Possession-candidate helpers are transform/position consumers",
     "No live memory this milestone"
   ],
   "hypotheses": [
-    "A tight-factory caller supplies TypeInfo for key 0xB2898C8 / size 0x20F0",
-    "Selected helper consumers may relate to possession/control"
+    "Runtime non-RIP TypeInfo may still reach a tight factory",
+    "Ownership behind transform-copy helpers may relate to control"
   ],
   "blockers": [
-    "No LookupKey-tied tight factory feed for 0x20F0 record",
+    "Create/use path for 0x20F0 composite not via factory-caller key LEA",
     "No input/possession path",
     "Spawn tests not authorized"
   ],
   "mostRecentCompletedMilestone": {
-    "id": "v0.6.22",
-    "docs": ["docs/v0.6.22-typeinfo-factory.md"],
+    "id": "v0.6.23",
+    "docs": ["docs/v0.6.23-factory-feed.md"],
     "reports": [
-      "reports/v0.6.22-funcs-deep.json",
-      "reports/v0.6.22-summary.json",
-      "reports/v0.6.22-second-edward-feasibility.json",
-      "reports/v082-raw/evidence.txt"
+      "reports/v0.6.23-funcs-deep.json",
+      "reports/v0.6.23-summary.json",
+      "reports/v0.6.23-second-edward-feasibility.json",
+      "reports/v083-raw/evidence.txt"
     ]
   },
   "nextRecommendedMilestone": {
-    "id": "v0.6.23",
-    "title": "Tight-factory callers for key 0xB2898C8 / 0x20F0; possession-like 0x546D150 consumers",
-    "primary": ["factory callers feeding key/size", "possession-like helper consumers"],
-    "forbidden": ["spawn", "deploy", "live memory", "PC2", "save-data", "force-push main", "+0x61-only ranking", "field-offset 0x20F0 as heap size", "treat loose fullPattern as proven"]
+    "id": "v0.6.24",
+    "title": "InstallerA/outer-ctor reverse into create/use; ownership behind transform-copy helpers",
+    "primary": ["0x59D9660 create/use sites", "ownership behind neighbor/0x1D25E20"],
+    "forbidden": ["spawn", "deploy", "live memory", "PC2", "save-data", "force-push main", "+0x61-only ranking", "field-offset 0x20F0 as heap size", "treat helper position extract as possession"]
   },
   "tests": [
-    { "name": "TiFactory082_build_scan", "result": "pass" },
-    { "name": "tight_factory_verify", "result": "pass_5" },
-    { "name": "key_tied_tight", "result": "pass_none" },
-    { "name": "helper546_consumer_map", "result": "pass" },
+    { "name": "FactoryFeed083_build_scan", "result": "pass" },
+    { "name": "factory_key_feed", "result": "pass_none" },
+    { "name": "possession_helper_deep", "result": "pass" },
     { "name": "game_launch_deploy", "result": "not_run" },
     { "name": "spawn_live_memory", "result": "not_run" }
   ],
@@ -117,9 +115,9 @@
   },
   "chatgptNextReviewInstructions": [
     "Read docs/CHATGPT_HANDOFF.md and this JSON first",
-    "Review v0.6.22 PR; preserve v0.6.4-v0.6.21 history",
+    "Review v0.6.23 PR; preserve v0.6.4-v0.6.22 history",
     "Separate confirmed vs hypotheses",
-    "Propose v0.6.23 tight-factory callers for key/size + possession-like helper consumers",
+    "Propose v0.6.24 InstallerA/outer-ctor reverse + ownership behind transform helpers",
     "Do not authorize deploy/spawn/live memory/PC2 unless user overrides",
     "Return PC1 branch+PR instructions"
   ]

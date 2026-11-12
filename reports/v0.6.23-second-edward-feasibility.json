@@ -1,0 +1,14 @@
+﻿{
+  "schemaVersion": 1,
+  "milestone": "v0.6.23",
+  "generatedUtc": "2026-11-12T19:15:00Z",
+  "exeSha256": "19920F34BB2FAC814023EE3C27F0CECA1872E80A2AAFB37C092C419FFF77CC0D",
+  "createSecondEdward": { "class": "unsupported", "reason": "No Edward create; factory feed and helper consumers do not prove possession" },
+  "factoryKeyFeed": { "class": "unsupported", "reason": "No tight-factory caller LEAs LookupKey 0xB2898C8 or size imm 0x20F0", "keyTiedCallers": 0, "sizeImmCallers": 0 },
+  "possessionLikeHelpers": { "class": "partial", "reason": "Deep-decoded 32 helper consumers; v2B0=2 key=0 - possession/control not proven" },
+  "liveMemoryProbe": { "class": "blocked", "reason": "Not authorized" },
+  "next": {
+    "primary": "If no key-tied factory caller: reverse from InstallerA/outer ctor registration into create sites; continue possession-like helper decode",
+    "avoid": ["live memory", "ASI deploy", "spawn", "PC2", "+0x61-only ranking", "field-offset 0x20F0 as heap size", "treat loose fullPattern as proven"]
+  }
+}

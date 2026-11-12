@@ -1,0 +1,22 @@
+{
+  "schemaVersion": 1,
+  "milestone": "v0.6.23",
+  "generatedUtc": "2026-11-12T19:15:00Z",
+  "exeSha256": "19920F34BB2FAC814023EE3C27F0CECA1872E80A2AAFB37C092C419FFF77CC0D",
+  "factoryFeed": {
+    "callerRecords": 186,
+    "keyTiedCallers": 0,
+    "sizeImmCallers": 0,
+    "keyFuncFactoryIntersect": 0,
+    "keyFuncsWithInterestingEdges": 3,
+    "keyCallerFuncs": []
+  },
+  "possessionHelpers": {
+    "decoded": 32,
+    "vcall2B0": 2,
+    "keyLinked": 0,
+    "factoryLinked": 0,
+    "roles": {"helper-consumer": 2, "block-copy-consumer": 24, "arm-neighbor-like": 1, "neighbor-baseline": 1, "thin-wrapper": 2, "sideblock-walker": 2}
+  },
+  "edwardOrPlayerTypeConfirmed": false
+}
