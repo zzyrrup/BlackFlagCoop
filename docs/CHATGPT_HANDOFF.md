@@ -3,7 +3,7 @@
 **Last updated:** 2026-11-12  
 **Machine:** PC1 only  
 **Repo:** https://github.com/zzyrrup/BlackFlagCoop  
-**Branch:** `cursor/v075-install-e2c8a0-8285` (PR into `cursor/v074-gate-deep-typeinfo-8285`; do not push main)  
+**Branch:** `cursor/v076-edata-vcall-2b0-8285` (PR into `cursor/v075-install-e2c8a0-8285`; do not push main)  
 **Initial commit:** `e12e70150656ac80742f10b496f7e5556e7985b7`
 
 This document is the primary human-readable bridge between Cursor (local execution) and ChatGPT (review / next instructions). Update it after every completed milestone.
@@ -25,9 +25,9 @@ Ultimate vision is **not claimed as achieved**. Dual-Edward co-op remains unprov
 
 ## 2. Current development milestone
 
-**v0.6.15 complete** — Install paths recovered: gate via `0x21085D0`→`0x7BB020`→`0x53F31A0`; bit-writer via `.edata` thunks `0xF1C230`/`0x210A9F0`; `0xE2C8A0` feeds `0x2EA0B00` via allocator.
+**v0.6.16 complete** — `.edata` slots are vtable entries installed by ctors; neighbor A→membership/worker; neighbor B validates `[vt+0x2B0]`; arming helper tail-calls `[vt+0x2B0]` with `edx=2`.
 
-Prior: v0.6.5–v0.6.14 preserved. Offline only. No ASI, spawn, or networking change.
+Prior: v0.6.5–v0.6.15 preserved. Offline only. No ASI, spawn, or networking change.
 
 ---
 
@@ -97,6 +97,7 @@ High-signal offline findings (see `docs/v0.6.*` and `reports/v0.6.*`):
 - **v0.6.13:** `0xB2898C8` = `.trace` TypeInfo key shared with worker `0x725400`. Gate-setter **`0x53F31A0`** (`or [obj+0x61],0x0A`); bit-writer **`0xF1C240`**; candidates `0x4B5A560`/`0x4D04450`/`0x2EA0B00`. Still no Edward/create path.
 - **v0.6.14:** Deep-decode confirms gate-setter/bit-writer semantics; membership leads call worker and use `+0x98`; TypeInfo has no inline name; lookup hashes key high byte. Gate-setter/bit-writer have **0** E8/LEA callers. Still no Edward/create path.
 - **v0.6.15:** Gate install = `.edata 0x9490078` → `0x21085D0` → stub `0x7BB020` → `jmp 0x53F31A0` (alt `jmp 0xE95E80`). Bit-writer = `.edata` thunks `0xF1C230`/`0x210A9F0`. `0xE2C8A0` = sorted 0x18-stride ensure/insert feeding `0x2EA0B00`. Still no Edward/create path.
+- **v0.6.16:** `.edata` slots consumed as vtable entries (ctors `0x2E97A50`/`0x59D9B90` install table bases). Neighbor A→`0x4D04450`/`0x725400`; neighbor B validates `[vt+0x2B0]`/`[vt+0x2B8]`; arming helper `jmp [vt+0x2B0]` with `edx=2`. Still no Edward/create path.
 
 ---
 
@@ -130,6 +131,10 @@ High-signal offline findings (see `docs/v0.6.*` and `reports/v0.6.*`):
 - Gate-setter install: arming helper **`0x21085D0`** (`.edata 0x9490078`) calls stub **`0x7BB020`**, which tail-jmps to **`0x53F31A0`** (alt **`0xE95E80`**). Arming requires `+0x98==0`, nested `+0x18/+0xA8`, bit1 clear; then vcall `[vt+0x2B0]` with `edx=2`.
 - Bit-writer install: `.edata` adjacent slots publish thunks **`0x210A9F0` (bit=0)** and **`0xF1C230` (bit=1)** that jmp to **`0xF1C240`**.
 - `0xE2C8A0` is a sorted 0x18-stride packed-array ensure/insert that calls allocator then **`0x2EA0B00`** (no key/`+0x61`).
+- `.edata` slots are **vtable entries**: ctors install table bases (`0x2E97A50`→`0x948FF50`, `0x59D9B90`→`0x9303E28`); arming slot at base+`0x128`.
+- Neighbor A `0x2108530`→`0x129E5190` calls membership **`0x4D04450`** and worker **`0x725400`**.
+- Neighbor B `0x2108830`→`0x43E7750` **compares** `[vt+0x2B0]`/`[vt+0x2B8]` to expected code pointers.
+- Arming helper tail-calls **`[vt+0x2B0]` with `edx=2`**.
 - Input lead `0x187F0550` is action-name bind, not a movement controller.
 - No verified shared entity/ownership edge between input bind path and deferred handler.
 - No Edward, character, archetype, player, or transform string in either worker or the producer wrapper.
@@ -155,7 +160,7 @@ High-signal offline findings (see `docs/v0.6.*` and `reports/v0.6.*`):
 ## 9. Current blockers
 
 - No confirmed character/Edward factory or archetype reuse path. Queue only enqueues/activates existing objects.
-- Subject concrete type still unknown; runtime consumers of `.edata` install slots still open.
+- Subject concrete type still unknown; semantic of virtual method `+0x2B0` / `edx=2` still open.
 - No verified input→character ownership/control binding.
 - No safe authorized spawn/possession test design yet.
 - GitHub handoff must stay free of ASI/game binaries.
@@ -164,34 +169,35 @@ High-signal offline findings (see `docs/v0.6.*` and `reports/v0.6.*`):
 
 ## 10. Most recent completed milestone
 
-**v0.6.15 — Install sites + `0xE2C8A0` deep-decode**
+**v0.6.16 — `.edata` consumers + arming neighbors + vcall `+0x2B0`**
 
 Deliverables:
 
-- `docs/v0.6.15-install-e2c8a0.md`
-- `reports/v0.6.15-install-sites.json`
-- `reports/v0.6.15-e2c8a0-deep.json`
-- `reports/v0.6.15-summary.json`
-- `reports/v0.6.15-second-edward-feasibility.json`
-- `reports/v075-raw/evidence.txt`
-- `tools/offline/InstallSite075/`
+- `docs/v0.6.16-edata-vcall-2b0.md`
+- `reports/v0.6.16-edata-consumers.json`
+- `reports/v0.6.16-arming-neighbors.json`
+- `reports/v0.6.16-vcall-2b0.json`
+- `reports/v0.6.16-summary.json`
+- `reports/v0.6.16-second-edward-feasibility.json`
+- `reports/v076-raw/evidence.txt`
+- `tools/offline/EdataConsumer076/`
 
-v0.6.4–v0.6.14 reports were left in place.
+v0.6.4–v0.6.15 reports were left in place.
 
 ---
 
 ## 11. Next recommended milestone
 
-**v0.6.16 (proposed):** Offline decode consumers of `.edata` slots **`0x9490078`** / **`0x9303E30–E38`**; deep-decode arming neighbors **`0x2108530`** / **`0x2108830`** and vcall **`+0x2B0`**. Still no spawn, deploy, live memory, or PC2 unless separately authorized.
+**v0.6.17 (proposed):** Offline deep-decode expected **`[vt+0x2B0]` / `[vt+0x2B8]`** callees compared in **`0x43E7750`**; follow ctors **`0x2E97A50` / `0x59D9B90`** for subject type/size. Still no spawn, deploy, live memory, or PC2 unless separately authorized.
 
 ---
 
 ## 12. Files changed in the latest milestone
 
-- `docs/v0.6.15-install-e2c8a0.md`
-- `reports/v0.6.15-*.json`
-- `reports/v075-raw/evidence.txt`
-- `tools/offline/InstallSite075/`
+- `docs/v0.6.16-edata-vcall-2b0.md`
+- `reports/v0.6.16-*.json`
+- `reports/v076-raw/evidence.txt`
+- `tools/offline/EdataConsumer076/`
 - `docs/CHATGPT_HANDOFF.md`
 - `reports/CHATGPT_HANDOFF.json`
 
@@ -212,6 +218,7 @@ v0.6.4–v0.6.14 reports were left in place.
 | Offline insert/gate v0.6.13 (`EnrollInsert073`) | Pass; key shared with worker; gate-setter `0x53F31A0`; bit-writer `0xF1C240` |
 | Offline deep-decode v0.6.14 (`GateDeep074`) | Pass; gate/bit/membership semantics; TypeInfo no inline name |
 | Offline install/E2C8A0 v0.6.15 (`InstallSite075`) | Pass; gate/bit install chains; E2C8A0→2EA0B00 |
+| Offline edata/vcall v0.6.16 (`EdataConsumer076`) | Pass; vtable install; neighbor A/B; edx=2 vcall |
 | Subject MSVC RTTI name | **Not found** (game types RTTI-stripped) |
 | Game launch / ASI deploy | **Not performed** |
 | Spawn / inject / live memory | **Not performed** |
@@ -237,6 +244,6 @@ When reviewing the GitHub repository after a Cursor push:
 2. Diff against the previous handoff `milestoneId` / commit.
 3. Treat only **confirmed** items as facts; keep hypotheses labeled.
 4. Propose the **next single milestone** with: objective, in-scope RVAs/files, out-of-scope (spawn/deploy/PC2), required deliverables paths, and acceptance checks.
-5. Prefer **v0.6.16**: decode `.edata` slot consumers `0x9490078` / `0x9303E30–E38`; deep-decode `0x2108530`/`0x2108830` and vcall `+0x2B0`. Do not treat LOD enqueue/comparator as character creation; avoid `+0x61`-only ranking; do not rely on MSVC RTTI for game types.
+5. Prefer **v0.6.17**: deep-decode expected `[vt+0x2B0]`/`[vt+0x2B8]` from `0x43E7750`; follow ctors `0x2E97A50`/`0x59D9B90`. Do not treat LOD enqueue/comparator as character creation; avoid `+0x61`-only ranking; do not rely on MSVC RTTI for game types.
 6. Do not instruct Cursor to deploy ASI, spawn, use live memory, or touch PC2/save data unless the user explicitly overrides safety.
 7. Return instructions Cursor can execute verbatim on PC1 on a dedicated branch + PR (never push main).
