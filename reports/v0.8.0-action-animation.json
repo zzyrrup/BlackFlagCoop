@@ -7,6 +7,7 @@
   "worktree": "/workspace",
   "parentBranch": "cursor/v086-alloc-vt0-8285",
   "parentCommit": "dae256e",
+  "implementationCommit": "01a65451a3e0bfd2e9e3a90edadf323b1afee149",
   "exeSha256": "19920F34BB2FAC814023EE3C27F0CECA1872E80A2AAFB37C092C419FFF77CC0D",
   "ac4coopUpstream": "68355c71eafa0baf913587605e9c330db6166057",
   "ac4coopContractsCommit": "b570413711ed23857c00b5e4ee4d08ff705c0a0e",
