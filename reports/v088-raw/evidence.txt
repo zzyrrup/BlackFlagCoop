@@ -1,0 +1,144 @@
+===== v0.6.28 Neighbor/Spatial CONSTRUCTION + RELOC/TypeInfo LEADS =====
+exeSha256=19920F34BB2FAC814023EE3C27F0CECA1872E80A2AAFB37C092C419FFF77CC0D
+
+===== CONSTRUCT-FAMILY CENSUS (E8 / QWORD / LEA) =====
+NeighVT0 0x13612B0 E8=0 QWORD=1 LEA=0
+  Q@0x976B2D0 sec=.edata
+SpatVT0 0x5781490 E8=0 QWORD=1 LEA=0
+  Q@0x9236E00 sec=.edata
+NeighRel 0x3D522C0 E8=0 QWORD=1 LEA=0
+  Q@0xAAD22E0 sec=.trace
+SpatA 0x5563CF0 E8=0 QWORD=0 LEA=2
+  LEA@0x5E5B9C5 func=0x5E5AF20
+  LEA@0x5E5B9C6 func=0x5E5AF20
+SpatB 0x6CF34A0 E8=0 QWORD=0 LEA=2
+  LEA@0x5E5BA14 func=0x5E5AF20
+  LEA@0x5E5BA15 func=0x5E5AF20
+SpatC 0x6CF3750 E8=0 QWORD=0 LEA=0
+SpatRegistrar 0x5E5AF20 E8=0 QWORD=1 LEA=0
+  Q@0xA23E188 sec=.edata
+Outer 0x59D9660 E8=0 QWORD=0 LEA=2
+  LEA@0x5F14901 func=0x5F11A40
+  LEA@0x5F14902 func=0x5F11A40
+InstallerA 0x5F11A40 E8=0 QWORD=1 LEA=0
+  Q@0xA240B20 sec=.edata
+
+===== VT INSTALL SITES (LEA owner VT) =====
+  LEA vt=0x976B2D0 @0x13612BC func=0x13612B0 role=NeighVT0
+  LEA vt=0x976B2D0 @0x13612BD func=0x13612B0 role=NeighVT0
+  LEA vt=0x976B2D0 @0x3D522D4 func=0x3D522C0 role=NeighRel
+  LEA vt=0x976B2D0 @0x3D522D5 func=0x3D522C0 role=NeighRel
+  LEA vt=0x9236E00 @0x5563CFD func=0x5563CF0 role=SpatA
+  LEA vt=0x9236E00 @0x5563CFE func=0x5563CF0 role=SpatA
+  LEA vt=0x9236E00 @0x578149B func=0x5781490 role=SpatVT0
+  LEA vt=0x9236E00 @0x578149C func=0x5781490 role=SpatVT0
+  LEA vt=0x9236E00 @0x6CF34A8 func=0x6CF34A0 role=SpatB
+  LEA vt=0x9236E00 @0x6CF34A9 func=0x6CF34A0 role=SpatB
+
+===== SPATIAL RUNTIME TypeInfo REGISTRAR 0x5E5AF20 =====
+published .edata QWORD @0xA23E188 embeds=1 E8=0
+SpatA LEA->store fields: 0xACE8448
+SpatB LEA->store fields: 0xACE84C8
+expected SpatAField=0xACE8448 hit=True
+expected SpatBField=0xACE84C8 hit=True
+--- SpatA-field-window ---
+  [0xACE8428] = 0x0
+  [0xACE8430] = 0x0
+  [0xACE8438] = 0x0
+  [0xACE8440] = 0x0
+  [0xACE8448] = 0x0 <<<
+  [0xACE8450] = 0x0
+  [0xACE8458] = 0x0
+  [0xACE8460] = 0x0
+  [0xACE8468] = 0x0
+  [0xACE8470] = 0x0
+  [0xACE8478] = 0x0
+--- SpatB-field-window ---
+  [0xACE84A8] = 0x0
+  [0xACE84B0] = 0x0
+  [0xACE84B8] = 0x0
+  [0xACE84C0] = 0x0
+  [0xACE84C8] = 0x0 <<<
+  [0xACE84D0] = 0x0
+  [0xACE84D8] = 0x0
+  [0xACE84E0] = 0x0
+  [0xACE84E8] = 0x0
+  [0xACE84F0] = 0x0
+  [0xACE84F8] = 0x0
+--- registrar-SpatA/B-LEA-window ---
+0x5E5B9C0 sub eax,4E8CA7B
+0x5E5B9C5 lea rcx,[rip-8F7CDC] *** SPATA ***
+0x5E5B9CC mov [rip+4E8CA75],rcx *** FIELD ***
+0x5E5B9D3 vmovups [rip+4E8CAAD],ymm2
+0x5E5B9DB vmovups [rip+4E8CA8D],ymm2
+0x5E5B9E3 vmovups [rip+4E8CA65],ymm2
+0x5E5B9EB mov [rip+4E8C9FE],rax
+0x5E5B9F2 mov [rip+4E8CAB8],esi
+0x5E5B9F8 lea rax,[rip-0A6011F]
+0x5E5B9FF mov [rip+4E8CAA2],rax
+0x5E5BA06 vmovups [rip+4E8CAAA],xmm6
+0x5E5BA0E mov [rip+4E8CABC],esi
+0x5E5BA14 lea rax,[rip+0E97A85] *** SPATB ***
+0x5E5BA1B mov [rip+4E8CAA6],rax *** FIELD ***
+0x5E5BA22 mov [rip+4E8CAB8],esi
+0x5E5BA28 mov [rip+4E8CAA9],rdi
+0x5E5BA2F mov [rip+4E8CAB1],r14w
+
+===== RIP STORES FROM SpatRegistrar INTO .trace =====
+registrarTraceStores=80 writerFuncs=1
+  writer 0x5E5AF20 E8=0 QWORD=1
+  ctor-field STORE @0x5E5B9CC ->0xACE8448 mov [rip+4E8CA75],rcx
+  ctor-field STORE @0x5E5BA1B ->0xACE84C8 mov [rip+4E8CAA6],rax
+
+===== NEIGHBOR CONSTRUCTION / META =====
+--- Neigh-VT-meta ---
+  [0xAAD2290] = 0xAAD21E0 <<<
+  [0xAAD2298] = 0x0
+  [0xAAD22A0] = 0x0
+  [0xAAD22A8] = 0x2996CA50CB0F23F4
+  [0xAAD22B0] = 0xB0
+  [0xAAD22B8] = 0x20000000000
+  [0xAAD22C0] = 0x0
+  [0xAAD22C8] = 0x0
+  [0xAAD22D0] = 0x0
+  [0xAAD22D8] = 0x7FFF7FFF00000000
+  [0xAAD22E0] = 0x3D522C0
+  [0xAAD22E8] = 0x0
+  [0xAAD22F0] = 0x0
+  [0xAAD22F8] = 0x0
+  [0xAAD2300] = 0x0
+  [0xAAD2308] = 0x0
+  [0xAAD2310] = 0x0
+NeighRelSlot 0xAAD22E0 value=0x3D522C0 (expect NeighRel 0x3D522C0)
+neighRelSlotPtrStores=0 (PE-static NeighRel embed; no SpatRegistrar-equivalent found)
+
+===== VT[+0x30] META LINKS =====
+Neigh VT[+0x30]=0xAAD2290
+Spat VT[+0x30]=0xACE83F8
+Neigh meta ptr == 0xAAD2290: True
+Spat meta ptr == 0xACE83F8: True
+
+===== RELOC LEADS (DIR64 on VT / slots) =====
+  type=10 @0x9236E00 near=0x9236E00
+  type=10 @0x976B2D0 near=0x976B2D0
+  type=10 @0xA23E188 near=0xA23E188
+  type=10 @0xA240B20 near=0xA240B20
+  type=10 @0xAAD22E0 near=0xAAD22E0
+relocHits=5
+
+===== OUTER/INSTALLERA CONTRAST (not NS construct) =====
+InstallerA LEA Outer sites=2 (TypeInfo composite registration; E8 Outer=0)
+No E8 InstallerA->SpatRegistrar / NeighVT0 (InstallerA E8=0)
+
+===== TIGHT FACTORIES (generic [ti+0x50] consumers) =====
+  0x238590 alloc=True icall50=1
+  0x256280 alloc=True icall50=1
+  0x218900 alloc=True icall50=1
+  0x218660 alloc=True icall50=2
+  0x21FA70 alloc=True icall50=1
+
+===== VERDICT =====
+Spatial construct path: SpatRegistrar 0x5E5AF20 fills .trace ctor fields 0xACE8448=SpatA / 0xACE84C8=SpatB (runtime TypeInfo); SpatA/B/VT0 LEA SpatVT (in-place). Invoke via factory icall[ti+0x50] or call[vt+0]. confirmed=True
+Neighbor construct path: VT install only in NeighVT0/NeighRel; NeighRel PE-static @0xAAD22E0; no runtime TypeInfo registrar found. Invoke = table/call[vt+0] only. vtInstallOnly=True
+Outer/InstallerA: parallel composite TypeInfo registration — not NS object factory.
+Reloc: DIR64 on Neigh/Spat VT bases + NeighRel slot (image fixups).

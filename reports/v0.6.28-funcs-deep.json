@@ -1,0 +1,18 @@
+{
+  "schemaVersion": 1,
+  "milestone": "v0.6.28",
+  "generatedUtc": "2026-11-12T20:46:57Z",
+  "exeSha256": "19920F34BB2FAC814023EE3C27F0CECA1872E80A2AAFB37C092C419FFF77CC0D",
+  "constructFamily": [
+    { "entry": "0x13612B0", "role": "NeighVT0", "e8": 0, "note": "VT[0]; in-place Neigh VT install" },
+    { "entry": "0x3D522C0", "role": "NeighRel", "e8": 0, "note": "LEA Neigh VT; PE-static @0xAAD22E0" },
+    { "entry": "0x5781490", "role": "SpatVT0", "e8": 0, "note": "VT[0]; in-place Spat VT install" },
+    { "entry": "0x5563CF0", "role": "SpatA", "e8": 0, "note": "runtime TypeInfo field 0xACE8448 via registrar" },
+    { "entry": "0x6CF34A0", "role": "SpatB", "e8": 0, "note": "runtime TypeInfo field 0xACE84C8 via registrar" },
+    { "entry": "0x5E5AF20", "role": "SpatRegistrar", "e8": 0, "note": ".edata 0xA23E188; fills Spat .trace ctor fields" },
+    { "entry": "0x59D9660", "role": "Outer", "e8": 0, "note": "InstallerA TypeInfo composite; not NS factory" },
+    { "entry": "0x5F11A40", "role": "InstallerA", "e8": 0, "note": "LEA-registers Outer; parallel to SpatRegistrar" }
+  ],
+  "spatAStoreFields": ["0xACE8448"],
+  "spatBStoreFields": ["0xACE84C8"]
+}
