@@ -1,0 +1,548 @@
+===== v0.6.26 ALLOC->VT0 + SIDEBLOCK/ARMING SAME-INSTANCE =====
+exeSha256=19920F34BB2FAC814023EE3C27F0CECA1872E80A2AAFB37C092C419FFF77CC0D
+note: VT[0] ctors have 0 E8 callers (v0.6.25)
+
+===== ABS64 / QWORD EMBEDS OF VT[0] CTORS =====
+QWORD 0x13612B0 embeds=1
+  @0x976B2D0 sec=.edata
+QWORD 0x5781490 embeds=1
+  @0x9236E00 sec=.edata
+
+===== MOVABS CTOR IMM64 IN CODE =====
+movabs sites=0
+
+===== ALLOC + LEA OWNER VT =====
+E8->Allocator sampled=500
+allocPlusOwnerVtFuncs=0
+
+===== STORES OF VT[0] CTOR PTRS (TypeInfo-like) =====
+neighCtor LEA count=0
+spatCtor LEA count=0
+
+===== LEA VT THEN CALL [rax]/VT0 (with Alloc) =====
+leaVtNearIcallSites=0
+
+===== ALLOC/VT0 CANDIDATE FUNCS =====
+E8->SideBlock=2 E8->Arming=0 QWORD Arming=1 QWORD ArmWrap=1
+
+===== FUNC 0x1AC380 (alloc-vt-cand) size=671 sec=.impdata =====
+alloc=False side98=True arm=False wrap=False neighVt=False spatVt=False absN=False absS=False t98=False key=False factory=False callees=7
+  SIDE98 @0x1AC4DB
+  SIDE98 @0x1AC523
+  callee 0xD530
+  callee 0x2EA3770
+  callee 0x725400
+  callee 0xE95E80 *** SIDE98 ***
+  callee 0x53519E0
+  callee 0x5014570
+  callee 0xE6E0
+--- head ---
+0x1AC380 push r15
+0x1AC382 push r14
+0x1AC384 push r13
+0x1AC386 push r12
+0x1AC388 push rsi
+0x1AC389 push rdi
+0x1AC38A push rbx
+0x1AC38B sub rsp,70
+0x1AC38F vmovaps [rsp+60],xmm8
+0x1AC395 vmovaps [rsp+50],xmm7 *** +50 ***
+0x1AC39B vmovaps [rsp+40],xmm6
+0x1AC3A1 mov rsi,rcx
+0x1AC3A4 mov rax,[rip+0A106E55]
+0x1AC3AB xor rax,rsp
+0x1AC3AE mov [rsp+38],rax
+0x1AC3B3 mov rcx,[rcx+190]
+0x1AC3BA test rcx,rcx
+0x1AC3BD je near ptr 00000001401AC59E
+0x1AC3C3 mov r14d,[rsi+0AC8]
+0x1AC3CA mov edi,r14d
+0x1AC3CD and edi,3FFF
+0x1AC3D3 je near ptr 00000001401AC59E
+0x1AC3D9 xor r15d,r15d
+0x1AC3DC cmp byte ptr [rip+0AD04D45],0
+0x1AC3E3 sete r15b
+0x1AC3E7 lea r8d,[r15+r15+3]
+0x1AC3EC mov eax,0A
+0x1AC3F1 mov r9d,14
+
+===== FUNC 0x218660 (tight-factory) size=664 sec=.impdata =====
+alloc=True side98=False arm=False wrap=False neighVt=False spatVt=False absN=False absS=False t98=False key=False factory=False callees=4
+  LOOKUP @0x218689
+  ICALL @0x2186D9 call qword ptr [rax+48]
+  ALLOC @0x218710
+  ICALL @0x218724 call qword ptr [rbx+50]
+  ICALL_TI50 @0x218724
+  ICALL @0x2187A4 call qword ptr [rax+40]
+  ICALL @0x2187B7 call qword ptr [rip+0A0309D3]
+  ICALL @0x2188F0 call qword ptr [rax+40]
+  callee 0x429F9E0
+  callee 0x426EE50 *** ALLOC ***
+  callee 0x42F6850
+  callee 0x42256B0
+--- head ---
+0x218660 push r15
+0x218662 push r14
+0x218664 push r13
+0x218666 push r12
+0x218668 push rsi
+0x218669 push rdi
+0x21866A push rbx
+0x21866B sub rsp,20
+0x21866F test dword ptr [rcx+20],3FFFFFFF
+0x218676 je short 00000001402186C2
+0x218678 mov rsi,rcx
+0x21867B mov rdi,[rdx+28]
+0x21867F mov rcx,[rdi+30]
+0x218683 mov rdx,rsi
+0x218686 xor r8d,r8d
+0x218689 call 000000014429F9E0 *** LOOKUP ***
+0x21868E test rax,rax
+0x218691 je short 00000001402186D3
+0x218693 mov r12,[rax]
+0x218696 lea rcx,[r12+10]
+0x21869B movzx eax,word ptr [r12+18]
+0x2186A1 test eax,3FFF
+0x2186A6 jne near ptr 0000000140218771
+0x2186AC mov dl,1
+0x2186AE add rsp,20
+0x2186B2 pop rbx
+0x2186B3 pop rdi
+0x2186B4 pop rsi
+
+===== FUNC 0x218900 (tight-factory) size=546 sec=.impdata =====
+alloc=True side98=False arm=False wrap=False neighVt=False spatVt=False absN=False absS=False t98=False key=False factory=False callees=3
+  LOOKUP @0x218924
+  ICALL @0x21894F call qword ptr [rax+48]
+  ALLOC @0x218982
+  ICALL @0x218996 call qword ptr [r14+50]
+  ICALL_TI50 @0x218996
+  ICALL @0x2189A7 call qword ptr [rax+48]
+  ICALL @0x218B1A call qword ptr [rax+40]
+  callee 0x429F9E0
+  callee 0x426EE50 *** ALLOC ***
+  callee 0x42F6850
+--- head ---
+0x218900 push r15
+0x218902 push r14
+0x218904 push r13
+0x218906 push r12
+0x218908 push rsi
+0x218909 push rdi
+0x21890A push rbp
+0x21890B push rbx
+0x21890C sub rsp,28
+0x218910 mov rbx,rdx
+0x218913 mov rsi,rcx
+0x218916 mov rdi,[rdx+28]
+0x21891A mov rcx,[rdi+20]
+0x21891E mov rdx,rsi
+0x218921 xor r8d,r8d
+0x218924 call 000000014429F9E0 *** LOOKUP ***
+0x218929 test rax,rax
+0x21892C je short 0000000140218949
+0x21892E mov r13,[rax]
+0x218931 mov word ptr [r13+10],0
+0x218938 add rsp,28
+0x21893C pop rbx
+0x21893D pop rbp
+0x21893E pop rdi
+0x21893F pop rsi
+0x218940 pop r12
+0x218942 pop r13
+0x218944 pop r14
+
+===== FUNC 0x21FA70 (tight-factory) size=996 sec=.impdata =====
+alloc=True side98=False arm=False wrap=False neighVt=False spatVt=False absN=False absS=False t98=True key=False factory=False callees=8
+  LOOKUP @0x21FB66
+  ICALL @0x21FBA2 call qword ptr [rax+0B0]
+  ICALL @0x21FBB5 call qword ptr [rax+60]
+  ICALL @0x21FBCB call qword ptr [rax+0A8]
+  ICALL @0x21FC3A call qword ptr [rax+48]
+  ALLOC @0x21FC71
+  ICALL @0x21FC85 call qword ptr [rbx+50]
+  ICALL_TI50 @0x21FC85
+  ICALL @0x21FD05 call qword ptr [rax+40]
+  ICALL @0x21FD18 call qword ptr [rip+0A029472]
+  ICALL @0x21FE4C call qword ptr [rax+40]
+  callee 0xF237F0
+  callee 0x429F9E0
+  callee 0x544310
+  callee 0x43FDC00
+  callee 0x5014570
+  callee 0x426EE50 *** ALLOC ***
+  callee 0x42F6850
+  callee 0x42256B0
+--- head ---
+0x21FA70 push r15
+0x21FA72 push r14
+0x21FA74 push r13
+0x21FA76 push r12
+0x21FA78 push rsi
+0x21FA79 push rdi
+0x21FA7A push rbx
+0x21FA7B sub rsp,150
+0x21FA82 mov rax,[rip+0A093777]
+0x21FA89 xor rax,rsp
+0x21FA8C mov [rsp+148],rax
+0x21FA94 test dword ptr [rcx+20],3FFFFFFF
+0x21FA9B je near ptr 000000014021FC0F
+0x21FAA1 mov rsi,rcx
+0x21FAA4 vxorps xmm0,xmm0,xmm0
+0x21FAA8 lea rax,[rsp+38]
+0x21FAAD vmovups [rax-8],ymm0
+0x21FAB2 vmovups [rax+78],ymm0
+0x21FAB7 vmovups [rax+0B8],ymm0
+0x21FABF vmovups [rax+0C8],ymm0
+0x21FAC7 vmovups [rax+98],ymm0 *** +98 ***
+0x21FACF vmovups [rax+58],ymm0
+0x21FAD4 vmovups [rax+38],ymm0
+0x21FAD9 vmovups [rax+18],ymm0
+0x21FADE mov dword ptr [rax-8],88000
+0x21FAE5 mov [rax-10],rax
+0x21FAE9 lea rcx,[rip+0AD540E8]
+0x21FAF0 mov [rax+80],rcx
+
+===== FUNC 0x238590 (tight-factory) size=584 sec=.impdata =====
+alloc=True side98=False arm=False wrap=False neighVt=False spatVt=False absN=False absS=False t98=False key=False factory=False callees=4
+  ICALL @0x2385AF call qword ptr [rax+88]
+  LOOKUP @0x2385C7
+  ALLOC @0x238627
+  ICALL @0x23863B call qword ptr [r14+50]
+  ICALL_TI50 @0x23863B
+  ICALL @0x23869D call qword ptr [rax+48]
+  ICALL @0x2387D0 call qword ptr [rax+40]
+  callee 0x429F9E0
+  callee 0x426EE50 *** ALLOC ***
+  callee 0x42F6850
+  callee 0xE01190
+--- head ---
+0x238590 push r15
+0x238592 push r14
+0x238594 push r13
+0x238596 push r12
+0x238598 push rsi
+0x238599 push rdi
+0x23859A push rbp
+0x23859B push rbx
+0x23859C sub rsp,28
+0x2385A0 mov rsi,r8
+0x2385A3 mov rdi,rdx
+0x2385A6 mov rbx,rcx
+0x2385A9 mov rax,[rdx]
+0x2385AC mov rcx,rdx
+0x2385AF call qword ptr [rax+88] *** ICALL ***
+0x2385B5 test rax,rax
+0x2385B8 je short 00000001402385D7
+0x2385BA mov r14,rax
+0x2385BD mov rcx,[rbx+60]
+0x2385C1 mov rdx,rdi
+0x2385C4 xor r8d,r8d
+0x2385C7 call 000000014429F9E0 *** LOOKUP ***
+0x2385CC test rax,rax
+0x2385CF je short 00000001402385EE
+0x2385D1 cmp qword ptr [rax],0
+0x2385D5 je short 00000001402385EE
+0x2385D7 xor r13d,r13d
+0x2385DA mov rax,r13
+
+===== FUNC 0x256280 (tight-factory) size=566 sec=.impdata =====
+alloc=True side98=False arm=False wrap=False neighVt=False spatVt=False absN=False absS=False t98=False key=False factory=False callees=4
+  LOOKUP @0x2562A0
+  ICALL @0x2562C7 call qword ptr [rax+90]
+  ALLOC @0x256309
+  ICALL @0x25631D call qword ptr [r14+50]
+  ICALL_TI50 @0x25631D
+  ICALL @0x25637B call qword ptr [rax+48]
+  ICALL @0x2564AE call qword ptr [rax+40]
+  callee 0x429F9E0
+  callee 0x426EE50 *** ALLOC ***
+  callee 0x42F6850
+  callee 0x537C730
+--- head ---
+0x256280 push r15
+0x256282 push r14
+0x256284 push r13
+0x256286 push r12
+0x256288 push rsi
+0x256289 push rdi
+0x25628A push rbp
+0x25628B push rbx
+0x25628C sub rsp,28
+0x256290 mov rsi,r8
+0x256293 mov rdi,rdx
+0x256296 mov rbx,rcx
+0x256299 mov rcx,[rcx+8]
+0x25629D xor r8d,r8d
+0x2562A0 call 000000014429F9E0 *** LOOKUP ***
+0x2562A5 test rax,rax
+0x2562A8 je short 00000001402562C1
+0x2562AA mov r13,[rax]
+0x2562AD mov rax,r13
+0x2562B0 add rsp,28
+0x2562B4 pop rbx
+0x2562B5 pop rbp
+0x2562B6 pop rdi
+0x2562B7 pop rsi
+0x2562B8 pop r12
+0x2562BA pop r13
+0x2562BC pop r14
+0x2562BE pop r15
+
+===== SIDEBLOCK + ARMING SAME-INSTANCE =====
+--- arming-21085D0 0x21085D0..0x21086F0 ---
+0x21085D0 push rsi
+0x21085D1 sub rsp,20
+0x21085D5 mov rsi,rcx
+0x21085D8 cmp qword ptr [rcx+98],0 *** +98 ***
+0x21085E0 jne short 0000000142108603
+0x21085E2 mov rax,[rsi+18]
+0x21085E6 test rax,rax
+0x21085E9 je short 0000000142108603
+0x21085EB cmp qword ptr [rax+0A8],0
+0x21085F3 je short 0000000142108603
+0x21085F5 test byte ptr [rsi+61],2
+0x21085F9 jne short 0000000142108603
+0x21085FB mov rcx,rsi
+0x21085FE call 00000001407BB020
+0x2108603 mov rax,[rsi]
+0x2108606 mov rax,[rax+2B0]
+0x210860D mov rcx,rsi
+0x2108610 mov edx,2
+0x2108615 add rsp,20
+0x2108619 pop rsi
+0x210861A jmp rax
+0x210861D int 3
+0x210861E int 3
+0x210861F int 3
+0x2108620 push r14
+0x2108622 push rsi
+0x2108623 push rdi
+0x2108624 push rbx
+0x2108625 sub rsp,38
+0x2108629 mov rsi,rcx
+0x210862C mov rax,[rip+81AABCD]
+0x2108633 xor rax,rsp
+0x2108636 mov [rsp+30],rax
+0x210863B call 000000014479E3B0
+0x2108640 mov rdi,[rsi+98] *** +98 ***
+0x2108647 test rdi,rdi
+0x210864A jne short 0000000142108664
+0x210864C mov rcx,[rsp+30]
+0x2108651 xor rcx,rsp
+0x2108654 call 0000000145014570
+0x2108659 nop
+0x210865A add rsp,38
+0x210865E pop rbx
+0x210865F pop rdi
+0x2108660 pop rsi
+0x2108661 pop r14
+0x2108663 ret
+0x2108664 cmp byte ptr [rsi+25],0
+0x2108668 je near ptr 0000000142108710
+0x210866E cmp byte ptr [rsi+22],0
+0x2108672 je near ptr 0000000142108710
+0x2108678 test byte ptr [rsi+23],4
+0x210867C je short 000000014210864C
+0x210867E test byte ptr [rdi+84],2
+0x2108685 jne short 000000014210864C
+0x2108687 mov byte ptr [rdi+158],1
+0x210868E lea rcx,[rdi+0C8]
+0x2108695 call 0000000140C45FB0
+0x210869A lea rcx,[rdi+78]
+0x210869E call 0000000140C46110
+0x21086A3 mov eax,[rdi+94]
+0x21086A9 shl eax,4
+0x21086AC and eax,3FFF0
+0x21086B1 je short 00000001421086CC
+0x21086B3 mov rcx,[rdi+8C]
+0x21086BA xor edx,edx
+0x21086BC test byte ptr [rcx+rdx+8],2
+0x21086C1 jne short 00000001421086D3
+0x21086C3 add rdx,10
+0x21086C7 cmp rax,rdx
+--- sideblock-E95E80 0xE95E80..0xE95F80 ---
+0xE95E80 push r15
+0xE95E82 push r14
+0xE95E84 push r13
+0xE95E86 push r12
+0xE95E88 push rsi
+0xE95E89 push rdi
+0xE95E8A push rbp
+0xE95E8B push rbx
+0xE95E8C sub rsp,398
+0xE95E93 mov rsi,rcx
+0xE95E96 mov rax,[rip+941D363]
+0xE95E9D xor rax,rsp
+0xE95EA0 mov [rsp+390],rax
+0xE95EA8 mov rax,[rip+0A0D9E99]
+0xE95EAF cmp byte ptr [rax+2A],0
+0xE95EB3 je near ptr 0000000140E960C9
+0xE95EB9 mov rdi,rax
+0xE95EBC mov rcx,rdi
+0xE95EBF mov edx,160
+0xE95EC4 mov r8d,8
+0xE95ECA call 000000014426EE50 *** ALLOC ***
+0xE95ECF mov rbx,rax
+0xE95ED2 test rax,rax
+0xE95ED5 je near ptr 0000000140E96AAB
+0xE95EDB lea r14,[rbx+0A0]
+0xE95EE2 lea rax,[rbx+10]
+0xE95EE6 mov ebp,80000000
+0xE95EEB mov ecx,[rbx+8]
+0xE95EEE and ecx,ebp
+0xE95EF0 or ecx,28000
+0xE95EF6 mov [rbx+8],ecx
+0xE95EF9 mov [rbx],rax
+0xE95EFC mov [rbx+40],r14
+0xE95F00 xor r15d,r15d
+0xE95F03 mov [rbx+49],r15w
+0xE95F08 lea rax,[rip+8305DA9]
+0xE95F0F mov [rbx+50],rax *** +50 ***
+0xE95F13 mov eax,[rbx+60]
+0xE95F16 and eax,ebp
+0xE95F18 or eax,0C000
+0xE95F1D mov [rbx+60],eax
+0xE95F20 mov [rbx+58],r15
+0xE95F24 mov [rbx+68],r14
+0xE95F28 mov [rbx+71],r15w
+0xE95F2D lea rdi,[rbx+78]
+0xE95F31 mov eax,[rbx+80]
+0xE95F37 and eax,ebp
+0xE95F39 or eax,0C000
+0xE95F3E mov [rbx+80],eax
+0xE95F44 mov [rbx+78],r15
+0xE95F48 mov dword ptr [rbx+88],0FFFFFFFF
+0xE95F52 mov eax,[rbx+94]
+0xE95F58 and eax,ebp
+0xE95F5A or eax,0C000
+0xE95F5F mov [rbx+94],eax
+0xE95F65 mov [rbx+8C],r15
+0xE95F6C mov byte ptr [rbx+84],0
+0xE95F73 mov [rbx+98],r15 *** +98 ***
+0xE95F7A mov eax,[rbx+0A8]
+
+===== FUNCS WITH SIDEBLOCK AND OWNER/ARMING =====
+
+===== ARMING BODY +0x98 / VT RELATION =====
+  ARM +98 @0x21085D8 cmp qword ptr [rcx+98],0
+  ARM +98 @0x2108640 mov rdi,[rsi+98]
+  ARM +98 @0x21086D3 mov rdx,[rsi+98]
+  ARM +98 @0x2108735 mov rsi,[rsi+98]
+armingTouches98=True armingCallsSideBlock=False
+
+===== CROSS =====
+allocPlusOwnerVtDecoded=0
+sidePlusOwner=0
+sidePlusArming=0
+armingTouches98=True
+
+===== SIDEBLOCK ALLOC + ATTACH (this+0x98) =====
+  SIDE Alloc E8 @0xE95ECA
+  SIDE +98 @0xE95F73 mov [rbx+98],r15
+  SIDE +98 @0xE96075 mov [rbx+98],r14
+  SIDE +98 @0xE9607C mov [rsi+98],rbx
+  SIDE +98 @0xE96115 mov rdx,[rbx+98]
+  SIDE +98 @0xE96207 mov rdx,[rbx+98]
+  SIDE +98 @0xE962B2 mov r12,[rsi+98]
+  SIDE +98 @0xE96907 mov rdx,[rsi+98]
+  SIDE +98 @0xE96938 mov rbx,[rsi+98]
+  SIDE +98 @0xE9698B mov rdx,[rsi+98]
+sideblockAllocates=True sideblockStoresThisPlus98=True sideblockBackPtrAtBlockPlus100=True
+
+===== SIDEBLOCK E8 CALLERS (queue attach path) =====
+  E8@0x1AC4DB func=0x1AC380
+  E8@0x1AC523 func=0x1AC380
+--- queue-handler-side-loop 0x1AC4C0..0x1AC540 ---
+0x1AC4C0 xor r13d,r13d
+0x1AC4C3 mov rax,[rsi+0AC0]
+0x1AC4CA mov r14,[rax+r12]
+0x1AC4CE mov rcx,r14
+0x1AC4D1 mov dl,1
+0x1AC4D3 call 0000000140725400
+0x1AC4D8 mov rcx,r14
+0x1AC4DB call 0000000140E95E80 *** SIDE98 ***
+0x1AC4E0 inc r13
+0x1AC4E3 add r12,10
+0x1AC4E7 cmp r13,rbx
+0x1AC4EA jb short 00000001401AC4C3
+0x1AC4EC cmp r15d,edi
+0x1AC4EF jae short 00000001401AC543
+0x1AC4F1 vmovss xmm6,dword ptr [rip+9619707]
+0x1AC4F9 mov rax,[rsi+0AC0]
+0x1AC500 mov rcx,rbx
+0x1AC503 shl rcx,4
+0x1AC507 vucomiss xmm6,dword ptr [rax+rcx+8]
+0x1AC50D jb short 00000001401AC540
+0x1AC50F inc r15d
+0x1AC512 mov r14,[rax+rcx]
+0x1AC516 mov rcx,r14
+0x1AC519 mov dl,1
+0x1AC51B call 0000000140725400
+0x1AC520 mov rcx,r14
+0x1AC523 call 0000000140E95E80 *** SIDE98 ***
+0x1AC528 inc rbx
+0x1AC52B cmp rbx,rdi
+0x1AC52E jb short 00000001401AC4F9
+0x1AC530 mov rbx,rdi
+0x1AC533 mov r15d,edi
+0x1AC536 jmp short 00000001401AC543
+0x1AC538 xor r8d,r8d
+0x1AC53B jmp near ptr 00000001401AC4AA
+--- pre-side-725400 0x725400..0x725450 ---
+0x725400 push r14
+0x725402 push rsi
+0x725403 push rdi
+0x725404 push rbx
+0x725405 sub rsp,38
+0x725409 mov rsi,rcx
+0x72540C mov rax,[rip+9B8DDED]
+0x725413 xor rax,rsp
+0x725416 mov [rsp+30],rax
+0x72541B mov al,[rcx+61]
+0x72541E test al,4
+0x725420 je short 000000014072542F
+0x725422 test dl,dl
+0x725424 je near ptr 00000001407255CE
+0x72542A and al,0FB
+0x72542C mov [rsi+61],al
+0x72542F test al,8
+0x725431 je short 00000001407254A8
+0x725433 mov rax,[rsi+18]
+0x725437 mov rax,[rax+0A8]
+0x72543E mov rcx,[rax+3CD0]
+0x725445 lea rdx,[rip+0AB6447C]
+0x72544C xor edi,edi
+0x72544E xor r8d,r8d
+
+===== ARMWRAP +0x98 =====
+  WRAP +98 @0x2108640 mov rdi,[rsi+98]
+  WRAP +98 @0x21086D3 mov rdx,[rsi+98]
+  WRAP +98 @0x2108735 mov rsi,[rsi+98]
+armWrapTouches98=True count=3
+
+===== OWNER VT LEA SITES (ctor/install only) =====
+  LEA vt=0x976B2D0 @0x13612BC func=0x13612B0 nearAlloc80=False
+  LEA vt=0x976B2D0 @0x13612BD func=0x13612B0 nearAlloc80=False
+  LEA vt=0x976B2D0 @0x3D522D4 func=0x3D522C0 nearAlloc80=False
+  LEA vt=0x976B2D0 @0x3D522D5 func=0x3D522C0 nearAlloc80=False
+  LEA vt=0x9236E00 @0x5563CFD func=0x5563CF0 nearAlloc80=False
+  LEA vt=0x9236E00 @0x5563CFE func=0x5563CF0 nearAlloc80=False
+  LEA vt=0x9236E00 @0x578149B func=0x5781490 nearAlloc80=False
+  LEA vt=0x9236E00 @0x578149C func=0x5781490 nearAlloc80=False
+  LEA vt=0x9236E00 @0x6CF34A8 func=0x6CF34A0 nearAlloc80=False
+  LEA vt=0x9236E00 @0x6CF34A9 func=0x6CF34A0 nearAlloc80=False
+leaOwnerVtNearAllocHits=0
+
+===== STRUCTURAL SAME-INSTANCE ARGUMENT =====
+1) Owner spat/neigh ctors init object+0x98 (v0.6.25)
+2) SideBlock 0xE95E80: Alloc(0x160) then mov [rsi+98],rbx (+ back-ptr [rbx+100],rsi)
+   sideblockAllocates=True store98=True backPtr=True
+3) Arming touches +0x98: True (cmp/load pointer on this)
+4) ArmWrap loads [this+98] as side-block pointer: True
+5) Sole E8 SideBlock callers = deferred queue handler 0x1AC380 (pre-call 0x725400)
+6) Neighbor/Spatial methods consume +0x98/helper (prior)
+7) Alloc->VT[0]: 0 movabs, 0 Alloc+LEA owner VT, 0 LEA-near-Alloc; ctors in-place only
+structuralSameLayout=True
+callGraphSameInstance=False
+pointerSlotSameInstance=True (SideBlock store + Arming/ArmWrap load this+0x98)
