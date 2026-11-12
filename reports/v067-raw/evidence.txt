@@ -1,0 +1,256 @@
+===== v0.6.7 WRAPPER DISPATCH + SUBJECT TYPE =====
+exeSha256=19920F34BB2FAC814023EE3C27F0CECA1872E80A2AAFB37C092C419FFF77CC0D
+imageBase=0x140000000
+
+===== XREFS =====
+0x2E97FC0 wrapper E8=0 LEA=0 QWORD=0
+0x2E97B60 enqueue E8=3 LEA=0 QWORD=0
+  e8 0x2E98AA3 sec=.impdata func≈0x2E97FC0
+  e8 0x2E9B3D1 sec=.impdata func≈0x2E97FC0
+  e8 0x2E9B481 sec=.impdata func≈0x2E97FC0
+0x1AC380 deferred (control) E8=0 LEA=2 QWORD=0
+  lea 0x5CBE0DE sec=.impdata func≈0x5CBDFB0
+  lea 0x5CBE0DF sec=.impdata func≈0x5CBDFB0
+
+===== RVA DWORD HITS (image-relative tables) =====
+  rva32 wrapper @0x1D75EC58 sec=.vmp4
+  rva32 enqueue @0x1D75EC34 sec=.vmp4
+  rva32 deferred @0x1D6AD16C sec=.vmp4
+
+===== PHASE REGISTRAR 0x5CBDFB0 =====
+registrarEnd=0x5CBE847 size=2199
+PHASE "ActorComponent::Begin" nameLea=0x5CBDFF1 handler=0x0 handlerLea=0x0
+PHASE "ActorComponent::End" nameLea=0x5CBE007 handler=0x67BDB30 handlerLea=0x5CBE039
+PHASE "UpdateActorLOD" nameLea=0x5CBE01F handler=0x67BDB30 handlerLea=0x5CBE039
+PHASE "CreateActorsDeferredSingleThreaded" nameLea=0x5CBE0C7 handler=0x1AC380 handlerLea=0x5CBE0DE :: CreateActorsDeferred handler (control)
+PHASE "GatherActorComponentsForSingleThreadedUpdate" nameLea=0x5CBE156 handler=0x1A97E0 handlerLea=0x5CBE16D
+PHASE "GatherActorComponentsForMultiThreadedUpdate" nameLea=0x5CBE1EC handler=0x1A75D0 handlerLea=0x5CBE203
+PHASE "UpdateActorControllersSingleThreaded" nameLea=0x5CBE302 handler=0x7B00B60 handlerLea=0x5CBE342
+PHASE "UpdateActorSingleThreaded" nameLea=0x5CBE36B handler=0x67BDB30 handlerLea=0x5CBE39A
+PHASE "UpdateActorMultiThreaded" nameLea=0x5CBE47E handler=0x49D0630 handlerLea=0x5CBE4A5
+PHASE "UpdateActorMultiThreadedInteractionGroups" nameLea=0x5CBE541 handler=0x0 handlerLea=0x0
+PHASE "ActorAfterAnimMultiThreadedInteraction" nameLea=0x5CBE69D handler=0x425B390 handlerLea=0x5CBE6C4
+PHASE "ActorAfterAnimMultiThreaded" nameLea=0x5CBE6F0 handler=0x67BDB30 handlerLea=0x5CBE72E
+PHASE "ActorStateManagerUpdate" nameLea=0x5CBE717 handler=0x67BDB30 handlerLea=0x5CBE72E
+phaseCount=13 deferredMapped=True wrapperMapped=False
+
+===== NEARBY ACTOR PHASE NAMES (string scan) =====
+ascii~"CreateActorsDeferred" hits=1
+  0xA17A4F0 "CreateActorsDeferredSingleThreaded" sec=.edata
+    lea 0x5CBE0C7 func≈0x5CBDFB0
+    lea 0x5CBE0C8 func≈0x5CBDFB0
+ascii~"UpdateActor" hits=9
+  0xA11A342 "UpdateActorMultiThreadedInteractionGroups" sec=.edata
+    lea 0x5CBE541 func≈0x5CBDFB0
+    lea 0x5CBE542 func≈0x5CBDFB0
+  0xA126CC7 "UpdateActorMatrices" sec=.edata
+    lea 0x5AC2C7B func≈0x5AC2AF0
+    lea 0x5AC2C7C func≈0x5AC2AF0
+  0xA14E42B "UpdateActorTask" sec=.edata
+    lea 0x671C7B1 func≈0x671C480
+    lea 0x671C7B2 func≈0x671C480
+  0xA153699 "UpdateActor_WorldIsNotPausedBranch" sec=.edata
+    lea 0x5509399 func≈0x5508FD0
+    lea 0x550939A func≈0x5508FD0
+  0xA16C09C "UpdateActorEndNode" sec=.edata
+    lea 0x55093AC func≈0x5508FD0
+    lea 0x55093AD func≈0x5508FD0
+  0xA17A28D "UpdateActorMultiThreaded" sec=.edata
+    lea 0x5CBE47E func≈0x5CBDFB0
+    lea 0x5CBE47F func≈0x5CBDFB0
+  0xA17A3CB "UpdateActorControllersSingleThreaded" sec=.edata
+    lea 0x5CBE302 func≈0x5CBDFB0
+    lea 0x5CBE303 func≈0x5CBDFB0
+  0xA17A40D "UpdateActorSingleThreaded" sec=.edata
+    lea 0x5CBE36B func≈0x5CBDFB0
+    lea 0x5CBE36C func≈0x5CBDFB0
+  0xA199D0C "UpdateActorLOD" sec=.edata
+    lea 0x5CBE01F func≈0x5CBDFB0
+    lea 0x5CBE020 func≈0x5CBDFB0
+ascii~"GatherActor" hits=3
+  0xA15B89C "GatherActorsForNotifyKinoState" sec=.edata
+    lea 0x57D3866 func≈0x57D37B0
+    lea 0x57D3867 func≈0x57D37B0
+  0xA15CAD6 "GatherActorComponentsForMultiThreadedUpdate" sec=.edata
+    lea 0x5CBE1EC func≈0x5CBDFB0
+    lea 0x5CBE1ED func≈0x5CBDFB0
+  0xA15CB67 "GatherActorComponentsForSingleThreadedUpdate" sec=.edata
+    lea 0x5CBE156 func≈0x5CBDFB0
+    lea 0x5CBE157 func≈0x5CBDFB0
+ascii~"ActorState" hits=1
+  0xA15C5DA "ActorStateManagerUpdate" sec=.edata
+    lea 0x5CBE717 func≈0x5CBDFB0
+    lea 0x5CBE718 func≈0x5CBDFB0
+ascii~"Deferred" hits=12
+  0xA104B11 "DeferredWaterShadow" sec=.edata
+    lea 0x3788D6C func≈0x3786820
+    lea 0x3788D6D func≈0x3786820
+  0xA104C08 "DeferredShadow" sec=.edata
+  0xA107747 "DeferredDecalLayout" sec=.edata
+    lea 0x15DBF712 func≈0x15DBF6D2
+    lea 0x15DBF713 func≈0x15DBF6D3
+  0xA107839 "DeferredLightingLayout" sec=.edata
+    lea 0x17EEC105 func≈0x17EEC0C5
+    lea 0x17EEC106 func≈0x17EEC0C6
+  0xA114740 "DeferredCommonInputs" sec=.edata
+  0xA117006 "DeferredMaterialPSODrawOffsets" sec=.edata
+  0xA117028 "DeferredMaterialPSODrawOffsets" sec=.edata
+  0xA1188DF "DeferredLightingPass" sec=.edata
+  0xA118B95 "DeferredAmbientOnlyTiledSss" sec=.edata
+    lea 0x5C412D4 func≈0x5C41294
+    lea 0x5C412D5 func≈0x5C41295
+  0xA118BB1 "DeferredSunLightTiledSss" sec=.edata
+    lea 0x5C41242 func≈0x5C41202
+    lea 0x5C41243 func≈0x5C41203
+  0xA118BCA "DeferredLocalLightsTiledSss" sec=.edata
+    lea 0x5C411B0 func≈0x5C41170
+    lea 0x5C411B1 func≈0x5C41171
+  0xA11EE59 "Deferred Decals" sec=.edata
+    lea 0x140AEC2F func≈0x140A9DC6
+    lea 0x140AEC30 func≈0x140A9DC6
+ascii~"Enqueue" hits=0
+ascii~"ActivateActor" hits=0
+ascii~"SpawnActor" hits=0
+
+===== SUBJECT VIRTUAL CALLS (0xE95E80) =====
+  0xE9626C call qword ptr [rax+20] :: base=RAX disp=0x20
+  0xE9631A call qword ptr [rax+68] :: base=RAX disp=0x68
+  0xE9640E call qword ptr [rax+68] :: base=RAX disp=0x68
+  0xE965D6 call qword ptr [rax+48] :: base=RAX disp=0x48
+  0xE96642 call qword ptr [rax+50] :: base=RAX disp=0x50
+  0xE967A6 call qword ptr [rax+18] :: base=RAX disp=0x18
+  0xE967C0 call qword ptr [rax+88] :: base=RAX disp=0x88
+  0xE968E3 call qword ptr [rax+18] :: base=RAX disp=0x18
+  0xE968FD call qword ptr [rax+88] :: base=RAX disp=0x88
+  0xE96A0B call qword ptr [rip+93B277F]
+  0xE96A19 call qword ptr [rax+230] :: base=RAX disp=0x230
+  0xE96ABF call qword ptr [rax+40] :: base=RAX disp=0x40
+
+===== SUBJECT FIELD / VCALL USE (0x725400) =====
+  0x72549D call qword ptr [rip+9B23CED]
+  0x725629 call qword ptr [rip+9B23B61]
+
+===== WRAPPER 0x2E97FC0 VIRTUAL CALLS / STRINGS =====
+  0x2E9884A call qword ptr [rip+73B0940]
+  0x2E99815 call rbp
+  0x2E99FB0 call qword ptr [rax+18] :: base=RAX disp=0x18
+  0x2E99FCA call qword ptr [rax+88] :: base=RAX disp=0x88
+  0x2E9A06D call qword ptr [rax+18] :: base=RAX disp=0x18
+  0x2E9A087 call qword ptr [rax+88] :: base=RAX disp=0x88
+  0x2E9A675 call qword ptr [rax+18] :: base=RAX disp=0x18
+  0x2E9A699 call qword ptr [rax+88] :: base=RAX disp=0x88
+  0x2E9A6BA call qword ptr [rax+18] :: base=RAX disp=0x18
+  0x2E9A6D5 call qword ptr [rax+88] :: base=RAX disp=0x88
+  0x2E9ABEA call qword ptr [rax+18] :: base=RAX disp=0x18
+  0x2E9AC0E call qword ptr [rax+88] :: base=RAX disp=0x88
+  0x2E9AC26 call qword ptr [rax+18] :: base=RAX disp=0x18
+  0x2E9AC40 call qword ptr [rax+88] :: base=RAX disp=0x88
+  0x2E9B500 call qword ptr [rax+18] :: base=RAX disp=0x18
+  0x2E9B52D call qword ptr [rax+18] :: base=RAX disp=0x18
+  0x2E9C076 call qword ptr [rax+18] :: base=RAX disp=0x18
+  0x2E9C097 call qword ptr [rax+88] :: base=RAX disp=0x88
+  0x2E9C1F4 call qword ptr [rax+18] :: base=RAX disp=0x18
+  0x2E9C21D call qword ptr [rax+88] :: base=RAX disp=0x88
+  0x2E9C242 call qword ptr [rax+18] :: base=RAX disp=0x18
+  0x2E9C449 call qword ptr [rax+18] :: base=RAX disp=0x18
+  0x2E9C46F call qword ptr [rax+88] :: base=RAX disp=0x88
+  0x2E9C494 call qword ptr [rax+18] :: base=RAX disp=0x18
+  0x2E9C5E1 call qword ptr [rax+18] :: base=RAX disp=0x18
+  0x2E9C60A call qword ptr [rax+88] :: base=RAX disp=0x88
+  0x2E9C63C call qword ptr [rax+18] :: base=RAX disp=0x18
+  0x2E9C951 call qword ptr [rax+18] :: base=RAX disp=0x18
+  0x2E9C96B call qword ptr [rax+88] :: base=RAX disp=0x88
+  0x2E9CA6E call qword ptr [rax+18] :: base=RAX disp=0x18
+  0x2E9CA88 call qword ptr [rax+88] :: base=RAX disp=0x88
+  0x2E9CCFD call qword ptr [rax+18] :: base=RAX disp=0x18
+  0x2E9CD17 call qword ptr [rax+88] :: base=RAX disp=0x88
+  0x2E9CD53 call qword ptr [rax+18] :: base=RAX disp=0x18
+  0x2E9CE31 call qword ptr [rax+18] :: base=RAX disp=0x18
+  0x2E9CE55 call qword ptr [rax+88] :: base=RAX disp=0x88
+  0x2E9D0AF call qword ptr [rax+18] :: base=RAX disp=0x18
+  0x2E9D0C9 call qword ptr [rax+88] :: base=RAX disp=0x88
+  0x2E9D210 call qword ptr [rax+18] :: base=RAX disp=0x18
+  0x2E9D22A call qword ptr [rax+88] :: base=RAX disp=0x88
+  str 0x2E9A599 "Invalid pointer not allocated by our allocators or already freed: 0x%p"
+  str 0x2E9AB10 "Invalid pointer not allocated by our allocators or already freed: 0x%p"
+  str 0x2E9B56E "Invalid pointer not allocated by our allocators or already freed: 0x%p"
+  str 0x2E9B5C6 "Invalid pointer not allocated by our allocators or already freed: 0x%p"
+  str 0x2E9B6A7 "Too many elements for %sArray. Size: %u, Max Size: %u"
+  str 0x2E9B6AE "Small"
+  str 0x2E9BB5D "Invalid pointer not allocated by our allocators or already freed: 0x%p"
+  str 0x2E9BBAC "Invalid pointer not allocated by our allocators or already freed: 0x%p"
+  str 0x2E9BFBF "Invalid pointer not allocated by our allocators or already freed: 0x%p"
+  str 0x2E9C0EF "Invalid pointer not allocated by our allocators or already freed: 0x%p"
+  str 0x2E9C400 "Invalid pointer not allocated by our allocators or already freed: 0x%p"
+  str 0x2E9C4D8 "Invalid pointer not allocated by our allocators or already freed: 0x%p"
+  str 0x2E9C905 "Invalid pointer not allocated by our allocators or already freed: 0x%p"
+  str 0x2E9CA22 "Invalid pointer not allocated by our allocators or already freed: 0x%p"
+  str 0x2E9CCB1 "Invalid pointer not allocated by our allocators or already freed: 0x%p"
+  str 0x2E9CDE5 "Invalid pointer not allocated by our allocators or already freed: 0x%p"
+  str 0x2E9D063 "Invalid pointer not allocated by our allocators or already freed: 0x%p"
+  str 0x2E9D1C4 "Invalid pointer not allocated by our allocators or already freed: 0x%p"
+  str 0x2E9D305 "Invalid pointer not allocated by our allocators or already freed: 0x%p"
+  str 0x2E9D558 "Too many elements for %sArray. Size: %u, Max Size: %u"
+  str 0x2E9D55F "Small"
+  str 0x2E9D621 "Too many elements for %sArray. Size: %u, Max Size: %u"
+  str 0x2E9D628 "Small"
+  str 0x2E9D683 "Too many elements for %sArray. Size: %u, Max Size: %u"
+  str 0x2E9D68A "Small"
+
+===== LOOKUP 0x429F9E0 / KEY 0xB2898C8 =====
+key@0xB2898C8 hex=A2 C3 FF FF FF FF 06 C4 C2 3B EB F0 5D 3C 00 00 00 00 09 F0 5D 3C 00 00 00 00 E8 10 AF 5A 01 00
+key ascii=
+lookup end=0x42A08D1 size=3825
+  0x429F9E0 push r15
+  0x429F9E2 push r14
+  0x429F9E4 push r13
+  0x429F9E6 push r12
+  0x429F9E8 push rsi
+  0x429F9E9 push rdi
+  0x429F9EA push rbp
+  0x429F9EB push rbx
+  0x429F9EC mov eax,ecx
+  0x429F9EE and eax,7
+  0x429F9F1 cmp eax,3
+  0x429F9F4 jne short 000000014429FA55
+  0x429F9F6 mov r9,0FFFFFFFFFFFFFF
+  0x429FA00 mov r10,0FFFFFF00000000
+  0x429FA0A mov r11,0FFFF0000000000
+  0x429FA14 mov rsi,0FF000000000000
+  0x429FA1E and rcx,0FFFFFFFFFFFFFFF8
+  0x429FA22 lea rax,[rcx+8]
+  0x429FA26 cmp byte ptr [rcx+17],23
+  0x429FA2A jne near ptr 000000014429FBEE
+lookup E8 callers=40
+
+===== RTTI PROBES ON IP-REL LEAS IN WORKERS/WRAPPER =====
+  (no MSVC RTTI hits in 0xE95E80)
+  (no MSVC RTTI hits in 0x2E97FC0)
+  (no MSVC RTTI hits in 0x725400)
+
+===== REGISTRAR WINDOW RAW HANDLER LEAS =====
+  codeLea 0x5CBE039 -> 0x67BDB30 sec=.impdata prologue=48 8B 49 08 48 8B 52 08
+  codeLea 0x5CBE045 -> 0x1A5A70 sec=.impdata prologue=48 83 C1 10 E9 47 25 CF
+  codeLea 0x5CBE059 -> 0x1A5A00 sec=.impdata prologue=48 89 C8 48 89 D1 48 FF
+  codeLea 0x5CBE0DE -> 0x1AC380 sec=.impdata *** DEFERRED *** prologue=41 57 41 56 41 55 41 54
+  codeLea 0x5CBE16D -> 0x1A97E0 sec=.impdata prologue=41 57 41 56 41 54 56 57
+  codeLea 0x5CBE17E -> 0x1A5A00 sec=.impdata prologue=48 89 C8 48 89 D1 48 FF
+  codeLea 0x5CBE203 -> 0x1A75D0 sec=.impdata prologue=56 57 48 83 EC 28 48 89
+  codeLea 0x5CBE297 -> 0x1A5FF0 sec=.impdata prologue=56 57 53 48 83 EC 20 8B
+  codeLea 0x5CBE2A8 -> 0x1A5A00 sec=.impdata prologue=48 89 C8 48 89 D1 48 FF
+  codeLea 0x5CBE342 -> 0x7B00B60 sec=.impdata prologue=56 57 53 48 83 EC 20 48
+  codeLea 0x5CBE39A -> 0x67BDB30 sec=.impdata prologue=48 8B 49 08 48 8B 52 08
+  codeLea 0x5CBE3A6 -> 0x29C6910 sec=.impdata prologue=56 57 48 83 EC 28 8B 05
+  codeLea 0x5CBE3B7 -> 0x464F2B0 sec=.impdata prologue=41 57 41 56 41 55 41 54
+  codeLea 0x5CBE405 -> 0x42AA150 sec=.impdata prologue=41 57 41 56 41 55 41 54
+  codeLea 0x5CBE45C -> 0x49D08A0 sec=.impdata prologue=41 57 41 56 41 55 41 54
+  codeLea 0x5CBE4A5 -> 0x49D0630 sec=.impdata prologue=56 57 53 48 81 EC D0 00
+  codeLea 0x5CBE4B0 -> 0x179D3D0 sec=.impdata prologue=41 8D 40 FF 83 F8 02 72
+  codeLea 0x5CBE4BB -> 0x319430 sec=.impdata prologue=48 8B 09 48 FF 62 10 CC
+  codeLea 0x5CBE5F5 -> 0x4E76D10 sec=.impdata prologue=41 57 41 56 41 55 41 54
+  codeLea 0x5CBE60C -> 0x319430 sec=.impdata prologue=48 8B 09 48 FF 62 10 CC
+  codeLea 0x5CBE6C4 -> 0x425B390 sec=.impdata prologue=56 57 53 48 83 EC 20 48
+  codeLea 0x5CBE72E -> 0x67BDB30 sec=.impdata prologue=48 8B 49 08 48 8B 52 08
+  codeLea 0x5CBE73A -> 0x1ABAA0 sec=.impdata prologue=41 57 41 56 41 55 41 54
+  codeLea 0x5CBE74F -> 0x1A5A00 sec=.impdata prologue=48 89 C8 48 89 D1 48 FF
+  codeLea 0x5CBE82C -> 0x179D3D0 sec=.impdata prologue=41 8D 40 FF 83 F8 02 72

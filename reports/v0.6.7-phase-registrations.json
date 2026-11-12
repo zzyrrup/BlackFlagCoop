@@ -1,0 +1,23 @@
+{
+  "schemaVersion": 1,
+  "milestone": "v0.6.7",
+  "generatedUtc": "2026-11-12T16:46:44Z",
+  "exeSha256": "19920F34BB2FAC814023EE3C27F0CECA1872E80A2AAFB37C092C419FFF77CC0D",
+  "registrar": "0x5CBDFB0",
+  "wrapperMappedInRegistrar": false,
+  "phases": [
+    { "name": "ActorComponent::Begin", "nameLea": "0x5CBDFF1", "handler": "0x0", "handlerLea": "0x0", "note": "" },
+    { "name": "ActorComponent::End", "nameLea": "0x5CBE007", "handler": "0x67BDB30", "handlerLea": "0x5CBE039", "note": "" },
+    { "name": "UpdateActorLOD", "nameLea": "0x5CBE01F", "handler": "0x67BDB30", "handlerLea": "0x5CBE039", "note": "" },
+    { "name": "CreateActorsDeferredSingleThreaded", "nameLea": "0x5CBE0C7", "handler": "0x1AC380", "handlerLea": "0x5CBE0DE", "note": "CreateActorsDeferred handler (control)" },
+    { "name": "GatherActorComponentsForSingleThreadedUpdate", "nameLea": "0x5CBE156", "handler": "0x1A97E0", "handlerLea": "0x5CBE16D", "note": "" },
+    { "name": "GatherActorComponentsForMultiThreadedUpdate", "nameLea": "0x5CBE1EC", "handler": "0x1A75D0", "handlerLea": "0x5CBE203", "note": "" },
+    { "name": "UpdateActorControllersSingleThreaded", "nameLea": "0x5CBE302", "handler": "0x7B00B60", "handlerLea": "0x5CBE342", "note": "" },
+    { "name": "UpdateActorSingleThreaded", "nameLea": "0x5CBE36B", "handler": "0x67BDB30", "handlerLea": "0x5CBE39A", "note": "" },
+    { "name": "UpdateActorMultiThreaded", "nameLea": "0x5CBE47E", "handler": "0x49D0630", "handlerLea": "0x5CBE4A5", "note": "" },
+    { "name": "UpdateActorMultiThreadedInteractionGroups", "nameLea": "0x5CBE541", "handler": "0x0", "handlerLea": "0x0", "note": "" },
+    { "name": "ActorAfterAnimMultiThreadedInteraction", "nameLea": "0x5CBE69D", "handler": "0x425B390", "handlerLea": "0x5CBE6C4", "note": "" },
+    { "name": "ActorAfterAnimMultiThreaded", "nameLea": "0x5CBE6F0", "handler": "0x67BDB30", "handlerLea": "0x5CBE72E", "note": "" },
+    { "name": "ActorStateManagerUpdate", "nameLea": "0x5CBE717", "handler": "0x67BDB30", "handlerLea": "0x5CBE72E", "note": "" }
+  ]
+}

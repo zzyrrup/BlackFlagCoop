@@ -1,14 +1,14 @@
 {
   "schemaVersion": 1,
-  "generatedUtc": "2026-11-12T17:10:00Z",
+  "generatedUtc": "2026-11-12T17:25:00Z",
   "handoffFor": "ChatGPT",
   "executor": "Cursor",
   "machine": "PC1",
   "repository": {
     "url": "https://github.com/zzyrrup/BlackFlagCoop",
     "defaultBranch": "main",
-    "featureBranch": "cursor/v065-queue-worker-decode-8285",
-    "baseBranch": "cursor/v065-deferred-queue-worker-007d",
+    "featureBranch": "cursor/v067-wrapper-dispatch-rtti-8285",
+    "baseBranch": "cursor/v065-queue-worker-decode-8285",
     "doNotPushMain": true,
     "initialCommit": "e12e70150656ac80742f10b496f7e5556e7985b7"
   },
@@ -18,10 +18,10 @@
     "functionalityChangedByThisMilestone": false
   },
   "milestone": {
-    "currentId": "v0.6.6",
-    "currentTitle": "Deferred queue producers",
+    "currentId": "v0.6.7",
+    "currentTitle": "Enqueue wrapper dispatch and subject type leads",
     "status": "complete",
-    "priorPreserved": ["v0.6.4", "v0.6.5"]
+    "priorPreserved": ["v0.6.4", "v0.6.5", "v0.6.6"]
   },
   "asi": {
     "version": "0.5.1",
@@ -37,7 +37,7 @@
   },
   "build": {
     "asiRebuilt": false,
-    "offlineTools": ["tools/offline/QueueWorker065", "tools/offline/QueueProducer066"]
+    "offlineTools": ["tools/offline/WrapperDispatch067"]
   },
   "network": {
     "changesAuthorized": false,
@@ -45,57 +45,58 @@
   },
   "engineFindings": {
     "summary": [
-      "v0.6.5: slot={ptr@0,f32@8}; workers 0x725400/0xE95E80 on subject",
-      "v0.6.6: enqueue helper 0x2E97B60(coordinator,object); wrapper 0x2E97FC0",
-      "Post-enqueue sets object+0x61 bit2; 0x725400 clears it",
-      "No Edward/create/input path on producer or consumer"
+      "UpdateActorLOD registers stub 0x1A5A70 which jmps to enqueue wrapper 0x2E97FC0",
+      "CreateActorsDeferredSingleThreaded remains the drain phase (0x1AC380)",
+      "No MSVC RTTI name for queued subjects; field/vcall fingerprint only",
+      "No Edward/create/input path"
     ],
     "keyRvas": {
-      "deferredHandler": "0x1AC380",
-      "enqueueHelper": "0x2E97B60",
+      "phaseRegistrar": "0x5CBDFB0",
+      "updateActorLodPhase": "UpdateActorLOD",
+      "lodStub": "0x1A5A70",
       "enqueueWrapper": "0x2E97FC0",
-      "perElementA": "0x725400",
-      "perElementB": "0xE95E80",
-      "controllerNeighborHelper": "0x7B02D70"
+      "enqueueHelper": "0x2E97B60",
+      "deferredHandler": "0x1AC380",
+      "lodSiblingHelper": "0x67BDB30"
     }
   },
   "confirmed": [
     "ASI v0.5.1 preserved; no deploy",
-    "0x2E97B60 enqueues object pointers into +0xAC0 with consumer packing",
-    "Only callers of enqueue are inside 0x2E97FC0 (3 sites)",
-    "object+0x61 bit 0x04 set on enqueue, cleared in 0x725400",
-    "No Edward strings on producer path"
+    "Wrapper dispatch via UpdateActorLOD -> 0x1A5A70 -> 0x2E97FC0",
+    "No direct E8/LEA/qword to wrapper entry",
+    "Subject RTTI name not recovered offline"
   ],
   "hypotheses": [
-    "0x2E97FC0 is phase-dispatched like 0x1AC380",
-    "Queued objects may include player/Edward instances",
+    "Queued subjects are LOD-tracked actor-like objects",
     "0x160 side block is activation/controller-related"
   ],
   "blockers": [
-    "Subject type/RTTI unknown",
-    "0x2E97FC0 registration unknown",
+    "Subject concrete type unknown",
     "No input/possession path",
     "Spawn tests not authorized"
   ],
   "mostRecentCompletedMilestone": {
-    "id": "v0.6.6",
-    "docs": ["docs/v0.6.6-deferred-queue-producers.md"],
+    "id": "v0.6.7",
+    "docs": ["docs/v0.6.7-wrapper-dispatch-subject-type.md"],
     "reports": [
-      "reports/v0.6.6-enqueue-helper.json",
-      "reports/v0.6.6-producer-scan-summary.json",
-      "reports/v0.6.6-second-edward-feasibility.json",
-      "reports/v066-raw/evidence.txt"
+      "reports/v0.6.7-wrapper-dispatch.json",
+      "reports/v0.6.7-subject-type-leads.json",
+      "reports/v0.6.7-phase-registrations.json",
+      "reports/v0.6.7-dispatch-summary.json",
+      "reports/v0.6.7-second-edward-feasibility.json",
+      "reports/v067-raw/evidence.txt"
     ]
   },
   "nextRecommendedMilestone": {
-    "id": "v0.6.7",
-    "title": "Enqueue wrapper dispatch and subject type recovery",
-    "primary": ["registration of 0x2E97FC0", "subject vtable/RTTI"],
+    "id": "v0.6.8",
+    "title": "Subject constructor/vtable fingerprint match",
+    "primary": ["constructors matching +0x61/+0x18/+0x98 fingerprint", "decode 0x67BDB30"],
     "forbidden": ["spawn", "deploy", "live memory", "PC2", "save-data", "force-push main"]
   },
   "tests": [
-    { "name": "QueueProducer066_build_scan", "result": "pass" },
-    { "name": "enqueue_helper_packing_match", "result": "pass" },
+    { "name": "WrapperDispatch067_build_scan", "result": "pass" },
+    { "name": "updateActorLod_stub_jmp", "result": "pass" },
+    { "name": "subject_msvc_rtti_name", "result": "not_found" },
     { "name": "game_launch_deploy", "result": "not_run" },
     { "name": "spawn_live_memory", "result": "not_run" }
   ],
@@ -111,9 +112,9 @@
   },
   "chatgptNextReviewInstructions": [
     "Read docs/CHATGPT_HANDOFF.md and this JSON first",
-    "Review v0.6.6 PR; preserve v0.6.4/v0.6.5 history",
+    "Review v0.6.7 PR; preserve v0.6.4-v0.6.6 history",
     "Separate confirmed vs hypotheses",
-    "Propose v0.6.7: 0x2E97FC0 dispatch + subject RTTI",
+    "Propose v0.6.8 fingerprint/constructor match",
     "Do not authorize deploy/spawn/live memory/PC2 unless user overrides",
     "Return PC1 branch+PR instructions"
   ]

@@ -1,0 +1,43 @@
+{
+  "schemaVersion": 1,
+  "generatedUtc": "2026-11-12T17:20:00Z",
+  "milestone": "v0.6.7",
+  "assessments": {
+    "enqueueWrapperDispatchKnown": {
+      "class": "confirmed",
+      "reason": "UpdateActorLOD registers stub 0x1A5A70 which jmps to 0x2E97FC0"
+    },
+    "subjectConcreteTypeKnown": {
+      "class": "unsupported",
+      "reason": "No MSVC RTTI name; only field/vcall fingerprint"
+    },
+    "createSecondCharacterEntity": {
+      "class": "unsupported_on_this_path",
+      "reason": "LOD enqueue + deferred activate still operate on existing objects"
+    },
+    "reuseEdwardDefinition": {
+      "class": "unsupported",
+      "reason": "No Edward/archetype edge"
+    },
+    "assignSeparateInputControl": {
+      "class": "unsupported",
+      "reason": "No input path in dispatch or activation workers"
+    },
+    "secondEdwardWorks": {
+      "class": "unknown_untested",
+      "reason": "No gameplay test; type unknown"
+    }
+  },
+  "nextSafestStep": {
+    "primary": "Offline match constructors/vtable installs to subject fingerprint; decode LOD sibling 0x67BDB30",
+    "forbidden": ["spawn", "ASI deploy", "live memory", "PC2", "save-data", "push main"]
+  },
+  "safety": {
+    "spawnAttempted": false,
+    "gameLaunched": false,
+    "liveMemory": false,
+    "asiPreservedAsV051": true,
+    "pc2Untouched": true,
+    "priorMilestonesPreserved": true
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "schemaVersion": 1,
+  "milestone": "v0.6.7",
+  "generatedUtc": "2026-11-12T16:46:44Z",
+  "exeSha256": "19920F34BB2FAC814023EE3C27F0CECA1872E80A2AAFB37C092C419FFF77CC0D",
+  "enqueueWrapper": "0x2E97FC0",
+  "enqueueHelper": "0x2E97B60",
+  "wrapperInPhaseRegistrar": false,
+  "deferredHandlerInPhaseRegistrar": true,
+  "deferredPhaseName": "CreateActorsDeferredSingleThreaded",
+  "phaseCount": 13,
+  "e8CallersOfWrapper": 0,
+  "leaXrefsOfWrapper": 0,
+  "qwordXrefsOfWrapper": 0
+}
