@@ -1,0 +1,16 @@
+{
+  "schemaVersion": 1,
+  "milestone": "v0.6.14",
+  "generatedUtc": "2026-11-12T17:52:17Z",
+  "exeSha256": "19920F34BB2FAC814023EE3C27F0CECA1872E80A2AAFB37C092C419FFF77CC0D",
+  "createSecondEdward": { "class": "unsupported", "reason": "Gate/membership leads operate on existing typed objects; no Edward factory shown" },
+  "typeInfoNamed": { "class": "plausible", "reason": "anvil_typeinfo_key_blob_no_inline_name" },
+  "gateSetterConfirmed": { "class": "confirmed", "reason": "0x53F31A0 uses key+nested and writes +0x61" },
+  "bitWriterConfirmed": { "class": "confirmed", "reason": "0xF1C240 load/mask/or/store +0x61" },
+  "membershipInsertPinned": { "class": "plausible", "reason": "indexed store notes present on membership leads?" },
+  "liveMemoryProbe": { "class": "blocked", "reason": "Not authorized" },
+  "next": {
+    "primary": "Trace callers of 0x53F31A0 / 0xF1C240 to object creation; pin SmallArray store sites on membership leads",
+    "avoid": ["live memory", "ASI deploy", "spawn", "PC2", "+0x61-only ranking"]
+  }
+}

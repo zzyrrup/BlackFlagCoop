@@ -1,14 +1,14 @@
 {
   "schemaVersion": 1,
-  "generatedUtc": "2026-11-12T17:50:00Z",
+  "generatedUtc": "2026-11-12T18:05:00Z",
   "handoffFor": "ChatGPT",
   "executor": "Cursor",
   "machine": "PC1",
   "repository": {
     "url": "https://github.com/zzyrrup/BlackFlagCoop",
     "defaultBranch": "main",
-    "featureBranch": "cursor/v073-enroll-insert-gate-8285",
-    "baseBranch": "cursor/v072-enqueue-feed-forward-8285",
+    "featureBranch": "cursor/v074-gate-deep-typeinfo-8285",
+    "baseBranch": "cursor/v073-enroll-insert-gate-8285",
     "doNotPushMain": true,
     "initialCommit": "e12e70150656ac80742f10b496f7e5556e7985b7"
   },
@@ -18,10 +18,10 @@
     "functionalityChangedByThisMilestone": false
   },
   "milestone": {
-    "currentId": "v0.6.13",
-    "currentTitle": "Enrollment insert / gate writers / lookup key decode",
+    "currentId": "v0.6.14",
+    "currentTitle": "Gate/insert deep-decode and TypeInfo field map",
     "status": "complete",
-    "priorPreserved": ["v0.6.4", "v0.6.5", "v0.6.6", "v0.6.7", "v0.6.8", "v0.6.9", "v0.6.10", "v0.6.11", "v0.6.12"]
+    "priorPreserved": ["v0.6.4", "v0.6.5", "v0.6.6", "v0.6.7", "v0.6.8", "v0.6.9", "v0.6.10", "v0.6.11", "v0.6.12", "v0.6.13"]
   },
   "asi": {
     "version": "0.5.1",
@@ -37,7 +37,7 @@
   },
   "build": {
     "asiRebuilt": false,
-    "offlineTools": ["tools/offline/EnrollInsert073"]
+    "offlineTools": ["tools/offline/GateDeep074"]
   },
   "network": {
     "changesAuthorized": false,
@@ -45,61 +45,62 @@
   },
   "engineFindings": {
     "summary": [
-      "0xB2898C8 is .trace Anvil TypeInfo/key shared by UpdateActorLOD wrapper and worker 0x725400",
-      "Gate-setter 0x53F31A0: nested+key then or [obj+0x61], 0x0A (bit1+bit3)",
-      "Bit-writer API 0xF1C240: load/and 0xFE/or bl/store on +0x61",
-      "Membership candidates 0x4B5A560 / 0x4D04450 test bit1 and touch +0x98/SmallArray",
+      "0x53F31A0: nested+key, or [obj+0x61],0x0A, LOD float math; 0 E8/LEA callers",
+      "0xF1C240: child table +0x138/+0x165, and 0xFE/or bl store; key + 3FFF packing; 0 E8/LEA callers",
+      "0x4B5A560/0x4D04450: bit1 early-out, +0x98, call worker 0x725400",
+      "0x2EA0B00: indexed list writes; callers from 0xE2C8A0 (alloc)",
+      "0xB2898C8: no inline name; lookup uses shr key,0x38",
       "No Edward/create path"
     ],
     "keyRvas": {
-      "lookupKey": "0xB2898C8",
       "gateSetter": "0x53F31A0",
       "bitWriter": "0xF1C240",
       "membershipA": "0x4B5A560",
       "membershipB": "0x4D04450",
       "nearWrapperList": "0x2EA0B00",
-      "workerA": "0x725400",
-      "enqueueWrapper": "0x2E97FC0",
-      "enqueueHelper": "0x2E97B60"
+      "nearWrapperCaller": "0xE2C8A0",
+      "lookupKey": "0xB2898C8",
+      "lookup": "0x429F9E0",
+      "workerA": "0x725400"
     }
   },
   "confirmed": [
     "ASI v0.5.1 preserved; no deploy",
-    "Lookup key shared by wrapper and worker",
-    "or4 post-enqueue in wrapper; gate-setter 0x53F31A0 named",
+    "Gate-setter and bit-writer semantics confirmed offline",
+    "Membership leads linked to +0x98 and worker",
     "No live memory this milestone"
   ],
   "hypotheses": [
-    "0x53F31A0 / 0xF1C240 establish enrollment eligibility",
-    "0x4B5A560 / 0x4D04450 may insert into related lists when bit1 clear"
+    "Gate-setter/bit-writer installed via vtable/bundle slots",
+    "0xE2C8A0 allocator path populates lists consumed by UpdateActorLOD"
   ],
   "blockers": [
     "Subject concrete type name unknown",
-    "Exact enrollment SmallArray store sites still open",
+    "Indirect install sites for gate-setter/bit-writer unidentified",
     "No input/possession path",
     "Spawn tests not authorized"
   ],
   "mostRecentCompletedMilestone": {
-    "id": "v0.6.13",
-    "docs": ["docs/v0.6.13-enroll-insert-gate.md"],
+    "id": "v0.6.14",
+    "docs": ["docs/v0.6.14-gate-deep-typeinfo.md"],
     "reports": [
-      "reports/v0.6.13-lookup-key.json",
-      "reports/v0.6.13-gate-writers.json",
-      "reports/v0.6.13-summary.json",
-      "reports/v0.6.13-second-edward-feasibility.json",
-      "reports/v073-raw/evidence.txt"
+      "reports/v0.6.14-typeinfo-fields.json",
+      "reports/v0.6.14-leads-deep.json",
+      "reports/v0.6.14-summary.json",
+      "reports/v0.6.14-second-edward-feasibility.json",
+      "reports/v074-raw/evidence.txt"
     ]
   },
   "nextRecommendedMilestone": {
-    "id": "v0.6.14",
-    "title": "Deep-decode gate/insert leads and TypeInfo fields at 0xB2898C8",
-    "primary": ["0x53F31A0", "0xF1C240", "0x4B5A560", "0x4D04450", "0x2EA0B00", "0xB2898C8 fields"],
+    "id": "v0.6.15",
+    "title": "Recover indirect install sites for gate-setter/bit-writer; deep-decode 0xE2C8A0",
+    "primary": ["0x53F31A0 install", "0xF1C240 install", "0xE2C8A0"],
     "forbidden": ["spawn", "deploy", "live memory", "PC2", "save-data", "force-push main", "+0x61-only ranking"]
   },
   "tests": [
-    { "name": "EnrollInsert073_build_scan", "result": "pass" },
-    { "name": "worker_references_lookup_key", "result": "pass" },
-    { "name": "wrapper_or4_post_enqueue", "result": "pass" },
+    { "name": "GateDeep074_build_scan", "result": "pass" },
+    { "name": "gate_setter_or0A", "result": "pass" },
+    { "name": "typeinfo_inline_name", "result": "absent" },
     { "name": "game_launch_deploy", "result": "not_run" },
     { "name": "spawn_live_memory", "result": "not_run" }
   ],
@@ -115,9 +116,9 @@
   },
   "chatgptNextReviewInstructions": [
     "Read docs/CHATGPT_HANDOFF.md and this JSON first",
-    "Review v0.6.13 PR; preserve v0.6.4-v0.6.12 history",
+    "Review v0.6.14 PR; preserve v0.6.4-v0.6.13 history",
     "Separate confirmed vs hypotheses",
-    "Propose v0.6.14 deep-decode of gate/insert leads",
+    "Propose v0.6.15 indirect install recovery + 0xE2C8A0 decode",
     "Do not authorize deploy/spawn/live memory/PC2 unless user overrides",
     "Return PC1 branch+PR instructions"
   ]

@@ -3,7 +3,7 @@
 **Last updated:** 2026-11-12  
 **Machine:** PC1 only  
 **Repo:** https://github.com/zzyrrup/BlackFlagCoop  
-**Branch:** `cursor/v073-enroll-insert-gate-8285` (PR into `cursor/v072-enqueue-feed-forward-8285`; do not push main)  
+**Branch:** `cursor/v074-gate-deep-typeinfo-8285` (PR into `cursor/v073-enroll-insert-gate-8285`; do not push main)  
 **Initial commit:** `e12e70150656ac80742f10b496f7e5556e7985b7`
 
 This document is the primary human-readable bridge between Cursor (local execution) and ChatGPT (review / next instructions). Update it after every completed milestone.
@@ -25,9 +25,9 @@ Ultimate vision is **not claimed as achieved**. Dual-Edward co-op remains unprov
 
 ## 2. Current development milestone
 
-**v0.6.13 complete** — Lookup key `0xB2898C8` is shared `.trace` TypeInfo (wrapper + worker); gate-setter **`0x53F31A0`** (`or …, 0x0A`); bit-writer **`0xF1C240`**; membership candidates `0x4B5A560` / `0x4D04450`.
+**v0.6.14 complete** — Deep-decode: gate-setter `or …,0x0A` + LOD math; bit-writer child-table `+0x61` merge; membership A/B ↔ `+0x98`/worker; TypeInfo key has no inline name (lookup uses `shr key,0x38`).
 
-Prior: v0.6.5–v0.6.12 preserved. Offline only. No ASI, spawn, or networking change.
+Prior: v0.6.5–v0.6.13 preserved. Offline only. No ASI, spawn, or networking change.
 
 ---
 
@@ -95,6 +95,7 @@ High-signal offline findings (see `docs/v0.6.*` and `reports/v0.6.*`):
 - **v0.6.11:** Deep-decode shows **`0x400B50`** alloc **`0x50`**, **`0x4444C0`** alloc **`0xE0`**; both use `[+0x38]→[+0x58]→[+0xA8]→[+0x3CD0]` lookup. **No** direct/caller enrollment into enqueue/wrapper. Still no Edward/create path.
 - **v0.6.12:** Enrollment feeds from **hash-bucket → packed-pointer SmallArray** with gate `([obj+0x61]&6)==2`; wrapper **does not** call allocator; near-site callee `0x537C2C0` is a list scan. Shared static lookup key **`0xB2898C8`**. Still no Edward/create path.
 - **v0.6.13:** `0xB2898C8` = `.trace` TypeInfo key shared with worker `0x725400`. Gate-setter **`0x53F31A0`** (`or [obj+0x61],0x0A`); bit-writer **`0xF1C240`**; candidates `0x4B5A560`/`0x4D04450`/`0x2EA0B00`. Still no Edward/create path.
+- **v0.6.14:** Deep-decode confirms gate-setter/bit-writer semantics; membership leads call worker and use `+0x98`; TypeInfo has no inline name; lookup hashes key high byte. Gate-setter/bit-writer have **0** E8/LEA callers. Still no Edward/create path.
 
 ---
 
@@ -121,8 +122,10 @@ High-signal offline findings (see `docs/v0.6.*` and `reports/v0.6.*`):
 - Enrollment gate before helper: `([obj+0x61] & 6) == 2`.
 - Static lookup key `0xB2898C8` shared by enrollment sites `0x2E9B3D1` / `0x2E9B481`.
 - `0xB2898C8` lives in `.trace` and is also referenced by worker `0x725400` (same TypeInfo family).
-- Gate-setter lead `0x53F31A0` does nested lookup then `or [obj+0x61], 0x0A` (sets bit1+bit3).
-- `0xF1C240` is a parameterized `+0x61` load/mask/or/store helper using the same key.
+- Gate-setter lead `0x53F31A0` does nested lookup then `or [obj+0x61], 0x0A` (sets bit1+bit3); also LOD-like float work; no E8/LEA callers.
+- `0xF1C240` selects a child from `[container+0x138]` via index `[+0x165]`, then load/`and 0xFE`/`or bl`/store on `+0x61`; uses key + `3FFF` packing; no E8/LEA callers.
+- Membership `0x4B5A560` / `0x4D04450` early-out on bit1, use `+0x98`, call worker `0x725400`.
+- Lookup `0x429F9E0` indexes with `shr key, 0x38`; TypeInfo blob has no inline ASCII name.
 - Input lead `0x187F0550` is action-name bind, not a movement controller.
 - No verified shared entity/ownership edge between input bind path and deferred handler.
 - No Edward, character, archetype, player, or transform string in either worker or the producer wrapper.
@@ -148,7 +151,7 @@ High-signal offline findings (see `docs/v0.6.*` and `reports/v0.6.*`):
 ## 9. Current blockers
 
 - No confirmed character/Edward factory or archetype reuse path. Queue only enqueues/activates existing objects.
-- Subject concrete type still unknown; exact SmallArray store sites for enrollment lists still open (gate-setter/membership leads named).
+- Subject concrete type still unknown; indirect install sites for gate-setter/bit-writer still open.
 - No verified input→character ownership/control binding.
 - No safe authorized spawn/possession test design yet.
 - GitHub handoff must stay free of ASI/game binaries.
@@ -157,34 +160,34 @@ High-signal offline findings (see `docs/v0.6.*` and `reports/v0.6.*`):
 
 ## 10. Most recent completed milestone
 
-**v0.6.13 — Enrollment insert / gate writers / lookup key**
+**v0.6.14 — Gate/insert deep-decode + TypeInfo fields**
 
 Deliverables:
 
-- `docs/v0.6.13-enroll-insert-gate.md`
-- `reports/v0.6.13-lookup-key.json`
-- `reports/v0.6.13-gate-writers.json`
-- `reports/v0.6.13-summary.json`
-- `reports/v0.6.13-second-edward-feasibility.json`
-- `reports/v073-raw/evidence.txt`
-- `tools/offline/EnrollInsert073/`
+- `docs/v0.6.14-gate-deep-typeinfo.md`
+- `reports/v0.6.14-typeinfo-fields.json`
+- `reports/v0.6.14-leads-deep.json`
+- `reports/v0.6.14-summary.json`
+- `reports/v0.6.14-second-edward-feasibility.json`
+- `reports/v074-raw/evidence.txt`
+- `tools/offline/GateDeep074/`
 
-v0.6.4–v0.6.12 reports were left in place.
+v0.6.4–v0.6.13 reports were left in place.
 
 ---
 
 ## 11. Next recommended milestone
 
-**v0.6.14 (proposed):** Offline deep-decode gate/insert leads **`0x53F31A0`**, **`0xF1C240`**, **`0x4B5A560`**, **`0x4D04450`**, **`0x2EA0B00`** (callers, list stores, relation to wrapper arrays); map TypeInfo fields at `0xB2898C8`. Still no spawn, deploy, live memory, or PC2 unless separately authorized.
+**v0.6.15 (proposed):** Offline recover **indirect install sites** for `0x53F31A0` / `0xF1C240` (vtable/bundle qword patterns); deep-decode allocator caller `0xE2C8A0` of `0x2EA0B00`. Still no spawn, deploy, live memory, or PC2 unless separately authorized.
 
 ---
 
 ## 12. Files changed in the latest milestone
 
-- `docs/v0.6.13-enroll-insert-gate.md`
-- `reports/v0.6.13-*.json`
-- `reports/v073-raw/evidence.txt`
-- `tools/offline/EnrollInsert073/`
+- `docs/v0.6.14-gate-deep-typeinfo.md`
+- `reports/v0.6.14-*.json`
+- `reports/v074-raw/evidence.txt`
+- `tools/offline/GateDeep074/`
 - `docs/CHATGPT_HANDOFF.md`
 - `reports/CHATGPT_HANDOFF.json`
 
@@ -203,6 +206,7 @@ v0.6.4–v0.6.12 reports were left in place.
 | Offline alloc leads v0.6.11 (`AllocLead071`) | Pass; alloc `0x50`/`0xE0`; **no** enqueue enrollment |
 | Offline enqueue feed v0.6.12 (`EnqueueFeed072`) | Pass; packed-ptr array feed; **no** allocator on enrollment path |
 | Offline insert/gate v0.6.13 (`EnrollInsert073`) | Pass; key shared with worker; gate-setter `0x53F31A0`; bit-writer `0xF1C240` |
+| Offline deep-decode v0.6.14 (`GateDeep074`) | Pass; gate/bit/membership semantics; TypeInfo no inline name |
 | Subject MSVC RTTI name | **Not found** (game types RTTI-stripped) |
 | Game launch / ASI deploy | **Not performed** |
 | Spawn / inject / live memory | **Not performed** |
@@ -228,6 +232,6 @@ When reviewing the GitHub repository after a Cursor push:
 2. Diff against the previous handoff `milestoneId` / commit.
 3. Treat only **confirmed** items as facts; keep hypotheses labeled.
 4. Propose the **next single milestone** with: objective, in-scope RVAs/files, out-of-scope (spawn/deploy/PC2), required deliverables paths, and acceptance checks.
-5. Prefer **v0.6.14**: deep-decode `0x53F31A0` / `0xF1C240` / `0x4B5A560` / `0x4D04450` / `0x2EA0B00` and TypeInfo fields at `0xB2898C8`. Do not treat LOD enqueue/comparator as character creation; avoid `+0x61`-only ranking; do not rely on MSVC RTTI for game types.
+5. Prefer **v0.6.15**: recover indirect install sites for `0x53F31A0`/`0xF1C240`; deep-decode `0xE2C8A0`. Do not treat LOD enqueue/comparator as character creation; avoid `+0x61`-only ranking; do not rely on MSVC RTTI for game types.
 6. Do not instruct Cursor to deploy ASI, spawn, use live memory, or touch PC2/save data unless the user explicitly overrides safety.
 7. Return instructions Cursor can execute verbatim on PC1 on a dedicated branch + PR (never push main).
