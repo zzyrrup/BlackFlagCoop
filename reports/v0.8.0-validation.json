@@ -22,7 +22,7 @@
     "version": "0.8.0-dev",
     "path": "build/bin/Release/BlackFlagCoop.asi",
     "bytes": 101376,
-    "sha256": "AD1EE8C35CD99E3452E6330032E660C9FFC83AC01221423F3627A81344807711",
+    "sha256": "BB65C643BA4318C9714EA7C2F0A1468D9730BD423DA71BD953BC97434783D925",
     "invokeNativeSpawn": false,
     "deployed": false
   },
@@ -38,5 +38,9 @@
     { "name": "SpawnContract_ctest_Release", "result": "pass" },
     { "name": "game_launch_deploy", "result": "not_run" }
   ],
-  "missingLink": "A callsite that fills SpawnEntityBuilderParams and inserts a character into the world. The *Params functions are schema visitors via 0x4572C60."
+  "allocVtables": {
+    "0x34730": {"size": "0x1528", "finalVtable": "0x92F9108", "rtti": "none", "character": false},
+    "0x3DE6300": {"size": "0x1530", "finalVtable": "0x92F9048", "rtti": "none", "character": false}
+  },
+  "missingLink": "A callsite that fills SpawnEntityBuilderParams and inserts a character into the world. The 0x1528/0x1530 objects are not that character."
 }

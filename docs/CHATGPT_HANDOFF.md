@@ -38,7 +38,7 @@ Prior: v0.6.25 owner VT[0] ctors (`0x13612B0` / `0x5781490`) and v0.6.5–v0.6.2
 | Working in-game ASI | **v0.5.1** (still installed, 99840 bytes) |
 | ASI SHA256 | `63B38877DDA7CC7CD9AB2619F94D3941C37F54C95A435EFE47084DC4CF2A50BE` |
 | Candidate | `0.8.0-dev` `build/bin/Release/BlackFlagCoop.asi` |
-| Candidate SHA256 | `AD1EE8C35CD99E3452E6330032E660C9FFC83AC01221423F3627A81344807711` (101376 bytes) |
+| Candidate SHA256 | `BB65C643BA4318C9714EA7C2F0A1468D9730BD423DA71BD953BC97434783D925` (101376 bytes) |
 | Deploy status | **Do not replace** the installed v0.5.1 without explicit user approval |
 
 ---
@@ -109,7 +109,7 @@ High-signal offline findings (see `docs/v0.6.*` and `reports/v0.6.*`):
 - **v0.6.23:** Tight-factory callers do **not** LEA key/`0x20F0` (186 records, 0 hits). Helper deep-decode: `0x2336560` position extract; `0x1D25E20` spatial math — not possession. Still no Edward/create path.
 - **v0.6.24:** Outer `0x59D9660` = InstallerA TypeInfo registration only (0 E8). Neighbor/Spatial = `.edata` methods; owner vtables `0x976B2D0`/`0x9236E00`. Still no Edward/create path.
 - **v0.6.25:** Owner VT[0] ctors `0x13612B0`/`0x5781490` (0 E8); spat/neigh ctors init `+0x98` (enrollment side-block field). Still no Edward/create path.
-- **v0.8.0:** `Spawn*Params` functions are schema visitors, not a character factory. Same-table allocators `0x34730` (`edx=0x1528`) and `0x3DE6300` (`edx=0x1530`) are unproven. Plugin refuses to call them.
+- **v0.8.0:** `Spawn*Params` functions are schema visitors, not a character factory. `0x34730` installs final vtable `0x92F9108`; `0x3DE6300` installs final vtable `0x92F9048`. No MSVC RTTI. Not characters. Plugin refuses to call them.
 
 ---
 
@@ -275,7 +275,7 @@ v0.6.4–v0.6.24 reports were left in place.
 | Offline VT owner ctors v0.6.25 (`VtOwner085`) | Pass; VT[0] ctors; +0x98 enrollment link |
 | Offline spawn callers v0.8.0 (`SpawnCallers080`) | Pass; 3/3 schema visitors; 0 factory candidates |
 | `ctest -C Release` SpawnContract | Pass (1/1, ALL PASSED) |
-| VS 18 2026 x64 Release | Pass. Candidate `AD1EE8C3…` (101376 bytes). Not deployed |
+| VS 18 2026 x64 Release | Pass. Candidate `BB65C643…` (101376 bytes). Not deployed |
 | Subject MSVC RTTI name | **Not found** (game types RTTI-stripped) |
 | Game launch / ASI deploy | **Not performed** |
 | Spawn / inject / live memory | **Not performed** |
@@ -287,7 +287,7 @@ v0.6.4–v0.6.24 reports were left in place.
 
 - PC1 only; PC2 untouched.
 - Game installs unmodified by this handoff work.
-- ASI v0.5.1 preserved and re-read (`63B38877…`, 99840 bytes). Candidate `AD1EE8C3…` was not copied into the game.
+- ASI v0.5.1 preserved and re-read (`63B38877…`, 99840 bytes). Candidate `BB65C643…` was not copied into the game.
 - Backups preserved locally; excluded from Git.
 - No force-push; no credential commits.
 

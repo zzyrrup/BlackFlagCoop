@@ -13,12 +13,14 @@ struct SpawnExclusion {
 };
 
 // Allocator call on the same code-pointer run as a schema visitor.
-// The allocated object's identity is not proven, so it is not a character factory.
+// finalVtable is the last vptr stored into the returned object. 0 means not recovered.
+// None of these vtables has an MSVC RTTI name, and none is a confirmed character type.
 struct UnprovenSameTableAlloc {
     std::uint32_t rva;
     std::uint32_t runBase;
     int slot;
     std::uint32_t sizeBytes;
+    std::uint32_t finalVtable;
     const char* note;
 };
 
@@ -46,15 +48,14 @@ public:
     };
 
     static constexpr UnprovenSameTableAlloc kUnprovenAllocs[] = {
-        {0x34730u, 0x92D2030u, 3, 0x1528u,
-         "code-pointer run also holds SpawnEntityParams visitor 0x8DFFB90; "
-         "edx=0x1528 before Allocator; object identity unproven"},
-        {0x3DE6300u, 0x92D1F70u, 3, 0x1530u,
-         "code-pointer run also holds SpawnEntityBuilderParams visitor 0x8E02960; "
-         "edx=0x1530 before Allocator; object identity unproven"},
-        {0x32FF450u, 0x92D1EB0u, 3, 0u,
-         "code-pointer run also holds SpawnEntityBuilderParams visitor 0x8E02960; "
-         "Allocator call is past the decoded head, size not recovered"},
+        {0x34730u, 0x92D2030u, 3, 0x1528u, 0x92F9108u,
+         "returned object stores base 0x92F91C8 then final 0x92F9108; "
+         "vt-8 is 0 so there is no MSVC RTTI name; not a character"},
+        {0x3DE6300u, 0x92D1F70u, 3, 0x1530u, 0x92F9048u,
+         "returned object stores 0x92F91C8, then 0x92F9108, then final 0x92F9048; "
+         "vt-8 is 0 so there is no MSVC RTTI name; not a character"},
+        {0x32FF450u, 0x92D1EB0u, 3, 0u, 0u,
+         "Allocator call is past the decoded head; size and vtable not recovered"},
     };
 
     static constexpr const char* kMissingLink =

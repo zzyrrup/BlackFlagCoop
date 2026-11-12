@@ -65,6 +65,8 @@ std::string SpawnContract::Describe() {
         AppendHex(text, item.rva);
         text += " size=";
         AppendHex(text, item.sizeBytes);
+        text += " finalVt=";
+        AppendHex(text, item.finalVtable);
         text += " ";
         text += item.note;
     }
@@ -76,8 +78,8 @@ void SpawnContract::LogGate() {
                  " native spawn invoke=off");
     Logger::Info(kMissingLink);
     Logger::Info(
-        "Same-table allocators 0x34730 (0x1528 bytes) and 0x3DE6300 (0x1530 bytes) "
-        "stay unproven and are not called");
+        "Allocators 0x34730 and 0x3DE6300 install vtables 0x92F9108 and 0x92F9048. "
+        "No RTTI name. Not a character. Not called");
 }
 
 }  // namespace bfc

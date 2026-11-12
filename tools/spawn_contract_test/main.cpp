@@ -48,10 +48,12 @@ int main() {
         bfc::SpawnContract::FindUnprovenAlloc(0x3DE6300u);
     const bfc::UnprovenSameTableAlloc* builderLate =
         bfc::SpawnContract::FindUnprovenAlloc(0x32FF450u);
-    Expect(entity != nullptr && entity->sizeBytes == 0x1528u && entity->slot == 3,
-           "entity-table alloc size is recorded");
-    Expect(builder != nullptr && builder->sizeBytes == 0x1530u && builder->slot == 3,
-           "builder-table alloc size is recorded");
+    Expect(entity != nullptr && entity->sizeBytes == 0x1528u && entity->slot == 3 &&
+               entity->finalVtable == 0x92F9108u,
+           "0x1528 object final vtable is recorded");
+    Expect(builder != nullptr && builder->sizeBytes == 0x1530u && builder->slot == 3 &&
+               builder->finalVtable == 0x92F9048u,
+           "0x1530 object final vtable is recorded");
     Expect(builderLate != nullptr && builderLate->sizeBytes == 0u,
            "late allocator size stays unknown");
     Expect(bfc::SpawnContract::FindUnprovenAlloc(0x80F2330u) == nullptr,
@@ -65,6 +67,9 @@ int main() {
            "description says the allocators are not called");
     Expect(text.find("0x34730") != std::string::npos, "description records 0x34730");
     Expect(text.find("0x1528") != std::string::npos, "description records size 0x1528");
+    Expect(text.find("0x92F9108") != std::string::npos, "description records final vtable");
+    Expect(text.find("not a character") != std::string::npos,
+           "description records the negative character result");
 
     if (g_failed != 0) {
         std::cout << "FAILED " << g_failed << "\n";

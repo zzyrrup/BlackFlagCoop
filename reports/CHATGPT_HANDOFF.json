@@ -31,7 +31,7 @@
     "candidate": {
       "version": "0.8.0-dev",
       "bytes": 101376,
-      "sha256": "AD1EE8C35CD99E3452E6330032E660C9FFC83AC01221423F3627A81344807711",
+      "sha256": "BB65C643BA4318C9714EA7C2F0A1468D9730BD423DA71BD953BC97434783D925",
       "invokeNativeSpawn": false,
       "deployed": false
     },
@@ -64,7 +64,7 @@
       "No same-func ctor->arming edge",
       "No Edward/create path on the v0.6.25 owner VT",
       "v0.8.0: Spawn*Params are schema visitors via 0x4572C60",
-      "Same-table alloc 0x34730 size 0x1528 and 0x3DE6300 size 0x1530 are unproven",
+      "0x34730 final vtable 0x92F9108 and 0x3DE6300 final vtable 0x92F9048 have no RTTI and are not characters",
       "Plugin SpawnContract invoke=off"
     ],
     "keyRvas": {
@@ -84,7 +84,7 @@
     "Installed ASI v0.5.1 hash re-read; candidate not deployed",
     "SpawnCharacterParams 0x80F2330, SpawnEntityParams 0x8DFFB90, SpawnEntityBuilderParams 0x8E02960 are schema visitors via 0x4572C60",
     "Direct callers of those visitors are also schema visitors",
-    "0x34730 allocates 0x1528 bytes and 0x3DE6300 allocates 0x1530 bytes on the same code-pointer runs; object identity unproven",
+    "0x34730 installs final vtable 0x92F9108; 0x3DE6300 installs final vtable 0x92F9048; vt-8 is 0; not characters",
     "SpawnContract invoke flag is false and AttemptSpawn returns target 0"
   ],
   "hypotheses": [
@@ -99,9 +99,11 @@
   ],
   "mostRecentCompletedMilestone": {
     "id": "v0.8.0",
-    "docs": ["docs/v0.8.0-second-edward-plan.md", "docs/v0.8.0-manual-pc1-checklist.md", "docs/v0.6.25-vt-owner-ctors.md"],
+    "docs": ["docs/v0.8.0-alloc-vtables.md", "docs/v0.8.0-second-edward-plan.md", "docs/v0.8.0-manual-pc1-checklist.md"],
     "reports": [
       "reports/v0.8.0-validation.json",
+      "docs/v0.8.0-alloc-vtables.md",
+      "reports/v080-vptr-raw/evidence.txt",
       "reports/v0.8.0-spawn-callers.json",
       "reports/v0.8.0-param-vtables.json",
       "reports/v080-spawn-raw/evidence.txt",
@@ -111,8 +113,8 @@
   },
   "nextRecommendedMilestone": {
     "id": "v0.8.1",
-    "title": "Vtable stored by 0x34730 and 0x3DE6300 after Allocator returns",
-    "primary": ["post-alloc vtable in 0x34730", "post-alloc vtable in 0x3DE6300", "stop unless that vtable is a character or actor"],
+    "title": "Decode final-vtable slot 6 passed to 0x43DCB00",
+    "primary": ["0xC05CF10 for vtable 0x92F9108", "0xC05AA10 for vtable 0x92F9048", "stop unless a character type name appears"],
     "forbidden": ["call the allocator from the plugin", "deploy", "game launch", "live memory", "PC2", "LAN", "treat schema visitors as factories", "treat 0x1528/0x1530 size alone as Edward"]
   },
   "tests": [
