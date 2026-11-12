@@ -1,0 +1,14 @@
+{
+  "schemaVersion": 1,
+  "milestone": "v0.6.27",
+  "generatedUtc": "2026-11-12T20:36:46Z",
+  "exeSha256": "19920F34BB2FAC814023EE3C27F0CECA1872E80A2AAFB37C092C419FFF77CC0D",
+  "createSecondEdward": { "class": "unsupported", "reason": "No Edward create; TypeInfo VT[0] binding absent statically; +0x98 classification does not prove possession" },
+  "ti50OwnerVt0": { "class": "unsupported", "reason": "No static LEA/movabs/store+50/TypeInfo-shape binding of owner VT[0]; only VT-table embeds; tight factories are generic [ti+0x50] consumers" },
+  "plus98Classification": { "class": "confirmed", "reason": "Pointer family (SideBlock/Arming/ArmWrap/NeighRelated) vs inline family (Spatial VT0/instA/instB) are distinct uses of +0x98" },
+  "liveMemoryProbe": { "class": "blocked", "reason": "Not authorized" },
+  "next": {
+    "primary": "Find runtime/reloc TypeInfo registration of owner VT[0], or which outer/factory ctor constructs Neighbor/Spatial subobjects",
+    "avoid": ["live memory", "ASI deploy", "spawn", "PC2", "expect static TypeInfo+0x50 == VT[0] without evidence", "conflate Spatial inline +0x98 with SideBlock pointer"]
+  }
+}

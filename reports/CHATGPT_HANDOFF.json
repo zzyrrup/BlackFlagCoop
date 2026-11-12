@@ -1,14 +1,14 @@
 {
   "schemaVersion": 1,
-  "generatedUtc": "2026-11-12T19:46:00Z",
+  "generatedUtc": "2026-11-12T20:38:00Z",
   "handoffFor": "ChatGPT",
   "executor": "Cursor",
   "machine": "PC1",
   "repository": {
     "url": "https://github.com/zzyrrup/BlackFlagCoop",
     "defaultBranch": "main",
-    "featureBranch": "cursor/v086-alloc-vt0-8285",
-    "baseBranch": "cursor/v085-vt-owner-ctors-8285",
+    "featureBranch": "cursor/v087-ti50-plus98-8285",
+    "baseBranch": "cursor/v086-alloc-vt0-8285",
     "doNotPushMain": true,
     "initialCommit": "e12e70150656ac80742f10b496f7e5556e7985b7"
   },
@@ -18,10 +18,10 @@
     "functionalityChangedByThisMilestone": false
   },
   "milestone": {
-    "currentId": "v0.6.26",
-    "currentTitle": "Alloc->VT[0] indirect-only + SideBlock/Arming same-instance",
+    "currentId": "v0.6.27",
+    "currentTitle": "TypeInfo [ti+0x50] vs owner VT[0] + plus98 classification",
     "status": "complete",
-    "priorPreserved": ["v0.6.4", "v0.6.5", "v0.6.6", "v0.6.7", "v0.6.8", "v0.6.9", "v0.6.10", "v0.6.11", "v0.6.12", "v0.6.13", "v0.6.14", "v0.6.15", "v0.6.16", "v0.6.17", "v0.6.18", "v0.6.19", "v0.6.20", "v0.6.21", "v0.6.22", "v0.6.23", "v0.6.24", "v0.6.25"]
+    "priorPreserved": ["v0.6.4", "v0.6.5", "v0.6.6", "v0.6.7", "v0.6.8", "v0.6.9", "v0.6.10", "v0.6.11", "v0.6.12", "v0.6.13", "v0.6.14", "v0.6.15", "v0.6.16", "v0.6.17", "v0.6.18", "v0.6.19", "v0.6.20", "v0.6.21", "v0.6.22", "v0.6.23", "v0.6.24", "v0.6.25", "v0.6.26"]
   },
   "asi": {
     "version": "0.5.1",
@@ -37,7 +37,7 @@
   },
   "build": {
     "asiRebuilt": false,
-    "offlineTools": ["tools/offline/AllocVt086"]
+    "offlineTools": ["tools/offline/Ti50Plus087"]
   },
   "network": {
     "changesAuthorized": false,
@@ -45,65 +45,63 @@
   },
   "engineFindings": {
     "summary": [
-      "Alloc->owner VT[0] (0x13612B0/0x5781490): indirect_only; 0 movabs, 0 Alloc+LEA owner VT, 0 LEA-near-Alloc",
-      "VT[0] ctors are in-place (assume rcx already allocated); only embeds at VT bases",
-      "SideBlock 0xE95E80: Alloc(0x160) then mov [this+98],block + back-ptr [block+100],this",
-      "Sole E8 SideBlock callers: queue handler 0x1AC380 (pre 0x725400)",
-      "Arming 0x21085D0 / ArmWrap 0x2108620 load [this+98] pointer slot -> structural same-instance",
-      "No same-func SideBlock+Arming E8 (Arming is .edata VT-slot 0x9490078)",
+      "No static TypeInfo/+0x50 binding to owner VT[0] (0 LEA/movabs/store+50; only VT-table embeds)",
+      "Outer ctor 0x59D9660 still has LEA x2 registration contrast",
+      "Tight factories remain generic [ti+0x50] consumers (not owner-VT0-tied offline)",
+      "Pointer +0x98 family: SideBlock/Arming/ArmWrap/NeighRelated/Helper/Neighbor method",
+      "Inline +0x98 family: Spat VT0/instA/instB + Spatial method; SpatInstC mixed",
       "No Edward/create path"
     ],
     "keyRvas": {
-      "neighVt": "0x976B2D0",
       "neighVt0Ctor": "0x13612B0",
-      "spatVt": "0x9236E00",
       "spatVt0Ctor": "0x5781490",
-      "allocator": "0x426EE50",
-      "sideBlockAlloc": "0xE95E80",
-      "queueHandler": "0x1AC380",
-      "preSide": "0x725400",
+      "outerCtor": "0x59D9660",
+      "sideBlock": "0xE95E80",
       "arming": "0x21085D0",
       "armWrap": "0x2108620",
-      "armingSlot": "0x9490078"
+      "spatInstA": "0x5563CF0",
+      "spatInstB": "0x6CF34A0",
+      "spatInstC": "0x6CF3750",
+      "neighRelated": "0x3D522C0",
+      "tightFactoryA": "0x238590",
+      "tightFactoryB": "0x256280"
     }
   },
   "confirmed": [
     "ASI v0.5.1 preserved; no deploy",
-    "No PE-static Alloc then invoke owner VT[0] path",
-    "SideBlock Alloc+attach to this+0x98 with back-pointer",
-    "Arming/ArmWrap consume same this+0x98 pointer slot (structural same-instance)",
+    "No static TypeInfo [ti+0x50] == owner VT[0]",
+    "Pointer vs Spatial inline +0x98 are distinct layouts",
     "No live memory this milestone"
   ],
   "hypotheses": [
-    "TypeInfo +0x50 (or equivalent table) invokes owner VT[0] after some Allocator",
-    "Enrollment-family objects carrying pointer +0x98 are the Neighbor-family instances that also host spat/neigh methods"
+    "Runtime/reloc TypeInfo may still bind owner VT[0]",
+    "Outer/factory constructs Neighbor/Spatial via Alloc then VT install without TypeInfo ctor field"
   ],
   "blockers": [
-    "TypeInfo/+0x50 binding to owner VT[0] not recovered",
+    "Neighbor/Spatial object construction path still open",
     "No input/possession path",
     "Spawn tests not authorized"
   ],
   "mostRecentCompletedMilestone": {
-    "id": "v0.6.26",
-    "docs": ["docs/v0.6.26-alloc-vt0.md"],
+    "id": "v0.6.27",
+    "docs": ["docs/v0.6.27-ti50-plus98.md"],
     "reports": [
-      "reports/v0.6.26-funcs-deep.json",
-      "reports/v0.6.26-summary.json",
-      "reports/v0.6.26-second-edward-feasibility.json",
-      "reports/v086-raw/evidence.txt"
+      "reports/v0.6.27-funcs-deep.json",
+      "reports/v0.6.27-summary.json",
+      "reports/v0.6.27-second-edward-feasibility.json",
+      "reports/v087-raw/evidence.txt"
     ]
   },
   "nextRecommendedMilestone": {
-    "id": "v0.6.27",
-    "title": "TypeInfo/+0x50 -> owner VT[0]; classify pointer vs inline +0x98",
-    "primary": ["TypeInfo +0x50 consumers of owner VT[0]", "pointer +0x98 vs Spatial inline +0x98"],
-    "forbidden": ["spawn", "deploy", "live memory", "PC2", "save-data", "force-push main", "expect E8 to Outer/owner VT[0]"]
+    "id": "v0.6.28",
+    "title": "Neighbor/Spatial construction path without static TypeInfo+0x50",
+    "primary": ["outer/factory construct Neighbor/Spatial", "VT install / call [vt+0] sites", "optional reloc TypeInfo registration"],
+    "forbidden": ["spawn", "deploy", "live memory", "PC2", "save-data", "force-push main", "expect static ti+50==VT[0]", "conflate inline vs pointer +0x98"]
   },
   "tests": [
-    { "name": "AllocVt086_build_scan", "result": "pass" },
-    { "name": "alloc_vt0_indirect_only", "result": "pass" },
-    { "name": "sideblock_attach_plus98", "result": "pass" },
-    { "name": "arming_armwrap_plus98", "result": "pass" },
+    { "name": "Ti50Plus087_build_scan", "result": "pass" },
+    { "name": "ti50_owner_vt0_static_absent", "result": "pass" },
+    { "name": "plus98_pointer_vs_inline", "result": "pass" },
     { "name": "game_launch_deploy", "result": "not_run" },
     { "name": "spawn_live_memory", "result": "not_run" }
   ],
@@ -119,9 +117,9 @@
   },
   "chatgptNextReviewInstructions": [
     "Read docs/CHATGPT_HANDOFF.md and this JSON first",
-    "Review v0.6.26 PR; preserve v0.6.4-v0.6.25 history",
+    "Review v0.6.27 PR; preserve v0.6.4-v0.6.26 history",
     "Separate confirmed vs hypotheses",
-    "Propose v0.6.27 TypeInfo/+0x50 -> VT[0] and +0x98 classification",
+    "Propose v0.6.28 Neighbor/Spatial construction without static ti+50",
     "Do not authorize deploy/spawn/live memory/PC2 unless user overrides",
     "Return PC1 branch+PR instructions"
   ]

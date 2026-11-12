@@ -1,0 +1,219 @@
+===== v0.6.27 TypeInfo [ti+0x50] + POINTER vs INLINE +0x98 =====
+exeSha256=19920F34BB2FAC814023EE3C27F0CECA1872E80A2AAFB37C092C419FFF77CC0D
+
+===== QWORD EMBEDS OF OWNER VT[0] =====
+QWORD 0x13612B0 embeds=1
+  @0x976B2D0 sec=.edata asTi50Candidate=False offsetInVtNeigh=+0x0 offsetInVtSpat=-
+    window ti=0x976B280 [+00]=0x148D75DE0 [+20]=0x48D75000 [+50]=0x1413612B0
+QWORD 0x5781490 embeds=1
+  @0x9236E00 sec=.edata asTi50Candidate=False offsetInVtNeigh=- offsetInVtSpat=+0x0
+    window ti=0x9236DB0 [+00]=0x14ACE82F8 [+20]=0x455BB1F0 [+50]=0x145781490
+
+===== LEA OF OWNER VT[0] CTOR ADDRS (TypeInfo-register style) =====
+LEA->0x13612B0 count=0
+LEA->0x5781490 count=0
+
+===== MOVABS / STORE [reg+0x50] OF OWNER VT[0] =====
+movabs ctor sites=0
+  +50-store @0x256667 func=0x256280 mov [rsp+50],rcx
+storePlus50OfCtorHits=0
+
+===== KNOWN TYPEINFO KEY REGION (reference Outer path) =====
+LookupKey 0xB2898C8 region (raw qwords):
+  [0xB2898C8] = 0xC406FFFFFFFFC3A2
+  [0xB2898D0] = 0x3C5DF0EB3BC2
+  [0xB2898D8] = 0x3C5DF0090000
+  [0xB2898E0] = 0x15AAF10E80000
+  [0xB2898E8] = 0x1574321350000 *** SIZE_FIELD ***
+  [0xB2898F0] = 0x878EFFCBDFC50000
+  [0xB2898F8] = 0xB7BC000000003CB1
+  [0xB289900] = 0x7C39000000006090
+  [0xB289908] = 0x1C0A000000014D97
+  [0xB289910] = 0xFFFFC3A20F24A20F
+  [0xB289918] = 0xFFFF *** CTOR_FIELD ***
+  [0xB289920] = 0x5DF0DC4A0000
+  [0xB289928] = 0x159807F0C0000
+raw8 at CtorField file: FF-FF-00-00-00-00-00-00
+E8->InstallerA=0 LEA->OuterCtor=2 QWORD OuterCtor embeds=0
+
+===== TIGHT FACTORIES: [ti+0x50] ICALL SITES (generic consumers) =====
+factory 0x238590 icall50=1 alloc=True
+  ICALL50 @0x23863B call qword ptr [r14+50]
+factory 0x256280 icall50=1 alloc=True
+  ICALL50 @0x25631D call qword ptr [r14+50]
+factory 0x218900 icall50=1 alloc=True
+  ICALL50 @0x218996 call qword ptr [r14+50]
+factory 0x218660 icall50=2 alloc=True
+  ICALL50 @0x218724 call qword ptr [rbx+50]
+  ICALL50 @0x218996 call qword ptr [r14+50]
+factory 0x21FA70 icall50=1 alloc=True
+  ICALL50 @0x21FC85 call qword ptr [rbx+50]
+
+===== STATIC TYPEINFO-SHAPED SCAN (ctor at +0x50) =====
+  cand ti=0x976B280 ctorSlot=0x976B2D0 ctor=0x13612B0 dword[+20]=0x48D75000 qword[ti]=0x148D75DE0 sec=.edata note=VT_BASE_NOT_TYPEINFO
+  cand ti=0x9236DB0 ctorSlot=0x9236E00 ctor=0x5781490 dword[+20]=0x455BB1F0 qword[ti]=0x14ACE82F8 sec=.edata note=VT_BASE_NOT_TYPEINFO
+nonVtTiShapeHits=0
+
+===== CONTRAST: OUTER CTOR TypeInfo REGISTRATION =====
+LEA->Outer=2
+  LEA Outer @0x5F14901 func=0x5F11A40
+    0x5F148E1 and [rax],al
+    0x5F148E3 add [rax-77],cl
+    0x5F148E6 xor eax,537501D
+    0x5F148EB mov [rip+537501E],rbx
+    0x5F148F2 mov [rip+5375003],rsi
+    0x5F148F9 vmovups [rip+5374FEB],xmm6
+    0x5F14901 lea rcx,[rip-53B2A8]
+    0x5F14908 mov [rip+5375009],rcx
+    0x5F1490F vxorps xmm0,xmm0,xmm0
+    0x5F14913 vmovups [rip+537505D],ymm0
+    0x5F1491B vmovups [rip+537503D],ymm0
+    0x5F14923 vmovups [rip+5375015],ymm0
+    0x5F1492B mov [rip+5374F90],al
+    0x5F14931 vmovups [rip+5374FE7],ymm0
+    0x5F14939 mov [rip+5375061],esi
+    0x5F1493F lea rax,[rip+1BEF57A]
+    0x5F14946 mov [rip+537504B],rax
+    0x5F1494D mov [rip+537505D],esi
+    0x5F14953 mov [rip+537504E],rdi
+    0x5F1495A mov [rip+5375057],si
+  LEA Outer @0x5F14902 func=0x5F11A40
+    0x5F148E2 add [rax],al
+    0x5F148E4 mov [rip+537501D],rsi
+    0x5F148EB mov [rip+537501E],rbx
+    0x5F148F2 mov [rip+5375003],rsi
+    0x5F148F9 vmovups [rip+5374FEB],xmm6
+    0x5F14901 lea rcx,[rip-53B2A8]
+    0x5F14908 mov [rip+5375009],rcx
+    0x5F1490F vxorps xmm0,xmm0,xmm0
+    0x5F14913 vmovups [rip+537505D],ymm0
+    0x5F1491B vmovups [rip+537503D],ymm0
+    0x5F14923 vmovups [rip+5375015],ymm0
+    0x5F1492B mov [rip+5374F90],al
+    0x5F14931 vmovups [rip+5374FE7],ymm0
+    0x5F14939 mov [rip+5375061],esi
+    0x5F1493F lea rax,[rip+1BEF57A]
+    0x5F14946 mov [rip+537504B],rax
+    0x5F1494D mov [rip+537505D],esi
+    0x5F14953 mov [rip+537504E],rdi
+    0x5F1495A mov [rip+5375057],si
+    0x5F14961 mov [rip+5375052],sil
+
+ti50OwnerVt0StaticBinding=False (LEA=0 movabs=0 store+50=0 nonVtShape=0)
+
+===== +0x98 CLASSIFICATION (known subjects) =====
+CLASS 0x1AC380 (queue-handler) => none ptrStore=False ptrLoad=False ptrZero=False ptrCmp=False inlAdd=False inlLea=False inlCall=False
+CLASS 0xE95E80 (sideblock) => pointer ptrStore=True ptrLoad=True ptrZero=False ptrCmp=False inlAdd=False inlLea=False inlCall=False
+  STORE98 @0xE95F73 mov [rbx+98],r15
+  STORE98 @0xE96075 mov [rbx+98],r14
+  STORE98 @0xE9607C mov [rsi+98],rbx
+  LOAD98 @0xE96115 mov rdx,[rbx+98]
+  LOAD98 @0xE96207 mov rdx,[rbx+98]
+  LOAD98 @0xE962B2 mov r12,[rsi+98]
+  LOAD98 @0xE96907 mov rdx,[rsi+98]
+  LOAD98 @0xE96938 mov rbx,[rsi+98]
+  LOAD98 @0xE9698B mov rdx,[rsi+98]
+CLASS 0x13612B0 (neigh-vt0) => none ptrStore=False ptrLoad=False ptrZero=False ptrCmp=False inlAdd=False inlLea=False inlCall=False
+CLASS 0x1D25E20 (spatial-method) => inline ptrStore=False ptrLoad=False ptrZero=False ptrCmp=False inlAdd=False inlLea=True inlCall=True
+  LEA98 @0x1D26C1B lea r15,[rcx+98]
+  LEA98mem @0x1D26C1B lea r15,[rcx+98]
+CLASS 0x21085D0 (arming) => pointer ptrStore=False ptrLoad=False ptrZero=False ptrCmp=True inlAdd=False inlLea=False inlCall=False
+  CMP98 @0x21085D8 cmp qword ptr [rcx+98],0
+CLASS 0x2108620 (armwrap) => pointer ptrStore=False ptrLoad=True ptrZero=False ptrCmp=False inlAdd=False inlLea=False inlCall=False
+  LOAD98 @0x2108640 mov rdi,[rsi+98]
+  LOAD98 @0x21086D3 mov rdx,[rsi+98]
+  LOAD98 @0x2108735 mov rsi,[rsi+98]
+CLASS 0x2335140 (neighbor-method) => pointer ptrStore=True ptrLoad=True ptrZero=False ptrCmp=False inlAdd=False inlLea=False inlCall=False
+  LOAD98 @0x2335168 mov rdi,[rcx+98]
+  STORE98 @0x23351B9 mov byte ptr [rsi+98],1
+CLASS 0x3D522C0 (neigh-related) => pointer ptrStore=True ptrLoad=False ptrZero=False ptrCmp=False inlAdd=False inlLea=False inlCall=False
+  STORE98 @0x3D52338 mov [rcx+98],al
+CLASS 0x546D150 (helper546) => pointer ptrStore=False ptrLoad=True ptrZero=False ptrCmp=False inlAdd=False inlLea=False inlCall=False
+  LOAD98 @0x546D156 mov rax,[rcx+98]
+  LOAD98 @0x546D2FA mov rax,[rcx+98]
+CLASS 0x5563CF0 (spat-instA) => inline ptrStore=False ptrLoad=False ptrZero=False ptrCmp=False inlAdd=True inlLea=False inlCall=False
+  ADD98 @0x5563D12 add rsi,98
+CLASS 0x5781490 (spat-vt0) => inline ptrStore=False ptrLoad=False ptrZero=False ptrCmp=False inlAdd=True inlLea=False inlCall=True
+  ADD98 @0x57814B0 add rcx,98
+CLASS 0x6CF34A0 (spat-instB) => inline ptrStore=False ptrLoad=False ptrZero=False ptrCmp=False inlAdd=True inlLea=False inlCall=True
+  ADD98 @0x6CF34BD add rcx,98
+CLASS 0x6CF3750 (spat-instC) => mixed ptrStore=True ptrLoad=False ptrZero=False ptrCmp=False inlAdd=True inlLea=False inlCall=True
+  STORE98 @0x6CF3779 mov [rsi+98],rax
+  ADD98 @0x6CF381B add rdi,98
+  ADD98 @0x6CF3825 add rcx,98
+
+===== OWNER-VT FUNCS +0x98 CLASS =====
+
+===== DEEP: SIDEBLOCK POINTER ATTACH =====
+--- sideblock 0xE95E80 ---
+0xE95ECA call 000000014426EE50 *** ALLOC ***
+0xE95F0F mov [rbx+50],rax *** +50 ***
+0xE95F73 mov [rbx+98],r15 *** +98 ***
+
+===== DEEP: SPATIAL VT0 INLINE +0x98 =====
+--- spat-vt0 0x5781490 ---
+0x578149B lea rax,[rip+3AB595E] *** SPATVT ***
+0x57814B0 add rcx,98
+0x57814B7 call 0000000145781570
+0x57814BF call 00000001457814E0
+0x57814D5 call 00000001443F8CB0
+--- spat-instA 0x5563CF0 ---
+0x5563CF8 call 0000000145563D30
+0x5563CFD lea rax,[rip+3CD30FC] *** SPATVT ***
+0x5563D12 add rsi,98
+0x5563D38 call 0000000140D2E190
+0x5563D61 call 0000000141691ED0
+0x5563D6A call 0000000141691ED0
+--- spat-instB 0x6CF34A0 ---
+0x6CF34A8 lea rax,[rip+2543951] *** SPATVT ***
+0x6CF34BD add rcx,98
+0x6CF34C4 call 0000000145781570
+0x6CF34F4 call 00000001443DCB00
+0x6CF3518 call 0000000144CF96B0
+
+===== DEEP: NEIGH RELATED ZERO +0x98 =====
+--- neigh-related 0x3D522C0 ---
+0x3D522D4 lea rax,[rip+5A18FF5] *** NEIGHVT ***
+0x3D52316 vmovups [rcx+50],ymm0 *** +50 ***
+0x3D52338 mov [rcx+98],al *** +98 ***
+0x3D52363 call 0000000140356C60
+0x3D52380 call 000000014457AC50
+
+===== DEEP: ARMING / ARMWRAP POINTER LOAD =====
+--- arming 0x21085D0 ---
+0x21085D8 cmp qword ptr [rcx+98],0 *** +98 ***
+0x21085FE call 00000001407BB020
+0x210863B call 000000014479E3B0
+0x2108640 mov rdi,[rsi+98] *** +98 ***
+0x2108654 call 0000000145014570
+0x2108695 call 0000000140C45FB0
+0x210869E call 0000000140C46110
+--- armwrap 0x2108620 ---
+0x210863B call 000000014479E3B0
+0x2108640 mov rdi,[rsi+98] *** +98 ***
+0x2108654 call 0000000145014570
+0x2108695 call 0000000140C45FB0
+0x210869E call 0000000140C46110
+
+===== +0x98 CLASS COUNTS =====
+pointer=6 inline=4 mixed=1 none/unknown=2
+  [inline] 0x1D25E20 spatial-method store=False load=False zero=False add=False lea=True thenCall=True
+  [inline] 0x5563CF0 spat-instA store=False load=False zero=False add=True lea=False thenCall=False
+  [inline] 0x5781490 spat-vt0 store=False load=False zero=False add=True lea=False thenCall=True
+  [inline] 0x6CF34A0 spat-instB store=False load=False zero=False add=True lea=False thenCall=True
+  [mixed] 0x6CF3750 spat-instC store=True load=False zero=False add=True lea=False thenCall=True
+  [none] 0x1AC380 queue-handler store=False load=False zero=False add=False lea=False thenCall=False
+  [none] 0x13612B0 neigh-vt0 store=False load=False zero=False add=False lea=False thenCall=False
+  [pointer] 0xE95E80 sideblock store=True load=True zero=False add=False lea=False thenCall=False
+  [pointer] 0x21085D0 arming store=False load=False zero=False add=False lea=False thenCall=False
+  [pointer] 0x2108620 armwrap store=False load=True zero=False add=False lea=False thenCall=False
+  [pointer] 0x2335140 neighbor-method store=True load=True zero=False add=False lea=False thenCall=False
+  [pointer] 0x3D522C0 neigh-related store=True load=False zero=False add=False lea=False thenCall=False
+  [pointer] 0x546D150 helper546 store=False load=True zero=False add=False lea=False thenCall=False
+
+===== VERDICT =====
+1) Owner VT[0] static TypeInfo/+0x50 binding: NOT_FOUND
+2) Generic [ti+0x50] consumers exist (tight factories) but not owner-VT0-tied offline.
+3) +0x98 pointer family: SideBlock/Arming/ArmWrap/NeighRelated(+zero)/Helper
+4) +0x98 inline family: Spatial VT[0]/instA/instB (add/lea +98 then sub-init)
+5) These are DISTINCT layout uses of the same numeric offset.
