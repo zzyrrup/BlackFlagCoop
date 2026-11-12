@@ -3,7 +3,7 @@
 **Last updated:** 2026-11-12  
 **Machine:** PC1 only  
 **Repo:** https://github.com/zzyrrup/BlackFlagCoop  
-**Branch:** `cursor/v078-armwrap-installers-8285` (PR into `cursor/v077-vt-slot-ctors-8285`; do not push main)  
+**Branch:** `cursor/v079-mode-enroll-size-8285` (PR into `cursor/v078-armwrap-installers-8285`; do not push main)  
 **Initial commit:** `e12e70150656ac80742f10b496f7e5556e7985b7`
 
 This document is the primary human-readable bridge between Cursor (local execution) and ChatGPT (review / next instructions). Update it after every completed milestone.
@@ -25,9 +25,9 @@ Ultimate vision is **not claimed as achieved**. Dual-Edward co-op remains unprov
 
 ## 2. Current development milestone
 
-**v0.6.18 complete** — Arm wrap `0x2108620` calls canonical `0x479E3B0` then `+0x98` modes 0–3 at `+0x158`; post-`+0x2B8` `0x479E440` gates on `[+0x26]`; installer A LEA-registers ctor A; installer B calls ctor B then continues large composite init.
+**v0.6.19 complete** — Modes 2/3 ≠ enrollment gate (no enroll edge); `0x59D9660` outer/subobj layout lower bound `0x20E0` (no allocator); `AnimatedOnActiveChanged` same-owner `0x2335040` E8-calls `0x479E440`.
 
-Prior: v0.6.5–v0.6.17 preserved. Offline only. No ASI, spawn, or networking change.
+Prior: v0.6.5–v0.6.18 preserved. Offline only. No ASI, spawn, or networking change.
 
 ---
 
@@ -99,7 +99,8 @@ High-signal offline findings (see `docs/v0.6.*` and `reports/v0.6.*`):
 - **v0.6.15:** Gate install = `.edata 0x9490078` → `0x21085D0` → stub `0x7BB020` → `jmp 0x53F31A0` (alt `jmp 0xE95E80`). Bit-writer = `.edata` thunks `0xF1C230`/`0x210A9F0`. `0xE2C8A0` = sorted 0x18-stride ensure/insert feeding `0x2EA0B00`. Still no Edward/create path.
 - **v0.6.16:** `.edata` slots consumed as vtable entries (ctors `0x2E97A50`/`0x59D9B90` install table bases). Neighbor A→`0x4D04450`/`0x725400`; neighbor B validates `[vt+0x2B0]`/`[vt+0x2B8]`; arming helper `jmp [vt+0x2B0]` with `edx=2`. Still no Edward/create path.
 - **v0.6.17:** Expected `+0x2B0=0x4656C80` trampoline→`+0x2B8`; canonical `+0x2B8=0x479E3B0`; arm-table `+0x2B8=0x2108620` wraps it with `+0x98` work. Ctor A installs `0x948FF50`; ctor B installs `0x9303E28` at `+0x1D0`. Still no Edward/create path.
-- **v0.6.18:** Wrap `0x2108620` modes 0–3 on side-block `+0x158` + list helpers; `.edata 0x9490208` is arm-table `+0x2B8`. Post-2B8 `0x479E440` compares mode vs `[+0x26]`; nearby `AnimatedOnActiveChanged`. Installer A registers ctor A via LEA; installer B calls ctor B then inits through `+0xE38`. Still no Edward/create path.
+- **v0.6.18:** Wrap `0x2108620` modes 0–3 on side-block `+0x158` + list helpers; `.edata 0x9490208` is arm-table `+0x2B8`. Post-2B8 `0x479E440` compares mode vs `[+0x26]`. Installer A registers ctor A via LEA; installer B calls ctor B then inits through `+0xE38`. Still no Edward/create path.
+- **v0.6.19:** Modes 2/3 have **no** enroll edge (≠ `+0x61` gate). `0x59D9660` = header `0xB169D0` + InstallerB at `+0x20`; outer lower bound `0x20E0`; no allocator. `AnimatedOnActiveChanged` @ `0xA179A9F` owned by `0x2335040` (also E8-calls `0x479E440`). Still no Edward/create path.
 
 ---
 
@@ -144,6 +145,9 @@ High-signal offline findings (see `docs/v0.6.*` and `reports/v0.6.*`):
 - Arm wrap `0x2108620` calls `0x479E3B0`, then gates on `+0x98` / flags and writes modes **0–3** at side-block **`+0x158`**; installed at arm-table **`.edata 0x9490208`**.
 - Post-2B8 `0x479E440` compares **`[obj+0x26]`** to mode; walks context SmallArray stride `0x58`; nearby string **`AnimatedOnActiveChanged`**.
 - Installer A `0x5F11A40` **LEA-registers** ctor A (does not call); uses LookupKey. Installer B `0x59D96A0` **calls** ctor B then continues composite init through `+0xE38`.
+- Modes **2/3** write side-block `+0x158` / listHelper args only — **no** edge to enqueue/wrapper/gate/membership; **not** the enrollment `([+0x61]&6)==2` test.
+- `0x59D9660` calls `0xB169D0` then InstallerB at **`[obj+0x20]`**; outer layout lower bound **`0x20E0`**; **no** allocator on chain; Fill imm **`0x140`** in ctor B.
+- `AnimatedOnActiveChanged` string **`0xA179A9F`**; same-owner **`0x2335040`** LEAs it (→`0x8CD620`) and E8-calls **`0x479E440`**.
 - Input lead `0x187F0550` is action-name bind, not a movement controller.
 - No verified shared entity/ownership edge between input bind path and deferred handler.
 - No Edward, character, archetype, player, or transform string in either worker or the producer wrapper.
@@ -153,8 +157,8 @@ High-signal offline findings (see `docs/v0.6.*` and `reports/v0.6.*`):
 
 - The queued object is an actor or character (LOD-tracked).
 - The 0x160 side block is activation state for that object.
-- `0x479E440` is an `AnimatedOnActiveChanged`-style activation dispatcher.
-- Modes 2/3 drive listHelper membership that feeds enrollment eligibility.
+- `0x8CD620` is an event/notify dispatcher for `AnimatedOnActiveChanged`.
+- Neighbor `0x2335140` (`edx=3` → `[vt+0x2B0]`) is a related arming specialization.
 - Dual Edward / dual input context is feasible somewhere else in the engine.
 
 ### Disproven on this path
@@ -165,13 +169,15 @@ High-signal offline findings (see `docs/v0.6.*` and `reports/v0.6.*`):
 - `0xE95E80` finishes a character/Edward spawn.
 - `0x2D4F30` / the v0.6.8 top fingerprint trio are the deferred-queue subject constructors.
 - Wrapper `0x2E97FC0` / enrollment sites allocate the objects they enqueue (they consume preexisting packed-pointer arrays).
+- Arm-wrap modes 2/3 are the enrollment gate value / feed enqueue eligibility (no edge; different `+0x61` vs `+0x158` domains).
+- `AnimatedOnActiveChanged` is a nearby string inside `0x479E440` (it lives at `0xA179A9F`; same-owner is caller `0x2335040`).
 
 ---
 
 ## 9. Current blockers
 
 - No confirmed character/Edward factory or archetype reuse path. Queue only enqueues/activates existing objects.
-- Subject concrete type / single heap size still unknown; mode 2/3 → enrollment eligibility not fully mapped.
+- Subject concrete type / composite heap size still unknown (layout lower bound only).
 - No verified input→character ownership/control binding.
 - No safe authorized spawn/possession test design yet.
 - GitHub handoff must stay free of ASI/game binaries.
@@ -180,33 +186,33 @@ High-signal offline findings (see `docs/v0.6.*` and `reports/v0.6.*`):
 
 ## 10. Most recent completed milestone
 
-**v0.6.18 — Arm wrap + installers**
+**v0.6.19 — Modes 2/3 vs enrollment + size + Animated xref**
 
 Deliverables:
 
-- `docs/v0.6.18-armwrap-installers.md`
-- `reports/v0.6.18-funcs-deep.json`
-- `reports/v0.6.18-summary.json`
-- `reports/v0.6.18-second-edward-feasibility.json`
-- `reports/v078-raw/evidence.txt`
-- `tools/offline/ArmWrap078/`
+- `docs/v0.6.19-mode-enroll-size.md`
+- `reports/v0.6.19-mode-enroll-deep.json`
+- `reports/v0.6.19-summary.json`
+- `reports/v0.6.19-second-edward-feasibility.json`
+- `reports/v079-raw/evidence.txt`
+- `tools/offline/ModeEnroll079/`
 
-v0.6.4–v0.6.17 reports were left in place.
+v0.6.4–v0.6.18 reports were left in place.
 
 ---
 
 ## 11. Next recommended milestone
 
-**v0.6.19 (proposed):** Offline map modes **2/3** listHelper paths to enrollment eligibility; recover object size from installerB/ctorB chain (`0x59D9660`); resolve whether `0x479E440` xrefs `AnimatedOnActiveChanged`. Still no spawn, deploy, live memory, or PC2 unless separately authorized.
+**v0.6.20 (proposed):** Offline deep-decode **`0x2335040`** / **`0x8CD620`**; follow neighbor **`0x2335140`** (`edx=3`); recover heap size from **`0x59D9660`** registration consumers under **`0x5F11A40`**. Still no spawn, deploy, live memory, or PC2 unless separately authorized.
 
 ---
 
 ## 12. Files changed in the latest milestone
 
-- `docs/v0.6.18-armwrap-installers.md`
-- `reports/v0.6.18-*.json`
-- `reports/v078-raw/evidence.txt`
-- `tools/offline/ArmWrap078/`
+- `docs/v0.6.19-mode-enroll-size.md`
+- `reports/v0.6.19-*.json`
+- `reports/v079-raw/evidence.txt`
+- `tools/offline/ModeEnroll079/`
 - `docs/CHATGPT_HANDOFF.md`
 - `reports/CHATGPT_HANDOFF.json`
 
@@ -230,6 +236,7 @@ v0.6.4–v0.6.17 reports were left in place.
 | Offline edata/vcall v0.6.16 (`EdataConsumer076`) | Pass; vtable install; neighbor A/B; edx=2 vcall |
 | Offline vt/ctors v0.6.17 (`VtSlotCtor077`) | Pass; expected slots; arm chain to 0x2108620; both ctors |
 | Offline armwrap/installers v0.6.18 (`ArmWrap078`) | Pass; modes 0–3; post-2B8; installer A/B |
+| Offline mode/enroll/size v0.6.19 (`ModeEnroll079`) | Pass; no mode→enroll edge; layout `0x20E0`; Animated same-owner |
 | Subject MSVC RTTI name | **Not found** (game types RTTI-stripped) |
 | Game launch / ASI deploy | **Not performed** |
 | Spawn / inject / live memory | **Not performed** |
@@ -255,6 +262,6 @@ When reviewing the GitHub repository after a Cursor push:
 2. Diff against the previous handoff `milestoneId` / commit.
 3. Treat only **confirmed** items as facts; keep hypotheses labeled.
 4. Propose the **next single milestone** with: objective, in-scope RVAs/files, out-of-scope (spawn/deploy/PC2), required deliverables paths, and acceptance checks.
-5. Prefer **v0.6.19**: map mode 2/3 → enrollment; size from installerB chain; `AnimatedOnActiveChanged` xref. Do not treat LOD enqueue/comparator as character creation; avoid `+0x61`-only ranking; do not rely on MSVC RTTI for game types.
+5. Prefer **v0.6.20**: `0x2335040`/`0x8CD620`/`0x2335140` + heap-size from `0x59D9660` registration. Do not treat LOD enqueue/comparator as character creation; avoid `+0x61`-only ranking; do not conflate wrap modes with the enrollment gate; do not rely on MSVC RTTI for game types.
 6. Do not instruct Cursor to deploy ASI, spawn, use live memory, or touch PC2/save data unless the user explicitly overrides safety.
 7. Return instructions Cursor can execute verbatim on PC1 on a dedicated branch + PR (never push main).
