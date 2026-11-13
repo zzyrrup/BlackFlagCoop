@@ -1,5 +1,28 @@
 # BlackFlagCoop
 
+![BlackFlagCoop](BlackFlagCoop_splash.png)
+
+**Bringing the original Black Flag co-op vision into Black Flag Resynced.**
+
+**Two Edwards. One Jackdaw. One shared adventure.**
+
+Target: **Assassin's Creed Black Flag Resynced 1.0.6 — Windows x64**.
+
+BlackFlagCoop aims to become the successor to the original BlackFlagCoop project. Our goal is a genuine co-op campaign with two separately rendered, independently controlled Edwards sharing one world.
+
+> **Development status:** early research and engineering. Networking and offline test foundations exist, but a genuine second Edward has not yet been spawned in Resynced. Independent in-game control and playable co-op are not yet achieved. Concept art is illustrative, not gameplay evidence.
+
+## Follow development
+
+- [Project roadmap and milestone acceptance criteria](docs/PROJECT_ROADMAP.md)
+- [Development update — 13 November 2026](docs/DEVELOPMENT_UPDATE_2026-11-13.md)
+- [GitHub community hub and roadmap tracker](https://github.com/zzyrrup/BlackFlagCoop/issues/45)
+- [Share research leads, ideas, or contribute](https://github.com/zzyrrup/BlackFlagCoop/issues/54)
+
+**Current critical path:** prove the Resynced 1.0.6 x64 player/entity creation pipeline before attempting a second Edward. Original AC4 x86 addresses and layouts are behavioral reference only and are not transplanted.
+
+---
+
 Experimental research plugin for **Assassin's Creed IV: Black Flag Resynced** (Windows PC).
 
 This first build is a **safe smoke-test ASI plugin**. It does **not** modify the game, read game memory, install loaders, or call any game APIs. When loaded by an ASI loader in a future test, it only writes a log file.
